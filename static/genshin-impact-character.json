@@ -1,0 +1,1114 @@
+{
+  "materials": {
+    "DvalinsSigh": 0,
+    "DvalinsPlume": 0,
+    "DvalinsClaw": 0,
+    "RingOfBoreas": 0,
+    "SpiritLocketOfBoreas": 0,
+    "TailOfBoreas": 0,
+    "ShadowOfTheWarrior": 0,
+    "ShardOfAFoulLegacy": 0,
+    "TushOfMonocerosCaeli": 0,
+    "DragonLordsCrown": 0,
+    "BloodjadeBranch": 0,
+    "GildedScale": 0,
+    "AshenHeart": 0,
+    "HellfireButterfly": 0,
+    "MoltenMoment": 0,
+    "TheMeaningOfAeons": 0,
+    "MudraOfTheMaleficGeneral": 0,
+    "TearsOfTheCalamitousGod": 0
+  },
+  "characters": {
+    "Amber": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "DvalinsSigh"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "DvalinsSigh"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "DvalinsSigh"
+        }
+      }
+    },
+    "Beidou": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "DvalinsSigh"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "DvalinsSigh"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "DvalinsSigh"
+        }
+      }
+    },
+    "Chongyun": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "DvalinsSigh"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "DvalinsSigh"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "DvalinsSigh"
+        }
+      }
+    },
+    "Traveler": {
+      "level": 1,
+      "phase": 0,
+      "constellations": {
+        "Anemo": 0,
+        "Geo": 0,
+        "Electro": 0
+      },
+      "aptitudes": {
+        "Anemo": {
+          "normalAttack": {
+            "level": 1,
+            "material": "DvalinsSigh"
+          },
+          "elementalSkill": {
+            "level": 1,
+            "constellationIncrease": 5,
+            "material": "DvalinsSigh"
+          },
+          "elementalBurst": {
+            "level": 1,
+            "constellationIncrease": 3,
+            "material": "DvalinsSigh"
+          }
+        },
+        "Geo": {
+          "normalAttack": {
+            "level": 1,
+            "material": "DvalinsSigh"
+          },
+          "elementalSkill": {
+            "level": 1,
+            "constellationIncrease": 5,
+            "material": "TailOfBoreas"
+          },
+          "elementalBurst": {
+            "level": 1,
+            "constellationIncrease": 3,
+            "material": "TailOfBoreas"
+          }
+        },
+        "Electro": {
+          "normalAttack": {
+            "level": 1,
+            "material": "DragonLordsCrown"
+          },
+          "elementalSkill": {
+            "level": 1,
+            "constellationIncrease": 5,
+            "material": "DragonLordsCrown"
+          },
+          "elementalBurst": {
+            "level": 1,
+            "constellationIncrease": 3,
+            "material": "DragonLordsCrown"
+          }
+        }
+      }
+    },
+    "Bennett": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "DvalinsPlume"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "DvalinsPlume"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "DvalinsPlume"
+        }
+      }
+    },
+    "Diluc": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "DvalinsPlume"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "DvalinsPlume"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "DvalinsPlume"
+        }
+      }
+    },
+    "Jean": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "DvalinsPlume"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "DvalinsPlume"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "DvalinsPlume"
+        }
+      }
+    },
+    "Lisa": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "DvalinsClaw"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "DvalinsClaw"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "DvalinsClaw"
+        }
+      }
+    },
+    "Noelle": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "DvalinsClaw"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "DvalinsClaw"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "DvalinsClaw"
+        }
+      }
+    },
+    "Razor": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "DvalinsClaw"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "DvalinsClaw"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "DvalinsClaw"
+        }
+      }
+    },
+    "Xiangling": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "DvalinsClaw"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "DvalinsClaw"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "DvalinsClaw"
+        }
+      }
+    },
+    "Barbara": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "RingOfBoreas"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "RingOfBoreas"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "RingOfBoreas"
+        }
+      }
+    },
+    "Keqing": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "RingOfBoreas"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "RingOfBoreas"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "RingOfBoreas"
+        }
+      }
+    },
+    "Klee": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "RingOfBoreas"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "RingOfBoreas"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "RingOfBoreas"
+        }
+      }
+    },
+    "Mona": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "RingOfBoreas"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "RingOfBoreas"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "RingOfBoreas"
+        }
+      }
+    },
+    "Qiqi": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "TailOfBoreas"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "TailOfBoreas"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "TailOfBoreas"
+        }
+      }
+    },
+    "Venti": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "TailOfBoreas"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "TailOfBoreas"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "TailOfBoreas"
+        }
+      }
+    },
+    "Xingqiu": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "TailOfBoreas"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "TailOfBoreas"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "TailOfBoreas"
+        }
+      }
+    },
+    "Fischl": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "SpiritLocketOfBoreas"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "SpiritLocketOfBoreas"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "SpiritLocketOfBoreas"
+        }
+      }
+    },
+    "Kaeya": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "SpiritLocketOfBoreas"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "SpiritLocketOfBoreas"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "SpiritLocketOfBoreas"
+        }
+      }
+    },
+    "Ningguang": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "SpiritLocketOfBoreas"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "SpiritLocketOfBoreas"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "SpiritLocketOfBoreas"
+        }
+      }
+    },
+    "Sucrose": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "SpiritLocketOfBoreas"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "SpiritLocketOfBoreas"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "SpiritLocketOfBoreas"
+        }
+      }
+    },
+    "Xiao": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "ShadowOfTheWarrior"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "ShadowOfTheWarrior"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "ShadowOfTheWarrior"
+        }
+      }
+    },
+    "Ganyu": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "ShadowOfTheWarrior"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "ShadowOfTheWarrior"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "ShadowOfTheWarrior"
+        }
+      }
+    },
+    "Rosalia": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "ShadowOfTheWarrior"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "ShadowOfTheWarrior"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "ShadowOfTheWarrior"
+        }
+      }
+    },
+    "Zhongli": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "TushOfMonocerosCaeli"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "TushOfMonocerosCaeli"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "TushOfMonocerosCaeli"
+        }
+      }
+    },
+    "Xinyan": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "TushOfMonocerosCaeli"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "TushOfMonocerosCaeli"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "TushOfMonocerosCaeli"
+        }
+      }
+    },
+    "Albedo": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "TushOfMonocerosCaeli"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "TushOfMonocerosCaeli"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "TushOfMonocerosCaeli"
+        }
+      }
+    },
+    "Tartaglia": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "phaseIncrease": 0,
+          "phaseIncreaseBonus": 1,
+          "material": "ShardOfAFoulLegacy"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "ShardOfAFoulLegacy"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "ShardOfAFoulLegacy"
+        }
+      }
+    },
+    "Diona": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "ShardOfAFoulLegacy"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "ShardOfAFoulLegacy"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "ShardOfAFoulLegacy"
+        }
+      }
+    },
+    "Hu Tao": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "ShardOfAFoulLegacy"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "ShardOfAFoulLegacy"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "ShardOfAFoulLegacy"
+        }
+      }
+    },
+    "Kamisato Ayaka": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "BloodjadeBranch"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "BloodjadeBranch"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "BloodjadeBranch"
+        }
+      }
+    },
+    "Yanfei": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "BloodjadeBranch"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "BloodjadeBranch"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "BloodjadeBranch"
+        }
+      }
+    },
+    "Eula": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "DragonLordsCrown"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "DragonLordsCrown"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "DragonLordsCrown"
+        }
+      }
+    },
+    "Yoimiya": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "DragonLordsCrown"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "DragonLordsCrown"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "DragonLordsCrown"
+        }
+      }
+    },
+    "Kaedehara Kazuha": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "GildedScale"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "GildedScale"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "GildedScale"
+        }
+      }
+    },
+    "Sayu": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "GildedScale"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "GildedScale"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "GildedScale"
+        }
+      }
+    },
+    "Shogun Raiden": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "MoltenMoment"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "MoltenMoment"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "MoltenMoment"
+        }
+      }
+    },
+    "Aloy": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "MoltenMoment"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "material": "MoltenMoment"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "material": "MoltenMoment"
+        }
+      }
+    },
+    "Gorou": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "MoltenMoment"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "MoltenMoment"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "MoltenMoment"
+        }
+      }
+    },
+    "Sangonomiya Kokomi": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "HellfireButterfly"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "HellfireButterfly"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "HellfireButterfly"
+        }
+      }
+    },
+    "Thomas": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "HellfireButterfly"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "HellfireButterfly"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "HellfireButterfly"
+        }
+      }
+    },
+    "Shenhe": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "HellfireButterfly"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "HellfireButterfly"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "HellfireButterfly"
+        }
+      }
+    },
+    "Kujou Sara": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "AshenHeart"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "AshenHeart"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "AshenHeart"
+        }
+      }
+    },
+    "Arataki Itto": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "AshenHeart"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "AshenHeart"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "AshenHeart"
+        }
+      }
+    },
+    "Yun Jin": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "AshenHeart"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "AshenHeart"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "AshenHeart"
+        }
+      }
+    },
+    "Yae Miko": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "TheMeaningOfAeons"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "TheMeaningOfAeons"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "TheMeaningOfAeons"
+        }
+      }
+    },
+    "Kamisato Ayato": {
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "MudraOfTheMaleficGeneral"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "MudraOfTheMaleficGeneral"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "MudraOfTheMaleficGeneral"
+        }
+      }
+    },
+    "Yelan": {
+      "beta": true,
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "GildedScale"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "GildedScale"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "GildedScale"
+        }
+      }
+    },
+    "Kuki Shinobu": {
+      "beta": true,
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "TearsOfTheCalamitousGod"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "TearsOfTheCalamitousGod"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "TearsOfTheCalamitousGod"
+        }
+      }
+    }
+  }
+}

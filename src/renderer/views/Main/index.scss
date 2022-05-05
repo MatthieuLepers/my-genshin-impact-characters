@@ -1,0 +1,18 @@
+@import '~scss/utilities.scss';
+
+.MainView {
+  .BossTitle {
+    @include font-size(18);
+    @include font-family('open-sans', 600);
+    background-color: lighten(color(primary), 11.74);
+    margin: 16px 4px 0;
+    width: calc(100% - 8px);
+    padding: 12px 8px;
+    letter-spacing: .1rem;
+
+    span {
+      @include font-size(16);
+      letter-spacing: normal;
+    }
+  }
+}
