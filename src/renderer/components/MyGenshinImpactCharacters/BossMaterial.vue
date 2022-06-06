@@ -5,7 +5,7 @@
         <img class="BossMaterialImg" :src="`static/img/materials/${material}.png`" :alt="material" />
         [{{ getOwnedAndInvestedMaterials(material) }}/{{ getMaxMaterial(material) }}] {{ $t(`Data.WeaklyBosses.${boss}.materials.${material}`) }}
       </span>
-      <FormInput type="number" :min="0" :max="9999" v-model="AppStore.data.materials[material]" :label="$t('App.inInventory')" />
+      <FormInput type="number" :min="0" :max="9999" v-model="AppStore.data.materials[material]" :label="$t('App.inInventory')" @click.stop />
     </button>
     <DataTable v-show="open" :columns="columns" :paginate="false" :enableActionRow="false" :data="characters">
       <template v-slot:nameStr="props">

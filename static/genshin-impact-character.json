@@ -1067,7 +1067,6 @@
       }
     },
     "Yelan": {
-      "beta": true,
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -1089,7 +1088,6 @@
       }
     },
     "Kuki Shinobu": {
-      "beta": true,
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -1107,6 +1105,28 @@
           "level": 1,
           "constellationIncrease": 5,
           "material": "TearsOfTheCalamitousGod"
+        }
+      }
+    },
+    "Shikanoin Heizou": {
+      "beta": true,
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "TheMeaningOfAeons"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "TheMeaningOfAeons"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "TheMeaningOfAeons"
         }
       }
     }

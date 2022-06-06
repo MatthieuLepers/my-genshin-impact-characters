@@ -16,7 +16,7 @@
       :max="type === 'number' && max ? max : null"
       :step="type === 'number' ? Math.abs(step) : null"
       @input="$emit('input', cast($event.target.value, typeof value))"
-      @click="$emit('click')"
+      @click="$emit('click', $event)"
       @keydown="$emit('keydown', $event)"
       @focus="handleFocus('focus', true)"
       @blur="handleFocus('blur', false)"
