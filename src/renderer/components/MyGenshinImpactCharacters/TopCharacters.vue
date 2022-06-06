@@ -1,6 +1,6 @@
 <template>
   <ul class="TopCharacters" @mousewheel="handleMouseWheel">
-    <li v-for="character in characters" :key="character.name">
+    <li v-for="character in characters" :key="character.name" @click="handleclick(character)">
       <img
         :src="`static/img/characters/${character.imageName}_gacha_card.png`"
         :title="`${character.nameStr}, ${character.spentMora / 1000}k`"
@@ -24,6 +24,9 @@ export default {
     handleMouseWheel(e) {
       e.preventDefault();
       this.$el.scrollLeft += e.deltaY;
+    },
+    handleclick(character) {
+      this.$emit('clickCharacter', character);
     },
   },
 };

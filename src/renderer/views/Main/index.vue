@@ -2,7 +2,7 @@
   <div class="View MainView">
     <AppTitleBar />
     <main>
-      <TopCharacters />
+      <TopCharacters @clickCharacter="handleClickCharacter" />
       <div
         v-for="boss in Object.keys($t(`Data.WeaklyBosses`))"
         :key="boss"
@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import Vue from 'vue';
 import AppTitleBar from '@/components/AppTitleBar/index';
 import BossMaterial from '@/components/MyGenshinImpactCharacters/BossMaterial';
 import TopCharacters from '@/components/MyGenshinImpactCharacters/TopCharacters';
@@ -55,6 +56,16 @@ export default {
     },
     getOwnedAndInvestedMaterials(materialName) {
       return (this.characters[materialName] || []).reduce((acc, character) => acc + character.getInvestedMaterials(materialName), AppStore.data.materials[materialName]);
+    },
+    handleClickCharacter(character) {
+      this.selectedCharacter = character;
+      const bossMaterialElement = document.getElementById(character.name).closest('.BossMaterial');
+      if (!bossMaterialElement.querySelector('.DataTable--Open')) {
+        bossMaterialElement.querySelector('.BossMaterialTitle').click();
+      }
+      Vue.nextTick(() => {
+        bossMaterialElement.scrollIntoView();
+      });
     },
   },
   mounted() {

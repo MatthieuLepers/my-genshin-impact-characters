@@ -7,9 +7,11 @@
       </span>
       <FormInput type="number" :min="0" :max="9999" v-model="AppStore.data.materials[material]" :label="$t('App.inInventory')" @click.stop />
     </button>
-    <DataTable v-show="open" :columns="columns" :paginate="false" :enableActionRow="false" :data="characters">
+    <DataTable :class="{ 'DataTable--Open': open }" v-show="open" :columns="columns" :paginate="false" :enableActionRow="false" :data="characters">
       <template v-slot:nameStr="props">
-        [{{ props.obj.getInvestedMaterials(material) }}/{{ props.obj.getMaxMaterial(material) }}] {{ props.obj.nameStr }}
+        <span :id="props.obj.name">
+          [{{ props.obj.getInvestedMaterials(material) }}/{{ props.obj.getMaxMaterial(material) }}] {{ props.obj.nameStr }}
+        </span>
       </template>
       <template v-slot:smartLevel="props">
         <FormInput type="number" :min="1" :max="90" v-model="props.obj.smartLevel" />
