@@ -17,7 +17,7 @@ export default {
   name: 'TopCharacters',
   data() {
     return {
-      characters: AppStore.getCharacterSortedBySpentMora(),
+      characters: AppStore.characterSortedBySpentMora,
     };
   },
   methods: {

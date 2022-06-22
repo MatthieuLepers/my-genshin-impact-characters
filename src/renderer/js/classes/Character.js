@@ -25,13 +25,20 @@ export default class Character {
 
   defineAccessors() {
     Object.keys(this.$data).forEach((key) => {
-      if (key !== 'aptitudes') {
+      if (!['aptitudes', 'element'].includes(key)) {
         Object.defineProperty(this, key, {
           get: () => this.$data[key],
           set: (val) => { this.$data[key] = val; },
         });
       }
     });
+  }
+
+  /**
+   * @return {String}
+   */
+  get element() {
+    return `${this.$data.element.substring(0, 1).toUpperCase()}${this.$data.element.substring(1).toLowerCase()}`;
   }
 
   /**

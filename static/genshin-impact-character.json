@@ -21,6 +21,7 @@
   },
   "characters": {
     "Amber": {
+      "element": "pyro",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -42,6 +43,7 @@
       }
     },
     "Beidou": {
+      "element": "electro",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -63,6 +65,7 @@
       }
     },
     "Chongyun": {
+      "element": "cryo",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -143,6 +146,7 @@
       }
     },
     "Bennett": {
+      "element": "pyro",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -164,6 +168,7 @@
       }
     },
     "Diluc": {
+      "element": "pyro",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -185,6 +190,7 @@
       }
     },
     "Jean": {
+      "element": "anemo",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -206,6 +212,7 @@
       }
     },
     "Lisa": {
+      "element": "electro",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -227,6 +234,7 @@
       }
     },
     "Noelle": {
+      "element": "geo",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -248,6 +256,7 @@
       }
     },
     "Razor": {
+      "element": "electro",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -269,6 +278,7 @@
       }
     },
     "Xiangling": {
+      "element": "pyro",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -290,6 +300,7 @@
       }
     },
     "Barbara": {
+      "element": "hydro",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -311,6 +322,7 @@
       }
     },
     "Keqing": {
+      "element": "electro",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -332,6 +344,7 @@
       }
     },
     "Klee": {
+      "element": "pyro",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -353,6 +366,7 @@
       }
     },
     "Mona": {
+      "element": "hydro",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -374,6 +388,7 @@
       }
     },
     "Qiqi": {
+      "element": "cryo",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -395,6 +410,7 @@
       }
     },
     "Venti": {
+      "element": "anemo",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -416,6 +432,7 @@
       }
     },
     "Xingqiu": {
+      "element": "hydro",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -437,6 +454,7 @@
       }
     },
     "Fischl": {
+      "element": "electro",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -458,6 +476,7 @@
       }
     },
     "Kaeya": {
+      "element": "cryo",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -479,6 +498,7 @@
       }
     },
     "Ningguang": {
+      "element": "geo",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -500,6 +520,7 @@
       }
     },
     "Sucrose": {
+      "element": "anemo",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -521,6 +542,7 @@
       }
     },
     "Xiao": {
+      "element": "anemo",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -542,6 +564,7 @@
       }
     },
     "Ganyu": {
+      "element": "cryo",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -563,6 +586,7 @@
       }
     },
     "Rosalia": {
+      "element": "cryo",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -584,6 +608,7 @@
       }
     },
     "Zhongli": {
+      "element": "geo",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -605,6 +630,7 @@
       }
     },
     "Xinyan": {
+      "element": "pyro",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -626,6 +652,7 @@
       }
     },
     "Albedo": {
+      "element": "geo",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -647,6 +674,7 @@
       }
     },
     "Tartaglia": {
+      "element": "hydro",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -670,6 +698,7 @@
       }
     },
     "Diona": {
+      "element": "cryo",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -691,6 +720,7 @@
       }
     },
     "Hu Tao": {
+      "element": "pyro",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -712,6 +742,7 @@
       }
     },
     "Kamisato Ayaka": {
+      "element": "cryo",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -733,6 +764,7 @@
       }
     },
     "Yanfei": {
+      "element": "pyro",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -754,6 +786,7 @@
       }
     },
     "Eula": {
+      "element": "cryo",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -775,6 +808,7 @@
       }
     },
     "Yoimiya": {
+      "element": "pyro",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -796,6 +830,7 @@
       }
     },
     "Kaedehara Kazuha": {
+      "element": "anemo",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -817,6 +852,7 @@
       }
     },
     "Sayu": {
+      "element": "anemo",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -838,6 +874,7 @@
       }
     },
     "Shogun Raiden": {
+      "element": "electro",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -859,6 +896,7 @@
       }
     },
     "Aloy": {
+      "element": "cryo",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -878,6 +916,7 @@
       }
     },
     "Gorou": {
+      "element": "geo",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -899,6 +938,7 @@
       }
     },
     "Sangonomiya Kokomi": {
+      "element": "hydro",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -920,6 +960,7 @@
       }
     },
     "Thomas": {
+      "element": "pyro",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -941,6 +982,7 @@
       }
     },
     "Shenhe": {
+      "element": "cryo",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -962,6 +1004,7 @@
       }
     },
     "Kujou Sara": {
+      "element": "electro",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -983,6 +1026,7 @@
       }
     },
     "Arataki Itto": {
+      "element": "geo",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -1004,6 +1048,7 @@
       }
     },
     "Yun Jin": {
+      "element": "geo",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -1025,6 +1070,7 @@
       }
     },
     "Yae Miko": {
+      "element": "electro",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -1046,6 +1092,7 @@
       }
     },
     "Kamisato Ayato": {
+      "element": "hydro",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -1067,6 +1114,7 @@
       }
     },
     "Yelan": {
+      "element": "hydro",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -1088,6 +1136,7 @@
       }
     },
     "Kuki Shinobu": {
+      "element": "electro",
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -1109,6 +1158,7 @@
       }
     },
     "Shikanoin Heizou": {
+      "element": "anemo",
       "beta": true,
       "level": 1,
       "phase": 0,

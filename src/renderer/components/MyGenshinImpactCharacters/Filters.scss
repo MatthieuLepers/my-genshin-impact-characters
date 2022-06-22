@@ -1,0 +1,43 @@
+@import '~scss/utilities.scss';
+
+.Filters {
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &ElementList {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+  }
+
+  &Element {
+    border: 1px solid lighten(color(primary), 11.74);
+    border-radius: 4px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:not(:last-of-type) {
+      margin-right: 8px;
+    }
+
+    img {
+      width: 24px;
+      filter: grayscale(1);
+    }
+
+    &--Active {
+      background-color: lighten(color(primary), 11.74);
+      border-color: color(f);
+
+      img {
+        filter: none;
+      }
+    }
+  }
+}

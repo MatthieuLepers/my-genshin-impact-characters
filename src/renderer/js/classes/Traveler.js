@@ -24,6 +24,13 @@ export default class Traveler extends Character {
   }
 
   /**
+   * @return {String}
+   */
+  get element() {
+    return `${this.type.substring(0, 1).toUpperCase()}${this.type.substring(1).toLowerCase()}`;
+  }
+
+  /**
    * @return {Aptitude[]}
    */
   get aptitudes() {

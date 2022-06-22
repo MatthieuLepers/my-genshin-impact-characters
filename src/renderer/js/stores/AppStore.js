@@ -2,20 +2,30 @@ import { ipcRenderer } from 'electron';
 import Character from '../classes/Character';
 import Traveler from '../classes/Traveler';
 
+function $makeFilters(character) {
+  if (this.filters.elements.length) {
+    return this.filters.elements.includes(character.element);
+  }
+  return true;
+}
+
 class AppStore {
   /**
    * @constructor
    */
   constructor() {
     this.data = this.load();
+    this.filters = {
+      elements: [],
+    };
   }
 
   /**
    * @return {Character[]}
    */
-  getCharacterSortedBySpentMora() {
+  get characterSortedBySpentMora() {
     return Object.values(this.data.characters)
-      .filter((character) => !character.beta)
+      .filter((character) => !character.beta && $makeFilters.call(this, character))
       .sort((a, b) => b.spentMora - a.spentMora || a.name.localeCompare(b.name))
     ;
   }
