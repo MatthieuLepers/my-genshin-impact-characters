@@ -8,7 +8,7 @@
         v-for="boss in Object.keys($t(`Data.WeaklyBosses`))"
         :key="boss"
       >
-        <h3 class="BossTitle">
+        <h3 class="BossTitle" v-if="filteredCharacters(boss).length">
           <span>[{{ totalInvestedBossMaterial(boss) }}/{{ totalBossMaterial(boss) }}]</span> {{ $t(`Data.WeaklyBosses.${boss}.name`) }}
         </h3>
         <BossMaterial
@@ -17,6 +17,7 @@
           :boss="boss"
           :material="material"
           :characters="characters[material]"
+          :filters="filters"
           @addCharacter="(form) => handleAddCharacter(boss, form)"
         />
       </div>
@@ -69,6 +70,13 @@ export default {
       Vue.nextTick(() => {
         bossMaterialElement.scrollIntoView();
       });
+    },
+    filteredCharacters(boss) {
+      const materials = Object.keys(this.$t(`Data.WeaklyBosses.${boss}.materials`));
+      return Object.keys(this.characters)
+        .filter((key) => materials.includes(key))
+        .reduce((acc, key) => [...acc, ...this.characters[key].filter((character) => !this.filters.elements.length || this.filters.elements.includes(character.element))], [])
+      ;
     },
   },
   mounted() {

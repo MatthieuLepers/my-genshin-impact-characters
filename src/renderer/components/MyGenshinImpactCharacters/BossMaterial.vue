@@ -1,14 +1,16 @@
 <template>
-  <div class="BossMaterial">
+  <div class="BossMaterial" v-if="filteredCharacters.length">
     <button class="BossMaterialTitle" @click="open = !open">
       <span>
         <img class="BossMaterialImg" :src="`static/img/materials/${material}.png`" :alt="material" />
         [{{ getOwnedAndInvestedMaterials(material) }}/{{ getMaxMaterial(material) }}] {{ $t(`Data.WeaklyBosses.${boss}.materials.${material}`) }}
+        <span v-if="filters.elements.length">&nbsp;({{ filteredCharacters.length }})</span>
       </span>
       <FormInput type="number" :min="0" :max="9999" v-model="AppStore.data.materials[material]" :label="$t('App.inInventory')" @click.stop />
     </button>
-    <DataTable :class="{ 'DataTable--Open': open }" v-show="open" :columns="columns" :paginate="false" :enableActionRow="false" :data="characters">
+    <DataTable :class="{ 'DataTable--Open': open }" v-show="open" :columns="columns" :paginate="false" :enableActionRow="false" :data="filteredCharacters">
       <template v-slot:nameStr="props">
+        <img class="Element" :src="`static/img/elements/${props.obj.element}.png`" :alt="props.obj.element" />
         <span :id="props.obj.name">
           [{{ props.obj.getInvestedMaterials(material) }}/{{ props.obj.getMaxMaterial(material) }}] {{ props.obj.nameStr }}
         </span>
@@ -58,6 +60,7 @@ export default {
     boss: { type: String, required: true },
     material: { type: String, required: true },
     characters: { type: Array, default: () => [] },
+    filters: { type: Object, required: true },
   },
   data() {
     return {
@@ -97,6 +100,13 @@ export default {
     },
     getOwnedAndInvestedMaterials(materialName) {
       return this.characters.reduce((acc, character) => acc + character.getInvestedMaterials(materialName), AppStore.data.materials[materialName]);
+    },
+  },
+  computed: {
+    filteredCharacters() {
+      return this.characters
+        .filter((character) => !this.filters.elements.length || this.filters.elements.includes(character.element))
+      ;
     },
   },
 };
