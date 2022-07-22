@@ -16,6 +16,9 @@ export default {
         spentMora: 'Spent Moras',
       },
     },
+    Filters: {
+      showBeta: 'Show beta characters',
+    },
   },
   TitleBarMenu: {
     fileMenu: {

@@ -16,6 +16,9 @@ export default {
         spentMora: 'Moras dépensés',
       },
     },
+    Filters: {
+      showBeta: 'Afficher les personnages de la bêta',
+    },
   },
   TitleBarMenu: {
     fileMenu: {

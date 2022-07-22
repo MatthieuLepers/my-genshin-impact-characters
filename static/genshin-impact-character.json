@@ -87,26 +87,28 @@
       }
     },
     "Traveler": {
-      "level": 1,
-      "phase": 0,
+      "beta": ["Dendro"],
+      "level": 80,
+      "phase": 6,
       "constellations": {
-        "Anemo": 0,
-        "Geo": 0,
-        "Electro": 0
+        "Anemo": 6,
+        "Geo": 6,
+        "Electro": 6,
+        "Dendro": 0
       },
       "aptitudes": {
         "Anemo": {
           "normalAttack": {
-            "level": 1,
+            "level": 3,
             "material": "DvalinsSigh"
           },
           "elementalSkill": {
-            "level": 1,
+            "level": 4,
             "constellationIncrease": 5,
             "material": "DvalinsSigh"
           },
           "elementalBurst": {
-            "level": 1,
+            "level": 4,
             "constellationIncrease": 3,
             "material": "DvalinsSigh"
           }
@@ -117,30 +119,46 @@
             "material": "DvalinsSigh"
           },
           "elementalSkill": {
-            "level": 1,
+            "level": 4,
             "constellationIncrease": 5,
             "material": "TailOfBoreas"
           },
           "elementalBurst": {
-            "level": 1,
+            "level": 4,
             "constellationIncrease": 3,
             "material": "TailOfBoreas"
           }
         },
         "Electro": {
           "normalAttack": {
-            "level": 1,
+            "level": 2,
             "material": "DragonLordsCrown"
           },
           "elementalSkill": {
-            "level": 1,
+            "level": 5,
             "constellationIncrease": 5,
             "material": "DragonLordsCrown"
           },
           "elementalBurst": {
-            "level": 1,
+            "level": 5,
             "constellationIncrease": 3,
             "material": "DragonLordsCrown"
+          }
+        },
+        "Dendro": {
+          "normalAttack": {
+            "level": 1,
+            "material": "MudraOfTheMaleficGeneral"
+          },
+          "elementalSkill": {
+            "level": 1,
+            "constellationIncrease": 5,
+            "material": "MudraOfTheMaleficGeneral"
+          },
+          "elementalBurst": {
+            "level": 1,
+            "constellationIncrease": 3,
+            "material": "MudraOfTheMaleficGeneral"
           }
         }
       }
@@ -1178,6 +1196,75 @@
           "constellationIncrease": 5,
           "material": "TheMeaningOfAeons"
         }
+      }
+    }
+  },
+  "Collei": {
+    "beta": true,
+    "element": "dendro",
+    "level": 1,
+    "phase": 0,
+    "constellations": 0,
+    "aptitudes": {
+      "normalAttack": {
+        "level": 1,
+        "material": "TearsOfTheCalamitousGod"
+      },
+      "elementalSkill": {
+        "level": 1,
+        "constellationIncrease": 3,
+        "material": "TearsOfTheCalamitousGod"
+      },
+      "elementalBurst": {
+        "level": 1,
+        "constellationIncrease": 5,
+        "material": "TearsOfTheCalamitousGod"
+      }
+    }
+  },
+  "Dori": {
+    "beta": true,
+    "element": "electro",
+    "level": 1,
+    "phase": 0,
+    "constellations": 0,
+    "aptitudes": {
+      "normalAttack": {
+        "level": 1,
+        "material": "BloodjadeBranch"
+      },
+      "elementalSkill": {
+        "level": 1,
+        "constellationIncrease": 5,
+        "material": "BloodjadeBranch"
+      },
+      "elementalBurst": {
+        "level": 1,
+        "constellationIncrease": 3,
+        "material": "BloodjadeBranch"
+      }
+    }
+  },
+  "Tighnari": {
+    "beta": true,
+    "element": "dendro",
+    "level": 1,
+    "phase": 0,
+    "constellations": 0,
+    "aptitudes": {
+      "normalAttack": {
+        "level": 1,
+        "material": "TheMeaningOfAeons"
+      },
+      "elementalSkill": {
+        "level": 1,
+        "constellationIncrease": 5,
+        "material": "TheMeaningOfAeons"
+      },
+      "elementalBurst": {
+        "level": 1,
+        "constellationIncrease": 3,
+        "material": "TheMeaningOfAeons"
       }
     }
   }

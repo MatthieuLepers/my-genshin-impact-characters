@@ -14,7 +14,7 @@ export default class Traveler extends Character {
 
   defineAccessors() {
     Object.keys(this.$data).forEach((key) => {
-      if (!['aptitudes', 'constellations'].includes(key)) {
+      if (!['aptitudes', 'constellations', 'beta'].includes(key)) {
         Object.defineProperty(this, key, {
           get: () => this.$data[key],
           set: (val) => { this.$data[key] = val; },
@@ -51,5 +51,12 @@ export default class Traveler extends Character {
    */
   set constellations(val) {
     this.$data.constellations[this.type] = val;
+  }
+
+  /**
+   * @return {Boolean}
+   */
+  get beta() {
+    return this.$data.beta && this.$data.beta.includes(this.type);
   }
 }
