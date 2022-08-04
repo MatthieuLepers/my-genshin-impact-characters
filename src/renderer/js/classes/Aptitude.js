@@ -1,3 +1,5 @@
+import AppStore from '@/js/stores/AppStore';
+
 export default class Aptitude {
   /**
    * @constructor
@@ -15,6 +17,23 @@ export default class Aptitude {
         set: (val) => { this.$data[key] = val; },
       });
     });
+  }
+
+  /**
+   * @return {Number}
+   */
+  get smartLevel() {
+    return this.level;
+  }
+
+  /**
+   * @param {Number} level
+   */
+  set smartLevel(level) {
+    const totalMaterial = this.getMaterialForLevel(this.level) + AppStore.data.materials[this.material];
+    this.level = level;
+    const diffMaterial = totalMaterial - (this.getMaterialForLevel(level) + AppStore.data.materials[this.material]);
+    AppStore.data.materials[this.material] += diffMaterial;
   }
 
   /**

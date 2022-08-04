@@ -26,19 +26,22 @@
       </template>
       <template v-slot:aptitudes="props">
         <FormInput type="number"
+          :class="{ Bonus: props.obj.aptitudes.normalAttack.getBonusValue() > 0 }"
           :min="props.obj.aptitudes.normalAttack.getMinLevel()"
           :max="props.obj.aptitudes.normalAttack.getMaxLevel()"
-          v-model="props.obj.aptitudes.normalAttack.level"
+          v-model="props.obj.aptitudes.normalAttack.smartLevel"
         />
         <FormInput type="number"
+          :class="{ Bonus: props.obj.aptitudes.elementalSkill.getBonusValue() > 0 }"
           :min="props.obj.aptitudes.elementalSkill.getMinLevel()"
           :max="props.obj.aptitudes.elementalSkill.getMaxLevel()"
-          v-model="props.obj.aptitudes.elementalSkill.level"
+          v-model="props.obj.aptitudes.elementalSkill.smartLevel"
         />
         <FormInput type="number"
+          :class="{ Bonus: props.obj.aptitudes.elementalBurst.getBonusValue() > 0 }"
           :min="props.obj.aptitudes.elementalBurst.getMinLevel()"
           :max="props.obj.aptitudes.elementalBurst.getMaxLevel()"
-          v-model="props.obj.aptitudes.elementalBurst.level"
+          v-model="props.obj.aptitudes.elementalBurst.smartLevel"
         />
       </template>
       <template v-slot:spentMora="props">
