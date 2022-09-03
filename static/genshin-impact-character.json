@@ -87,7 +87,6 @@
       }
     },
     "Traveler": {
-      "beta": ["Dendro"],
       "level": 80,
       "phase": 6,
       "constellations": {
@@ -1177,7 +1176,6 @@
     },
     "Shikanoin Heizou": {
       "element": "anemo",
-      "beta": true,
       "level": 1,
       "phase": 0,
       "constellations": 0,
@@ -1200,7 +1198,6 @@
     }
   },
   "Collei": {
-    "beta": true,
     "element": "dendro",
     "level": 1,
     "phase": 0,
@@ -1223,7 +1220,6 @@
     }
   },
   "Dori": {
-    "beta": true,
     "element": "electro",
     "level": 1,
     "phase": 0,
@@ -1246,7 +1242,6 @@
     }
   },
   "Tighnari": {
-    "beta": true,
     "element": "dendro",
     "level": 1,
     "phase": 0,
@@ -1265,6 +1260,75 @@
         "level": 1,
         "constellationIncrease": 3,
         "material": "TheMeaningOfAeons"
+      }
+    }
+  },
+  "Nilou": {
+    "beta": true,
+    "element": "hydro",
+    "level": 1,
+    "phase": 0,
+    "constellations": 0,
+    "aptitudes": {
+      "normalAttack": {
+        "level": 1,
+        "material": "TearsOfTheCalamitousGod"
+      },
+      "elementalSkill": {
+        "level": 1,
+        "constellationIncrease": 5,
+        "material": "TearsOfTheCalamitousGod"
+      },
+      "elementalBurst": {
+        "level": 1,
+        "constellationIncrease": 3,
+        "material": "TearsOfTheCalamitousGod"
+      }
+    }
+  },
+  "Cyno": {
+    "beta": true,
+    "element": "electro",
+    "level": 1,
+    "phase": 0,
+    "constellations": 0,
+    "aptitudes": {
+      "normalAttack": {
+        "level": 1,
+        "material": "MudraOfTheMaleficGeneral"
+      },
+      "elementalSkill": {
+        "level": 1,
+        "constellationIncrease": 5,
+        "material": "MudraOfTheMaleficGeneral"
+      },
+      "elementalBurst": {
+        "level": 1,
+        "constellationIncrease": 3,
+        "material": "MudraOfTheMaleficGeneral"
+      }
+    }
+  },
+  "Candace": {
+    "beta": true,
+    "element": "hydro",
+    "level": 1,
+    "phase": 0,
+    "constellations": 0,
+    "aptitudes": {
+      "normalAttack": {
+        "level": 1,
+        "material": "TearsOfTheCalamitousGod"
+      },
+      "elementalSkill": {
+        "level": 1,
+        "constellationIncrease": 3,
+        "material": "TearsOfTheCalamitousGod"
+      },
+      "elementalBurst": {
+        "level": 1,
+        "constellationIncrease": 5,
+        "material": "TearsOfTheCalamitousGod"
       }
     }
   }
