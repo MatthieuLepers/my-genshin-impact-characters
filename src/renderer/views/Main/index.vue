@@ -1,6 +1,5 @@
 <template>
   <div class="View MainView">
-    <AppTitleBar />
     <main>
       <Filters />
       <TopCharacters @clickCharacter="handleClickCharacter" :key="filters.elements.length" />
@@ -27,7 +26,6 @@
 
 <script>
 import Vue from 'vue';
-import AppTitleBar from '@/components/AppTitleBar/index';
 import BossMaterial from '@/components/MyGenshinImpactCharacters/BossMaterial';
 import TopCharacters from '@/components/MyGenshinImpactCharacters/TopCharacters';
 import Filters from '@/components/MyGenshinImpactCharacters/Filters';
@@ -35,7 +33,7 @@ import AppStore from '@/js/stores/AppStore';
 
 export default {
   name: 'MainView',
-  components: { AppTitleBar, BossMaterial, Filters, TopCharacters },
+  components: { BossMaterial, Filters, TopCharacters },
   data() {
     return {
       characters: {},

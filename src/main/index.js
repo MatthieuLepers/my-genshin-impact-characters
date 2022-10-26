@@ -1,5 +1,6 @@
 import 'regenerator-runtime/runtime';
-import { app } from 'electron'; // eslint-disable-line
+import { app } from 'electron';
+import { autoUpdater } from 'electron-updater';
 import path from 'path';
 import Window from './modules/Window/Window';
 import ModuleManager from './modules/Manager';
@@ -46,16 +47,12 @@ ModuleManager.registerModule(AppModule, ElectronUIModule);
  * Uncomment the following code below and install `electron-updater` to
  * support auto updating. Code Signing with a valid certificate is required.
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-electron-builder.html#auto-updating
+ * https://github.com/iffy/electron-updater-example
  */
-
-/*
-import { autoUpdater } from 'electron-updater'
-
 autoUpdater.on('update-downloaded', () => {
-  autoUpdater.quitAndInstall()
-})
+  autoUpdater.quitAndInstall();
+});
 
 app.on('ready', () => {
-  if (process.env.NODE_ENV === 'production') autoUpdater.checkForUpdates()
-})
- */
+  if (process.env.NODE_ENV === 'production') autoUpdater.checkForUpdates();
+});

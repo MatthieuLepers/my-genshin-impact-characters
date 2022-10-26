@@ -2,7 +2,7 @@ import GlobalI18N from './GlobalI18N';
 
 export default {
   Data: {
-    WeaklyBosses: GlobalI18N.WeaklyBosses('fr-FR'),
+    WeaklyBosses: GlobalI18N.WeaklyBosses('en-EN'),
   },
   App: {
     inInventory: 'In inventory :',

@@ -1,5 +1,6 @@
 <template>
-  <div id="app" :key="$root.$i18n.locale">
+  <div id="app">
+    <AppTitleBar />
     <router-view />
     <NotificationList />
   </div>
@@ -7,11 +8,12 @@
 
 <script>
 import { ipcRenderer } from 'electron';
+import AppTitleBar from '@/components/AppTitleBar/index';
 import NotificationList from '@/components/UI/Notification/List';
 
 export default {
   name: 'App',
-  components: { NotificationList },
+  components: { AppTitleBar, NotificationList },
   mounted() {
     ipcRenderer.on('set-locale', (e, iso) => {
       this.$root.$i18n.locale = iso;

@@ -2,8 +2,8 @@
   "name": "my-genshin-impact-characters",
   "version": "1.0.0",
   "author": "Matthieu LEPERS",
-  "description": "Get informations about your Genshin Imapct character investment",
-  "license": "ISC",
+  "description": "Follow up your Genshin Impact characters investments",
+  "license": "GNU GPLv3",
   "homepage": "https://github.com/MatthieuLepers/my-genshin-impact-characters#readme",
   "repository": {
     "type": "git",
@@ -12,6 +12,7 @@
   "main": "./dist/electron/main.js",
   "scripts": {
     "build": "node .electron-vue/build.js && electron-builder",
+    "publish": "node .electron-vue/build.js && electron-builder --win -p always",
     "test:unit": "vue-cli-service test:unit",
     "build:dir": "node .electron-vue/build.js && electron-builder --dir",
     "build:clean": "cross-env BUILD_TARGET=clean node .electron-vue/build.js",
@@ -28,6 +29,13 @@
     "asar": true,
     "productName": "My Genshin Impact Characters",
     "appId": "lepers.matthieu.mygenshinimapctcharacters",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "MatthieuLepers",
+        "repo": "my-genshin-impact-characters"
+      }
+    ],
     "directories": {
       "output": "build"
     },
@@ -92,6 +100,7 @@
     "electron-builder": "^20.19.2",
     "electron-debug": "^1.5.0",
     "electron-devtools-installer": "^2.2.4",
+    "electron-updater": "^5.3.0",
     "eslint": "^7.5.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-friendly-formatter": "^4.0.1",

@@ -1264,7 +1264,6 @@
     }
   },
   "Nilou": {
-    "beta": true,
     "element": "hydro",
     "level": 1,
     "phase": 0,
@@ -1287,7 +1286,6 @@
     }
   },
   "Cyno": {
-    "beta": true,
     "element": "electro",
     "level": 1,
     "phase": 0,
@@ -1310,7 +1308,6 @@
     }
   },
   "Candace": {
-    "beta": true,
     "element": "hydro",
     "level": 1,
     "phase": 0,
@@ -1329,6 +1326,52 @@
         "level": 1,
         "constellationIncrease": 5,
         "material": "TearsOfTheCalamitousGod"
+      }
+    }
+  },
+  "Nahida": {
+    "beta": true,
+    "element": "dendro",
+    "level": 1,
+    "phase": 0,
+    "constellations": 0,
+    "aptitudes": {
+      "normalAttack": {
+        "level": 1,
+        "material": "???"
+      },
+      "elementalSkill": {
+        "level": 1,
+        "constellationIncrease": 3,
+        "material": "???"
+      },
+      "elementalBurst": {
+        "level": 1,
+        "constellationIncrease": 5,
+        "material": "???"
+      }
+    }
+  },
+  "Layla": {
+    "beta": true,
+    "element": "hydro",
+    "level": 1,
+    "phase": 0,
+    "constellations": 0,
+    "aptitudes": {
+      "normalAttack": {
+        "level": 1,
+        "material": "???"
+      },
+      "elementalSkill": {
+        "level": 1,
+        "constellationIncrease": 3,
+        "material": "???"
+      },
+      "elementalBurst": {
+        "level": 1,
+        "constellationIncrease": 5,
+        "material": "???"
       }
     }
   }
