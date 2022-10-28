@@ -1,0 +1,38 @@
+@import '~scss/utilities.scss';
+
+.CharacterListView {
+  padding: 24px 8px 0;
+  max-height: calc(100vh - 30px);
+  overflow-y: auto;
+
+  &Title {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .CharacterList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 16px 0 0;
+    padding: 0;
+    list-style: none;
+
+    &Item {
+      &Button {
+        .CharacterCardImage {
+          filter: grayscale(1);
+          opacity: .4;
+        }
+
+        &--Owned {
+          .CharacterCardImage {
+            filter: none;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

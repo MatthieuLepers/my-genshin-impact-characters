@@ -5,10 +5,24 @@ export default {
     WeaklyBosses: GlobalI18N.WeaklyBosses('fr-FR'),
   },
   App: {
+    TitleBarMenu: {
+      fileMenu: {
+        label: 'Fichier',
+        save: 'Sauvegarder',
+        exit: 'Quitter',
+      },
+      langMenu: {
+        label: 'Langage',
+        french: 'Français',
+        english: 'Anglais',
+      },
+    },
     inInventory: 'Dans l\'inventaire :',
+    selectOwnedCharacters: 'Séléctionnez les personnages que vous possédez',
     BossMaterial: {
       columns: {
         character: 'Personnage',
+        owned: 'Possédé',
         level: 'Niveau',
         phase: 'Phase',
         constellation: 'Constellation',
@@ -18,19 +32,26 @@ export default {
     },
     Filters: {
       showBeta: 'Afficher les personnages de la bêta',
-    },
-  },
-  TitleBarMenu: {
-    fileMenu: {
-      label: 'Fichier',
-      selectProfil: 'Sélection du profil...',
-      exit: 'Quitter',
-      save: 'Sauvegarder',
-    },
-    langMenu: {
-      label: 'Langage',
-      french: 'Français',
-      english: 'Anglais',
+      element: {
+        label: 'Élément :',
+      },
+      sort: {
+        label: 'Trier par :',
+        releasedAt: {
+          asc: 'Date de sortie croissante',
+          desc: 'Date de sortie décroissante',
+        },
+        name: {
+          asc: 'Nom par ordre alphabétique',
+          desc: 'Nom par ordre alphabétique inversé',
+        },
+        element: {
+          asc: 'Élément',
+        },
+      },
+      search: {
+        label: 'Nom du personnage :',
+      },
     },
   },
   Electron: {
@@ -49,5 +70,25 @@ export default {
         json: 'Fichier JSON',
       },
     },
+  },
+  Date: {
+    days: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+    months: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+    daySuffix: [],
+    defaultSuffix: '',
+  },
+  Materials: {
+    Form: {
+      DropArea: {
+        areaLabel: 'Glisser-déposer des fichiers pour les téléverser',
+      },
+      Select: {
+        removeOption: 'Retirer l\'option {option}',
+      },
+    },
+  },
+  Notification: {
+    saveSuccess: 'Sauvegardé !',
+    saveError: 'Echec de la sauvegarde',
   },
 };

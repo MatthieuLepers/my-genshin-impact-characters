@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <AppTitleBar />
+    <AppMenu />
     <router-view />
     <NotificationList />
   </div>
@@ -9,11 +10,12 @@
 <script>
 import { ipcRenderer } from 'electron';
 import AppTitleBar from '@/components/AppTitleBar/index';
-import NotificationList from '@/components/UI/Notification/List';
+import AppMenu from '@/components/AppMenu/index';
+import NotificationList from '@/components/Materials/Notification/List';
 
 export default {
   name: 'App',
-  components: { AppTitleBar, NotificationList },
+  components: { AppTitleBar, AppMenu, NotificationList },
   mounted() {
     ipcRenderer.on('set-locale', (e, iso) => {
       this.$root.$i18n.locale = iso;

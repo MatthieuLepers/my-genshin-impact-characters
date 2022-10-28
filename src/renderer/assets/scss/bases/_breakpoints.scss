@@ -1,43 +1,16 @@
 $breakpoints: (
-  xs: 320px,
-  sm: 768px,
-  md: 1024px,
-  lg: 1200px,
-  xl: 1600px,
+  xs :  320px,
+  s  :  768px,
+  m  : 1024px,
+  l  : 1200px,
+  xl : 1600px,
+  xxl: 1921px
 );
 
-@mixin media-breakpoint-up($breakpoint) {
-  @media all and (min-width: map-get($breakpoints, $breakpoint)) {
-    @content;
-  }
-}
+@mixin set-from-screen ($breakpoint) {
+  $max-width: map-get($breakpoints, $breakpoint);
 
-@mixin media-breakpoint-down($breakpoint) {
-  @media all and (max-width: map-get($breakpoints, $breakpoint) - 1px) {
-    @content;
-  }
-}
-
-@mixin media-breakpoint-between($bpMin, $bpMax) {
-  @media all and (min-width: map-get($breakpoints, $bpMin)) and (max-width: map-get($breakpoints, $bpMax) - 1px) {
-    @content;
-  }
-}
-
-@mixin media-breakpoint-up-custom($bp) {
-  @media all and (min-width: $bp) {
-    @content;
-  }
-}
-
-@mixin media-breakpoint-down-custom($bp) {
-  @media all and (max-width: $bp) {
-    @content;
-  }
-}
-
-@mixin media-breakpoint-between-custom($bpMin, $bpMax) {
-  @media all and (min-width: $bpMin) and (max-width: $bpMax) {
+  @media screen and (max-width: #{$max-width - 1px}) {
     @content;
   }
 }

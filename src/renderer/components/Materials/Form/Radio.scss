@@ -1,0 +1,57 @@
+@import '~scss/utilities.scss';
+
+.FormRadio {
+  position: relative;
+
+  @include make-accessibility() {
+    width: 32px;
+    height: 32px;
+    top: calc(50% - 16px);
+    left: 0;
+  }
+
+  input {
+    position: absolute;
+    top: calc(50% - 5px);
+    left: 0;
+    z-index: -1;
+
+    &+label {
+      @include font-size(12);
+      padding-left: 40px;
+      min-height: 32px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      &::before {
+        content: '';
+        width: 32px;
+        height: 32px;
+        position: absolute;
+        top: calc(50% - 16px);
+        left: 0;
+        background-color: lighten(color(primary), 10.76);
+        border-radius: 16px;
+      }
+
+      &::after {
+        @include transition(opacity .2s ease-in-out);
+        content: '';
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        top: calc(50% - 6px);
+        left: 10px;
+        opacity: 0;
+        background-color: color(f);
+        border-radius: 50%;
+      }
+    }
+
+    &:checked+label::after {
+      opacity: 1;
+    }
+  }
+}
+

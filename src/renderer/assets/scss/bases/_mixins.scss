@@ -31,3 +31,25 @@
   font-size: rem($size);
   padding: 0;
 }
+
+@mixin make-accessibility {
+  &::after {
+    content: '';
+    display: block;
+    pointer-events: none;
+    position: absolute;
+    border-radius: 24px;
+    transition: box-shadow .2s ease;
+    z-index: 1;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    @content;
+  }
+
+  &:focus::after,
+  &--Focus::after {
+    box-shadow: 0 0 0 .125rem color(primary), 0 0 0 .25rem color(focus);
+  }
+}

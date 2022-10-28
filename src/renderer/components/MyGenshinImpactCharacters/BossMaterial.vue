@@ -8,7 +8,14 @@
       </span>
       <FormInput type="number" :min="0" :max="9999" v-model="AppStore.data.materials[material]" :label="$t('App.inInventory')" @click.stop />
     </button>
-    <DataTable :class="{ 'DataTable--Open': open }" v-show="open" :columns="columns" :paginate="false" :enableActionRow="false" :data="filteredCharacters">
+    <DataTable
+      v-show="open"
+      :class="{ 'DataTable--Open': open }"
+      :columns="columns"
+      :paginate="false"
+      :enableActionRow="false"
+      :data="filteredCharacters"
+    >
       <template v-slot:nameStr="props">
         <img class="Element" :src="`static/img/elements/${props.obj.element}.png`" :alt="props.obj.element" />
         <span :id="props.obj.name">
@@ -52,9 +59,9 @@
 </template>
 
 <script>
-import DataTable from '@/components/UI/DataTable/index';
-import FormInput from '@/components/UI/Form/Input';
-import AppStore from '@/js/stores/AppStore';
+import DataTable from '@/components/Materials/DataTable/index';
+import FormInput from '@/components/Materials/Form/Input';
+import AppStore from '@/assets/js/stores/AppStore';
 
 export default {
   name: 'BossMaterial',
@@ -69,32 +76,6 @@ export default {
     return {
       AppStore,
       open: false,
-      columns: {
-        nameStr: {
-          label: this.$t('App.BossMaterial.columns.character'),
-          className: 'col-xs-3',
-        },
-        smartLevel: {
-          label: this.$t('App.BossMaterial.columns.level'),
-          className: 'col-xs-1',
-        },
-        phase: {
-          label: this.$t('App.BossMaterial.columns.phase'),
-          className: 'col-xs-1',
-        },
-        constellations: {
-          label: this.$t('App.BossMaterial.columns.constellation'),
-          className: 'col-xs-2',
-        },
-        aptitudes: {
-          label: this.$t('App.BossMaterial.columns.aptitudes'),
-          className: 'col-xs-3',
-        },
-        spentMora: {
-          label: this.$t('App.BossMaterial.columns.spentMora'),
-          className: 'col-xs-2',
-        },
-      },
     };
   },
   methods: {
@@ -110,6 +91,34 @@ export default {
       return this.characters
         .filter((character) => !this.filters.elements.length || this.filters.elements.includes(character.element))
       ;
+    },
+    columns() {
+      return {
+        nameStr: {
+          label: this.$t('App.BossMaterial.columns.character'),
+          className: 'col-xs-10',
+        },
+        smartLevel: {
+          label: this.$t('App.BossMaterial.columns.level'),
+          className: 'col-xs-1',
+        },
+        phase: {
+          label: this.$t('App.BossMaterial.columns.phase'),
+          className: 'col-xs-1',
+        },
+        constellations: {
+          label: this.$t('App.BossMaterial.columns.constellation'),
+          className: 'col-xs-2',
+        },
+        aptitudes: {
+          label: this.$t('App.BossMaterial.columns.aptitudes'),
+          className: 'col-xs-8 BossMaterialColumn BossMaterialColumn--Aptitude',
+        },
+        spentMora: {
+          label: this.$t('App.BossMaterial.columns.spentMora'),
+          className: 'col-xs-2',
+        },
+      };
     },
   },
 };

@@ -1,0 +1,60 @@
+@import '~scss/utilities.scss';
+
+.FormCheckbox {
+  position: relative;
+
+  @include make-accessibility() {
+    width: 32px;
+    height: 32px;
+    border-radius: 12px;
+    top: calc(50% - 16px);
+    left: 0;
+  }
+
+  input {
+    position: absolute;
+    top: calc(50% - 5px);
+    left: 0;
+    z-index: -1;
+
+    &+label {
+      @include font-size(12);
+      padding-left: 40px;
+      min-height: 32px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      &::before {
+        content: '';
+        width: 32px;
+        height: 32px;
+        position: absolute;
+        top: calc(50% - 16px);
+        left: 0;
+        background-color: lighten(color(primary), 10.76);
+        border-radius: 12px;
+      }
+
+      &::after {
+        @include transition(opacity .2s ease-in-out);
+        content: '';
+        display: block;
+        width: 12px;
+        height: 6px;
+        border: 3px solid color(f);
+        border-top: none;
+        border-right: none;
+        transform: rotate(-45deg);
+        position: absolute;
+        top: calc(50% - 6px);
+        left: 9px;
+        opacity: 0;
+      }
+    }
+
+    &:checked+label::after {
+      opacity: 1;
+    }
+  }
+}

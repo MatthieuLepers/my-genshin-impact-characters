@@ -1,4 +1,5 @@
 {
+  "locale": "fr-FR",
   "materials": {
     "DvalinsSigh": 0,
     "DvalinsPlume": 0,
@@ -19,8 +20,11 @@
     "MudraOfTheMaleficGeneral": 0,
     "TearsOfTheCalamitousGod": 0
   },
+  "ownedCharacters": [
+  ],
   "characters": {
     "Amber": {
+      "releasedAt": "2020-09-28",
       "element": "pyro",
       "level": 1,
       "phase": 0,
@@ -43,6 +47,7 @@
       }
     },
     "Beidou": {
+      "releasedAt": "2020-09-28",
       "element": "electro",
       "level": 1,
       "phase": 0,
@@ -65,6 +70,7 @@
       }
     },
     "Chongyun": {
+      "releasedAt": "2020-09-28",
       "element": "cryo",
       "level": 1,
       "phase": 0,
@@ -87,6 +93,12 @@
       }
     },
     "Traveler": {
+      "releasedAt": {
+        "Anemo": "2020-09-28",
+        "Geo": "2020-09-28",
+        "Electro": "2021-07-01",
+        "Dendro": "2022-08-24"
+      },
       "level": 80,
       "phase": 6,
       "constellations": {
@@ -163,6 +175,7 @@
       }
     },
     "Bennett": {
+      "releasedAt": "2020-09-28",
       "element": "pyro",
       "level": 1,
       "phase": 0,
@@ -185,6 +198,7 @@
       }
     },
     "Diluc": {
+      "releasedAt": "2020-09-28",
       "element": "pyro",
       "level": 1,
       "phase": 0,
@@ -207,6 +221,7 @@
       }
     },
     "Jean": {
+      "releasedAt": "2020-09-28",
       "element": "anemo",
       "level": 1,
       "phase": 0,
@@ -229,6 +244,7 @@
       }
     },
     "Lisa": {
+      "releasedAt": "2020-09-28",
       "element": "electro",
       "level": 1,
       "phase": 0,
@@ -251,6 +267,7 @@
       }
     },
     "Noelle": {
+      "releasedAt": "2020-09-28",
       "element": "geo",
       "level": 1,
       "phase": 0,
@@ -273,6 +290,7 @@
       }
     },
     "Razor": {
+      "releasedAt": "2020-09-28",
       "element": "electro",
       "level": 1,
       "phase": 0,
@@ -295,6 +313,7 @@
       }
     },
     "Xiangling": {
+      "releasedAt": "2020-09-28",
       "element": "pyro",
       "level": 1,
       "phase": 0,
@@ -317,6 +336,7 @@
       }
     },
     "Barbara": {
+      "releasedAt": "2020-09-28",
       "element": "hydro",
       "level": 1,
       "phase": 0,
@@ -339,6 +359,7 @@
       }
     },
     "Keqing": {
+      "releasedAt": "2020-09-28",
       "element": "electro",
       "level": 1,
       "phase": 0,
@@ -361,6 +382,7 @@
       }
     },
     "Klee": {
+      "releasedAt": "2020-10-20",
       "element": "pyro",
       "level": 1,
       "phase": 0,
@@ -383,6 +405,7 @@
       }
     },
     "Mona": {
+      "releasedAt": "2020-09-28",
       "element": "hydro",
       "level": 1,
       "phase": 0,
@@ -405,6 +428,7 @@
       }
     },
     "Qiqi": {
+      "releasedAt": "2020-09-28",
       "element": "cryo",
       "level": 1,
       "phase": 0,
@@ -427,6 +451,7 @@
       }
     },
     "Venti": {
+      "releasedAt": "2020-09-28",
       "element": "anemo",
       "level": 1,
       "phase": 0,
@@ -449,6 +474,7 @@
       }
     },
     "Xingqiu": {
+      "releasedAt": "2020-09-28",
       "element": "hydro",
       "level": 1,
       "phase": 0,
@@ -471,6 +497,7 @@
       }
     },
     "Fischl": {
+      "releasedAt": "2020-09-28",
       "element": "electro",
       "level": 1,
       "phase": 0,
@@ -493,6 +520,7 @@
       }
     },
     "Kaeya": {
+      "releasedAt": "2020-09-28",
       "element": "cryo",
       "level": 1,
       "phase": 0,
@@ -515,6 +543,7 @@
       }
     },
     "Ningguang": {
+      "releasedAt": "2020-09-28",
       "element": "geo",
       "level": 1,
       "phase": 0,
@@ -537,6 +566,7 @@
       }
     },
     "Sucrose": {
+      "releasedAt": "2020-09-28",
       "element": "anemo",
       "level": 1,
       "phase": 0,
@@ -559,6 +589,7 @@
       }
     },
     "Xiao": {
+      "releasedAt": "2021-02-03",
       "element": "anemo",
       "level": 1,
       "phase": 0,
@@ -581,6 +612,7 @@
       }
     },
     "Ganyu": {
+      "releasedAt": "2021-01-12",
       "element": "cryo",
       "level": 1,
       "phase": 0,
@@ -603,6 +635,7 @@
       }
     },
     "Rosalia": {
+      "releasedAt": "2021-04-07",
       "element": "cryo",
       "level": 1,
       "phase": 0,
@@ -625,6 +658,7 @@
       }
     },
     "Zhongli": {
+      "releasedAt": "2020-12-01",
       "element": "geo",
       "level": 1,
       "phase": 0,
@@ -647,6 +681,7 @@
       }
     },
     "Xinyan": {
+      "releasedAt": "2020-12-01",
       "element": "pyro",
       "level": 1,
       "phase": 0,
@@ -669,6 +704,7 @@
       }
     },
     "Albedo": {
+      "releasedAt": "2020-12-23",
       "element": "geo",
       "level": 1,
       "phase": 0,
@@ -691,6 +727,7 @@
       }
     },
     "Tartaglia": {
+      "releasedAt": "2020-11-11",
       "element": "hydro",
       "level": 1,
       "phase": 0,
@@ -715,6 +752,7 @@
       }
     },
     "Diona": {
+      "releasedAt": "2020-11-11",
       "element": "cryo",
       "level": 1,
       "phase": 0,
@@ -737,6 +775,7 @@
       }
     },
     "Hu Tao": {
+      "releasedAt": "2021-03-02",
       "element": "pyro",
       "level": 1,
       "phase": 0,
@@ -759,6 +798,7 @@
       }
     },
     "Kamisato Ayaka": {
+      "releasedAt": "2021-07-01",
       "element": "cryo",
       "level": 1,
       "phase": 0,
@@ -781,6 +821,7 @@
       }
     },
     "Yanfei": {
+      "releasedAt": "2021-04-28",
       "element": "pyro",
       "level": 1,
       "phase": 0,
@@ -803,6 +844,7 @@
       }
     },
     "Eula": {
+      "releasedAt": "2021-05-18",
       "element": "cryo",
       "level": 1,
       "phase": 0,
@@ -825,6 +867,7 @@
       }
     },
     "Yoimiya": {
+      "releasedAt": "2021-08-10",
       "element": "pyro",
       "level": 1,
       "phase": 0,
@@ -847,6 +890,7 @@
       }
     },
     "Kaedehara Kazuha": {
+      "releasedAt": "2021-06-29",
       "element": "anemo",
       "level": 1,
       "phase": 0,
@@ -869,6 +913,7 @@
       }
     },
     "Sayu": {
+      "releasedAt": "2021-08-10",
       "element": "anemo",
       "level": 1,
       "phase": 0,
@@ -891,6 +936,7 @@
       }
     },
     "Shogun Raiden": {
+      "releasedAt": "2021-09-01",
       "element": "electro",
       "level": 1,
       "phase": 0,
@@ -913,6 +959,7 @@
       }
     },
     "Aloy": {
+      "releasedAt": "2021-09-01",
       "element": "cryo",
       "level": 1,
       "phase": 0,
@@ -933,6 +980,7 @@
       }
     },
     "Gorou": {
+      "releasedAt": "2021-12-14",
       "element": "geo",
       "level": 1,
       "phase": 0,
@@ -955,6 +1003,7 @@
       }
     },
     "Sangonomiya Kokomi": {
+      "releasedAt": "2021-09-21",
       "element": "hydro",
       "level": 1,
       "phase": 0,
@@ -977,6 +1026,7 @@
       }
     },
     "Thomas": {
+      "releasedAt": "2021-11-02",
       "element": "pyro",
       "level": 1,
       "phase": 0,
@@ -999,6 +1049,7 @@
       }
     },
     "Shenhe": {
+      "releasedAt": "2022-01-05",
       "element": "cryo",
       "level": 1,
       "phase": 0,
@@ -1021,6 +1072,7 @@
       }
     },
     "Kujou Sara": {
+      "releasedAt": "2021-09-01",
       "element": "electro",
       "level": 1,
       "phase": 0,
@@ -1043,6 +1095,7 @@
       }
     },
     "Arataki Itto": {
+      "releasedAt": "2021-12-14",
       "element": "geo",
       "level": 1,
       "phase": 0,
@@ -1065,6 +1118,7 @@
       }
     },
     "Yun Jin": {
+      "releasedAt": "2022-01-05",
       "element": "geo",
       "level": 1,
       "phase": 0,
@@ -1087,6 +1141,7 @@
       }
     },
     "Yae Miko": {
+      "releasedAt": "2022-02-16",
       "element": "electro",
       "level": 1,
       "phase": 0,
@@ -1109,6 +1164,7 @@
       }
     },
     "Kamisato Ayato": {
+      "releasedAt": "2022-03-26",
       "element": "hydro",
       "level": 1,
       "phase": 0,
@@ -1131,6 +1187,7 @@
       }
     },
     "Yelan": {
+      "releasedAt": "2022-04-31",
       "element": "hydro",
       "level": 1,
       "phase": 0,
@@ -1153,6 +1210,7 @@
       }
     },
     "Kuki Shinobu": {
+      "releasedAt": "2022-06-21",
       "element": "electro",
       "level": 1,
       "phase": 0,
@@ -1175,6 +1233,7 @@
       }
     },
     "Shikanoin Heizou": {
+      "releasedAt": "2022-07-13",
       "element": "anemo",
       "level": 1,
       "phase": 0,
@@ -1195,183 +1254,189 @@
           "material": "TheMeaningOfAeons"
         }
       }
-    }
-  },
-  "Collei": {
-    "element": "dendro",
-    "level": 1,
-    "phase": 0,
-    "constellations": 0,
-    "aptitudes": {
-      "normalAttack": {
-        "level": 1,
-        "material": "TearsOfTheCalamitousGod"
-      },
-      "elementalSkill": {
-        "level": 1,
-        "constellationIncrease": 3,
-        "material": "TearsOfTheCalamitousGod"
-      },
-      "elementalBurst": {
-        "level": 1,
-        "constellationIncrease": 5,
-        "material": "TearsOfTheCalamitousGod"
+    },
+    "Collei": {
+      "releasedAt": "2022-08-24",
+      "element": "dendro",
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "TearsOfTheCalamitousGod"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "TearsOfTheCalamitousGod"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "TearsOfTheCalamitousGod"
+        }
       }
-    }
-  },
-  "Dori": {
-    "element": "electro",
-    "level": 1,
-    "phase": 0,
-    "constellations": 0,
-    "aptitudes": {
-      "normalAttack": {
-        "level": 1,
-        "material": "BloodjadeBranch"
-      },
-      "elementalSkill": {
-        "level": 1,
-        "constellationIncrease": 5,
-        "material": "BloodjadeBranch"
-      },
-      "elementalBurst": {
-        "level": 1,
-        "constellationIncrease": 3,
-        "material": "BloodjadeBranch"
+    },
+    "Dori": {
+      "releasedAt": "2022-09-09",
+      "element": "electro",
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "BloodjadeBranch"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "BloodjadeBranch"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "BloodjadeBranch"
+        }
       }
-    }
-  },
-  "Tighnari": {
-    "element": "dendro",
-    "level": 1,
-    "phase": 0,
-    "constellations": 0,
-    "aptitudes": {
-      "normalAttack": {
-        "level": 1,
-        "material": "TheMeaningOfAeons"
-      },
-      "elementalSkill": {
-        "level": 1,
-        "constellationIncrease": 5,
-        "material": "TheMeaningOfAeons"
-      },
-      "elementalBurst": {
-        "level": 1,
-        "constellationIncrease": 3,
-        "material": "TheMeaningOfAeons"
+    },
+    "Tighnari": {
+      "releasedAt": "2022-08-24",
+      "element": "dendro",
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "TheMeaningOfAeons"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "TheMeaningOfAeons"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "TheMeaningOfAeons"
+        }
       }
-    }
-  },
-  "Nilou": {
-    "element": "hydro",
-    "level": 1,
-    "phase": 0,
-    "constellations": 0,
-    "aptitudes": {
-      "normalAttack": {
-        "level": 1,
-        "material": "TearsOfTheCalamitousGod"
-      },
-      "elementalSkill": {
-        "level": 1,
-        "constellationIncrease": 5,
-        "material": "TearsOfTheCalamitousGod"
-      },
-      "elementalBurst": {
-        "level": 1,
-        "constellationIncrease": 3,
-        "material": "TearsOfTheCalamitousGod"
+    },
+    "Nilou": {
+      "releasedAt": "2022-10-14",
+      "element": "hydro",
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "TearsOfTheCalamitousGod"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "TearsOfTheCalamitousGod"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "TearsOfTheCalamitousGod"
+        }
       }
-    }
-  },
-  "Cyno": {
-    "element": "electro",
-    "level": 1,
-    "phase": 0,
-    "constellations": 0,
-    "aptitudes": {
-      "normalAttack": {
-        "level": 1,
-        "material": "MudraOfTheMaleficGeneral"
-      },
-      "elementalSkill": {
-        "level": 1,
-        "constellationIncrease": 5,
-        "material": "MudraOfTheMaleficGeneral"
-      },
-      "elementalBurst": {
-        "level": 1,
-        "constellationIncrease": 3,
-        "material": "MudraOfTheMaleficGeneral"
+    },
+    "Cyno": {
+      "releasedAt": "2022-09-28",
+      "element": "electro",
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "MudraOfTheMaleficGeneral"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "MudraOfTheMaleficGeneral"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "MudraOfTheMaleficGeneral"
+        }
       }
-    }
-  },
-  "Candace": {
-    "element": "hydro",
-    "level": 1,
-    "phase": 0,
-    "constellations": 0,
-    "aptitudes": {
-      "normalAttack": {
-        "level": 1,
-        "material": "TearsOfTheCalamitousGod"
-      },
-      "elementalSkill": {
-        "level": 1,
-        "constellationIncrease": 3,
-        "material": "TearsOfTheCalamitousGod"
-      },
-      "elementalBurst": {
-        "level": 1,
-        "constellationIncrease": 5,
-        "material": "TearsOfTheCalamitousGod"
+    },
+    "Candace": {
+      "releasedAt": "2022-09-28",
+      "element": "hydro",
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "TearsOfTheCalamitousGod"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "TearsOfTheCalamitousGod"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "TearsOfTheCalamitousGod"
+        }
       }
-    }
-  },
-  "Nahida": {
-    "beta": true,
-    "element": "dendro",
-    "level": 1,
-    "phase": 0,
-    "constellations": 0,
-    "aptitudes": {
-      "normalAttack": {
-        "level": 1,
-        "material": "???"
-      },
-      "elementalSkill": {
-        "level": 1,
-        "constellationIncrease": 3,
-        "material": "???"
-      },
-      "elementalBurst": {
-        "level": 1,
-        "constellationIncrease": 5,
-        "material": "???"
+    },
+    "Nahida": {
+      "beta": true,
+      "element": "dendro",
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "???"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "???"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "???"
+        }
       }
-    }
-  },
-  "Layla": {
-    "beta": true,
-    "element": "hydro",
-    "level": 1,
-    "phase": 0,
-    "constellations": 0,
-    "aptitudes": {
-      "normalAttack": {
-        "level": 1,
-        "material": "???"
-      },
-      "elementalSkill": {
-        "level": 1,
-        "constellationIncrease": 3,
-        "material": "???"
-      },
-      "elementalBurst": {
-        "level": 1,
-        "constellationIncrease": 5,
-        "material": "???"
+    },
+    "Layla": {
+      "beta": true,
+      "element": "hydro",
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "???"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "???"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "???"
+        }
       }
     }
   }

@@ -1,0 +1,61 @@
+@import '~scss/utilities.scss';
+
+.FormToggle {
+  position: relative;
+
+  @include make-accessibility() {
+    width: 48px;
+  }
+
+  input {
+    position: absolute;
+    top: 0;
+    left: 100vw;
+
+    &+label {
+      @include font-size(12);
+      cursor: pointer;
+      position: relative;
+      padding: 0 0 0 56px;
+      display: flex;
+      align-items: center;
+      min-height: 24px;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+      }
+
+      &::before {
+        @include transition(background-color .2s ease);
+        background-color: lighten(color(primary), 10.76);
+        width: 48px;
+        height: 24px;
+        top: calc(50% - 12px);
+        left: 0;
+        border-radius: 12px;
+      }
+
+      &::after {
+        @include transition(left .2s ease);
+        background-color: color(f);
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
+        top: calc(50% - 9px);
+        left: 3px;
+      }
+    }
+
+    &:checked+label {
+      &::before {
+        background-color: color(secondary);
+      }
+
+      &::after {
+        left: 27px;
+      }
+    }
+  }
+}

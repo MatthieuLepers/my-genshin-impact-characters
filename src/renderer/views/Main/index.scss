@@ -1,6 +1,8 @@
 @import '~scss/utilities.scss';
 
 .MainView {
+  padding: 0 8px;
+
   .BossTitle {
     @include font-size(18);
     @include font-family('open-sans', 600);
@@ -14,5 +16,10 @@
       @include font-size(16);
       letter-spacing: normal;
     }
+  }
+
+  &Filters {
+    margin-top: 16px;
+    margin-bottom: 16px;
   }
 }

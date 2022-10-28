@@ -5,10 +5,24 @@ export default {
     WeaklyBosses: GlobalI18N.WeaklyBosses('en-EN'),
   },
   App: {
+    TitleBarMenu: {
+      fileMenu: {
+        label: 'File',
+        save: 'Save',
+        exit: 'Exit',
+      },
+      langMenu: {
+        label: 'Language',
+        french: 'French',
+        english: 'English',
+      },
+    },
     inInventory: 'In inventory :',
+    selectOwnedCharacters: 'Select all characters you own',
     BossMaterial: {
       columns: {
         character: 'Character',
+        owned: 'Owned',
         level: 'Level',
         phase: 'Phase',
         constellation: 'Constellation',
@@ -18,19 +32,26 @@ export default {
     },
     Filters: {
       showBeta: 'Show beta characters',
-    },
-  },
-  TitleBarMenu: {
-    fileMenu: {
-      label: 'File',
-      selectProfil: 'Select profil...',
-      exit: 'Exit',
-      save: 'Save',
-    },
-    langMenu: {
-      label: 'Language',
-      french: 'French',
-      english: 'English',
+      element: {
+        label: 'Element :',
+      },
+      sort: {
+        label: 'Sort by :',
+        releasedAt: {
+          asc: 'Ascending release date',
+          desc: 'Descending release date',
+        },
+        name: {
+          asc: 'Name by reverse alphabetical order',
+          desc: 'Name by alphabetical order',
+        },
+        element: {
+          asc: 'Element',
+        },
+      },
+      search: {
+        label: 'Character name :',
+      },
     },
   },
   Electron: {
@@ -49,5 +70,25 @@ export default {
         json: 'JSON file',
       },
     },
+  },
+  Date: {
+    days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+    daySuffix: ['st', 'nd', 'rd'],
+    defaultSuffix: 'th',
+  },
+  Materials: {
+    Form: {
+      DropArea: {
+        areaLabel: 'Drag\'n\'drop files to upload them',
+      },
+      Select: {
+        removeOption: 'Remove option {option}',
+      },
+    },
+  },
+  Notification: {
+    saveSuccess: 'Saved !',
+    saveError: 'Save failed',
   },
 };

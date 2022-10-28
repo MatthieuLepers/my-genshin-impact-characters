@@ -10,6 +10,7 @@ $colors: (
   light     : #ebebeb, // Light gray
   border    : #8c868a, // Border gray
   cancel    : #6d6d6d, // Cancel gray
+  focus     : #00f7ff, // Accessibility focus
 );
 
 @function color($colorName) {

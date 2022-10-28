@@ -39,6 +39,14 @@
       flex-direction: row-reverse;
       align-items: center;
 
+      @include make-accessibility {
+        height: 32px;
+        bottom: 0;
+        top: auto;
+        left: auto;
+        width: 60px;
+      }
+
       input {
         width: 60px;
         margin-left: 4px;
@@ -51,5 +59,13 @@
     height: auto;
     display: block;
     margin-right: 8px;
+  }
+
+  &Column {
+    &--Aptitude {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+    }
   }
 }

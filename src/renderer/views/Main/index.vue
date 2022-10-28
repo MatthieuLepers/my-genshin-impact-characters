@@ -1,8 +1,8 @@
 <template>
   <div class="View MainView">
     <main>
-      <Filters />
-      <TopCharacters @clickCharacter="handleClickCharacter" :key="filters.elements.length" />
+      <Filters :store="FilteredCharacterStore" class="MainViewFilters" />
+      <TopCharacters @clickCharacter="handleClickCharacter" :key="FilteredCharacterStore.filters.elements.length" />
       <div
         v-for="boss in Object.keys($t(`Data.WeaklyBosses`))"
         :key="boss"
@@ -16,8 +16,7 @@
           :boss="boss"
           :material="material"
           :characters="characters[material]"
-          :filters="filters"
-          @addCharacter="(form) => handleAddCharacter(boss, form)"
+          :filters="FilteredCharacterStore.filters"
         />
       </div>
     </main>
@@ -29,7 +28,8 @@ import Vue from 'vue';
 import BossMaterial from '@/components/MyGenshinImpactCharacters/BossMaterial';
 import TopCharacters from '@/components/MyGenshinImpactCharacters/TopCharacters';
 import Filters from '@/components/MyGenshinImpactCharacters/Filters';
-import AppStore from '@/js/stores/AppStore';
+import AppStore from '@/assets/js/stores/AppStore';
+import FilteredCharacterStore from '@/assets/js/stores/FilteredCharacterStore';
 
 export default {
   name: 'MainView',
@@ -37,7 +37,7 @@ export default {
   data() {
     return {
       characters: {},
-      filters: AppStore.filters,
+      FilteredCharacterStore,
     };
   },
   methods: {
@@ -57,7 +57,10 @@ export default {
       ;
     },
     getOwnedAndInvestedMaterials(materialName) {
-      return (this.characters[materialName] || []).reduce((acc, character) => acc + character.getInvestedMaterials(materialName), AppStore.data.materials[materialName]);
+      if (!this.characters[materialName]?.length) return 0;
+      return (this.characters[materialName] || [])
+        .reduce((acc, character) => acc + character.getInvestedMaterials(materialName), AppStore.data.materials[materialName])
+      ;
     },
     handleClickCharacter(character) {
       this.selectedCharacter = character;
@@ -72,13 +75,17 @@ export default {
     filteredCharacters(boss) {
       const materials = Object.keys(this.$t(`Data.WeaklyBosses.${boss}.materials`));
       return Object.keys(this.characters)
-        .filter((key) => materials.includes(key))
-        .reduce((acc, key) => [...acc, ...this.characters[key].filter((character) => !this.filters.elements.length || this.filters.elements.includes(character.element))], [])
+        .filter((material) => materials.includes(material))
+        .reduce((acc, material) => [
+          ...acc,
+          ...FilteredCharacterStore.applyFilters(Object.values(this.characters[material])),
+        ], [])
       ;
     },
   },
   mounted() {
     this.characters = Object.values(AppStore.data.characters)
+      .filter((character) => character.owned)
       .reduce((acc, character) => {
         character.materials.forEach((material) => {
           acc[material] = [...(acc[material] || []), character];
@@ -86,6 +93,10 @@ export default {
         return acc;
       }, {})
     ;
+
+    // if (!Object.values(this.characters).length) {
+    //   this.$router.push({ name: 'CharacterList' });
+    // }
   },
 };
 </script>

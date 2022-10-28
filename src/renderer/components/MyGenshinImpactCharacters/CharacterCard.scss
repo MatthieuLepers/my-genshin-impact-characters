@@ -1,0 +1,40 @@
+@import '~scss/utilities.scss';
+
+.CharacterCard {
+  position: relative;
+
+  &:hover .CharacterCardInfo {
+    opacity: 1;
+  }
+
+  &Element {
+    width: 24px;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+  }
+
+  &Info {
+    @include transition(opacity .2s ease-in-out);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 18px;
+  }
+    
+  &Name {
+    @include font-family('Open Sans', 700);
+    text-shadow: 1px 1px rgba(color(primary), .8), -1px 1px rgba(color(primary), .8), 1px -1px rgba(color(primary), .8), -1px -1px rgba(color(primary), .8);
+  }
+
+  &Image {
+    width: 113px;
+  }
+}

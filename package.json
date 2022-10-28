@@ -69,6 +69,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "deepmerge": "^4.2.2",
     "vue": "^2.5.16",
     "vue-electron": "^1.0.6",
     "vue-i18n": "^8.22.2",

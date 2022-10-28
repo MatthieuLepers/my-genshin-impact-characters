@@ -1,13 +1,14 @@
 <template>
   <ContextMenu :visible="visible">
     <ContextMenuItem
-      :label="$t('TitleBarMenu.fileMenu.save')"
+      :label="$t('App.TitleBarMenu.fileMenu.save')"
+      icon="icon-save"
       shortcut="Ctrl+S"
       @click="save"
     />
     <ContextMenuSeparator />
     <ContextMenuItem
-      :label="$t('TitleBarMenu.fileMenu.exit')"
+      :label="$t('App.TitleBarMenu.fileMenu.exit')"
       shortcut="Alt+F4"
       @click="closeApp"
     />
@@ -17,12 +18,12 @@
 <script>
 import { remote } from 'electron';
 
-import ContextMenu from '@/components/UI/ContextMenu/index';
-import ContextMenuItem from '@/components/UI/ContextMenu/Item';
-import ContextMenuSeparator from '@/components/UI/ContextMenu/Separator';
-import NotificationStore from '@/components/UI/Notification/Store';
+import ContextMenu from '@/components/Materials/ContextMenu/index';
+import ContextMenuItem from '@/components/Materials/ContextMenu/Item';
+import ContextMenuSeparator from '@/components/Materials/ContextMenu/Separator';
+import NotificationStore from '@/components/Materials/Notification/Store';
 
-import AppStore from '@/js/stores/AppStore';
+import AppStore from '@/assets/js/stores/AppStore';
 
 export default {
   name: 'AppTitleBarFileMenu',
@@ -35,11 +36,11 @@ export default {
       remote.getCurrentWindow().close();
     },
     save() {
-      const success = AppStore.save();
+      const success = AppStore.save(this.$root.$i18n.locale);
       if (success) {
-        NotificationStore.success('Sauvegardé !');
+        NotificationStore.success(this.$t('Notification.saveSuccess'));
       } else {
-        NotificationStore.error('Échec de la sauvegarde');
+        NotificationStore.error(this.$t('Notification.saveError'));
       }
       this.$emit('close');
     },

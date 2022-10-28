@@ -1,0 +1,11 @@
+@import '~scss/utilities.scss';
+
+.FormFileSelector {
+  &Input {
+    display: none;
+  }
+
+  &Button {
+    width: 100%;;
+  }
+}

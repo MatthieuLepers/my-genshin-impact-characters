@@ -1,6 +1,10 @@
 <template>
   <ul class="TopCharacters" @mousewheel="handleMouseWheel">
-    <li v-for="character in characters" :key="character.name" @click="handleclick(character)">
+    <li
+      v-for="character in characters"
+      :key="character.name"
+      @click="handleclick(character)"
+    >
       <img
         :src="`static/img/characters/${character.imageName}_gacha_card.png`"
         :title="`${character.nameStr}, ${character.spentMora / 1000}k`"
@@ -11,7 +15,7 @@
 </template>
 
 <script>
-import AppStore from '@/js/stores/AppStore';
+import AppStore from '@/assets/js/stores/AppStore';
 
 export default {
   name: 'TopCharacters',

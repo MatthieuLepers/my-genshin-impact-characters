@@ -1,6 +1,8 @@
 import os from 'os';
 import fs from 'fs';
+import merge from 'deepmerge';
 import Module from './Module';
+import WindowStore from './Window/Store';
 
 function $handleLoadDataSync(e) {
   const baseDir = `${os.homedir()}/Documents`;
@@ -9,8 +11,17 @@ function $handleLoadDataSync(e) {
   const defaultFilePath = `static/${fileName}`;
   if (!fs.existsSync(filePath)) {
     fs.copyFileSync(defaultFilePath, filePath);
+    const data = JSON.parse(`${fs.readFileSync(filePath)}`);
+    WindowStore.broadcastData('set-locale', data.locale ?? 'fr-FR');
+    e.returnValue = data;
+  } else {
+    const data = merge(
+      JSON.parse(`${fs.readFileSync(defaultFilePath)}`),
+      JSON.parse(`${fs.readFileSync(filePath)}`),
+    );
+    WindowStore.broadcastData('set-locale', data.locale ?? 'fr-FR');
+    e.returnValue = data;
   }
-  e.returnValue = JSON.parse(`${fs.readFileSync(filePath)}`);
 }
 
 function $handleSaveDataSync(e, data) {
