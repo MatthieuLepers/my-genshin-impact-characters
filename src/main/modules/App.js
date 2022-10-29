@@ -4,22 +4,27 @@ import merge from 'deepmerge';
 import Module from './Module';
 import WindowStore from './Window/Store';
 
+const STATIC_DIR = process.env.NODE_ENV === 'development'
+  ? `${process.cwd()}/static`
+  : require('path').join(__dirname, '/static').replace(/\\/g, '/')
+;
+
 function $handleLoadDataSync(e) {
   const baseDir = `${os.homedir()}/Documents`;
   const fileName = 'genshin-impact-character.json';
   const filePath = `${baseDir}/${fileName}`;
-  const defaultFilePath = `static/${fileName}`;
+  const defaultFilePath = `${STATIC_DIR}/${fileName}`;
   if (!fs.existsSync(filePath)) {
     fs.copyFileSync(defaultFilePath, filePath);
     const data = JSON.parse(`${fs.readFileSync(filePath)}`);
-    WindowStore.broadcastData('set-locale', data.locale ?? 'fr-FR');
+    WindowStore.broadcastData('set-locale', data.locale || 'fr-FR');
     e.returnValue = data;
   } else {
     const data = merge(
       JSON.parse(`${fs.readFileSync(defaultFilePath)}`),
       JSON.parse(`${fs.readFileSync(filePath)}`),
     );
-    WindowStore.broadcastData('set-locale', data.locale ?? 'fr-FR');
+    WindowStore.broadcastData('set-locale', data.locale || 'fr-FR');
     e.returnValue = data;
   }
 }

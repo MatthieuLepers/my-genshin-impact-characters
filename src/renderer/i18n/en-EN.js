@@ -5,6 +5,10 @@ export default {
     WeaklyBosses: GlobalI18N.WeaklyBosses('en-EN'),
   },
   App: {
+    Menu: {
+      followup: 'Followup',
+      characterBox: 'Box',
+    },
     TitleBarMenu: {
       fileMenu: {
         label: 'File',

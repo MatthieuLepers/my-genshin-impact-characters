@@ -1,5 +1,5 @@
 <template>
-  <TitleBar :btnMaximize="false" :btnHelp="false">
+  <TitleBar :btnMaximize="false" :btnHelp="false" :appTitle="`My Genshin Impact characters v${appVersion}`">
     <template v-slot:menu>
       <TitleBarMenu :menuList="menuList">
         <template v-slot:fileMenu="{ visible, close }">
@@ -19,6 +19,7 @@ import TitleBarMenu from '@/components/Materials/TitleBar/Menu';
 
 import AppTitleBarFileMenu from './FileMenu';
 import AppTitleBarLangMenu from './LangMenu';
+import { version } from '../../../../package.json';
 
 export default {
   name: 'AppTitleBar',
@@ -28,6 +29,9 @@ export default {
   computed: {
     menuList() {
       return ['fileMenu', 'langMenu'];
+    },
+    appVersion() {
+      return version;
     },
   },
 };

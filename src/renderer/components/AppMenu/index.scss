@@ -13,8 +13,31 @@
     li {
       width: 60px;
       height: 60px;
-      padding: 8px;
+      padding: 4px;
       overflow: hidden;
+    }
+  }
+
+  &Link {
+    @include font-size(12);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 2px;
+    background-color: lighten(color(primary), 22.74);
+    border-radius: 12px;
+    text-decoration: none;
+
+    &.router-link-exact-active {
+      background-color: color(focus);
+    }
+  
+    img {
+      width: 20px;
+      margin-bottom: 4px;
     }
   }
 }
