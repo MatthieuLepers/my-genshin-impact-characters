@@ -7,14 +7,26 @@
 
 Helps Genshin Impact players to manage their ressources
 
+--
+
 ## Installation
 
-Download and install [the latest release](https://github.com/MatthieuLepers/my-genshin-impact-characters/releases/download/v1.0.0/).
+Download and install [the latest release](https://github.com/MatthieuLepers/my-genshin-impact-characters/releases/latest).
 
-This software will automatically update itself after installation.
+This software will automatically update itself after first installation.
+
+### ➡️ About Windows SmartScreen "Windows protected your pc"
+
+<img src="static/img/windows-smartscreen.jpg" width="300px" alt="Windows Smart Screen">
+
+During installation, Windows SmartScreen can block the installation by warning the user about risks of uncknown apps, this warning is due to my app code signing. It's a free app and i'll not buy a Microsoft Code Signing Certificate to make this warning disapear, it cost 200~350$ per year.
+
+See application reputation & windows smart screen [here](https://www.digicert.com/dc/ms-smartscreen-application-reputation/)
+
+---
 
 ## Contributing
-**⚠️ You should definitely read this part before contributing**
+**⚠️ You should definitely read this part before making a contribution**
 
 ### Installation
 Just clone the repository, run `npm install` to install all node dependencies, then run `npm run dev` to start the application.
