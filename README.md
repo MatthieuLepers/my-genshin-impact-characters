@@ -4,8 +4,9 @@
 [![GitHub release](https://img.shields.io/badge/Platform-Windows-orange)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 [![GitHub release](https://img.shields.io/badge/Node-14.19.0-green)](https://nodejs.org/download/release/v14.19.0/)
 [![GitHub release](https://img.shields.io/badge/License-GNU%20GPLv3-blue)](https://www.gnu.org/licenses/gpl-3.0.en.html)
+[![GitHub release](https://img.shields.io/badge/Virustotal%20analysis-undetected-green)](https://www.virustotal.com/gui/file/ee8f7479f96bcab106d1fdb7ebdf1a8e14e94320f1cfc8f1e722f258d74f5549?nocache=1)
 
-Helps Genshin Impact players to manage their ressources
+Helps Genshin Impact players to follow up invested ressources in their characters
 
 --
 
