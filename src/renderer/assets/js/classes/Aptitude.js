@@ -33,7 +33,7 @@ export default class Aptitude {
     const totalMaterial = this.getMaterialForLevel(this.level) + AppStore.data.materials[this.material];
     this.level = level;
     const diffMaterial = totalMaterial - (this.getMaterialForLevel(level) + AppStore.data.materials[this.material]);
-    AppStore.data.materials[this.material] += diffMaterial;
+    AppStore.data.materials[this.material] = Math.max(0, AppStore.data.materials[this.material] + diffMaterial);
   }
 
   /**

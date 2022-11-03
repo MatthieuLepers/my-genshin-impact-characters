@@ -20,7 +20,7 @@ class FilteredCharacterStore {
       elements: [],
       name: '',
     };
-    this.sortBy = 'releasedAt:asc';
+    this.sortBy = 'releasedAt:desc';
   }
 
   /**
@@ -30,7 +30,7 @@ class FilteredCharacterStore {
   applyFilters(characterList) {
     const [field, sort] = this.sortBy.split(':');
     return characterList
-      .filter((character) => Object.keys(this.filters).reduce((acc, key) => acc && FILTERING_FUNCTIONS[key](this.filters[key])(character), true))
+      .filter((character) => character.isReleased() && Object.keys(this.filters).reduce((acc, key) => acc && FILTERING_FUNCTIONS[key](this.filters[key])(character), true))
       .sort((a, b) => SORTING_FUNCTIONS[field](sort)(a, b))
     ;
   }

@@ -19,10 +19,8 @@ import AppStore from '@/assets/js/stores/AppStore';
 
 export default {
   name: 'TopCharacters',
-  data() {
-    return {
-      characters: AppStore.characterSortedBySpentMora,
-    };
+  props: {
+    store: { type: Object, required: true },
   },
   methods: {
     handleMouseWheel(e) {
@@ -31,6 +29,15 @@ export default {
     },
     handleclick(character) {
       this.$emit('clickCharacter', character);
+    },
+  },
+  computed: {
+    characters() {
+      return this.store
+        .applyFilters(Object.values(AppStore.data.characters))
+        .filter((character) => character.owned)
+        .sort((a, b) => b.spentMora - a.spentMora || a.name.localeCompare(b.name))
+      ;
     },
   },
 };

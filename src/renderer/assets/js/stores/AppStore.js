@@ -2,34 +2,12 @@ import { ipcRenderer } from 'electron';
 import Character from '../classes/Character';
 import Traveler from '../classes/Traveler';
 
-function $makeFilters(character) {
-  if (this.filters.elements.length) {
-    return this.filters.elements.includes(character.element);
-  }
-  return true;
-}
-
 class AppStore {
   /**
    * @constructor
    */
   constructor() {
     this.data = this.load();
-    this.filters = {
-      elements: [],
-      name: '',
-      sort: 'asc',
-    };
-  }
-
-  /**
-   * @return {Character[]}
-   */
-  get characterSortedBySpentMora() {
-    return Object.values(this.data.characters)
-      .filter((character) => !character.beta && character.owned && $makeFilters.call(this, character))
-      .sort((a, b) => b.spentMora - a.spentMora || a.name.localeCompare(b.name))
-    ;
   }
 
   /**
@@ -67,6 +45,7 @@ class AppStore {
   save(locale = 'fr-FR') {
     const characters = Object.entries(this.data.characters)
       .reduce((acc, [key, character]) => {
+        character.removeBetaTag();
         if (character.name.startsWith('Traveler')) {
           return { ...acc, Traveler: character.$data };
         }

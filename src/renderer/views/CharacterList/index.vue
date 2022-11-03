@@ -55,7 +55,7 @@ export default {
     filteredCharacters() {
       return FilteredCharacterStore
         .applyFilters(Object.values(this.characters))
-        .filter((character) => !character.beta && !character.name.startsWith('Traveler'))
+        .filter((character) => !character.name.startsWith('Traveler'))
       ;
     },
   },

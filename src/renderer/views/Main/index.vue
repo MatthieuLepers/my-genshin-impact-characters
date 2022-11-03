@@ -2,7 +2,11 @@
   <div class="View MainView">
     <main>
       <Filters :store="FilteredCharacterStore" class="MainViewFilters" />
-      <TopCharacters @clickCharacter="handleClickCharacter" :key="FilteredCharacterStore.filters.elements.length" />
+      <TopCharacters
+        @clickCharacter="handleClickCharacter"
+        :key="FilteredCharacterStore.filters.elements.length"
+        :store="FilteredCharacterStore"
+      />
       <div
         v-for="boss in Object.keys($t(`Data.WeaklyBosses`))"
         :key="boss"

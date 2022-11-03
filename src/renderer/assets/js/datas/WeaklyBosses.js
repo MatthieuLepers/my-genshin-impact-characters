@@ -4,6 +4,7 @@ import Childe from './bosses/Childe';
 import Azhdaha from './bosses/Azhdaha';
 import Signora from './bosses/Signora';
 import NarukamiNoMikoto from './bosses/NarukamiNoMikoto';
+import ShoukiNoKamiTheProdigal from './bosses/ShoukiNoKamiTheProdigal';
 
 export default {
   Dvalin,
@@ -12,4 +13,5 @@ export default {
   Azhdaha,
   Signora,
   NarukamiNoMikoto,
+  ShoukiNoKamiTheProdigal,
 };
