@@ -21,6 +21,13 @@ export default {
         english: 'Anglais',
       },
     },
+    Main: {
+      newlyReleasedCharactersModal: {
+        title: 'Nouveau personnage disponible ! | Nouveaux personnages disponibles !',
+        okLabel: 'Voir la box',
+        cancelLabel: 'Fermer',
+      },
+    },
     inInventory: 'Dans l\'inventaire :',
     selectOwnedCharacters: 'Séléctionnez les personnages que vous possédez',
     BossMaterial: {

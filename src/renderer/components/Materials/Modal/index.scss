@@ -28,6 +28,14 @@
     border: 2px solid color(f);
     width: calc(75% - 30px);
 
+    &.size-xs {
+      width: 288px;
+    }
+
+    &.size-m {
+      width: 42%;
+    }
+
     &Title {
       @include font-family('Open Sans', 700);
       @include font-size(18);

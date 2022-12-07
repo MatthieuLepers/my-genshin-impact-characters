@@ -131,7 +131,10 @@ export default class Character {
    */
   isReleased() {
     const { beta, releasedAt } = this.$data;
-    return releasedAt ? Date.now() >= new Date(this.$data.releasedAt).getTime() : !beta;
+    return releasedAt
+      ? Date.now() >= new Date(this.$data.releasedAt).getTime()
+      : !beta
+    ;
   }
 
   removeBetaTag() {

@@ -8,6 +8,7 @@ class AppStore {
    */
   constructor() {
     this.data = this.load();
+    this.newlyModalOpened = false;
   }
 
   /**
@@ -62,6 +63,16 @@ class AppStore {
       ownedCharacters,
       characters,
     });
+  }
+
+  /**
+   * @return {Character[]}
+   */
+  get newlyReleasedCharacters() {
+    return Object
+      .values(this.data.characters)
+      .filter((character) => character.isReleased() && character.beta && !character.owned)
+    ;
   }
 }
 

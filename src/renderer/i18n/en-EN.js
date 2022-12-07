@@ -21,6 +21,13 @@ export default {
         english: 'English',
       },
     },
+    Main: {
+      newlyReleasedCharactersModal: {
+        title: 'New character available ! | New characters available !',
+        okLabel: 'Go to box',
+        cancelLabel: 'Close',
+      },
+    },
     inInventory: 'In inventory :',
     selectOwnedCharacters: 'Select all characters you own',
     BossMaterial: {

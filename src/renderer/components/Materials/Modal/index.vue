@@ -2,7 +2,7 @@
   <div :class="GenerateModifiers('ModalBackDrop', { Open: open })">
     <div :id="name" :class="`Modal size-${size}`">
       <div class="ModalTitle">
-        <slot name="header">{{ title }}</slot>
+        <slot name="header" :title="title">{{ title }}</slot>
       </div>
       <div class="ModalContent">
         <slot />

@@ -8,7 +8,7 @@
         :store="FilteredCharacterStore"
       />
       <div
-        v-for="boss in Object.keys($t(`Data.WeaklyBosses`))"
+        v-for="boss in Object.keys($t('Data.WeaklyBosses'))"
         :key="boss"
       >
         <h3 class="BossTitle" v-if="filteredCharacters(boss).length">
@@ -23,26 +23,58 @@
           :filters="FilteredCharacterStore.filters"
         />
       </div>
+
+      <Modal
+        name="newlyReleasedCharactersModal"
+        size="m"
+        :title="$tc('App.Main.newlyReleasedCharactersModal.title', newlyReleasedCharacters.length)"
+        :okCancel="true"
+        :okLabel="$t('App.Main.newlyReleasedCharactersModal.okLabel')"
+        :cancelLabel="$t('App.Main.newlyReleasedCharactersModal.cancelLabel')"
+        @close="handleCloseModal"
+        @confirm="$router.push({ name: 'CharacterList' })"
+      >
+        <ul class="CharacterList">
+          <li
+            v-for="(character, i) in newlyReleasedCharacters"
+            :key="i"
+            class="CharacterListItem"
+          >
+            <CharacterCard :character="character" />
+          </li>
+        </ul>
+      </Modal>
     </main>
   </div>
 </template>
 
 <script>
 import Vue from 'vue';
+
+import Modal from '@/components/Materials/Modal/index';
 import BossMaterial from '@/components/MyGenshinImpactCharacters/BossMaterial';
 import TopCharacters from '@/components/MyGenshinImpactCharacters/TopCharacters';
 import Filters from '@/components/MyGenshinImpactCharacters/Filters';
+import CharacterCard from '@/components/MyGenshinImpactCharacters/CharacterCard';
+
+import ModalStore from '@/components/Materials/Modal/Store';
 import AppStore from '@/assets/js/stores/AppStore';
 import FilteredCharacterStore from '@/assets/js/stores/FilteredCharacterStore';
 
 export default {
   name: 'MainView',
-  components: { BossMaterial, Filters, TopCharacters },
+  components: { Modal, BossMaterial, Filters, TopCharacters, CharacterCard },
   data() {
     return {
       characters: {},
       FilteredCharacterStore,
+      newlyReleasedCharactersModalOpen: false,
     };
+  },
+  computed: {
+    newlyReleasedCharacters() {
+      return AppStore.newlyReleasedCharacters;
+    },
   },
   methods: {
     totalBossMaterial(boss) {
@@ -86,6 +118,11 @@ export default {
         ], [])
       ;
     },
+    handleCloseModal() {
+      this.newlyReleasedCharacters.forEach((character) => {
+        character.removeBetaTag();
+      });
+    },
   },
   mounted() {
     this.characters = Object.values(AppStore.data.characters)
@@ -98,9 +135,12 @@ export default {
       }, {})
     ;
 
-    // if (!Object.values(this.characters).length) {
-    //   this.$router.push({ name: 'CharacterList' });
-    // }
+    if (!Object.values(this.characters).length) {
+      this.$router.push({ name: 'CharacterList' });
+    } else if (this.newlyReleasedCharacters.length && !AppStore.newlyModalOpened) {
+      ModalStore.showModal('newlyReleasedCharactersModal');
+      AppStore.newlyModalOpened = true;
+    }
   },
 };
 </script>
