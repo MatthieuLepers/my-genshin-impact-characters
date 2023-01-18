@@ -40,7 +40,7 @@ export default class Character {
    * @return {String}
    */
   get element() {
-    return `${this.$data.element.substring(0, 1).toUpperCase()}${this.$data.element.substring(1).toLowerCase()}`;
+    return `${this.$data.element.charAt(0).toUpperCase()}${this.$data.element.substring(1).toLowerCase()}`;
   }
 
   /**
@@ -130,16 +130,6 @@ export default class Character {
    * @return {Boolean}
    */
   isReleased() {
-    const { beta, releasedAt } = this.$data;
-    return releasedAt
-      ? Date.now() >= new Date(this.$data.releasedAt).getTime()
-      : !beta
-    ;
-  }
-
-  removeBetaTag() {
-    if (this.isReleased() && this.beta) {
-      delete this.$data.beta;
-    }
+    return !!this.releasedAt && Date.now() >= new Date(this.releasedAt).getTime();
   }
 }

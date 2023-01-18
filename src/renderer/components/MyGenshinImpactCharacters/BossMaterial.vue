@@ -19,7 +19,7 @@
       <template v-slot:nameStr="props">
         <img class="Element" :src="`static/img/elements/${props.obj.element.toLowerCase()}.png`" :alt="props.obj.element" />
         <span :id="props.obj.name">
-          [{{ props.obj.getInvestedMaterials(material) }}/{{ props.obj.getMaxMaterial(material) }}] {{ props.obj.nameStr }} <span class="Beta" v-if="props.obj.beta">(Beta)</span>
+          [{{ props.obj.getInvestedMaterials(material) }}/{{ props.obj.getMaxMaterial(material) }}] {{ props.obj.nameStr }}
         </span>
       </template>
       <template v-slot:smartLevel="props">

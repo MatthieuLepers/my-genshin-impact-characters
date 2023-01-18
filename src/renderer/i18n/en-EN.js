@@ -42,7 +42,6 @@ export default {
       },
     },
     Filters: {
-      showBeta: 'Show beta characters',
       element: {
         label: 'Element :',
       },

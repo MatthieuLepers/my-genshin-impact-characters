@@ -42,7 +42,6 @@ export default {
       },
     },
     Filters: {
-      showBeta: 'Afficher les personnages de la bêta',
       element: {
         label: 'Élément :',
       },

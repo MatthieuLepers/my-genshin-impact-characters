@@ -1420,7 +1420,6 @@
       }
     },
     "Layla": {
-      "beta": true,
       "releasedAt": "2022-11-18",
       "element": "cryo",
       "level": 1,
@@ -1444,7 +1443,6 @@
       }
     },
     "Wanderer": {
-      "beta": true,
       "releasedAt": "2022-12-07",
       "element": "anemo",
       "level": 1,
@@ -1468,7 +1466,6 @@
       }
     },
     "Faruzan": {
-      "beta": true,
       "releasedAt": "2022-12-07",
       "element": "anemo",
       "level": 1,
@@ -1488,6 +1485,52 @@
           "level": 1,
           "constellationIncrease": 5,
           "material": "PuppetStrings"
+        }
+      }
+    },
+    "Alhaitham": {
+      "releasedAt": "2023-01-18",
+      "element": "dendro",
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "MirrorOfMushin"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "MirrorOfMushin"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "MirrorOfMushin"
+        }
+      }
+    },
+    "Yaoyao": {
+      "releasedAt": "2023-01-18",
+      "element": "dendro",
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "DakasBell"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "DakasBell"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "DakasBell"
         }
       }
     }

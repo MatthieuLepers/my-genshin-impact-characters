@@ -14,7 +14,7 @@ export default class Traveler extends Character {
 
   defineAccessors() {
     Object.keys(this.$data).forEach((key) => {
-      if (!['aptitudes', 'constellations', 'beta', 'releasedAt'].includes(key)) {
+      if (!['aptitudes', 'constellations', 'releasedAt'].includes(key)) {
         Object.defineProperty(this, key, {
           get: () => this.$data[key],
           set: (val) => { this.$data[key] = val; },
@@ -54,33 +54,9 @@ export default class Traveler extends Character {
   }
 
   /**
-   * @return {Boolean}
-   */
-  get beta() {
-    return this.$data.beta?.includes(this.type) ?? false;
-  }
-
-  /**
    * @return {String|null}
    */
   get releasedAt() {
-    return this.$data.beta?.[this.type] ?? null;
-  }
-
-  /**
-   * @return {Boolean}
-   */
-  isReleased() {
-    return this.releasedAt ? Date.now() >= new Date(this.releasedAt).getTime() : !this.beta;
-  }
-
-  removeBetaTag() {
-    if (this.isReleased() && this.beta) {
-      delete this.$data.beta[this.type];
-
-      if (!Object.keys(this.$data.beta).length) {
-        delete this.$data.beta;
-      }
-    }
+    return this.$data.releasedAt?.[this.type] ?? null;
   }
 }

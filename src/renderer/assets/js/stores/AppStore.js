@@ -46,7 +46,6 @@ class AppStore {
   save(locale = 'fr-FR') {
     const characters = Object.entries(this.data.characters)
       .reduce((acc, [key, character]) => {
-        character.removeBetaTag();
         if (character.name.startsWith('Traveler')) {
           return { ...acc, Traveler: character.$data };
         }
@@ -71,7 +70,7 @@ class AppStore {
   get newlyReleasedCharacters() {
     return Object
       .values(this.data.characters)
-      .filter((character) => character.isReleased() && character.beta && !character.owned)
+      .filter((character) => character.isReleased() && new Date(character.releasedAt).getTime() + 864000000 >= Date.now() && !character.owned)
     ;
   }
 }

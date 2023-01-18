@@ -31,7 +31,6 @@
         :okCancel="true"
         :okLabel="$t('App.Main.newlyReleasedCharactersModal.okLabel')"
         :cancelLabel="$t('App.Main.newlyReleasedCharactersModal.cancelLabel')"
-        @close="handleCloseModal"
         @confirm="$router.push({ name: 'CharacterList' })"
       >
         <ul class="CharacterList">
@@ -117,11 +116,6 @@ export default {
           ...FilteredCharacterStore.applyFilters(Object.values(this.characters[material])),
         ], [])
       ;
-    },
-    handleCloseModal() {
-      this.newlyReleasedCharacters.forEach((character) => {
-        character.removeBetaTag();
-      });
     },
   },
   mounted() {
