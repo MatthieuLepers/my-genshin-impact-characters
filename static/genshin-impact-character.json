@@ -1533,6 +1533,52 @@
           "material": "DakasBell"
         }
       }
+    },
+    "Dehya": {
+      "releasedAt": "2023-03-01",
+      "element": "pyro",
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "PuppetStrings"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "PuppetStrings"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "PuppetStrings"
+        }
+      }
+    },
+    "Mika": {
+      "releasedAt": "2023-03-21",
+      "element": "cryo",
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "MirrorOfMushin"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "MirrorOfMushin"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "MirrorOfMushin"
+        }
+      }
     }
   }
 }
