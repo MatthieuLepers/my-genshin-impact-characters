@@ -5,6 +5,7 @@ import Azhdaha from './bosses/Azhdaha';
 import Signora from './bosses/Signora';
 import NarukamiNoMikoto from './bosses/NarukamiNoMikoto';
 import ShoukiNoKamiTheProdigal from './bosses/ShoukiNoKamiTheProdigal';
+import GuardianOfApepsOasis from './bosses/GuardianOfApepsOasis';
 
 export default {
   Dvalin,
@@ -14,4 +15,5 @@ export default {
   Signora,
   NarukamiNoMikoto,
   ShoukiNoKamiTheProdigal,
+  GuardianOfApepsOasis,
 };
