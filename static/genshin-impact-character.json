@@ -1651,6 +1651,72 @@
           "material": "Everamber"
         }
       }
+    },
+    "Freminet": {
+      "element": "cryo",
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "WorldspanFern"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "WorldspanFern"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "WorldspanFern"
+        }
+      }
+    },
+    "Lynette": {
+      "element": "anemo",
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "Everamber"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "Everamber"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "Everamber"
+        }
+      }
+    },
+    "Lyney": {
+      "element": "pyro",
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "PrimordialGreenbloom"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "PrimordialGreenbloom"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "PrimordialGreenbloom"
+        }
+      }
     }
   }
 }
