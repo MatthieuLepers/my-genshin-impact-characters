@@ -23,16 +23,18 @@ export default class Aptitude {
    * @return {Number}
    */
   get smartLevel() {
-    return this.level;
+    return Math.max(this.getMinLevel(), this.level);
   }
 
   /**
    * @param {Number} level
    */
   set smartLevel(level) {
-    const totalMaterial = this.getMaterialForLevel(this.level) + AppStore.data.materials[this.material];
+    const oldRealLevelMaterialCost = this.getMaterialForLevel(this.realLevel);
     this.level = level;
-    const diffMaterial = totalMaterial - (this.getMaterialForLevel(level) + AppStore.data.materials[this.material]);
+    const newRealLevelMaterialCost = this.getMaterialForLevel(this.realLevel);
+
+    const diffMaterial = oldRealLevelMaterialCost - newRealLevelMaterialCost;
     AppStore.data.materials[this.material] = Math.max(0, AppStore.data.materials[this.material] + diffMaterial);
   }
 

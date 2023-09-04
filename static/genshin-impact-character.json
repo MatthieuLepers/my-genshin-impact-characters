@@ -103,15 +103,17 @@
         "Anemo": "2020-09-28",
         "Geo": "2020-09-28",
         "Electro": "2021-07-01",
-        "Dendro": "2022-08-24"
+        "Dendro": "2022-08-24",
+        "Hydro": "2323-08-16"
       },
-      "level": 80,
-      "phase": 6,
+      "level": 1,
+      "phase": 0,
       "constellations": {
-        "Anemo": 6,
-        "Geo": 6,
-        "Electro": 6,
-        "Dendro": 0
+        "Anemo": 0,
+        "Geo": 0,
+        "Electro": 0,
+        "Dendro": 0,
+        "Hydro": 0
       },
       "aptitudes": {
         "Anemo": {
@@ -176,6 +178,22 @@
             "level": 1,
             "constellationIncrease": 3,
             "material": "MudraOfTheMaleficGeneral"
+          }
+        },
+        "Hydro": {
+          "normalAttack": {
+            "level": 1,
+            "material": "WorldspanFern"
+          },
+          "elementalSkill": {
+            "level": 1,
+            "constellationIncrease": 3,
+            "material": "WorldspanFern"
+          },
+          "elementalBurst": {
+            "level": 1,
+            "constellationIncrease": 5,
+            "material": "WorldspanFern"
           }
         }
       }
@@ -1653,6 +1671,7 @@
       }
     },
     "Freminet": {
+      "releasedAt": "2023-09-06",
       "element": "cryo",
       "level": 1,
       "phase": 0,
@@ -1675,6 +1694,7 @@
       }
     },
     "Lynette": {
+      "releasedAt": "2023-08-16",
       "element": "anemo",
       "level": 1,
       "phase": 0,
@@ -1697,6 +1717,7 @@
       }
     },
     "Lyney": {
+      "releasedAt": "2023-08-16",
       "element": "pyro",
       "level": 1,
       "phase": 0,
@@ -1704,16 +1725,16 @@
       "aptitudes": {
         "normalAttack": {
           "level": 1,
+          "constellationIncrease": 3,
           "material": "PrimordialGreenbloom"
         },
         "elementalSkill": {
           "level": 1,
-          "constellationIncrease": 5,
           "material": "PrimordialGreenbloom"
         },
         "elementalBurst": {
           "level": 1,
-          "constellationIncrease": 3,
+          "constellationIncrease": 5,
           "material": "PrimordialGreenbloom"
         }
       }

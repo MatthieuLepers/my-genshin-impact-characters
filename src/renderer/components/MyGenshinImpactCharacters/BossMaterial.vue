@@ -28,8 +28,8 @@
       <template v-slot:phase="props">
         <FormInput type="number" :min="0" :max="6" v-model="props.obj.phase" />
       </template>
-      <template v-slot:constellations="props">
-        <FormInput type="number" :min="0" :max="6" v-model="props.obj.constellations" />
+      <template v-slot:smartConstellation="props">
+        <FormInput type="number" :min="0" :max="6" v-model="props.obj.smartConstellation" />
       </template>
       <template v-slot:aptitudes="props">
         <FormInput type="number"
@@ -106,7 +106,7 @@ export default {
           label: this.$t('App.BossMaterial.columns.phase'),
           className: 'col-xs-1',
         },
-        constellations: {
+        smartConstellation: {
           label: this.$t('App.BossMaterial.columns.constellation'),
           className: 'col-xs-2',
         },

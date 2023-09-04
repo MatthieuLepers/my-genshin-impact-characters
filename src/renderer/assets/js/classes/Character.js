@@ -87,6 +87,30 @@ export default class Character {
   /**
    * @return {Number}
    */
+  get smartConstellation() {
+    return this.constellations;
+  }
+
+  /**
+   * @param {Number} constellations
+   */
+  set smartConstellation(constellations) {
+    const oldRealLevels = Object
+      .values(this.aptitudes)
+      .map((aptitude) => aptitude.realLevel)
+    ;
+    this.constellations = constellations;
+    Object
+      .values(this.aptitudes)
+      .forEach((aptitude, i) => {
+        aptitude.level = oldRealLevels[i] + aptitude.getBonusValue();
+      })
+    ;
+  }
+
+  /**
+   * @return {Number}
+   */
   get spentMora() {
     return [20, 40, 60, 80, 100, 120].slice(0, Math.max(0, this.phase - 1)).reduce((acc, val) => acc + val, 0) * 1000
       + Object.values(this.aptitudes).reduce((acc, aptitude) => acc + aptitude.spentMora, 0)
