@@ -1738,6 +1738,52 @@
           "material": "PrimordialGreenbloom"
         }
       }
+    },
+    "Neuvillette": {
+      "releasedAt": "2023-09-27",
+      "element": "hydro",
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "Everamber"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "material": "Everamber"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "Everamber"
+        }
+      }
+    },
+    "Wriothesley": {
+      "releasedAt": "2023-10-17",
+      "element": "cryo",
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "PrimordialGreenbloom"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "material": "PrimordialGreenbloom"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "PrimordialGreenbloom"
+        }
+      }
     }
   }
 }
