@@ -38,7 +38,7 @@ class FilteredCharacterStore {
   reset() {
     this.filters.elements = [];
     this.filters.name = '';
-    this.sortBy = 'releasedAt:asc';
+    this.sortBy = 'releasedAt:desc';
   }
 }
 

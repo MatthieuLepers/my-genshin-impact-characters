@@ -24,7 +24,10 @@
     "DakasBell": 0,
     "WorldspanFern": 0,
     "PrimordialGreenbloom": 0,
-    "Everamber": 0
+    "Everamber": 0,
+    "LightlessSilkString": 0,
+    "LightlessEyeOfTheMaelstrom": 0,
+    "LightlessMass": 0
   },
   "ownedCharacters": [
   ],
@@ -1782,6 +1785,52 @@
           "level": 1,
           "constellationIncrease": 5,
           "material": "PrimordialGreenbloom"
+        }
+      }
+    },
+    "Charlotte": {
+      "releasedAt": "2023-11-14",
+      "element": "cryo",
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "LightlessSilkString"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "LightlessSilkString"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "LightlessSilkString"
+        }
+      }
+    },
+    "Furina": {
+      "releasedAt": "2023-11-14",
+      "element": "hydro",
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "LightlessMass"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "LightlessMass"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "LightlessMass"
         }
       }
     }

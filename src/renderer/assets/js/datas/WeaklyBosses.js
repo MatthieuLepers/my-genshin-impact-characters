@@ -6,6 +6,7 @@ import Signora from './bosses/Signora';
 import NarukamiNoMikoto from './bosses/NarukamiNoMikoto';
 import ShoukiNoKamiTheProdigal from './bosses/ShoukiNoKamiTheProdigal';
 import GuardianOfApepsOasis from './bosses/GuardianOfApepsOasis';
+import AllDevouringNarwhal from './bosses/AllDevouringNarwhal';
 
 export default {
   Dvalin,
@@ -16,4 +17,5 @@ export default {
   NarukamiNoMikoto,
   ShoukiNoKamiTheProdigal,
   GuardianOfApepsOasis,
+  AllDevouringNarwhal,
 };
