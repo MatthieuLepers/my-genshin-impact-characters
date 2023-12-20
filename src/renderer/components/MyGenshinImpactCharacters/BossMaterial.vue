@@ -1,15 +1,19 @@
 <template>
-  <div class="BossMaterial" v-if="filteredCharacters.length">
-    <button class="BossMaterialTitle" @click="open = !open">
+  <div class="BossMaterial">
+    <component
+      :is="filteredCharacters.length ? 'button' : 'div'"
+      class="BossMaterialTitle"
+      @click="filteredCharacters.length ? (open = !open) : null"
+    >
       <span>
         <img class="BossMaterialImg" :src="`static/img/materials/${material}.png`" :alt="material" />
         [{{ getOwnedAndInvestedMaterials(material) }}/{{ getMaxMaterial(material) }}] {{ $t(`Data.WeaklyBosses.${boss}.materials.${material}`) }}
         <span v-if="filters.elements.length">&nbsp;({{ filteredCharacters.length }})</span>
       </span>
       <FormInput type="number" :min="0" :max="9999" v-model="AppStore.data.materials[material]" :label="$t('App.inInventory')" @click.stop />
-    </button>
+    </component>
     <DataTable
-      v-show="open"
+      v-show="open && filteredCharacters.length"
       :class="{ 'DataTable--Open': open }"
       :columns="columns"
       :paginate="false"

@@ -4,7 +4,7 @@ export default {
       name: 'Narvhal Stellavore',
       materials: {
         LightlessSilkString: 'Ficelle de soie sans lumière',
-        LightlessEyeOfTheMaelstrom: 'Œil de tourbillon sans lmière',
+        LightlessEyeOfTheMaelstrom: 'Œil de tourbillon sans lumière',
         LightlessMass: 'Masse sans lumière',
       },
     },

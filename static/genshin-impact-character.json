@@ -1833,6 +1833,52 @@
           "material": "LightlessMass"
         }
       }
+    },
+    "Chevreuse": {
+      "releasedAt": "2024-01-09",
+      "element": "pyro",
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "LightlessEyeOfTheMaelstrom"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "LightlessEyeOfTheMaelstrom"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "LightlessEyeOfTheMaelstrom"
+        }
+      }
+    },
+    "Navia": {
+      "releasedAt": "2023-12-20",
+      "element": "geo",
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "LightlessSilkString"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "LightlessSilkString"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "LightlessSilkString"
+        }
+      }
     }
   }
 }
