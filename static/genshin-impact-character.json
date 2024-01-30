@@ -1879,6 +1879,52 @@
           "material": "LightlessSilkString"
         }
       }
+    },
+    "Gaming": {
+      "releasedAt": "2024-01-31",
+      "element": "pyro",
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "LightlessMass"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "LightlessMass"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "LightlessMass"
+        }
+      }
+    },
+    "Xianyun": {
+      "releasedAt": "2024-01-31",
+      "element": "anemo",
+      "level": 1,
+      "phase": 0,
+      "constellations": 0,
+      "aptitudes": {
+        "normalAttack": {
+          "level": 1,
+          "material": "LightlessEyeOfTheMaelstrom"
+        },
+        "elementalSkill": {
+          "level": 1,
+          "constellationIncrease": 5,
+          "material": "LightlessEyeOfTheMaelstrom"
+        },
+        "elementalBurst": {
+          "level": 1,
+          "constellationIncrease": 3,
+          "material": "LightlessEyeOfTheMaelstrom"
+        }
+      }
     }
   }
 }
