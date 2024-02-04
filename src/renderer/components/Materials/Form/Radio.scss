@@ -1,9 +1,9 @@
-@import '~scss/utilities.scss';
+@import '~styles/utilities.scss';
 
-.FormRadio {
+.m-form-radio {
   position: relative;
 
-  @include make-accessibility() {
+  @include make-accessibility-shadow() {
     width: 32px;
     height: 32px;
     top: calc(50% - 16px);
@@ -17,12 +17,13 @@
     z-index: -1;
 
     &+label {
-      @include font-size(12);
-      padding-left: 40px;
+      @include set-font-scale('xs');
+      padding-left: rem(40px);
       min-height: 32px;
       display: flex;
       align-items: center;
       cursor: pointer;
+      color: color(grey000);
 
       &::before {
         content: '';
@@ -31,7 +32,7 @@
         position: absolute;
         top: calc(50% - 16px);
         left: 0;
-        background-color: lighten(color(primary), 10.76);
+        background-color: color(grey800);
         border-radius: 16px;
       }
 
@@ -44,7 +45,7 @@
         top: calc(50% - 6px);
         left: 10px;
         opacity: 0;
-        background-color: color(f);
+        background-color: color(grey000);
         border-radius: 50%;
       }
     }

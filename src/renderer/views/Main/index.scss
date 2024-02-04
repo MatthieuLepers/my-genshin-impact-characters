@@ -1,26 +1,26 @@
-@import '~scss/utilities.scss';
+@import '~styles/utilities.scss';
 
 .MainView {
   padding: 0 8px;
 
   .BossTitle {
-    @include font-size(18);
+    @include set-font-scale('m');
     @include font-family('open-sans', 600);
-    background-color: lighten(color(primary), 11.74);
-    margin: 16px 4px 0;
+    background-color: color(grey800);
+    margin: rem(16px) rem(4px) 0;
     width: calc(100% - 8px);
-    padding: 12px 8px;
+    padding: rem(12px) rem(8px);
     letter-spacing: .1rem;
 
     span {
-      @include font-size(16);
+      @include set-font-scale('m');
       letter-spacing: normal;
     }
   }
 
   &Filters {
-    margin-top: 16px;
-    margin-bottom: 16px;
+    margin-top: rem(16px);
+    margin-bottom: rem(16px);
   }
 
   .CharacterList {
@@ -28,7 +28,7 @@
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    margin: 16px 0 0;
+    margin: rem(16px) 0 0;
     padding: 0;
     list-style: none;
   }

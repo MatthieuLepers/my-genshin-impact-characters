@@ -1,25 +1,83 @@
-@import '~scss/utilities.scss';
+@import '~styles/utilities.scss';
 
-.Button {
-  @include make-accessibility();
-  min-height: 32px;
-  border-radius: 16px;
-  padding: 0 4px;
-  text-align: center;
-  background-color: lighten(color(primary), 10.76);
-  color: color(text);
-  position: relative;
+@mixin set-button-color($background, $text) {
+  background-color: $background;
+  color: $text;
+
+  .m-button__icon {
+    background-color: $text;
+    color: $background;
+  }
 
   &:focus,
   &:hover {
-    background-color: lighten(color(primary), 20.76);
+    background-color: lighten($background, 10);
+
+    .m-button__icon {
+      background-color: $text;
+      color: $background;
+    }
   }
 
-  &--Iconed {
+  &.m-button--iconed:focus .m-button__icon,
+  &.m-button--iconed:hover .m-button__icon {
+    color: lighten($background, 10);
+  }
+
+  &.m-button--inverted {
+    background-color: $text;
+    color: $background;
+
+    .m-button__icon {
+      background-color: $background;
+      color: $text;
+    }
+
+    &:focus,
+    &:hover {
+      background-color: lighten($text, 10);
+
+      .m-button__icon {
+        background-color: $background;
+        color: $text;
+      }
+    }
+
+    &.m-button--iconed:focus .m-button__icon,
+    &.m-button--iconed:hover .m-button__icon {
+      color: lighten($text, 10);
+    }
+  }
+}
+
+.m-button {
+  min-height: 32px;
+  border-radius: 16px;
+  padding: 0 rem(8px);
+  text-align: center;
+  background-color: color(grey800);
+  color: color(grey000);
+
+  &:focus,
+  &:hover {
+    outline: none;
+    background-color: color(grey700);
+  }
+
+  &--squared {
+    border-radius: 0;
+  }
+
+  &--iconOnly {
+    padding: 0;
+    min-width: 32px;
+  }
+
+  &--iconed {
     position: relative;
   
-    .ButtonIcon {
-      @include font-size(12);
+    .m-button__icon {
+      font-size: rem(12px);
       position: absolute;
       top: 4px;
       width: 24px;
@@ -27,104 +85,57 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: lighten(color(primary), 20.76);
+      background-color: color(grey700);
       border-radius: 50%;
     }
 
-    &:focus .ButtonIcon,
-    &:hover .ButtonIcon {
-      background-color: lighten(color(primary), 30.76);
+    &:focus .m-button__icon,
+    &:hover .m-button__icon {
+      background-color: color(grey600);
     }
 
-    &.Button--Iconed-Left {
-      padding-left: 32px;
+    &.m-button--iconed-left {
+      padding-left: rem(32px);
   
-      .ButtonIcon {
+      .m-button__icon {
         left: 4px;
       }
     }
 
-    &.Button--Iconed-Right {
-      padding-right: 32px;
+    &.m-button--iconed-right {
+      padding-right: rem(32px);
 
-      .ButtonIcon {
+      .m-button__icon {
         right: 4px;
       }
-
-      .ButtonLabel {
-        padding-right: 8px;
-      }
     }
   }
 
-  &--Secondary {
-    background-color: color(secondary);
-
-    .ButtonIcon {
-      background-color: lighten(color(secondary), 10.76);
-    }
-
-    &:focus,
-    &:hover {
-      background-color: lighten(color(secondary), 10.76);
-
-      .ButtonIcon {
-        background-color: lighten(color(secondary), 20.76);
-      }
-    }
-
-    &.Button--Iconed:focus .ButtonIcon,
-    &.Button--Iconed:hover .ButtonIcon {
-      background-color: lighten(color(secondary), 30.76);
-    }
+  &--success:not(&--disabled) {
+    @include set-button-color(color(success300), color(grey000));
   }
 
-  &--Danger {
-    background-color: color(danger);
-
-    .ButtonIcon {
-      background-color: lighten(color(danger), 10.76);
-    }
-
-    &:focus,
-    &:hover {
-      background-color: lighten(color(danger), 10.76);
-
-      .ButtonIcon {
-        background-color: lighten(color(danger), 20.76);
-      }
-    }
-
-    &.Button--Iconed:focus .ButtonIcon,
-    &.Button--Iconed:hover .ButtonIcon {
-      background-color: lighten(color(secondary), 30.76);
-    }
+  &--primary:not(&--disabled) {
+    @include set-button-color(color(grey900), color(grey000));
   }
 
-  &--Cancel {
-    background-color: color(cancel);
-
-    .ButtonIcon {
-      background-color: lighten(color(cancel), 10.76);
-    }
-
-    &:focus,
-    &:hover {
-      background-color: lighten(color(cancel), 10.76);
-
-      .ButtonIcon {
-        background-color: lighten(color(cancel), 20.76);
-      }
-    }
-
-    &.Button--Iconed:focus .ButtonIcon,
-    &.Button--Iconed:hover .ButtonIcon {
-      background-color: lighten(color(cancel), 30.76);
-    }
+  &--secondary:not(&--disabled)  {
+    @include set-button-color(color(secondary200), color(grey000));
   }
 
-  &--Disabled,
-  &--Disabled:hover {
-    background-color: color(cancel);
+  &--warning:not(&--disabled) {
+    @include set-button-color(color(warning300), color(grey000));
+  }
+
+  &--danger:not(&--disabled) {
+    @include set-button-color(color(danger300), color(grey000));
+  }
+
+  &--cancel:not(&--disabled) {
+    @include set-button-color(color(grey600), color(grey000));
+  }
+
+  &--disabled {
+    @include set-button-color(color(grey600), color(grey000));
   }
 }

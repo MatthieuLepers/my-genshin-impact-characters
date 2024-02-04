@@ -1,9 +1,10 @@
 <template>
-  <div :class="GenerateModifiers('ContextMenuItem', { Separator: true })"></div>
+  <div :class="GenerateModifiers('m-contextmenu-item', { separator: true })"></div>
 </template>
 
-<script>
-export default {
-  name: 'ContextMenuSeparator',
-};
+<script setup>
+defineOptions({ name: 'ContextMenuSeparator' });
 </script>
+
+<style lang="scss" src="./Separator.scss">
+</style>

@@ -1,156 +1,183 @@
 <template>
-  <div class="DataTable">
-    <div class="DataTableHead">
+  <div class="m-datatable">
+    <div class="m-datatable__header">
       <DataTableRow>
-        <DataTableColumn v-if="enableActionRow" :modifiers="{ Action: true }" />
-        <DataTableColumn :modifiers="{ Inner: true, NoActionRow: !enableActionRow }">
-          <DataTableColumn :class="columnData.className" v-for="([column, columnData], i) in Object.entries(columns)" :key="i" :data-label="columnData.label">
-            <DataTableButton :variant="`Sort${getSortingDirection(column)}`" v-if="!isSortDisabled(column)" @click="sortBy(column)">
+        <DataTableColumn
+          v-if="props.showActionRow"
+          :modifiers="{ action: true }"
+        />
+        <DataTableColumn :modifiers="{ inner: true, noActionRow: !props.showActionRow }">
+          <DataTableColumn
+            v-for="([column, columnData], i) in Object.entries(props.columns)"
+            :key="i"
+            :class="columnData.className"
+            :data-label="columnData.label"
+          >
+            <DataTableButton
+              v-if="!actions.isSortDisabled(column)"
+              :modifiers="{ longRound: true, [`sort${actions.getSortingDirection(column)}`]: true }"
+              @click="actions.sortBy(column)"
+            >
               {{ columnData.label }}
             </DataTableButton>
-            <span v-else>{{ columnData.label }}</span>
+            <span v-else>
+              {{ columnData.label }}
+            </span>
           </DataTableColumn>
         </DataTableColumn>
       </DataTableRow>
     </div>
-    <component :is="isGrabbable() ? 'Draggable' : 'div'" class="DataTableBody" :list="result" @change="handleDraggableChange">
-      <DataTableRow
-        v-for="(obj, i) in result"
-        :key="`row${i}`"
-        :modifiers="{ Selectable: enableSelectionRow, Selected: obj.selected }"
-        @click="handleRowClick(obj)"
-        @contextmenu="$event => $emit('contextmenu', $event, obj)"
+    <div class="m-datatable__body">
+      <Draggable
+        :list="[...State.result]"
+        :move="State.isGrabbable ? props.allowMoveFn : () => false"
+        itemKey="id"
+        @change="actions.handleOrderChange"
       >
-        <DataTableRow v-if="enableActionRow" :modifiers="{ Action: true, Opened: isOpened(obj) }">
-          <DataTableColumn :modifiers="{ Action: true }">
-            <DataTableButton :modifiers="{ Less: true, Shadowed: true }" @click.stop="close(obj)" />
-          </DataTableColumn>
-          <DataTableColumn :modifiers="{ Inner: true }">
-            <slot name="ActionColumnInner" :obj="obj" :close="() => close(obj)" />
-          </DataTableColumn>
-        </DataTableRow>
-        <DataTableColumn v-if="enableActionRow" :modifiers="{ Action: true }">
-          <DataTableButton :modifiers="{ More: true, Shadowed: true }" @click.stop="open(obj)" />
-          <slot name="ActionColumn" :obj="obj" />
-        </DataTableColumn>
-        <DataTableColumn :modifiers="{ Inner: true, NoActionRow: !enableActionRow }">
-          <DataTableColumn :class="columnData.className" v-for="([column, columnData], j) in Object.entries(columns)" :key="`column${j}`" :data-label="columnData.label">
-            <slot :name="column" :obj="obj" :value="obj[column]" :column="column">
-              {{ obj[column] }}
-            </slot>
-          </DataTableColumn>
-        </DataTableColumn>
-        <slot name="SecretArea" />
-      </DataTableRow>
-      <slot name="LastRow" />
-    </component>
-    <div class="DataTableFooter" v-if="paginate && paginated.length > 1">
+        <template v-slot:item="{ element }">
+          <div class="m-datatable__draggable">
+            <DataTableBodyRow
+              :columns="props.columns"
+              :obj="element"
+              :showActionRow="props.showActionRow"
+              :showSelectionRow="props.showSelectionRow"
+            >
+              <template v-slot:actionColumnInner="{ obj, close }">
+                <slot name="actionColumnInner" :obj="obj" :close="close" />
+              </template>
+              <template v-slot:actionColumn="{ obj }">
+                <slot name="actionColumn" :obj="obj" />
+              </template>
+              <template
+                v-for="(columnName, i) in Object.keys(props.columns)"
+                :key="i"
+                v-slot:[columnName]="{ obj, value, column }"
+              >
+                <slot
+                  :name="columnName"
+                  :obj="obj"
+                  :value="value"
+                  :column="column"
+                >
+                  {{ value }}
+                </slot>
+              </template>
+              <template v-slot:secretArea="{ obj }">
+                <slot name="secretArea" :obj="obj" />
+              </template>
+            </DataTableBodyRow>
+            <slot name="lastRow" />
+          </div>
+        </template>
+      </Draggable>
+    </div>
+    <div
+      v-if="props.paginate && State.paginated.length > 1"
+      class="m-datatable__footer"
+    >
       <!-- <DataTablePagination :data="paginated" :perPage="perPage" v-model="page" /> -->
     </div>
   </div>
 </template>
 
-<script>
+<script setup>
+import { reactive, computed, watch } from 'vue';
 import Draggable from 'vuedraggable';
-import DataTableRow from './Row';
-import DataTableColumn from './Column';
-import DataTableButton from './Button';
-// import DataTablePagination from './Pagination';
 
-export default {
-  name: 'DataTable',
-  components: { Draggable, DataTableRow, DataTableColumn, DataTableButton },
-  props: {
-    columns: { type: Object, default: () => ({}) },
-    data: { type: Array, default: () => [] },
-    perPage: { type: Number, default: 20 },
-    filters: { type: Object, default: () => ({}) },
-    paginate: { type: Boolean, default: true },
-    enableActionRow: { type: Boolean, default: true },
-    enableSelectionRow: { type: Boolean, default: false },
+import DataTableRow from '@renderer/components/Materials/DataTable/Row.vue';
+import DataTableBodyRow from '@renderer/components/Materials/DataTable/BodyRow.vue';
+import DataTableColumn from '@renderer/components/Materials/DataTable/Column.vue';
+import DataTableButton from '@renderer/components/Materials/DataTable/Button.vue';
+// import DataTablePagination from '@renderer/components/Materials/DataTable/Pagination.vue';
+
+defineOptions({ name: 'DataTable' });
+
+const emit = defineEmits(['orderChange']);
+
+const props = defineProps({
+  columns: { type: Object, default: () => ({}) },
+  data: { type: Array, default: () => [] },
+  perPage: { type: Number, default: 20 },
+  filters: { type: Object, default: () => ({}) },
+  paginate: { type: Boolean, default: true },
+  showActionRow: { type: Boolean, default: true },
+  showSelectionRow: { type: Boolean, default: false },
+  allowMoveFn: { type: Function, default: () => true },
+});
+
+const state = reactive({
+  perPage: props.perPage,
+  page: 1,
+  sorting: {
+    key: null,
+    direction: '',
   },
-  data() {
-    return {
-      opened: [],
-      perChunk: this.perPage,
-      page: 1,
-      sorting: {
-        name: null,
-        direction: '',
-      },
+});
+
+const State = computed(() => {
+  const filtered = Object
+    .values(props.filters)
+    .reduce((objList, fn) => objList.filter(fn), props.data)
+  ;
+  const sorted = (() => {
+    const { key, direction } = state.sorting;
+    if (!key || !direction) {
+      return filtered;
+    }
+    return filtered.slice().sort((a, b) => props.columns[key].filter(a, b, direction === 'Desc'));
+  })();
+  const paginated = sorted.reduce((acc, val, i) => {
+    const ch = Math.floor(i / state.perPage);
+    acc[ch] = [].concat((acc[ch] || []), val);
+    return acc;
+  }, []);
+  const result = props.paginate
+    ? paginated[state.page - 1] || []
+    : sorted
+  ;
+  const isGrabbable = result.every((obj) => obj.order !== undefined);
+
+  return {
+    filtered,
+    sorted,
+    paginated,
+    result,
+    isGrabbable,
+  };
+});
+
+const actions = {
+  isSortDisabled(key) {
+    return !props.columns[key].filter;
+  },
+  getSortingDirection(key) {
+    if (state.sorting.key && state.sorting.key === key) {
+      return state.sorting.direction || '';
+    }
+    return '';
+  },
+  sortBy(key) {
+    const sortDirection = actions.getSortingDirection(key);
+    state.sorting = {
+      key,
+      direction: !sortDirection || sortDirection === 'Desc' ? 'Asc' : 'Desc',
     };
   },
-  methods: {
-    open(obj) {
-      this.opened.push(obj);
-    },
-    close(obj) {
-      this.opened.splice(this.opened.indexOf(obj), 1);
-    },
-    isOpened(obj) {
-      return this.opened.includes(obj);
-    },
-    isSortDisabled(key) {
-      return !this.columns[key].filter;
-    },
-    getSortingDirection(key) {
-      if (this.sorting.name && this.sorting.name === key) {
-        return this.sorting.direction || '';
-      }
-      return '';
-    },
-    sortBy(key) {
-      const sortDirection = this.getSortingDirection(key);
-      this.sorting = {
-        name: key,
-        direction: !sortDirection || sortDirection === 'Desc' ? 'Asc' : 'Desc',
-      };
-    },
-    handleRowClick(obj) {
-      if (this.enableSelectionRow) {
-        this.$emit('selectLine', obj);
-      }
-    },
-    isGrabbable() {
-      return this.result.every((obj) => obj.order !== undefined);
-    },
-    handleDraggableChange() {
-      const changed = [];
-      this.result.forEach((obj, index) => {
-        if (obj.order !== null && obj.order !== index + 1) {
-          // eslint-disable-next-line no-param-reassign
-          obj.order = index + 1;
-          changed.push(obj);
-        }
-      });
-      if (changed.length) {
-        this.$emit('orderChange', changed);
-      }
-    },
-  },
-  computed: {
-    filtered() {
-      return Object.values(this.filters).reduce((objList, fn) => objList.filter(fn), this.data);
-    },
-    sorted() {
-      const { name, direction } = this.sorting;
-      if (!name || !direction) {
-        return this.filtered;
-      }
-      return this.filtered.slice().sort((a, b) => this.columns[name].filter(a, b, direction === 'Desc'));
-    },
-    paginated() {
-      return this.sorted.reduce((acc, val, i) => {
-        const ch = Math.floor(i / this.perChunk);
-        acc[ch] = [].concat((acc[ch] || []), val);
-        return acc;
-      }, []);
-    },
-    result() {
-      return this.paginate ? this.paginated[this.page - 1] || [] : this.sorted;
-    },
+  handleOrderChange(e) {
+    const { newIndex, oldIndex } = e.moved;
+    emit('orderChange', {
+      account: State.value.result[newIndex],
+      order: oldIndex,
+    }, {
+      account: State.value.result[oldIndex],
+      order: newIndex,
+    });
   },
 };
+
+watch(() => props.perPage, (newVal) => {
+  state.perPage = newVal;
+});
 </script>
 
 <style lang="scss" src="./index.scss">

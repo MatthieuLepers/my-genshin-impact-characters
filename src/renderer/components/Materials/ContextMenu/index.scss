@@ -1,13 +1,13 @@
-@import '~scss/utilities.scss';
+@import '~styles/utilities.scss';
 
-.ContextMenu {
+.m-contextmenu {
   list-style: none;
   padding: 8px 0;
   margin: 0;
-  background-color: lighten(desaturate(adjust-hue(color(primary), 30), 2.67), 4.90);
+  background-color: lighten(desaturate(adjust-hue(color(grey900), 30), 2.67), 4.90);
   min-width: 265px;
   position: absolute;
-  z-index: 99;
+  z-index: 999;
 
   &.top {
     top: -8px;
@@ -25,7 +25,7 @@
     left: 0;
   }
 
-  &--Shadowed {
-    filter: drop-shadow(0px 0px 4px rgba(color(0), .5));
+  &--shadowed {
+    filter: drop-shadow(0px 0px 4px rgba(color(grey999), .5));
   }
 }

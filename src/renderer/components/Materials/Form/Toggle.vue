@@ -1,37 +1,52 @@
 <template>
-  <div :class="GenerateModifiers('FormToggle', { Focus: focused, [variant]: variant !== null })">
+  <div :class="GenerateModifiers('m-form-toggle', {
+    focus: state.focused,
+    disabled: props.disabled,
+    [props.variant]: props.variant,
+    [props.direction]: props.direction,
+  })">
     <input
       type="checkbox"
-      :id="`formToggle${_uid}`"
-      :checked="value"
-      @input="$emit('input', $event.target.checked)"
-      @focus="handleFocus($event, true)"
-      @blur="handleFocus($event, false)"
+      :id="props.id || `formToggle${$uid}`"
+      :checked="props.modelValue"
+      :name="props.name"
+      :disabled="props.disabled"
+      @input="emit('update:modelValue', $event.target.checked)"
+      @focus="actions.handleFocus('focus', true)"
+      @blur="actions.handleFocus('blur', false)"
     />
-    <label :for="`formToggle${_uid}`">
-      {{ label }}
+    <label class="m-form-toggle__label" :for="props.id || `formToggle${$uid}`">
+      <slot>{{ props.label }}</slot>
     </label>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'FormToggle',
-  props: {
-    value: { type: Boolean, required: true },
-    label: { type: String, required: true },
-    variant: { type: String, default: null },
-  },
-  data() {
-    return {
-      focused: false,
-    };
-  },
-  methods: {
-    handleFocus(e, value) {
-      this.focused = value;
-      this.$emit(e.type, this.focused);
-    },
+<script setup>
+import { reactive, getCurrentInstance } from 'vue';
+
+defineOptions({ name: 'FormToggle' });
+
+const emit = defineEmits(['update:modelValue', 'focus', 'blur']);
+const $uid = getCurrentInstance().uid;
+
+const props = defineProps({
+  modelValue: { type: Boolean, required: true },
+  id: { type: String, default: null },
+  name: { type: String, default: null },
+  label: { type: String, required: true },
+  disabled: { type: Boolean, default: false },
+  variant: { type: String, default: 'default' },
+  direction: { type: String, default: 'left' },
+});
+
+const state = reactive({
+  focused: false,
+});
+
+const actions = {
+  handleFocus(type, value) {
+    state.focused = value;
+    emit(type, state.focused);
   },
 };
 </script>

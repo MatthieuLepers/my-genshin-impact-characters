@@ -1,0 +1,49 @@
+@import '~styles/utilities.scss';
+
+@import '~styles/bases/bases.scss';
+@import '~styles/bases/classes.scss';
+@import '~styles/bases/flexy-grid.scss';
+
+#app {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 60px auto;
+  grid-template-rows: 30px auto;
+
+  .m-title-bar {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+
+  .AppMenu {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .View {
+    grid-column: 2;
+    grid-row: 2;
+    width: calc(100vw - 60px);
+    height: calc(100vh - 30px);
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  ::-webkit-scrollbar {
+    background: none;
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: color(grey800);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(color(grey000), .4);
+  }
+}

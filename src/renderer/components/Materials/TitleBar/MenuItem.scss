@@ -1,18 +1,19 @@
-@import '~scss/utilities.scss';
+@import '~styles/utilities.scss';
 
-.TitleBarMenuItem {
+.m-title-bar__menu-item {
   height: 100%;
   position: relative;
 
-  &Button {
+  &__button {
+    @include set-font-scale('s');
     cursor: pointer;
-    padding: 0 10px;
+    padding: 0 rem(12px);
     height: 100%;
 
     &:hover,
     &:focus {
       outline: none;
-      background-color: rgba(color(f), .1);
+      background-color: rgba(color(grey000), .1);
     }
   }
 }

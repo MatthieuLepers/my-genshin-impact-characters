@@ -1,38 +1,43 @@
 <template>
-  <TitleBar :btnMaximize="false" :btnHelp="false" :appTitle="`My Genshin Impact characters v${appVersion}`">
-    <template v-slot:menu>
-      <TitleBarMenu :menuList="menuList">
+  <TitleBar
+    :name="props.name"
+    :maximizable="false"
+    :showHelp="false"
+    :appTitle="`My Genshin Impact Characters v${version}`"
+  >
+    <template v-slot:menu="{ windowName }">
+      <TitleBarMenu :menuList="State.menuList">
         <template v-slot:fileMenu="{ visible, close }">
-          <AppTitleBarFileMenu :visible="visible" @close="close" />
+          <AppTitleBarFileMenu :visible="visible" :name="windowName" @close="close" />
         </template>
         <template v-slot:langMenu="{ visible, close }">
           <AppTitleBarLangMenu :visible="visible" @close="close" />
+        </template>
+        <template v-slot:toolsMenu="{ visible, close }">
+          <AppTitleBarToolsMenu :visible="visible" @close="close" />
         </template>
       </TitleBarMenu>
     </template>
   </TitleBar>
 </template>
 
-<script>
-import TitleBar from '@/components/Materials/TitleBar/index';
-import TitleBarMenu from '@/components/Materials/TitleBar/Menu';
+<script setup>
+import { computed } from 'vue';
 
-import AppTitleBarFileMenu from './FileMenu';
-import AppTitleBarLangMenu from './LangMenu';
+import TitleBar from '@renderer/components/Materials/TitleBar/index.vue';
+import TitleBarMenu from '@renderer/components/Materials/TitleBar/Menu.vue';
+import AppTitleBarFileMenu from '@renderer/components/AppTitleBar/FileMenu.vue';
+import AppTitleBarLangMenu from '@renderer/components/AppTitleBar/LangMenu.vue';
+
 import { version } from '../../../../package.json';
 
-export default {
-  name: 'AppTitleBar',
-  components: {
-    TitleBar, TitleBarMenu, AppTitleBarFileMenu, AppTitleBarLangMenu,
-  },
-  computed: {
-    menuList() {
-      return ['fileMenu', 'langMenu'];
-    },
-    appVersion() {
-      return version;
-    },
-  },
-};
+defineOptions({ name: 'AppTitleBar' });
+
+const props = defineProps({
+  name: { type: String, required: true },
+});
+
+const State = computed(() => ({
+  menuList: ['fileMenu', 'langMenu'],
+}));
 </script>

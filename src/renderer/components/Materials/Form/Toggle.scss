@@ -1,22 +1,90 @@
-@import '~scss/utilities.scss';
+@import '~styles/utilities.scss';
 
-.FormToggle {
+.m-form-toggle {
   position: relative;
 
-  @include make-accessibility() {
-    width: 48px;
-  }
+  &--default {
+    &.m-form-toggle--left {
+      &.m-form-toggle {
+        @include make-accessibility-shadow {
+          width: 40px;
+          height: 24px;
+        };
+      }
 
-  input {
-    position: absolute;
-    top: 0;
-    left: 100vw;
+      input {
+        left: 8px;
+      }
 
-    &+label {
-      @include font-size(12);
-      cursor: pointer;
+      .m-form-toggle__label {
+        padding-left: rem(48px);
+
+        &::before {
+          left: 0;
+        }
+
+        &::after {
+          left: 4px;
+        }
+      }
+    }
+
+    &.m-form-toggle--right {
+      &.m-form-toggle {
+        @include make-accessibility-shadow {
+          width: 40px;
+          height: 24px;
+          right: 0;
+          left: auto;
+        };
+      }
+
+      input {
+        right: 8px;
+      }
+
+      .m-form-toggle__label {
+        padding-right: rem(48px);
+
+        &::before {
+          right: 0;
+        }
+
+        &::after {
+          right: 28px;
+        }
+      }
+    }
+
+    &.m-form-toggle--disabled {
+      .m-form-toggle__label {
+        &::before {
+          background-color: color(grey500);
+        }
+      }
+    }
+
+    input {
+      position: absolute;
+      z-index: 0;
+      top: 2px;
+
+      &:checked+.m-form-toggle__label {
+        &::before {
+          background-color: color(secondary200);
+        }
+
+        &::after {
+          transform: translateX(16px);
+        }
+      }
+    }
+
+    .m-form-toggle__label {
+      @include set-font-scale('xs');
+      color: color(grey000);
       position: relative;
-      padding: 0 0 0 56px;
+      cursor: pointer;
       display: flex;
       align-items: center;
       min-height: 24px;
@@ -25,36 +93,26 @@
       &::after {
         content: '';
         position: absolute;
+        z-index: 1;
+        cursor: pointer;
       }
 
       &::before {
         @include transition(background-color .2s ease);
-        background-color: lighten(color(primary), 10.76);
-        width: 48px;
+        width: 40px;
         height: 24px;
-        top: calc(50% - 12px);
-        left: 0;
-        border-radius: 12px;
+        border-radius: 16px;
+        background-color: color(grey800);
+        top: 0;
       }
 
       &::after {
-        @include transition(left .2s ease);
-        background-color: color(f);
+        @include transition(transform .2s ease);
+        width: 16px;
+        height: 16px;
         border-radius: 50%;
-        width: 18px;
-        height: 18px;
-        top: calc(50% - 9px);
-        left: 3px;
-      }
-    }
-
-    &:checked+label {
-      &::before {
-        background-color: color(secondary);
-      }
-
-      &::after {
-        left: 27px;
+        background-color: color(grey000);
+        top: 4px;
       }
     }
   }

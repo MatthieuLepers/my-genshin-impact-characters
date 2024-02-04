@@ -1,63 +1,84 @@
 module.exports = {
   root: true,
-  parserOptions: {
-    parser: '@babel/eslint-parser',
-    sourceType: 'module',
-  },
   env: {
-    browser: true,
+    commonjs: true,
+    es2021: true,
     node: true,
     jest: true,
   },
-  // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
-  // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-  extends: ['plugin:vue/essential', 'airbnb-base'],
-  globals: {
-    __static: true,
+  extends: [
+    'eslint:recommended',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
+    'plugin:vue/vue3-essential',
+    '@electron-toolkit',
+    'airbnb-base',
+    'airbnb-typescript/base',
+  ],
+  parser: 'vue-eslint-parser',
+  parserOptions: {
+    parser: "@typescript-eslint/parser",
+    ecmaVersion: 'latest',
+    project: ['./tsconfig.json', './tsconfig.eslint.json'],
+    extraFileExtensions: ['.vue'],
   },
   plugins: [
     'vue',
+    'import',
+    '@typescript-eslint',
   ],
-  // check if imports actually resolve
+  globals: {
+    api: true,
+  },
   settings: {
+    'import/core-modules': [
+      'electron',
+    ],
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
+    },
     'import/resolver': {
-      webpack: {
-        config: '.electron-vue/webpack.renderer.config.js',
+      typescript: {
+        alwaysTryTypes: true,
+        project: ['./tsconfig.json', './tsconfig.node.json'],
       },
     },
   },
   rules: {
-    'global-require': 0,
-    // don't require .vue extension when importing
+    'global-require': 'off',
+    'import/no-cycle': 'off',
+    'import/no-dynamic-require': 'off',
     'import/extensions': ['error', 'always', {
       js: 'never',
-      vue: 'never',
+      jsx: 'never',
+      ts: 'never',
+      tsx: 'never',
     }],
-    // disallow reassignment of function parameters
-    // disallow parameter object manipulation except for specific exclusions
-    'no-param-reassign': 0,
-    // allow optionalDependencies
-    'import/no-extraneous-dependencies': 0,
-    'import/newline-after-import': 0,
-    'no-shadow': 0,
-    'no-multi-assign': 0,
-    // allow debugger during development
-    'no-console': process.env.NODE_ENV === 'production' ? 2 : 0,
-    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
-    'linebreak-style': ['error', 'windows'],
-    'max-len': [
-      'error',
-      {
-        code: 2000,
-        tabWidth: 2,
-      },
-    ],
-    'semi-style': 0,
-    'function-paren-newline': 0,
-    'class-methods-use-this': 0,
-    'object-curly-newline': 0,
-    'vue/custom-event-name-casing': 0,
-    'vue/no-mutating-props': 0,
-    'import/no-cycle': 0,
+    'import/prefer-default-export': 'off',
+    'object-curly-newline': ['error', {
+      ImportDeclaration: { multiline: true, minProperties: 4 },
+    }],
+    'no-param-reassign': 'off',
+    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'linebreak-style': ['error', 'unix'],
+    'max-len': ['error', {
+      code: 512,
+      tabWidth: 2,
+    }],
+    'semi-style': 'off',
+    'class-methods-use-this': 'off',
+    'func-names': 'off',
+    'vue/multi-word-component-names': 'off',
+    'vue/no-multiple-template-root': 'off',
+    'vue/require-default-prop': 'off',
+    'vue/no-mutating-props': 'off',
+    'new-cap': 'off',
+    'arrow-body-style': 'off',
+    'max-classes-per-file': ['error', {
+      ignoreExpressions: true,
+      max: 2,
+    },
+  ]
   },
 };

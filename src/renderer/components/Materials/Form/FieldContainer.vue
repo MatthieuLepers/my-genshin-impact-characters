@@ -1,16 +1,15 @@
 <template>
-  <div :class="GenerateModifiers('FormFieldContainer', modifiers)">
+  <div :class="GenerateModifiers('m-form-field-container', props.modifiers)">
     <slot />
   </div>
 </template>
 
-<script>
-export default {
-  name: 'FormFieldContainer',
-  props: {
-    modifiers: { type: Object, default: () => ({}) },
-  },
-};
+<script setup>
+defineOptions({ name: 'FormFieldContainer' });
+
+const props = defineProps({
+  modifiers: { type: Object, default: () => ({}) },
+});
 </script>
 
 <style lang="scss" src="./FieldContainer.scss">

@@ -1,4 +1,4 @@
-@import '~scss/utilities.scss';
+@import '~styles/utilities.scss';
 
 .CharacterCard {
   position: relative;
@@ -26,12 +26,12 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    padding-bottom: 18px;
+    padding-bottom: rem(18px);
   }
-    
+
   &Name {
     @include font-family('Open Sans', 700);
-    text-shadow: 1px 1px rgba(color(primary), .8), -1px 1px rgba(color(primary), .8), 1px -1px rgba(color(primary), .8), -1px -1px rgba(color(primary), .8);
+    text-shadow: 1px 1px rgba(color(grey800), .8), -1px 1px rgba(color(grey800), .8), 1px -1px rgba(color(grey800), .8), -1px -1px rgba(color(grey800), .8);
   }
 
   &Image {

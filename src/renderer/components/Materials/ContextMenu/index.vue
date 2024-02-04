@@ -1,39 +1,30 @@
 <template>
-  <ul :class="`${GenerateModifiers('ContextMenu', { Shadowed: shadowed })} ${anchor}`" v-show="isVisible" @click="attachMenu">
+  <ul
+    v-show="state.isVisible"
+    :class="`${GenerateModifiers('m-contextmenu', { shadowed: props.shadowed })} ${props.anchor}`"
+  >
     <slot />
   </ul>
 </template>
 
-<script>
-import { remote } from 'electron';
+<script setup>
+import { reactive, watch } from 'vue';
 
-export default {
-  name: 'ContextMenu',
-  props: {
-    visible: { type: Boolean, default: false },
-    anchor: { type: String, default: 'bottom left' },
-    shadowed: { type: Boolean, default: false },
-  },
-  data() {
-    return {
-      menu: new remote.Menu(),
-      isVisible: this.visible,
-    };
-  },
-  methods: {
-    attachMenu() {
-      remote.Menu.setApplicationMenu(this.menu);
-    },
-  },
-  mounted() {
-    this.attachMenu();
-  },
-  watch: {
-    visible() {
-      this.isVisible = this.visible;
-    },
-  },
-};
+defineOptions({ name: 'ContextMenu' });
+
+const props = defineProps({
+  visible: { type: Boolean, default: false },
+  anchor: { type: String, default: 'bottom left' },
+  shadowed: { type: Boolean, default: false },
+});
+
+const state = reactive({
+  isVisible: props.visible,
+});
+
+watch(() => props.visible, (newVal) => {
+  state.isVisible = newVal;
+});
 </script>
 
 <style lang="scss" src="./index.scss">

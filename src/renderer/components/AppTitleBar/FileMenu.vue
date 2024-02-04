@@ -1,49 +1,34 @@
 <template>
-  <ContextMenu :visible="visible">
-    <ContextMenuItem
-      :label="$t('App.TitleBarMenu.fileMenu.save')"
-      icon="icon-save"
-      shortcut="Ctrl+S"
-      @click="save"
-    />
+  <ContextMenu :visible="props.visible">
     <ContextMenuSeparator />
     <ContextMenuItem
-      :label="$t('App.TitleBarMenu.fileMenu.exit')"
-      shortcut="Alt+F4"
-      @click="closeApp"
+      :label="t('App.TitleBarMenu.fileMenu.exit')"
+      :shortcut="plateform === 'darwin' ? 'Cmd+Q' : 'Alt+F4'"
+      @click="actions.closeApp"
     />
   </ContextMenu>
 </template>
 
-<script>
-import { remote } from 'electron';
+<script setup>
+import { useI18n } from 'vue-i18n';
 
-import ContextMenu from '@/components/Materials/ContextMenu/index';
-import ContextMenuItem from '@/components/Materials/ContextMenu/Item';
-import ContextMenuSeparator from '@/components/Materials/ContextMenu/Separator';
-import NotificationStore from '@/components/Materials/Notification/Store';
+import ContextMenu from '@renderer/components/Materials/ContextMenu/index.vue';
+import ContextMenuItem from '@renderer/components/Materials/ContextMenu/Item.vue';
+import ContextMenuSeparator from '@renderer/components/Materials/ContextMenu/Separator.vue';
 
-import AppStore from '@/assets/js/stores/AppStore';
+defineOptions({ name: 'AppTitleBarFileMenu' });
 
-export default {
-  name: 'AppTitleBarFileMenu',
-  components: { ContextMenu, ContextMenuItem, ContextMenuSeparator },
-  props: {
-    visible: { type: Boolean, required: true },
-  },
-  methods: {
-    closeApp() {
-      remote.getCurrentWindow().close();
-    },
-    save() {
-      const success = AppStore.save(this.$root.$i18n.locale);
-      if (success) {
-        NotificationStore.success(this.$t('Notification.saveSuccess'));
-      } else {
-        NotificationStore.error(this.$t('Notification.saveError'));
-      }
-      this.$emit('close');
-    },
+const { t } = useI18n();
+const { plateform } = api;
+
+const props = defineProps({
+  visible: { type: Boolean, required: true },
+  name: { type: String, required: true },
+});
+
+const actions = {
+  closeApp() {
+    api.send(`close:${props.name}`);
   },
 };
 </script>

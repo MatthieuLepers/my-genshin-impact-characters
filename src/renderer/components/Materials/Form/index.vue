@@ -1,13 +1,16 @@
 <template>
-  <form class="Form" @submit="$emit('submit', $event)">
+  <form class="m-form" @submit="emit('submit', $event)" v-bind="$attrs">
     <slot />
   </form>
 </template>
 
-<script>
-export default {
-  name: 'Form',
-};
+<script setup>
+defineOptions({
+  name: 'MForm',
+  inheritAttrs: false,
+});
+
+const emit = defineEmits(['submit']);
 </script>
 
 <style lang="scss" src="./index.scss">

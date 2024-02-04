@@ -1,24 +1,24 @@
-@import '~scss/utilities.scss';
+@import '~styles/utilities.scss';
 
-.DataTableColumn {
+.m-datatable-column {
   flex: 1;
-  padding: 8px;
+  padding: rem(8px);
   display: flex;
   align-items: center;
 
-  &--Inner {
+  &--inner {
     padding: 0;
 
-    .DataTableColumn {
-      padding: 8px 8px 8px 0;
+    .m-datatable-column {
+      padding: rem(8px) rem(8px) rem(8px) 0;
     }
   }
 
-  &--NoActionRow .DataTableColumn {
-    padding: 8px;
+  &--noActionRow .m-datatable-column {
+    padding: rem(8px);
   }
 
-  &--Action {
+  &--action {
     flex: none;
     min-width: 48px;
   }
