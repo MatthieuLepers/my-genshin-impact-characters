@@ -101,7 +101,7 @@ const props = defineProps({
    * Valid modifiers:
    * - Modal : paddingLess, rounded
    * - Body  : centered
-   * - Size  : xs
+   * - Size  : xs, m
    */
   modifiers: { type: Object, default: () => ({}) },
 });

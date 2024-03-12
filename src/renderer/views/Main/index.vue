@@ -24,12 +24,11 @@
 
       <Modal
         name="newlyReleasedCharactersModal"
-        size="m"
+        :modifiers="{ m: true }"
         :title="t('App.Main.newlyReleasedCharactersModal.title', State.newlyReleasedCharacters.length)"
-        :okCancel="true"
-        :okLabel="t('App.Main.newlyReleasedCharactersModal.okLabel')"
-        :cancelLabel="t('App.Main.newlyReleasedCharactersModal.cancelLabel')"
-        @confirm="router.push({ name: 'CharacterList' })"
+        :acceptLabel="t('App.Main.newlyReleasedCharactersModal.okLabel')"
+        :refuseLabel="t('App.Main.newlyReleasedCharactersModal.cancelLabel')"
+        @accept="router.push({ name: 'CharacterList' })"
       >
         <ul class="CharacterList">
           <li
@@ -50,6 +49,7 @@ import {
   reactive,
   computed,
   onBeforeMount,
+  onMounted,
   nextTick,
 } from 'vue';
 import { useRouter } from 'vue-router';
@@ -76,9 +76,7 @@ const state = reactive({
 });
 
 const State = computed(() => ({
-  newlyReleasedCharacters() {
-    return AppStore.newlyReleasedCharacters;
-  },
+  newlyReleasedCharacters: AppStore.newlyReleasedCharacters,
 }));
 
 const actions = {
@@ -134,7 +132,9 @@ onBeforeMount(() => {
       return acc;
     }, {})
   ;
+});
 
+onMounted(() => {
   if (!Object.values(state.characters).length) {
     router.push({ name: 'CharacterList' });
   } else if (State.value.newlyReleasedCharacters.length && !AppStore.newlyModalOpened) {

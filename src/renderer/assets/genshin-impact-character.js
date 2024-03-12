@@ -1926,5 +1926,28 @@ export default {
         },
       },
     },
+    Chiori: {
+      releasedAt: '2024-03-12',
+      element: 'geo',
+      level: 1,
+      phase: 0,
+      constellations: 0,
+      aptitudes: {
+        normalAttack: {
+          level: 1,
+          material: 'LightlessSilkString',
+        },
+        elementalSkill: {
+          level: 1,
+          constellationIncrease: 3,
+          material: 'LightlessSilkString',
+        },
+        elementalBurst: {
+          level: 1,
+          constellationIncrease: 5,
+          material: 'LightlessSilkString',
+        },
+      },
+    },
   },
 };
