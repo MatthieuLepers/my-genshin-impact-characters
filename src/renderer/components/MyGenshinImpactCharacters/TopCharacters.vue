@@ -1,12 +1,16 @@
 <template>
-  <ul class="TopCharacters" @mousewheel="handleMouseWheel">
+  <ul
+    class="TopCharacters"
+    @mousewheel="actions.handleMouseWheel"
+    ref="el"
+  >
     <li
-      v-for="character in characters"
+      v-for="character in State.characters"
       :key="character.name"
-      @click="handleclick(character)"
+      @click="actions.handleclick(character)"
     >
       <img
-        :src="`static/img/characters/${character.imageName}_gacha_card.png`"
+        :src="image(`img/characters/${character.imageName}_gacha_card.png`)"
         :title="`${character.nameStr}, ${character.spentMora / 1000}k`"
         v-if="!character.name.startsWith('Traveler')"
       />
@@ -14,31 +18,31 @@
   </ul>
 </template>
 
-<script>
-import AppStore from '@/assets/js/stores/AppStore';
+<script setup>
+import { computed, ref } from 'vue';
 
-export default {
-  name: 'TopCharacters',
-  props: {
-    store: { type: Object, required: true },
+import AppStore from '@renderer/core/stores/AppStore';
+import { useFilteredCharacterStore } from '@renderer/core/stores/FilteredCharacterStore';
+import { image } from '@renderer/core/utils';
+
+const el = ref(null);
+
+const emit = defineEmits(['clickCharacter']);
+
+const State = computed(() => ({
+  characters: useFilteredCharacterStore.actions
+    .applyFilters(Object.values(AppStore.data.characters))
+    .filter((character) => character.owned)
+    .sort((a, b) => b.spentMora - a.spentMora || a.name.localeCompare(b.name)),
+}));
+
+const actions = {
+  handleMouseWheel(e) {
+    e.preventDefault();
+    el.value.scrollLeft += e.deltaY;
   },
-  methods: {
-    handleMouseWheel(e) {
-      e.preventDefault();
-      this.$el.scrollLeft += e.deltaY;
-    },
-    handleclick(character) {
-      this.$emit('clickCharacter', character);
-    },
-  },
-  computed: {
-    characters() {
-      return this.store
-        .applyFilters(Object.values(AppStore.data.characters))
-        .filter((character) => character.owned)
-        .sort((a, b) => b.spentMora - a.spentMora || a.name.localeCompare(b.name))
-      ;
-    },
+  handleclick(character) {
+    emit('clickCharacter', character);
   },
 };
 </script>

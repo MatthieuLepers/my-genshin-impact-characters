@@ -1,45 +1,74 @@
 <template>
-  <div :class="GenerateModifiers('FormCheckbox', { Focus: focused })">
+  <div :class="GenerateModifiers('m-form-checkbox', { focus: state.focused, [props.variant]: true })">
     <input
       type="checkbox"
-      :id="`formCheckbox${_uid}`"
-      :value="val"
-      :name="name"
-      :disabled="disabled"
-      :checked="checked"
-      @click="handleClick"
-      @focus="focused = true"
-      @blur="focused = false"
+      :id="props.id || `formCheckbox${$uid}`"
+      :value="props.value"
+      :name="props.name"
+      :disabled="props.disabled"
+      :checked="State.checked"
+      @click="actions.handleClick"
+      @focus="state.focused = true"
+      @blur="state.focused = false"
     />
-    <label :for="`formCheckbox${_uid}`">{{ label }}</label>
+    <label :for="props.id || `formCheckbox${$uid}`">
+      {{ props.label }}
+    </label>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'FormCheckbox',
-  props: {
-    value: { type: Array, required: true },
-    val: { type: [String, Number, Boolean], required: true },
-    name: { type: String, default: null },
-    label: { type: String, required: true },
-    disabled: { type: Boolean, default: false },
+<script setup>
+import { reactive, computed, getCurrentInstance } from 'vue';
+
+defineOptions({ name: 'FormCheckbox' });
+
+const emit = defineEmits(['update:modelValue', 'click']);
+const $uid = getCurrentInstance().uid;
+
+const props = defineProps({
+  modelValue: { type: [Array, String, Boolean, Number] },
+  id: { type: String, default: null },
+  value: { type: [String, Number, Boolean, null], required: true },
+  name: { type: String, default: null },
+  label: { type: String, required: true },
+  disabled: { type: Boolean, default: false },
+  /**
+   * Variant: default, small
+   */
+  variant: { type: String, default: 'default' },
+});
+
+const state = reactive({
+  focused: false,
+});
+
+const State = computed(() => {
+  const modelValue = Array.isArray(props.modelValue) ? props.modelValue : [props.modelValue];
+  const checked = modelValue.includes(props.value);
+
+  return {
+    modelValue,
+    checked,
+  };
+});
+
+const actions = {
+  cast(value, type) {
+    if (type === 'number') {
+      return parseFloat(value);
+    }
+    return value;
   },
-  data() {
-    return {
-      focused: false,
-    };
-  },
-  computed: {
-    checked() {
-      return this.value.includes(this.val);
-    },
-  },
-  methods: {
-    handleClick(e) {
-      this.$emit('click', e, { value: e.target.value, checked: this.checked });
-      this.$emit('input', !this.checked ? [...this.value, this.val] : this.value.filter((v) => v !== this.val));
-    },
+  handleClick(e) {
+    const { value, checked } = e.target;
+    const castedValue = actions.cast(value, typeof props.value);
+
+    if (checked && !State.value.modelValue.includes(castedValue)) {
+      emit('update:modelValue', [...State.value.modelValue, castedValue]);
+    } else if (!checked && State.value.modelValue.includes(castedValue)) {
+      emit('update:modelValue', State.value.modelValue.filter((v) => v !== props.value));
+    }
+    emit('click', e, { value: castedValue, checked });
   },
 };
 </script>

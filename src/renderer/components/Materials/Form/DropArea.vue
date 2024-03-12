@@ -1,48 +1,61 @@
 <template>
-  <div class="FormDropArea">
+  <div class="m-form-droparea">
     <button
-      :class="GenerateModifiers('FormDropAreaButton', modifiers)"
-      type="button"
-      @drop.prevent="handleDrop"
+      :class="GenerateModifiers('m-form-droparea__button', props.modifiers)"
+      @drop.prevent="actions.handleDrop"
       @dragover.prevent
-      @click="handleClick"
-      @dragenter.prevent="modifiers.Hover = true"
-      @dragleave="modifiers.Hover = false"
+      @click="actions.handleClick"
+      @dragenter.prevent="state.hover = true"
+      @dragleave="state.hover = false"
     >
-      {{ $t('Materials.Form.DropArea.areaLabel') }}<br />
-      <i class="icon-import"></i>
+      {{ t('Materials.Form.DropArea.areaLabel') }}<br />
+      <span class="icon-import"></span>
     </button>
-    <input class="FormDropAreaInput" tabindex="-1" ref="fileInput" type="file" :value="files" @input="handleUploadFiles" />
+    <input
+      class="m-form-droparea__input"
+      tabindex="-1"
+      ref="input"
+      type="file"
+      :value="state.files"
+      @input="actions.handleUploadFiles"
+    />
   </div>
 </template>
 
-<script>
-export default {
-  name: 'FormDropArea',
-  data() {
-    return {
-      files: [],
-      modifiers: { Hover: false },
-    };
-  },
-  methods: {
-    handleDrop(e) {
-      const [...droppedFiles] = e.dataTransfer.files;
-      if (!droppedFiles) return;
-      this.$emit('fileUpload', droppedFiles);
-      this.modifiers.Hover = false;
-    },
-    handleDragEnter() {
+<script setup>
+import { reactive, ref } from 'vue';
+import { useI18n } from 'vue-i18n';
 
-    },
-    handleUploadFiles(e) {
-      const [...droppedFiles] = e.target.files;
-      if (!droppedFiles) return;
-      this.$emit('fileUpload', droppedFiles);
-    },
-    handleClick() {
-      this.$refs.fileInput.click();
-    },
+defineOptions({ name: 'FormDropArea' });
+
+const { t } = useI18n();
+const emit = defineEmits(['fileUpload']);
+
+const input = ref(null);
+
+const props = defineProps({
+  modifiers: { type: Object, default: () => ({}) },
+});
+
+const state = reactive({
+  files: [],
+  hover: false,
+});
+
+const actions = {
+  handleDrop(e) {
+    const [...droppedFiles] = e.dataTransfer.files;
+    if (!droppedFiles) return;
+    emit('fileUpload', droppedFiles);
+    state.hover = false;
+  },
+  handleUploadFiles(e) {
+    const [...droppedFiles] = e.target.files;
+    if (!droppedFiles) return;
+    emit('fileUpload', droppedFiles);
+  },
+  handleClick() {
+    input.value.click();
   },
 };
 </script>

@@ -5,19 +5,18 @@
     </h1>
     <Filters
       :ownerFilter="false"
-      :store="FilteredCharacterStore"
       :simple="false"
     />
     <ul class="CharacterList">
       <li
-        v-for="character in filteredCharacters"
+        v-for="character in State.filteredCharacters"
         :key="character.name"
         class="CharacterListItem"
       >
         <button
           :title="character.name"
           :class="GenerateModifiers('CharacterListItemButton', { Owned: character.owned })"
-          @click="handleToggleOwned(character)"
+          @click="actions.handleToggleOwned(character)"
         >
           <CharacterCard :character="character" />
         </button>
@@ -27,37 +26,36 @@
   </main>
 </template>
 
-<script>
-import Filters from '@/components/MyGenshinImpactCharacters/Filters';
-import AppStore from '@/assets/js/stores/AppStore';
-import FilteredCharacterStore from '@/assets/js/stores/FilteredCharacterStore';
-import CharacterCard from '@/components/MyGenshinImpactCharacters/CharacterCard';
+<script setup>
+import { reactive, computed } from 'vue';
+import { onBeforeRouteLeave } from 'vue-router';
 
-export default {
-  name: 'CharacterListView',
-  components: { Filters, CharacterCard },
-  data() {
-    return {
-      characters: AppStore.data.characters,
-      FilteredCharacterStore,
-    };
-  },
-  beforeRouteLeave(to, from, next) {
-    FilteredCharacterStore.reset();
-    next();
-  },
-  methods: {
-    handleToggleOwned(character) {
-      character.owned = !character.owned;
-    },
-  },
-  computed: {
-    filteredCharacters() {
-      return FilteredCharacterStore
-        .applyFilters(Object.values(this.characters))
-        .filter((character) => !character.name.startsWith('Traveler'))
-      ;
-    },
+import Filters from '@renderer/components/MyGenshinImpactCharacters/Filters.vue';
+import CharacterCard from '@renderer/components/MyGenshinImpactCharacters/CharacterCard.vue';
+
+import AppStore from '@renderer/core/stores/AppStore';
+import { useFilteredCharacterStore } from '@renderer/core/stores/FilteredCharacterStore';
+
+defineOptions({ name: 'CharacterListView' });
+
+const state = reactive({
+  characters: AppStore.data.characters,
+});
+
+const State = computed(() => ({
+  filteredCharacters: useFilteredCharacterStore.actions
+    .applyFilters(Object.values(state.characters))
+    .filter((character) => !character.name.startsWith('Traveler')),
+}));
+
+onBeforeRouteLeave((to, from, next) => {
+  useFilteredCharacterStore.actions.reset();
+  next();
+});
+
+const actions = {
+  handleToggleOwned(character) {
+    character.owned = !character.owned;
   },
 };
 </script>

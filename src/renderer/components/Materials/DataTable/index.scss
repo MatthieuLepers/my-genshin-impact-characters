@@ -1,43 +1,50 @@
-@import '~scss/utilities.scss';
+@import '~styles/utilities.scss';
 
-.DataTable {
-  border: 1px solid lighten(color(primary), 10.76);
+.m-datatable {
+  border: 1px solid color(grey800);
   border-top: none;
   width: 100%;
-  background: color(primary);
+  background: color(grey900);
   overflow: hidden;
 
-  &Head {
+  &__header {
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-color: lighten(color(primary), 10.76);
+    background-color: color(grey800);
 
-    .DataTableRow {
+    .m-datatable-row {
       display: flex;
       width: 100%;
-      border-bottom: 1px solid lighten(color(primary), 10.76);
+      border-bottom: 1px solid color(grey800);
     }
 
-    .DataTableColumn {
+    .m-datatable-column {
       @include font-family('Open Sans', 600);
+      @include set-font-scale('s');
 
-      &--Action {
+      &--action {
         min-width: 48px;
       }
 
-      .DataTableButton--Sort,
-      .DataTableButton--SortAsc,
-      .DataTableButton--SortDesc {
-        background: none;
+      .m-datatable-button--sort,
+      .m-datatable-button--sortAsc,
+      .m-datatable-button--sortDesc {
         @include font-family('Open Sans', 600);
+        background: none;
       }
     }
   }
 
-  &Body {
+  &__body {
     width: 100%;
     height: 100%;
     position: relative;
+  }
+
+  &__draggable {
+    &+& {
+      border-top: 1px solid color(grey800);
+    }
   }
 }

@@ -1,9 +1,9 @@
 @use 'sass:math';
-@import '~scss/utilities.scss';
+@import '~styles/utilities.scss';
 
 $field-line-gap: 8px;
 
-@mixin  field-line-sized($size: 1) {
+@mixin field-line-sized($size: 1) {
   @if ($size > 1) {
     &--#{$size} {
       display: flex;
@@ -11,14 +11,14 @@ $field-line-gap: 8px;
       justify-content: space-between;
       width: 100%;
 
-      .FormFieldContainer {
+      .m-form-field-container {
         width: calc(#{math.div(100%, $size)} - #{math.div($field-line-gap * ($size - 1), $size)});
       }
     }
   }
 }
 
-.FormFieldLine {
+.m-form-field-line {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

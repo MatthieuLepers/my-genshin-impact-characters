@@ -1,33 +1,32 @@
-@import '~scss/utilities.scss';
+@import '~styles/utilities.scss';
 
-.ContextMenuItem {
-  @include font-size(12);
+.m-contextmenu-item {
+  @include set-font-scale('xs');
   display: flex;
   justify-content: space-between;
   position: relative;
-  padding: 5px 25px;
+  padding: rem(4px) rem(24px);
   width: 100%;
-  line-height: rem(14px);
 
-  &:not(.ContextMenuItem--Separator) {
+  &:not(&--separator) {
     cursor: pointer;
 
     &:hover,
     &:focus {
       outline: none;
-      background-color: color(secondary);
+      background-color: color(secondary200);
     }
   }
 
-  &--Separator {
-    background-color: rgba(color(f), .1);
-    width: calc(100% - 20px);
+  &--separator {
+    background-color: rgba(color(grey000), .1);
+    width: calc(100% - 24px);
     height: 1px;
     padding: 0;
-    margin: 5px 10px;
+    margin: rem(4px) rem(12px);
   }
 
-  &--ArrowRight {
+  &--arrowRight {
     &::after,
     &::before {
       content: '';
@@ -36,7 +35,7 @@
       position: absolute;
       top: calc(50% - 1px);
       right: 15px;
-      background-color: invert(color(primary));
+      background-color: invert(color(grey900));
     }
 
     &::before {
@@ -50,8 +49,7 @@
     }
   }
 
-  &Icon {
-    @include font-size(12);
+  &__icon {
     position: absolute;
     top: 0;
     left: 0;
@@ -60,5 +58,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: rem(12px);
   }
 }

@@ -1,61 +1,68 @@
 <template>
-  <nav class="TitleBar">
-    <slot name="menu" />
+  <nav class="m-title-bar">
+    <slot name="menu" :windowName="props.name" />
 
-    <div class="TitleBarApp" v-if="appTitle">
-      {{ appTitle }}
+    <div class="m-title-bar__app" v-if="props.appTitle">
+      {{ props.appTitle }}
     </div>
-    <div class="TitleBarButtonCtn">
-      <button type="button" v-if="btnHelp" class="TitleBarButton" @click="$emit('help')">
-        <i class="icon-help"></i>
+    <div class="m-title-bar__button-ctn">
+      <button
+        v-if="props.showHelp"
+        type="button"
+        class="m-title-bar__button"
+        @click="emit('help')"
+      >
+        <span v-icon:help />
       </button>
-      <button type="button" v-if="btnMinimize" class="TitleBarButton" @click="minimize">
-        <i class="icon-minimize"></i>
+      <button
+        v-if="props.minimizable"
+        type="button"
+        class="m-title-bar__button"
+        @click="actions.minimize"
+      >
+        <span v-icon:minimize />
       </button>
-      <button type="button" v-if="btnMaximize || btnMinimize" :disabled="!btnMaximize" class="TitleBarButton" @click="maximize">
-        <i class="icon-maximize"></i>
+      <button
+        v-if="props.maximizable || props.minimizable"
+        :disabled="!props.maximizable"
+        class="m-title-bar__button"
+        @click="actions.maximize">
+        <span v-icon:maximize />
       </button>
-      <button type="button" v-if="btnClose" class="TitleBarButton" @click="close">
-        <i class="icon-close"></i>
+      <button
+        v-if="props.closable"
+        :class="GenerateModifiers('m-title-bar__button', { close: true })"
+        @click="actions.close"
+      >
+        <span v-icon:close />
       </button>
     </div>
   </nav>
 </template>
 
-<script>
-import { remote } from 'electron';
+<script setup>
+defineOptions({ name: 'TitleBar' });
 
-export default {
-  name: 'TitleBar',
-  props: {
-    btnMinimize: { type: Boolean, default: true },
-    btnMaximize: { type: Boolean, default: true },
-    btnClose: { type: Boolean, default: true },
-    btnHelp: { type: Boolean, default: true },
-    appTitle: { type: String, default: null },
+const emit = defineEmits(['help']);
+
+const props = defineProps({
+  name: { type: String, required: true },
+  minimizable: { type: Boolean, default: true },
+  maximizable: { type: Boolean, default: true },
+  closable: { type: Boolean, default: true },
+  showHelp: { type: Boolean, default: true },
+  appTitle: { type: String, default: null },
+});
+
+const actions = {
+  minimize() {
+    api.send(`minimize:${props.name}`);
   },
-  data() {
-    return {
-      window: remote.getCurrentWindow(),
-    };
+  maximize() {
+    api.send(`maximize:${props.name}`);
   },
-  methods: {
-    minimize() {
-      this.window.minimize();
-    },
-    maximize() {
-      if (this.window.isMaximized()) {
-        this.window.unmaximize();
-      } else {
-        this.window.maximize();
-      }
-    },
-    close() {
-      if (process.env.NODE_ENV === 'development' && this.window.isDevToolsOpened()) {
-        this.window.closeDevTools();
-      }
-      this.window.close();
-    },
+  close() {
+    api.send(`close:${props.name}`);
   },
 };
 </script>

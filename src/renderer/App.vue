@@ -1,28 +1,31 @@
 <template>
-  <div id="app">
-    <AppTitleBar />
-    <AppMenu />
-    <router-view />
-    <NotificationList />
-  </div>
+  <AppTitleBar name="main" />
+  <AppMenu />
+  <router-view />
+  <NotificationList />
 </template>
 
-<script>
-import { ipcRenderer } from 'electron';
-import AppTitleBar from '@/components/AppTitleBar/index';
-import AppMenu from '@/components/AppMenu/index';
-import NotificationList from '@/components/Materials/Notification/List';
+<script setup>
+import { useI18n } from 'vue-i18n';
 
-export default {
-  name: 'App',
-  components: { AppTitleBar, AppMenu, NotificationList },
-  mounted() {
-    ipcRenderer.on('set-locale', (e, iso) => {
-      this.$root.$i18n.locale = iso;
-    });
-  },
-};
+import AppTitleBar from '@renderer/components/AppTitleBar/index.vue';
+import AppMenu from '@renderer/components/AppMenu/index.vue';
+import NotificationList from '@renderer/components/Materials/Notification/List.vue';
+
+import Shortcut from '@renderer/core/Shortcut';
+
+const { locale } = useI18n();
+
+api.on('localeChange', (iso) => {
+  locale.value = iso;
+});
+
+api.on('runShortcut', (shortcut) => {
+  if (shortcut in Shortcut) {
+    Shortcut[shortcut]();
+  }
+});
 </script>
 
-<style lang="scss" src="./assets/scss/style.scss">
+<style lang="scss" src="./assets/styles/style.scss">
 </style>

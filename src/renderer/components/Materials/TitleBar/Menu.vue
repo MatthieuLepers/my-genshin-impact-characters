@@ -1,45 +1,56 @@
 <template>
-  <div class="TitleBarMenuCtn">
-    <ul class="TitleBarMenu">
-      <TitleBarMenuItem :id="menuName" :label="$t(`App.TitleBarMenu.${menuName}.label`)" @click="toggleMenu(menuName)" v-for="(menuName, i) in menuList" :key="`menu${i}`">
-        <slot :name="menuName" :visible="menuName === activeMenu" :close="closeMenu" />
+  <div class="m-title-bar__menu-ctn" ref="root">
+    <ul class="m-title-bar__menu">
+      <TitleBarMenuItem
+        v-for="(menuName, i) in props.menuList"
+        :key="`menu${i}`"
+        :id="menuName"
+        :label="t(`App.TitleBarMenu.${menuName}.label`)"
+        @click.stop.prevent="(e, menuName) => actions.toggleMenu(menuName)"
+      >
+        <slot :name="menuName" :visible="menuName === state.activeMenu" :close="actions.closeMenu" />
       </TitleBarMenuItem>
     </ul>
   </div>
 </template>
 
-<script>
-import TitleBarMenuItem from './MenuItem';
+<script setup>
+import { reactive, ref } from 'vue';
+import { useI18n } from 'vue-i18n';
 
-export default {
-  name: 'TitleBarMenu',
-  components: { TitleBarMenuItem },
-  props: {
-    menuList: { type: Array, default: () => [] },
+import TitleBarMenuItem from '@renderer/components/Materials/TitleBar/MenuItem.vue';
+
+defineOptions({ name: 'TitleBarMenu' });
+
+const { t } = useI18n();
+
+const root = ref(null);
+
+const props = defineProps({
+  menuList: { type: Array, default: () => [] },
+});
+
+const state = reactive({
+  activeMenu: null,
+});
+
+const actions = {
+  handleWindowClick(e) {
+    if (!e.target.matches('.TitleBarMenuCtn') && !e.target.closest('.TitleBarMenuCtn') && e.target !== root.value) {
+      state.activeMenu = null;
+      window.removeEventListener('click', actions.handleWindowClick);
+    }
   },
-  data() {
-    return {
-      activeMenu: null,
-    };
+  toggleMenu(menu) {
+    if (state.activeMenu === menu) {
+      state.activeMenu = null;
+    } else {
+      state.activeMenu = menu;
+      window.addEventListener('click', actions.handleWindowClick);
+    }
   },
-  methods: {
-    handleWindowClick(e) {
-      if (!e.target.matches('.TitleBarMenuCtn') && !e.target.closest('.TitleBarMenuCtn') && e.target !== this.$el) {
-        this.activeMenu = null;
-        window.removeEventListener('click', this.handleWindowClick);
-      }
-    },
-    toggleMenu(menu) {
-      if (this.activeMenu === menu) {
-        this.activeMenu = null;
-      } else {
-        this.activeMenu = menu;
-        window.addEventListener('click', this.handleWindowClick);
-      }
-    },
-    closeMenu() {
-      this.activeMenu = null;
-    },
+  closeMenu() {
+    state.activeMenu = null;
   },
 };
 </script>

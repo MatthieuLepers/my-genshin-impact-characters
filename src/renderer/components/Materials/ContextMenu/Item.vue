@@ -1,40 +1,38 @@
 <template>
-  <button :class="GenerateModifiers('ContextMenuItem', { Disabled: disabled })" v-show="visible" @click="handleOnClicked">
-    <div class="ContextMenuItemIcon">
-      <i :class="icon" v-if="icon"></i>
+  <button
+    v-show="props.visible"
+    type="button"
+    :class="GenerateModifiers('m-contextmenu-item', { disabled: props.disabled })"
+    @click="actions.handleOnClicked"
+  >
+    <div class="m-contextmenu-item__icon">
+      <i :class="props.icon" v-if="props.icon"></i>
     </div>
-    <div class="ContextMenuItemName">
-      {{ label }}
+    <div class="m-contextmenu-item__name">
+      {{ props.label }}
     </div>
-    <div class="ContextMenuItemShortcut">
-      {{ shortcut }}
+    <div class="m-contextmenu-item__shortcut">
+      {{ props.shortcut }}
     </div>
   </button>
 </template>
 
-<script>
-import { remote } from 'electron';
+<script setup>
+defineOptions({ name: 'ContextMenuItem' });
 
-export default {
-  name: 'ContextMenuItem',
-  props: {
-    disabled: { type: Boolean, default: false },
-    visible: { type: Boolean, default: true },
-    icon: { type: String, default: null },
-    label: { type: String, required: true },
-    shortcut: { type: String, default: null },
-  },
-  mounted() {
-    this.$parent.menu.append(new remote.MenuItem({
-      label: this.label,
-      accelerator: this.shortcut,
-      click: this.handleOnClicked.bind(this),
-    }));
-  },
-  methods: {
-    handleOnClicked() {
-      this.$emit('click');
-    },
+const emit = defineEmits(['click']);
+
+const props = defineProps({
+  disabled: { type: Boolean, default: false },
+  visible: { type: Boolean, default: true },
+  icon: { type: String, default: null },
+  label: { type: String, required: true },
+  shortcut: { type: String, default: null },
+});
+
+const actions = {
+  handleOnClicked() {
+    emit('click');
   },
 };
 </script>

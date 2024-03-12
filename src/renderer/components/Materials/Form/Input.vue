@@ -1,116 +1,147 @@
 <template>
-  <div :class="GenerateModifiers('FormInput', { Valid: state !== null && state, Invalid: state !== null && !state, [variant]: !!variant, Focus: focused, Required: required, Readonly: readonly, Disabled: disabled, Adornment: iconData.icon || iconData.text || type === 'password' })">
-    <p :class="GenerateModifiers('FormInputMessage', { [messageData.type]: true })" v-if="messageData && ((state === false && messageData.type === MessageTypeEnum.ERROR) || messageData.type === MessageTypeEnum.HELP)">
-      {{ messageData.content }}
-    </p>
-    <input
-      :id="id || `formInput${_uid}`"
-      :type="computedType"
-      :placeholder="placeholder"
-      :pattern="pattern"
-      :required="required"
-      :readonly="readonly"
-      :disabled="disabled"
-      :value="value"
-      :min="type === 'number' ? min : null"
-      :max="type === 'number' && max ? max : null"
-      :step="type === 'number' ? Math.abs(step) : null"
-      @input="$emit('input', cast($event.target.value, typeof value))"
-      @click="$emit('click', $event)"
-      @keydown="$emit('keydown', $event)"
-      @focus="handleFocus('focus', true)"
-      @blur="handleFocus('blur', false)"
-      @mousewheel="handleMouseWheel"
+  <div
+    :class="GenerateModifiers('m-form-input', {
+      valid: props.valid !== null && props.valid,
+      invalid: props.valid !== null && !props.valid,
+      [variant]: !!props.variant,
+      focus: state.focused,
+      empty: State.isEmpty,
+      required: props.required,
+      readonly: props.readonly,
+      disabled: props.disabled,
+      adornment: props.iconData.icon || props.iconData.text || props.type === 'password',
+      noLabel: !props.label || !props.label.length,
+    })">
+    <div class="m-form-input__container">
+      <input
+        :id="props.id || `formInput${$uid}`"
+        :type="State.type"
+        :placeholder="props.placeholder"
+        :pattern="props.pattern"
+        :required="props.required"
+        :readonly="props.readonly"
+        :disabled="props.disabled"
+        :value="props.modelValue"
+        :name="name"
+        :autocomplete="autocomplete"
+        :min="props.type === 'number' ? props.min : null"
+        :max="props.type === 'number' && props.max ? props.max : null"
+        :step="props.type === 'number' ? Math.abs(props.step) : null"
+        @input="emit('update:modelValue', actions.cast($event.target.value, typeof props.modelValue))"
+        @click="emit('click')"
+        @keydown="emit('keydown', $event)"
+        @focus="actions.handleFocus('focus', true)"
+        @blur="actions.handleFocus('blur', false)"
+        @mousewheel="actions.handleMouseWheel"
+      />
+      <label
+        v-if="props.label"
+        class="m-form-input__label"
+        :for="`formInput${$uid}`"
+      >
+        {{ props.label }}
+      </label>
+      <component
+        v-if="(iconData.icon && type !== 'password') || type === 'password' || iconData.text"
+        type="button"
+        :is="iconData.clickable || type === 'password' ? 'button' : 'span'"
+        :class="[State.icon, GenerateModifiers('m-form-input__adornment', { clickable: iconData.clickable || type === 'password' })]"
+        :aria-label="iconData.ariaLabel"
+        :aria-hidden="!iconData.clickable || type !== 'password'"
+        @click.stop="actions.handleIconClick"
+      >
+        {{ props.iconData.text || '' }}
+      </component>
+    </div>
+
+    <MaterialFormMessageList
+      :valid="props.valid"
+      :touched="state.touched"
+      :messages="props.messages"
     />
-    <label class="FormInputLabel" :for="`formInput${_uid}`" v-if="label">
-      {{ label }}
-    </label>
-    <component
-      :is="iconData.clickable || type === 'password' ? 'button' : 'span'"
-      type="button"
-      v-if="(iconData.icon && type !== 'password') || type === 'password' || iconData.text"
-      :class="[computedIcon, GenerateModifiers('FormInputAdornment', { Clickable: iconData.clickable || type === 'password' })]"
-      :aria-label="iconData.ariaLabel"
-      :aria-hidden="!iconData.clickable && type !== 'password'"
-      @click.stop="handleIconClick"
-    >
-      {{ iconData.text || '' }}
-    </component>
   </div>
 </template>
 
-<script>
-import MessageTypeEnum from '@/assets/js/classes/enums/MessageTypeEnum';
+<script setup>
+import {
+  reactive,
+  computed,
+  ref,
+  getCurrentInstance,
+} from 'vue';
 
-export default {
-  name: 'FormInput',
-  props: {
-    value: { type: [String, Number] },
-    id: { type: String, default: null },
-    type: { type: String, default: 'text' },
-    required: { type: Boolean, default: false },
-    placeholder: { type: String, default: null },
-    pattern: { type: String, default: null },
-    readonly: { type: Boolean, default: false },
-    disabled: { type: Boolean, default: false },
-    label: { type: String, default: null },
-    iconData: { type: Object, default: () => ({}) },
-    variant: { type: String, default: null },
-    state: { type: Boolean, default: null },
-    messageData: { type: Object, default: null },
-    min: { type: Number, default: 0 },
-    max: { type: Number },
-    step: { type: Number, default: 1 },
+import MaterialFormMessageList from '@renderer/components/Materials/Form/MessageList.vue';
+
+defineOptions({ name: 'FormInput' });
+
+const emit = defineEmits(['update:modelValue', 'click', 'keydown', 'icon', 'focus', 'blur']);
+const $uid = ref(getCurrentInstance().uid);
+
+const props = defineProps({
+  modelValue: { type: [String, Number] },
+  id: { type: String, default: null },
+  type: { type: String, default: 'text' },
+  required: { type: Boolean, default: false },
+  placeholder: { type: String, default: null },
+  pattern: { type: String, default: null },
+  readonly: { type: Boolean, default: false },
+  disabled: { type: Boolean, default: false },
+  label: { type: String, default: null },
+  iconData: { type: Object, default: () => ({}) },
+  variant: { type: String, default: 'default' },
+  valid: { type: Boolean, default: null },
+  messages: { type: Array, default: () => [] },
+  min: { type: Number, default: 0 },
+  max: { type: Number },
+  step: { type: Number, default: 1 },
+  autocomplete: { type: [String, Boolean], default: null },
+  name: { type: String, default: null },
+});
+
+const state = reactive({
+  focused: false,
+  passwordVisible: false,
+  touched: false,
+});
+
+const State = computed(() => ({
+  type: (props.type === 'password' && state.passwordVisible && 'text')
+    || (props.type === 'password' && 'password')
+    || props.type,
+  icon: (props.iconData.icon && props.type !== 'password' && props.iconData.icon)
+    || (props.type === 'password' && (state.passwordVisible ? 'icon-eye-slash' : 'icon-eye'))
+    || props.iconData?.text
+    || null,
+  isEmpty: typeof props.modelValue === 'string' && !props.modelValue.length && !props.placeholder?.length,
+}));
+
+const actions = {
+  cast(value, type) {
+    if (type === 'number') {
+      return parseFloat(value) || props.min || 0;
+    }
+    return value;
   },
-  data() {
-    return {
-      MessageTypeEnum,
-      focused: false,
-      passwordIcon: 'icon-eye',
-    };
+  handleFocus(type, value) {
+    if (!state.touched) {
+      state.touched = true;
+    }
+    state.focused = value;
+    emit(type, state.focused);
   },
-  computed: {
-    computedType() {
-      if (this.type === 'password') {
-        return this.passwordIcon === 'icon-eye' ? 'password' : 'text';
-      }
-      return this.type;
-    },
-    computedIcon() {
-      if (this.iconData.icon && this.type !== 'password') {
-        return this.iconData.icon;
-      } if (this.type === 'password') {
-        return this.passwordIcon;
-      } if (this.iconData.text) {
-        return this.iconData.text;
-      }
-      return null;
-    },
+  handleIconClick(e) {
+    if (props.type === 'password') {
+      state.passwordVisible = !state.passwordVisible;
+    }
+    emit('icon', e);
   },
-  methods: {
-    handleFocus(type, value) {
-      this.focused = value;
-      this.$emit(type, this.focused);
-    },
-    handleIconClick() {
-      if (this.type === 'password') {
-        this.passwordIcon = `icon-eye${this.passwordIcon === 'icon-eye' ? '-slash' : ''}`;
-      }
-      this.$emit('icon-click');
-    },
-    handleMouseWheel(e) {
-      if (this.type === 'number' && this.focused) {
-        e.preventDefault();
-        const offset = e.deltaY < 0 ? 1 : -1;
-        this.$emit('input', this.cast(Math.min(this.max || null, Math.max(this.min, this.value + offset)), typeof this.value));
-      }
-    },
-    cast(value, type) {
-      if (type === 'number') {
-        return parseInt(value, 10) || this.min || 0;
-      }
-      return value;
-    },
+  handleMouseWheel(e) {
+    if (props.type === 'number' && state.focused) {
+      e.preventDefault();
+      const offset = e.deltaY < 0 ? 1 : -1;
+      const max = Math.max(props.min, props.modelValue + offset);
+      emit('update:modelValue', actions.cast(Math.min(props.max || max, max), typeof props.modelValue));
+    }
   },
 };
 </script>

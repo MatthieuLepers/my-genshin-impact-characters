@@ -17,8 +17,8 @@ export default {
       },
       langMenu: {
         label: 'Langage',
-        french: 'Français',
-        english: 'Anglais',
+        'fr-FR': 'Français',
+        'en-EN': 'Anglais',
       },
     },
     Main: {

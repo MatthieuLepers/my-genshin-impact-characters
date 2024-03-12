@@ -1,40 +1,36 @@
 <template>
-  <ContextMenu :visible="visible">
+  <ContextMenu :visible="props.visible">
     <ContextMenuItem
-      v-for="([lang, iso], i) in Object.entries(langList)"
+      v-for="(iso, i) in availableLocales"
       :key="i"
-      :label="$t(`App.TitleBarMenu.langMenu.${lang}`)"
-      :icon="iso === $root.$i18n.locale ? 'icon-check' : ''"
-      @click="handleSetLocale(iso)"
+      :label="t(`App.TitleBarMenu.langMenu.${iso}`)"
+      :icon="iso === locale ? 'icon-check' : ''"
+      @click="actions.handleSetLocale(iso)"
     />
   </ContextMenu>
 </template>
 
-<script>
-import { ipcRenderer } from 'electron';
-import ContextMenu from '@/components/Materials/ContextMenu/index';
-import ContextMenuItem from '@/components/Materials/ContextMenu/Item';
+<script setup>
+import { useI18n } from 'vue-i18n';
 
-export default {
-  name: 'AppTitleBarLangMenu',
-  components: { ContextMenu, ContextMenuItem },
-  props: {
-    visible: { type: Boolean, required: true },
-  },
-  computed: {
-    langList() {
-      return {
-        english: 'en-EN',
-        french: 'fr-FR',
-      };
-    },
-  },
-  methods: {
-    handleSetLocale(iso) {
-      ipcRenderer.invoke('locale-change', iso);
-      this.$emit('input', iso);
-      this.$emit('close');
-    },
+import ContextMenu from '@renderer/components/Materials/ContextMenu/index.vue';
+import ContextMenuItem from '@renderer/components/Materials/ContextMenu/Item.vue';
+
+defineOptions({ name: 'AppTitleBarLangMenu' });
+
+const { t, locale, availableLocales } = useI18n();
+const emit = defineEmits(['update:modelValue', 'close']);
+
+const props = defineProps({
+  visible: { type: Boolean, required: true },
+});
+
+const actions = {
+  handleSetLocale(iso) {
+    api.invoke('localeChange', iso);
+    locale.value = iso;
+    emit('update:modelValue', iso);
+    emit('close');
   },
 };
 </script>

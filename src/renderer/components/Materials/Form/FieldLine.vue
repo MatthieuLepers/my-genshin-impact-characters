@@ -1,27 +1,31 @@
 <template>
-  <div :class="GenerateModifiers('FormFieldLine', { [size]: size > 1 })">
-    <FormFieldContainer :modifiers="modifiers" v-for="i in slots" :key="i">
-      <slot :name="`field${i}`" />
+  <div :class="GenerateModifiers('m-form-field-line', { [props.size]: props.size > 1 })">
+    <FormFieldContainer
+      v-for="i in State.slots"
+      :key="i"
+      :modifiers="props.modifiers?.[`field${i}`] ?? {}"
+    >
+      <slot v-if="props.size > 1" :name="`field${i}`" />
+      <slot v-else />
     </FormFieldContainer>
   </div>
 </template>
 
-<script>
-import FormFieldContainer from './FieldContainer';
+<script setup>
+import { computed } from 'vue';
 
-export default {
-  name: 'FormFieldLine',
-  components: { FormFieldContainer },
-  props: {
-    size: { type: Number, default: 1 },
-    modifiers: { type: Object, default: () => ({}) },
-  },
-  computed: {
-    slots() {
-      return [...Array(this.size).keys()];
-    },
-  },
-};
+import FormFieldContainer from '@renderer/components/Materials/Form/FieldContainer.vue';
+
+defineOptions({ name: 'FormFieldLine' });
+
+const props = defineProps({
+  size: { type: Number, default: 1 },
+  modifiers: { type: Object, default: () => ({}) },
+});
+
+const State = computed(() => ({
+  slots: [...Array(props.size).keys()],
+}));
 </script>
 
 <style lang="scss" src="./FieldLine.scss">
