@@ -23,7 +23,7 @@ import ContextMenuItem from '@renderer/components/Materials/ContextMenu/Item.vue
 import ContextMenuSeparator from '@renderer/components/Materials/ContextMenu/Separator.vue';
 
 import { notificationStore } from '@renderer/components/Materials/Notification/Store';
-import AppStore from '@renderer/core/stores/AppStore';
+import { useAppStore } from '@renderer/core/stores/AppStore';
 
 defineOptions({ name: 'AppTitleBarFileMenu' });
 
@@ -42,7 +42,7 @@ const actions = {
     api.send(`close:${props.name}`);
   },
   save() {
-    const success = AppStore.save(locale.value);
+    const success = useAppStore.save(locale.value);
     if (success) {
       notificationStore.actions.success(t('Notification.saveSuccess'));
     } else {

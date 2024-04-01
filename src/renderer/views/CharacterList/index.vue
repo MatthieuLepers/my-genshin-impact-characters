@@ -1,7 +1,7 @@
 <template>
   <main class="View CharacterListView">
     <h1 class="CharacterListViewTitle">
-      {{ $t('App.selectOwnedCharacters') }}
+      {{ t('App.selectOwnedCharacters') }}
     </h1>
     <Filters
       :ownerFilter="false"
@@ -27,24 +27,23 @@
 </template>
 
 <script setup>
-import { reactive, computed } from 'vue';
+import { computed } from 'vue';
 import { onBeforeRouteLeave } from 'vue-router';
+import { useI18n } from 'vue-i18n';
 
 import Filters from '@renderer/components/MyGenshinImpactCharacters/Filters.vue';
 import CharacterCard from '@renderer/components/MyGenshinImpactCharacters/CharacterCard.vue';
 
-import AppStore from '@renderer/core/stores/AppStore';
+import { useAppStore } from '@renderer/core/stores/AppStore';
 import { useFilteredCharacterStore } from '@renderer/core/stores/FilteredCharacterStore';
 
 defineOptions({ name: 'CharacterListView' });
 
-const state = reactive({
-  characters: AppStore.data.characters,
-});
+const { t } = useI18n();
 
 const State = computed(() => ({
   filteredCharacters: useFilteredCharacterStore.actions
-    .applyFilters(Object.values(state.characters))
+    .applyFilters(Object.values(useAppStore.state.characters))
     .filter((character) => !character.name.startsWith('Traveler')),
 }));
 

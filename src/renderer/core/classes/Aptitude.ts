@@ -1,4 +1,4 @@
-import AppStore from '@renderer/core/stores/AppStore';
+import { useAppStore } from '@renderer/core/stores/AppStore';
 import type Character from '@renderer/core/classes/Character';
 
 export interface IRawAptitude {
@@ -46,7 +46,7 @@ export default class Aptitude {
     const newRealLevelMaterialCost = this.getMaterialForLevel(this.realLevel);
 
     const diffMaterial = oldRealLevelMaterialCost - newRealLevelMaterialCost;
-    AppStore.data.materials[this.material] = Math.max(0, AppStore.data.materials[this.material] + diffMaterial);
+    useAppStore.state.materials[this.material] = Math.max(0, useAppStore.state.materials[this.material] + diffMaterial);
   }
 
   get realLevel(): number {

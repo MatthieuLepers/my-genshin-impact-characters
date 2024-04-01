@@ -10,7 +10,15 @@
         [{{ actions.getOwnedAndInvestedMaterials(props.material) }}/{{ actions.getMaxMaterial(props.material) }}] {{ t(`Data.WeaklyBosses.${props.boss}.materials.${props.material}`) }}
         <span v-if="useFilteredCharacterStore.filters.elements.length">&nbsp;({{ State.filteredCharacters.length }})</span>
       </span>
-      <FormInput type="number" :min="0" :max="9999" v-model="AppStore.data.materials[material]" :label="t('App.inInventory')" @click.stop />
+      <FormInput
+        class="BossMaterialInventoryInput"
+        type="number"
+        :min="0"
+        :max="9999"
+        v-model="useAppStore.state.materials[material]"
+        :label="t('App.inInventory')"
+        @click.stop
+      />
     </component>
     <DataTable
       v-show="state.open && State.filteredCharacters.length"
@@ -70,7 +78,7 @@ import { useI18n } from 'vue-i18n';
 import DataTable from '@renderer/components/Materials/DataTable/index.vue';
 import FormInput from '@renderer/components/Materials/Form/Input.vue';
 
-import AppStore from '@renderer/core/stores/AppStore';
+import { useAppStore } from '@renderer/core/stores/AppStore';
 import { useFilteredCharacterStore } from '@/renderer/core/stores/FilteredCharacterStore';
 import { image } from '@renderer/core/utils';
 
@@ -121,7 +129,7 @@ const actions = {
     return props.characters.reduce((acc, character) => acc + character.getMaxMaterial(materialName), 0);
   },
   getOwnedAndInvestedMaterials(materialName) {
-    return props.characters.reduce((acc, character) => acc + character.getInvestedMaterials(materialName), AppStore.data.materials[materialName]);
+    return props.characters.reduce((acc, character) => acc + character.getInvestedMaterials(materialName), useAppStore.state.materials[materialName]);
   },
 };
 </script>

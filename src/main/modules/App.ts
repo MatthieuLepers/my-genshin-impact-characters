@@ -49,13 +49,13 @@ class AppModule {
   }
 
   @IpcOn
-  static saveData(data) {
+  static saveData(json: string) {
     const baseDir = `${os.homedir()}/Documents`;
     const fileName = 'genshin-impact-character.json';
     const filePath = `${baseDir}/${fileName}`;
 
     try {
-      fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+      fs.writeFileSync(filePath, json);
       return true;
     } catch (ex) {
       return false;

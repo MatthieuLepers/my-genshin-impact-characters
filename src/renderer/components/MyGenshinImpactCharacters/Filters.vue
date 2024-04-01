@@ -51,7 +51,7 @@ import FormFieldLine from '@renderer/components/Materials/Form/FieldLine.vue';
 import FormInput from '@renderer/components/Materials/Form/Input.vue';
 import FormSelect from '@renderer/components/Materials/Form/Select.vue';
 
-import AppStore from '@renderer/core/stores/AppStore';
+import { useAppStore } from '@renderer/core/stores/AppStore';
 import { useFilteredCharacterStore } from '@/renderer/core/stores/FilteredCharacterStore';
 import { image } from '@renderer/core/utils';
 
@@ -66,7 +66,7 @@ const props = defineProps({
 
 const State = computed(() => ({
   elementList: Object
-    .values(AppStore.data.characters)
+    .values(useAppStore.state.characters)
     .filter((character) => !props.ownerFilter || (props.ownerFilter && character.owned))
     .map((character) => character.element)
     .filter((character, i, arr) => arr.indexOf(character) === i)

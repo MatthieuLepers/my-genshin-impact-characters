@@ -63,4 +63,14 @@
       flex-wrap: nowrap;
     }
   }
+
+  &InventoryInput.m-form-input--default {
+    @include make-accessibility-shadow {
+      top: 0;
+      bottom: auto;
+      right: 0;
+      left: auto;
+      width: 60px;
+    }
+  }
 }

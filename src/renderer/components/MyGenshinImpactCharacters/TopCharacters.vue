@@ -21,7 +21,7 @@
 <script setup>
 import { computed, ref } from 'vue';
 
-import AppStore from '@renderer/core/stores/AppStore';
+import { useAppStore } from '@renderer/core/stores/AppStore';
 import { useFilteredCharacterStore } from '@renderer/core/stores/FilteredCharacterStore';
 import { image } from '@renderer/core/utils';
 
@@ -31,7 +31,7 @@ const emit = defineEmits(['clickCharacter']);
 
 const State = computed(() => ({
   characters: useFilteredCharacterStore.actions
-    .applyFilters(Object.values(AppStore.data.characters))
+    .applyFilters(Object.values(useAppStore.state.characters))
     .filter((character) => character.owned)
     .sort((a, b) => b.spentMora - a.spentMora || a.name.localeCompare(b.name)),
 }));

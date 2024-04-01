@@ -1,49 +1,39 @@
 import Character from '@renderer/core/classes/Character';
+import { reactive, computed } from 'vue';
+
 import Traveler from '@renderer/core/classes/Traveler';
 
-class AppStore {
-  /**
-   * @constructor
-   */
-  constructor() {
-    this.data = this.load();
-    this.newlyModalOpened = false;
-  }
+const appStore = () => {
+  const { locale, materials, ownedCharacters, characters } = api.sendSync('loadData');
+  const characterList = Object.entries(characters)
+    .reduce((acc, [key, value]) => {
+      if (key === 'Traveler') {
+        const travelerTypeList = Object.keys(value.aptitudes);
+        return {
+          ...acc,
+          ...travelerTypeList.reduce((ac, type) => ({ ...ac, [`Traveler_${type}`]: new Traveler(type, value) }), {}),
+        };
+      }
+      return { ...acc, [key]: new Character(key, value, ownedCharacters.includes(key)) };
+    }, {})
+  ;
+  const materialList = Object.entries(materials)
+    .reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {})
+  ;
 
-  /**
-   * @return {Object}
-   */
-  load() {
-    const { locale, materials, ownedCharacters, characters } = api.sendSync('loadData');
-    const characterList = Object.entries(characters)
-      .reduce((acc, [key, value]) => {
-        if (key === 'Traveler') {
-          const travelerTypeList = Object.keys(value.aptitudes);
-          return {
-            ...acc,
-            ...travelerTypeList.reduce((ac, type) => ({ ...ac, [`Traveler_${type}`]: new Traveler(type, value) }), {}),
-          };
-        }
-        return { ...acc, [key]: new Character(key, value, ownedCharacters.includes(key)) };
-      }, {})
-    ;
-    const materialList = Object.entries(materials)
-      .reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {})
-    ;
+  const state = reactive({
+    locale,
+    characters: characterList,
+    materials: materialList,
+    newlyModalOpened: false,
+  });
 
-    return {
-      locale,
-      materials: materialList,
-      characters: characterList,
-    };
-  }
+  const newlyReleasedCharacters = computed(() => Object
+    .values(state.characters)
+    .filter((character) => character.isReleased() && new Date(character.releasedAt).getTime() + 864000000 >= Date.now() && !character.owned));
 
-  /**
-   * @param {String} locale
-   * @return {Boolean}
-   */
-  save(locale = 'fr-FR') {
-    const characters = Object.entries(this.data.characters)
+  const save = (localeName = 'fr-FR') => {
+    const charactersList = Object.entries(state.characters)
       .reduce((acc, [key, character]) => {
         if (character.name.startsWith('Traveler')) {
           return { ...acc, Traveler: character.$data };
@@ -51,27 +41,24 @@ class AppStore {
         return { ...acc, [key]: character.$data };
       }, {})
     ;
-    const ownedCharacters = Object.values(this.data.characters)
+    const ownedCharactersList = Object.values(state.characters)
       .filter((character) => !character.name.startsWith('Traveler') && character.owned)
       .map((character) => character.name)
     ;
-    return api.sendSync('saveData', {
-      locale,
-      materials: this.data.materials,
-      ownedCharacters,
-      characters,
-    });
-  }
+    console.log(1);
+    return api.sendSync('saveData', JSON.stringify({
+      locale: localeName,
+      materials: state.materials,
+      ownedCharacters: ownedCharactersList,
+      characters: charactersList,
+    }, null, 2));
+  };
 
-  /**
-   * @return {Character[]}
-   */
-  get newlyReleasedCharacters() {
-    return Object
-      .values(this.data.characters)
-      .filter((character) => character.isReleased() && new Date(character.releasedAt).getTime() + 864000000 >= Date.now() && !character.owned)
-    ;
-  }
-}
+  return {
+    state,
+    newlyReleasedCharacters,
+    save,
+  };
+};
 
-export default new AppStore();
+export const useAppStore = appStore();

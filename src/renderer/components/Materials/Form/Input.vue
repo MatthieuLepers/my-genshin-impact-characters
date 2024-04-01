@@ -28,7 +28,7 @@
         :max="props.type === 'number' && props.max ? props.max : null"
         :step="props.type === 'number' ? Math.abs(props.step) : null"
         @input="emit('update:modelValue', actions.cast($event.target.value, typeof props.modelValue))"
-        @click="emit('click')"
+        @click="emit('click', $event)"
         @keydown="emit('keydown', $event)"
         @focus="actions.handleFocus('focus', true)"
         @blur="actions.handleFocus('blur', false)"
