@@ -28,6 +28,9 @@ export default {
     LightlessSilkString: 0,
     LightlessEyeOfTheMaelstrom: 0,
     LightlessMass: 0,
+    FadingCandle: 0,
+    SilkenFeather: 0,
+    DenialAndJudgment: 0,
   },
   ownedCharacters: [
   ],
@@ -1946,6 +1949,29 @@ export default {
           level: 1,
           constellationIncrease: 5,
           material: 'LightlessSilkString',
+        },
+      },
+    },
+    Arlecchino: {
+      releasedAt: '2024-04-24',
+      element: 'pyro',
+      level: 1,
+      phase: 0,
+      constellations: 0,
+      aptitudes: {
+        normalAttack: {
+          level: 1,
+          constellationIncrease: 3,
+          material: 'FadingCandle',
+        },
+        elementalSkill: {
+          level: 1,
+          material: 'FadingCandle',
+        },
+        elementalBurst: {
+          level: 1,
+          constellationIncrease: 5,
+          material: 'FadingCandle',
         },
       },
     },

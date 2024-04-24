@@ -1,12 +1,13 @@
-import Dvalin from './bosses/Dvalin';
-import Andrius from './bosses/Andrius';
-import Childe from './bosses/Childe';
-import Azhdaha from './bosses/Azhdaha';
-import Signora from './bosses/Signora';
-import NarukamiNoMikoto from './bosses/NarukamiNoMikoto';
-import ShoukiNoKamiTheProdigal from './bosses/ShoukiNoKamiTheProdigal';
-import GuardianOfApepsOasis from './bosses/GuardianOfApepsOasis';
-import AllDevouringNarwhal from './bosses/AllDevouringNarwhal';
+import Dvalin from '@renderer/core/datas/bosses/Dvalin';
+import Andrius from '@renderer/core/datas/bosses/Andrius';
+import Childe from '@renderer/core/datas/bosses/Childe';
+import Azhdaha from '@renderer/core/datas/bosses/Azhdaha';
+import Signora from '@renderer/core/datas/bosses/Signora';
+import NarukamiNoMikoto from '@renderer/core/datas/bosses/NarukamiNoMikoto';
+import ShoukiNoKamiTheProdigal from '@renderer/core/datas/bosses/ShoukiNoKamiTheProdigal';
+import GuardianOfApepsOasis from '@renderer/core/datas/bosses/GuardianOfApepsOasis';
+import AllDevouringNarwhal from '@renderer/core/datas/bosses/AllDevouringNarwhal';
+import TheKnave from '@renderer/core/datas/bosses/TheKnave';
 
 export default {
   Dvalin,
@@ -18,4 +19,5 @@ export default {
   ShoukiNoKamiTheProdigal,
   GuardianOfApepsOasis,
   AllDevouringNarwhal,
+  TheKnave,
 };
