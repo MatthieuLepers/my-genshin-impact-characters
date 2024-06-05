@@ -1975,5 +1975,74 @@ export default {
         },
       },
     },
+    Clorinde: {
+      releasedAt: '2024-06-05',
+      element: 'electro',
+      level: 1,
+      phase: 0,
+      constellations: 0,
+      aptitudes: {
+        normalAttack: {
+          level: 1,
+          material: 'Everamber',
+        },
+        elementalSkill: {
+          level: 1,
+          constellationIncrease: 5,
+          material: 'Everamber',
+        },
+        elementalBurst: {
+          level: 1,
+          constellationIncrease: 3,
+          material: 'Everamber',
+        },
+      },
+    },
+    Sigewinne: {
+      releasedAt: '2024-07-04',
+      element: 'hydro',
+      level: 1,
+      phase: 0,
+      constellations: 0,
+      aptitudes: {
+        normalAttack: {
+          level: 1,
+          material: 'LightlessEyeOfTheMaelstrom',
+        },
+        elementalSkill: {
+          level: 1,
+          constellationIncrease: 3,
+          material: 'LightlessEyeOfTheMaelstrom',
+        },
+        elementalBurst: {
+          level: 1,
+          constellationIncrease: 5,
+          material: 'LightlessEyeOfTheMaelstrom',
+        },
+      },
+    },
+    Sethos: {
+      releasedAt: '2024-06-05',
+      element: 'electro',
+      level: 1,
+      phase: 0,
+      constellations: 0,
+      aptitudes: {
+        normalAttack: {
+          level: 1,
+          constellationIncrease: 3,
+          material: 'DakasBell',
+        },
+        elementalSkill: {
+          level: 1,
+          material: 'DakasBell',
+        },
+        elementalBurst: {
+          level: 1,
+          constellationIncrease: 5,
+          material: 'DakasBell',
+        },
+      },
+    },
   },
 };
