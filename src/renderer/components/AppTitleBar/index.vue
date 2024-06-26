@@ -13,9 +13,6 @@
         <template v-slot:langMenu="{ visible, close }">
           <AppTitleBarLangMenu :visible="visible" @close="close" />
         </template>
-        <template v-slot:toolsMenu="{ visible, close }">
-          <AppTitleBarToolsMenu :visible="visible" @close="close" />
-        </template>
       </TitleBarMenu>
     </template>
   </TitleBar>

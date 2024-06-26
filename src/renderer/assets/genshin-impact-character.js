@@ -1999,7 +1999,7 @@ export default {
       },
     },
     Sigewinne: {
-      releasedAt: '2024-07-04',
+      releasedAt: '2024-06-25',
       element: 'hydro',
       level: 1,
       phase: 0,
