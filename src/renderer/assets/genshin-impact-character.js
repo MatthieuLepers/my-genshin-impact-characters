@@ -2044,5 +2044,27 @@ export default {
         },
       },
     },
+    Emilie: {
+      element: 'dendro',
+      level: 1,
+      phase: 0,
+      constellations: 0,
+      aptitudes: {
+        normalAttack: {
+          level: 1,
+          material: 'SilkenFeather',
+        },
+        elementalSkill: {
+          level: 1,
+          constellationIncrease: 3,
+          material: 'SilkenFeather',
+        },
+        elementalBurst: {
+          level: 1,
+          constellationIncrease: 5,
+          material: 'SilkenFeather',
+        },
+      },
+    },
   },
 };
