@@ -45,7 +45,6 @@ const appStore = () => {
       .filter((character) => !character.name.startsWith('Traveler') && character.owned)
       .map((character) => character.name)
     ;
-    console.log(1);
     return api.sendSync('saveData', JSON.stringify({
       locale: localeName,
       materials: state.materials,
