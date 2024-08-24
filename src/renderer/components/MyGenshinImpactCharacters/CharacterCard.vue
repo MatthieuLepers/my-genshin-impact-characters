@@ -19,7 +19,7 @@
 </template>
 
 <script setup>
-import Character from '@renderer/core/classes/Character';
+import Character from '@renderer/core/entities/character';
 import { image } from '@renderer/core/utils';
 
 defineOptions({ name: 'CharacterCard' });

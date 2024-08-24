@@ -1,25 +1,28 @@
 <template>
-  <div class="BossMaterial">
-    <component
-      :is="State.filteredCharacters.length ? 'button' : 'div'"
+  <div
+    v-if="State.filteredCharacters.length > 0"
+    class="BossMaterial"
+  >
+    <button
       class="BossMaterialTitle"
       @click="State.filteredCharacters.length ? (state.open = !state.open) : null"
     >
       <span>
-        <img class="BossMaterialImg" :src="image(`img/materials/${material}.png`)" :alt="props.material" />
+        <img class="BossMaterialImg" :src="image(`img/materials/${props.material}.png`)" :alt="props.material" />
         [{{ actions.getOwnedAndInvestedMaterials(props.material) }}/{{ actions.getMaxMaterial(props.material) }}] {{ t(`Data.WeaklyBosses.${props.boss}.materials.${props.material}`) }}
-        <span v-if="useFilteredCharacterStore.filters.elements.length">&nbsp;({{ State.filteredCharacters.length }})</span>
+        <span v-if="filteredCharacterStore.filters.elements.length">&nbsp;({{ State.filteredCharacters.length }})</span>
       </span>
       <FormInput
         class="BossMaterialInventoryInput"
         type="number"
         :min="0"
         :max="9999"
-        v-model="useAppStore.state.materials[material]"
         :label="t('App.inInventory')"
+        v-model="materialsStore.state.materials[props.material].inInventory"
         @click.stop
+        @update:modelValue="materialsStore.state.materials[props.material].save()"
       />
-    </component>
+    </button>
     <DataTable
       v-show="state.open && State.filteredCharacters.length"
       :class="{ 'DataTable--Open': state.open }"
@@ -36,32 +39,56 @@
         </span>
       </template>
       <template v-slot:smartLevel="{ obj }">
-        <FormInput type="number" :min="1" :max="90" v-model="obj.smartLevel" />
+        <FormInput
+          type="number"
+          :min="1"
+          :max="90"
+          v-model="obj.smartLevel"
+          @update:modelValue="obj.save()"
+        />
       </template>
       <template v-slot:phase="{ obj }">
-        <FormInput type="number" :min="0" :max="6" v-model="obj.phase" />
+        <FormInput
+          type="number"
+          :min="0"
+          :max="6"
+          v-model="obj.phase"
+          @update:modelValue="obj.save()"
+        />
       </template>
       <template v-slot:smartConstellation="{ obj }">
-        <FormInput type="number" :min="0" :max="6" v-model="obj.smartConstellation" />
+        <FormInput
+          type="number"
+          :min="0"
+          :max="6"
+          v-model="obj.smartConstellation"
+          @update:modelValue="obj.save()"
+        />
       </template>
       <template v-slot:aptitudes="{ obj }">
-        <FormInput type="number"
-          :class="{ Bonus: obj.aptitudes.normalAttack.getBonusValue() > 0 }"
-          :min="obj.aptitudes.normalAttack.getMinLevel()"
-          :max="obj.aptitudes.normalAttack.getMaxLevel()"
-          v-model="obj.aptitudes.normalAttack.smartLevel"
+        <FormInput
+          type="number"
+          :class="{ Bonus: obj.aptitudes.NormalAttack.getBonusValue() > 0 }"
+          :min="obj.aptitudes.NormalAttack.getMinLevel()"
+          :max="obj.aptitudes.NormalAttack.getMaxLevel()"
+          v-model="obj.aptitudes.NormalAttack.smartLevel"
+          @update:modelValue="obj.aptitudes.NormalAttack.save()"
         />
-        <FormInput type="number"
-          :class="{ Bonus: obj.aptitudes.elementalSkill.getBonusValue() > 0 }"
-          :min="obj.aptitudes.elementalSkill.getMinLevel()"
-          :max="obj.aptitudes.elementalSkill.getMaxLevel()"
-          v-model="obj.aptitudes.elementalSkill.smartLevel"
+        <FormInput
+          type="number"
+          :class="{ Bonus: obj.aptitudes.ElementalSkill.getBonusValue() > 0 }"
+          :min="obj.aptitudes.ElementalSkill.getMinLevel()"
+          :max="obj.aptitudes.ElementalSkill.getMaxLevel()"
+          v-model="obj.aptitudes.ElementalSkill.smartLevel"
+          @update:modelValue="obj.aptitudes.ElementalSkill.save()"
         />
-        <FormInput type="number"
-          :class="{ Bonus: obj.aptitudes.elementalBurst.getBonusValue() > 0 }"
-          :min="obj.aptitudes.elementalBurst.getMinLevel()"
-          :max="obj.aptitudes.elementalBurst.getMaxLevel()"
-          v-model="obj.aptitudes.elementalBurst.smartLevel"
+        <FormInput
+          type="number"
+          :class="{ Bonus: obj.aptitudes.ElementalBurst.getBonusValue() > 0 }"
+          :min="obj.aptitudes.ElementalBurst.getMinLevel()"
+          :max="obj.aptitudes.ElementalBurst.getMaxLevel()"
+          v-model="obj.aptitudes.ElementalBurst.smartLevel"
+          @update:modelValue="obj.aptitudes.ElementalBurst.save()"
         />
       </template>
       <template v-slot:spentMora="{ obj }">
@@ -78,8 +105,8 @@ import { useI18n } from 'vue-i18n';
 import DataTable from '@renderer/components/Materials/DataTable/index.vue';
 import FormInput from '@renderer/components/Materials/Form/Input.vue';
 
-import { useAppStore } from '@renderer/core/stores/AppStore';
-import { useFilteredCharacterStore } from '@/renderer/core/stores/FilteredCharacterStore';
+import { materialsStore } from '@/renderer/core/entities/material/store';
+import { filteredCharacterStore } from '@/renderer/core/stores/FilteredCharacterStore';
 import { image } from '@renderer/core/utils';
 
 const { t } = useI18n();
@@ -95,7 +122,7 @@ const state = reactive({
 });
 
 const State = computed(() => ({
-  filteredCharacters: props.characters.filter((character) => !useFilteredCharacterStore.filters.elements.length || useFilteredCharacterStore.filters.elements.includes(character.element)),
+  filteredCharacters: props.characters.filter((character) => !filteredCharacterStore.filters.elements.length || filteredCharacterStore.filters.elements.includes(character.element)),
   columns: {
     nameStr: {
       label: t('App.BossMaterial.columns.character'),
@@ -129,7 +156,10 @@ const actions = {
     return props.characters.reduce((acc, character) => acc + character.getMaxMaterial(materialName), 0);
   },
   getOwnedAndInvestedMaterials(materialName) {
-    return props.characters.reduce((acc, character) => acc + character.getInvestedMaterials(materialName), useAppStore.state.materials[materialName]);
+    return props.characters.reduce((acc, character) => acc + character.getInvestedMaterials(materialName), materialsStore.state.materials[materialName].inInventory);
+  },
+  handleAptitudeLevelInput(e) {
+    console.log(e);
   },
 };
 </script>

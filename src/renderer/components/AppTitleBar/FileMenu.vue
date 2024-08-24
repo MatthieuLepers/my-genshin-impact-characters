@@ -1,13 +1,6 @@
 <template>
   <ContextMenu :visible="props.visible">
     <ContextMenuItem
-      :label="t('App.TitleBarMenu.fileMenu.save')"
-      icon="icon-save"
-      shortcut="Ctrl+S"
-      @click="actions.save"
-    />
-    <ContextMenuSeparator />
-    <ContextMenuItem
       :label="t('App.TitleBarMenu.fileMenu.exit')"
       :shortcut="plateform === 'darwin' ? 'Cmd+Q' : 'Alt+F4'"
       @click="actions.closeApp"
@@ -20,14 +13,10 @@ import { useI18n } from 'vue-i18n';
 
 import ContextMenu from '@renderer/components/Materials/ContextMenu/index.vue';
 import ContextMenuItem from '@renderer/components/Materials/ContextMenu/Item.vue';
-import ContextMenuSeparator from '@renderer/components/Materials/ContextMenu/Separator.vue';
-
-import { notificationStore } from '@renderer/components/Materials/Notification/Store';
-import { useAppStore } from '@renderer/core/stores/AppStore';
 
 defineOptions({ name: 'AppTitleBarFileMenu' });
 
-const { t, locale } = useI18n();
+const { t } = useI18n();
 const { plateform } = api;
 
 const props = defineProps({
@@ -35,20 +24,9 @@ const props = defineProps({
   name: { type: String, required: true },
 });
 
-const emit = defineEmits(['close']);
-
 const actions = {
   closeApp() {
     api.send(`close:${props.name}`);
-  },
-  save() {
-    const success = useAppStore.save(locale.value);
-    if (success) {
-      notificationStore.actions.success(t('Notification.saveSuccess'));
-    } else {
-      notificationStore.actions.error(t('Notification.saveError'));
-    }
-    emit('close');
   },
 };
 </script>

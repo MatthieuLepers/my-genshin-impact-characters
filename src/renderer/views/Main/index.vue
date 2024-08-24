@@ -4,7 +4,7 @@
       <Filters class="MainViewFilters" />
       <TopCharacters
         @clickCharacter="actions.handleClickCharacter"
-        :key="useFilteredCharacterStore.filters.elements.length"
+        :key="filteredCharacterStore.filters.elements.length"
       />
       <div
         v-for="boss in Object.keys(tm('Data.WeaklyBosses'))"
@@ -25,14 +25,14 @@
       <Modal
         name="newlyReleasedCharactersModal"
         :modifiers="{ m: true }"
-        :title="t('App.Main.newlyReleasedCharactersModal.title', useAppStore.newlyReleasedCharacters.value.length)"
+        :title="t('App.Main.newlyReleasedCharactersModal.title', appStore.newlyReleasedCharacters.value.length)"
         :acceptLabel="t('App.Main.newlyReleasedCharactersModal.okLabel')"
         :refuseLabel="t('App.Main.newlyReleasedCharactersModal.cancelLabel')"
         @accept="router.push({ name: 'CharacterList' })"
       >
         <ul class="CharacterList">
           <li
-            v-for="(character, i) in useAppStore.newlyReleasedCharacters.value"
+            v-for="(character, i) in appStore.newlyReleasedCharacters.value"
             :key="i"
             class="CharacterListItem"
           >
@@ -61,8 +61,10 @@ import Filters from '@renderer/components/MyGenshinImpactCharacters/Filters.vue'
 import CharacterCard from '@renderer/components/MyGenshinImpactCharacters/CharacterCard.vue';
 
 import { modalStore } from '@renderer/components/Materials/Modal/Store';
-import { useAppStore } from '@renderer/core/stores/AppStore';
-import { useFilteredCharacterStore } from '@renderer/core/stores/FilteredCharacterStore';
+import { charactersStore } from '@renderer/core/entities/character/store';
+import { materialsStore } from '@renderer/core/entities/material/store';
+import { filteredCharacterStore } from '@renderer/core/stores/FilteredCharacterStore';
+import { appStore } from '@renderer/core/stores/AppStore';
 
 defineOptions({ name: 'MainView' });
 
@@ -93,7 +95,7 @@ const actions = {
   getOwnedAndInvestedMaterials(materialName) {
     if (!state.characters[materialName]?.length) return 0;
     return (state.characters[materialName] || [])
-      .reduce((acc, character) => acc + character.getInvestedMaterials(materialName), useAppStore.state.materials[materialName])
+      .reduce((acc, character) => acc + character.getInvestedMaterials(materialName), materialsStore.state.materials[materialName].inInventory)
     ;
   },
   handleClickCharacter(character) {
@@ -111,14 +113,14 @@ const actions = {
       .filter((material) => materials.includes(material))
       .reduce((acc, material) => [
         ...acc,
-        ...useFilteredCharacterStore.actions.applyFilters(Object.values(state.characters[material])),
+        ...filteredCharacterStore.actions.applyFilters(Object.values(state.characters[material])),
       ], [])
     ;
   },
 };
 
 onBeforeMount(() => {
-  state.characters = Object.values(useAppStore.state.characters)
+  state.characters = Object.values(charactersStore.state.characters)
     .filter((character) => character.owned)
     .reduce((acc, character) => {
       character.materials.forEach((material) => {
@@ -130,11 +132,9 @@ onBeforeMount(() => {
 });
 
 onMounted(() => {
-  if (!Object.values(state.characters).length) {
-    router.push({ name: 'CharacterList' });
-  } else if (useAppStore.newlyReleasedCharacters.value.length && !useAppStore.state.newlyModalOpened) {
+  if (appStore.newlyReleasedCharacters.value.length && !appStore.state.newlyModalOpened) {
     modalStore.actions.show('newlyReleasedCharactersModal');
-    useAppStore.state.newlyModalOpened = true;
+    appStore.state.newlyModalOpened = true;
   }
 });
 </script>

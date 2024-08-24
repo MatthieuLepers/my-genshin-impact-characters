@@ -1,5 +1,9 @@
 import { ipcRenderer, clipboard } from 'electron';
 
+import * as Character from '@/main/api/character';
+import * as CharacterAptitude from '@/main/api/characterAptitude';
+import * as Material from '@/main/api/material';
+import * as Setting from '@/main/api/setting';
 import * as CipherUtils from '@/main/utils/CipherUtils';
 import { APP_PLATEFORM, HOME_DIR, IS_DEV } from '@/main/utils/Constants';
 
@@ -17,6 +21,10 @@ export default {
   on(channel: string, func: Function) {
     ipcRenderer.on(channel, (_e, ...args) => func(...args));
   },
+  Character,
+  CharacterAptitude,
+  Material,
+  Setting,
   CipherUtils,
   homedir: HOME_DIR,
   plateform: APP_PLATEFORM,

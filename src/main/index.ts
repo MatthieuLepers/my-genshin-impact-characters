@@ -3,8 +3,10 @@ import { join } from 'path';
 import { electronApp, optimizer, is } from '@electron-toolkit/utils';
 import { autoUpdater } from 'electron-updater';
 
-import { APP_PLATEFORM } from '@/main/utils/Constants';
+import { sequelize, migrateUp } from '@/main/database';
+import { Setting } from '@/main/database/models';
 import ElectronWindow from '@/main/classes/ElectronWindow';
+import { APP_PLATEFORM } from '@/main/utils/Constants';
 
 function createWindow() {
   const mainWindow = new ElectronWindow('main', {
@@ -28,12 +30,16 @@ function createWindow() {
 app
   .whenReady()
   .then(async () => {
-    electronApp.setAppUserModelId('com.electron');
+    electronApp.setAppUserModelId('vite.electron.my-genshin-impact-characters');
 
     const AppModule = await import('@/main/modules/App');
     AppModule.default();
 
     createWindow();
+
+    await sequelize.sync();
+    await Setting.createDefault();
+    await migrateUp();
 
     if (is.dev) {
       // eslint-disable-next-line import/no-extraneous-dependencies
