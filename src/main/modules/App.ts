@@ -1,6 +1,7 @@
 import fs from 'fs';
 import os from 'os';
 import merge from 'deepmerge';
+import { autoUpdater } from 'electron-updater';
 import database from '@renderer/assets/genshin-impact-character';
 
 import { IpcHandle, IpcOn, GlobalShortcut } from '@/main/decorators';
@@ -60,6 +61,21 @@ class AppModule {
     } catch (ex) {
       return false;
     }
+  }
+
+  @IpcOn
+  static databaseReady() {
+    WindowStore.getVisibleWindows().forEach((win) => {
+      win.sendData('database-ready');
+      win.webContents.addListener('did-finish-load', () => {
+        win.sendData('database-ready');
+      });
+    });
+  }
+
+  @IpcOn
+  static quitAndInstallUpdate() {
+    autoUpdater.quitAndInstall();
   }
 
   @GlobalShortcut('Alt+F4')

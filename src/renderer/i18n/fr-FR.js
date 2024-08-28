@@ -9,6 +9,11 @@ export default {
       followup: 'Suivi',
       characterBox: 'Box',
     },
+    Updater: {
+      downloadingUpdate: 'Téléchargement de la mise à jour...',
+      readyToInstall: 'Mise à jour prête à être installée !',
+      quitAndInstall: 'Mettre à jour',
+    },
     TitleBarMenu: {
       fileMenu: {
         label: 'Fichier',

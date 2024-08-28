@@ -2067,5 +2067,51 @@ export default {
         },
       },
     },
+    Mualani: {
+      releasedAt: '2024-08-28',
+      element: 'hydro',
+      level: 1,
+      phase: 0,
+      constellations: 0,
+      aptitudes: {
+        normalAttack: {
+          level: 1,
+          material: 'LightlessMass',
+        },
+        elementalSkill: {
+          level: 1,
+          constellationIncrease: 3,
+          material: 'LightlessMass',
+        },
+        elementalBurst: {
+          level: 1,
+          constellationIncrease: 5,
+          material: 'LightlessMass',
+        },
+      },
+    },
+    Kachina: {
+      releasedAt: '2024-08-28',
+      element: 'geo',
+      level: 1,
+      phase: 0,
+      constellations: 0,
+      aptitudes: {
+        normalAttack: {
+          level: 1,
+          material: 'FadingCandle',
+        },
+        elementalSkill: {
+          level: 1,
+          constellationIncrease: 3,
+          material: 'FadingCandle',
+        },
+        elementalBurst: {
+          level: 1,
+          constellationIncrease: 5,
+          material: 'FadingCandle',
+        },
+      },
+    },
   },
 };

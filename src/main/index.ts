@@ -5,6 +5,7 @@ import { autoUpdater } from 'electron-updater';
 
 import { APP_PLATEFORM } from '@/main/utils/Constants';
 import ElectronWindow from '@/main/classes/ElectronWindow';
+import WindowStore from '@/main/stores/WindowStore';
 
 function createWindow() {
   const mainWindow = new ElectronWindow('main', {
@@ -79,8 +80,12 @@ app.on('before-quit', () => {
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-electron-builder.html#auto-updating
  * https://github.com/iffy/electron-updater-example
  */
+autoUpdater.on('update-available', () => {
+  WindowStore.broadcastData('update-available');
+});
+
 autoUpdater.on('update-downloaded', () => {
-  autoUpdater.quitAndInstall();
+  WindowStore.broadcastData('update-downloaded');
 });
 
 app.on('ready', () => {
