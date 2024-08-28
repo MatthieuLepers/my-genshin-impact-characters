@@ -1,3 +1,5 @@
+import { autoUpdater } from 'electron-updater';
+
 import { IpcHandle, IpcOn, GlobalShortcut } from '@/main/decorators';
 import { Setting } from '@/main/database/models/Setting';
 import WindowStore from '@/main/stores/WindowStore';
@@ -26,6 +28,11 @@ class AppModule {
         win.sendData('database-ready');
       });
     });
+  }
+
+  @IpcOn
+  static quitAndInstallUpdate() {
+    autoUpdater.quitAndInstall();
   }
 
   @GlobalShortcut('Alt+F4')

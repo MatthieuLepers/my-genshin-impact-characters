@@ -4,6 +4,7 @@ import {
   Model,
   DataType,
   PrimaryKey,
+  AllowNull,
 } from 'sequelize-typescript';
 
 @Table({
@@ -23,4 +24,8 @@ export class ArtefactSet extends Model {
 
   @Column(DataType.INTEGER)
   declare rarity: number;
+
+  @AllowNull(true)
+  @Column(DataType.DATE)
+  declare releasedAt: Date;
 }

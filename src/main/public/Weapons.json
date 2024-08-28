@@ -1,0 +1,1920 @@
+[
+  {
+    "name": "Absolution",
+    "type": "sword",
+    "owned": false,
+    "rarity": 5,
+    "atk": 47.54,
+    "statName": "CritDmg%",
+    "statValue": 9.6,
+    "releasedAt": "2024-06-05"
+  },
+  {
+    "name": "Akuoumaru",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "Atk%",
+    "statValue": 9,
+    "releasedAt": "2021-10-13"
+  },
+  {
+    "name": "AlleyHunter",
+    "type": "bow",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "Atk%",
+    "statValue": 6,
+    "releasedAt": "2021-04-06"
+  },
+  {
+    "name": "AmenomaKageuchi",
+    "type": "sword",
+    "owned": false,
+    "rarity": 4,
+    "atk": 41.07,
+    "statName": "Atk%",
+    "statValue": 12,
+    "releasedAt": "2021-07-21"
+  },
+  {
+    "name": "AmosBow",
+    "type": "bow",
+    "owned": false,
+    "rarity": 5,
+    "atk": 45.94,
+    "statName": "Atk%",
+    "statValue": 10.8,
+    "releasedAt": "2020-10-28"
+  },
+  {
+    "name": "ApprenticesNotes",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 1,
+    "atk": 23.25,
+    "releasedAt": "2020-10-28"
+  },
+  {
+    "name": "AquaSimulacra",
+    "type": "bow",
+    "owned": false,
+    "rarity": 5,
+    "atk": 44.34,
+    "statName": "CritDmg%",
+    "statValue": 19.2,
+    "releasedAt": "2022-05-31"
+  },
+  {
+    "name": "AquilaFavonia",
+    "type": "sword",
+    "owned": false,
+    "rarity": 5,
+    "atk": 47.54,
+    "statName": "PhysicalDmg%",
+    "statValue": 9,
+    "releasedAt": "2020-10-28"
+  },
+  {
+    "name": "AshGravenDrinkingHorn",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "HP%",
+    "statValue": 9
+  },
+  {
+    "name": "AThousandFloatingDreams",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 5,
+    "atk": 44.34,
+    "statName": "EM",
+    "statValue": 57.6,
+    "releasedAt": "2022-11-02"
+  },
+  {
+    "name": "BalladOfTheBoundlessBlue",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "ER%",
+    "statValue": 6.67,
+    "releasedAt": "2023-10-12"
+  },
+  {
+    "name": "BalladOfTheFjords",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "CritRate%",
+    "statValue": 6,
+    "releasedAt": "2023-08-16"
+  },
+  {
+    "name": "BeaconOfTheReedSea",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 5,
+    "atk": 45.94,
+    "statName": "CritRate%",
+    "statValue": 7.2,
+    "releasedAt": "2023-03-01"
+  },
+  {
+    "name": "BeginnersProtector",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 1,
+    "atk": 23.25,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "BlackcliffAgate",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "CritDmg%",
+    "statValue": 12,
+    "releasedAt": "2020-11-01"
+  },
+  {
+    "name": "BlackcliffLongsword",
+    "type": "sword",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "CritDmg%",
+    "statValue": 8,
+    "releasedAt": "2020-11-01"
+  },
+  {
+    "name": "BlackcliffPole",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "CritDmg%",
+    "statValue": 12,
+    "releasedAt": "2020-11-01"
+  },
+  {
+    "name": "BlackcliffSlasher",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "CritDmg%",
+    "statValue": 12,
+    "releasedAt": "2020-11-01"
+  },
+  {
+    "name": "BlackcliffWarbow",
+    "type": "bow",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "CritDmg%",
+    "statValue": 8,
+    "releasedAt": "2020-11-01"
+  },
+  {
+    "name": "BlackTassel",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 3,
+    "atk": 37.61,
+    "statName": "HP%",
+    "statValue": 10.21,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "BloodtaintedGreatsword",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 3,
+    "atk": 37.6,
+    "statName": "EM",
+    "statValue": 40.8,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "CalamityQueller",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 5,
+    "atk": 49.14,
+    "statName": "Ark%",
+    "statValue": 3.6,
+    "releasedAt": "2022-01-05"
+  },
+  {
+    "name": "CashflowSupervision",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 5,
+    "atk": 47.54,
+    "statName": "CritRate%",
+    "statValue": 4.8,
+    "releasedAt": "2023-10-17"
+  },
+  {
+    "name": "ChainBreaker",
+    "type": "bow",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "Atk%",
+    "statValue": 6,
+    "releasedAt": "2024-08-28"
+  },
+  {
+    "name": "CinnabarSpindle",
+    "type": "sword",
+    "owned": false,
+    "rarity": 4,
+    "atk": 41.07,
+    "statName": "Def%",
+    "statValue": 15.01,
+    "releasedAt": "2021-11-25"
+  },
+  {
+    "name": "Cloudforged",
+    "type": "bow",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "EM",
+    "statValue": 36,
+    "releasedAt": "2024-06-07"
+  },
+  {
+    "name": "CompoundBow",
+    "type": "bow",
+    "owned": false,
+    "rarity": 4,
+    "atk": 41.07,
+    "statName": "PhysicalDmg%",
+    "statValue": 15.01,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "CoolSteel",
+    "type": "sword",
+    "owned": false,
+    "rarity": 3,
+    "atk": 38.74,
+    "statName": "Atk%",
+    "statValue": 7.66,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "CranesEchoingCall",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 5,
+    "atk": 49.14,
+    "statName": "Atk%",
+    "statValue": 3.6,
+    "releasedAt": "2024-01-31"
+  },
+  {
+    "name": "CrescentPike",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "PhysicalDmg%",
+    "statValue": 7.51,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "CrimsonMoonsSemblance",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 5,
+    "atk": 47.54,
+    "statName": "CritRate%",
+    "statValue": 4.8,
+    "releasedAt": "2024-04-24"
+  },
+  {
+    "name": "DarkIronSword",
+    "type": "sword",
+    "owned": false,
+    "rarity": 3,
+    "atk": 38.74,
+    "statName": "EM",
+    "statValue": 30.6,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "Deathmatch",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 4,
+    "atk": 41.07,
+    "statName": "CritRate%",
+    "statValue": 8,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "DebateClub",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 3,
+    "atk": 38.74,
+    "statName": "Atk%",
+    "statValue": 7.66,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "DialoguesOfTheDesertSages",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "HP%",
+    "statValue": 9,
+    "releasedAt": "2024-03-14"
+  },
+  {
+    "name": "DodocoTales",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 4,
+    "atk": 41.07,
+    "statName": "Atk%",
+    "statValue": 12,
+    "releasedAt": "2021-06-17"
+  },
+  {
+    "name": "DragonsBane",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 4,
+    "atk": 41.07,
+    "statName": "EM",
+    "statValue": 48,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "DragonspineSpear",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 4,
+    "atk": 41.07,
+    "statName": "PhysicalDmg%",
+    "statValue": 15.01,
+    "releasedAt": "2020-12-23"
+  },
+  {
+    "name": "DullBlade",
+    "type": "sword",
+    "owned": false,
+    "rarity": 1,
+    "atk": 23.25,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "EarthShaker",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "Atk%",
+    "statValue": 6,
+    "releasedAt": "2024-08-28"
+  },
+  {
+    "name": "ElegyForTheEnd",
+    "type": "bow",
+    "owned": false,
+    "rarity": 5,
+    "atk": 45.94,
+    "statName": "ER%",
+    "statValue": 12,
+    "releasedAt": "2021-03-17"
+  },
+  {
+    "name": "EmeraldOrb",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 3,
+    "atk": 39.88,
+    "statName": "EM",
+    "statValue": 20.4,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "EndOfTheLine",
+    "type": "bow",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "ER%",
+    "statValue": 10,
+    "releasedAt": "2022-08-24"
+  },
+  {
+    "name": "EngulfingLightning",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 5,
+    "atk": 45.94,
+    "statName": "ER%",
+    "statValue": 12,
+    "releasedAt": "2021-09-01"
+  },
+  {
+    "name": "EverlastingMoonglow",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 5,
+    "atk": 45.94,
+    "statName": "HP%",
+    "statValue": 10.8,
+    "releasedAt": "2021-09-21"
+  },
+  {
+    "name": "EyeOfPerception",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 4,
+    "atk": 41.07,
+    "statName": "Atk%",
+    "statValue": 12,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "FadingTwilight",
+    "type": "bow",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "ER%",
+    "statValue": 6.67,
+    "releasedAt": "2022-03-31"
+  },
+  {
+    "name": "FangOfTheMountainKing",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 5,
+    "atk": 49.14,
+    "statName": "CritRate%",
+    "statValue": 2.4
+  },
+  {
+    "name": "FavoniusCodex",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "ER%",
+    "statValue": 10,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "FavoniusGreatsword",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 4,
+    "atk": 41.07,
+    "statName": "ER%",
+    "statValue": 13.33,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "FavoniusLance",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "ER%",
+    "statValue": 6.67,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "FavoniusSword",
+    "type": "sword",
+    "owned": false,
+    "rarity": 4,
+    "atk": 41.07,
+    "statName": "ER%",
+    "statValue": 13.33,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "FavoniusWarbow",
+    "type": "bow",
+    "owned": false,
+    "rarity": 4,
+    "atk": 41.07,
+    "statName": "ER%",
+    "statValue": 13.33,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "FerrousShadow",
+    "type": "sword",
+    "owned": false,
+    "rarity": 3,
+    "atk": 38.74,
+    "statName": "HP%",
+    "statValue": 7.66,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "FesteringDesire",
+    "type": "sword",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "ER%",
+    "statValue": 10,
+    "releasedAt": "2020-12-23"
+  },
+  {
+    "name": "FilletBlade",
+    "type": "sword",
+    "owned": false,
+    "rarity": 3,
+    "atk": 38.74,
+    "statName": "Atk%",
+    "statValue": 7.66,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "FinaleOfTheDeep",
+    "type": "sword",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "Atk%",
+    "statValue": 6,
+    "releasedAt": "2023-08-16"
+  },
+  {
+    "name": "FleuveCendreFerryman",
+    "type": "sword",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "ER%",
+    "statValue": 10,
+    "releasedAt": "2023-08-16"
+  },
+  {
+    "name": "FlowingPurity",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "Atk%",
+    "statValue": 6,
+    "releasedAt": "2023-08-16"
+  },
+  {
+    "name": "FluteOfEzpitzal",
+    "type": "sword",
+    "owned": false,
+    "rarity": 4,
+    "atk": 41.07,
+    "statName": "Def%",
+    "statValue": 15.01,
+    "releasedAt": "2024-08-28"
+  },
+  {
+    "name": "FootprintOfTheRainbow",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "Def%",
+    "statValue": 11.26,
+    "releasedAt": "2024-08-28"
+  },
+  {
+    "name": "ForestRegalia",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "ER%",
+    "statValue": 6.67,
+    "releasedAt": "2022-08-24"
+  },
+  {
+    "name": "FreedomSword",
+    "type": "sword",
+    "owned": false,
+    "rarity": 5,
+    "atk": 45.94,
+    "statName": "EM",
+    "statValue": 43.2,
+    "releasedAt": "2021-06-29"
+  },
+  {
+    "name": "Frostbearer",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "Atk%",
+    "statValue": 9,
+    "releasedAt": "2020-12-23"
+  },
+  {
+    "name": "FruitOfFulfillment",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "ER%",
+    "statValue": 10,
+    "releasedAt": "2022-08-24"
+  },
+  {
+    "name": "HakushinRing",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "ER%",
+    "statValue": 6.67,
+    "releasedAt": "2021-07-21"
+  },
+  {
+    "name": "Halberd",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 3,
+    "atk": 39.88,
+    "statName": "Atk%",
+    "statValue": 5.11,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "Hamayumi",
+    "type": "bow",
+    "owned": false,
+    "rarity": 4,
+    "atk": 41.07,
+    "statName": "Atk%",
+    "statValue": 12,
+    "releasedAt": "2021-07-21"
+  },
+  {
+    "name": "HaranGeppakuFutsu",
+    "type": "sword",
+    "owned": false,
+    "rarity": 5,
+    "atk": 45.94,
+    "statName": "CritRate%",
+    "statValue": 7.2,
+    "releasedAt": "2022-03-30"
+  },
+  {
+    "name": "HarbingerOfDawn",
+    "type": "sword",
+    "owned": false,
+    "rarity": 3,
+    "atk": 38.74,
+    "statName": "CritDmg%",
+    "statValue": 10.2,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "HuntersBow",
+    "type": "bow",
+    "owned": false,
+    "rarity": 1,
+    "atk": 23.25,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "HuntersPath",
+    "type": "bow",
+    "owned": false,
+    "rarity": 5,
+    "atk": 44.34,
+    "statName": "CritRate%",
+    "statValue": 9.6,
+    "releasedAt": "2022-08-24"
+  },
+  {
+    "name": "IbisPiercer",
+    "type": "bow",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "Atk%",
+    "statValue": 6,
+    "releasedAt": "2023-05-25"
+  },
+  {
+    "name": "IronPoint",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 2,
+    "atk": 32.93,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "IronSting",
+    "type": "sword",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "EM",
+    "statValue": 36,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "JadefallsSplendor",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 5,
+    "atk": 45.94,
+    "statName": "HP%",
+    "statValue": 10.8,
+    "releasedAt": "2023-05-02"
+  },
+  {
+    "name": "KagotsurubeIsshin",
+    "type": "sword",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "Atk%",
+    "statValue": 9,
+    "releasedAt": "2022-07-13"
+  },
+  {
+    "name": "KagurasVerity",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 5,
+    "atk": 45.94,
+    "statName": "CritDmg%",
+    "statValue": 14.4,
+    "releasedAt": "2022-02-16"
+  },
+  {
+    "name": "KatsuragikiriNagamasa",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "ER%",
+    "statValue": 10,
+    "releasedAt": "2021-07-21"
+  },
+  {
+    "name": "KeyOfKahjNisut",
+    "type": "sword",
+    "owned": false,
+    "rarity": 5,
+    "atk": 44.34,
+    "statName": "HP%",
+    "statValue": 14.4,
+    "releasedAt": "2022-10-14"
+  },
+  {
+    "name": "KingsSquire",
+    "type": "bow",
+    "owned": false,
+    "rarity": 4,
+    "atk": 41.07,
+    "statName": "Atk%",
+    "statValue": 12,
+    "releasedAt": "2022-08-24"
+  },
+  {
+    "name": "KitainCrossSpear",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "EM",
+    "statValue": 24,
+    "releasedAt": "2021-07-21"
+  },
+  {
+    "name": "LightOfFoliarIncision",
+    "type": "sword",
+    "owned": false,
+    "rarity": 5,
+    "atk": 44.34,
+    "statName": "CritDmg%",
+    "statValue": 19.2,
+    "releasedAt": "2023-01-18"
+  },
+  {
+    "name": "LionsRoar",
+    "type": "sword",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "Atk%",
+    "statValue": 9,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "LithicBlade",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "Atk%",
+    "statValue": 9,
+    "releasedAt": "2021-02-23"
+  },
+  {
+    "name": "LithicSpear",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "Atk%",
+    "statValue": 6,
+    "releasedAt": "2021-02-23"
+  },
+  {
+    "name": "LostPrayerToTheSacredWinds",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 5,
+    "atk": 45.94,
+    "statName": "CritRate%",
+    "statValue": 7.2,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "LumidouceElegy",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 5,
+    "atk": 45.94,
+    "statName": "CritRate%",
+    "statValue": 7.2,
+    "releasedAt": "2024-08-06"
+  },
+  {
+    "name": "LuxuriousSeaLord",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 4,
+    "atk": 41.07,
+    "statName": "Atk%",
+    "statValue": 12,
+    "releasedAt": "2021-09-27"
+  },
+  {
+    "name": "MagicGuide",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 3,
+    "atk": 37.61,
+    "statName": "EM",
+    "statValue": 40.8,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "MailedFlower",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "EM",
+    "statValue": 24,
+    "releasedAt": "20203-03-03"
+  },
+  {
+    "name": "MakhairaAquamarine",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "EM",
+    "statValue": 36,
+    "releasedAt": "2022-09-28"
+  },
+  {
+    "name": "MappaMare",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "EM",
+    "statValue": 24,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "MemoryOfDust",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 5,
+    "atk": 45.94,
+    "statName": "Atk%",
+    "statValue": 10.8,
+    "releasedAt": "2020-11-11"
+  },
+  {
+    "name": "Messenger",
+    "type": "bow",
+    "owned": false,
+    "rarity": 3,
+    "atk": 39.88,
+    "statName": "CritDmg%",
+    "statValue": 6.8,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "MissiveWindspear",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "Atk%",
+    "statValue": 9,
+    "releasedAt": "2022-09-29"
+  },
+  {
+    "name": "MistsplitterReforged",
+    "type": "sword",
+    "owned": false,
+    "rarity": 5,
+    "atk": 47.54,
+    "statName": "CritDmg%",
+    "statValue": 9.6,
+    "releasedAt": "2021-07-21"
+  },
+  {
+    "name": "MitternachtsWaltz",
+    "type": "bow",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "PhysicalDmg%",
+    "statValue": 11.26,
+    "releasedAt": "2021-06-09"
+  },
+  {
+    "name": "Moonpiercer",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "EM",
+    "statValue": 24,
+    "releasedAt": "2022-08-24"
+  },
+  {
+    "name": "MouunsMoon",
+    "type": "bow",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "Atk%",
+    "statValue": 6,
+    "releasedAt": "2021-11-02"
+  },
+  {
+    "name": "OathswornEye",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "Atk%",
+    "statValue": 6,
+    "releasedAt": "2022-02-16"
+  },
+  {
+    "name": "OldMercsPal",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 2,
+    "atk": 32.93,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "OtherworldlyStory",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 3,
+    "atk": 38.74,
+    "statName": "ER%",
+    "statValue": 8.5,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "PocketGrimoire",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 2,
+    "atk": 32.93,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "PolarStar",
+    "type": "bow",
+    "owned": false,
+    "rarity": 5,
+    "atk": 45.94,
+    "statName": "CritRate%",
+    "statValue": 7.2,
+    "releasedAt": "2021-10-13"
+  },
+  {
+    "name": "PortablePowerSaw",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 4,
+    "atk": 41.07,
+    "statName": "HP%",
+    "statValue": 12,
+    "releasedAt": "2023-09-27"
+  },
+  {
+    "name": "Predator",
+    "type": "bow",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "Atk%",
+    "statValue": 9,
+    "releasedAt": "2021-09-01"
+  },
+  {
+    "name": "PrimordialJadeCutter",
+    "type": "sword",
+    "owned": false,
+    "rarity": 5,
+    "atk": 44.34,
+    "statName": "CritRate%",
+    "statValue": 9.6,
+    "releasedAt": "2021-02-03"
+  },
+  {
+    "name": "PrimordialJadeWingedSpear",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 5,
+    "atk": 47.54,
+    "statName": "CritRate%",
+    "statValue": 4.8,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "ProspectorsDrill",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "Atk%",
+    "statValue": 6,
+    "releasedAt": "2023-10-17"
+  },
+  {
+    "name": "PrototypeAmber",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "HP%",
+    "statValue": 9,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "PrototypeArchaic",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "Atk%",
+    "statValue": 6,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "PrototypeCrescent",
+    "type": "bow",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "Atk%",
+    "statValue": 9,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "PrototypeRancour",
+    "type": "sword",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "PhysicalDmg%",
+    "statValue": 7.51,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "PrototypeStarglitter",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "ER%",
+    "statValue": 10,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "Rainslasher",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "EM",
+    "statValue": 36,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "RangeGauge",
+    "type": "bow",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "Atk%",
+    "statValue": 6,
+    "releasedAt": "2023-10-17"
+  },
+  {
+    "name": "RavenBow",
+    "type": "bow",
+    "owned": false,
+    "rarity": 3,
+    "atk": 39.88,
+    "statName": "EM",
+    "statValue": 20.4,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "RecurveBow",
+    "type": "bow",
+    "owned": false,
+    "rarity": 3,
+    "atk": 37.61,
+    "statName": "HP%",
+    "statValue": 10.21,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "RedhornStonethresher",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 5,
+    "atk": 44.34,
+    "statName": "CritDmg%",
+    "statValue": 19.2,
+    "releasedAt": "2021-12-14"
+  },
+  {
+    "name": "RightfulReward",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "HP%",
+    "statValue": 6,
+    "releasedAt": "2023-08-16"
+  },
+  {
+    "name": "RingOfYaxche",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "HP%",
+    "statValue": 9,
+    "releasedAt": "2024-08-28"
+  },
+  {
+    "name": "RoyalBow",
+    "type": "bow",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "Atk%",
+    "statValue": 9,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "RoyalGreatsword",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "Atk%",
+    "statValue": 6,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "RoyalGrimoire",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "Atk%",
+    "statValue": 6,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "RoyalLongsword",
+    "type": "sword",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "Atk%",
+    "statValue": 9,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "RoyalSpear",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.7,
+    "statName": "Atk%",
+    "statValue": 6,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "Rust",
+    "type": "bow",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "Atk%",
+    "statValue": 9,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "SacrificialBow",
+    "type": "bow",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "ER%",
+    "statValue": 6.67,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "SacrificialFragments",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 4,
+    "atk": 41.07,
+    "statName": "EM",
+    "statValue": 48,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "SacrificialGreatsword",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "ER%",
+    "statValue": 6.67,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "SacrificialJade",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 4,
+    "atk": 41.07,
+    "statName": "CritRate%",
+    "statValue": 8,
+    "releasedAt": "2023-08-16"
+  },
+  {
+    "name": "SacrificialSword",
+    "type": "sword",
+    "owned": false,
+    "rarity": 4,
+    "atk": 41.07,
+    "statName": "ER%",
+    "statValue": 13.33,
+    "releasedAt": "20240-09-28"
+  },
+  {
+    "name": "ScionOfTheBlazingSun",
+    "type": "bow",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "CritRate%",
+    "statValue": 4,
+    "releasedAt": "2023-08-16"
+  },
+  {
+    "name": "SeasonedHuntersBow",
+    "type": "bow",
+    "owned": false,
+    "rarity": 2,
+    "atk": 32.93,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "SerpentSpine",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "CritRate%",
+    "statValue": 6,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "SharpshootersOath",
+    "type": "bow",
+    "owned": false,
+    "rarity": 3,
+    "atk": 38.74,
+    "statName": "CritDmg%",
+    "statValue": 10.2,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "SilvershowerHeartstrings",
+    "type": "bow",
+    "owned": false,
+    "rarity": 5,
+    "atk": 44.34,
+    "statName": "HP%",
+    "statValue": 14.4,
+    "releasedAt": "2024-06-25"
+  },
+  {
+    "name": "SilverSword",
+    "type": "sword",
+    "owned": false,
+    "rarity": 2,
+    "atk": 32.93,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "SkyriderGreatsword",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 3,
+    "atk": 38.74,
+    "statName": "PhysicalDmg%",
+    "statValue": 9.56,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "SkyriderSword",
+    "type": "sword",
+    "owned": false,
+    "rarity": 3,
+    "atk": 37.61,
+    "statName": "ER%",
+    "statValue": 11.33,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "SkywardBlade",
+    "type": "sword",
+    "owned": false,
+    "rarity": 5,
+    "atk": 45.94,
+    "statName": "ER%",
+    "statValue": 12,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "SkywardAtlas",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 5,
+    "atk": 47.54,
+    "statName": "Atk%",
+    "statValue": 7.2,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "SkywardHarp",
+    "type": "bow",
+    "owned": false,
+    "rarity": 5,
+    "atk": 47.54,
+    "statName": "CritRate%",
+    "statValue": 4.8,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "SkywardPride",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 5,
+    "atk": 47.54,
+    "statName": "ER%",
+    "statValue": 8,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "SkywardSpine",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 5,
+    "atk": 47.54,
+    "statName": "ER%",
+    "statValue": 8,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "Slingshot",
+    "type": "bow",
+    "owned": false,
+    "rarity": 3,
+    "atk": 37.61,
+    "statName": "CritRate%",
+    "statValue": 6.8,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "SnowTombedStarsilver",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "PhysicalDmg%",
+    "statValue": 7.51,
+    "releasedAt": "2020-12-23"
+  },
+  {
+    "name": "SolarPearl",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "CritRate%",
+    "statValue": 6,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "SongOfBrokenPines",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 5,
+    "atk": 49.14,
+    "statName": "PhysicalDmg%",
+    "statValue": 4.5,
+    "releasedAt": "2021-03-18"
+  },
+  {
+    "name": "SongOfStillness",
+    "type": "bow",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "Atk%",
+    "statValue": 9,
+    "releasedAt": "2023-08-16"
+  },
+  {
+    "name": "SapwoodBlade",
+    "type": "sword",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "ER%",
+    "statValue": 6.67,
+    "releasedAt": "2022-08-24"
+  },
+  {
+    "name": "SplendorOfTranquilWaters",
+    "type": "sword",
+    "owned": false,
+    "rarity": 5,
+    "atk": 44.34,
+    "statName": "CritDmg%",
+    "statValue": 19.2,
+    "releasedAt": "2023-11-08"
+  },
+  {
+    "name": "StaffOfHoma",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 5,
+    "atk": 45.94,
+    "statName": "CritDmg%",
+    "statValue": 14.4,
+    "releasedAt": "2021-02-23"
+  },
+  {
+    "name": "StaffOfTheScarletSands",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 5,
+    "atk": 44.34,
+    "statName": "CritRate%",
+    "statValue": 9.6,
+    "releasedAt": "2022-09-28"
+  },
+  {
+    "name": "SummitShaper",
+    "type": "sword",
+    "owned": false,
+    "rarity": 5,
+    "atk": 45.94,
+    "statName": "Atk%",
+    "statValue": 10.8,
+    "releasedAt": "2020-12-23"
+  },
+  {
+    "name": "SurfsUp",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 5,
+    "atk": 44.34,
+    "statName": "CritDmg%",
+    "statValue": 19.2,
+    "releasedAt": "2024-08-28"
+  },
+  {
+    "name": "SwordOfDescension",
+    "type": "sword",
+    "owned": false,
+    "rarity": 4,
+    "atk": 38.74,
+    "statName": "Atk%",
+    "statValue": 7.66,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "SwordOfNarzissenkreuz",
+    "type": "sword",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "Atk%",
+    "statValue": 9,
+    "releasedAt": "2023-11-08"
+  },
+  {
+    "name": "TalkingStick",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "CritRate%",
+    "statValue": 4,
+    "releasedAt": "2023-08-16"
+  },
+  {
+    "name": "TheAlleyFlash",
+    "type": "sword",
+    "owned": false,
+    "rarity": 4,
+    "atk": 45.07,
+    "statName": "EM",
+    "statValue": 12,
+    "releasedAt": "2021-03-17"
+  },
+  {
+    "name": "TheBell",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "HP%",
+    "statValue": 9,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "TheBlackSword",
+    "type": "sword",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "CritRate%",
+    "statValue": 6,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "TheCatch",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "ER%",
+    "statValue": 10,
+    "releasedAt": "2021-09-01"
+  },
+  {
+    "name": "TheDockhandsAssistant",
+    "type": "sword",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "HP%",
+    "statValue": 9,
+    "releasedAt": "2023-09-27"
+  },
+  {
+    "name": "TheFirstGreatMagic",
+    "type": "bow",
+    "owned": false,
+    "rarity": 5,
+    "atk": 45.94,
+    "statName": "CritDmg%",
+    "statValue": 14.4,
+    "releasedAt": "2023-08-16"
+  },
+  {
+    "name": "TheFlute",
+    "type": "sword",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "Atk%",
+    "statValue": 9,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "TheStringless",
+    "type": "bow",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "EM",
+    "statValue": 36,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "TheUnforged",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 5,
+    "atk": 45.94,
+    "statName": "Atk%",
+    "statValue": 10.8,
+    "releasedAt": "2020-12-01"
+  },
+  {
+    "name": "TheViridescentHunt",
+    "type": "bow",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "CritRate%",
+    "statValue": 6,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "TheWidsith",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "CritDmg%",
+    "statValue": 12,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "ThrillingTalesOfDragonSlayers",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 3,
+    "atk": 38.74,
+    "statName": "HP%",
+    "statValue": 7.66,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "ThunderingPulse",
+    "type": "bow",
+    "owned": false,
+    "rarity": 5,
+    "atk": 45.94,
+    "statName": "CritDmg%",
+    "statValue": 14.4,
+    "releasedAt": "2021-08-10"
+  },
+  {
+    "name": "TidalShadow",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "Atk%",
+    "statValue": 9,
+    "releasedAt": "2023-08-16"
+  },
+  {
+    "name": "TomeOfTheEternalFlow",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 5,
+    "atk": 44.34,
+    "statName": "CritDmg%",
+    "statValue": 19.2,
+    "releasedAt": "2023-09-27"
+  },
+  {
+    "name": "ToukabouShigure",
+    "type": "sword",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "EM",
+    "statValue": 36,
+    "releasedAt": "2022-12-15"
+  },
+  {
+    "name": "TravelersHandySword",
+    "type": "sword",
+    "owned": false,
+    "rarity": 3,
+    "atk": 39.88,
+    "statName": "Def%",
+    "statValue": 6.37,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "TulaytullahsRemembrance",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 5,
+    "atk": 47.54,
+    "statName": "CritDmg%",
+    "statValue": 9.6,
+    "releasedAt": "2022-12-07"
+  },
+  {
+    "name": "TwinNephrite",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 3,
+    "atk": 39.88,
+    "statName": "CritRate%",
+    "statValue": 3.4,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "UltimateOverlordsMegaMagicSword",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "ER%",
+    "statValue": 6.67,
+    "releasedAt": "2023-12-21"
+  },
+  {
+    "name": "UrakuMisugiri",
+    "type": "sword",
+    "owned": false,
+    "rarity": 4,
+    "atk": 44.34,
+    "statName": "CritDmg%",
+    "statValue": 19.2,
+    "releasedAt": "2024-03-13"
+  },
+  {
+    "name": "Verdict",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 5,
+    "atk": 47.54,
+    "statName": "CritRate%",
+    "statValue": 4.8,
+    "releasedAt": "2023-12-20"
+  },
+  {
+    "name": "VortexVanquisher",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 5,
+    "atk": 45.94,
+    "statName": "Atk%",
+    "statValue": 10.8,
+    "releasedAt": "2020-12-01"
+  },
+  {
+    "name": "WanderingEvenstar",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "EM",
+    "statValue": 36,
+    "releasedAt": "2022-10-14"
+  },
+  {
+    "name": "WasterGreatsword",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 1,
+    "atk": 23.25,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "WavebreakersFin",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 4,
+    "atk": 45.07,
+    "statName": "Atk%",
+    "statValue": 3,
+    "releasedAt": "2021-11-02"
+  },
+  {
+    "name": "Whiteblind",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "Def%",
+    "statValue": 11.26,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "WhiteIronGreatsword",
+    "type": "sword",
+    "owned": false,
+    "rarity": 3,
+    "atk": 38.74,
+    "statName": "Def%",
+    "statValue": 9.56,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "WhiteTassel",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 3,
+    "atk": 38.74,
+    "statName": "CritRate%",
+    "statValue": 5.1,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "WindblumeOde",
+    "type": "bow",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "EM",
+    "statValue": 36,
+    "releasedAt": "2021-03-19"
+  },
+  {
+    "name": "WineAndSong",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "ER%",
+    "statValue": 6.67,
+    "releasedAt": "2021-03-17"
+  },
+  {
+    "name": "WolfFang",
+    "type": "sword",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "CritRate%",
+    "statValue": 6,
+    "releasedAt": "2023-08-16"
+  },
+  {
+    "name": "WolfsGravestone",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 5,
+    "atk": 45.94,
+    "statName": "Atk%",
+    "statValue": 10.8,
+    "releasedAt": "2020-09-28"
+  },
+  {
+    "name": "XiphosMoonlight",
+    "type": "sword",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "EM",
+    "statValue": 36,
+    "releasedAt": "2022-10-14"
+  }
+]

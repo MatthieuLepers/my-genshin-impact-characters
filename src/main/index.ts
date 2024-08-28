@@ -3,10 +3,12 @@ import { join } from 'path';
 import { electronApp, optimizer, is } from '@electron-toolkit/utils';
 import { autoUpdater } from 'electron-updater';
 
-import { sequelize, migrateUp } from '@/main/database';
+import { sequelize } from '@/main/database';
+import populate from '@/main/database/populate';
 import { Setting } from '@/main/database/models';
 import ElectronWindow from '@/main/classes/ElectronWindow';
 import { APP_PLATEFORM } from '@/main/utils/Constants';
+import WindowStore from '@/main/stores/WindowStore';
 
 function createWindow() {
   const mainWindow = new ElectronWindow('main', {
@@ -39,7 +41,7 @@ app
 
     await sequelize.sync();
     await Setting.createDefault();
-    await migrateUp();
+    await populate();
 
     if (is.dev) {
       // eslint-disable-next-line import/no-extraneous-dependencies
@@ -85,8 +87,12 @@ app.on('before-quit', () => {
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-electron-builder.html#auto-updating
  * https://github.com/iffy/electron-updater-example
  */
+autoUpdater.on('update-available', () => {
+  WindowStore.broadcastData('update-available');
+});
+
 autoUpdater.on('update-downloaded', () => {
-  autoUpdater.quitAndInstall();
+  WindowStore.broadcastData('update-downloaded');
 });
 
 app.on('ready', () => {

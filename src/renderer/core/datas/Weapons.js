@@ -135,7 +135,7 @@ export { default as ScionOfTheBlazingSun } from '@renderer/core/datas/weapons/Sc
 export { default as SeasonedHuntersBow } from '@renderer/core/datas/weapons/SeasonedHuntersBow';
 export { default as SerpentSpine } from '@renderer/core/datas/weapons/SerpentSpine';
 export { default as SharpshootersOath } from '@renderer/core/datas/weapons/SharpshootersOath';
-export { default as SilverhowerHeartstrings } from '@renderer/core/datas/weapons/SilverhowerHeartstrings';
+export { default as SilvershowerHeartstrings } from '@/renderer/core/datas/weapons/SilvershowerHeartstrings';
 export { default as SilverSword } from '@renderer/core/datas/weapons/SilverSword';
 export { default as SkyriderGreatsword } from '@renderer/core/datas/weapons/SkyriderGreatsword';
 export { default as SkyriderSword } from '@renderer/core/datas/weapons/SkyriderSword';

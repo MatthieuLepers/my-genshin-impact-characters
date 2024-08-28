@@ -15,12 +15,13 @@ import AppMenu from '@renderer/components/AppMenu/index.vue';
 import NotificationList from '@renderer/components/Materials/Notification/List.vue';
 import MaterialLoaderIcon from '@renderer/components/Materials/Loader/Icon.vue';
 
+import { notificationStore } from '@renderer/components/Materials/Notification/Store';
 import { settingsStore } from '@renderer/core/entities/setting/store';
 import { materialsStore } from '@renderer/core/entities/material/store';
 import { charactersStore } from '@renderer/core/entities/character/store';
 import Shortcut from '@renderer/core/Shortcut';
 
-const { locale } = useI18n();
+const { t, locale } = useI18n();
 
 const state = reactive({
   loading: true,
@@ -34,6 +35,39 @@ api.on('runShortcut', (shortcut) => {
   if (shortcut in Shortcut) {
     Shortcut[shortcut]();
   }
+});
+
+const updateAvailableNotification = {
+  type: 'info',
+  text: t('App.Updater.downloadingUpdate'),
+  delay: 0,
+  action: {
+    callback() {
+      notificationStore.actions.removeNotification(updateAvailableNotification);
+    },
+    icon: 'icon-close',
+  },
+};
+
+api.on('update-available', () => {
+  notificationStore.actions.pushRawNotification(updateAvailableNotification);
+});
+
+api.on('update-downloaded', () => {
+  const notification = {
+    type: 'success',
+    text: t('App.Updater.readyToInstall'),
+    delay: 0,
+    action: {
+      callback() {
+        api.sendSync('quitAndInstallUpdate');
+      },
+      label: t('App.Updater.quitAndInstall'),
+      icon: 'icon-export',
+    },
+  };
+  notificationStore.actions.removeNotification(updateAvailableNotification);
+  notificationStore.actions.pushRawNotification(notification);
 });
 
 onBeforeMount(() => {

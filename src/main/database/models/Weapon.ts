@@ -29,6 +29,10 @@ export class Weapon extends Model {
   @Column(DataType.STRING)
   declare name: string;
 
+  @AllowNull(true)
+  @Column(DataType.DATE)
+  declare releasedAt: Date;
+
   @AllowNull(false)
   @Column(DataType.STRING)
   declare type: string;
@@ -48,9 +52,9 @@ export class Weapon extends Model {
 
   @AllowNull(true)
   @Column(DataType.STRING)
-  declare stateName: string;
+  declare statName: string;
 
   @Default(0)
   @Column(DataType.INTEGER)
-  declare stateValue: number;
+  declare statValue: number;
 }

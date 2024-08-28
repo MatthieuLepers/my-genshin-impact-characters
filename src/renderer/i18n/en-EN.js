@@ -21,6 +21,11 @@ export default {
         'en-EN': 'English',
       },
     },
+    Updater: {
+      downloadingUpdate: 'Downloading update...',
+      readyToInstall: 'Update ready to install!',
+      quitAndInstall: 'Install',
+    },
     Main: {
       newlyReleasedCharactersModal: {
         title: 'New character available ! | New characters available !',

@@ -27,21 +27,27 @@ export class Setting extends Model {
   @Column(DataType.TEXT)
   declare value: string;
 
-  static async get<T>(key: string, defaultValue?: T): Promise<T | null> {
+  static async get(key: string, defaultValue?: string): Promise<string | null> {
     const setting = await Setting.findByPk(key);
-    return setting?.value
-      ? JSON.parse(setting.value) as T
-      : defaultValue || null
-    ;
+    return setting?.value ?? defaultValue ?? null;
   }
 
-  static async set<T>(key: string, value: T): Promise<void> {
-    await Setting.create({ key, value: JSON.stringify(value) });
+  static async set(key: string, value: string | number | Date): Promise<void> {
+    const setting = await Setting.findByPk(key);
+    if (setting) {
+      setting.value = value.toString();
+      await setting.save();
+    } else {
+      await Setting.create({ key, value: value.toString() });
+    }
   }
 
   static async createDefault(): Promise<void> {
     const DEFAULT_SETTINGS = {
-      lastMigrationTimestamp: 0,
+      lastPopulateDateArtefactSets: '1970-01-01',
+      lastPopulateDateCharacters: '1970-01-01',
+      lastPopulateDateMaterials: '1970-01-01',
+      lastPopulateDateWeapons: '1970-01-01',
       locale: 'en-EN',
       cipherKey: crypto.randomBytes(16).toString('hex'),
       cipherIv: crypto.randomBytes(8).toString('hex'),

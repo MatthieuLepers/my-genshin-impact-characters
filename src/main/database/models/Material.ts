@@ -5,6 +5,7 @@ import {
   DataType,
   PrimaryKey,
   Default,
+  AllowNull,
 } from 'sequelize-typescript';
 
 @Table({
@@ -25,4 +26,8 @@ export class Material extends Model {
   @Default(0)
   @Column(DataType.INTEGER)
   declare inInventory: number;
+
+  @AllowNull(false)
+  @Column(DataType.DATE)
+  declare releasedAt: Date;
 }

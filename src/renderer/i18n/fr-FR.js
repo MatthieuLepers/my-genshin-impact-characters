@@ -21,6 +21,11 @@ export default {
         'en-EN': 'Anglais',
       },
     },
+    Updater: {
+      downloadingUpdate: 'Téléchargement de la mise à jour...',
+      readyToInstall: 'Mise à jour prête à être installée !',
+      quitAndInstall: 'Mettre à jour',
+    },
     Main: {
       newlyReleasedCharactersModal: {
         title: 'Nouveau personnage disponible ! | Nouveaux personnages disponibles !',

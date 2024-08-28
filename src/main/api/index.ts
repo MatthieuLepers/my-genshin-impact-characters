@@ -3,6 +3,8 @@ import { ipcRenderer, clipboard } from 'electron';
 import * as Character from '@/main/api/character';
 import * as CharacterAptitude from '@/main/api/characterAptitude';
 import * as Material from '@/main/api/material';
+import * as ArtefactSet from '@/main/api/artefactSet';
+import * as Weapon from '@/main/api/weapon';
 import * as Setting from '@/main/api/setting';
 import * as CipherUtils from '@/main/utils/CipherUtils';
 import { APP_PLATEFORM, HOME_DIR, IS_DEV } from '@/main/utils/Constants';
@@ -24,6 +26,8 @@ export default {
   Character,
   CharacterAptitude,
   Material,
+  ArtefactSet,
+  Weapon,
   Setting,
   CipherUtils,
   homedir: HOME_DIR,
