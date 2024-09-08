@@ -1,0 +1,95 @@
+@import '~styles/utilities.scss';
+
+.ArtefactCard {
+  position: relative;
+  width: calc(100% - 8px);
+  height: 100%;
+  background-color: color(grey800);
+  padding: rem(16px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  grid-column: 2;
+  grid-row: 1 / span 2;
+
+  &--edit {
+    &::before {
+      content: '';
+      position: absolute;
+      width: 245%;
+      height: 100%;
+      right: 100%;
+      top: 0;
+    }
+  }
+
+  &Header {
+    display: flex;
+    position: relative;
+    height: 128px;
+
+    img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 116px;
+    }
+  }
+
+  &MainStat {
+    @include set-font-scale('xxs');
+    position: absolute;
+    bottom: 16px;
+    left: 0;
+    font-weight: 700;
+    color: color(grey500);
+
+    span {
+      @include set-font-scale('xxl', 'xl');
+      display: block;
+      color: color(grey100);
+    }
+  }
+
+  &Level {
+    @include set-font-scale('s');
+    display: inline-block;
+    background-color: color(grey100);
+    padding: 0 rem(8px);
+    border-radius: 6px;
+    color: color(grey900);
+    font-weight: 700;
+
+    &+span {
+      @include set-font-scale('xxs');
+      display: inline-block;
+      margin-left: rem(8px);
+    }
+  }
+
+  &SubStatList {
+    padding: 0;
+    margin: rem(12px) 0 rem(8px);
+    list-style: none;
+    font-weight: 600;
+
+    &--edit {
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin-bottom: rem(4px);
+      }
+    }
+  }
+
+  &Buttons {
+    display: flex;
+    flex-direction: column;
+    gap: rem(8px);
+  }
+}
+
+#artefactDestroyModal {
+  width: 35%;
+}

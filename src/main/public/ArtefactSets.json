@@ -1,267 +1,146 @@
 [
   {
-    "id": "Adventurer",
-    "rarity": 3,
-    "releasedAt": "2020-09-28"
-  },
-  {
     "id": "ArchaicPetra",
-    "rarity": 5,
-    "releasedAt": "2020-09-28"
-  },
-  {
-    "id": "Berserker",
-    "rarity": 4,
     "releasedAt": "2020-09-28"
   },
   {
     "id": "BlizzardStrayer",
-    "rarity": 5,
     "releasedAt": "2020-12-23"
   },
   {
     "id": "BloodstainedChivalry",
-    "rarity": 5,
-    "releasedAt": "2020-09-28"
-  },
-  {
-    "id": "BraveHeart",
-    "rarity": 4,
     "releasedAt": "2020-09-28"
   },
   {
     "id": "CrimsonWitchOfFlames",
-    "rarity": 5,
     "releasedAt": "2020-09-28"
   },
   {
     "id": "DeepwoodMemories",
-    "rarity": 5,
     "releasedAt": "2022-08-24"
   },
   {
-    "id": "DefendersWill",
-    "rarity": 4,
-    "releasedAt": "2020-09-28"
-  },
-  {
     "id": "DesertPavilionChronicle",
-    "rarity": 5,
     "releasedAt": "2022-12-07"
   },
   {
     "id": "EchoesOfAnOffering",
-    "rarity": 5,
     "releasedAt": "2022-03-30"
   },
   {
     "id": "EmblemOfSeveredFate",
-    "rarity": 5,
     "releasedAt": "2021-07-21"
   },
   {
     "id": "FlowerOfParadiseLost",
-    "rarity": 5,
     "releasedAt": "2022-12-07"
   },
   {
     "id": "FragmentOfHarmonicWhimsy",
-    "rarity": 5,
     "releasedAt": "2024-04-24"
   },
   {
-    "id": "Gambler",
-    "rarity": 4,
-    "releasedAt": "2020-09-28"
-  },
-  {
     "id": "GildedDreams",
-    "rarity": 5,
     "releasedAt": "2022-08-24"
   },
   {
     "id": "GladiatorsFinale",
-    "rarity": 5,
     "releasedAt": "2020-09-28"
   },
   {
     "id": "GoldenTroupe",
-    "rarity": 5,
     "releasedAt": "2023-08-16"
   },
   {
     "id": "HeartOfDepth",
-    "rarity": 5,
     "releasedAt": "2020-12-23"
   },
   {
     "id": "HuskOfOpulentDreams",
-    "rarity": 5,
     "releasedAt": "2021-11-24"
   },
   {
-    "id": "Instructor",
-    "rarity": 4,
-    "releasedAt": "2020-09-28"
-  },
-  {
     "id": "Lavawalker",
-    "rarity": 5,
-    "releasedAt": "2020-09-28"
-  },
-  {
-    "id": "LuckyDog",
-    "rarity": 3,
     "releasedAt": "2020-09-28"
   },
   {
     "id": "MaidenBeloved",
-    "rarity": 5,
     "releasedAt": "2020-09-28"
   },
   {
     "id": "MarechausseHunter",
-    "rarity": 5,
     "releasedAt": "2023-08-16"
   },
   {
-    "id": "MartialArtist",
-    "rarity": 4,
-    "releasedAt": "2020-09-28"
-  },
-  {
     "id": "NighttimeWhispersInTheEchoingWoods",
-    "rarity": 5,
     "releasedAt": "2023-12-20"
   },
   {
     "id": "NoblesseOblige",
-    "rarity": 5,
     "releasedAt": "2020-09-28"
   },
   {
     "id": "NymphsDream",
-    "rarity": 5,
     "releasedAt": "2023-04-12"
   },
   {
     "id": "ObsidianCodex",
-    "rarity": 5,
     "releasedAt": "2024-08-28"
   },
   {
     "id": "OceanHuedClam",
-    "rarity": 5,
     "releasedAt": "2021-11-24"
   },
   {
     "id": "PaleFlame",
-    "rarity": 5,
     "releasedAt": "2021-04-28"
   },
   {
-    "id": "PrayersForDestiny",
-    "rarity": 4,
-    "releasedAt": "2020-09-28"
-  },
-  {
-    "id": "PrayersForIllumination",
-    "rarity": 4,
-    "releasedAt": "2020-09-28"
-  },
-  {
-    "id": "PrayersForWisdom",
-    "rarity": 4,
-    "releasedAt": "2020-09-28"
-  },
-  {
-    "id": "PrayersToSpringtime",
-    "rarity": 4,
-    "releasedAt": "2020-09-28"
-  },
-  {
-    "id": "ResolutionOfSojourner",
-    "rarity": 4,
-    "releasedAt": "2020-09-28"
-  },
-  {
     "id": "RetracingBolide",
-    "rarity": 5,
-    "releasedAt": "2020-09-28"
-  },
-  {
-    "id": "Scholar",
-    "rarity": 4,
     "releasedAt": "2020-09-28"
   },
   {
     "id": "ScrollOfTheHeroOfCinderCity",
-    "rarity": 5,
     "releasedAt": "2024-08-28"
   },
   {
     "id": "ShimenawasReminiscence",
-    "rarity": 5,
     "releasedAt": "2021-07-21"
   },
   {
     "id": "SongOfDaysPast",
-    "rarity": 5,
     "releasedAt": "2023-12-20"
   },
   {
     "id": "TenacityOfTheMillelith",
-    "rarity": 5,
     "releasedAt": "2021-04-28"
   },
   {
-    "id": "TheExile",
-    "rarity": 4,
-    "releasedAt": "2020-09-28"
-  },
-  {
     "id": "ThunderingFury",
-    "rarity": 5,
     "releasedAt": "2020-09-28"
   },
   {
     "id": "Thundersoother",
-    "rarity": 5,
-    "releasedAt": "2020-09-28"
-  },
-  {
-    "id": "TinyMiracle",
-    "rarity": 4,
-    "releasedAt": "2020-09-28"
-  },
-  {
-    "id": "TravelingDoctor",
-    "rarity": 3,
     "releasedAt": "2020-09-28"
   },
   {
     "id": "UnfinishedReverie",
-    "rarity": 5,
     "releasedAt": "2024-04-24"
   },
   {
     "id": "VermillionHereafter",
-    "rarity": 5,
     "releasedAt": "2022-03-30"
   },
   {
     "id": "ViridescentVenerer",
-    "rarity": 5,
     "releasedAt": "2020-09-28"
   },
   {
     "id": "VourukashasGlow",
-    "rarity": 5,
     "releasedAt": "2023-04-12"
   },
   {
     "id": "WanderersTroupe",
-    "rarity": 5,
     "releasedAt": "2020-09-28"
   }
 ]

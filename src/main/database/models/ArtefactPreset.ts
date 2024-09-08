@@ -9,7 +9,7 @@ import {
   BelongsTo,
   ForeignKey,
 } from 'sequelize-typescript';
-import { HasOneGetAssociationMixin } from 'sequelize';
+import { HasOneGetAssociationMixin, HasOneSetAssociationMixin } from 'sequelize';
 import { Artefact } from '@/main/database/models';
 
 @Table({
@@ -41,6 +41,8 @@ export class ArtefactPreset extends Model {
 
   declare getFlower: HasOneGetAssociationMixin<Artefact>;
 
+  declare setFlower: HasOneSetAssociationMixin<Artefact, 'id'>;
+
   @ForeignKey(() => Artefact)
   @Column(DataType.INTEGER)
   declare featherId: number;
@@ -49,6 +51,8 @@ export class ArtefactPreset extends Model {
   declare feather: Artefact;
 
   declare getFeather: HasOneGetAssociationMixin<Artefact>;
+
+  declare setFeather: HasOneSetAssociationMixin<Artefact, 'id'>;
 
   @ForeignKey(() => Artefact)
   @Column(DataType.INTEGER)
@@ -59,6 +63,8 @@ export class ArtefactPreset extends Model {
 
   declare getSands: HasOneGetAssociationMixin<Artefact>;
 
+  declare setSands: HasOneSetAssociationMixin<Artefact, 'id'>;
+
   @ForeignKey(() => Artefact)
   @Column(DataType.INTEGER)
   declare gobletId: number;
@@ -68,6 +74,8 @@ export class ArtefactPreset extends Model {
 
   declare getGoblet: HasOneGetAssociationMixin<Artefact>;
 
+  declare setGoblet: HasOneSetAssociationMixin<Artefact, 'id'>;
+
   @ForeignKey(() => Artefact)
   @Column(DataType.INTEGER)
   declare circletId: number;
@@ -76,4 +84,6 @@ export class ArtefactPreset extends Model {
   declare circlet: Artefact;
 
   declare getCirclet: HasOneGetAssociationMixin<Artefact>;
+
+  declare setCirclet: HasOneSetAssociationMixin<Artefact, 'id'>;
 }

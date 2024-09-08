@@ -89,6 +89,10 @@
         position: absolute;
         top: 8px;
         left: 15px;
+
+        strong {
+          margin-left: rem(4px);
+        }
       }
 
       &__outer {

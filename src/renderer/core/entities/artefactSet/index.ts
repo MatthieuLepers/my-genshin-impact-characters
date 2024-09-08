@@ -4,9 +4,7 @@ import { IArtefactSet, IRemoteArtefactSet } from '@renderer/core/entities/artefa
 export default class ArtefactSet extends AbstractEntity<IArtefactSet> {
   declare readonly id: string;
 
-  declare rarity: number;
-
-  declare releasedAt: Date;
+  declare readonly releasedAt: Date;
 
   constructor(data: IArtefactSet) {
     super(data, []);

@@ -22,9 +22,6 @@ export class ArtefactSet extends Model {
   @Column(DataType.STRING)
   declare id: string;
 
-  @Column(DataType.INTEGER)
-  declare rarity: number;
-
   @AllowNull(true)
   @Column(DataType.DATE)
   declare releasedAt: Date;

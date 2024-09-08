@@ -1,0 +1,108 @@
+@import '~styles/utilities.scss';
+
+.ArtefactFilters {
+  @include transition(left .2s ease);
+  position: absolute;
+  top: 0;
+  left: -33%;
+  width: 33%;
+  height: 100%;
+  background-color: rgba(color(grey900), .98);
+  padding: rem(8px);
+  display: flex;
+  flex-direction: column;
+  gap: rem(8px);
+  border-right: 2px solid color(grey800);
+
+  &--visible {
+    left: 0;
+  }
+
+  &Form {
+    flex: 1;
+    padding-right: rem(8px);
+    overflow: auto;
+
+    .m-form-fieldset__content {
+      padding-bottom: 0;
+    }
+  }
+
+  .FrameBox {
+    position: relative;
+    @include set-font-scale('s');
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: rem(8px);
+    padding: rem(8px);
+    margin: rem(2px) 0 rem(10px);
+    background-color: color(grey800);
+    border: 1px solid color(grey600);
+    box-shadow: 0 0 0 2px color(grey800);
+    color: color(grey000);
+    overflow: hidden;
+
+    &--selected,
+    &--checked {
+      box-shadow: 0 0 0 2px color(grey100);
+      border: 1px solid color(grey100);
+      background-color:  color(grey100);
+      color: color(grey900);
+    }
+
+    &--button {
+      cursor: pointer;
+      padding-left: rem(32px);
+
+      input {
+        position: absolute;
+        left: -100%;
+
+        &:checked+label::before {
+          @include icon('check');
+          left: 10px;
+          border: none;
+          width: auto;
+          height: auto;
+        }
+
+        &+label {
+          pointer-events: none;
+
+          &::before {
+            content: '';
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 1px solid color(grey600);
+            position: absolute;
+            left: 8px;
+          }
+        }
+      }
+    }
+
+    &Selector {
+      @include set-font-scale('xxl');
+      background-color: color(grey800);
+      border: 1px solid color(grey600);
+      box-shadow: 0 0 0 2px color(grey800);
+      color: color(grey000);
+      width: 100%;
+      padding: rem(6px) 0;
+      justify-content: center;
+    }
+
+    span {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 0;
+      right: 0;
+      height: 100%;
+      padding: rem(16px);
+    }
+  }
+}

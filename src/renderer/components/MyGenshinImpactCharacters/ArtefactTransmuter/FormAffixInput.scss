@@ -1,0 +1,45 @@
+@import '~styles/utilities.scss';
+
+.FormAffixInput {
+  @include set-font-scale('xxs');
+  position: relative;
+  box-shadow: 0 0 0 2px color(grey800);
+  border: 1px solid color(grey600);
+  background-color:  color(grey800);
+  color: color(grey100);
+  padding: rem(4px) rem(8px);
+  width: 100%;
+  text-align: left;
+  font-weight: 700;
+
+  &--invalid {
+    border-color: color(danger300);
+  }
+
+  label {
+    display: block;
+  }
+
+  input {
+    @include set-font-scale('s');
+    width: calc(100% - 24px);
+    background: none;
+    color: color(grey100);
+  }
+
+  button {
+    position: absolute;
+    top: calc(50% - 12px);
+    right: 8px;
+    background-color: color(grey100);
+    color: color(grey800);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+
+    &:focus,
+    &:hover {
+      background-color: color(grey200);
+    }
+  }
+}

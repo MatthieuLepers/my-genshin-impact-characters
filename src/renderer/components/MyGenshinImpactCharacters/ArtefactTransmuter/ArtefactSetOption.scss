@@ -1,0 +1,45 @@
+@import '~styles/utilities.scss';
+
+.artefactset-option {
+  @include set-font-scale('s');
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: rem(8px);
+  box-shadow: 0 0 0 2px color(grey800);
+  border: 1px solid color(grey600);
+  background-color:  color(grey800);
+  color: color(grey000);
+  padding: rem(8px);
+  margin: rem(2px) 0;
+  font-weight: 700;
+  cursor: pointer;
+
+  &--selected {
+    background-color: color(grey100);
+    box-shadow: 0 0 0 2px color(grey100);
+    color: color(grey900);
+  }
+
+  input {
+    position: absolute;
+    left: -100%;
+  }
+
+  &__img {
+    width: auto;
+    height: 32px;
+  }
+
+  &__count {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    right: 0;
+    height: 100%;
+    padding: rem(16px);
+  }
+}

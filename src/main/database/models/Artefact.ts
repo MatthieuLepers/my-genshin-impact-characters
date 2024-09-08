@@ -33,8 +33,8 @@ export class Artefact extends Model {
   declare type: string;
 
   @ForeignKey(() => ArtefactSet)
-  @Column(DataType.INTEGER)
-  declare setId: number;
+  @Column(DataType.STRING)
+  declare setId: string;
 
   @BelongsTo(() => ArtefactSet)
   declare artefactSet: ArtefactSet;

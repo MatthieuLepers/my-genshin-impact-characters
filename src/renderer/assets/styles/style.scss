@@ -21,6 +21,16 @@
     grid-row: 2;
   }
 
+  .MainLoader {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    font-size: rem(64px);
+    position: absolute;
+    top: calc(50% - 32px);
+    left: calc(50% - 32px);
+  }
+
   .View {
     grid-column: 2;
     grid-row: 2;

@@ -5,7 +5,7 @@
       disabled: props.disabled,
       iconed: !!props.icon,
       [`iconed-${props.iconSide}`]: true,
-      iconOnly: !slots?.default()?.[0]?.children?.length ?? false,
+      iconOnly: typeof slots?.default !== 'function' || !slots?.default()?.[0]?.children?.length || false,
     })"
     :type="props.type"
     :disabled="props.disabled"

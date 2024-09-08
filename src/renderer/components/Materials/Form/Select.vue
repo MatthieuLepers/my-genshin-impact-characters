@@ -68,7 +68,7 @@
         :for="props.id || `formSelect${$uid}`"
         class="m-form-select__label"
       >
-        {{ props.label }} <strong v-if="State.isMultiple && !!State.selectedOptionList.length">({{ State.selectedOptionList.length }})</strong>
+        {{ props.label }}<strong v-if="State.isMultiple && !!State.selectedOptionList.length">({{ State.selectedOptionList.length }})</strong>
       </label>
       <div
         :class="GenerateModifiers('m-form-select__outer', { focus: state.focused || state.open })"
@@ -160,7 +160,7 @@
             :search="state.searchText"
             :reset="actions.handleClickReset"
           >
-            Aucun résultat pour « {{ state.searchText }} »
+            {{ t('Materials.Form.Select.emptyResult', [state.searchText]) }}
           </slot>
         </span>
       </div>
@@ -202,7 +202,7 @@
             :search="state.searchText"
             :reset="actions.handleClickReset"
           >
-            {{ t('App.Materials.Form.Select.emptyResult', [state.searchText]) }}
+            {{ t('Materials.Form.Select.emptyResult', [state.searchText]) }}
           </slot>
         </span>
       </div>

@@ -1,0 +1,75 @@
+<template>
+  <label
+    :for="`set${$uid}`"
+    :class="GenerateModifiers('artefactset-option', {
+      selected: state.selectedOptions.includes(props.option.value),
+    })"
+  >
+    <input
+      :type="State.isMultiple ? 'checkbox' : 'radio'"
+      name="setId"
+      :id="`set${$uid}`"
+      :value="props.option.value"
+      :checked="modelValue === props.option.value"
+      @click="actions.handleSelectOption(props.option.value)"
+    />
+
+    <img
+      :src="image(`img/artefacts/${props.option.value}/flower.webp`)"
+      alt=""
+      class="artefactset-option__img"
+    />
+    {{ props.option.label }}
+    <span v-if="props.showCount" class="artefactset-option__count">
+      {{ artefactsStore.actions.getArtefactCountForSet(props.option.value) }}
+    </span>
+  </label>
+</template>
+
+<script setup>
+import {
+  reactive,
+  computed,
+  watch,
+  getCurrentInstance,
+} from 'vue';
+
+import { image } from '@renderer/core/utils';
+import { artefactsStore } from '@renderer/core/entities/artefact/store';
+
+const $uid = getCurrentInstance().uid;
+
+const modelValue = defineModel({ type: [String, Number, Boolean, Array] });
+
+const props = defineProps({
+  option: { type: Object, required: true },
+  showCount: { type: Boolean, default: false },
+});
+
+const state = reactive({
+  selectedOptions: Array.isArray(modelValue.value) ? modelValue.value : [modelValue.value],
+});
+
+const State = computed(() => ({
+  isMultiple: Array.isArray(modelValue.value),
+}));
+
+const actions = {
+  handleSelectOption(optionValue) {
+    if (state.selectedOptions.includes(optionValue)) {
+      state.selectedOptions = state.selectedOptions.filter((val) => val !== optionValue);
+    } else {
+      state.selectedOptions.push(optionValue);
+    }
+
+    modelValue.value = State.value.isMultiple ? state.selectedOptions : optionValue;
+  },
+};
+
+watch(() => modelValue.value, (newVal) => {
+  state.selectedOptions = Array.isArray(newVal) ? newVal : [newVal];
+});
+</script>
+
+<style lang="scss" src="./ArtefactSetOption.scss">
+</style>

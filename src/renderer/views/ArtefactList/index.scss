@@ -1,0 +1,12 @@
+@import '~styles/utilities.scss';
+
+.ArtefactListView {
+  padding: rem(16px);
+  max-height: calc(100vh - 30px);
+  overflow-y: auto;
+
+  &Title {
+    text-align: center;
+    margin-bottom: rem(16px);
+  }
+}

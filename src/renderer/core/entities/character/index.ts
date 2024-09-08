@@ -16,9 +16,9 @@ const PHASES = [
 export default class Character extends AbstractEntity<ICharacter> {
   declare readonly id: number;
 
-  declare name: string;
+  declare readonly name: string;
 
-  declare releasedAt?: Date;
+  declare readonly releasedAt?: Date;
 
   declare level: number;
 
@@ -113,9 +113,9 @@ export default class Character extends AbstractEntity<ICharacter> {
   }
 
   async save(): Promise<Character> {
-    const { name, releasedAt, element, level, phase, constellation, owned } = this.data;
+    const { level, phase, constellation, owned } = this.data;
     if (this.id) {
-      await api.Character.update(this.id, JSON.stringify({ name, releasedAt, element, level, phase, constellation, owned }));
+      await api.Character.update(this.id, JSON.stringify({ level, phase, constellation, owned }));
       return this;
     }
     throw new Error('Character not found');

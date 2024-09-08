@@ -1,0 +1,82 @@
+@import '~styles/utilities.scss';
+
+.artefact-transmuter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: rem(8px);
+  background-color: color(grey900);
+  overflow: hidden;
+
+  &__form {
+    display: flex;
+    gap: rem(24px);
+    height: 100%;
+  }
+
+  &__sets {
+    margin: 0;
+    padding: 0 rem(8px) 0 0;
+    list-style: none;
+    max-height: 100%;
+    overflow-y: auto;
+    flex: 0 0 calc(39% - 12px);
+
+    &-item {
+      padding: rem(2px);
+    }
+  }
+
+  &__editor {
+    flex: 0 0 calc(61% - 12px);
+  }
+
+  &__type-selector {
+    .PanelMenuButton {
+      &:focus,
+      &.PanelMenuButton--selected {
+        img {
+          filter: invert(100%);
+        }
+      }
+    }
+
+    img {
+      width: 28px;
+    }
+  }
+
+  &__preview {
+    background-color: color(grey800);
+    margin: rem(16px) 0;
+    padding: rem(8px);
+    display: flex;
+    justify-content: space-between;
+
+    .artefact-infos {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-weight: 700;
+
+      span {
+        display: block;
+        font-weight: 400;
+      }
+    }
+
+    .artefact-preview {
+      width: auto;
+      height: 64px;
+    }
+  }
+
+  &__submit-area {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: calc(61% - 12px);
+  }
+}

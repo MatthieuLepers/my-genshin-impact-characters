@@ -1,0 +1,53 @@
+@import '~styles/utilities.scss';
+
+.ArtefactSelectorPanel {
+  @include transition(left .2s ease);
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  border-right: 2px solid color(grey800);
+  background-color: rgba(color(grey900), .98);
+  padding: rem(8px);
+  display: flex;
+  flex-wrap: nowrap;
+  gap: rem(8px);
+
+  &--open {
+    left: 0;
+  }
+
+  &Container {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 66%;
+  }
+
+  .PanelMenuButton {
+    &:focus,
+    &.PanelMenuButton--selected {
+      img {
+        filter: invert(100%);
+      }
+    }
+
+    img {
+      width: 28px;
+    }
+  }
+
+  &List {
+    list-style: none;
+    padding: 0;
+    margin: rem(8px) 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(8px);
+    flex: 1;
+
+    &Item {
+      flex: 0 0 calc(14.285% - 6.857px);
+    }
+  }
+}

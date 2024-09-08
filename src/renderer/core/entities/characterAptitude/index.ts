@@ -6,7 +6,7 @@ import { materialsStore } from '@renderer/core/entities/material/store';
 export default class CharacterAptitude extends AbstractEntity<ICharacterAptitude> {
   declare readonly id: number;
 
-  declare type: string;
+  declare readonly type: string;
 
   declare level: number;
 
@@ -79,9 +79,9 @@ export default class CharacterAptitude extends AbstractEntity<ICharacterAptitude
   }
 
   async save(): Promise<CharacterAptitude> {
-    const { type, level, phaseIncrease, phaseIncreaseBonus, constellationIncrease, constellationIncreaseBonus } = this.data;
+    const { level, phaseIncrease, phaseIncreaseBonus, constellationIncrease, constellationIncreaseBonus } = this.data;
     if (this.id) {
-      await api.CharacterAptitude.update(this.id, JSON.stringify({ type, level, phaseIncrease, phaseIncreaseBonus, constellationIncrease, constellationIncreaseBonus }));
+      await api.CharacterAptitude.update(this.id, JSON.stringify({ level, phaseIncrease, phaseIncreaseBonus, constellationIncrease, constellationIncreaseBonus }));
       return this;
     }
     throw new Error('Character aptitude not found');

@@ -2,7 +2,7 @@
   <AppTitleBar name="main" />
   <AppMenu v-if="!state.loading" />
   <router-view v-if="!state.loading" />
-  <MaterialLoaderIcon v-else />
+  <MaterialLoaderIcon v-else class="MainLoader" />
   <NotificationList />
 </template>
 
@@ -19,6 +19,11 @@ import { notificationStore } from '@renderer/components/Materials/Notification/S
 import { settingsStore } from '@renderer/core/entities/setting/store';
 import { materialsStore } from '@renderer/core/entities/material/store';
 import { charactersStore } from '@renderer/core/entities/character/store';
+import { artefactSetsStore } from '@renderer/core/entities/artefactSet/store';
+import { artefactsStore } from '@renderer/core/entities/artefact/store';
+import { artefactPresetsStore } from '@renderer/core/entities/artefactPreset/store';
+import { weaponsStore } from '@renderer/core/entities/weapon/store';
+import { characterBuildsStore } from '@renderer/core/entities/characterBuild/store';
 import Shortcut from '@renderer/core/Shortcut';
 
 const { t, locale } = useI18n();
@@ -75,6 +80,11 @@ onBeforeMount(() => {
     await settingsStore.actions.load();
     await materialsStore.actions.load();
     await charactersStore.actions.load();
+    await artefactSetsStore.actions.load();
+    await artefactsStore.actions.load();
+    await artefactPresetsStore.actions.load();
+    await weaponsStore.actions.load();
+    await characterBuildsStore.actions.load();
 
     await api.invoke('localeChange', settingsStore.actions.getString('locale'));
     locale.value = settingsStore.actions.getString('locale');

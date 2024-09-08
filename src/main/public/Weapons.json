@@ -84,7 +84,8 @@
     "rarity": 4,
     "atk": 42.4,
     "statName": "HP%",
-    "statValue": 9
+    "statValue": 9,
+    "releasedAt": "2024-08-28"
   },
   {
     "name": "AThousandFloatingDreams",
