@@ -212,7 +212,7 @@ const actions = {
 
 onBeforeMount(() => {
   artefactsStore.state.filters.type = ['flower'];
-  artefactsStore.state.current = artefactPresetsStore.state.current.flower;
+  artefactsStore.state.current = artefactPresetsStore.state.current?.flower ?? null;
 });
 </script>
 

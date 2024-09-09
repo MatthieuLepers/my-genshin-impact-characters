@@ -57,7 +57,7 @@
       :showEdit="false"
       :showDelete="false"
       :showExport="false"
-      :showSelect="form[artefactsStore.state.filters.type]?.id !== artefactsStore.state.current.id"
+      :showSelect="form[artefactsStore.state.filters.type] !== artefactsStore.state.current"
       @select="actions.handleSelectArtfact"
     />
   </MaterialForm>
