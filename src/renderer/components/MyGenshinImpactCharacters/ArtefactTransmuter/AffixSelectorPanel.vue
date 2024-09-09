@@ -28,11 +28,11 @@
     <MaterialFormFieldLine :size="2">
       <template #field0>
         <MaterialButton
-          icon="icon-reload"
+          :icon="form.mainAffix || form.minorAffixes.length > 0 ? 'icon-reload' : 'icon-close'"
           :modifiers="{ danger: true }"
           @click="actions.reset(true)"
         >
-          {{ t('App.ArtefactTransmuter.resetBtnLabel') }}
+          {{ t(form.mainAffix || form.minorAffixes.length > 0 ? 'App.ArtefactTransmuter.resetBtnLabel' : 'App.ArtefactTransmuter.resetCloseBtnLabel') }}
         </MaterialButton>
       </template>
       <template #field1>
@@ -67,10 +67,11 @@ import StatRangeEnum from '@renderer/core/entities/artefact/StatRangeEnum';
 
 const { t } = useI18n();
 
-const emit = defineEmits(['update:modelValue', 'confirm']);
+const emit = defineEmits(['close']);
+
+const modelValue = defineModel({ type: Array, default: () => [] });
 
 const props = defineProps({
-  modelValue: { type: Array, default: () => [] },
   type: { type: String, default: 'flower' },
   visible: { type: Boolean, default: false },
 });
@@ -111,15 +112,20 @@ const State = computed(() => {
 
 const actions = {
   reset(force = false) {
-    form.mainAffix = (!force && props.modelValue.find((affix) => affix.main)?.name) || (props.type === 'flower' && 'HP') || (props.type === 'feather' && 'Atk') || null;
-    form.minorAffixes = (!force && props.modelValue.reduce((acc, val) => (val.main ? acc : [...acc, val.name]), [])) || [];
-    state.main = !State.value.minorOnly;
+    if (form.mainAffix || form.minorAffixes.length > 0) {
+      form.mainAffix = (!force && modelValue.value.find((affix) => affix.main)?.name) || (props.type === 'flower' && 'HP') || (props.type === 'feather' && 'Atk') || null;
+      form.minorAffixes = (!force && modelValue.value.reduce((acc, val) => (val.main ? acc : [...acc, val.name]), [])) || [];
+      state.main = !State.value.minorOnly;
+    } else {
+      emit('close');
+    }
   },
   confirm() {
-    emit('update:modelValue', [
-      { name: form.mainAffix, value: StatRangeEnum.main[form.mainAffix].min, main: true },
+    modelValue.value = [
+      { name: form.mainAffix, value: StatRangeEnum.main[form.mainAffix].max, main: true },
       ...form.minorAffixes.map((affix) => ({ name: affix, value: StatRangeEnum.sub[affix].min })),
-    ]);
+    ];
+    emit('close');
   },
   setStat(affix) {
     if (state.main) {

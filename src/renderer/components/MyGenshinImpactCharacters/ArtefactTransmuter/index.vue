@@ -99,7 +99,7 @@
       v-model="v$.statsJson.$model"
       :type="form.type"
       :visible="state.affixPanelVisible"
-      @update:modelValue="state.affixPanelVisible = false"
+      @close="state.affixPanelVisible = false"
     />
   </section>
 </template>
@@ -158,7 +158,7 @@ const state = reactive({
 const State = computed(() => ({
   setList: Object
     .values(artefactSetsStore.state.sets)
-    .sort((a, b) => b.rarity - a.rarity || new Date(b.releasedAt).getTime() - new Date(a.releasedAt).getTime() || t(`Data.ArtefactSets.${a.id}.name`).localeCompare(t(`Data.ArtefactSets.${b.id}.name`)))
+    .sort((a, b) => new Date(b.releasedAt).getTime() - new Date(a.releasedAt).getTime() || t(`Data.ArtefactSets.${a.id}.name`).localeCompare(t(`Data.ArtefactSets.${b.id}.name`)))
     .map((set) => ({
       value: set.id,
       label: t(`Data.ArtefactSets.${set.id}.name`),
@@ -178,14 +178,14 @@ const actions = {
     form.setId = State.value.setList[0].value;
     form.type = 'flower';
     form.statsJson = [
-      { name: 'HP', value: 717, main: true },
+      {
+        name: 'HP',
+        value: StatRangeEnum.main.HP.max,
+        main: true,
+      },
     ];
   },
 };
-
-watch(() => form.setId, () => {
-  form.type = 'flower';
-});
 
 watch(() => form.type, () => {
   if (['flower', 'feather'].includes(form.type) && !State.value.isEditMode) {
@@ -196,7 +196,7 @@ watch(() => form.type, () => {
     form.statsJson = [
       {
         name: data[form.type],
-        value: StatRangeEnum.main[data[form.type]].min,
+        value: StatRangeEnum.main[data[form.type]].max,
         main: true,
       },
     ];
@@ -210,7 +210,7 @@ onBeforeMount(() => {
   form.statsJson = [
     {
       name: 'HP',
-      value: StatRangeEnum.main.HP.min,
+      value: StatRangeEnum.main.HP.max,
       main: true,
     },
   ];

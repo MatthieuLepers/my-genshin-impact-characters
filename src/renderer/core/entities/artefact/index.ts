@@ -31,12 +31,12 @@ export default class Artefact extends AbstractEntity<IArtefact> {
       if (stat.main) return 0;
       const ranges = [...Array(5).keys()]
         .map((i) => ({
-          min: StatRangeEnum.sub[stat.name].min + i * StatRangeEnum.sub[stat.name].min,
-          max: StatRangeEnum.sub[stat.name].maxRoll + i * StatRangeEnum.sub[stat.name].maxRoll,
+          min: Math.floor((StatRangeEnum.sub[stat.name].min + i * StatRangeEnum.sub[stat.name].min) * 10) / 10,
+          max: Math.floor((StatRangeEnum.sub[stat.name].maxRoll + i * StatRangeEnum.sub[stat.name].maxRoll) * 10) / 10,
         }))
       ;
 
-      return acc + ranges.findLastIndex((range) => range.min <= stat.value && range.max >= stat.value);
+      return acc + ranges.findIndex((range) => range.min <= stat.value && range.max >= stat.value);
     }, 0);
   }
 

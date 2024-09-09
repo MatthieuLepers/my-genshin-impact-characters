@@ -131,6 +131,7 @@ export { default as SacrificialFragments } from '@renderer/core/datas/weapons/Sa
 export { default as SacrificialGreatsword } from '@renderer/core/datas/weapons/SacrificialGreatsword';
 export { default as SacrificialJade } from '@renderer/core/datas/weapons/SacrificialJade';
 export { default as SacrificialSword } from '@renderer/core/datas/weapons/SacrificialSword';
+export { default as SapwoodBlade } from '@/renderer/core/datas/weapons/SapwoodBlade';
 export { default as ScionOfTheBlazingSun } from '@renderer/core/datas/weapons/ScionOfTheBlazingSun';
 export { default as SeasonedHuntersBow } from '@renderer/core/datas/weapons/SeasonedHuntersBow';
 export { default as SerpentSpine } from '@renderer/core/datas/weapons/SerpentSpine';
@@ -139,7 +140,7 @@ export { default as SilvershowerHeartstrings } from '@/renderer/core/datas/weapo
 export { default as SilverSword } from '@renderer/core/datas/weapons/SilverSword';
 export { default as SkyriderGreatsword } from '@renderer/core/datas/weapons/SkyriderGreatsword';
 export { default as SkyriderSword } from '@renderer/core/datas/weapons/SkyriderSword';
-export { default as SkywaardBlade } from '@renderer/core/datas/weapons/SkywardBlade';
+export { default as SkywardBlade } from '@renderer/core/datas/weapons/SkywardBlade';
 export { default as SkywardAtlas } from '@renderer/core/datas/weapons/SkywardAtlas';
 export { default as SkywardHarp } from '@renderer/core/datas/weapons/SkywardHarp';
 export { default as SkywardPride } from '@renderer/core/datas/weapons/SkywardPride';
@@ -149,7 +150,6 @@ export { default as SnowTombedStarsilver } from '@renderer/core/datas/weapons/Sn
 export { default as SolarPearl } from '@renderer/core/datas/weapons/SolarPearl';
 export { default as SongOfBrokenPines } from '@renderer/core/datas/weapons/SongOfBrokenPines';
 export { default as SongOfStillness } from '@renderer/core/datas/weapons/SongOfStillness';
-export { default as SpawoodBlade } from '@/renderer/core/datas/weapons/SapwoodBlade';
 export { default as SplendorOfTranquilWaters } from '@renderer/core/datas/weapons/SplendorOfTranquilWaters';
 export { default as StaffOfHoma } from '@renderer/core/datas/weapons/StaffOfHoma';
 export { default as StaffOfTheScarletSands } from '@renderer/core/datas/weapons/StaffOfTheScarletSands';

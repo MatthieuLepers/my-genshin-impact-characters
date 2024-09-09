@@ -38,17 +38,17 @@ const props = defineProps({
 const State = computed(() => {
   const ranges = [...Array(5).keys()]
     .map((i) => ({
-      min: StatRangeEnum.sub[props.stat.name].min + i * StatRangeEnum.sub[props.stat.name].min,
-      max: StatRangeEnum.sub[props.stat.name].maxRoll + i * StatRangeEnum.sub[props.stat.name].maxRoll,
+      min: Math.floor((StatRangeEnum.sub[props.stat.name].min + i * StatRangeEnum.sub[props.stat.name].min) * 10) / 10,
+      max: Math.floor((StatRangeEnum.sub[props.stat.name].maxRoll + i * StatRangeEnum.sub[props.stat.name].maxRoll) * 10) / 10,
     }))
   ;
 
-  const rollAmount = ranges.findLastIndex((range) => range.min <= props.stat.value && range.max >= props.stat.value);
+  const rollAmount = ranges.findIndex((range) => range.min <= props.stat.value && range.max >= props.stat.value);
 
   return {
     rollAmount,
-    minRoll: Math.round(ranges[rollAmount].min * 10) / 10,
-    maxRoll: Math.round(ranges[rollAmount].max * 10) / 10,
+    minRoll: Math.floor(ranges[rollAmount].min * 10) / 10,
+    maxRoll: Math.floor(ranges[rollAmount].max * 10) / 10,
   };
 });
 </script>

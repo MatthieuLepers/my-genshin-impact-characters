@@ -5,7 +5,7 @@ export default {
     Atk: { min: 47, max: 311 },
     'Atk%': { min: 7.0, max: 46.6 },
     'Def%': { min: 8.7, max: 58.3 },
-    EM: { min: 28, max: 186.5 },
+    EM: { min: 28, max: 187 },
     'ER%': { min: 7.8, max: 51.8 },
     'Heal%': { min: 5.4, max: 35.9 },
     'CritRate%': { min: 4.7, max: 31.1 },

@@ -1,6 +1,7 @@
 import { reactive, computed } from 'vue';
 import type { OpenDialogOptions, SaveDialogOptions } from 'electron';
 
+import i18n from '@renderer/plugins/i18n';
 import Artefact from '@renderer/core/entities/artefact';
 import type { IArtefact } from '@renderer/core/entities/artefact/i';
 
@@ -39,7 +40,9 @@ const useArtefactsStore = () => {
 
   const artefactList = computed(() => Object
     .values(state.artefacts)
-    .sort((a, b) => new Date(b.artefactSet.releasedAt).getTime() - new Date(a.artefactSet.releasedAt).getTime() || TYPE_ORDER.indexOf(a.type) - TYPE_ORDER.indexOf(b.type))
+    .sort((a, b) => new Date(b.artefactSet.releasedAt).getTime() - new Date(a.artefactSet.releasedAt).getTime()
+      || i18n.global.t(`Data.ArtefactSets.${a.setId}.name`).localeCompare(i18n.global.t(`Data.ArtefactSets.${b.setId}.name`))
+      || TYPE_ORDER.indexOf(a.type) - TYPE_ORDER.indexOf(b.type))
     .filter(filters))
   ;
 

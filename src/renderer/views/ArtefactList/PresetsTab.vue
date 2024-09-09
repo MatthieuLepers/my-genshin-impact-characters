@@ -120,9 +120,19 @@
 
     <ArtefactSelectorPanel
       v-model="state.showArtefactSelectorPanel"
-      :formData="form"
+      :formData="State.form"
       @submit="actions.handleSubmit"
     />
+
+    <MaterialModal
+      name="presetDestroyModal"
+      :title="t('App.Artefact.PresetList.modal.title')"
+      :refuseLabel="t('App.Artefact.PresetList.modal.refuseLabel')"
+      :acceptLabel="t('App.Artefact.PresetList.modal.acceptLabel')"
+      @confirm="actions.handleConfirmDelete"
+    >
+      {{ t('App.Artefact.PresetList.modal.content') }}
+    </MaterialModal>
   </div>
 </template>
 
@@ -135,6 +145,7 @@ import MaterialForm from '@renderer/components/Materials/Form/index.vue';
 import MaterialFormInput from '@renderer/components/Materials/Form/Input.vue';
 import MaterialFormFieldLine from '@renderer/components/Materials/Form/FieldLine.vue';
 import MaterialFormFieldSet from '@renderer/components/Materials/Form/FieldSet.vue';
+import MaterialModal from '@renderer/components/Materials/Modal/index.vue';
 import ArtefactCard from '@renderer/components/MyGenshinImpactCharacters/ArtefactCard.vue';
 import Artefact from '@renderer/components/MyGenshinImpactCharacters/Artefact.vue';
 import ArtefactSelectorPanel from '@renderer/components/MyGenshinImpactCharacters/ArtefactSelectorPanel.vue';
@@ -142,6 +153,8 @@ import ArtefactSelectorPanel from '@renderer/components/MyGenshinImpactCharacter
 import { image } from '@renderer/core/utils';
 import { artefactsStore } from '@renderer/core/entities/artefact/store';
 import { artefactPresetsStore } from '@renderer/core/entities/artefactPreset/store';
+import { notificationStore } from '@renderer/components/Materials/Notification/Store';
+import { modalStore } from '@renderer/components/Materials/Modal/Store';
 
 const { t } = useI18n();
 
@@ -156,11 +169,13 @@ const form = reactive({
 
 const state = reactive({
   showArtefactSelectorPanel: false,
+  edit: false,
 });
 
 const State = computed(() => ({
   displayCard: (artefactPresetsStore.state.current && artefactsStore.state.current)
     || ((form.flower || form.feather || form.sands || form.goblet || form.circlet) && artefactsStore.state.current),
+  form: state.edit ? artefactPresetsStore.state.current : form,
 }));
 
 const actions = {
@@ -169,11 +184,20 @@ const actions = {
     state.showArtefactSelectorPanel = true;
   },
   handleSubmit(formData) {
-    form.flower = formData.flower;
-    form.feather = formData.feather;
-    form.sands = formData.sands;
-    form.goblet = formData.goblet;
-    form.circlet = formData.circlet;
+    if (!state.edit) {
+      form.flower = formData.flower;
+      form.feather = formData.feather;
+      form.sands = formData.sands;
+      form.goblet = formData.goblet;
+      form.circlet = formData.circlet;
+    } else {
+      artefactPresetsStore.state.current.flowerId = formData.flower.id;
+      artefactPresetsStore.state.current.featherId = formData.feather.id;
+      artefactPresetsStore.state.current.sandsId = formData.sands.id;
+      artefactPresetsStore.state.current.gobletId = formData.goblet.id;
+      artefactPresetsStore.state.current.circletId = formData.circlet.id;
+      state.edit = false;
+    }
   },
   handleResetForm() {
     form.name = '';
@@ -196,16 +220,20 @@ const actions = {
     actions.handleResetForm();
   },
   handleClickEdit(set) {
-    console.log('TODO: edit', set);
     artefactPresetsStore.state.current = set;
     artefactsStore.state.current = set.flower;
+    state.edit = true;
     state.showArtefactSelectorPanel = true;
   },
-  async handleClickDelete(set) {
-    console.log('TODO: delete', set);
-    await set.destroy();
+  handleClickDelete(set) {
+    artefactPresetsStore.state.current = set;
+    modalStore.actions.show('presetDestroyModal');
+  },
+  async handleConfirmDelete() {
+    await artefactPresetsStore.actions.destroy();
   },
   async handleClickSave(set) {
+    notificationStore.actions.success(t('App.Artefact.PresetList.saved'));
     await set.save();
   },
 };

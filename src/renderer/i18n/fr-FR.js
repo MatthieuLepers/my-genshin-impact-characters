@@ -103,6 +103,13 @@ export default {
         confirmBtnLabel: 'Confirmer',
         formPlaceholder: 'Nouveau preset',
         placeholder: 'Nom du preset',
+        saved: 'Sauvegarde réussie !',
+        modal: {
+          title: 'Confirmation de suppression',
+          acceptLabel: 'Oui',
+          refuseLabel: 'Non',
+          content: 'Voulez-vous vraiment supprimer ce preset d\'artéfact ? Cette action est irréversible',
+        },
       },
       type: {
         flower: 'Fleur de la vie',
@@ -161,6 +168,7 @@ export default {
       minorAffixes: 'Secondaires',
       selectAffixBtnLabel: 'Choisir l\'affixe',
       resetBtnLabel: 'Réinitialiser',
+      resetCloseBtnLabel: 'Fermer',
       confirmBtnLabel: 'Confirmer',
       createBtnLabel: 'Terminer',
       closeBtnLabel: 'Annuler',

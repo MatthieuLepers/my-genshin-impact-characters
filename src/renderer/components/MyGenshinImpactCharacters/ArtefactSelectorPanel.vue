@@ -14,43 +14,45 @@
         </template>
       </PanelMenu>
 
-      <ul class="ArtefactSelectorPanelList">
-        <li
-          v-for="(artefact, i) in artefactsStore.artefactList.value"
-          :key="i"
-          class="ArtefactSelectorPanelListItem"
-        >
-          <Artefact
-            :artefact="artefact"
-            :selected="artefactsStore.state.current.id === artefact.id"
-            :modifiers="{ checked: form[artefactsStore.state.filters.type] === artefact }"
-            @click="artefactsStore.state.current = artefact"
-            @dblclick="form[artefactsStore.state.filters.type] = artefact"
-          />
-        </li>
-      </ul>
+      <div class="ArtefactSelectorPanelContainerSub">
+        <ul class="ArtefactSelectorPanelList">
+          <li
+            v-for="(artefact, i) in artefactsStore.artefactList.value"
+            :key="i"
+            class="ArtefactSelectorPanelListItem"
+          >
+            <Artefact
+              :artefact="artefact"
+              :selected="artefactsStore.state.current.id === artefact.id"
+              :modifiers="{ checked: form[artefactsStore.state.filters.type] === artefact }"
+              @click="artefactsStore.state.current = artefact"
+              @dblclick="form[artefactsStore.state.filters.type] = artefact"
+            />
+          </li>
+        </ul>
 
-      <MaterialFormFieldLine :size="4">
-        <template #field2>
-          <MaterialButton
-            icon="icon-close"
-            :modifiers="{ danger: true }"
-            @click="modelValue = false"
-          >
-            {{ t('App.Artefact.PresetList.closeBtnLabel') }}
-          </MaterialButton>
-        </template>
-        <template #field3>
-          <MaterialButton
-            type="submit"
-            icon="icon-check"
-            :modifiers="{ success: true }"
-            @click="modelValue = false"
-          >
-            {{ t('App.Artefact.PresetList.confirmBtnLabel') }}
-          </MaterialButton>
-        </template>
-      </MaterialFormFieldLine>
+        <MaterialFormFieldLine :size="4">
+          <template #field2>
+            <MaterialButton
+              icon="icon-close"
+              :modifiers="{ danger: true }"
+              @click="modelValue = false"
+            >
+              {{ t('App.Artefact.PresetList.closeBtnLabel') }}
+            </MaterialButton>
+          </template>
+          <template #field3>
+            <MaterialButton
+              type="submit"
+              icon="icon-check"
+              :modifiers="{ success: true }"
+              @click="modelValue = false"
+            >
+              {{ t('App.Artefact.PresetList.confirmBtnLabel') }}
+            </MaterialButton>
+          </template>
+        </MaterialFormFieldLine>
+      </div>
     </div>
 
     <ArtefactCard

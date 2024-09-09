@@ -99,6 +99,13 @@ export default {
         confirmBtnLabel: 'Confirm',
         formPlaceholder: 'New preset',
         placeholder: 'Preset name',
+        saved: 'Saved!',
+        modal: {
+          title: 'Deletion confirmation',
+          acceptLabel: 'Yes',
+          refuseLabel: 'No',
+          content: 'Are you sure you want to remove this artefact preset? This action is irreversible',
+        },
       },
       type: {
         flower: 'Flower of Life',
@@ -157,6 +164,7 @@ export default {
       minorAffixes: 'Minor affixes',
       selectAffixBtnLabel: 'Select affix',
       resetBtnLabel: 'Reset',
+      resetCloseBtnLabel: 'Close',
       confirmBtnLabel: 'Confirm',
       createBtnLabel: 'Done',
       closeBtnLabel: 'Cancel',
