@@ -10,3 +10,23 @@
     margin-bottom: rem(16px);
   }
 }
+
+.WeaponCategory {
+  &Header {
+    background-color: color(grey800);
+    padding: rem(8px);
+    width: 100%;
+    text-align: left;
+    margin-top: rem(16px);
+  }
+
+  &DataTable {
+    margin-top: rem(16px);
+  }
+
+  &Img {
+    max-width: 32px;
+    max-height: 32px;
+    width: auto;
+  }
+}

@@ -1,0 +1,39 @@
+@import '~styles/utilities.scss';
+
+.m-datatable-pagination {
+  list-style: none;
+  margin: 0;
+  padding: rem(16px) 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: rem(8px);
+  border-top: 1px solid color(grey800);
+
+  &__item {
+    &--current button {
+      background-color: color(grey100);
+      color: color(grey900);
+    }
+
+    &--edge {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  button {
+    background-color: color(grey800);
+    color: color(grey000);
+    min-width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: color(grey700);
+    }
+  }
+}

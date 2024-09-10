@@ -16,7 +16,6 @@ const useWeaponsStore = () => {
 
   const weaponList = computed(() => Object
     .values(state.weapons)
-    .filter((weapon, i, arr) => arr.findIndex((w) => w.name === weapon.name) === i) // TO REMOVE
     .sort((a, b) => TYPE_ORDER.indexOf(a.type) - TYPE_ORDER.indexOf(b.type)
       || b.level - a.level
       || b.rarity - a.rarity
