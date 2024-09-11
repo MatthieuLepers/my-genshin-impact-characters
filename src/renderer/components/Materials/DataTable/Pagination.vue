@@ -4,17 +4,22 @@
       <button
         type="button"
         v-if="State.hasPrev"
+        aria-label="Page précédente"
         @click="modelValue -= 1"
-      >
-        Prev
-      </button>
+      />
     </li>
     <li
       v-for="(page, i) in props.data"
       :key="i"
-      :class="GenerateModifiers('m-datatable-pagination__item', { current: modelValue === i })"
+      :class="GenerateModifiers('m-datatable-pagination__item', {
+        current: modelValue === i,
+        skipped: !(i === 0 || i === props.data.length - 1 || i === modelValue || (modelValue - 2 <= i && modelValue + 2 >= i)),
+      })"
     >
-      <button type="button" @click="modelValue = i">
+      <button
+        type="button"
+        @click="modelValue = i"
+      >
         {{ i + 1 }}
       </button>
     </li>
@@ -22,10 +27,9 @@
       <button
         type="button"
         v-if="State.hasNext"
+        aria-label="Page suivante"
         @click="modelValue += 1"
-      >
-        Next
-      </button>
+      />
     </li>
   </ul>
 </template>

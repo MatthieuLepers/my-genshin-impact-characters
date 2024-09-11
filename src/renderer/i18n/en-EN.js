@@ -179,6 +179,16 @@ export default {
         acceptLabel: 'Confirm',
       },
     },
+    Weapons: {
+      weapons: '{0} weapons',
+      type: {
+        bow: 'Bow | Bows',
+        catalyser: 'Catalyser | Catalysers',
+        polearm: 'Polearm | Polearms',
+        claymore: 'Claymore | Claymores',
+        sword: 'Sword | Swords',
+      },
+    },
   },
   Electron: {
     Dialog: {

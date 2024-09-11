@@ -5,47 +5,62 @@
       v-for="group in Object.keys(State.weaponList).reverse()"
       :key="group"
     >
-      <button
-        type="button"
-        class="WeaponCategoryHeader"
-        @click="actions.handleClickShowGroup(group)"
+      <span class="WeaponCategoryHeader">
+        {{ t('App.Weapons.weapons', [`${group}★`]) }}
+      </span>
+
+      <div
+        v-for="(type, i) in Object.keys(State.weaponList[group])"
+        :key="i"
+        class="WeaponCategoryType"
       >
-        {{ [...Array(parseInt(group, 10)).keys()].reduce((acc) => `${acc}★`, '') }}
-      </button>
-      <MaterialDataTable
-        v-if="state.showedGroups.includes(group)"
-        class="WeaponCategoryDataTable"
-        :data="State.weaponList[group]"
-        :columns="State.columns"
-        :perPage="10"
-        :showActionRow="false"
-        :allowMoveFn="() => false"
-      >
-        <template #name="{ obj }">
-          <img
-            class="WeaponCategoryImg"
-            :src="image(`img/weapons/${obj.name}.webp`)"
-            alt=""
-          />
-          <span>
-            {{ t(`Data.Weapons.${obj.name}.name`) }}<br />
-            {{ [...Array(obj.rarity).keys()].reduce((acc) => `${acc}★`, '') }}
-          </span>
-        </template>
-        <template #owned="{ obj }">
-          <MaterialFormToggle
-            v-model="obj.owned"
-            label=""
-          />
-          <MaterialFormInput
-            v-if="obj.owned"
-            v-model="obj.level"
-            type="number"
-            label="Level"
-            @wheel.stop
-          />
-        </template>
-      </MaterialDataTable>
+        <button
+          type="button"
+          class="WeaponCategoryTypeHeader"
+          @click="actions.handleClickShowType(`${group}${type}`)"
+        >
+          <img :src="image(`img/weapons/${State.weaponList[group][type][0].name}.webp`)" alt="" />
+          {{ t(`App.Weapons.type.${type}`, 2) }}
+        </button>
+        <MaterialDataTable
+          v-if="state.showedTypes.includes(`${group}${type}`)"
+          class="WeaponCategoryTypeDataTable"
+          :data="State.weaponList[group][type]"
+          :columns="State.columns"
+          :perPage="6"
+          :showActionRow="false"
+          :allowMoveFn="() => false"
+        >
+          <template #name="{ obj }">
+            <img
+              class="WeaponCategoryImg"
+              :src="image(`img/weapons/${obj.name}.webp`)"
+              alt=""
+            />
+            <span>
+              {{ t(`Data.Weapons.${obj.name}.name`) }}<br />
+              {{ [...Array(obj.rarity).keys()].reduce((acc) => `${acc}★`, '') }}
+            </span>
+          </template>
+          <template #owned="{ obj }">
+            <MaterialFormToggle
+              v-model="obj.owned"
+              label=""
+            />
+          </template>
+          <template #level="{ obj }">
+            <MaterialFormInput
+              v-model="obj.level"
+              :disabled="!obj.owned"
+              :min="1"
+              :max="obj.maxLevel"
+              type="number"
+              label=""
+              @wheel.stop
+            />
+          </template>
+        </MaterialDataTable>
+      </div>
     </div>
   </main>
 </template>
@@ -66,33 +81,33 @@ defineOptions({ name: 'WeaponListView' });
 const { t } = useI18n();
 
 const state = reactive({
-  showedGroups: [],
+  showedTypes: [],
 });
 
 const State = computed(() => ({
-  panelMenuData: [
-    { id: 'owned', label: 'My weapons' },
-    { id: 'all', label: 'All weapons' },
-  ],
   weaponList: weaponsStore.weaponList.value.reduce((acc, val) => ({
     ...acc,
-    [val.rarity]: [
-      ...(acc[val.rarity] ?? []),
-      val,
-    ],
+    [val.rarity]: {
+      ...(acc[val.rarity] ?? {}),
+      [val.type]: [
+        ...(acc[val.rarity]?.[val.type] ?? []),
+        val,
+      ],
+    },
   }), {}),
   columns: {
     name: { label: 'Nom' },
     owned: { label: 'Possédée ?' },
+    level: { label: 'Niveau' },
   },
 }));
 
 const actions = {
-  handleClickShowGroup(group) {
-    if (state.showedGroups.includes(group)) {
-      state.showedGroups = state.showedGroups.filter((g) => g !== group);
+  handleClickShowType(groupTypeId) {
+    if (state.showedTypes.includes(groupTypeId)) {
+      state.showedTypes = state.showedTypes.filter((gt) => gt !== groupTypeId);
     } else {
-      state.showedGroups.push(group);
+      state.showedTypes.push(groupTypeId);
     }
   },
 };

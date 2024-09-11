@@ -183,6 +183,16 @@ export default {
         acceptLabel: 'Confirmer',
       },
     },
+    Weapons: {
+      weapons: 'Armes {0}',
+      type: {
+        bow: 'Arc | Arcs',
+        catalyser: 'Catalyseur | Catalyseurs',
+        polearm: 'Arme d\'hast | Armes d\'hast',
+        claymore: 'Claymore | Claymores',
+        sword: 'Épée | Épées',
+      },
+    },
   },
   Electron: {
     Dialog: {
