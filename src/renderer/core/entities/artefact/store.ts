@@ -100,10 +100,16 @@ const useArtefactsStore = () => {
         await api.invoke('exportArtefact', state.current.id, dialogOptions);
       }
     },
+    async requestExportMultiple(dialogOptions: SaveDialogOptions) {
+      await api.invoke('exportMultipleArtefact', JSON.stringify(Object
+        .values(state.artefacts)
+        .map(({ id }) => id)), dialogOptions);
+    },
     async requestImport(dialogOptions: OpenDialogOptions): Promise<boolean> {
       const artefactJson = await api.invoke('importArtefact', dialogOptions);
       try {
-        await actions.create(JSON.parse(artefactJson));
+        const parsedArtefactList: Array<IArtefact> = JSON.parse(artefactJson);
+        await Promise.all(parsedArtefactList.map((artefactData: IArtefact) => actions.create(artefactData)));
         return true;
       } catch (e) {
         return false;

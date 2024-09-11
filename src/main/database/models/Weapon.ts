@@ -44,6 +44,10 @@ export class Weapon extends Model {
   @Column(DataType.INTEGER)
   declare level: number;
 
+  @Default(1)
+  @Column(DataType.INTEGER)
+  declare rank: number;
+
   @Column(DataType.INTEGER)
   declare rarity: number;
 
@@ -57,4 +61,7 @@ export class Weapon extends Model {
   @Default(0)
   @Column(DataType.INTEGER)
   declare statValue: number;
+
+  @Column(DataType.JSON)
+  declare tags: Array<string>;
 }

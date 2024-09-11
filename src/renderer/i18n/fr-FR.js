@@ -85,6 +85,7 @@ export default {
         importFailed: 'L\'importation à échouée',
         filterBtnTitle: 'Filtrer la liste',
         importBtnTitle: 'Importer depuis un fichier',
+        exportBtnTitle: 'Exporter tous les artéfacts',
         modal: {
           title: 'Confirmation de suppression',
           acceptLabel: 'Oui',
@@ -176,6 +177,7 @@ export default {
     ArtefactFilters: {
       title: 'Filtrer les artéfacts',
       resetBtnLabel: 'Réinitialiser',
+      resetCloseBtnLabel: 'Fermer',
       confirmBtnLabel: 'Appliquer',
       modal: {
         title: 'Set d\'artéfact',
@@ -191,6 +193,14 @@ export default {
         polearm: 'Arme d\'hast | Armes d\'hast',
         claymore: 'Claymore | Claymores',
         sword: 'Épée | Épées',
+      },
+      tags: {
+        wishes: 'Voeux',
+        bp: 'Battle Pass',
+        f2p: 'Free to play',
+        event: 'Évènement',
+        shop: 'Boutique',
+        fishing: 'Pêche',
       },
     },
   },

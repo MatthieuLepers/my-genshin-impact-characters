@@ -14,6 +14,8 @@ export default class Weapon extends AbstractEntity<IWeapon> {
 
   declare level: number;
 
+  declare rank: number;
+
   declare readonly rarity: number;
 
   // LVL90 atk value = atk
@@ -73,6 +75,8 @@ export default class Weapon extends AbstractEntity<IWeapon> {
   declare readonly statName: string;
 
   declare readonly statValue: number;
+
+  declare readonly tags: Array<string>;
 
   constructor(data: IWeapon) {
     super(data, []);

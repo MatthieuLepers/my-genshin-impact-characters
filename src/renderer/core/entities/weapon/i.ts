@@ -5,10 +5,12 @@ export interface IWeapon {
   type: string;
   owned: boolean;
   level: number;
+  rank: number;
   rarity: number;
   atk: number;
   statName: string;
   statValue: number;
+  tags: Array<string>;
 }
 
 export interface IRemoteWeapon {

@@ -31,10 +31,15 @@
       align-items: center;
       gap: rem(8px);
       height: 54px;
+      width: 100%;
 
       img {
         width: auto;
       }
+    }
+
+    &DataTable {
+      margin-bottom: rem(16px);
     }
   }
 
@@ -43,5 +48,22 @@
     max-height: 32px;
     width: auto;
     margin-right: rem(8px);
+  }
+
+  &Tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(4px);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    &Item {
+      @include set-font-scale('xxs');
+      background-color: color(grey700);
+      border-radius: 20px;
+      text-transform: capitalize;
+      padding: 0 rem(4px);
+    }
   }
 }

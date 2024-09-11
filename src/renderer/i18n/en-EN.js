@@ -81,6 +81,11 @@ export default {
         deleteBtnLabel: 'Delete',
         exportBtnLabel: 'Export',
         selectBtnLabel: 'Select',
+        importSuccess: 'Importation success!',
+        importFailed: 'Importation failed',
+        filterBtnTitle: 'Filter',
+        importBtnTitle: 'Import from file',
+        exportBtnTitle: 'Export all artefacts',
         modal: {
           title: 'Deletion confirmation',
           acceptLabel: 'Yes',
@@ -172,6 +177,7 @@ export default {
     ArtefactFilters: {
       title: 'Artefact filters',
       resetBtnLabel: 'Reset',
+      resetCloseBtnLabel: 'Close',
       confirmBtnLabel: 'Apply',
       modal: {
         title: 'Artefact set',
@@ -187,6 +193,14 @@ export default {
         polearm: 'Polearm | Polearms',
         claymore: 'Claymore | Claymores',
         sword: 'Sword | Swords',
+      },
+      tags: {
+        wishes: 'Wishes',
+        bp: 'Battle Pass',
+        f2p: 'Free to play',
+        event: 'Event',
+        shop: 'Shop',
+        fishing: 'Fishing',
       },
     },
   },

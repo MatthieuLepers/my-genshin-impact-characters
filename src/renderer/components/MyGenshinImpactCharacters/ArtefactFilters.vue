@@ -81,14 +81,14 @@
           :modifiers="{ danger: true }"
           @click="actions.handleReset"
         >
-          {{ t('App.ArtefactFilters.resetBtnLabel') }}
+          {{ !form.setId.length && !form.mainStat.length && !form.subStat.length ? t('App.ArtefactFilters.resetCloseBtnLabel') : t('App.ArtefactFilters.resetBtnLabel') }}
         </MaterialButton>
       </template>
       <template #field1>
         <MaterialButton
           icon="icon-check"
           :modifiers="{ secondary: true }"
-          @click="emit('confirm', { ...form })"
+          @click="actions.handleClickConfirm"
         >
           {{ t('App.ArtefactFilters.confirmBtnLabel') }}
         </MaterialButton>
@@ -115,7 +115,7 @@ import { artefactsStore } from '@renderer/core/entities/artefact/store';
 import { modalStore } from '@renderer/components/Materials/Modal/Store';
 
 const { t, tm } = useI18n();
-const emit = defineEmits(['reset', 'confirm']);
+const emit = defineEmits(['confirm', 'close']);
 
 const props = defineProps({
   filters: { type: Object, default: () => ({}) },
@@ -142,10 +142,18 @@ const State = computed(() => ({
 
 const actions = {
   handleReset() {
-    form.setId = props.filters.setId ?? [];
-    form.mainStat = props.filters.mainStat ?? [];
-    form.subStat = props.filters.subStat ?? [];
-    emit('reset', { ...form });
+    if (!form.setId.length && !form.mainStat.length && !form.subStat.length) {
+      emit('close');
+    } else {
+      form.setId = props.filters.setId ?? [];
+      form.mainStat = props.filters.mainStat ?? [];
+      form.subStat = props.filters.subStat ?? [];
+      emit('confirm', { ...form });
+    }
+  },
+  handleClickConfirm() {
+    emit('confirm', { ...form });
+    emit('close');
   },
   handleClickMainStat(e, stat) {
     const target = e.target.querySelector('input');

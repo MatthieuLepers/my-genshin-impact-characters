@@ -7,7 +7,8 @@
     "atk": 47.54,
     "statName": "CritDmg%",
     "statValue": 9.6,
-    "releasedAt": "2024-06-05"
+    "releasedAt": "2024-06-05",
+    "tags": ["wishes", "Clorinde"]
   },
   {
     "name": "Akuoumaru",
@@ -17,7 +18,8 @@
     "atk": 42.4,
     "statName": "Atk%",
     "statValue": 9,
-    "releasedAt": "2021-10-13"
+    "releasedAt": "2021-10-13",
+    "tags": ["wishes"]
   },
   {
     "name": "AlleyHunter",
@@ -27,7 +29,8 @@
     "atk": 43.73,
     "statName": "Atk%",
     "statValue": 6,
-    "releasedAt": "2021-04-06"
+    "releasedAt": "2021-04-06",
+    "tags": ["wishes"]
   },
   {
     "name": "AmenomaKageuchi",
@@ -37,7 +40,8 @@
     "atk": 41.07,
     "statName": "Atk%",
     "statValue": 12,
-    "releasedAt": "2021-07-21"
+    "releasedAt": "2021-07-21",
+    "tags": ["f2p", "inazuma"]
   },
   {
     "name": "AmosBow",
@@ -47,7 +51,8 @@
     "atk": 45.94,
     "statName": "Atk%",
     "statValue": 10.8,
-    "releasedAt": "2020-10-28"
+    "releasedAt": "2020-10-28",
+    "tags": ["wishes"]
   },
   {
     "name": "ApprenticesNotes",
@@ -65,7 +70,8 @@
     "atk": 44.34,
     "statName": "CritDmg%",
     "statValue": 19.2,
-    "releasedAt": "2022-05-31"
+    "releasedAt": "2022-05-31",
+    "tags": ["wishes", "Yelan"]
   },
   {
     "name": "AquilaFavonia",
@@ -75,7 +81,8 @@
     "atk": 47.54,
     "statName": "PhysicalDmg%",
     "statValue": 9,
-    "releasedAt": "2020-10-28"
+    "releasedAt": "2020-10-28",
+    "tags": ["wishes"]
   },
   {
     "name": "AshGravenDrinkingHorn",
@@ -85,7 +92,8 @@
     "atk": 42.4,
     "statName": "HP%",
     "statValue": 9,
-    "releasedAt": "2024-08-28"
+    "releasedAt": "2024-08-28",
+    "tags": ["event"]
   },
   {
     "name": "AThousandFloatingDreams",
@@ -95,7 +103,8 @@
     "atk": 44.34,
     "statName": "EM",
     "statValue": 57.6,
-    "releasedAt": "2022-11-02"
+    "releasedAt": "2022-11-02",
+    "tags": ["wishes", "Nahida"]
   },
   {
     "name": "BalladOfTheBoundlessBlue",
@@ -105,7 +114,8 @@
     "atk": 43.73,
     "statName": "ER%",
     "statValue": 6.67,
-    "releasedAt": "2023-10-12"
+    "releasedAt": "2023-10-12",
+    "tags": ["event"]
   },
   {
     "name": "BalladOfTheFjords",
@@ -115,7 +125,8 @@
     "atk": 42.4,
     "statName": "CritRate%",
     "statValue": 6,
-    "releasedAt": "2023-08-16"
+    "releasedAt": "2023-08-16",
+    "tags": ["bp"]
   },
   {
     "name": "BeaconOfTheReedSea",
@@ -125,7 +136,8 @@
     "atk": 45.94,
     "statName": "CritRate%",
     "statValue": 7.2,
-    "releasedAt": "2023-03-01"
+    "releasedAt": "2023-03-01",
+    "tags": ["wishes", "Dehya"]
   },
   {
     "name": "BeginnersProtector",
@@ -143,7 +155,8 @@
     "atk": 42.4,
     "statName": "CritDmg%",
     "statValue": 12,
-    "releasedAt": "2020-11-01"
+    "releasedAt": "2020-11-01",
+    "tags": ["shop"]
   },
   {
     "name": "BlackcliffLongsword",
@@ -153,7 +166,8 @@
     "atk": 43.73,
     "statName": "CritDmg%",
     "statValue": 8,
-    "releasedAt": "2020-11-01"
+    "releasedAt": "2020-11-01",
+    "tags": ["shop"]
   },
   {
     "name": "BlackcliffPole",
@@ -163,7 +177,8 @@
     "atk": 42.4,
     "statName": "CritDmg%",
     "statValue": 12,
-    "releasedAt": "2020-11-01"
+    "releasedAt": "2020-11-01",
+    "tags": ["shop"]
   },
   {
     "name": "BlackcliffSlasher",
@@ -173,7 +188,8 @@
     "atk": 42.4,
     "statName": "CritDmg%",
     "statValue": 12,
-    "releasedAt": "2020-11-01"
+    "releasedAt": "2020-11-01",
+    "tags": ["shop"]
   },
   {
     "name": "BlackcliffWarbow",
@@ -183,7 +199,8 @@
     "atk": 43.73,
     "statName": "CritDmg%",
     "statValue": 8,
-    "releasedAt": "2020-11-01"
+    "releasedAt": "2020-11-01",
+    "tags": ["shop"]
   },
   {
     "name": "BlackTassel",
@@ -213,7 +230,8 @@
     "atk": 49.14,
     "statName": "Ark%",
     "statValue": 3.6,
-    "releasedAt": "2022-01-05"
+    "releasedAt": "2022-01-05",
+    "tags": ["wishes", "Shenhe"]
   },
   {
     "name": "CashflowSupervision",
@@ -223,7 +241,8 @@
     "atk": 47.54,
     "statName": "CritRate%",
     "statValue": 4.8,
-    "releasedAt": "2023-10-17"
+    "releasedAt": "2023-10-17",
+    "tags": ["wishes", "Wriothesley"]
   },
   {
     "name": "ChainBreaker",
@@ -233,7 +252,8 @@
     "atk": 43.73,
     "statName": "Atk%",
     "statValue": 6,
-    "releasedAt": "2024-08-28"
+    "releasedAt": "2024-08-28",
+    "tags": ["f2p", "natlan"]
   },
   {
     "name": "CinnabarSpindle",
@@ -243,7 +263,8 @@
     "atk": 41.07,
     "statName": "Def%",
     "statValue": 15.01,
-    "releasedAt": "2021-11-25"
+    "releasedAt": "2021-11-25",
+    "tags": ["event"]
   },
   {
     "name": "Cloudforged",
@@ -253,7 +274,8 @@
     "atk": 42.4,
     "statName": "EM",
     "statValue": 36,
-    "releasedAt": "2024-06-07"
+    "releasedAt": "2024-06-07",
+    "tags": ["event"]
   },
   {
     "name": "CompoundBow",
@@ -263,7 +285,8 @@
     "atk": 41.07,
     "statName": "PhysicalDmg%",
     "statValue": 15.01,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["f2p", "liyue", "mondstadt"]
   },
   {
     "name": "CoolSteel",
@@ -283,7 +306,8 @@
     "atk": 49.14,
     "statName": "Atk%",
     "statValue": 3.6,
-    "releasedAt": "2024-01-31"
+    "releasedAt": "2024-01-31",
+    "tags": ["wishes", "Xianyun"]
   },
   {
     "name": "CrescentPike",
@@ -293,7 +317,8 @@
     "atk": 43.73,
     "statName": "PhysicalDmg%",
     "statValue": 7.51,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["f2p", "liyue", "mondstadt"]
   },
   {
     "name": "CrimsonMoonsSemblance",
@@ -303,7 +328,8 @@
     "atk": 47.54,
     "statName": "CritRate%",
     "statValue": 4.8,
-    "releasedAt": "2024-04-24"
+    "releasedAt": "2024-04-24",
+    "tags": ["wishes", "Arlecchino"]
   },
   {
     "name": "DarkIronSword",
@@ -323,7 +349,8 @@
     "atk": 41.07,
     "statName": "CritRate%",
     "statValue": 8,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["bp"]
   },
   {
     "name": "DebateClub",
@@ -343,7 +370,8 @@
     "atk": 42.4,
     "statName": "HP%",
     "statValue": 9,
-    "releasedAt": "2024-03-14"
+    "releasedAt": "2024-03-14",
+    "tags": ["event"]
   },
   {
     "name": "DodocoTales",
@@ -353,7 +381,8 @@
     "atk": 41.07,
     "statName": "Atk%",
     "statValue": 12,
-    "releasedAt": "2021-06-17"
+    "releasedAt": "2021-06-17",
+    "tags": ["event"]
   },
   {
     "name": "DragonsBane",
@@ -363,7 +392,8 @@
     "atk": 41.07,
     "statName": "EM",
     "statValue": 48,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["wishes"]
   },
   {
     "name": "DragonspineSpear",
@@ -373,7 +403,8 @@
     "atk": 41.07,
     "statName": "PhysicalDmg%",
     "statValue": 15.01,
-    "releasedAt": "2020-12-23"
+    "releasedAt": "2020-12-23",
+    "tags": ["f2p", "dragonspine"]
   },
   {
     "name": "DullBlade",
@@ -391,7 +422,8 @@
     "atk": 43.73,
     "statName": "Atk%",
     "statValue": 6,
-    "releasedAt": "2024-08-28"
+    "releasedAt": "2024-08-28",
+    "tags": ["f2p", "natlan"]
   },
   {
     "name": "ElegyForTheEnd",
@@ -401,7 +433,8 @@
     "atk": 45.94,
     "statName": "ER%",
     "statValue": 12,
-    "releasedAt": "2021-03-17"
+    "releasedAt": "2021-03-17",
+    "tags": ["wishes", "Venti"]
   },
   {
     "name": "EmeraldOrb",
@@ -421,7 +454,8 @@
     "atk": 42.4,
     "statName": "ER%",
     "statValue": 10,
-    "releasedAt": "2022-08-24"
+    "releasedAt": "2022-08-24",
+    "tags": ["f2p", "sumeru", "fishing"]
   },
   {
     "name": "EngulfingLightning",
@@ -431,7 +465,8 @@
     "atk": 45.94,
     "statName": "ER%",
     "statValue": 12,
-    "releasedAt": "2021-09-01"
+    "releasedAt": "2021-09-01",
+    "tags": ["wishes", "Raiden Shogun"]
   },
   {
     "name": "EverlastingMoonglow",
@@ -441,7 +476,8 @@
     "atk": 45.94,
     "statName": "HP%",
     "statValue": 10.8,
-    "releasedAt": "2021-09-21"
+    "releasedAt": "2021-09-21",
+    "tags": ["wishes", "Sangonomiya Kokomi"]
   },
   {
     "name": "EyeOfPerception",
@@ -451,7 +487,8 @@
     "atk": 41.07,
     "statName": "Atk%",
     "statValue": 12,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["wishes"]
   },
   {
     "name": "FadingTwilight",
@@ -461,7 +498,8 @@
     "atk": 43.73,
     "statName": "ER%",
     "statValue": 6.67,
-    "releasedAt": "2022-03-31"
+    "releasedAt": "2022-03-31",
+    "tags": ["event"]
   },
   {
     "name": "FangOfTheMountainKing",
@@ -470,7 +508,8 @@
     "rarity": 5,
     "atk": 49.14,
     "statName": "CritRate%",
-    "statValue": 2.4
+    "statValue": 2.4,
+    "tags": ["wishes", "Kinich"]
   },
   {
     "name": "FavoniusCodex",
@@ -480,7 +519,8 @@
     "atk": 42.4,
     "statName": "ER%",
     "statValue": 10,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["wishes"]
   },
   {
     "name": "FavoniusGreatsword",
@@ -490,7 +530,8 @@
     "atk": 41.07,
     "statName": "ER%",
     "statValue": 13.33,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["wishes"]
   },
   {
     "name": "FavoniusLance",
@@ -500,7 +541,8 @@
     "atk": 43.73,
     "statName": "ER%",
     "statValue": 6.67,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["wishes"]
   },
   {
     "name": "FavoniusSword",
@@ -510,7 +552,8 @@
     "atk": 41.07,
     "statName": "ER%",
     "statValue": 13.33,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["wishes"]
   },
   {
     "name": "FavoniusWarbow",
@@ -520,7 +563,8 @@
     "atk": 41.07,
     "statName": "ER%",
     "statValue": 13.33,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["wishes"]
   },
   {
     "name": "FerrousShadow",
@@ -540,7 +584,8 @@
     "atk": 42.4,
     "statName": "ER%",
     "statValue": 10,
-    "releasedAt": "2020-12-23"
+    "releasedAt": "2020-12-23",
+    "tags": ["event"]
   },
   {
     "name": "FilletBlade",
@@ -560,7 +605,8 @@
     "atk": 43.73,
     "statName": "Atk%",
     "statValue": 6,
-    "releasedAt": "2023-08-16"
+    "releasedAt": "2023-08-16",
+    "tags": ["f2p", "fontaine"]
   },
   {
     "name": "FleuveCendreFerryman",
@@ -570,7 +616,8 @@
     "atk": 42.4,
     "statName": "ER%",
     "statValue": 10,
-    "releasedAt": "2023-08-16"
+    "releasedAt": "2023-08-16",
+    "tags": ["f2p", "fontaine", "fishing"]
   },
   {
     "name": "FlowingPurity",
@@ -580,7 +627,8 @@
     "atk": 43.73,
     "statName": "Atk%",
     "statValue": 6,
-    "releasedAt": "2023-08-16"
+    "releasedAt": "2023-08-16",
+    "tags": ["f2p", "fontaine"]
   },
   {
     "name": "FluteOfEzpitzal",
@@ -590,7 +638,8 @@
     "atk": 41.07,
     "statName": "Def%",
     "statValue": 15.01,
-    "releasedAt": "2024-08-28"
+    "releasedAt": "2024-08-28",
+    "tags": ["f2p", "natlan"]
   },
   {
     "name": "FootprintOfTheRainbow",
@@ -600,7 +649,8 @@
     "atk": 42.4,
     "statName": "Def%",
     "statValue": 11.26,
-    "releasedAt": "2024-08-28"
+    "releasedAt": "2024-08-28",
+    "tags": ["f2p", "natlan"]
   },
   {
     "name": "ForestRegalia",
@@ -610,7 +660,8 @@
     "atk": 43.73,
     "statName": "ER%",
     "statValue": 6.67,
-    "releasedAt": "2022-08-24"
+    "releasedAt": "2022-08-24",
+    "tags": ["f2p", "sumeru"]
   },
   {
     "name": "FreedomSword",
@@ -620,7 +671,8 @@
     "atk": 45.94,
     "statName": "EM",
     "statValue": 43.2,
-    "releasedAt": "2021-06-29"
+    "releasedAt": "2021-06-29",
+    "tags": ["wishes", "Kaedehara Kazuha"]
   },
   {
     "name": "Frostbearer",
@@ -630,7 +682,8 @@
     "atk": 42.4,
     "statName": "Atk%",
     "statValue": 9,
-    "releasedAt": "2020-12-23"
+    "releasedAt": "2020-12-23",
+    "tags": ["f2p", "dragonspine"]
   },
   {
     "name": "FruitOfFulfillment",
@@ -640,7 +693,8 @@
     "atk": 42.4,
     "statName": "ER%",
     "statValue": 10,
-    "releasedAt": "2022-08-24"
+    "releasedAt": "2022-08-24",
+    "tags": ["f2p", "sumeru"]
   },
   {
     "name": "HakushinRing",
@@ -650,7 +704,8 @@
     "atk": 43.73,
     "statName": "ER%",
     "statValue": 6.67,
-    "releasedAt": "2021-07-21"
+    "releasedAt": "2021-07-21",
+    "tags": ["f2p", "inazuma"]
   },
   {
     "name": "Halberd",
@@ -670,7 +725,8 @@
     "atk": 41.07,
     "statName": "Atk%",
     "statValue": 12,
-    "releasedAt": "2021-07-21"
+    "releasedAt": "2021-07-21",
+    "tags": ["f2p", "inazuma"]
   },
   {
     "name": "HaranGeppakuFutsu",
@@ -680,7 +736,8 @@
     "atk": 45.94,
     "statName": "CritRate%",
     "statValue": 7.2,
-    "releasedAt": "2022-03-30"
+    "releasedAt": "2022-03-30",
+    "tags": ["wishes", "Kamisato Ayato"]
   },
   {
     "name": "HarbingerOfDawn",
@@ -708,7 +765,8 @@
     "atk": 44.34,
     "statName": "CritRate%",
     "statValue": 9.6,
-    "releasedAt": "2022-08-24"
+    "releasedAt": "2022-08-24",
+    "tags": ["wishes", "Tighnari"]
   },
   {
     "name": "IbisPiercer",
@@ -718,7 +776,8 @@
     "atk": 43.73,
     "statName": "Atk%",
     "statValue": 6,
-    "releasedAt": "2023-05-25"
+    "releasedAt": "2023-05-25",
+    "tags": ["event"]
   },
   {
     "name": "IronPoint",
@@ -736,7 +795,8 @@
     "atk": 42.4,
     "statName": "EM",
     "statValue": 36,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["f2p", "liyue", "mondstadt"]
   },
   {
     "name": "JadefallsSplendor",
@@ -746,7 +806,8 @@
     "atk": 45.94,
     "statName": "HP%",
     "statValue": 10.8,
-    "releasedAt": "2023-05-02"
+    "releasedAt": "2023-05-02",
+    "tags": ["wishes", "Baizhu"]
   },
   {
     "name": "KagotsurubeIsshin",
@@ -756,7 +817,8 @@
     "atk": 42.4,
     "statName": "Atk%",
     "statValue": 9,
-    "releasedAt": "2022-07-13"
+    "releasedAt": "2022-07-13",
+    "tags": ["f2p"]
   },
   {
     "name": "KagurasVerity",
@@ -766,7 +828,8 @@
     "atk": 45.94,
     "statName": "CritDmg%",
     "statValue": 14.4,
-    "releasedAt": "2022-02-16"
+    "releasedAt": "2022-02-16",
+    "tags": ["wishes", "Yae Miko"]
   },
   {
     "name": "KatsuragikiriNagamasa",
@@ -776,7 +839,8 @@
     "atk": 42.4,
     "statName": "ER%",
     "statValue": 10,
-    "releasedAt": "2021-07-21"
+    "releasedAt": "2021-07-21",
+    "tags": ["f2p", "inazuma"]
   },
   {
     "name": "KeyOfKahjNisut",
@@ -786,7 +850,8 @@
     "atk": 44.34,
     "statName": "HP%",
     "statValue": 14.4,
-    "releasedAt": "2022-10-14"
+    "releasedAt": "2022-10-14",
+    "tags": ["wishes", "Nilou"]
   },
   {
     "name": "KingsSquire",
@@ -796,7 +861,8 @@
     "atk": 41.07,
     "statName": "Atk%",
     "statValue": 12,
-    "releasedAt": "2022-08-24"
+    "releasedAt": "2022-08-24",
+    "tags": ["f2p", "sumeru"]
   },
   {
     "name": "KitainCrossSpear",
@@ -806,7 +872,8 @@
     "atk": 43.73,
     "statName": "EM",
     "statValue": 24,
-    "releasedAt": "2021-07-21"
+    "releasedAt": "2021-07-21",
+    "tags": ["f2p", "inazuma"]
   },
   {
     "name": "LightOfFoliarIncision",
@@ -816,7 +883,8 @@
     "atk": 44.34,
     "statName": "CritDmg%",
     "statValue": 19.2,
-    "releasedAt": "2023-01-18"
+    "releasedAt": "2023-01-18",
+    "tags": ["wishes", "Alhaitham"]
   },
   {
     "name": "LionsRoar",
@@ -826,7 +894,8 @@
     "atk": 42.4,
     "statName": "Atk%",
     "statValue": 9,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["wishes"]
   },
   {
     "name": "LithicBlade",
@@ -836,7 +905,8 @@
     "atk": 42.4,
     "statName": "Atk%",
     "statValue": 9,
-    "releasedAt": "2021-02-23"
+    "releasedAt": "2021-02-23",
+    "tags": ["wishes"]
   },
   {
     "name": "LithicSpear",
@@ -846,7 +916,8 @@
     "atk": 43.73,
     "statName": "Atk%",
     "statValue": 6,
-    "releasedAt": "2021-02-23"
+    "releasedAt": "2021-02-23",
+    "tags": ["wishes"]
   },
   {
     "name": "LostPrayerToTheSacredWinds",
@@ -856,7 +927,8 @@
     "atk": 45.94,
     "statName": "CritRate%",
     "statValue": 7.2,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["wishes"]
   },
   {
     "name": "LumidouceElegy",
@@ -866,7 +938,8 @@
     "atk": 45.94,
     "statName": "CritRate%",
     "statValue": 7.2,
-    "releasedAt": "2024-08-06"
+    "releasedAt": "2024-08-06",
+    "tags": ["wishes", "Emilie"]
   },
   {
     "name": "LuxuriousSeaLord",
@@ -876,7 +949,8 @@
     "atk": 41.07,
     "statName": "Atk%",
     "statValue": 12,
-    "releasedAt": "2021-09-27"
+    "releasedAt": "2021-09-27",
+    "tags": ["event"]
   },
   {
     "name": "MagicGuide",
@@ -896,7 +970,8 @@
     "atk": 43.73,
     "statName": "EM",
     "statValue": 24,
-    "releasedAt": "2023-03-03"
+    "releasedAt": "2023-03-03",
+    "tags": ["event"]
   },
   {
     "name": "MakhairaAquamarine",
@@ -906,7 +981,8 @@
     "atk": 42.4,
     "statName": "EM",
     "statValue": 36,
-    "releasedAt": "2022-09-28"
+    "releasedAt": "2022-09-28",
+    "tags": ["wishes"]
   },
   {
     "name": "MappaMare",
@@ -916,7 +992,8 @@
     "atk": 43.73,
     "statName": "EM",
     "statValue": 24,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["f2p", "liyue", "mondstadt"]
   },
   {
     "name": "MemoryOfDust",
@@ -926,7 +1003,8 @@
     "atk": 45.94,
     "statName": "Atk%",
     "statValue": 10.8,
-    "releasedAt": "2020-11-11"
+    "releasedAt": "2020-11-11",
+    "tags": ["wishes"]
   },
   {
     "name": "Messenger",
@@ -946,7 +1024,8 @@
     "atk": 42.4,
     "statName": "Atk%",
     "statValue": 9,
-    "releasedAt": "2022-09-29"
+    "releasedAt": "2022-09-29",
+    "tags": ["event"]
   },
   {
     "name": "MistsplitterReforged",
@@ -956,7 +1035,8 @@
     "atk": 47.54,
     "statName": "CritDmg%",
     "statValue": 9.6,
-    "releasedAt": "2021-07-21"
+    "releasedAt": "2021-07-21",
+    "tags": ["wishes", "Kamisato Ayaka"]
   },
   {
     "name": "MitternachtsWaltz",
@@ -966,7 +1046,8 @@
     "atk": 42.4,
     "statName": "PhysicalDmg%",
     "statValue": 11.26,
-    "releasedAt": "2021-06-09"
+    "releasedAt": "2021-06-09",
+    "tags": ["wishes"]
   },
   {
     "name": "Moonpiercer",
@@ -976,7 +1057,8 @@
     "atk": 43.73,
     "statName": "EM",
     "statValue": 24,
-    "releasedAt": "2022-08-24"
+    "releasedAt": "2022-08-24",
+    "tags": ["f2p", "sumeru"]
   },
   {
     "name": "MouunsMoon",
@@ -986,7 +1068,8 @@
     "atk": 43.73,
     "statName": "Atk%",
     "statValue": 6,
-    "releasedAt": "2021-11-02"
+    "releasedAt": "2021-11-02",
+    "tags": ["wishes"]
   },
   {
     "name": "OathswornEye",
@@ -996,7 +1079,8 @@
     "atk": 43.73,
     "statName": "Atk%",
     "statValue": 6,
-    "releasedAt": "2022-02-16"
+    "releasedAt": "2022-02-16",
+    "tags": ["event"]
   },
   {
     "name": "OldMercsPal",
@@ -1032,7 +1116,8 @@
     "atk": 45.94,
     "statName": "CritRate%",
     "statValue": 7.2,
-    "releasedAt": "2021-10-13"
+    "releasedAt": "2021-10-13",
+    "tags": ["wishes", "Tartaglia"]
   },
   {
     "name": "PortablePowerSaw",
@@ -1042,7 +1127,8 @@
     "atk": 41.07,
     "statName": "HP%",
     "statValue": 12,
-    "releasedAt": "2023-09-27"
+    "releasedAt": "2023-09-27",
+    "tags": ["wishes"]
   },
   {
     "name": "Predator",
@@ -1052,7 +1138,8 @@
     "atk": 42.4,
     "statName": "Atk%",
     "statValue": 9,
-    "releasedAt": "2021-09-01"
+    "releasedAt": "2021-09-01",
+    "tags": ["ps4", "Aloy"]
   },
   {
     "name": "PrimordialJadeCutter",
@@ -1062,7 +1149,8 @@
     "atk": 44.34,
     "statName": "CritRate%",
     "statValue": 9.6,
-    "releasedAt": "2021-02-03"
+    "releasedAt": "2021-02-03",
+    "tags": ["wishes"]
   },
   {
     "name": "PrimordialJadeWingedSpear",
@@ -1072,7 +1160,8 @@
     "atk": 47.54,
     "statName": "CritRate%",
     "statValue": 4.8,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["wishes"]
   },
   {
     "name": "ProspectorsDrill",
@@ -1082,7 +1171,8 @@
     "atk": 43.73,
     "statName": "Atk%",
     "statValue": 6,
-    "releasedAt": "2023-10-17"
+    "releasedAt": "2023-10-17",
+    "tags": ["wishes"]
   },
   {
     "name": "PrototypeAmber",
@@ -1092,7 +1182,8 @@
     "atk": 42.4,
     "statName": "HP%",
     "statValue": 9,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["f2p", "liyue", "mondstadt"]
   },
   {
     "name": "PrototypeArchaic",
@@ -1102,7 +1193,8 @@
     "atk": 43.73,
     "statName": "Atk%",
     "statValue": 6,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["f2p", "liyue", "mondstadt"]
   },
   {
     "name": "PrototypeCrescent",
@@ -1112,7 +1204,8 @@
     "atk": 42.4,
     "statName": "Atk%",
     "statValue": 9,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["f2p", "liyue", "mondstadt"]
   },
   {
     "name": "PrototypeRancour",
@@ -1122,7 +1215,8 @@
     "atk": 43.73,
     "statName": "PhysicalDmg%",
     "statValue": 7.51,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["f2p", "liyue", "mondstadt"]
   },
   {
     "name": "PrototypeStarglitter",
@@ -1132,7 +1226,8 @@
     "atk": 42.4,
     "statName": "ER%",
     "statValue": 10,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["f2p", "liyue", "mondstadt"]
   },
   {
     "name": "Rainslasher",
@@ -1142,7 +1237,8 @@
     "atk": 42.4,
     "statName": "EM",
     "statValue": 36,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["wishes"]
   },
   {
     "name": "RangeGauge",
@@ -1152,7 +1248,8 @@
     "atk": 43.73,
     "statName": "Atk%",
     "statValue": 6,
-    "releasedAt": "2023-10-17"
+    "releasedAt": "2023-10-17",
+    "tags": ["wishes"]
   },
   {
     "name": "RavenBow",
@@ -1182,7 +1279,8 @@
     "atk": 44.34,
     "statName": "CritDmg%",
     "statValue": 19.2,
-    "releasedAt": "2021-12-14"
+    "releasedAt": "2021-12-14",
+    "tags": ["wishes", "Arataki Itto"]
   },
   {
     "name": "RightfulReward",
@@ -1192,7 +1290,8 @@
     "atk": 43.73,
     "statName": "HP%",
     "statValue": 6,
-    "releasedAt": "2023-08-16"
+    "releasedAt": "2023-08-16",
+    "tags": ["f2p", "fontaine"]
   },
   {
     "name": "RingOfYaxche",
@@ -1202,7 +1301,8 @@
     "atk": 42.4,
     "statName": "HP%",
     "statValue": 9,
-    "releasedAt": "2024-08-28"
+    "releasedAt": "2024-08-28",
+    "tags": ["f2p", "natlan"]
   },
   {
     "name": "RoyalBow",
@@ -1212,7 +1312,8 @@
     "atk": 42.4,
     "statName": "Atk%",
     "statValue": 9,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["shop"]
   },
   {
     "name": "RoyalGreatsword",
@@ -1222,7 +1323,8 @@
     "atk": 43.73,
     "statName": "Atk%",
     "statValue": 6,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["shop"]
   },
   {
     "name": "RoyalGrimoire",
@@ -1232,7 +1334,8 @@
     "atk": 43.73,
     "statName": "Atk%",
     "statValue": 6,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["shop"]
   },
   {
     "name": "RoyalLongsword",
@@ -1242,7 +1345,8 @@
     "atk": 42.4,
     "statName": "Atk%",
     "statValue": 9,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["shop"]
   },
   {
     "name": "RoyalSpear",
@@ -1252,7 +1356,8 @@
     "atk": 43.7,
     "statName": "Atk%",
     "statValue": 6,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["shop"]
   },
   {
     "name": "Rust",
@@ -1262,7 +1367,8 @@
     "atk": 42.4,
     "statName": "Atk%",
     "statValue": 9,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["wishes"]
   },
   {
     "name": "SacrificialBow",
@@ -1272,7 +1378,8 @@
     "atk": 43.73,
     "statName": "ER%",
     "statValue": 6.67,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["wishes"]
   },
   {
     "name": "SacrificialFragments",
@@ -1282,7 +1389,8 @@
     "atk": 41.07,
     "statName": "EM",
     "statValue": 48,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["wishes"]
   },
   {
     "name": "SacrificialGreatsword",
@@ -1292,7 +1400,8 @@
     "atk": 43.73,
     "statName": "ER%",
     "statValue": 6.67,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["wishes"]
   },
   {
     "name": "SacrificialJade",
@@ -1302,7 +1411,8 @@
     "atk": 41.07,
     "statName": "CritRate%",
     "statValue": 8,
-    "releasedAt": "2023-08-16"
+    "releasedAt": "2023-08-16",
+    "tags": ["wishes"]
   },
   {
     "name": "SacrificialSword",
@@ -1312,7 +1422,8 @@
     "atk": 41.07,
     "statName": "ER%",
     "statValue": 13.33,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["wishes"]
   },
   {
     "name": "ScionOfTheBlazingSun",
@@ -1322,7 +1433,8 @@
     "atk": 43.73,
     "statName": "CritRate%",
     "statValue": 4,
-    "releasedAt": "2023-08-16"
+    "releasedAt": "2023-08-16",
+    "tags": ["bp"]
   },
   {
     "name": "SeasonedHuntersBow",
@@ -1340,7 +1452,8 @@
     "atk": 42.4,
     "statName": "CritRate%",
     "statValue": 6,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["bp"]
   },
   {
     "name": "SharpshootersOath",
@@ -1360,7 +1473,8 @@
     "atk": 44.34,
     "statName": "HP%",
     "statValue": 14.4,
-    "releasedAt": "2024-06-25"
+    "releasedAt": "2024-06-25",
+    "tags": ["wishes", "Sigewinne"]
   },
   {
     "name": "SilverSword",
@@ -1398,7 +1512,8 @@
     "atk": 45.94,
     "statName": "ER%",
     "statValue": 12,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["wishes"]
   },
   {
     "name": "SkywardAtlas",
@@ -1408,7 +1523,8 @@
     "atk": 47.54,
     "statName": "Atk%",
     "statValue": 7.2,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["wishes"]
   },
   {
     "name": "SkywardHarp",
@@ -1418,7 +1534,8 @@
     "atk": 47.54,
     "statName": "CritRate%",
     "statValue": 4.8,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["wishes"]
   },
   {
     "name": "SkywardPride",
@@ -1428,7 +1545,8 @@
     "atk": 47.54,
     "statName": "ER%",
     "statValue": 8,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["wishes"]
   },
   {
     "name": "SkywardSpine",
@@ -1438,7 +1556,8 @@
     "atk": 47.54,
     "statName": "ER%",
     "statValue": 8,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["wishes"]
   },
   {
     "name": "Slingshot",
@@ -1458,7 +1577,8 @@
     "atk": 43.73,
     "statName": "PhysicalDmg%",
     "statValue": 7.51,
-    "releasedAt": "2020-12-23"
+    "releasedAt": "2020-12-23",
+    "tags": ["f2p", "dragonspine"]
   },
   {
     "name": "SolarPearl",
@@ -1468,7 +1588,8 @@
     "atk": 42.4,
     "statName": "CritRate%",
     "statValue": 6,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["bp"]
   },
   {
     "name": "SongOfBrokenPines",
@@ -1478,7 +1599,8 @@
     "atk": 49.14,
     "statName": "PhysicalDmg%",
     "statValue": 4.5,
-    "releasedAt": "2021-03-18"
+    "releasedAt": "2021-03-18",
+    "tags": ["wishes", "Eula"]
   },
   {
     "name": "SongOfStillness",
@@ -1488,7 +1610,8 @@
     "atk": 42.4,
     "statName": "Atk%",
     "statValue": 9,
-    "releasedAt": "2023-08-16"
+    "releasedAt": "2023-08-16",
+    "tags": ["f2p", "fontaine"]
   },
   {
     "name": "SapwoodBlade",
@@ -1498,7 +1621,8 @@
     "atk": 43.73,
     "statName": "ER%",
     "statValue": 6.67,
-    "releasedAt": "2022-08-24"
+    "releasedAt": "2022-08-24",
+    "tags": ["f2p", "sumeru"]
   },
   {
     "name": "SplendorOfTranquilWaters",
@@ -1508,7 +1632,8 @@
     "atk": 44.34,
     "statName": "CritDmg%",
     "statValue": 19.2,
-    "releasedAt": "2023-11-08"
+    "releasedAt": "2023-11-08",
+    "tags": ["wishes", "Furina"]
   },
   {
     "name": "StaffOfHoma",
@@ -1518,7 +1643,8 @@
     "atk": 45.94,
     "statName": "CritDmg%",
     "statValue": 14.4,
-    "releasedAt": "2021-02-23"
+    "releasedAt": "2021-02-23",
+    "tags": ["wishes", "Hu Tao"]
   },
   {
     "name": "StaffOfTheScarletSands",
@@ -1528,7 +1654,8 @@
     "atk": 44.34,
     "statName": "CritRate%",
     "statValue": 9.6,
-    "releasedAt": "2022-09-28"
+    "releasedAt": "2022-09-28",
+    "tags": ["wishes", "Cyno"]
   },
   {
     "name": "SummitShaper",
@@ -1538,7 +1665,8 @@
     "atk": 45.94,
     "statName": "Atk%",
     "statValue": 10.8,
-    "releasedAt": "2020-12-23"
+    "releasedAt": "2020-12-23",
+    "tags": ["wishes", "Albedo"]
   },
   {
     "name": "SurfsUp",
@@ -1548,7 +1676,8 @@
     "atk": 44.34,
     "statName": "CritDmg%",
     "statValue": 19.2,
-    "releasedAt": "2024-08-28"
+    "releasedAt": "2024-08-28",
+    "tags": ["wishes", "Mualani"]
   },
   {
     "name": "SwordOfDescension",
@@ -1558,7 +1687,8 @@
     "atk": 38.74,
     "statName": "Atk%",
     "statValue": 7.66,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["ps4", "Traveler"]
   },
   {
     "name": "SwordOfNarzissenkreuz",
@@ -1568,7 +1698,8 @@
     "atk": 42.4,
     "statName": "Atk%",
     "statValue": 9,
-    "releasedAt": "2023-11-08"
+    "releasedAt": "2023-11-08",
+    "tags": ["f2p", "fontaine"]
   },
   {
     "name": "TalkingStick",
@@ -1578,7 +1709,8 @@
     "atk": 43.73,
     "statName": "CritRate%",
     "statValue": 4,
-    "releasedAt": "2023-08-16"
+    "releasedAt": "2023-08-16",
+    "tags": ["bp"]
   },
   {
     "name": "TheAlleyFlash",
@@ -1588,7 +1720,8 @@
     "atk": 45.07,
     "statName": "EM",
     "statValue": 12,
-    "releasedAt": "2021-03-17"
+    "releasedAt": "2021-03-17",
+    "tags": ["wishes"]
   },
   {
     "name": "TheBell",
@@ -1598,7 +1731,8 @@
     "atk": 42.4,
     "statName": "HP%",
     "statValue": 9,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["wishes"]
   },
   {
     "name": "TheBlackSword",
@@ -1608,7 +1742,8 @@
     "atk": 42.4,
     "statName": "CritRate%",
     "statValue": 6,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["bp"]
   },
   {
     "name": "TheCatch",
@@ -1618,7 +1753,8 @@
     "atk": 42.4,
     "statName": "ER%",
     "statValue": 10,
-    "releasedAt": "2021-09-01"
+    "releasedAt": "2021-09-01",
+    "tags": ["f2p", "mondstadt", "fishing"]
   },
   {
     "name": "TheDockhandsAssistant",
@@ -1628,7 +1764,8 @@
     "atk": 42.4,
     "statName": "HP%",
     "statValue": 9,
-    "releasedAt": "2023-09-27"
+    "releasedAt": "2023-09-27",
+    "tags": ["wishes"]
   },
   {
     "name": "TheFirstGreatMagic",
@@ -1638,7 +1775,8 @@
     "atk": 45.94,
     "statName": "CritDmg%",
     "statValue": 14.4,
-    "releasedAt": "2023-08-16"
+    "releasedAt": "2023-08-16",
+    "tags": ["wishes", "Linney"]
   },
   {
     "name": "TheFlute",
@@ -1648,7 +1786,8 @@
     "atk": 42.4,
     "statName": "Atk%",
     "statValue": 9,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["wishes"]
   },
   {
     "name": "TheStringless",
@@ -1658,7 +1797,8 @@
     "atk": 42.4,
     "statName": "EM",
     "statValue": 36,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["wishes"]
   },
   {
     "name": "TheUnforged",
@@ -1668,7 +1808,8 @@
     "atk": 45.94,
     "statName": "Atk%",
     "statValue": 10.8,
-    "releasedAt": "2020-12-01"
+    "releasedAt": "2020-12-01",
+    "tags": ["wishes"]
   },
   {
     "name": "TheViridescentHunt",
@@ -1678,7 +1819,8 @@
     "atk": 42.4,
     "statName": "CritRate%",
     "statValue": 6,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["bp"]
   },
   {
     "name": "TheWidsith",
@@ -1688,7 +1830,8 @@
     "atk": 42.4,
     "statName": "CritDmg%",
     "statValue": 12,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["wishes"]
   },
   {
     "name": "ThrillingTalesOfDragonSlayers",
@@ -1708,7 +1851,8 @@
     "atk": 45.94,
     "statName": "CritDmg%",
     "statValue": 14.4,
-    "releasedAt": "2021-08-10"
+    "releasedAt": "2021-08-10",
+    "tags": ["wishes", "Yoimiya"]
   },
   {
     "name": "TidalShadow",
@@ -1718,7 +1862,8 @@
     "atk": 42.4,
     "statName": "Atk%",
     "statValue": 9,
-    "releasedAt": "2023-08-16"
+    "releasedAt": "2023-08-16",
+    "tags": ["f2p", "fontaine"]
   },
   {
     "name": "TomeOfTheEternalFlow",
@@ -1728,7 +1873,8 @@
     "atk": 44.34,
     "statName": "CritDmg%",
     "statValue": 19.2,
-    "releasedAt": "2023-09-27"
+    "releasedAt": "2023-09-27",
+    "tags": ["wishes", "Neuvillette"]
   },
   {
     "name": "ToukabouShigure",
@@ -1738,7 +1884,8 @@
     "atk": 42.4,
     "statName": "EM",
     "statValue": 36,
-    "releasedAt": "2022-12-15"
+    "releasedAt": "2022-12-15",
+    "tags": ["event"]
   },
   {
     "name": "TravelersHandySword",
@@ -1758,7 +1905,8 @@
     "atk": 47.54,
     "statName": "CritDmg%",
     "statValue": 9.6,
-    "releasedAt": "2022-12-07"
+    "releasedAt": "2022-12-07",
+    "tags": ["wishes", "Wanderer"]
   },
   {
     "name": "TwinNephrite",
@@ -1778,17 +1926,19 @@
     "atk": 43.73,
     "statName": "ER%",
     "statValue": 6.67,
-    "releasedAt": "2023-12-21"
+    "releasedAt": "2023-12-21",
+    "tags": ["event"]
   },
   {
     "name": "UrakuMisugiri",
     "type": "sword",
     "owned": false,
-    "rarity": 4,
+    "rarity": 5,
     "atk": 44.34,
     "statName": "CritDmg%",
     "statValue": 19.2,
-    "releasedAt": "2024-03-13"
+    "releasedAt": "2024-03-13",
+    "tags": ["wishes", "Chiori"]
   },
   {
     "name": "Verdict",
@@ -1798,7 +1948,8 @@
     "atk": 47.54,
     "statName": "CritRate%",
     "statValue": 4.8,
-    "releasedAt": "2023-12-20"
+    "releasedAt": "2023-12-20",
+    "tags": ["wishes", "Navia"]
   },
   {
     "name": "VortexVanquisher",
@@ -1808,7 +1959,8 @@
     "atk": 45.94,
     "statName": "Atk%",
     "statValue": 10.8,
-    "releasedAt": "2020-12-01"
+    "releasedAt": "2020-12-01",
+    "tags": ["wishes", "Zhongly"]
   },
   {
     "name": "WanderingEvenstar",
@@ -1818,7 +1970,8 @@
     "atk": 42.4,
     "statName": "EM",
     "statValue": 36,
-    "releasedAt": "2022-10-14"
+    "releasedAt": "2022-10-14",
+    "tags": ["wishes"]
   },
   {
     "name": "WasterGreatsword",
@@ -1836,7 +1989,8 @@
     "atk": 45.07,
     "statName": "Atk%",
     "statValue": 3,
-    "releasedAt": "2021-11-02"
+    "releasedAt": "2021-11-02",
+    "tags": ["wishes"]
   },
   {
     "name": "Whiteblind",
@@ -1846,7 +2000,8 @@
     "atk": 42.4,
     "statName": "Def%",
     "statValue": 11.26,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["f2p", "liyue", "mondstadt"]
   },
   {
     "name": "WhiteIronGreatsword",
@@ -1876,7 +2031,8 @@
     "atk": 42.4,
     "statName": "EM",
     "statValue": 36,
-    "releasedAt": "2021-03-19"
+    "releasedAt": "2021-03-19",
+    "tags": ["event"]
   },
   {
     "name": "WineAndSong",
@@ -1886,7 +2042,8 @@
     "atk": 43.73,
     "statName": "ER%",
     "statValue": 6.67,
-    "releasedAt": "2021-03-17"
+    "releasedAt": "2021-03-17",
+    "tags": ["wishes"]
   },
   {
     "name": "WolfFang",
@@ -1896,7 +2053,8 @@
     "atk": 42.4,
     "statName": "CritRate%",
     "statValue": 6,
-    "releasedAt": "2023-08-16"
+    "releasedAt": "2023-08-16",
+    "tags": ["bp"]
   },
   {
     "name": "WolfsGravestone",
@@ -1906,7 +2064,8 @@
     "atk": 45.94,
     "statName": "Atk%",
     "statValue": 10.8,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "tags": ["wishes"]
   },
   {
     "name": "XiphosMoonlight",
@@ -1916,6 +2075,7 @@
     "atk": 42.4,
     "statName": "EM",
     "statValue": 36,
-    "releasedAt": "2022-10-14"
+    "releasedAt": "2022-10-14",
+    "tags": ["wishes"]
   }
 ]

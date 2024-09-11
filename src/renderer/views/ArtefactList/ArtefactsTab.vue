@@ -1,7 +1,7 @@
 <template>
   <div class="ArtefactsTab">
     <ul class="ArtefactsTabList">
-      <li class="ArtefactsTabListItem" v-if="props.showAdd">
+      <li class="ArtefactsTabListItem">
         <button
           class="Artefact ArtefactButton"
           @click="modalStore.actions.show('artefactCreateModal')"
@@ -32,12 +32,19 @@
       </button>
 
       <button
-        v-if="props.showImport"
         type="button"
         :title="t('App.Artefact.List.importBtnTitle')"
         @click="actions.handleClickImport"
       >
         <span v-icon:import />
+      </button>
+
+      <button
+        type="button"
+        :title="t('App.Artefact.List.exportBtnTitle')"
+        @click="actions.handleClickExportMultiple"
+      >
+        <span v-icon:export />
       </button>
     </div>
 
@@ -46,12 +53,11 @@
     <ArtefactFilters
       :filters="props.filters"
       :visible="state.showArtefactFilters"
-      @reset="actions.handleApplyFilters"
       @confirm="actions.handleApplyFilters"
+      @close="state.showArtefactFilters = false"
     />
 
     <MaterialModal
-      v-if="props.showAdd"
       name="artefactCreateModal"
       :showClose="false"
       :showFooter="false"
@@ -83,8 +89,6 @@ const { t } = useI18n();
 
 const props = defineProps({
   filters: { type: Object, default: () => ({}) },
-  showImport: { type: Boolean, default: true },
-  showAdd: { type: Boolean, default: true },
 });
 
 const state = reactive({
@@ -107,16 +111,30 @@ const actions = {
     };
     const success = await artefactsStore.actions.requestImport(dialogOptions);
     if (success) {
-      notificationStore.actions.success('Importation success!');
+      notificationStore.actions.success(t('App.Artefact.List.importSuccess'));
     } else {
-      notificationStore.actions.error('Importation failed');
+      notificationStore.actions.error(t('App.Artefact.List.importFailed'));
     }
+  },
+  async handleClickExportMultiple() {
+    const dialogOptions = {
+      title: t('Electron.Dialog.saveFile.title'),
+      buttonLabel: t('Electron.Dialog.saveFile.buttonLabel'),
+      defaultPath: `${api.homedir}/Desktop/all-artefacts.json`,
+      filters: [
+        {
+          name: t('Electron.Dialog.filters.json'),
+          extensions: ['json'],
+        },
+      ],
+      properties: [],
+    };
+    await artefactsStore.actions.requestExportMultiple(dialogOptions);
   },
   handleApplyFilters(data) {
     artefactsStore.state.filters.setId = [...data.setId];
     artefactsStore.state.filters.mainStat = [...data.mainStat];
     artefactsStore.state.filters.subStat = [...data.subStat];
-    state.showArtefactFilters = false;
   },
   async handleCreate(data) {
     await artefactsStore.actions.create(data);

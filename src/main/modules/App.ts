@@ -8,6 +8,7 @@ import { IpcHandle, IpcOn, GlobalShortcut } from '@/main/decorators';
 import { Setting, Artefact } from '@/main/database/models';
 import WindowStore from '@/main/stores/WindowStore';
 import ArtefactSchema from '@/main/public/schemas/artefact.schema.json';
+import { serial } from '@/main/utils/PromiseUtils';
 
 class AppModule {
   @IpcHandle
@@ -40,6 +41,20 @@ class AppModule {
   }
 
   @IpcHandle
+  static async exportMultipleArtefact(idList: string, dialogOptions: SaveDialogOptions): Promise<void> {
+    const parsedIdList = JSON.parse(idList);
+    const mainWindow = WindowStore.get('main')!;
+    const { canceled, filePath } = await dialog.showSaveDialog(mainWindow, dialogOptions);
+
+    if (!canceled && filePath?.length) {
+      const artefactList: Array<Artefact> = await serial(parsedIdList.map((id: Identifier) => () => Artefact.findByPk(id)));
+      const toExportList = artefactList.map(({ type, setId, statsJson }) => ({ type, setId, statsJson }));
+
+      fs.writeFileSync(filePath, JSON.stringify(toExportList, null, 2));
+    }
+  }
+
+  @IpcHandle
   static async importArtefact(dialogOptions: OpenDialogOptions): Promise<string | null> {
     const mainWindow = WindowStore.get('main')!;
     const { canceled, filePaths } = await dialog.showOpenDialog(mainWindow, dialogOptions);
@@ -47,13 +62,17 @@ class AppModule {
     if (canceled || !filePaths.length || !fs.existsSync(filePaths[0])) return null;
 
     const fileContent = `${fs.readFileSync(filePaths[0])}`;
-    const validator = new Ajv();
 
     try {
-      const valid = validator.validate(ArtefactSchema, JSON.parse(fileContent));
-      console.log(validator.errors);
-      if (valid) {
-        return fileContent;
+      const parsedContent = JSON.parse(fileContent);
+      const artefactList = Array.isArray(parsedContent) ? parsedContent : [parsedContent];
+
+      const valid = artefactList.filter((artefactData) => {
+        const validator = new Ajv();
+        return validator.validate(ArtefactSchema, artefactData);
+      });
+      if (valid.length) {
+        return JSON.stringify(valid);
       }
       return null;
     } catch (e) {

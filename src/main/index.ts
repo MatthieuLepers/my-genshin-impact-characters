@@ -79,14 +79,6 @@ app.on('before-quit', () => {
   }
 });
 
-/**
- * Auto Updater
- *
- * Uncomment the following code below and install `electron-updater` to
- * support auto updating. Code Signing with a valid certificate is required.
- * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-electron-builder.html#auto-updating
- * https://github.com/iffy/electron-updater-example
- */
 autoUpdater.on('update-available', () => {
   WindowStore.broadcastData('update-available');
 });
