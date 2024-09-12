@@ -6,6 +6,8 @@ export default class Material extends AbstractEntity<IMaterial> {
 
   declare inInventory: number;
 
+  declare readonly bossId: string;
+
   constructor(data: IMaterial) {
     super(data, []);
   }

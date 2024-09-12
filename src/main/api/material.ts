@@ -4,7 +4,7 @@ import { Material } from '@/main/database/models';
 import type { IMaterial } from '@/renderer/core/entities/material/i';
 
 export async function findAll(): Promise<Array<Material>> {
-  return Material.findAll();
+  return Material.findAll({ order: [['releasedAt', 'ASC']] });
 }
 
 export async function update(identifier: Identifier, body: string): Promise<Material | null> {

@@ -7,7 +7,7 @@
         :key="filteredCharacterStore.filters.elements.length"
       />
       <div
-        v-for="boss in Object.keys(tm('Data.WeaklyBosses'))"
+        v-for="boss in materialsStore.bossList.value"
         :key="boss"
       >
         <h3 class="BossTitle" v-if="actions.filteredCharacters(boss).length">

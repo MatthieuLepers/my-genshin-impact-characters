@@ -1,122 +1,152 @@
 [
   {
     "id": "DvalinsSigh",
+    "bossId": "Dvalin",
     "releasedAt": "2020-09-28"
   },
   {
     "id": "DvalinsPlume",
+    "bossId": "Dvalin",
     "releasedAt": "2020-09-28"
   },
   {
     "id": "DvalinsClaw",
+    "bossId": "Dvalin",
     "releasedAt": "2020-09-28"
   },
   {
     "id": "RingOfBoreas",
+    "bossId": "Andrius",
     "releasedAt": "2020-09-28"
   },
   {
     "id": "SpiritLocketOfBoreas",
+    "bossId": "Andrius",
     "releasedAt": "2020-09-28"
   },
   {
     "id": "TailOfBoreas",
+    "bossId": "Andrius",
     "releasedAt": "2020-09-28"
   },
   {
     "id": "ShardOfAFoulLegacy",
+    "bossId": "Childe",
     "releasedAt": "2020-11-11"
   },
   {
     "id": "TushOfMonocerosCaeli",
+    "bossId": "Childe",
     "releasedAt": "2020-11-11"
   },
   {
     "id": "ShadowOfTheWarrior",
+    "bossId": "Childe",
     "releasedAt": "2020-11-11"
   },
   {
     "id": "BloodjadeBranch",
+    "bossId": "Azhdaha",
     "releasedAt": "2021-04-28"
   },
   {
     "id": "DragonLordsCrown",
+    "bossId": "Azhdaha",
     "releasedAt": "2021-04-28"
   },
   {
     "id": "GildedScale",
+    "bossId": "Azhdaha",
     "releasedAt": "2021-04-28"
   },
   {
     "id": "MoltenMoment",
+    "bossId": "Signora",
     "releasedAt": "2021-09-01"
   },
   {
     "id": "AshenHeart",
+    "bossId": "Signora",
     "releasedAt": "2021-09-01"
   },
   {
     "id": "HellfireButterfly",
+    "bossId": "Signora",
     "releasedAt": "2021-09-01"
   },
   {
     "id": "TheMeaningOfAeons",
+    "bossId": "NarukamiNoMikoto",
     "releasedAt": "2022-02-16"
   },
   {
     "id": "MudraOfTheMaleficGeneral",
+    "bossId": "NarukamiNoMikoto",
     "releasedAt": "2022-02-16"
   },
   {
     "id": "TearsOfTheCalamitousGod",
+    "bossId": "NarukamiNoMikoto",
     "releasedAt": "2022-02-16"
   },
   {
     "id": "PuppetStrings",
+    "bossId": "ShoukiNoKamiTheProdigal",
     "releasedAt": "2022-11-02"
   },
   {
     "id": "MirrorOfMushin",
+    "bossId": "ShoukiNoKamiTheProdigal",
     "releasedAt": "2022-11-02"
   },
   {
     "id": "DakasBell",
+    "bossId": "ShoukiNoKamiTheProdigal",
     "releasedAt": "2022-11-02"
   },
   {
     "id": "WorldspanFern",
+    "bossId": "GuardianOfApepsOasis",
     "releasedAt": "2023-04-12"
   },
   {
     "id": "PrimordialGreenbloom",
+    "bossId": "GuardianOfApepsOasis",
     "releasedAt": "2023-04-12"
   },
   {
     "id": "Everamber",
+    "bossId": "GuardianOfApepsOasis",
     "releasedAt": "2023-04-12"
   },
   {
     "id": "LightlessSilkString",
+    "bossId": "AllDevouringNarwhal",
     "releasedAt": "2023-11-08"
   },
   {
     "id": "LightlessMass",
+    "bossId": "AllDevouringNarwhal",
     "releasedAt": "2023-11-08"
   },
   {
     "id": "LightlessEyeOfTheMaelstrom",
+    "bossId": "AllDevouringNarwhal",
     "releasedAt": "2023-11-08"
   },
   {
     "id": "FadingCandle",
+    "bossId": "TheKnave",
     "releasedAt": "2024-04-24"
   },
   {
     "id": "SilkenFeather",
+    "bossId": "TheKnave",
     "releasedAt": "2024-04-24"
   },
   {
     "id": "DenialAndJudgment",
+    "bossId": "TheKnave",
     "releasedAt": "2024-04-24"
   }
 ]

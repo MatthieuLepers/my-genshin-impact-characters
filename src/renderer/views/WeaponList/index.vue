@@ -51,7 +51,7 @@
             <MaterialFormToggle
               v-model="obj.owned"
               label=""
-              @update:modelValue="obj.save()"
+              @update:modelValue="actions.handleToggleOwned(obj)"
             />
           </template>
           <template #level="{ obj }">
@@ -65,6 +65,7 @@
               @wheel.stop
               @update:modelValue="obj.save()"
             />
+            Atk : {{ obj.currentAtk }}
           </template>
           <template #rank="{ obj }">
             <MaterialFormInput
@@ -140,6 +141,12 @@ const actions = {
     } else {
       state.showedTypes.push(groupTypeId);
     }
+  },
+  handleToggleOwned(obj) {
+    if (!obj.owned) {
+      obj.level = 1;
+    }
+    obj.save();
   },
 };
 </script>

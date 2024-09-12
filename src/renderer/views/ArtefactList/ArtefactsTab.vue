@@ -107,7 +107,7 @@ const actions = {
           extensions: ['json'],
         },
       ],
-      properties: [],
+      properties: ['openFile'],
     };
     const success = await artefactsStore.actions.requestImport(dialogOptions);
     if (success) {

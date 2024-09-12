@@ -28,6 +28,10 @@ export class Material extends Model {
   declare inInventory: number;
 
   @AllowNull(false)
+  @Column(DataType.STRING)
+  declare bossId: string;
+
+  @AllowNull(false)
   @Column(DataType.DATE)
   declare releasedAt: Date;
 }

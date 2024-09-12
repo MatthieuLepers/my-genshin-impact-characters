@@ -1,4 +1,4 @@
-import { reactive } from 'vue';
+import { reactive, computed } from 'vue';
 
 import Material from '@renderer/core/entities/material';
 
@@ -10,6 +10,11 @@ const useMaterialsStore = () => {
   const state = reactive<IState>({
     materials: {},
   });
+
+  const bossList = computed(() => Object
+    .values(state.materials)
+    .map((material) => material.bossId)
+    .filter((bossId, i, arr) => arr.indexOf(bossId) === i));
 
   const actions = {
     async load() {
@@ -23,6 +28,7 @@ const useMaterialsStore = () => {
 
   return {
     state,
+    bossList,
     actions,
   };
 };
