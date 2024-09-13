@@ -188,6 +188,7 @@ export default {
     },
     Weapons: {
       weapons: '{0} weapons',
+      level: 'Lvl',
       type: {
         bow: 'Bow | Bows',
         catalyser: 'Catalyser | Catalysers',

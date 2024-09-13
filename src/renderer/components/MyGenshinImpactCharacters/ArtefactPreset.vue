@@ -1,34 +1,36 @@
 <template>
   <MaterialFormFieldSet class="ArtefactPreset">
     <template #legend>
-      <MaterialFormInput
-        v-model="props.preset.name"
-        :placeholder="t('App.Artefact.PresetList.placeholder')"
-      />
-      <div class="ArtefactPresetButtons" v-if="props.showDelete || props.showEdit || props.showSave">
-        <MaterialButton
-          v-if="props.showDelete"
-          icon="icon-delete"
-          :modifiers="{ danger: true }"
-          :title="t('App.Artefact.PresetList.formDeleteBtnLabel')"
-          @click="actions.handleClickDelete"
+      <slot name="legend">
+        <MaterialFormInput
+          v-model="props.preset.name"
+          :placeholder="t('App.Artefact.PresetList.placeholder')"
         />
-        <MaterialButton
-          v-if="props.showEdit"
-          icon="icon-edit"
-          :modifiers="{ secondary: true }"
-          :title="t('App.Artefact.PresetList.formEditBtnLabel')"
-          @click="actions.handleClickEdit"
-        />
-        <MaterialButton
-          v-if="props.showSave"
-          :disabled="props.preset.name.length === 0 || !props.preset.flower || !props.preset.feather || !props.preset.sands || !props.preset.goblet || !props.preset.circlet"
-          icon="icon-check"
-          :modifiers="{ success: true }"
-          :title="t('App.Artefact.PresetList.formSaveBtnLabel')"
-          @click="actions.handleClickSave"
-        />
-      </div>
+        <div class="ArtefactPresetButtons" v-if="props.showDelete || props.showEdit || props.showSave">
+          <MaterialButton
+            v-if="props.showDelete"
+            icon="icon-delete"
+            :modifiers="{ danger: true }"
+            :title="t('App.Artefact.PresetList.formDeleteBtnLabel')"
+            @click="actions.handleClickDelete"
+          />
+          <MaterialButton
+            v-if="props.showEdit"
+            icon="icon-edit"
+            :modifiers="{ secondary: true }"
+            :title="t('App.Artefact.PresetList.formEditBtnLabel')"
+            @click="actions.handleClickEdit"
+          />
+          <MaterialButton
+            v-if="props.showSave"
+            :disabled="props.preset.name.length === 0 || !props.preset.flower || !props.preset.feather || !props.preset.sands || !props.preset.goblet || !props.preset.circlet"
+            icon="icon-check"
+            :modifiers="{ success: true }"
+            :title="t('App.Artefact.PresetList.formSaveBtnLabel')"
+            @click="actions.handleClickSave"
+          />
+        </div>
+      </slot>
     </template>
     <MaterialFormFieldLine :size="5">
       <template

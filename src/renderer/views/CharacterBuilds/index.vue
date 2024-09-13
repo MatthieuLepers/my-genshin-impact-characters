@@ -16,25 +16,40 @@
       />
 
       <div class="BuildArtefactPreset">
-        <MaterialFormSelect
-          v-model="form.presetId"
-          label="Artefact preset"
-          class="BuildPresetSelect"
-          variant="box"
-          :options="State.validPresetList"
-          :valid="!!form.presetId"
-        />
-        <ArtefactPreset
-          :preset="artefactPresetsStore.state.sets[form.presetId]"
-        />
-        <MaterialFormSelect
-          v-model="form.weaponId"
-          label="Weapon"
-          class="BuildWeaponSelect"
-          variant="box"
-          :options="State.validWeaponList"
-          :valid="!!form.weaponId"
-        />
+        <ArtefactPreset :preset="artefactPresetsStore.state.sets[form.presetId]">
+          <template #legend>
+            <MaterialFormSelect
+              v-model="form.presetId"
+              label="Artefact preset"
+              class="BuildPresetSelect"
+              variant="box"
+              :options="State.validPresetList"
+              :valid="!!form.presetId"
+              :searchable="true"
+            />
+          </template>
+        </ArtefactPreset>
+        <MaterialFormFieldSet>
+          <template #legend>
+            <MaterialFormSelect
+              v-model="form.weaponId"
+              label="Weapon"
+              class="BuildWeaponSelect"
+              variant="box"
+              :options="State.validWeaponList"
+              :valid="!!form.weaponId"
+            />
+          </template>
+          <div class="BuildWeapon">
+            <img class="BuildWeaponImg" :src="image(`img/weapons/${weaponsStore.state.weapons[form.weaponId].name}.webp`)" alt="" />
+            <div class="BuildWeaponInfos">
+              <span>{{ t(`Data.Weapons.${weaponsStore.state.weapons[form.weaponId].name}.name`) }}</span>
+              <span>{{ t('App.Artefact.display.Atk') }}: {{ weaponsStore.state.weapons[form.weaponId].currentAtk }}</span>
+              <span>{{ t('App.Weapons.level') }}: {{ weaponsStore.state.weapons[form.weaponId].level }}</span>
+              <span>{{ t(`App.Artefact.display.${weaponsStore.state.weapons[form.weaponId].statName}`) }}: {{ weaponsStore.state.weapons[form.weaponId].currentSubStat.toFixed(1) }}{{ weaponsStore.state.weapons[form.weaponId].statName.endsWith('%') ? '%' : '' }}</span>
+            </div>
+          </div>
+        </MaterialFormFieldSet>
       </div>
 
       <ArtefactCard
@@ -52,6 +67,7 @@ import { reactive, computed, onBeforeMount } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 import MaterialFormSelect from '@renderer/components/Materials/Form/Select.vue';
+import MaterialFormFieldSet from '@renderer/components/Materials/Form/FieldSet.vue';
 import ArtefactCard from '@renderer/components/MyGenshinImpactCharacters/ArtefactCard.vue';
 import ArtefactPreset from '@renderer/components/MyGenshinImpactCharacters/ArtefactPreset.vue';
 
@@ -104,6 +120,7 @@ onBeforeMount(() => {
   artefactPresetsStore.state.current = State.value.validPresetList[0].obj;
   artefactsStore.state.current = artefactPresetsStore.state.current.flower;
   form.presetId = artefactPresetsStore.state.current.id;
+  form.weaponId = State.value.validWeaponList[0].value;
 });
 </script>
 

@@ -23,12 +23,42 @@
     &ArtefactPreset {
       grid-column: 1;
       grid-row: 2;
+
+      .m-form-fieldset__legend {
+        padding: 0;
+
+        .m-form-select {
+          width: 100%;
+          margin-bottom: 0;
+        }
+      }
     }
 
     &ArtefactCard {
       grid-column: 2;
       grid-row: 2;
       width: 100%;
+    }
+
+    &Weapon {
+      @include set-font-scale('s');
+      display: flex;
+      gap: rem(8px);
+
+      &Img {
+        width: auto;
+      }
+
+      &Infos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: rem(8px);
+
+        span {
+          display: block;
+          flex: 0 0 calc(50% - 4px);
+        }
+      }
     }
   }
 }

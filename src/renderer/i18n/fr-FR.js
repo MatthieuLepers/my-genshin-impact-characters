@@ -188,6 +188,7 @@ export default {
     },
     Weapons: {
       weapons: 'Armes {0}',
+      level: 'Niv',
       type: {
         bow: 'Arc | Arcs',
         catalyser: 'Catalyseur | Catalyseurs',
