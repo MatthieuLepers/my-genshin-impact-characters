@@ -65,7 +65,6 @@
               @wheel.stop
               @update:modelValue="obj.save()"
             />
-            Atk : {{ obj.currentAtk }}
           </template>
           <template #rank="{ obj }">
             <MaterialFormInput

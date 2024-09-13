@@ -17,7 +17,6 @@ const useWeaponsStore = () => {
   const weaponList = computed(() => Object
     .values(state.weapons)
     .sort((a, b) => TYPE_ORDER.indexOf(a.type) - TYPE_ORDER.indexOf(b.type)
-      || b.level - a.level
       || b.rarity - a.rarity
       || new Date(b.releasedAt).getTime() - new Date(a.releasedAt).getTime()
       || i18n.global.t(`Data.Weapons.${b.name}.name`).localeCompare(i18n.global.t(`Data.Weapons.${a.name}.name`))));

@@ -64,49 +64,13 @@
         v-for="(set, i) in Object.values(artefactPresetsStore.state.sets)"
         :key="i"
       >
-        <MaterialFormFieldSet>
-          <template #legend>
-            <MaterialFormInput
-              v-model="set.name"
-              :placeholder="t('App.Artefact.PresetList.placeholder')"
-            />
-            <div class="PresetsTabButtons">
-              <MaterialButton
-                icon="icon-delete"
-                :modifiers="{ danger: true }"
-                :title="t('App.Artefact.PresetList.formDeleteBtnLabel')"
-                @click="actions.handleClickDelete(set)"
-              />
-              <MaterialButton
-                icon="icon-edit"
-                :modifiers="{ secondary: true }"
-                :title="t('App.Artefact.PresetList.formEditBtnLabel')"
-                @click="actions.handleClickEdit(set)"
-              />
-              <MaterialButton
-                :disabled="set.name.length === 0 || !set.flower || !set.feather || !set.sands || !set.goblet || !set.circlet"
-                icon="icon-check"
-                :modifiers="{ success: true }"
-                :title="t('App.Artefact.PresetList.formSaveBtnLabel')"
-                @click="actions.handleClickSave(set)"
-              />
-            </div>
-          </template>
-          <MaterialFormFieldLine :size="5">
-            <template
-              v-for="(type, i) in ['flower', 'feather', 'sands', 'goblet', 'circlet']"
-              v-slot:[`field${i}`]
-              :key="type"
-            >
-              <Artefact
-                v-if="set[type]"
-                :artefact="set[type]"
-                :selected="artefactsStore.state.current.id === set[`${type}Id`]"
-                @click="artefactsStore.state.current = set[type]"
-              />
-            </template>
-          </MaterialFormFieldLine>
-        </MaterialFormFieldSet>
+        <ArtefactPreset
+          :preset="set"
+          :showDelete="true"
+          :showEdit="true"
+          :showSave="true"
+          @edit="actions.handleClickEdit"
+        />
       </li>
     </ul>
 
@@ -123,16 +87,6 @@
       :formData="State.form"
       @submit="actions.handleSubmit"
     />
-
-    <MaterialModal
-      name="presetDestroyModal"
-      :title="t('App.Artefact.PresetList.modal.title')"
-      :refuseLabel="t('App.Artefact.PresetList.modal.refuseLabel')"
-      :acceptLabel="t('App.Artefact.PresetList.modal.acceptLabel')"
-      @confirm="actions.handleConfirmDelete"
-    >
-      {{ t('App.Artefact.PresetList.modal.content') }}
-    </MaterialModal>
   </div>
 </template>
 
@@ -145,16 +99,14 @@ import MaterialForm from '@renderer/components/Materials/Form/index.vue';
 import MaterialFormInput from '@renderer/components/Materials/Form/Input.vue';
 import MaterialFormFieldLine from '@renderer/components/Materials/Form/FieldLine.vue';
 import MaterialFormFieldSet from '@renderer/components/Materials/Form/FieldSet.vue';
-import MaterialModal from '@renderer/components/Materials/Modal/index.vue';
 import ArtefactCard from '@renderer/components/MyGenshinImpactCharacters/ArtefactCard.vue';
 import Artefact from '@renderer/components/MyGenshinImpactCharacters/Artefact.vue';
 import ArtefactSelectorPanel from '@renderer/components/MyGenshinImpactCharacters/ArtefactSelectorPanel.vue';
+import ArtefactPreset from '@renderer/components/MyGenshinImpactCharacters/ArtefactPreset.vue';
 
 import { image } from '@renderer/core/utils';
 import { artefactsStore } from '@renderer/core/entities/artefact/store';
 import { artefactPresetsStore } from '@renderer/core/entities/artefactPreset/store';
-import { notificationStore } from '@renderer/components/Materials/Notification/Store';
-import { modalStore } from '@renderer/components/Materials/Modal/Store';
 
 const { t } = useI18n();
 
@@ -219,22 +171,9 @@ const actions = {
     });
     actions.handleResetForm();
   },
-  handleClickEdit(set) {
-    artefactPresetsStore.state.current = set;
-    artefactsStore.state.current = set.flower;
+  handleClickEdit() {
     state.edit = true;
     state.showArtefactSelectorPanel = true;
-  },
-  handleClickDelete(set) {
-    artefactPresetsStore.state.current = set;
-    modalStore.actions.show('presetDestroyModal');
-  },
-  async handleConfirmDelete() {
-    await artefactPresetsStore.actions.destroy();
-  },
-  async handleClickSave(set) {
-    notificationStore.actions.success(t('App.Artefact.PresetList.saved'));
-    await set.save();
   },
 };
 

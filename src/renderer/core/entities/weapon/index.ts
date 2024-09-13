@@ -2,38 +2,20 @@ import AbstractEntity from '@renderer/core/entities/AbstractEntity';
 import { IWeapon, IRemoteWeapon } from '@renderer/core/entities/weapon/i';
 
 const WEAPON_STAT_TYPES = {
-  5: {
-    type49: [[49, 145, 20], [176, 286, 20], [317, 374, 10], [406, 464, 10], [495, 555, 10], [586, 648, 10], [679, 741, 10]],
-    type48: [[48, 133, 20], [164, 261, 20], [292, 341, 10], [373, 423, 10], [455, 506, 10], [537, 590, 10], [621, 674, 10]],
-    type46: [[46, 122, 20], [153, 235, 20], [266, 308, 10], [340, 382, 10], [414, 457, 10], [488, 532, 10], [563, 608, 10]],
-    type44: [[44.34, 110.17, 20], [141.27, 209.82, 20], [240.92, 275.46, 10], [306.66, 341.46, 10], [372.56, 407.81, 10], [438.91, 474.55, 10], [505.65, 541.83, 10]],
-  },
-  4: {
-    type45: [[45, 128, 20], [154, 247, 20], [273, 321, 10], [347, 395, 10], [421, 470, 10], [496, 545, 10], [571, 620, 10]],
-    type44: [[44, 119, 20], [144, 226, 20], [252, 293, 10], [319, 361, 10], [387, 429, 10], [455, 497, 10], [523, 565]],
-    type42: [[42.4, 108.93, 20], [134.83, 204.83, 20], [230.83, 265.86, 10], [291.76, 326.78, 10], [352.68, 387.66, 10], [413.66, 448.68, 10], [474.58, 509.61, 10]],
-    type41: [[41, 99, 20], [125, 184, 20], [210, 238, 10], [264, 293, 10], [319, 347, 10], [373, 401, 10], [427, 454, 10]],
-    type39: [[39, 94, 20], [120, 176, 20], [202, 229, 10], [255, 282, 10], [308, 335, 10], [361, 388, 10], [414, 440, 10]],
-  },
-  3: {
-    type40: [[39.88, 101.96, 20], [121.46, 187.21, 20], [206.61, 239.47, 10], [258.97, 291.75, 10], [311.15, 343.89, 10], [363.39, 396.08, 10], [415.48, 448.22, 10]],
-    type39: [[39, 94, 20], [113, 169, 20], [189, 216, 10], [263, 282, 10], [282, 309, 10], [329, 355, 10], [375, 401, 10]],
-    type38: [[38, 86, 20], [105, 151, 20], [171, 193, 10], [212, 234, 10], [253, 274, 10], [294, 314, 10], [334, 354, 10]],
-  },
-  2: {
-    type33: [[32.93, 79.69, 20], [91.39, 139.01, 20], [150.61, 173.92, 10], [185.62, 208.67, 10], [220.37, 243.23, 10]],
-  },
-  1: {
-    type23: [[23.25, 56.25, 20], [67.95, 101.57, 20], [113.17, 129.62, 10], [141.32, 157.59, 10], [169.29, 185.43, 10]],
-  },
-};
-
-const getIndexFromLevel = (level: number): number => {
-  if (level <= 20) return 0;
-  return (level > 20 && level <= 40)
-    ? 1
-    : Math.ceil((level - 30) / 10)
-  ;
+  type549: [15.070818070818072, 13.177045177045176],
+  type548: [14.184476230542701, 12.407446360959193],
+  type546: [13.236177622986506, 11.585328689595125],
+  type544: [12.219891745602165, 10.702525935949481],
+  type445: [13.757044597293099, 12.086532061238074],
+  type444: [12.91516121655614, 11.358792590898698],
+  type442: [12.019103773584906, 10.582075471698113],
+  type441: [11.063063063063064, 9.755539323106891],
+  type439: [11.362674238513163, 10.007227671657201],
+  type340: [11.239217652958876, 9.931795386158475],
+  type339: [10.358544140423335, 9.1708828084667],
+  type338: [9.422494017548525, 8.360808295666047],
+  type233: [7.386273914363802],
+  type123: [7.975483870967742],
 };
 
 export default class Weapon extends AbstractEntity<IWeapon> {
@@ -55,7 +37,6 @@ export default class Weapon extends AbstractEntity<IWeapon> {
 
   declare readonly atk: number;
 
-  // LVL90 subStat value = stateValue * 4.594
   declare readonly statName: string;
 
   declare readonly statValue: number;
@@ -67,19 +48,28 @@ export default class Weapon extends AbstractEntity<IWeapon> {
   }
 
   get maxLevel(): number {
-    return (this.rarity <= 2 && 70) || 90;
+    return this.rarity <= 2 ? 70 : 90;
   }
 
   get currentAtk(): number {
-    const weaponStatType = WEAPON_STAT_TYPES[this.rarity][`type${Math.round(this.atk)}`];
-    const levelOffsets = weaponStatType.map(([min, max, range]) => Math.ceil(((max - min) / range) * 100) / 100);
-    const result = this.level === 1
-      ? this.atk
-      : [...Array(this.level).keys()].reduce((acc, i) => acc + levelOffsets[getIndexFromLevel(i)], this.atk)
-    ;
-    const ascenssionOffset = getIndexFromLevel(this.level) * (weaponStatType[1][0] - weaponStatType[0][1]);
+    if ((this.rarity >= 3 && this.level !== 80 && this.level !== 90) || (this.rarity < 3 && this.level !== 70)) {
+      throw new Error('Cannot get currentAtk for this level!');
+    }
+    const weaponStatType = WEAPON_STAT_TYPES[`type${this.rarity}${Math.round(this.atk)}`];
+    if (this.rarity <= 2) {
+      return Math.round(this.atk * weaponStatType[0]);
+    }
+    return Math.round(this.atk * weaponStatType[this.level === 90 ? 0 : 1]);
+  }
 
-    return Math.round((result + ascenssionOffset) * 100) / 100;
+  get currentSubStat(): number {
+    if (this.rarity < 3 || (this.level !== 80 && this.level !== 90)) {
+      throw new Error('Cannot get currentSubStat for this level!');
+    }
+    return this.level === 90
+      ? this.statValue * 4.59375
+      : this.statValue * 4.190277777777778
+    ;
   }
 
   static async findAll(): Promise<Array<Weapon>> {

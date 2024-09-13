@@ -65,14 +65,4 @@
     display: flex;
     justify-content: space-between;
   }
-
-  &Buttons {
-    display: flex;
-    gap: rem(8px);
-    justify-content: flex-end;
-  }
-}
-
-#presetDestroyModal {
-  width: 35%;
 }

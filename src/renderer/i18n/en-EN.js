@@ -10,6 +10,7 @@ export default {
     Menu: {
       followup: 'Followup',
       characterBox: 'Box',
+      characterBuilds: 'Builds',
       artefacts: 'Artefacts',
       weapons: 'Weapons',
     },

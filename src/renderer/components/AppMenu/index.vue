@@ -25,6 +25,12 @@
           {{ t('App.Menu.weapons') }}
         </router-link>
       </li>
+      <li>
+        <router-link :to="{ name: 'CharacterBuilds' }" class="AppMenuLink">
+          <img :src="image(`img/ui/menu_character.png`)" alt="" />
+          {{ t('App.Menu.characterBuilds') }}
+        </router-link>
+      </li>
     </ul>
   </nav>
 </template>
