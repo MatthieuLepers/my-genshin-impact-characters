@@ -1,0 +1,22 @@
+@import '~styles/utilities.scss';
+
+.ArtefactPreset {
+  &Buttons {
+    display: flex;
+    gap: rem(8px);
+    justify-content: flex-end;
+  }
+
+  .m-form-input input {
+    background-color: color(grey700);
+  }
+
+  .m-form-fieldset__legend {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+#presetDestroyModal {
+  width: 35%;
+}

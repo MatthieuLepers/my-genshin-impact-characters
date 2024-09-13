@@ -1,0 +1,34 @@
+@import '~styles/utilities.scss';
+
+.CharacterBuildsView {
+  padding: rem(8px);
+  display: flex;
+  gap: rem(8px);
+
+  .Build {
+    flex: 1;
+    display: grid;
+    grid-template-columns: auto 269px;
+    grid-template-rows: 56px auto;
+    gap: rem(8px);
+
+    &CharacterSelect {
+      grid-column: 1 / span 2;
+    }
+
+    &PresetSelect {
+      margin-bottom: rem(8px);
+    }
+
+    &ArtefactPreset {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    &ArtefactCard {
+      grid-column: 2;
+      grid-row: 2;
+      width: 100%;
+    }
+  }
+}
