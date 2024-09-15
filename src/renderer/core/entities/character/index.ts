@@ -1,7 +1,8 @@
 import AbstractEntity from '@renderer/core/entities/AbstractEntity';
-import { ICharacter, IRemoteCharacter } from '@renderer/core/entities/character/i';
+import type { ICharacter, IRemoteCharacter } from '@renderer/core/entities/character/i';
 import CharacterAptitude from '@renderer/core/entities/characterAptitude';
-import { IRemoteCharacterAptitude } from '@renderer/core/entities/characterAptitude/i';
+import type { IRemoteCharacterAptitude } from '@renderer/core/entities/characterAptitude/i';
+import type { IRemoteCharacterPassiveStat } from '@renderer/core/entities/characterPassiveStat/i';
 
 const PHASES = [
   (level: number): boolean => level > 0 && level <= 20,
@@ -29,7 +30,7 @@ export default class Character extends AbstractEntity<ICharacter> {
   declare owned: boolean;
 
   constructor(data: ICharacter) {
-    super(data, ['aptitudes', 'element']);
+    super(data, ['aptitudes', 'stats', 'passiveStats', 'element']);
   }
 
   get element(): string {
@@ -44,6 +45,28 @@ export default class Character extends AbstractEntity<ICharacter> {
         return { ...acc, [obj.type]: obj };
       }, {})
     ;
+  }
+
+  get stats(): Record<string, number> {
+    const stats = (this.data?.stats ?? []).find(({ dataValues }) => dataValues.level === this.level);
+    if (!stats) {
+      throw new Error('Cannot find stats object for this level!');
+    }
+    const { hp, atk, def, bonusType, bonusValue } = stats.dataValues;
+    return {
+      HP: hp,
+      Atk: atk,
+      Def: def,
+      [bonusType]: bonusValue,
+    };
+  }
+
+  get passiveStats(): Record<string, number> {
+    return (this.data?.passiveStats ?? [])
+      .reduce((acc, passiveStat: IRemoteCharacterPassiveStat) => ({
+        ...acc,
+        [passiveStat.dataValues.statType]: passiveStat.dataValues.statValue,
+      }), {});
   }
 
   get nameStr(): string {

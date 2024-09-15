@@ -1,12 +1,19 @@
 import { Identifier } from 'sequelize';
 
-import { Character, CharacterAptitude } from '@/main/database/models';
+import {
+  Character,
+  CharacterAptitude,
+  CharacterStats,
+  CharacterPassiveStat,
+} from '@/main/database/models';
 import type { ICharacter } from '@/renderer/core/entities/character/i';
 
 export async function findAll(): Promise<Array<Character>> {
   return Character.findAll({
     include: [
       { model: CharacterAptitude },
+      { model: CharacterStats },
+      { model: CharacterPassiveStat },
     ],
   });
 }

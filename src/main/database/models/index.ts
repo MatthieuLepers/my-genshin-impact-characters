@@ -1,4 +1,5 @@
 export { ArtefactSet } from '@/main/database/models/ArtefactSet';
+export { ArtefactSetPassiveStat } from '@/main/database/models/ArtefactSetPassiveStat';
 export { Character } from '@/main/database/models/Character';
 export { Material } from '@/main/database/models/Material';
 export { Artefact } from '@/main/database/models/Artefact';

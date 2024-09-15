@@ -205,6 +205,19 @@ export default {
         fishing: 'Fishing',
       },
     },
+    CharacterBuild: {
+      createBuild: 'Create new build',
+      myBuilds: 'My builds',
+      Create: {
+        characterSelect: 'Character lvl 90',
+        artefactPresetSelect: 'Artefacts preset',
+        weaponSelect: 'Weapon lvl 80 / 90',
+        name: 'Build name',
+        saveBtnLabel: 'Save',
+        successNotification: 'Saved as « {0} »',
+        errorNotification: 'An error occured when saving.',
+      },
+    },
   },
   Electron: {
     Dialog: {

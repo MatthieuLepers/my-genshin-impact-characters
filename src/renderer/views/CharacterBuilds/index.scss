@@ -3,62 +3,11 @@
 .CharacterBuildsView {
   padding: rem(8px);
   display: flex;
+  flex-direction: column;
   gap: rem(8px);
 
-  .Build {
-    flex: 1;
-    display: grid;
-    grid-template-columns: auto 269px;
-    grid-template-rows: 56px auto;
-    gap: rem(8px);
-
-    &CharacterSelect {
-      grid-column: 1 / span 2;
-    }
-
-    &PresetSelect {
-      margin-bottom: rem(8px);
-    }
-
-    &ArtefactPreset {
-      grid-column: 1;
-      grid-row: 2;
-
-      .m-form-fieldset__legend {
-        padding: 0;
-
-        .m-form-select {
-          width: 100%;
-          margin-bottom: 0;
-        }
-      }
-    }
-
-    &ArtefactCard {
-      grid-column: 2;
-      grid-row: 2;
-      width: 100%;
-    }
-
-    &Weapon {
-      @include set-font-scale('s');
-      display: flex;
-      gap: rem(8px);
-
-      &Img {
-        width: auto;
-      }
-
-      &Infos {
-        display: flex;
-        flex-wrap: wrap;
-        gap: rem(8px);
-
-        span {
-          display: block;
-          flex: 0 0 calc(50% - 4px);
-        }
-      }
-    }
+  &>.PanelMenu {
+    grid-column: 1 / span 2;
+    grid-row: 1;
   }
 }

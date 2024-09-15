@@ -1,16 +1,16 @@
 export interface IWeapon {
   readonly id: number;
-  name: string;
-  releasedAt: Date;
-  type: string;
+  readonly name: string;
+  readonly releasedAt: Date;
+  readonly type: string;
   owned: boolean;
   level: number;
   rank: number;
-  rarity: number;
-  atk: number;
-  statName: string;
-  statValue: number;
-  tags: Array<string>;
+  readonly rarity: number;
+  readonly atk: number;
+  readonly statName: string;
+  readonly statValue: number;
+  readonly tags: Array<string>;
 }
 
 export interface IRemoteWeapon {

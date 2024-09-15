@@ -60,6 +60,41 @@ export default class ArtefactPreset extends AbstractEntity<IArtefactPreset> {
     this.circletId = artefact.id;
   }
 
+  get artefacts(): Array<Artefact> {
+    return [this.flower, this.feather, this.sands, this.goblet, this.circlet];
+  }
+
+  get stats(): Record<string, number> {
+    const artefactGroupedBySetId: Record<string, Array<Artefact>> = this.artefacts.reduce((acc, artefact) => ({
+      ...acc,
+      [artefact.setId]: [...(acc[artefact.setId] ?? []), artefact],
+    }), {});
+    console.log(Object
+      .values(artefactGroupedBySetId)
+      .filter((artefacts) => artefacts.length >= 2));
+
+    const obj = Object
+      .values(artefactGroupedBySetId)
+      .filter((artefacts) => artefacts.length >= 2)
+      .reduce((acc, [artefact]) => {
+        return Object
+          .entries(artefact.artefactSet.stats)
+          .reduce((ac, [stat, val]) => ({
+            ...ac,
+            [stat]: (ac[stat] ?? 0) + val,
+          }), acc)
+        ;
+      }, {})
+    ;
+
+    return this.artefacts.reduce((acc, artefact) => {
+      return Object.entries(artefact.stats).reduce((ac, [k, v]) => ({
+        ...ac,
+        [k]: (acc[k] ?? 0) + v,
+      }), acc);
+    }, obj);
+  }
+
   static async findAll(): Promise<Array<ArtefactPreset>> {
     const presets = await api.ArtefactPreset.findAll();
     return presets.map((preset: IRemoteArtefactPreset) => new ArtefactPreset(preset.dataValues));

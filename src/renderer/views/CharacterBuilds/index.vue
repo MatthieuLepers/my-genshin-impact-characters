@@ -1,127 +1,36 @@
 <template>
   <div class="View CharacterBuildsView">
-    <img
-      :src="image(`img/characters/${charactersStore.state.characters[form.characterName].imageName}_gacha_card.png`)"
-      alt=""
-      style="height: 100%;width: auto;"
+    <PanelMenu
+      v-model="state.currentMenu"
+      :displayIf="Object.values(characterBuildsStore.state.builds).length > 0"
+      :data="State.panelMenuData"
     />
-    <div class="Build">
-      <MaterialFormSelect
-        v-model="form.characterName"
-        label="Character"
-        class="BuildCharacterSelect"
-        variant="box"
-        :options="State.validCharacterList"
-        :valid="!!form.characterName"
-      />
 
-      <div class="BuildArtefactPreset">
-        <ArtefactPreset :preset="artefactPresetsStore.state.sets[form.presetId]">
-          <template #legend>
-            <MaterialFormSelect
-              v-model="form.presetId"
-              label="Artefact preset"
-              class="BuildPresetSelect"
-              variant="box"
-              :options="State.validPresetList"
-              :valid="!!form.presetId"
-              :searchable="true"
-            />
-          </template>
-        </ArtefactPreset>
-        <MaterialFormFieldSet>
-          <template #legend>
-            <MaterialFormSelect
-              v-model="form.weaponId"
-              label="Weapon"
-              class="BuildWeaponSelect"
-              variant="box"
-              :options="State.validWeaponList"
-              :valid="!!form.weaponId"
-            />
-          </template>
-          <div class="BuildWeapon">
-            <img class="BuildWeaponImg" :src="image(`img/weapons/${weaponsStore.state.weapons[form.weaponId].name}.webp`)" alt="" />
-            <div class="BuildWeaponInfos">
-              <span>{{ t(`Data.Weapons.${weaponsStore.state.weapons[form.weaponId].name}.name`) }}</span>
-              <span>{{ t('App.Artefact.display.Atk') }}: {{ weaponsStore.state.weapons[form.weaponId].currentAtk }}</span>
-              <span>{{ t('App.Weapons.level') }}: {{ weaponsStore.state.weapons[form.weaponId].level }}</span>
-              <span>{{ t(`App.Artefact.display.${weaponsStore.state.weapons[form.weaponId].statName}`) }}: {{ weaponsStore.state.weapons[form.weaponId].currentSubStat.toFixed(1) }}{{ weaponsStore.state.weapons[form.weaponId].statName.endsWith('%') ? '%' : '' }}</span>
-            </div>
-          </div>
-        </MaterialFormFieldSet>
-      </div>
-
-      <ArtefactCard
-        class="BuildArtefactCard"
-        :showExport="false"
-        :showEdit="false"
-        :showDelete="false"
-      />
-    </div>
+    <CreateTab v-if="state.currentMenu === 'create'" />
   </div>
 </template>
 
 <script setup>
-import { reactive, computed, onBeforeMount } from 'vue';
+import { reactive, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 
-import MaterialFormSelect from '@renderer/components/Materials/Form/Select.vue';
-import MaterialFormFieldSet from '@renderer/components/Materials/Form/FieldSet.vue';
-import ArtefactCard from '@renderer/components/MyGenshinImpactCharacters/ArtefactCard.vue';
-import ArtefactPreset from '@renderer/components/MyGenshinImpactCharacters/ArtefactPreset.vue';
+import PanelMenu from '@renderer/components/MyGenshinImpactCharacters/PanelMenu.vue';
+import CreateTab from '@renderer/views/CharacterBuilds/CreateTab.vue';
 
-import { image } from '@renderer/core/utils';
-import { charactersStore } from '@renderer/core/entities/character/store';
-import { artefactPresetsStore } from '@renderer/core/entities/artefactPreset/store';
-import { weaponsStore } from '@renderer/core/entities/weapon/store';
 import { characterBuildsStore } from '@renderer/core/entities/characterBuild/store';
-import { artefactsStore } from '@/renderer/core/entities/artefact/store';
 
 const { t } = useI18n();
 
-const form = reactive({
-  name: '',
-  characterName: null,
-  presetId: null,
-  weaponId: null,
+const state = reactive({
+  currentMenu: 'create',
 });
 
-const State = computed(() => {
-  const validPresetList = Object
-    .values(artefactPresetsStore.state.sets)
-    .map((preset) => ({ value: preset.id, label: preset.name, obj: preset }))
-  ;
-  const validWeaponList = Object
-    .values(weaponsStore.state.weapons)
-    .filter((weapon) => ((weapon.rarity <= 2 && weapon.level === 70) || (weapon.rarity >= 3 && [80, 90].includes(weapon.level)))
-      && weapon.type === charactersStore.state.characters[form.characterName ?? 'Amber'].weaponType)
-    .sort((a, b) => b.rarity - a.rarity
-      || new Date(b.releasedAt).getTime() - new Date(a.releasedAt).getTime()
-      || t(`Data.Weapons.${b.name}.name`).localeCompare(t(`Data.Weapons.${a.name}.name`)))
-    .map((weapon) => ({ value: weapon.id, label: t(`Data.Weapons.${weapon.name}.name`), obj: weapon }))
-  ;
-  const validCharacterList = Object
-    .values(charactersStore.state.characters)
-    .filter((character) => character.owned && character.level === 90)
-    .sort((a, b) => new Date(b.releasedAt).getTime() - new Date(a.releasedAt).getTime())
-    .map((character) => ({ value: character.name, label: character.name, obj: character }))
-  ;
-
-  return {
-    validPresetList,
-    validWeaponList,
-    validCharacterList,
-  };
-});
-
-onBeforeMount(() => {
-  form.characterName = State.value.validCharacterList[0].value;
-  artefactPresetsStore.state.current = State.value.validPresetList[0].obj;
-  artefactsStore.state.current = artefactPresetsStore.state.current.flower;
-  form.presetId = artefactPresetsStore.state.current.id;
-  form.weaponId = State.value.validWeaponList[0].value;
-});
+const State = computed(() => ({
+  panelMenuData: [
+    { id: 'create', label: t('App.CharacterBuild.createBuild') },
+    { id: 'list', label: t('App.CharacterBuild.myBuilds') },
+  ],
+}));
 </script>
 
 <style lang="scss" src="./index.scss">

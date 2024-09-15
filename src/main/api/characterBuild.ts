@@ -20,3 +20,11 @@ export async function update(identifier: Identifier, body: string): Promise<Char
   }
   return null;
 }
+
+export async function destroy(identifier: Identifier): Promise<Boolean> {
+  const obj = await CharacterBuild.findByPk(identifier);
+  if (obj) {
+    return obj.destroy().then(() => true).catch(() => false);
+  }
+  return false;
+}

@@ -205,6 +205,19 @@ export default {
         fishing: 'Pêche',
       },
     },
+    CharacterBuild: {
+      createBuild: 'Nouveau build',
+      myBuilds: 'Mes builds',
+      Create: {
+        characterSelect: 'Personnage niv. 90',
+        artefactPresetSelect: 'Preset d\'artéfacts',
+        weaponSelect: 'Arme niv. 80 / 90',
+        name: 'Nom du build',
+        saveBtnLabel: 'Sauvegarder',
+        successNotification: 'Sauvegarder en tant que « {0} »',
+        errorNotification: 'Une erreur est survenue lors de la sauvegarde.',
+      },
+    },
   },
   Electron: {
     Dialog: {

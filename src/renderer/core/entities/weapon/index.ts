@@ -72,6 +72,13 @@ export default class Weapon extends AbstractEntity<IWeapon> {
     ;
   }
 
+  get stats(): Record<string, number> {
+    return {
+      Atk: this.currentAtk,
+      [this.statName]: this.currentSubStat,
+    };
+  }
+
   static async findAll(): Promise<Array<Weapon>> {
     const weapons = await api.Weapon.findAll();
     return weapons.map((weapon: IRemoteWeapon) => new Weapon(weapon.dataValues));

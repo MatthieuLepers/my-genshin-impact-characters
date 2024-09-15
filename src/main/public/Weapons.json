@@ -502,16 +502,6 @@
     "tags": ["event"]
   },
   {
-    "name": "FangOfTheMountainKing",
-    "type": "claymore",
-    "owned": false,
-    "rarity": 5,
-    "atk": 49.14,
-    "statName": "CritRate%",
-    "statValue": 2.4,
-    "tags": ["wishes", "Kinich"]
-  },
-  {
     "name": "FavoniusCodex",
     "type": "catalyser",
     "owned": false,
@@ -2076,6 +2066,56 @@
     "statName": "EM",
     "statValue": 36,
     "releasedAt": "2022-10-14",
+    "tags": ["wishes"]
+  },
+  {
+    "name": "FangOfTheMountainKing",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 5,
+    "atk": 49.14,
+    "statName": "CritRate%",
+    "statValue": 2.4,
+    "tags": ["wishes", "Kinich"]
+  },
+  {
+    "name": "SturdyBone",
+    "type": "sword",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "Atk%",
+    "statValue": 6,
+    "tags": ["wishes"]
+  },
+  {
+    "name": "PeakPatrolSong",
+    "type": "sword",
+    "owned": false,
+    "rarity": 5,
+    "atk": 44.34,
+    "statName": "Def%",
+    "statValue": 18,
+    "tags": ["wishes", "Xilonen"]
+  },
+  {
+    "name": "FruitfulHook",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "Atk%",
+    "statValue": 6,
+    "tags": ["wishes"]
+  },
+  {
+    "name": "MountainBracingBolt",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "ER%",
+    "statValue": 6.67,
     "tags": ["wishes"]
   }
 ]

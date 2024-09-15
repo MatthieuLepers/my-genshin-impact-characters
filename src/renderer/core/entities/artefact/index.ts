@@ -5,7 +5,7 @@ import type ArtefactSet from '@renderer/core/entities/artefactSet';
 import StatRangeEnum from '@renderer/core/entities/artefact/StatRangeEnum';
 
 export default class Artefact extends AbstractEntity<IArtefact> {
-  declare id: number;
+  declare readonly id: number;
 
   declare type: string;
 
@@ -46,6 +46,13 @@ export default class Artefact extends AbstractEntity<IArtefact> {
 
   get subStats(): Array<IArtefactStat> {
     return this.statsJson.filter((stat) => !stat.main);
+  }
+
+  get stats(): Record<string, number> {
+    return this.statsJson.reduce((ac, stat) => ({
+      ...ac,
+      [stat.name]: (ac[stat.name] ?? 0) + stat.value,
+    }), {});
   }
 
   static async findAll(): Promise<Array<Artefact>> {

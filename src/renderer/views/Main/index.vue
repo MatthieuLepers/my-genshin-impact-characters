@@ -6,6 +6,8 @@
         @clickCharacter="actions.handleClickCharacter"
         :key="filteredCharacterStore.filters.elements.length"
       />
+      <Slider v-model="state.sliderValue" v-model:rolls="state.rolls" :baseStat="298.75" />
+      HP: {{ Math.round(state.sliderValue) }}, rolls : {{ state.rolls.join(', ') }}
       <div
         v-for="boss in materialsStore.bossList.value"
         :key="boss"
@@ -65,6 +67,7 @@ import { charactersStore } from '@renderer/core/entities/character/store';
 import { materialsStore } from '@renderer/core/entities/material/store';
 import { filteredCharacterStore } from '@renderer/core/stores/FilteredCharacterStore';
 import { appStore } from '@renderer/core/stores/AppStore';
+import Slider from '@renderer/components/Slider/index.vue';
 
 defineOptions({ name: 'MainView' });
 
@@ -74,6 +77,8 @@ const { t, tm } = useI18n();
 const state = reactive({
   characters: {},
   newlyReleasedCharactersModalOpen: false,
+  sliderValue: 0,
+  rolls: [],
 });
 
 const actions = {
@@ -84,7 +89,7 @@ const actions = {
     ;
   },
   getMaxMaterial(materialName) {
-    return (state.characters[materialName] || []).reduce((acc, character) => acc + character.getMaxMaterial(materialName), 0);
+    return (state.characters[materialName] ?? []).reduce((acc, character) => acc + character.getMaxMaterial(materialName), 0);
   },
   totalInvestedBossMaterial(boss) {
     return Object
@@ -94,7 +99,7 @@ const actions = {
   },
   getOwnedAndInvestedMaterials(materialName) {
     if (!state.characters[materialName]?.length) return 0;
-    return (state.characters[materialName] || [])
+    return (state.characters[materialName] ?? [])
       .reduce((acc, character) => acc + character.getInvestedMaterials(materialName), materialsStore.state.materials[materialName].inInventory)
     ;
   },

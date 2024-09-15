@@ -5,47 +5,91 @@
   },
   {
     "id": "BlizzardStrayer",
-    "releasedAt": "2020-12-23"
+    "releasedAt": "2020-12-23",
+    "passiveStats": [{
+      "statType": "CryoDmg%",
+      "statValue": 15
+    }]
   },
   {
     "id": "BloodstainedChivalry",
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "passiveStats": [{
+      "statType": "PhysicalDmg%",
+      "statValue": 25
+    }]
   },
   {
     "id": "CrimsonWitchOfFlames",
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "passiveStats": [{
+      "statType": "PyroDmg%",
+      "statValue": 15
+    }]
   },
   {
     "id": "DeepwoodMemories",
-    "releasedAt": "2022-08-24"
+    "releasedAt": "2022-08-24",
+    "passiveStats": [{
+      "statType": "DendroDmg%",
+      "statValue": 15
+    }]
   },
   {
     "id": "DesertPavilionChronicle",
-    "releasedAt": "2022-12-07"
+    "releasedAt": "2022-12-07",
+    "passiveStats": [{
+      "statType": "AnemoDmg%",
+      "statValue": 15
+    }]
   },
   {
     "id": "EchoesOfAnOffering",
-    "releasedAt": "2022-03-30"
+    "releasedAt": "2022-03-30",
+    "passiveStats": [{
+      "statType": "Atk%",
+      "statValue": 18
+    }]
   },
   {
     "id": "EmblemOfSeveredFate",
-    "releasedAt": "2021-07-21"
+    "releasedAt": "2021-07-21",
+    "passiveStats": [{
+      "statType": "ER%",
+      "statValue": 20
+    }]
   },
   {
     "id": "FlowerOfParadiseLost",
-    "releasedAt": "2022-12-07"
+    "releasedAt": "2022-12-07",
+    "passiveStats": [{
+      "statType": "EM",
+      "statValue": 80
+    }]
   },
   {
     "id": "FragmentOfHarmonicWhimsy",
-    "releasedAt": "2024-04-24"
+    "releasedAt": "2024-04-24",
+    "passiveStats": [{
+      "statType": "Atk%",
+      "statValue": 18
+    }]
   },
   {
     "id": "GildedDreams",
-    "releasedAt": "2022-08-24"
+    "releasedAt": "2022-08-24",
+    "passiveStats": [{
+      "statType": "EM",
+      "statValue": 80
+    }]
   },
   {
     "id": "GladiatorsFinale",
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "passiveStats": [{
+      "statType": "Atk%",
+      "statValue": 18
+    }]
   },
   {
     "id": "GoldenTroupe",
@@ -53,19 +97,35 @@
   },
   {
     "id": "HeartOfDepth",
-    "releasedAt": "2020-12-23"
+    "releasedAt": "2020-12-23",
+    "passiveStats": [{
+      "statType": "HydroDmg%",
+      "statValue": 15
+    }]
   },
   {
     "id": "HuskOfOpulentDreams",
-    "releasedAt": "2021-11-24"
+    "releasedAt": "2021-11-24",
+    "passiveStats": [{
+      "statType": "Def%",
+      "statValue": 30
+    }]
   },
   {
     "id": "Lavawalker",
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "passiveStats": [{
+      "statType": "PyroRes%",
+      "statValue": 40
+    }]
   },
   {
     "id": "MaidenBeloved",
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "passiveStats": [{
+      "statType": "Heal%",
+      "statValue": 15
+    }]
   },
   {
     "id": "MarechausseHunter",
@@ -73,7 +133,11 @@
   },
   {
     "id": "NighttimeWhispersInTheEchoingWoods",
-    "releasedAt": "2023-12-20"
+    "releasedAt": "2023-12-20",
+    "passiveStats": [{
+      "statType": "Atk%",
+      "statValue": 18
+    }]
   },
   {
     "id": "NoblesseOblige",
@@ -81,7 +145,11 @@
   },
   {
     "id": "NymphsDream",
-    "releasedAt": "2023-04-12"
+    "releasedAt": "2023-04-12",
+    "passiveStats": [{
+      "statType": "HydroDmg%",
+      "statValue": 15
+    }]
   },
   {
     "id": "ObsidianCodex",
@@ -89,15 +157,27 @@
   },
   {
     "id": "OceanHuedClam",
-    "releasedAt": "2021-11-24"
+    "releasedAt": "2021-11-24",
+    "passiveStats": [{
+      "statType": "Heal%",
+      "statValue": 15
+    }]
   },
   {
     "id": "PaleFlame",
-    "releasedAt": "2021-04-28"
+    "releasedAt": "2021-04-28",
+    "passiveStats": [{
+      "statType": "PhysicalDmg%",
+      "statValue": 25
+    }]
   },
   {
     "id": "RetracingBolide",
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "passiveStats": [{
+      "statType": "ShieldStrength%",
+      "statValue": 35
+    }]
   },
   {
     "id": "ScrollOfTheHeroOfCinderCity",
@@ -105,42 +185,82 @@
   },
   {
     "id": "ShimenawasReminiscence",
-    "releasedAt": "2021-07-21"
+    "releasedAt": "2021-07-21",
+    "passiveStats": [{
+      "statType": "Atk%",
+      "statValue": 18
+    }]
   },
   {
     "id": "SongOfDaysPast",
-    "releasedAt": "2023-12-20"
+    "releasedAt": "2023-12-20",
+    "passiveStats": [{
+      "statType": "Heal%",
+      "statValue": 15
+    }]
   },
   {
     "id": "TenacityOfTheMillelith",
-    "releasedAt": "2021-04-28"
+    "releasedAt": "2021-04-28",
+    "passiveStats": [{
+      "statType": "HP%",
+      "statValue": 20
+    }]
   },
   {
     "id": "ThunderingFury",
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "passiveStats": [{
+      "statType": "ElectroDmg%",
+      "statValue": 15
+    }]
   },
   {
     "id": "Thundersoother",
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "passiveStats": [{
+      "statType": "ElectroRes%",
+      "statValue": 40
+    }]
   },
   {
     "id": "UnfinishedReverie",
-    "releasedAt": "2024-04-24"
+    "releasedAt": "2024-04-24",
+    "passiveStats": [{
+      "statType": "Atk%",
+      "statValue": 18
+    }]
   },
   {
     "id": "VermillionHereafter",
-    "releasedAt": "2022-03-30"
+    "releasedAt": "2022-03-30",
+    "passiveStats": [{
+      "statType": "Atk%",
+      "statValue": 18
+    }]
   },
   {
     "id": "ViridescentVenerer",
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "passiveStats": [{
+      "statType": "AnemoDmg%",
+      "statValue": 15
+    }]
   },
   {
     "id": "VourukashasGlow",
-    "releasedAt": "2023-04-12"
+    "releasedAt": "2023-04-12",
+    "passiveStats": [{
+      "statType": "HP%",
+      "statValue": 20
+    }]
   },
   {
     "id": "WanderersTroupe",
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "passiveStats": [{
+      "statType": "EM",
+      "statValue": 80
+    }]
   }
 ]

@@ -1,14 +1,17 @@
 import { reactive } from 'vue';
 
 import CharacterBuild from '@renderer/core/entities/characterBuild';
+import type { ICharacterBuild } from '@renderer/core/entities/characterBuild/i';
 
 interface IState {
-  builds: Array<CharacterBuild>;
+  builds: Record<number, CharacterBuild>;
+  current: CharacterBuild | null;
 }
 
 const useCharacterBuildsStore = () => {
   const state = reactive<IState>({
-    builds: [],
+    builds: {},
+    current: null,
   });
 
   const actions = {
@@ -17,7 +20,14 @@ const useCharacterBuildsStore = () => {
       state.builds = objList.reduce((acc, obj) => ({
         ...acc,
         [obj.id]: obj,
-      }), []);
+      }), {});
+    },
+    async create(data: ICharacterBuild) {
+      const build = await CharacterBuild.create(data);
+      state.builds[build.id] = build;
+      state.current = build;
+
+      return build;
     },
   };
 
