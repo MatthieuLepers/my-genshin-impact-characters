@@ -1,21 +1,18 @@
 <template>
   <div :class="GenerateModifiers('FormAffixInput', {
     editable: props.allowEdit,
-    invalid: modelValue.value < StatRangeEnum[modelValue.main ? 'main' : 'sub'][modelValue.name].min || modelValue.value > StatRangeEnum[modelValue.main ? 'main' : 'sub'][modelValue.name].max,
   })">
     <label :for="`affix${$uid}`">
       {{ t(`App.Artefact.stats.${modelValue.name}`) }}
     </label>
-    <input
+    {{ Math.round(modelValue.value * 100) / 100 }}
+    <Slider
+      v-if="!modelValue.main"
       v-model="modelValue.value"
-      type="number"
-      :min="StatRangeEnum[modelValue.main ? 'main' : 'sub'][modelValue.name].min"
-      :max="StatRangeEnum[modelValue.main ? 'main' : 'sub'][modelValue.name].max"
-      :step="0.1"
-      :id="`affix${$uid}`"
-      @click.stop
-      @wheel.stop
+      v-model:rolls="state.rolls"
+      :baseStat="State.maxRoll"
     />
+    <span>{{ state.rolls.join(', ') }}</span>
     <button
       v-if="props.allowEdit"
       type="button"
@@ -28,8 +25,10 @@
 </template>
 
 <script setup>
-import { getCurrentInstance } from 'vue';
+import { reactive, computed, getCurrentInstance } from 'vue';
 import { useI18n } from 'vue-i18n';
+
+import Slider from '@renderer/components/Slider/index.vue';
 
 import StatRangeEnum from '@renderer/core/entities/artefact/StatRangeEnum';
 
@@ -42,6 +41,14 @@ const modelValue = defineModel({ type: Object });
 const props = defineProps({
   allowEdit: { type: Boolean, default: false },
 });
+
+const state = reactive({
+  rolls: [],
+});
+
+const State = computed(() => ({
+  maxRoll: StatRangeEnum[modelValue.value.main ? 'main' : 'sub'][modelValue.value.name].maxRoll,
+}));
 </script>
 
 <style lang="scss" src="./FormAffixInput.scss">

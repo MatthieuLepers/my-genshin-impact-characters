@@ -25,6 +25,7 @@ import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 import StatRangeEnum from '@renderer/core/entities/artefact/StatRangeEnum';
+import { getMinMax } from '@renderer/core/datas/SubStatUtils';
 
 const { t } = useI18n();
 
@@ -36,13 +37,16 @@ const props = defineProps({
 });
 
 const State = computed(() => {
+  const stat = StatRangeEnum.sub[props.stat.name];
+  const [min] = getMinMax(stat.maxRoll);
   const ranges = [...Array(5).keys()]
     .map((i) => ({
-      min: Math.floor((StatRangeEnum.sub[props.stat.name].min + i * StatRangeEnum.sub[props.stat.name].min) * 10) / 10,
-      max: Math.floor((StatRangeEnum.sub[props.stat.name].maxRoll + i * StatRangeEnum.sub[props.stat.name].maxRoll) * 10) / 10,
+      min: Math.floor((min + i * min) * 10) / 10,
+      max: Math.floor((stat.maxRoll + i * stat.maxRoll) * 10) / 10,
     }))
   ;
 
+  console.log(props.stat.value);
   const rollAmount = ranges.findIndex((range) => range.min <= props.stat.value && range.max >= props.stat.value);
 
   return {

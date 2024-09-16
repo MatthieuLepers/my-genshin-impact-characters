@@ -1,6 +1,11 @@
 <template>
   <div class="ArtefactAffix">
-    <button class="ArtefactAffixButton" type="button" v-if="!modelValue" @click="emit('click', $event)">
+    <button
+      v-if="!modelValue"
+      class="ArtefactAffixButton"
+      type="button"
+      @click="emit('click', $event)"
+    >
       {{ t('App.ArtefactTransmuter.selectAffixBtnLabel') }}
     </button>
     <FormAffixInput

@@ -12,7 +12,7 @@
 
   &__form {
     display: flex;
-    gap: rem(24px);
+    gap: rem(8px);
     height: 100%;
   }
 
@@ -22,7 +22,7 @@
     list-style: none;
     max-height: 100%;
     overflow-y: auto;
-    flex: 0 0 calc(39% - 12px);
+    flex: 0 0 calc(35% - 4px);
 
     &-item {
       padding: rem(2px);
@@ -30,10 +30,14 @@
   }
 
   &__editor {
-    flex: 0 0 calc(61% - 12px);
+    flex: 0 0 calc(65% - 4px);
   }
 
   &__type-selector {
+    .PanelMenu {
+      margin-bottom: rem(8px);
+    }
+
     .PanelMenuButton {
       &:focus,
       &.PanelMenuButton--selected {
@@ -48,35 +52,10 @@
     }
   }
 
-  &__preview {
-    background-color: color(grey800);
-    margin: rem(16px) 0;
-    padding: rem(8px);
-    display: flex;
-    justify-content: space-between;
-
-    .artefact-infos {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      font-weight: 700;
-
-      span {
-        display: block;
-        font-weight: 400;
-      }
-    }
-
-    .artefact-preview {
-      width: auto;
-      height: 64px;
-    }
-  }
-
   &__submit-area {
     position: absolute;
     bottom: 8px;
     right: 8px;
-    width: calc(61% - 12px);
+    width: calc(65% - 4px);
   }
 }

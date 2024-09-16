@@ -4,48 +4,51 @@
     <PanelMenu
       v-model="state.main"
       :data="State.panelMenuData"
-      :displayIf="!State.minorOnly"
-    />
-    <ul :class="{ minorOnly: !State.minorOnly }">
-      <li v-for="affix in State.affixList" :key="affix">
-        <label :for="affix" :class="GenerateModifiers('AffixSelectorPanelCheckbox', {
-          checked: affix === form.mainAffix || (!state.main && affix === form.main && form.minorAffixes.includes(affix)) || (!state.main && form.minorAffixes.includes(affix)),
-          disabled: !state.main && affix === form.mainAffix,
-        })">
-          <input
-            :type="state.main ? 'radio' : 'checkbox'"
-            :id="affix"
-            :value="affix"
-            :disabled="!state.main && affix === form.mainAffix"
-            :checked="(state.main && affix === form.mainAffix) || (!state.main && form.minorAffixes.includes(affix))"
-            name="affix"
-            @click="($event) => $event.target.checked ? actions.setStat(affix) : actions.removeAffix(affix)"
-          />
-          {{ t(`App.Artefact.stats.${affix}`) }}
-        </label>
-      </li>
-    </ul>
-    <MaterialFormFieldLine :size="2">
-      <template #field0>
-        <MaterialButton
-          :icon="form.mainAffix || form.minorAffixes.length > 0 ? 'icon-reload' : 'icon-close'"
-          :modifiers="{ danger: true }"
-          @click="actions.reset(true)"
-        >
-          {{ t(form.mainAffix || form.minorAffixes.length > 0 ? 'App.ArtefactTransmuter.resetBtnLabel' : 'App.ArtefactTransmuter.resetCloseBtnLabel') }}
-        </MaterialButton>
+      :displayNavIf="!State.minorOnly"
+    >
+      <template #[state.main]>
+        <ul :class="{ minorOnly: !State.minorOnly }">
+          <li v-for="affix in State.affixList" :key="affix">
+            <label :for="affix" :class="GenerateModifiers('AffixSelectorPanelCheckbox', {
+              checked: (state.main && affix === form.mainAffix) || (!state.main && form.minorAffixes.includes(affix)),
+              disabled: !state.main && affix === form.mainAffix,
+            })">
+              <input
+                :type="state.main ? 'radio' : 'checkbox'"
+                :id="affix"
+                :value="affix"
+                :disabled="!state.main && affix === form.mainAffix"
+                :checked="(state.main && affix === form.mainAffix) || (!state.main && form.minorAffixes.includes(affix))"
+                name="affix"
+                @click="($event) => $event.target.checked ? actions.setStat(affix) : actions.removeAffix(affix)"
+              />
+              {{ t(`App.Artefact.stats.${affix}`) }}
+            </label>
+          </li>
+        </ul>
+        <MaterialFormFieldLine :size="2">
+          <template #field0>
+            <MaterialButton
+              :icon="(form.mainAffix && state.main) || form.minorAffixes.length > 0 ? 'icon-reload' : 'icon-close'"
+              :modifiers="{ danger: true }"
+              @click="(form.mainAffix && state.main) || form.minorAffixes.length > 0 ? actions.reset(true) : emit('close')"
+            >
+              {{ t((form.mainAffix && state.main) || form.minorAffixes.length > 0 ? 'App.ArtefactTransmuter.resetBtnLabel' : 'App.ArtefactTransmuter.resetCloseBtnLabel') }}
+            </MaterialButton>
+          </template>
+          <template #field1>
+            <MaterialButton
+              v-if="form.mainAffix && form.minorAffixes.length === 4"
+              icon="icon-check"
+              :modifiers="{ success: true }"
+              @click="actions.confirm()"
+            >
+              {{ t('App.ArtefactTransmuter.confirmBtnLabel') }}
+            </MaterialButton>
+          </template>
+        </MaterialFormFieldLine>
       </template>
-      <template #field1>
-        <MaterialButton
-          v-if="form.mainAffix && form.minorAffixes.length === 4"
-          icon="icon-check"
-          :modifiers="{ success: true }"
-          @click="actions.confirm()"
-        >
-          {{ t('App.ArtefactTransmuter.confirmBtnLabel') }}
-        </MaterialButton>
-      </template>
-    </MaterialFormFieldLine>
+    </PanelMenu>
   </MaterialForm>
 </template>
 
@@ -64,6 +67,7 @@ import MaterialButton from '@renderer/components/Materials/Button/index.vue';
 import PanelMenu from '@renderer/components/MyGenshinImpactCharacters/PanelMenu.vue';
 
 import StatRangeEnum from '@renderer/core/entities/artefact/StatRangeEnum';
+import { getMinMax } from '@/renderer/core/datas/SubStatUtils';
 
 const { t } = useI18n();
 
@@ -112,18 +116,21 @@ const State = computed(() => {
 
 const actions = {
   reset(force = false) {
-    if (form.mainAffix || form.minorAffixes.length > 0) {
-      form.mainAffix = (!force && modelValue.value.find((affix) => affix.main)?.name) || (props.type === 'flower' && 'HP') || (props.type === 'feather' && 'Atk') || null;
-      form.minorAffixes = (!force && modelValue.value.reduce((acc, val) => (val.main ? acc : [...acc, val.name]), [])) || [];
-      state.main = !State.value.minorOnly;
-    } else {
-      emit('close');
-    }
+    form.mainAffix = (!force && modelValue.value.find((affix) => affix.main)?.name) || (props.type === 'flower' && 'HP') || (props.type === 'feather' && 'Atk') || null;
+    form.minorAffixes = (!force && modelValue.value.reduce((acc, val) => (val.main ? acc : [...acc, val.name]), [])) || [];
+    state.main = !State.value.minorOnly;
   },
   confirm() {
     modelValue.value = [
-      { name: form.mainAffix, value: StatRangeEnum.main[form.mainAffix].max, main: true },
-      ...form.minorAffixes.map((affix) => ({ name: affix, value: StatRangeEnum.sub[affix].min })),
+      {
+        name: form.mainAffix,
+        value: StatRangeEnum.main[form.mainAffix].max,
+        main: true,
+      },
+      ...form.minorAffixes.map((affix) => {
+        const [min] = getMinMax(StatRangeEnum.sub[affix].maxRoll);
+        return { name: affix, value: min };
+      }),
     ];
     emit('close');
   },
@@ -135,7 +142,7 @@ const actions = {
     }
   },
   removeAffix(affix) {
-    if (!state.mainAffix) {
+    if (!state.main) {
       form.minorAffixes = form.minorAffixes.filter((a) => a !== affix);
     }
   },
@@ -145,8 +152,12 @@ watch(() => props.type, () => {
   actions.reset();
 });
 
-onMounted(() => {
+watch(() => props.visible, () => {
   actions.reset();
+});
+
+onMounted(() => {
+  actions.reset(true);
 });
 </script>
 

@@ -5,11 +5,12 @@
   position: absolute;
   top: 0;
   left: -100%;
-  width: calc(40% - 12px);
+  width: 35%;
   height: 100%;
   background-color: color(grey900);
   padding: rem(8px);
   flex-direction: column;
+  flex-wrap: nowrap;
 
   &--visible {
     left: 0;
@@ -68,7 +69,7 @@
   ul {
     list-style: none;
     margin: rem(16px) 0;
-    padding: 0;
+    padding: 0 rem(8px) 0 0;
     overflow-y: auto;
     height: calc(100% - 104px);
 

@@ -3,18 +3,15 @@
     <PanelMenu
       v-model="state.currentMenu"
       :data="State.panelMenuData"
-      :displayIf="Object.values(artefactsStore.state.artefacts).length > 0"
-    />
-
-    <ArtefactsTab
-      v-if="state.currentMenu === 'artefacts'"
-      class="Panel Panel--Artefacts"
-    />
-
-    <PresetsTab
-      v-if="state.currentMenu === 'artefactPresets'"
-      class="Panel Panel--Presets"
-    />
+      :displayNavIf="Object.values(artefactsStore.state.artefacts).length > 0"
+    >
+      <template #artefacts>
+        <ArtefactsTab class="Panel Panel--Artefacts" />
+      </template>
+      <template #artefactPresets>
+        <PresetsTab class="Panel Panel--Presets" />
+      </template>
+    </PanelMenu>
   </main>
 </template>
 

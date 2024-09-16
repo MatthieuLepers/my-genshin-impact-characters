@@ -16,3 +16,9 @@ export const getRollsFromValue = (baseStat: number, value: number): Array<number
   const index = rolls(baseStat).findIndex((mark) => mark === value);
   return rollsData[index].map((i) => Math.round(baseStat * (1 - (3 - i) / 10)));
 };
+
+export const getMinMax = (baseStat: number): [number, number] => {
+  const result = rolls(baseStat);
+
+  return [result[0], result[result.length - 1]];
+};

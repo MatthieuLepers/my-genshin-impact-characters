@@ -8,7 +8,8 @@
   background-color:  color(grey800);
   color: color(grey100);
   padding: rem(4px) rem(8px);
-  width: 100%;
+  margin: rem(2px);
+  width: calc(100% - 4px);
   text-align: left;
   font-weight: 700;
 

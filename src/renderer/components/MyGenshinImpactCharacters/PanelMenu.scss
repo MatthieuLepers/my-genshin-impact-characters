@@ -4,6 +4,12 @@
   display: flex;
   width: 100%;
 
+  &Container {
+    &:not(.PanelMenuContainer--solo) {
+      height: 100%;
+    }
+  }
+
   &Button {
     @include set-font-scale('s');
     flex: 1;

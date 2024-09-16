@@ -4,8 +4,8 @@
     v-model:rolls="rollsValue"
     :marks="State.marks"
     :min="0"
-    :max="State.max"
-    :interval="0.1"
+    :max="Math.ceil(State.max)"
+    :interval="0.01"
     :included="true"
     :hideLabel="true"
     :railStyle="{ height: '6px' }"
@@ -14,12 +14,12 @@
   >
     <template #tooltip="{ value }">
       <div class="m-slider__tooltip">
-        {{ Math.round(value) }}
+        {{ props.getTooltipText(value) }}
       </div>
     </template>
     <template v-slot:mark="{ active, pos }">
       <span
-        :style="{ left: `${pos}%` }"
+        :style="{ left: `calc(${pos}% - 2px)` }"
         :class="GenerateModifiers('m-slider__mark', { active })"
       />
     </template>
@@ -47,6 +47,7 @@ const rollsValue = defineModel('rolls', { type: Array });
 
 const props = defineProps({
   baseStat: { type: Number, required: true },
+  getTooltipText: { type: Function, default: (val) => Math.round(val * 100) / 100 },
 });
 
 const State = computed(() => {
@@ -56,8 +57,8 @@ const State = computed(() => {
 
   return {
     marks,
-    min,
-    max,
+    min: Math.floor(min * 100) / 100,
+    max: Math.ceil(max * 100) / 100,
   };
 });
 

@@ -19,56 +19,40 @@
           <template #button="{ item }">
             <img :src="image(`img/ui/${item.id}.png`)" :alt="item.id" />
           </template>
+          <template #[form.type]>
+            <MaterialFormFieldLine>
+              <ArtefactAffix
+                v-model="v$.statsJson.$model[0]"
+                :type="form.type"
+                @click="state.affixPanelVisible = true"
+              />
+            </MaterialFormFieldLine>
+            <MaterialFormFieldLine>
+              <ArtefactAffix
+                v-model="v$.statsJson.$model[1]"
+                @click="state.affixPanelVisible = true"
+              />
+            </MaterialFormFieldLine>
+            <MaterialFormFieldLine>
+              <ArtefactAffix
+                v-model="v$.statsJson.$model[2]"
+                @click="state.affixPanelVisible = true"
+              />
+            </MaterialFormFieldLine>
+            <MaterialFormFieldLine>
+              <ArtefactAffix
+                v-model="v$.statsJson.$model[3]"
+                @click="state.affixPanelVisible = true"
+              />
+            </MaterialFormFieldLine>
+            <MaterialFormFieldLine>
+              <ArtefactAffix
+                v-model="v$.statsJson.$model[4]"
+                @click="state.affixPanelVisible = true"
+              />
+            </MaterialFormFieldLine>
+          </template>
         </PanelMenu>
-
-        <div class="artefact-transmuter__preview">
-          <div class="artefact-infos">
-            {{ t(`App.Artefact.type.${form.type}`) }}
-            <span>★★★★★</span>
-          </div>
-          <img
-            class="artefact-preview"
-            :src="image(`img/artefacts/${form.setId}/${form.type}.webp`)"
-            :alt="t(`Data.ArtefactSets.${form.setId}.name`)"
-          />
-        </div>
-        <MaterialFormFieldLine :size="2">
-          <template #field0>
-            <ArtefactAffix
-              v-model="v$.statsJson.$model[0]"
-              :type="form.type"
-              @click="state.affixPanelVisible = true"
-            />
-          </template>
-        </MaterialFormFieldLine>
-        <MaterialFormFieldLine :size="2">
-          <template #field0>
-            <ArtefactAffix
-              v-model="v$.statsJson.$model[1]"
-              @click="state.affixPanelVisible = true"
-            />
-          </template>
-          <template #field1>
-            <ArtefactAffix
-              v-model="v$.statsJson.$model[2]"
-              @click="state.affixPanelVisible = true"
-            />
-          </template>
-        </MaterialFormFieldLine>
-        <MaterialFormFieldLine :size="2">
-          <template #field0>
-            <ArtefactAffix
-              v-model="v$.statsJson.$model[3]"
-              @click="state.affixPanelVisible = true"
-            />
-          </template>
-          <template #field1>
-            <ArtefactAffix
-              v-model="v$.statsJson.$model[4]"
-              @click="state.affixPanelVisible = true"
-            />
-          </template>
-        </MaterialFormFieldLine>
 
         <MaterialFormFieldLine :size="3" class="artefact-transmuter__submit-area">
           <template #field1>
@@ -90,7 +74,7 @@
             >
               {{ t('App.ArtefactTransmuter.createBtnLabel') }}
             </MaterialButton>
-          </template>>
+          </template>
         </MaterialFormFieldLine>
       </div>
     </MaterialForm>
@@ -126,6 +110,7 @@ import PanelMenu from '@renderer/components/MyGenshinImpactCharacters/PanelMenu.
 import { image } from '@renderer/core/utils';
 import { artefactSetsStore } from '@renderer/core/entities/artefactSet/store';
 import StatRangeEnum from '@renderer/core/entities/artefact/StatRangeEnum';
+import { getMinMax } from '@renderer/core/datas/SubStatUtils';
 
 defineOptions({ name: 'ArtefactTransmuter' });
 
@@ -136,7 +121,7 @@ const form = reactive({
   setId: null,
   type: 'flower',
   statsJson: [
-    { name: 'HP', value: 717, main: true },
+    { name: 'HP', value: StatRangeEnum.main.HP.max, main: true },
   ],
 });
 const rules = {
