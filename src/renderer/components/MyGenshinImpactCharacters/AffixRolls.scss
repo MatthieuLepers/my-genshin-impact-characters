@@ -1,0 +1,71 @@
+@import '~styles/utilities.scss';
+
+.AffixRolls {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+
+  &Item {
+    &--default {
+      @include set-font-scale('xs');
+      letter-spacing: 0.1rem;
+
+      &:not(:first-of-type) {
+        margin-left: rem(4px);
+      }
+
+      &.AffixRollsItem--common {
+        color: color(common);
+      }
+
+      &.AffixRollsItem--uncommon {
+        color: color(uncommon);
+      }
+
+      &.AffixRollsItem--rare {
+        color: color(rare);
+      }
+
+      &.AffixRollsItem--epic {
+        color: color(epic);
+      }
+    }
+
+    &--bar {
+      height: 20px;
+      width: 7px;
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      background-color: color(grey600);
+
+      &:not(:first-of-type) {
+        margin-left: rem(2px);
+      }
+
+      span {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
+
+      &.AffixRollsItem--common span {
+        background-color: color(common);
+      }
+
+      &.AffixRollsItem--uncommon span {
+        background-color: color(uncommon);
+      }
+
+      &.AffixRollsItem--rare span {
+        background-color: color(rare);
+      }
+
+      &.AffixRollsItem--epic span {
+        background-color: color(epic);
+      }
+    }
+  }
+}

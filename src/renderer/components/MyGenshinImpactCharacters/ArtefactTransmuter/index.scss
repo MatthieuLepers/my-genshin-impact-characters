@@ -22,7 +22,7 @@
     list-style: none;
     max-height: 100%;
     overflow-y: auto;
-    flex: 0 0 calc(39% - 4px);
+    flex: 0 0 calc(35% - 4px);
 
     &-item {
       padding: rem(2px);
@@ -30,7 +30,7 @@
   }
 
   &__editor {
-    flex: 0 0 calc(61% - 4px);
+    flex: 0 0 calc(65% - 4px);
   }
 
   &__preview {
@@ -87,6 +87,6 @@
     position: absolute;
     bottom: 8px;
     right: 8px;
-    width: calc(61% - 4px);
+    width: calc(65% - 4px);
   }
 }

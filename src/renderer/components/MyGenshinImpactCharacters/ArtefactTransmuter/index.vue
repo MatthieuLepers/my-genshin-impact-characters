@@ -33,48 +33,46 @@
                 :alt="t(`Data.ArtefactSets.${form.setId}.name`)"
               />
             </div>
-            <MaterialFormFieldLine :size="2">
-              <template #field0>
-                <ArtefactAffix
-                  v-model="v$.statsJson.$model[0]"
-                  :type="form.type"
-                  @click="state.affixPanelVisible = true"
-                />
-              </template>
+            <MaterialFormFieldLine>
+              <ArtefactAffix
+                v-model="v$.statsJson.$model[0]"
+                :type="form.type"
+                @click="actions.handleClickAffix(true)"
+              />
             </MaterialFormFieldLine>
-            <MaterialFormFieldLine :size="2">
-              <template #field0>
-                <ArtefactAffix
-                  v-model="v$.statsJson.$model[1]"
-                  @click="state.affixPanelVisible = true"
-                />
-              </template>
-              <template #field1>
-                <ArtefactAffix
-                  v-model="v$.statsJson.$model[2]"
-                  @click="state.affixPanelVisible = true"
-                />
-              </template>
+            <MaterialFormFieldLine>
+              <ArtefactAffix
+                v-model="v$.statsJson.$model[1]"
+                :getText="actions.getText(form.statsJson[1])"
+                @click="actions.handleClickAffix(false)"
+              />
             </MaterialFormFieldLine>
-            <MaterialFormFieldLine :size="2">
-              <template #field0>
-                <ArtefactAffix
-                  v-model="v$.statsJson.$model[3]"
-                  @click="state.affixPanelVisible = true"
-                />
-              </template>
-              <template #field1>
-                <ArtefactAffix
-                  v-model="v$.statsJson.$model[4]"
-                  @click="state.affixPanelVisible = true"
-                />
-              </template>
+            <MaterialFormFieldLine>
+              <ArtefactAffix
+                v-model="v$.statsJson.$model[2]"
+                :getText="actions.getText(form.statsJson[2])"
+                @click="actions.handleClickAffix(false)"
+              />
+            </MaterialFormFieldLine>
+            <MaterialFormFieldLine>
+              <ArtefactAffix
+                v-model="v$.statsJson.$model[3]"
+                :getText="actions.getText(form.statsJson[3])"
+                @click="actions.handleClickAffix(false)"
+              />
+            </MaterialFormFieldLine>
+            <MaterialFormFieldLine>
+              <ArtefactAffix
+                v-model="v$.statsJson.$model[4]"
+                :getText="actions.getText(form.statsJson[4])"
+                @click="actions.handleClickAffix(false)"
+              />
             </MaterialFormFieldLine>
           </template>
         </PanelMenu>
 
         <MaterialFormFieldLine :size="3" class="artefact-transmuter__submit-area">
-          <template #field1>
+          <template #field1 v-if="props.allowClose">
             <MaterialButton
               type="button"
               icon="icon-close"
@@ -101,6 +99,7 @@
     <AffixSelectorPanel
       v-model="v$.statsJson.$model"
       :type="form.type"
+      :main="state.main"
       :visible="state.affixPanelVisible"
       @close="state.affixPanelVisible = false"
     />
@@ -135,6 +134,10 @@ defineOptions({ name: 'ArtefactTransmuter' });
 const { t } = useI18n();
 const emit = defineEmits(['submit', 'close']);
 
+const props = defineProps({
+  allowClose: { type: Boolean, default: true },
+});
+
 const form = reactive({
   setId: null,
   type: 'flower',
@@ -156,6 +159,7 @@ const v$ = useVuelidate(rules, form, { $scope: 'artefactTransmuter' });
 const state = reactive({
   affixPanelVisible: false,
   currentMenu: 'flower',
+  main: false,
 });
 
 const State = computed(() => ({
@@ -187,6 +191,16 @@ const actions = {
         main: true,
       },
     ];
+  },
+  handleClickAffix(isMain) {
+    state.affixPanelVisible = true;
+    state.main = isMain;
+  },
+  getText(stat) {
+    return stat?.name?.endsWith('%')
+      ? (val) => Math.round(val * 10) / 10
+      : Math.round
+    ;
   },
 };
 

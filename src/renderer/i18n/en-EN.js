@@ -76,7 +76,7 @@ export default {
     },
     Artefact: {
       List: {
-        addNew: 'Add new',
+        addNew: 'Create new artefact',
         editBtnLabel: 'Edit',
         saveBtnLabel: 'Save',
         deleteBtnLabel: 'Delete',

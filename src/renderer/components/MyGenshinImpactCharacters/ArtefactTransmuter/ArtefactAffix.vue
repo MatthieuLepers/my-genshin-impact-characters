@@ -11,6 +11,7 @@
     <FormAffixInput
       v-else
       v-model="modelValue"
+      :getText="props.getText"
       :allowEdit="!modelValue.main || (modelValue.main && !['flower', 'feather'].includes(props.type))"
       @click="emit('click', $event)"
     />
@@ -29,6 +30,7 @@ const modelValue = defineModel({ type: Object });
 
 const props = defineProps({
   type: { type: String, default: null },
+  getText: { type: Function, default: Math.round },
 });
 </script>
 

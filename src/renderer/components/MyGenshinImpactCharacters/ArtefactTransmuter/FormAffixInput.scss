@@ -21,7 +21,9 @@
   &Value {
     @include set-font-scale('s', 'xxs');
     margin-top: rem(4px);
-    display: block;
+    letter-spacing: 0.1rem;
+    display: inline-block;
+    min-width: 60px;
   }
 
   label {
@@ -42,7 +44,7 @@
 
   button {
     position: absolute;
-    top: calc(50% - 12px);
+    top: 9px;
     right: 8px;
     background-color: color(grey100);
     color: color(grey800);

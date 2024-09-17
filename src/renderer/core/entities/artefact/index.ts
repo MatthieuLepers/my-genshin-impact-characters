@@ -26,20 +26,6 @@ export default class Artefact extends AbstractEntity<IArtefact> {
     return Math.max(0, Math.round((this.mainStat.value - min) / ((max - min) / 20)));
   }
 
-  get rollAmount(): number {
-    return this.statsJson.reduce((acc, stat) => {
-      if (stat.main) return 0;
-      const ranges = [...Array(5).keys()]
-        .map((i) => ({
-          min: Math.floor((StatRangeEnum.sub[stat.name].min + i * StatRangeEnum.sub[stat.name].min) * 10) / 10,
-          max: Math.floor((StatRangeEnum.sub[stat.name].maxRoll + i * StatRangeEnum.sub[stat.name].maxRoll) * 10) / 10,
-        }))
-      ;
-
-      return acc + ranges.findIndex((range) => range.min <= stat.value && range.max >= stat.value);
-    }, 0);
-  }
-
   get mainStat(): IArtefactStat {
     return this.statsJson.find((stat) => stat.main)!;
   }

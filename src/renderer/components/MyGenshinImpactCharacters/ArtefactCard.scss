@@ -59,12 +59,6 @@
     border-radius: 6px;
     color: color(grey900);
     font-weight: 700;
-
-    &+span {
-      @include set-font-scale('xxs');
-      display: inline-block;
-      margin-left: rem(8px);
-    }
   }
 
   &SubStatList {

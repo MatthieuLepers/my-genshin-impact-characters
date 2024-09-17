@@ -9,7 +9,7 @@
       :displayNavIf="!State.minorOnly"
     >
       <template #[state.main]>
-        <ul :class="{ minorOnly: !State.minorOnly }">
+        <ul :class="{ minorOnly: State.minorOnly }">
           <li v-for="affix in State.affixList" :key="affix">
             <label :for="affix" :class="GenerateModifiers('AffixSelectorPanelCheckbox', {
               checked: (state.main && affix === form.mainAffix) || (!state.main && form.minorAffixes.includes(affix)),
@@ -80,6 +80,7 @@ const modelValue = defineModel({ type: Array, default: () => [] });
 
 const props = defineProps({
   type: { type: String, default: 'flower' },
+  main: { type: Boolean, default: false },
   visible: { type: Boolean, default: false },
 });
 
@@ -89,7 +90,7 @@ const form = reactive({
 });
 
 const state = reactive({
-  main: true,
+  main: props.main,
 });
 
 const State = computed(() => {
@@ -157,6 +158,10 @@ watch(() => props.type, () => {
 
 watch(() => props.visible, () => {
   actions.reset();
+});
+
+watch(() => props.main, (newVal) => {
+  state.main = newVal;
 });
 
 onMounted(() => {

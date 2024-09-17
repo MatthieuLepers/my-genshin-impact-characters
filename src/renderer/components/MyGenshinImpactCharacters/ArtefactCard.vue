@@ -8,7 +8,7 @@
         {{ t(`App.Artefact.type.${artefactsStore.state.current.type}`) }}
         <img :src="image(`img/artefacts/${artefactsStore.state.current.setId}/${artefactsStore.state.current.type}.webp`)" alt="" />
         <div class="ArtefactCardMainStat" v-if="!state.edit">
-          {{ t(`App.Artefact.display.${artefactsStore.state.current.statsJson[0].name}`) }}
+          {{ t(`App.Artefact.stats.${artefactsStore.state.current.statsJson[0].name}.short`) }}
           <span>{{ artefactsStore.state.current.statsJson[0].value }}{{ artefactsStore.state.current.statsJson[0].name.endsWith('%') ? '%' : '' }}</span>
         </div>
         <FormAffixInput
@@ -23,7 +23,6 @@
       >
         +{{ artefactsStore.state.current.level }}
       </span>
-      <span>{{ artefactsStore.state.current.rollAmount }} / 5 rolls</span>
       <ul :class="GenerateModifiers('ArtefactCardSubStatList', { edit: state.edit })">
         <li v-for="(stat, i) in artefactsStore.state.current.statsJson.slice(1)" :key="i">
           <ArtefactSubStat

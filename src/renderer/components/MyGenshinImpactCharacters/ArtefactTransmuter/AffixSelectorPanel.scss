@@ -5,7 +5,7 @@
   position: absolute;
   top: 0;
   left: -100%;
-  width: calc(39% + 6px);
+  width: calc(35% + 6px);
   height: 100%;
   background-color: color(grey900);
   padding: rem(8px);
@@ -80,13 +80,13 @@
 
   ul {
     list-style: none;
-    margin: rem(16px) 0;
+    margin: rem(16px) 0 rem(8px);
     padding: 0 rem(8px) 0 0;
     overflow-y: auto;
-    height: calc(100% - 104px);
+    height: calc(100% - 126px);
 
     &.minorOnly {
-      height: calc(100% - 150px);
+      height: calc(100% - 56px);
     }
 
     li {

@@ -1,33 +1,27 @@
 <template>
-  <button
-    type="button"
+  <div
     :class="GenerateModifiers('ArtefactSubStat', { expanded: props.stat.name === modelValue })"
     @click="modelValue = (modelValue === props.stat.name ? null : props.stat.name)"
   >
-    {{ t(`App.Artefact.display.${props.stat.name}`) }}+{{ props.stat.value }}{{ props.stat.name.endsWith('%') ? '%' : '' }}
-
-    <div class="ArtefactSubStatInfos" v-show="props.stat.name === modelValue">
-      <meter
-        class="ArtefactSubStatBar"
-        :min="State.minRoll"
-        :max="State.maxRoll"
-        :value="props.stat.value"
-      /> {{ ((props.stat.value - State.minRoll) / (State.maxRoll - State.minRoll) * 100).toFixed(1) }}%
-      <br />
-      {{ State.rollAmount }} roll{{ State.rollAmount > 1 ? 's' : '' }}<br />
-      (Min: {{ State.minRoll }}{{ props.stat.name.endsWith('%') ? '%' : '' }}, Max: {{ State.maxRoll }}{{ props.stat.name.endsWith('%') ? '%' : '' }})
-    </div>
-  </button>
+    <span class="ArtefactSubStatValue">
+      <span v-icon:[formatAffix(props.stat.name)] />
+      {{ t(`App.Artefact.stats.${props.stat.name}.short`) }}+{{ actions.getText()(props.stat.value) }}{{ props.stat.name.endsWith('%') ? '%' : '' }}
+    </span>
+    <AffixRolls
+      :stat="props.stat"
+      :getText="actions.getText()"
+      variant="bar"
+    />
+  </div>
 </template>
 
 <script setup>
-import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 
-import StatRangeEnum from '@renderer/core/entities/artefact/StatRangeEnum';
-import { getMinMax } from '@renderer/core/datas/SubStatUtils';
+import AffixRolls from '@renderer/components/MyGenshinImpactCharacters/AffixRolls.vue';
 
 const { t } = useI18n();
+const formatAffix = (val) => val.toLowerCase().replace('%', '');
 
 const modelValue = defineModel({ type: String, default: null });
 
@@ -36,25 +30,14 @@ const props = defineProps({
   stat: { type: Object, required: true },
 });
 
-const State = computed(() => {
-  const stat = StatRangeEnum.sub[props.stat.name];
-  const [min] = getMinMax(stat.maxRoll);
-  const ranges = [...Array(5).keys()]
-    .map((i) => ({
-      min: Math.floor((min + i * min) * 10) / 10,
-      max: Math.floor((stat.maxRoll + i * stat.maxRoll) * 10) / 10,
-    }))
-  ;
-
-  console.log(props.stat.value);
-  const rollAmount = ranges.findIndex((range) => range.min <= props.stat.value && range.max >= props.stat.value);
-
-  return {
-    rollAmount,
-    minRoll: Math.floor(ranges[rollAmount].min * 10) / 10,
-    maxRoll: Math.floor(ranges[rollAmount].max * 10) / 10,
-  };
-});
+const actions = {
+  getText() {
+    return props.stat.name.endsWith('%')
+      ? (val) => Math.round(val * 10) / 10
+      : Math.round
+    ;
+  },
+};
 </script>
 
 <style lang="scss" src="./ArtefactSubStat.scss">

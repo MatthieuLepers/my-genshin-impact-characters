@@ -1,89 +1,87 @@
 <template>
   <div class="ArtefactsTab">
-    <ul class="ArtefactsTabList">
-      <li class="ArtefactsTabListItem">
-        <button
-          class="Artefact ArtefactButton"
-          @click="modalStore.actions.show('artefactCreateModal')"
+    <div v-if="!state.showArtefactTransmuter" class="ArtefactsTabContainer">
+      <ul class="ArtefactsTabList">
+        <li
+          v-for="(artefact, i) in artefactsStore.artefactList.value"
+          :key="i"
+          class="ArtefactsTabListItem"
         >
-          <img :src="image('img/ui/ArtefactTransmuter.webp')" alt="" />
-          <span>{{ t('App.Artefact.List.addNew') }}</span>
+          <Artefact
+            :artefact="artefact"
+            :selected="artefact.id === artefactsStore.state.current.id"
+            @click="artefactsStore.state.current = artefact"
+          />
+        </li>
+      </ul>
+
+      <div class="ArtefactsTabButtons">
+        <button
+          type="button"
+          :class="GenerateModifiers('ArtefactsTabButton', { secondary: true })"
+          :title="t('App.Artefact.List.addNew')"
+          @click="state.showArtefactTransmuter = true"
+        >
+          <span v-icon:plus />
         </button>
-      </li>
-      <li
-        v-for="(artefact, i) in artefactsStore.artefactList.value"
-        :key="i"
-        class="ArtefactsTabListItem"
-      >
-        <Artefact
-          :artefact="artefact"
-          :selected="artefact.id === artefactsStore.state.current.id"
-          @click="artefactsStore.state.current = artefact"
-        />
-      </li>
-    </ul>
 
-    <div class="ArtefactsTabFilters">
-      <button
-        type="button"
-        :title="t('App.Artefact.List.filterBtnTitle')"
-        @click="state.showArtefactFilters = true"
-      >
-        <span v-icon:filter />
-      </button>
+        <button
+          type="button"
+          class="ArtefactsTabButton"
+          :title="t('App.Artefact.List.filterBtnTitle')"
+          @click="state.showArtefactFilters = true"
+        >
+          <span v-icon:filter />
+        </button>
 
-      <button
-        type="button"
-        :title="t('App.Artefact.List.importBtnTitle')"
-        @click="actions.handleClickImport"
-      >
-        <span v-icon:import />
-      </button>
+        <button
+          type="button"
+          class="ArtefactsTabButton"
+          :title="t('App.Artefact.List.importBtnTitle')"
+          @click="actions.handleClickImport"
+        >
+          <span v-icon:import />
+        </button>
 
-      <button
-        type="button"
-        :title="t('App.Artefact.List.exportBtnTitle')"
-        @click="actions.handleClickExportMultiple"
-      >
-        <span v-icon:export />
-      </button>
+        <button
+          type="button"
+          class="ArtefactsTabButton"
+          :title="t('App.Artefact.List.exportBtnTitle')"
+          @click="actions.handleClickExportMultiple"
+        >
+          <span v-icon:export />
+        </button>
+      </div>
+
+      <ArtefactCard v-if="artefactsStore.state.current" />
+
+      <ArtefactFilters
+        :filters="props.filters"
+        :visible="state.showArtefactFilters"
+        @confirm="actions.handleApplyFilters"
+        @close="state.showArtefactFilters = false"
+      />
     </div>
 
-    <ArtefactCard v-if="artefactsStore.state.current" />
-
-    <ArtefactFilters
-      :filters="props.filters"
-      :visible="state.showArtefactFilters"
-      @confirm="actions.handleApplyFilters"
-      @close="state.showArtefactFilters = false"
+    <ArtefactTransmuter
+      v-else
+      class="ArtefactListTransmuter"
+      :allowClose="artefactsStore.artefactList.value.length > 0"
+      @close="state.showArtefactTransmuter = false"
+      @submit="actions.handleCreate"
     />
-
-    <MaterialModal
-      name="artefactCreateModal"
-      :showClose="false"
-      :showFooter="false"
-    >
-      <ArtefactTransmuter
-        class="ArtefactListTransmuter"
-        @close="modalStore.actions.hide('artefactCreateModal')"
-        @submit="actions.handleCreate"
-      />
-    </MaterialModal>
   </div>
 </template>
 
 <script setup>
-import { reactive, onBeforeMount } from 'vue';
+import { reactive, onBeforeMount, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 
-import MaterialModal from '@renderer/components/Materials/Modal/index.vue';
 import ArtefactTransmuter from '@renderer/components/MyGenshinImpactCharacters/ArtefactTransmuter/index.vue';
 import Artefact from '@renderer/components/MyGenshinImpactCharacters/Artefact.vue';
 import ArtefactFilters from '@renderer/components/MyGenshinImpactCharacters/ArtefactFilters.vue';
 import ArtefactCard from '@renderer/components/MyGenshinImpactCharacters/ArtefactCard.vue';
 
-import { image } from '@renderer/core/utils';
-import { modalStore } from '@renderer/components/Materials/Modal/Store';
 import { artefactsStore } from '@renderer/core/entities/artefact/store';
 import { notificationStore } from '@renderer/components/Materials/Notification/Store';
 
@@ -95,6 +93,7 @@ const props = defineProps({
 
 const state = reactive({
   showArtefactFilters: false,
+  showArtefactTransmuter: false,
 });
 
 const actions = {
@@ -140,16 +139,18 @@ const actions = {
   },
   async handleCreate(data) {
     await artefactsStore.actions.create(data);
-    modalStore.actions.hide('artefactCreateModal');
+    state.showArtefactTransmuter = false;
   },
 };
 
 onBeforeMount(() => {
   artefactsStore.actions.resetFilters();
   [artefactsStore.state.current] = artefactsStore.artefactList.value;
+});
 
-  if (!artefactsStore.artefactList.length) {
-    modalStore.actions.show('artefactCreateModal');
+onMounted(() => {
+  if (!artefactsStore.artefactList.value.length) {
+    state.showArtefactTransmuter = true;
   }
 });
 </script>
