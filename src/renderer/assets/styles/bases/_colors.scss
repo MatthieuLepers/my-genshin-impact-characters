@@ -26,7 +26,7 @@ $colors: (
   pyro         : #ff3c32,
   cryo         : #77a2e6,
   dendro       : #a5c83b,
-  gradient     : linear-gradient(to bottom right, #695453, #e6ac54)n
+  gradient     : linear-gradient(to bottom right, #695453, #e6ac54),
 );
 
 @function color($colorName) {

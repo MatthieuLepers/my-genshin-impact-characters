@@ -1,6 +1,8 @@
 <template>
   <MaterialForm :class="GenerateModifiers('AffixSelectorPanel', { visible: props.visible })">
-    <h2>{{ t('App.ArtefactTransmuter.title') }} <span v-if="State.minorOnly">({{ form.minorAffixes.length }}/4)</span></h2>
+    <h2 class="AffixSelectorPanelTitle">
+      {{ t('App.ArtefactTransmuter.title') }} <span v-if="State.minorOnly">({{ form.minorAffixes.length }}/4)</span>
+    </h2>
     <PanelMenu
       v-model="state.main"
       :data="State.panelMenuData"
@@ -22,7 +24,7 @@
                 name="affix"
                 @click="($event) => $event.target.checked ? actions.setStat(affix) : actions.removeAffix(affix)"
               />
-              {{ t(`App.Artefact.stats.${affix}`) }}
+              <span v-icon:[formatAffix(affix)] /> {{ t(`App.Artefact.stats.${affix}.long`) }}
             </label>
           </li>
         </ul>
@@ -72,6 +74,7 @@ import { getMinMax } from '@/renderer/core/datas/SubStatUtils';
 const { t } = useI18n();
 
 const emit = defineEmits(['close']);
+const formatAffix = (affix) => affix.replace('%', '').toLowerCase();
 
 const modelValue = defineModel({ type: Array, default: () => [] });
 

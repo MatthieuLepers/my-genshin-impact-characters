@@ -12,13 +12,25 @@
   width: calc(100% - 4px);
   text-align: left;
   font-weight: 700;
+  min-height: 44px;
 
   &--invalid {
     border-color: color(danger300);
   }
 
+  &Value {
+    @include set-font-scale('s', 'xxs');
+    margin-top: rem(4px);
+    display: block;
+  }
+
   label {
     display: block;
+    color: color(grey500);
+
+    [class^="icon"] {
+      margin-right: rem(4px);
+    }
   }
 
   input {

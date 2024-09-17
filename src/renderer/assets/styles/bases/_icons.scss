@@ -10,27 +10,68 @@
   font-display: block;
 }
 
+@font-face {
+  font-family: 'genshin';
+  src: url('~fonts/genshin/genshin.eot?ws6lg2');
+  src: url('~fonts/genshin/genshin.eot?ws6lg2#iefix') format('embedded-opentype'),
+       url('~fonts/genshin/genshin.ttf?ws6lg2') format('truetype'),
+       url('~fonts/genshin/genshin.woff?ws6lg2') format('woff'),
+       url('~fonts/genshin/genshin.svg?ws6lg2#genshin') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
 $icons: (
-  minimize  : ('icomoon', '\e900'),
-  maximize  : ('icomoon', '\e901'),
-  close     : ('icomoon', '\e902'),
-  help      : ('icomoon', '\e903'),
-  info      : ('icomoon', '\e904'),
-  warning   : ('icomoon', '\e905'),
-  check     : ('icomoon', '\e906'),
-  eye       : ('icomoon', '\e907'),
-  eye-slash : ('icomoon', '\e908'),
-  edit      : ('icomoon', '\e909'),
-  duplicate : ('icomoon', '\e90a'),
-  delete    : ('icomoon', '\e90b'),
-  reload    : ('icomoon', '\e90c'),
-  import    : ('icomoon', '\e90d'),
-  export    : ('icomoon', '\e90e'),
-  search    : ('icomoon', '\e90f'),
-  calendar  : ('icomoon', '\e910'),
-  save      : ('icomoon', '\e911'),
-  loader    : ('icomoon', '\e912'),
-  filter    : ('icomoon', '\e913'),
+  minimize    : ('icomoon', '\e900'),
+  maximize    : ('icomoon', '\e901'),
+  close       : ('icomoon', '\e902'),
+  help        : ('icomoon', '\e903'),
+  info        : ('icomoon', '\e904'),
+  warning     : ('icomoon', '\e905'),
+  check       : ('icomoon', '\e906'),
+  eye         : ('icomoon', '\e907'),
+  eye-slash   : ('icomoon', '\e908'),
+  edit        : ('icomoon', '\e909'),
+  duplicate   : ('icomoon', '\e90a'),
+  delete      : ('icomoon', '\e90b'),
+  reload      : ('icomoon', '\e90c'),
+  import      : ('icomoon', '\e90d'),
+  export      : ('icomoon', '\e90e'),
+  search      : ('icomoon', '\e90f'),
+  calendar    : ('icomoon', '\e910'),
+  save        : ('icomoon', '\e911'),
+  loader      : ('icomoon', '\e912'),
+  filter      : ('icomoon', '\e913'),
+  flower      : ('genshin', '\e900'),
+  feather     : ('genshin', '\e901'),
+  sands       : ('genshin', '\e902'),
+  goblet      : ('genshin', '\e903'),
+  circlet     : ('genshin', '\e904'),
+  hp          : ('genshin', '\e905'),
+  atk         : ('genshin', '\e906'),
+  def         : ('genshin', '\e907'),
+  em          : ('genshin', '\e908'),
+  er          : ('genshin', '\e909'),
+  critrate    : ('genshin', '\e90a'),
+  critdmg     : ('genshin', '\e90b'),
+  heal        : ('genshin', '\e90c'),
+  physical    : ('genshin', '\e90d'),
+  physicaldmg : ('genshin', '\e90d'),
+  anemo       : ('genshin', '\e90e'),
+  anemodmg    : ('genshin', '\e90e'),
+  pyro        : ('genshin', '\e90f'),
+  pyrodmg     : ('genshin', '\e90f'),
+  hydro       : ('genshin', '\e910'),
+  hydrodmg    : ('genshin', '\e910'),
+  cryo        : ('genshin', '\e911'),
+  cryodmg     : ('genshin', '\e911'),
+  electro     : ('genshin', '\e912'),
+  electrodmg  : ('genshin', '\e912'),
+  geo         : ('genshin', '\e913'),
+  geodmg      : ('genshin', '\e913'),
+  dendro      : ('genshin', '\e914'),
+  dendrodmg   : ('genshin', '\e914'),
 );
 
 @mixin icon($iconName) {

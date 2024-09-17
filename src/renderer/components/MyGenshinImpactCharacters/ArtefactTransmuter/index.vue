@@ -17,39 +17,58 @@
           :data="State.panelMenuData"
         >
           <template #button="{ item }">
-            <img :src="image(`img/ui/${item.id}.png`)" :alt="item.id" />
+            <span v-icon:[item.id] />
           </template>
           <template #[form.type]>
-            <MaterialFormFieldLine>
-              <ArtefactAffix
-                v-model="v$.statsJson.$model[0]"
-                :type="form.type"
-                @click="state.affixPanelVisible = true"
+            <div class="artefact-transmuter__preview">
+              <div class="artefact-infos">
+                <span :class="`icon-${form.type}`">
+                  {{ t(`App.Artefact.type.${form.type}`) }}
+                </span>
+                <span>★★★★★</span>
+              </div>
+              <img
+                class="artefact-preview"
+                :src="image(`img/artefacts/${form.setId}/${form.type}.webp`)"
+                :alt="t(`Data.ArtefactSets.${form.setId}.name`)"
               />
+            </div>
+            <MaterialFormFieldLine :size="2">
+              <template #field0>
+                <ArtefactAffix
+                  v-model="v$.statsJson.$model[0]"
+                  :type="form.type"
+                  @click="state.affixPanelVisible = true"
+                />
+              </template>
             </MaterialFormFieldLine>
-            <MaterialFormFieldLine>
-              <ArtefactAffix
-                v-model="v$.statsJson.$model[1]"
-                @click="state.affixPanelVisible = true"
-              />
+            <MaterialFormFieldLine :size="2">
+              <template #field0>
+                <ArtefactAffix
+                  v-model="v$.statsJson.$model[1]"
+                  @click="state.affixPanelVisible = true"
+                />
+              </template>
+              <template #field1>
+                <ArtefactAffix
+                  v-model="v$.statsJson.$model[2]"
+                  @click="state.affixPanelVisible = true"
+                />
+              </template>
             </MaterialFormFieldLine>
-            <MaterialFormFieldLine>
-              <ArtefactAffix
-                v-model="v$.statsJson.$model[2]"
-                @click="state.affixPanelVisible = true"
-              />
-            </MaterialFormFieldLine>
-            <MaterialFormFieldLine>
-              <ArtefactAffix
-                v-model="v$.statsJson.$model[3]"
-                @click="state.affixPanelVisible = true"
-              />
-            </MaterialFormFieldLine>
-            <MaterialFormFieldLine>
-              <ArtefactAffix
-                v-model="v$.statsJson.$model[4]"
-                @click="state.affixPanelVisible = true"
-              />
+            <MaterialFormFieldLine :size="2">
+              <template #field0>
+                <ArtefactAffix
+                  v-model="v$.statsJson.$model[3]"
+                  @click="state.affixPanelVisible = true"
+                />
+              </template>
+              <template #field1>
+                <ArtefactAffix
+                  v-model="v$.statsJson.$model[4]"
+                  @click="state.affixPanelVisible = true"
+                />
+              </template>
             </MaterialFormFieldLine>
           </template>
         </PanelMenu>
@@ -110,7 +129,6 @@ import PanelMenu from '@renderer/components/MyGenshinImpactCharacters/PanelMenu.
 import { image } from '@renderer/core/utils';
 import { artefactSetsStore } from '@renderer/core/entities/artefactSet/store';
 import StatRangeEnum from '@renderer/core/entities/artefact/StatRangeEnum';
-import { getMinMax } from '@renderer/core/datas/SubStatUtils';
 
 defineOptions({ name: 'ArtefactTransmuter' });
 

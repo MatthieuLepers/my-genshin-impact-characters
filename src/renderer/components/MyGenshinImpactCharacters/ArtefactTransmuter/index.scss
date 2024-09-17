@@ -22,7 +22,7 @@
     list-style: none;
     max-height: 100%;
     overflow-y: auto;
-    flex: 0 0 calc(35% - 4px);
+    flex: 0 0 calc(39% - 4px);
 
     &-item {
       padding: rem(2px);
@@ -30,7 +30,41 @@
   }
 
   &__editor {
-    flex: 0 0 calc(65% - 4px);
+    flex: 0 0 calc(61% - 4px);
+  }
+
+  &__preview {
+    background: color(gradient);
+    margin: rem(8px) 0;
+    padding: rem(8px);
+    display: flex;
+    justify-content: space-between;
+
+    [class^="icon"]::before {
+      display: inline-block;
+      margin-right: rem(4px);
+    }
+
+    .artefact-infos {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-weight: 700;
+
+      span {
+        display: block;
+        font-weight: 400;
+
+        &:last-of-type {
+          color: color(warning100);
+        }
+      }
+    }
+
+    .artefact-preview {
+      width: auto;
+      height: 64px;
+    }
   }
 
   &__type-selector {
@@ -39,16 +73,13 @@
     }
 
     .PanelMenuButton {
+      @include set-font-scale('xl');
+      color: color(grey100);
+
       &:focus,
       &.PanelMenuButton--selected {
-        img {
-          filter: invert(100%);
-        }
+        color: color(grey900);
       }
-    }
-
-    img {
-      width: 28px;
     }
   }
 
@@ -56,6 +87,6 @@
     position: absolute;
     bottom: 8px;
     right: 8px;
-    width: calc(65% - 4px);
+    width: calc(61% - 4px);
   }
 }

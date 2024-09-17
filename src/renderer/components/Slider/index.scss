@@ -2,6 +2,8 @@
 
 .m-slider {
   &__tooltip {
+    @include set-font-scale('s');
+    letter-spacing: 0.1rem;
     z-index: 1;
     white-space: nowrap;
     background-color: color(grey600);

@@ -45,7 +45,7 @@
               :id="`mainStat${i}`"
             />
             <label :for="`mainStat${i}`">
-              {{ t(`App.Artefact.stats.${stat}`) }}
+              {{ t(`App.Artefact.stats.${stat}.long`) }}
             </label>
           </div>
         </div>
@@ -67,7 +67,7 @@
               :id="`subStat${i}`"
             />
             <label :for="`subStat${i}`">
-              {{ t(`App.Artefact.stats.${stat}`) }}
+              {{ t(`App.Artefact.stats.${stat}.long`) }}
             </label>
           </div>
         </div>
