@@ -6,6 +6,7 @@
           class="Artefact ArtefactButton"
           @click="modalStore.actions.show('artefactCreateModal')"
         >
+          <img :src="image('img/ui/ArtefactTransmuter.webp')" alt="" />
           <span>{{ t('App.Artefact.List.addNew') }}</span>
         </button>
       </li>
@@ -81,6 +82,7 @@ import Artefact from '@renderer/components/MyGenshinImpactCharacters/Artefact.vu
 import ArtefactFilters from '@renderer/components/MyGenshinImpactCharacters/ArtefactFilters.vue';
 import ArtefactCard from '@renderer/components/MyGenshinImpactCharacters/ArtefactCard.vue';
 
+import { image } from '@renderer/core/utils';
 import { modalStore } from '@renderer/components/Materials/Modal/Store';
 import { artefactsStore } from '@renderer/core/entities/artefact/store';
 import { notificationStore } from '@renderer/components/Materials/Notification/Store';
@@ -145,6 +147,10 @@ const actions = {
 onBeforeMount(() => {
   artefactsStore.actions.resetFilters();
   [artefactsStore.state.current] = artefactsStore.artefactList.value;
+
+  if (!artefactsStore.artefactList.length) {
+    modalStore.actions.show('artefactCreateModal');
+  }
 });
 </script>
 
