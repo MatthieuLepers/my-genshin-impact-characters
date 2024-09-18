@@ -2,20 +2,37 @@
   <AppTitleBar name="main" />
   <AppMenu />
   <router-view />
-  <NotificationList />
+  <MaterialNotificationList>
+    <template #downloadupdate="{ notification }">
+      {{ notification.text }}
+      <div class="AppProgressBar">
+        <span
+          class="AppProgressBarTrack"
+          :style="{ width: `calc(${state.percent}% - 4px)` }"
+        >
+          {{ Math.round(state.percent * 10) / 10 }}%
+        </span>
+      </div>
+    </template>
+  </MaterialNotificationList>
 </template>
 
 <script setup>
+import { reactive } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 import AppTitleBar from '@renderer/components/AppTitleBar/index.vue';
 import AppMenu from '@renderer/components/AppMenu/index.vue';
-import NotificationList from '@renderer/components/Materials/Notification/List.vue';
+import MaterialNotificationList from '@renderer/components/Materials/Notification/List.vue';
 
 import { notificationStore } from '@renderer/components/Materials/Notification/Store';
 import Shortcut from '@renderer/core/Shortcut';
 
 const { t, locale } = useI18n();
+
+const state = reactive({
+  percent: 0,
+});
 
 api.on('localeChange', (iso) => {
   locale.value = iso;
@@ -41,6 +58,10 @@ const updateAvailableNotification = {
 
 api.on('update-available', () => {
   notificationStore.actions.pushRawNotification(updateAvailableNotification);
+});
+
+api.on('download-progress', (percent) => {
+  state.percent = percent;
 });
 
 api.on('update-downloaded', () => {
