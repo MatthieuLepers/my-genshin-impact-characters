@@ -2113,5 +2113,28 @@ export default {
         },
       },
     },
+    Kinich: {
+      releasedAt: '2024-09-18',
+      element: 'dendro',
+      level: 1,
+      phase: 0,
+      constellations: 0,
+      aptitudes: {
+        normalAttack: {
+          level: 1,
+          material: 'DenialAndJudgment',
+        },
+        elementalSkill: {
+          level: 1,
+          constellationIncrease: 3,
+          material: 'DenialAndJudgment',
+        },
+        elementalBurst: {
+          level: 1,
+          constellationIncrease: 5,
+          material: 'DenialAndJudgment',
+        },
+      },
+    },
   },
 };
