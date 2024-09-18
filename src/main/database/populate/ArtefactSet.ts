@@ -4,11 +4,14 @@ import { serial } from '@/main/utils/PromiseUtils';
 
 export default async () => {
   const lastPopulateDateSetting = await Setting.get('lastPopulateDateArtefactSets');
-  await serial(JSONArtefactSets
+  const done = await serial(JSONArtefactSets
     .filter((data) => data.releasedAt && new Date(data.releasedAt).getTime() > new Date(lastPopulateDateSetting!).getTime())
     .map((data) => () => ArtefactSet.create(data, {
       include: [ArtefactSetPassiveStat],
-    }).catch(console.log)));
+    }).catch(console.log)))
+  ;
 
-  await Setting.set('lastPopulateDateArtefactSets', new Date().toISOString());
+  if (done.length) {
+    await Setting.set('lastPopulateDateArtefactSets', new Date().toISOString());
+  }
 };

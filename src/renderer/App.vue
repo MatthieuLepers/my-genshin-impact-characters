@@ -3,11 +3,20 @@
   <AppMenu v-if="!state.loading" />
   <router-view v-if="!state.loading" />
   <MaterialLoaderIcon v-else class="MainLoader" />
-  <NotificationList />
+  <NotificationList>
+    <template #downloadupdate="{ notification }">
+      {{ notification.text }}
+      <div class="MainProgressBar">
+        <span :style="{ width: `calc(${state.percent}% - 4px)` }">
+          {{ Math.round(state.percent * 10) / 10 }}%
+        </span>
+      </div>
+    </template>
+  </NotificationList>
 </template>
 
 <script setup>
-import { reactive, onBeforeMount } from 'vue';
+import { reactive, onBeforeMount, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 import AppTitleBar from '@renderer/components/AppTitleBar/index.vue';
@@ -30,6 +39,7 @@ const { t, locale } = useI18n();
 
 const state = reactive({
   loading: true,
+  percent: 0,
 });
 
 api.on('localeChange', (iso) => {
@@ -43,6 +53,7 @@ api.on('runShortcut', (shortcut) => {
 });
 
 const updateAvailableNotification = {
+  id: 'downloadupdate',
   type: 'info',
   text: t('App.Updater.downloadingUpdate'),
   delay: 0,
@@ -56,6 +67,10 @@ const updateAvailableNotification = {
 
 api.on('update-available', () => {
   notificationStore.actions.pushRawNotification(updateAvailableNotification);
+});
+
+api.on('download-progress', (percent) => {
+  state.percent = percent;
 });
 
 api.on('update-downloaded', () => {

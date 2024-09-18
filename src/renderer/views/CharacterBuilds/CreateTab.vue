@@ -80,8 +80,8 @@
             <div class="BuildWeaponInfos">
               <span>{{ t(`Data.Weapons.${weaponsStore.state.weapons[form.weaponId].name}.name`) }}</span>
               <span>{{ t('App.Weapons.level') }}: {{ weaponsStore.state.weapons[form.weaponId].level }}</span>
-              <span>{{ t('App.Artefact.display.Atk') }}: {{ weaponsStore.state.weapons[form.weaponId].currentAtk }}</span>
-              <span>{{ t(`App.Artefact.display.${weaponsStore.state.weapons[form.weaponId].statName}`) }}: {{ weaponsStore.state.weapons[form.weaponId].currentSubStat.toFixed(1) }}{{ weaponsStore.state.weapons[form.weaponId].statName.endsWith('%') ? '%' : '' }}</span>
+              <span>{{ t('App.Artefact.stats.Atk.short') }}: {{ weaponsStore.state.weapons[form.weaponId].currentAtk }}</span>
+              <span>{{ t(`App.Artefact.stats.${weaponsStore.state.weapons[form.weaponId].statName}.short`) }}: {{ weaponsStore.state.weapons[form.weaponId].currentSubStat.toFixed(1) }}{{ weaponsStore.state.weapons[form.weaponId].statName.endsWith('%') ? '%' : '' }}</span>
             </div>
           </div>
         </MaterialFormFieldSet>

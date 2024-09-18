@@ -2928,5 +2928,37 @@
         "bonusValue": 24.0
       }
     ]
+  },
+  {
+    "name": "Kinich",
+    "releasedAt": "2024-09-18",
+    "element": "dendro",
+    "weaponType": "claymore",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "DenialAndJudgment"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 3,
+        "materialId": "DenialAndJudgment"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 5,
+        "materialId": "DenialAndJudgment"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 12858,
+        "atk": 332.46,
+        "def": 801.6,
+        "bonusType": "CritDmg%",
+        "bonusValue": 38.4
+      }
+    ]
   }
 ]

@@ -83,6 +83,10 @@ autoUpdater.on('update-available', () => {
   WindowStore.broadcastData('update-available');
 });
 
+autoUpdater.on('download-progress', (progressObj) => {
+  WindowStore.broadcastData('download-progress', progressObj.percent);
+});
+
 autoUpdater.on('update-downloaded', () => {
   WindowStore.broadcastData('update-downloaded');
 });

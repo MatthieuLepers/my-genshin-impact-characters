@@ -10,11 +10,14 @@ import { serial } from '@/main/utils/PromiseUtils';
 
 export default async () => {
   const lastPopulateDateSetting = await Setting.get('lastPopulateDateCharacters');
-  await serial(JSONCharacters
+  const done = await serial(JSONCharacters
     .filter((data) => data.releasedAt && new Date(data.releasedAt).getTime() > new Date(lastPopulateDateSetting!).getTime())
     .map((data) => () => Character.create(data, {
       include: [CharacterAptitude, CharacterStats, CharacterPassiveStat],
-    }).catch(console.log)));
+    }).catch(console.log)))
+  ;
 
-  await Setting.set('lastPopulateDateCharacters', new Date().toISOString());
+  if (done.length) {
+    await Setting.set('lastPopulateDateCharacters', new Date().toISOString());
+  }
 };

@@ -2,7 +2,7 @@
   <div class="View CharacterBuildsView">
     <PanelMenu
       v-model="state.currentMenu"
-      :displayIf="Object.values(characterBuildsStore.state.builds).length > 0"
+      :displayNavIf="Object.values(characterBuildsStore.state.builds).length > 0"
       :data="State.panelMenuData"
     >
       <template #create>
@@ -24,6 +24,8 @@ import CreateTab from '@renderer/views/CharacterBuilds/CreateTab.vue';
 import ListTab from '@renderer/views/CharacterBuilds/ListTab.vue';
 
 import { characterBuildsStore } from '@renderer/core/entities/characterBuild/store';
+
+defineOptions({ name: 'CharacterBuildsView' });
 
 const { t } = useI18n();
 

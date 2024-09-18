@@ -3,6 +3,7 @@
 .CreateTab {
   display: flex;
   gap: rem(8px);
+  padding-top: rem(8px);
 
   &>img {
     width: 157.656px;

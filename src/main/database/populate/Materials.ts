@@ -5,9 +5,12 @@ import { serial } from '@/main/utils/PromiseUtils';
 export default async () => {
   const lastPopulateDateSetting = await Setting.get('lastPopulateDateMaterials');
 
-  await serial(JSONMaterials
+  const done = await serial(JSONMaterials
     .filter((data) => data.releasedAt && new Date(data.releasedAt).getTime() > new Date(lastPopulateDateSetting!).getTime())
-    .map((data) => () => Material.create(data).catch(console.log)));
+    .map((data) => () => Material.create(data).catch(console.log)))
+  ;
 
-  await Setting.set('lastPopulateDateMaterials', new Date().toISOString());
+  if (done.length) {
+    await Setting.set('lastPopulateDateMaterials', new Date().toISOString());
+  }
 };
