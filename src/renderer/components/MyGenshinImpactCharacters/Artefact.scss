@@ -35,7 +35,7 @@
     max-width: 66px;
   }
 
-  span {
+  span:last-of-type {
     @include set-font-scale('m');
     color: color(grey900);
     background-color: color(grey100);

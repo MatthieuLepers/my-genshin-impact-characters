@@ -10,49 +10,50 @@
         :data="State.panelMenuData"
       >
         <template #button="{ item }">
-          <img :src="image(item.image)" alt="" />
+          <span v-icon:[item.id] />
+        </template>
+        <template #[artefactsStore.state.filters.type[0]]>
+          <div class="ArtefactSelectorPanelContainerSub">
+            <ul class="ArtefactSelectorPanelList">
+              <li
+                v-for="(artefact, i) in artefactsStore.artefactList.value"
+                :key="i"
+                class="ArtefactSelectorPanelListItem"
+              >
+                <Artefact
+                  :artefact="artefact"
+                  :selected="artefactsStore.state.current?.id === artefact.id"
+                  :modifiers="{ checked: form[artefactsStore.state.filters.type] === artefact }"
+                  @click="artefactsStore.state.current = artefact"
+                  @dblclick="form[artefactsStore.state.filters.type] = artefact"
+                />
+              </li>
+            </ul>
+
+            <MaterialFormFieldLine :size="4">
+              <template #field2>
+                <MaterialButton
+                  icon="icon-close"
+                  :modifiers="{ danger: true }"
+                  @click="modelValue = false"
+                >
+                  {{ t('App.Artefact.PresetList.closeBtnLabel') }}
+                </MaterialButton>
+              </template>
+              <template #field3>
+                <MaterialButton
+                  type="submit"
+                  icon="icon-check"
+                  :modifiers="{ success: true }"
+                  @click="modelValue = false"
+                >
+                  {{ t('App.Artefact.PresetList.confirmBtnLabel') }}
+                </MaterialButton>
+              </template>
+            </MaterialFormFieldLine>
+          </div>
         </template>
       </PanelMenu>
-
-      <div class="ArtefactSelectorPanelContainerSub">
-        <ul class="ArtefactSelectorPanelList">
-          <li
-            v-for="(artefact, i) in artefactsStore.artefactList.value"
-            :key="i"
-            class="ArtefactSelectorPanelListItem"
-          >
-            <Artefact
-              :artefact="artefact"
-              :selected="artefactsStore.state.current?.id === artefact.id"
-              :modifiers="{ checked: form[artefactsStore.state.filters.type] === artefact }"
-              @click="artefactsStore.state.current = artefact"
-              @dblclick="form[artefactsStore.state.filters.type] = artefact"
-            />
-          </li>
-        </ul>
-
-        <MaterialFormFieldLine :size="4">
-          <template #field2>
-            <MaterialButton
-              icon="icon-close"
-              :modifiers="{ danger: true }"
-              @click="modelValue = false"
-            >
-              {{ t('App.Artefact.PresetList.closeBtnLabel') }}
-            </MaterialButton>
-          </template>
-          <template #field3>
-            <MaterialButton
-              type="submit"
-              icon="icon-check"
-              :modifiers="{ success: true }"
-              @click="modelValue = false"
-            >
-              {{ t('App.Artefact.PresetList.confirmBtnLabel') }}
-            </MaterialButton>
-          </template>
-        </MaterialFormFieldLine>
-      </div>
     </div>
 
     <ArtefactCard
@@ -76,7 +77,6 @@ import Artefact from '@renderer/components/MyGenshinImpactCharacters/Artefact.vu
 import ArtefactCard from '@renderer/components/MyGenshinImpactCharacters/ArtefactCard.vue';
 import PanelMenu from '@renderer/components/MyGenshinImpactCharacters/PanelMenu.vue';
 
-import { image } from '@renderer/core/utils';
 import { artefactsStore } from '@renderer/core/entities/artefact/store';
 
 const { t } = useI18n();
@@ -98,11 +98,11 @@ const form = reactive({
 
 const State = computed(() => ({
   panelMenuData: [
-    { id: 'flower', image: 'img/ui/flower.png' },
-    { id: 'feather', image: 'img/ui/feather.png' },
-    { id: 'sands', image: 'img/ui/sands.png' },
-    { id: 'goblet', image: 'img/ui/goblet.png' },
-    { id: 'circlet', image: 'img/ui/circlet.png' },
+    { id: 'flower' },
+    { id: 'feather' },
+    { id: 'sands' },
+    { id: 'goblet' },
+    { id: 'circlet' },
   ],
 }));
 

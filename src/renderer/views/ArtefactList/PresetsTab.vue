@@ -45,7 +45,7 @@
                   class="ArtefactButton"
                   @click="actions.handleChooseArtefactType(type)"
                 >
-                  <img :src="image(`img/ui/${type}.png`)" alt="" />
+                  <span v-icon:[type] />
                   <span>{{ t('App.Artefact.PresetList.formChooseBtnLabel') }}</span>
                 </button>
                 <Artefact
@@ -104,7 +104,6 @@ import Artefact from '@renderer/components/MyGenshinImpactCharacters/Artefact.vu
 import ArtefactSelectorPanel from '@renderer/components/MyGenshinImpactCharacters/ArtefactSelectorPanel.vue';
 import ArtefactPreset from '@renderer/components/MyGenshinImpactCharacters/ArtefactPreset.vue';
 
-import { image } from '@renderer/core/utils';
 import { artefactsStore } from '@renderer/core/entities/artefact/store';
 import { artefactPresetsStore } from '@renderer/core/entities/artefactPreset/store';
 

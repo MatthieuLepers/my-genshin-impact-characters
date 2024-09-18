@@ -78,7 +78,6 @@ export default {
       List: {
         addNew: 'Create new artefact',
         editBtnLabel: 'Edit',
-        saveBtnLabel: 'Save',
         deleteBtnLabel: 'Delete',
         exportBtnLabel: 'Export',
         selectBtnLabel: 'Select',
@@ -227,7 +226,7 @@ export default {
       resetBtnLabel: 'Reset',
       resetCloseBtnLabel: 'Close',
       confirmBtnLabel: 'Confirm',
-      createBtnLabel: 'Done',
+      saveBtnLabel: 'Save',
       closeBtnLabel: 'Cancel',
     },
     ArtefactFilters: {

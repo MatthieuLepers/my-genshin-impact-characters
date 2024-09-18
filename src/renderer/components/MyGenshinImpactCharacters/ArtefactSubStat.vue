@@ -1,8 +1,5 @@
 <template>
-  <div
-    :class="GenerateModifiers('ArtefactSubStat', { expanded: props.stat.name === modelValue })"
-    @click="modelValue = (modelValue === props.stat.name ? null : props.stat.name)"
-  >
+  <div class="ArtefactSubStat">
     <span class="ArtefactSubStatValue">
       <span v-icon:[formatAffix(props.stat.name)] />
       {{ t(`App.Artefact.stats.${props.stat.name}.short`) }}+{{ actions.getText()(props.stat.value) }}{{ props.stat.name.endsWith('%') ? '%' : '' }}
@@ -22,8 +19,6 @@ import AffixRolls from '@renderer/components/MyGenshinImpactCharacters/AffixRoll
 
 const { t } = useI18n();
 const formatAffix = (val) => val.toLowerCase().replace('%', '');
-
-const modelValue = defineModel({ type: String, default: null });
 
 const props = defineProps({
   level: { type: Number, required: true },

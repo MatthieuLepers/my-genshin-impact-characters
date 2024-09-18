@@ -54,7 +54,7 @@
 
       &:focus,
       &:hover {
-        background-color: color(secondary100);
+        background-color: lighten(color(secondary200), 10%);
       }
     }
   }

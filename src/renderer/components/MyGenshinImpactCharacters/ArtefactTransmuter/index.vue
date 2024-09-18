@@ -36,6 +36,7 @@
             <MaterialFormFieldLine>
               <ArtefactAffix
                 v-model="v$.statsJson.$model[0]"
+                :getText="actions.getText(form.statsJson[0])"
                 :type="form.type"
                 @click="actions.handleClickAffix(true)"
               />
@@ -89,7 +90,7 @@
               :disabled="v$.$invalid"
               :modifiers="{ success: true }"
             >
-              {{ t('App.ArtefactTransmuter.createBtnLabel') }}
+              {{ t('App.ArtefactTransmuter.saveBtnLabel') }}
             </MaterialButton>
           </template>
         </MaterialFormFieldLine>
@@ -135,13 +136,14 @@ const { t } = useI18n();
 const emit = defineEmits(['submit', 'close']);
 
 const props = defineProps({
+  formData: { type: Object, default: () => ({}) },
   allowClose: { type: Boolean, default: true },
 });
 
 const form = reactive({
-  setId: null,
-  type: 'flower',
-  statsJson: [
+  setId: props.formData.setId ?? null,
+  type: props.formData.type ?? 'flower',
+  statsJson: props.formData.statsJson ?? [
     { name: 'HP', value: StatRangeEnum.main.HP.max, main: true },
   ],
 });
@@ -222,9 +224,17 @@ watch(() => form.type, () => {
   }
 });
 
+watch(() => props.formData, (newVal) => {
+  form.setId = newVal.setId ?? null;
+  form.type = newVal.type ?? 'flower';
+  form.statsJson = newVal.statsJson ?? [
+    { name: 'HP', value: StatRangeEnum.main.HP.max, main: true },
+  ];
+});
+
 onBeforeMount(() => {
-  form.setId = State.value.setList[0].value;
-  form.statsJson = [
+  form.setId = props.formData.setId ?? State.value.setList[0].value;
+  form.statsJson = props.formData.statsJson ?? [
     {
       name: 'HP',
       value: StatRangeEnum.main.HP.max,

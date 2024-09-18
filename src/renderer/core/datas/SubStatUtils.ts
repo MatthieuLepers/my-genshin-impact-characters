@@ -13,7 +13,7 @@ export const rolls = (baseStat: number): Array<number> => rollsData.reduce((ac, 
 ], []);
 
 export const getRollsFromValue = (baseStat: number, value: number): Array<number> => {
-  const index = rolls(baseStat).findIndex((mark) => mark === value);
+  const index = rolls(baseStat).findIndex((mark) => Math.round(mark * 10) / 10 === Math.round(value * 10) / 10);
   return rollsData[index].map((i) => baseStat * (1 - (3 - i) / 10));
 };
 

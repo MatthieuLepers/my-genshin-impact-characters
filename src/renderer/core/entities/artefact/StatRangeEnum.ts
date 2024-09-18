@@ -23,12 +23,12 @@ export default {
     HP: { max: 1794, maxRoll: 298.75 },
     'HP%': { max: 34.8, maxRoll: 5.83 },
     Atk: { max: 114, maxRoll: 19.45 },
-    'Atk%': { max: 34.8, maxRoll: 5.83 },
+    'Atk%': { max: 34.8, maxRoll: 5.83 }, // Wrong value (?)
     Def: { max: 138, maxRoll: 23.15 },
     'Def%': { max: 43.8, maxRoll: 7.29 },
     EM: { max: 138, maxRoll: 23.31 },
     'ER%': { max: 46.8, maxRoll: 6.48 },
     'CritRate%': { max: 23.4, maxRoll: 3.89 },
-    'CritDmg%': { max: 46.8, maxRoll: 7.77 },
+    'CritDmg%': { max: 46.8, maxRoll: 7.77 }, // Wrong value
   },
 };

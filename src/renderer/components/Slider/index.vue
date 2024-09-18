@@ -17,7 +17,7 @@
         {{ props.getTooltipText(value) }}
       </div>
     </template>
-    <template v-slot:mark="{ active, pos }">
+    <template #mark="{ active, pos }">
       <span
         :style="{ left: `calc(${pos}% - 2px)` }"
         :class="GenerateModifiers('m-slider__mark', { active })"

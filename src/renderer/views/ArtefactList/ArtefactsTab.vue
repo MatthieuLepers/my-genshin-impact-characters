@@ -1,6 +1,9 @@
 <template>
   <div class="ArtefactsTab">
-    <div v-if="!state.showArtefactTransmuter" class="ArtefactsTabContainer">
+    <div
+      v-if="!state.showArtefactTransmuter && !state.edit"
+      class="ArtefactsTabContainer"
+    >
       <ul class="ArtefactsTabList">
         <li
           v-for="(artefact, i) in artefactsStore.artefactList.value"
@@ -53,7 +56,10 @@
         </button>
       </div>
 
-      <ArtefactCard v-if="artefactsStore.state.current" />
+      <ArtefactCard
+        v-if="artefactsStore.state.current"
+        @edit="actions.handleEdit"
+      />
 
       <ArtefactFilters
         :filters="props.filters"
@@ -64,11 +70,12 @@
     </div>
 
     <ArtefactTransmuter
-      v-else
+      v-else-if="state.showArtefactTransmuter || state.edit"
       class="ArtefactListTransmuter"
+      :formData="state.edit ? artefactsStore.state.current : {}"
       :allowClose="artefactsStore.artefactList.value.length > 0"
-      @close="state.showArtefactTransmuter = false"
-      @submit="actions.handleCreate"
+      @close="actions.handleClose"
+      @submit="actions.handleSubmit"
     />
   </div>
 </template>
@@ -94,6 +101,7 @@ const props = defineProps({
 const state = reactive({
   showArtefactFilters: false,
   showArtefactTransmuter: false,
+  edit: false,
 });
 
 const actions = {
@@ -137,9 +145,25 @@ const actions = {
     artefactsStore.state.filters.mainStat = [...data.mainStat];
     artefactsStore.state.filters.subStat = [...data.subStat];
   },
-  async handleCreate(data) {
-    await artefactsStore.actions.create(data);
+  async handleSubmit(data) {
+    if (state.edit) {
+      artefactsStore.state.current.setId = data.setId;
+      artefactsStore.state.current.type = data.type;
+      artefactsStore.state.current.statsJson = data.statsJson;
+      await artefactsStore.state.current.save();
+      state.edit = false;
+    } else {
+      await artefactsStore.actions.create(data);
+    }
     state.showArtefactTransmuter = false;
+  },
+  handleEdit() {
+    state.showArtefactTransmuter = true;
+    state.edit = true;
+  },
+  handleClose() {
+    state.showArtefactTransmuter = false;
+    state.edit = false;
   },
 };
 

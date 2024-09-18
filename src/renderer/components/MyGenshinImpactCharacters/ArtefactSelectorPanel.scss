@@ -27,20 +27,17 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      flex: 1;
+      height: calc(100% - 36px);
     }
   }
 
   .PanelMenuButton {
+    @include set-font-scale('xl');
+    color: color(grey100);
+
     &:focus,
     &.PanelMenuButton--selected {
-      img {
-        filter: invert(100%);
-      }
-    }
-
-    img {
-      width: 28px;
+      color: color(grey900);
     }
   }
 
