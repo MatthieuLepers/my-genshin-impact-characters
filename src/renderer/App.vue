@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-import { reactive, onBeforeMount, onMounted } from 'vue';
+import { reactive, onBeforeMount } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 import AppTitleBar from '@renderer/components/AppTitleBar/index.vue';
