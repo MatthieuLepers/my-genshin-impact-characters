@@ -8,7 +8,6 @@ import { IpcHandle, IpcOn, GlobalShortcut } from '@/main/decorators';
 import { Setting, Artefact } from '@/main/database/models';
 import WindowStore from '@/main/stores/WindowStore';
 import ArtefactSchema from '@/main/public/schemas/artefact.schema.json';
-import { serial } from '@/main/utils/PromiseUtils';
 
 class AppModule {
   @IpcHandle
@@ -47,7 +46,9 @@ class AppModule {
     const { canceled, filePath } = await dialog.showSaveDialog(mainWindow, dialogOptions);
 
     if (!canceled && filePath?.length) {
-      const artefactList: Array<Artefact> = await serial(parsedIdList.map((id: Identifier) => () => Artefact.findByPk(id)));
+      const artefactList: Array<Artefact> = await Artefact.findAll({
+        where: { id: parsedIdList },
+      });
       const toExportList = artefactList.map(({ type, setId, statsJson }) => ({ type, setId, statsJson }));
 
       fs.writeFileSync(filePath, JSON.stringify(toExportList, null, 2));

@@ -37,6 +37,8 @@ import {
 import { image } from '@renderer/core/utils';
 import { artefactsStore } from '@renderer/core/entities/artefact/store';
 
+defineOptions({ name: 'ArtefactSetOption' });
+
 const $uid = getCurrentInstance().uid;
 
 const modelValue = defineModel({ type: [String, Number, Boolean, Array] });
@@ -71,5 +73,5 @@ watch(() => modelValue.value, (newVal) => {
 });
 </script>
 
-<style lang="scss" src="./ArtefactSetOption.scss">
+<style lang="scss" src="./Option.scss">
 </style>

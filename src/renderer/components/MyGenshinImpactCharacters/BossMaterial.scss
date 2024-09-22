@@ -8,6 +8,34 @@
     height: 16px;
     display: inline-block;
     margin-right: rem(4px);
+
+    &.icon-anemo {
+      color: color(anemo);
+    }
+
+    &.icon-geo {
+      color: color(geo);
+    }
+
+    &.icon-electro {
+      color: color(electro);
+    }
+
+    &.icon-hydro {
+      color: color(hydro);
+    }
+
+    &.icon-pyro {
+      color: color(pyro);
+    }
+
+    &.icon-cryo {
+      color: color(cryo);
+    }
+
+    &.icon-dendro {
+      color: color(dendro);
+    }
   }
 
   .Bonus input {

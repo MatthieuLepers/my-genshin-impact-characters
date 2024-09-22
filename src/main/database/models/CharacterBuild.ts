@@ -9,8 +9,8 @@ import {
   BelongsTo,
   ForeignKey,
 } from 'sequelize-typescript';
-import { HasOneGetAssociationMixin } from 'sequelize';
-import { ArtefactPreset, Character, Weapon } from '@/main/database/models';
+import { HasOneGetAssociationMixin, HasOneSetAssociationMixin } from 'sequelize';
+import { Artefact, Character, Weapon } from '@/main/database/models';
 
 @Table({
   modelName: 'characterBuilds',
@@ -41,14 +41,60 @@ export class CharacterBuild extends Model {
 
   declare getCharacter: HasOneGetAssociationMixin<Character>;
 
-  @ForeignKey(() => ArtefactPreset)
+  @ForeignKey(() => Artefact)
   @Column(DataType.INTEGER)
-  declare artefactPresetId: number;
+  declare flowerId: number;
 
-  @BelongsTo(() => ArtefactPreset)
-  declare artefactPreset: ArtefactPreset;
+  @BelongsTo(() => Artefact)
+  declare flower: Artefact;
 
-  declare getArtefactPreset: HasOneGetAssociationMixin<ArtefactPreset>;
+  declare getFlower: HasOneGetAssociationMixin<Artefact>;
+
+  declare setFlower: HasOneSetAssociationMixin<Artefact, 'id'>;
+
+  @ForeignKey(() => Artefact)
+  @Column(DataType.INTEGER)
+  declare featherId: number;
+
+  @BelongsTo(() => Artefact)
+  declare feather: Artefact;
+
+  declare getFeather: HasOneGetAssociationMixin<Artefact>;
+
+  declare setFeather: HasOneSetAssociationMixin<Artefact, 'id'>;
+
+  @ForeignKey(() => Artefact)
+  @Column(DataType.INTEGER)
+  declare sandsId: number;
+
+  @BelongsTo(() => Artefact)
+  declare sands: Artefact;
+
+  declare getSands: HasOneGetAssociationMixin<Artefact>;
+
+  declare setSands: HasOneSetAssociationMixin<Artefact, 'id'>;
+
+  @ForeignKey(() => Artefact)
+  @Column(DataType.INTEGER)
+  declare gobletId: number;
+
+  @BelongsTo(() => Artefact)
+  declare goblet: Artefact;
+
+  declare getGoblet: HasOneGetAssociationMixin<Artefact>;
+
+  declare setGoblet: HasOneSetAssociationMixin<Artefact, 'id'>;
+
+  @ForeignKey(() => Artefact)
+  @Column(DataType.INTEGER)
+  declare circletId: number;
+
+  @BelongsTo(() => Artefact)
+  declare circlet: Artefact;
+
+  declare getCirclet: HasOneGetAssociationMixin<Artefact>;
+
+  declare setCirclet: HasOneSetAssociationMixin<Artefact, 'id'>;
 
   @ForeignKey(() => Weapon)
   @Column(DataType.INTEGER)

@@ -16,7 +16,8 @@ export default class ArtefactSet extends AbstractEntity<IArtefactSet> {
       .reduce((acc, passiveStat: IRemoteArtefactSetPassiveStat) => ({
         ...acc,
         [passiveStat.dataValues.statType]: passiveStat.dataValues.statValue,
-      }), {});
+      }), {})
+    ;
   }
 
   static async findAll(): Promise<Array<ArtefactSet>> {

@@ -7,43 +7,10 @@
 }
 
 .WeaponCategory {
-  &Header {
-    background-color: color(grey800);
-    padding: rem(8px);
-    margin-bottom: rem(16px);
-    width: 100%;
-    text-align: left;
-    display: block;
-  }
-
-  &Type {
-    &Header {
-      @include set-font-scale('s');
-      text-align: left;
-      font-weight: 600;
-      background-color: color(grey900);
-      border: 1px solid color(grey800);
-      margin: 0 0 rem(16px);
-      width: calc(100% - 8px);
-      padding: rem(4px) rem(8px);
-      letter-spacing: 0.1rem;
-      display: flex;
-      align-items: center;
-      gap: rem(8px);
-      height: 54px;
-      width: 100%;
-
-      img {
-        max-width: 32px;
-        max-height: 32px;
-        width: auto;
-      }
-    }
-
-    &DataTable {
-      margin-bottom: rem(16px);
-    }
-  }
+  margin-top: rem(8px);
+  padding-right: rem(8px);
+  height: calc(100% - 46px);
+  overflow: auto;
 
   &Img {
     max-width: 32px;

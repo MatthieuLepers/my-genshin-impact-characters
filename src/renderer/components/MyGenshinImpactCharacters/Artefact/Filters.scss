@@ -1,6 +1,6 @@
 @import '~styles/utilities.scss';
 
-.ArtefactFilters {
+.artefact-filters {
   @include transition(left .2s ease);
   position: absolute;
   top: 0;
@@ -8,7 +8,7 @@
   width: 33%;
   height: 100%;
   background-color: rgba(color(grey900), .98);
-  padding: rem(8px);
+  padding: rem(8px) rem(8px) 0;
   display: flex;
   flex-direction: column;
   gap: rem(8px);
@@ -18,7 +18,7 @@
     left: 0;
   }
 
-  &Form {
+  &__form {
     flex: 1;
     padding-right: rem(8px);
     overflow: auto;
@@ -28,7 +28,7 @@
     }
   }
 
-  .FrameBox {
+  .frame-box {
     position: relative;
     @include set-font-scale('s');
     font-weight: 700;
@@ -83,7 +83,7 @@
       }
     }
 
-    &Selector {
+    &__selector {
       @include set-font-scale('xxl');
       background-color: color(grey800);
       border: 1px solid color(grey600);

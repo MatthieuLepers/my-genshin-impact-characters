@@ -1,7 +1,7 @@
 @import '~styles/utilities.scss';
 
-.ArtefactPreset {
-  &Buttons {
+.artefact-preset {
+  &__buttons {
     display: flex;
     gap: rem(8px);
     justify-content: flex-end;

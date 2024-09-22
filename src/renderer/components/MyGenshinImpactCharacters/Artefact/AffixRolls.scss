@@ -1,12 +1,12 @@
 @import '~styles/utilities.scss';
 
-.AffixRolls {
+.artefact-affix-rolls {
   list-style: none;
   padding: 0;
   margin: 0;
   display: inline-flex;
 
-  &Item {
+  &__item {
     &--default {
       @include set-font-scale('xs');
       letter-spacing: 0.1rem;
@@ -15,19 +15,19 @@
         margin-left: rem(4px);
       }
 
-      &.AffixRollsItem--common {
+      &.artefact-affix-rolls__item--common {
         color: color(common);
       }
 
-      &.AffixRollsItem--uncommon {
+      &.artefact-affix-rolls__item--uncommon {
         color: color(uncommon);
       }
 
-      &.AffixRollsItem--rare {
+      &.artefact-affix-rolls__item--rare {
         color: color(rare);
       }
 
-      &.AffixRollsItem--epic {
+      &.artefact-affix-rolls__item--epic {
         color: color(epic);
       }
     }
@@ -51,19 +51,19 @@
         width: 100%;
       }
 
-      &.AffixRollsItem--common span {
+      &.artefact-affix-rolls__item--common span {
         background-color: color(common);
       }
 
-      &.AffixRollsItem--uncommon span {
+      &.artefact-affix-rolls__item--uncommon span {
         background-color: color(uncommon);
       }
 
-      &.AffixRollsItem--rare span {
+      &.artefact-affix-rolls__item--rare span {
         background-color: color(rare);
       }
 
-      &.AffixRollsItem--epic span {
+      &.artefact-affix-rolls__item--epic span {
         background-color: color(epic);
       }
     }

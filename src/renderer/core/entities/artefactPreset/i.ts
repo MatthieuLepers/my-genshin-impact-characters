@@ -1,5 +1,6 @@
 export interface IArtefactPreset {
   readonly id: number;
+  name: string;
   flowerId: number;
   featherId: number;
   sandsId: number;

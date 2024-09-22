@@ -239,7 +239,7 @@ const input = ref(null);
 const dropdown = ref(null);
 
 const props = defineProps({
-  modelValue: { type: [Array, String, Number, Boolean] },
+  modelValue: { type: [Object, Array, String, Number, Boolean] },
   id: { type: String, default: null },
   required: { type: Boolean, default: false },
   disabled: { type: Boolean, default: false },

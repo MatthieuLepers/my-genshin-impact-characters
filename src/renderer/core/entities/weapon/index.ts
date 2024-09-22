@@ -57,9 +57,9 @@ export default class Weapon extends AbstractEntity<IWeapon> {
     }
     const weaponStatType = WEAPON_STAT_TYPES[`type${this.rarity}${Math.round(this.atk)}`];
     if (this.rarity <= 2) {
-      return Math.round(this.atk * weaponStatType[0]);
+      return this.atk * weaponStatType[0];
     }
-    return Math.round(this.atk * weaponStatType[this.level === 90 ? 0 : 1]);
+    return this.atk * weaponStatType[this.level === 90 ? 0 : 1];
   }
 
   get currentSubStat(): number {
@@ -77,6 +77,10 @@ export default class Weapon extends AbstractEntity<IWeapon> {
       Atk: this.currentAtk,
       [this.statName]: this.currentSubStat,
     };
+  }
+
+  getStat(statName: string): number {
+    return this.stats[statName] ?? 0;
   }
 
   static async findAll(): Promise<Array<Weapon>> {

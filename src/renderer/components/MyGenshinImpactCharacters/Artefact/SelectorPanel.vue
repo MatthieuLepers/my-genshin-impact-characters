@@ -1,10 +1,10 @@
 <template>
 
 <MaterialForm
-  :class="GenerateModifiers('ArtefactSelectorPanel', { open: modelValue })"
+  :class="GenerateModifiers('artefact-selector-panel', { open: modelValue })"
   @submit.prevent="actions.handleSubmit"
 >
-    <div class="ArtefactSelectorPanelContainer">
+    <div class="artefact-selector-panel__container">
       <PanelMenu
         v-model="artefactsStore.state.filters.type[0]"
         :data="State.panelMenuData"
@@ -13,12 +13,12 @@
           <span v-icon:[item.id] />
         </template>
         <template #[artefactsStore.state.filters.type[0]]>
-          <div class="ArtefactSelectorPanelContainerSub">
-            <ul class="ArtefactSelectorPanelList">
+          <div class="artefact-selector-panel__container-sub">
+            <ul class="artefact-selector-panel__list">
               <li
                 v-for="(artefact, i) in artefactsStore.artefactList.value"
                 :key="i"
-                class="ArtefactSelectorPanelListItem"
+                class="artefact-selector-panel__list-item"
               >
                 <Artefact
                   :artefact="artefact"
@@ -56,7 +56,7 @@
       </PanelMenu>
     </div>
 
-    <ArtefactCard
+    <ArtefactDetails
       :showEdit="false"
       :showDelete="false"
       :showExport="false"
@@ -73,11 +73,13 @@ import { useI18n } from 'vue-i18n';
 import MaterialButton from '@renderer/components/Materials/Button/index.vue';
 import MaterialForm from '@renderer/components/Materials/Form/index.vue';
 import MaterialFormFieldLine from '@renderer/components/Materials/Form/FieldLine.vue';
-import Artefact from '@renderer/components/MyGenshinImpactCharacters/Artefact.vue';
-import ArtefactCard from '@renderer/components/MyGenshinImpactCharacters/ArtefactCard.vue';
+import Artefact from '@renderer/components/MyGenshinImpactCharacters/Artefact/index.vue';
+import ArtefactDetails from '@renderer/components/MyGenshinImpactCharacters/Artefact/Details.vue';
 import PanelMenu from '@renderer/components/MyGenshinImpactCharacters/PanelMenu.vue';
 
 import { artefactsStore } from '@renderer/core/entities/artefact/store';
+
+defineOptions({ name: 'ArtefactSelectorPanel' });
 
 const { t } = useI18n();
 const emit = defineEmits(['submit']);
@@ -146,5 +148,5 @@ watch(() => props.formData, (newVal) => {
 });
 </script>
 
-<style lang="scss" src="./ArtefactSelectorPanel.scss">
+<style lang="scss" src="./SelectorPanel.scss">
 </style>

@@ -258,6 +258,12 @@ export default {
         shop: 'Shop',
         fishing: 'Fishing',
       },
+      DataTable: {
+        name: 'Name',
+        owned: 'Owned ?',
+        level: 'Level',
+        rank: 'Rank',
+      },
     },
     CharacterBuild: {
       createBuild: 'Create new build',

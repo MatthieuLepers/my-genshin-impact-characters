@@ -33,7 +33,7 @@
       :showActionRow="false"
     >
       <template v-slot:nameStr="{ obj }">
-        <img class="Element" :src="image(`img/elements/${obj.element.toLowerCase()}.png`)" :alt="obj.element" />
+        <span :class="['Element', `icon-${obj.element.toLowerCase()}`]" />
         <span :id="obj.name">
           [{{ obj.getInvestedMaterials(props.material) }}/{{ obj.getMaxMaterial(props.material) }}] {{ obj.nameStr }}
         </span>
@@ -105,8 +105,8 @@ import { useI18n } from 'vue-i18n';
 import DataTable from '@renderer/components/Materials/DataTable/index.vue';
 import FormInput from '@renderer/components/Materials/Form/Input.vue';
 
-import { materialsStore } from '@/renderer/core/entities/material/store';
-import { filteredCharacterStore } from '@/renderer/core/stores/FilteredCharacterStore';
+import { materialsStore } from '@renderer/core/entities/material/store';
+import { filteredCharacterStore } from '@renderer/core/stores/FilteredCharacterStore';
 import { image } from '@renderer/core/utils';
 
 const { t } = useI18n();
@@ -157,9 +157,6 @@ const actions = {
   },
   getOwnedAndInvestedMaterials(materialName) {
     return props.characters.reduce((acc, character) => acc + character.getInvestedMaterials(materialName), materialsStore.state.materials[materialName].inInventory);
-  },
-  handleAptitudeLevelInput(e) {
-    console.log(e);
   },
 };
 </script>

@@ -1,10 +1,10 @@
 <template>
-  <aside :class="GenerateModifiers('ArtefactFilters', { visible: props.visible })">
+  <aside :class="GenerateModifiers('artefact-filters', { visible: props.visible })">
     <h2>{{ t('App.ArtefactFilters.title') }}</h2>
 
-    <MaterialForm class="ArtefactFiltersForm">
+    <MaterialForm class="artefact-filters__form">
       <MaterialFormFieldSet legend="Artefact set">
-        <div class="FrameBox FrameBox--selected" v-for="(id, i) in form.setId" :key="i">
+        <div class="frame-box frame-box--selected" v-for="(id, i) in form.setId" :key="i">
           <img
             :src="image(`img/artefacts/${id}/flower.webp`)"
             alt=""
@@ -14,7 +14,7 @@
           <span>{{ artefactsStore.actions.getArtefactCountForSet(id) }}</span>
         </div>
         <button
-          class="FrameBox FrameBoxSelector"
+          class="frame-box frame-box__selector"
           type="button"
           @click="modalStore.actions.show('artefactSetModal')"
         >+</button>
@@ -31,7 +31,7 @@
           <div
             v-for="(stat, i) in Object.keys(tm('App.Artefact.stats'))"
             :key="i"
-            :class="GenerateModifiers('FrameBox', {
+            :class="GenerateModifiers('frame-box', {
               checked: form.mainStat.includes(stat),
               button: true,
             })"
@@ -53,7 +53,7 @@
           <div
             v-for="(stat, i) in ['HP', 'HP%', 'Atk', 'Atk%', 'Def', 'Def%', 'EM', 'ER%', 'CritRate%', 'CritDmg%']"
             :key="i"
-            :class="GenerateModifiers('FrameBox', {
+            :class="GenerateModifiers('frame-box', {
               checked: form.subStat.includes(stat),
               button: true,
             })"
@@ -107,12 +107,14 @@ import MaterialButton from '@renderer/components/Materials/Button/index.vue';
 import MaterialForm from '@renderer/components/Materials/Form/index.vue';
 import MaterialFormFieldLine from '@renderer/components/Materials/Form/FieldLine.vue';
 import MaterialFormFieldSet from '@renderer/components/Materials/Form/FieldSet.vue';
-import ArtefactSetSelectorModal from '@renderer/components/MyGenshinImpactCharacters/ArtefactSetSelectorModal.vue';
+import ArtefactSetSelectorModal from '@renderer/components/MyGenshinImpactCharacters/ArtefactSet/SelectorModal.vue';
 import PanelMenu from '@renderer/components/MyGenshinImpactCharacters/PanelMenu.vue';
 
 import { image } from '@renderer/core/utils';
 import { artefactsStore } from '@renderer/core/entities/artefact/store';
 import { modalStore } from '@renderer/components/Materials/Modal/Store';
+
+defineOptions({ name: 'ArtefactFilters' });
 
 const { t, tm } = useI18n();
 const emit = defineEmits(['confirm', 'close']);
@@ -174,5 +176,5 @@ const actions = {
 };
 </script>
 
-<style lang="scss" src="./ArtefactFilters.scss">
+<style lang="scss" src="./Filters.scss">
 </style>

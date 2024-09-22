@@ -39,15 +39,11 @@
                 v-slot:[`field${i}`]
                 :key="type"
               >
-                <button
+                <ArtefactButton
                   v-if="!form[type]"
-                  type="button"
-                  class="ArtefactButton"
+                  :type="type"
                   @click="actions.handleChooseArtefactType(type)"
-                >
-                  <span v-icon:[type] />
-                  <span>{{ t('App.Artefact.PresetList.formChooseBtnLabel') }}</span>
-                </button>
+                />
                 <Artefact
                   v-else
                   :artefact="form[type]"
@@ -74,7 +70,7 @@
       </li>
     </ul>
 
-    <ArtefactCard
+    <ArtefactDetails
       class="PresetsTabCard"
       v-if="State.displayCard"
       :showExport="false"
@@ -99,10 +95,11 @@ import MaterialForm from '@renderer/components/Materials/Form/index.vue';
 import MaterialFormInput from '@renderer/components/Materials/Form/Input.vue';
 import MaterialFormFieldLine from '@renderer/components/Materials/Form/FieldLine.vue';
 import MaterialFormFieldSet from '@renderer/components/Materials/Form/FieldSet.vue';
-import ArtefactCard from '@renderer/components/MyGenshinImpactCharacters/ArtefactCard.vue';
-import Artefact from '@renderer/components/MyGenshinImpactCharacters/Artefact.vue';
-import ArtefactSelectorPanel from '@renderer/components/MyGenshinImpactCharacters/ArtefactSelectorPanel.vue';
-import ArtefactPreset from '@renderer/components/MyGenshinImpactCharacters/ArtefactPreset.vue';
+import Artefact from '@renderer/components/MyGenshinImpactCharacters/Artefact/index.vue';
+import ArtefactButton from '@renderer/components/MyGenshinImpactCharacters/Artefact/Button.vue';
+import ArtefactDetails from '@renderer/components/MyGenshinImpactCharacters/Artefact/Details.vue';
+import ArtefactSelectorPanel from '@renderer/components/MyGenshinImpactCharacters/Artefact/SelectorPanel.vue';
+import ArtefactPreset from '@renderer/components/MyGenshinImpactCharacters/ArtefactPreset/index.vue';
 
 import { artefactsStore } from '@renderer/core/entities/artefact/store';
 import { artefactPresetsStore } from '@renderer/core/entities/artefactPreset/store';

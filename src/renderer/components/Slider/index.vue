@@ -1,20 +1,20 @@
 <template>
   <VueSlider
-    v-model="modelValue"
-    v-model:rolls="rollsValue"
+    v-model="modelValue.value"
     :marks="State.marks"
     :min="0"
     :max="Math.ceil(State.max)"
-    :interval="0.01"
+    :interval="0.1"
     :included="true"
     :hideLabel="true"
     :railStyle="{ height: '6px' }"
     :adsorb="true"
+    :duration="0"
     class="m-slider"
   >
     <template #tooltip="{ value }">
       <div class="m-slider__tooltip">
-        {{ props.getTooltipText(value) }}
+        {{ value.toFixed(+modelValue.name.endsWith('%')) }}
       </div>
     </template>
     <template #mark="{ active, pos }">
@@ -35,35 +35,26 @@
 <script setup>
 // https://vue-3-slider-component.netlify.app/?path=/docs/props-marks--docs
 // https://mui.com/material-ui/react-slider/
-import { computed, watch } from 'vue';
+import { computed } from 'vue';
 import VueSlider from 'vue-3-slider-component';
 
-import { rolls, getRollsFromValue } from '@renderer/core/datas/SubStatUtils';
+import ArtefactSubStatData from '@renderer/core/datas/ArtefactSubStat.json';
 
 defineOptions({ name: 'Slider' });
 
-const modelValue = defineModel({ type: Number });
-const rollsValue = defineModel('rolls', { type: Array });
-
-const props = defineProps({
-  baseStat: { type: Number, required: true },
-  getTooltipText: { type: Function, default: (val) => Math.round(val * 100) / 100 },
-});
+const modelValue = defineModel({ type: Object });
 
 const State = computed(() => {
-  const marks = rolls(props.baseStat);
-  const [min] = marks;
-  const max = marks[marks.length - 1];
+  const marks = Object
+    .keys(ArtefactSubStatData[modelValue.value.name].permutations)
+    .map((val) => parseFloat(val))
+  ;
+  const max = parseFloat(marks[marks.length - 1]);
 
   return {
     marks,
-    min: Math.floor(min * 100) / 100,
-    max: Math.ceil(max * 100) / 100,
+    max,
   };
-});
-
-watch(() => modelValue.value, (newVal) => {
-  rollsValue.value = getRollsFromValue(props.baseStat, newVal);
 });
 </script>
 

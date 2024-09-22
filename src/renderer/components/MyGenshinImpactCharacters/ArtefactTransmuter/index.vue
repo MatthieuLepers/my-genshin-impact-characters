@@ -36,7 +36,6 @@
             <MaterialFormFieldLine>
               <ArtefactAffix
                 v-model="v$.statsJson.$model[0]"
-                :getText="actions.getText(form.statsJson[0])"
                 :type="form.type"
                 @click="actions.handleClickAffix(true)"
               />
@@ -44,28 +43,24 @@
             <MaterialFormFieldLine>
               <ArtefactAffix
                 v-model="v$.statsJson.$model[1]"
-                :getText="actions.getText(form.statsJson[1])"
                 @click="actions.handleClickAffix(false)"
               />
             </MaterialFormFieldLine>
             <MaterialFormFieldLine>
               <ArtefactAffix
                 v-model="v$.statsJson.$model[2]"
-                :getText="actions.getText(form.statsJson[2])"
                 @click="actions.handleClickAffix(false)"
               />
             </MaterialFormFieldLine>
             <MaterialFormFieldLine>
               <ArtefactAffix
                 v-model="v$.statsJson.$model[3]"
-                :getText="actions.getText(form.statsJson[3])"
                 @click="actions.handleClickAffix(false)"
               />
             </MaterialFormFieldLine>
             <MaterialFormFieldLine>
               <ArtefactAffix
                 v-model="v$.statsJson.$model[4]"
-                :getText="actions.getText(form.statsJson[4])"
                 @click="actions.handleClickAffix(false)"
               />
             </MaterialFormFieldLine>
@@ -81,6 +76,16 @@
               @click="emit('close')"
             >
               {{ t('App.ArtefactTransmuter.closeBtnLabel') }}
+            </MaterialButton>
+          </template>
+          <template #field1 v-else-if="props.showImport">
+            <MaterialButton
+              type="button"
+              icon="icon-import"
+              :modifiers="{ secondary: true }"
+              @click="emit('import')"
+            >
+              {{ t('App.Artefact.List.importBtnTitle') }}
             </MaterialButton>
           </template>
           <template #field2>
@@ -121,30 +126,31 @@ import { required } from '@vuelidate/validators';
 import MaterialButton from '@renderer/components/Materials/Button/index.vue';
 import MaterialForm from '@renderer/components/Materials/Form/index.vue';
 import MaterialFormFieldLine from '@renderer/components/Materials/Form/FieldLine.vue';
-import ArtefactSetOption from '@renderer/components/MyGenshinImpactCharacters/ArtefactTransmuter/ArtefactSetOption.vue';
+import ArtefactSetOption from '@renderer/components/MyGenshinImpactCharacters/ArtefactSet/Option.vue';
 import ArtefactAffix from '@renderer/components/MyGenshinImpactCharacters/ArtefactTransmuter/ArtefactAffix.vue';
 import AffixSelectorPanel from '@renderer/components/MyGenshinImpactCharacters/ArtefactTransmuter/AffixSelectorPanel.vue';
 import PanelMenu from '@renderer/components/MyGenshinImpactCharacters/PanelMenu.vue';
 
 import { image } from '@renderer/core/utils';
 import { artefactSetsStore } from '@renderer/core/entities/artefactSet/store';
-import StatRangeEnum from '@renderer/core/entities/artefact/StatRangeEnum';
+import ArtefactMainStatData from '@renderer/core/datas/ArtefactMainStat.json';
 
 defineOptions({ name: 'ArtefactTransmuter' });
 
 const { t } = useI18n();
-const emit = defineEmits(['submit', 'close']);
+const emit = defineEmits(['submit', 'close', 'import']);
 
 const props = defineProps({
   formData: { type: Object, default: () => ({}) },
   allowClose: { type: Boolean, default: true },
+  showImport: { type: Boolean, default: false },
 });
 
 const form = reactive({
   setId: props.formData.setId ?? null,
   type: props.formData.type ?? 'flower',
-  statsJson: props.formData.statsJson ?? [
-    { name: 'HP', value: StatRangeEnum.main.HP.max, main: true },
+  statsJson: props.formData.statsJson?.slice()?.map((stat) => ({ ...stat })) ?? [
+    { name: 'HP', value: ArtefactMainStatData.HP[20], main: true },
   ],
 });
 const rules = {
@@ -189,7 +195,7 @@ const actions = {
     form.statsJson = [
       {
         name: 'HP',
-        value: StatRangeEnum.main.HP.max,
+        value: ArtefactMainStatData.HP[20],
         main: true,
       },
     ];
@@ -197,12 +203,6 @@ const actions = {
   handleClickAffix(isMain) {
     state.affixPanelVisible = true;
     state.main = isMain;
-  },
-  getText(stat) {
-    return stat?.name?.endsWith('%')
-      ? (val) => Math.round(val * 10) / 10
-      : Math.round
-    ;
   },
 };
 
@@ -215,7 +215,7 @@ watch(() => form.type, () => {
     form.statsJson = [
       {
         name: data[form.type],
-        value: StatRangeEnum.main[data[form.type]].max,
+        value: ArtefactMainStatData[data[form.type]][20],
         main: true,
       },
     ];
@@ -228,16 +228,16 @@ watch(() => props.formData, (newVal) => {
   form.setId = newVal.setId ?? null;
   form.type = newVal.type ?? 'flower';
   form.statsJson = newVal.statsJson ?? [
-    { name: 'HP', value: StatRangeEnum.main.HP.max, main: true },
+    { name: 'HP', value: ArtefactMainStatData.HP[20], main: true },
   ];
 });
 
 onBeforeMount(() => {
   form.setId = props.formData.setId ?? State.value.setList[0].value;
-  form.statsJson = props.formData.statsJson ?? [
+  form.statsJson = props.formData.statsJson?.slice()?.map((stat) => ({ ...stat })) ?? [
     {
       name: 'HP',
-      value: StatRangeEnum.main.HP.max,
+      value: ArtefactMainStatData.HP[20],
       main: true,
     },
   ];

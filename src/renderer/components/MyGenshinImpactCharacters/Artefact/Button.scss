@@ -1,0 +1,35 @@
+@import '~styles/utilities.scss';
+
+.artefact-button {
+  background-color: color(grey800);
+  overflow: hidden;
+  border-radius: 8px;
+  position: relative;
+  padding-bottom: rem(22px);
+  width: 100%;
+  min-height: 96px;
+
+  img {
+    max-height: 32px;
+    width: auto;
+    max-width: 32px;
+  }
+
+  span {
+    &[class^="icon"] {
+      @include set-font-scale('xxl');
+    }
+
+    &:last-of-type {
+      @include set-font-scale('m');
+      color: color(grey900);
+      background-color: color(grey100);
+      width: 100%;
+      display: block;
+      text-align: center;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+}

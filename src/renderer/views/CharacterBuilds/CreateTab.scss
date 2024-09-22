@@ -76,6 +76,10 @@
           &:not(:first-of-type) {
             @include set-font-scale('xs');
           }
+
+          &[class^="icon"]::before {
+            margin-right: rem(4px);
+          }
         }
       }
 

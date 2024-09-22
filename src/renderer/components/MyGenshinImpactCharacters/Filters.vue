@@ -1,10 +1,10 @@
 <template>
   <Form :class="GenerateModifiers('Filters', { Simple: props.simple })">
-    <FormFieldLine :size="simple ? 1 : 3">
+    <FormFieldLine :size="simple ? 1 : 2">
       <ul class="FiltersElementList">
         <li v-for="element in State.elementList" :key="element" :class="GenerateModifiers('FiltersElement', { Active: filteredCharacterStore.filters.elements.includes(element) })">
           <button type="button" @click="actions.handleClickElement(element)">
-            <img :src="image(`img/elements/${element.toLowerCase()}.png`)" :alt="element" />
+            <span v-icon:[element.toLowerCase()] />
           </button>
         </li>
       </ul>
@@ -15,7 +15,7 @@
         <ul class="FiltersElementList">
           <li v-for="element in State.elementList" :key="element" :class="GenerateModifiers('FiltersElement', { Active: filteredCharacterStore.filters.elements.includes(element) })">
             <button type="button" @click="actions.handleClickElement(element)">
-              <img :src="image(`img/elements/${element.toLowerCase()}.png`)" :alt="element" />
+              <span v-icon:[element.toLowerCase()] />
             </button>
           </li>
         </ul>
@@ -24,13 +24,6 @@
         </label>
       </template>
       <template v-slot:field1>
-        <FormInput
-          v-model="filteredCharacterStore.filters.name"
-          class="FiltersSearch"
-          :label="t('App.Filters.search.label')"
-        />
-      </template>
-      <template v-slot:field2>
         <FormSelect
           v-model="filteredCharacterStore.sortBy.text"
           class="FiltersSelect"
@@ -48,12 +41,10 @@ import { useI18n } from 'vue-i18n';
 
 import Form from '@renderer/components/Materials/Form/index.vue';
 import FormFieldLine from '@renderer/components/Materials/Form/FieldLine.vue';
-import FormInput from '@renderer/components/Materials/Form/Input.vue';
 import FormSelect from '@renderer/components/Materials/Form/Select.vue';
 
 import { charactersStore } from '@renderer/core/entities/character/store';
-import { filteredCharacterStore } from '@/renderer/core/stores/FilteredCharacterStore';
-import { image } from '@renderer/core/utils';
+import { filteredCharacterStore } from '@renderer/core/stores/FilteredCharacterStore';
 
 const { t } = useI18n();
 

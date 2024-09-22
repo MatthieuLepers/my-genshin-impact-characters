@@ -1,6 +1,6 @@
 @import '~styles/utilities.scss';
 
-.ArtefactSelectorPanel {
+.artefact-selector-panel {
   @include transition(left .2s ease);
   position: absolute;
   top: 0;
@@ -16,14 +16,15 @@
 
   &--open {
     left: 0;
+    z-index: 1;
   }
 
-  &Container {
+  &_container {
     display: flex;
     flex-direction: column;
     flex: 0 0 66%;
 
-    &Sub {
+    &-sub {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -41,7 +42,7 @@
     }
   }
 
-  &List {
+  &__list {
     list-style: none;
     padding: 0;
     margin: rem(8px) 0;
@@ -49,7 +50,7 @@
     flex-wrap: wrap;
     gap: rem(8px);
 
-    &Item {
+    &-item {
       flex: 0 0 calc(14.285% - 6.857px);
     }
   }

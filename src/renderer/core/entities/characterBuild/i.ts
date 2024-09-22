@@ -2,7 +2,11 @@ export interface ICharacterBuild {
   readonly id: number;
   name: string;
   characterId: number;
-  artefactPresetId: number;
+  flowerId: number;
+  featherId: number;
+  sandsId: number;
+  gobletId: number;
+  circletId: number;
   weaponId: number;
 }
 

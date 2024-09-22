@@ -6,6 +6,8 @@ import type Artefact from '@renderer/core/entities/artefact';
 export default class ArtefactPreset extends AbstractEntity<IArtefactPreset> {
   declare readonly id: number;
 
+  declare name: string;
+
   declare flowerId: number;
 
   declare featherId: number;
@@ -69,9 +71,6 @@ export default class ArtefactPreset extends AbstractEntity<IArtefactPreset> {
       ...acc,
       [artefact.setId]: [...(acc[artefact.setId] ?? []), artefact],
     }), {});
-    console.log(Object
-      .values(artefactGroupedBySetId)
-      .filter((artefacts) => artefacts.length >= 2));
 
     const obj = Object
       .values(artefactGroupedBySetId)
@@ -106,9 +105,9 @@ export default class ArtefactPreset extends AbstractEntity<IArtefactPreset> {
   }
 
   async save(): Promise<ArtefactPreset> {
-    const { flowerId, featherId, sandsId, gobletId, circletId } = this.data;
+    const { name, flowerId, featherId, sandsId, gobletId, circletId } = this.data;
     if (this.id) {
-      await api.ArtefactPreset.update(this.id, JSON.stringify({ flowerId, featherId, sandsId, gobletId, circletId }));
+      await api.ArtefactPreset.update(this.id, JSON.stringify({ name, flowerId, featherId, sandsId, gobletId, circletId }));
     }
     return this;
   }

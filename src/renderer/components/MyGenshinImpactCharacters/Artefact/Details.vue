@@ -1,23 +1,27 @@
 <template>
   <aside
     v-if="artefactsStore.state.current"
-    class="ArtefactCard"
+    class="artefact-details"
   >
     <div>
-      <div class="ArtefactCardHeader">
-        {{ t(`App.Artefact.type.${artefactsStore.state.current.type}`) }}
+      <div class="artefact-details__header">
+        <span :class="`icon-${artefactsStore.state.current.type}`">
+          {{ t(`App.Artefact.type.${artefactsStore.state.current.type}`) }}
+        </span>
         <img :src="image(`img/artefacts/${artefactsStore.state.current.setId}/${artefactsStore.state.current.type}.webp`)" alt="" />
-        <div class="ArtefactCardMainStat">
-          {{ t(`App.Artefact.stats.${artefactsStore.state.current.statsJson[0].name}.short`) }}
-          <span>{{ artefactsStore.state.current.statsJson[0].value }}{{ artefactsStore.state.current.statsJson[0].name.endsWith('%') ? '%' : '' }}</span>
+        <div class="artefact-details__main-stat">
+          <span :class="`icon-${formatAffix(artefactsStore.state.current.statsJson[0].name)}`">
+            {{ t(`App.Artefact.stats.${artefactsStore.state.current.statsJson[0].name}.short`) }}
+          </span>
+          <span class="artefact-details__main-stat__value">{{ artefactsStore.state.current.statsJson[0].value }}{{ artefactsStore.state.current.statsJson[0].name.endsWith('%') ? '%' : '' }}</span>
         </div>
       </div>
       <span
-        class="ArtefactCardLevel"
+        class="artefact-details__level"
       >
         +{{ artefactsStore.state.current.level }}
       </span>
-      <ul class="ArtefactCardSubStatList">
+      <ul class="artefact-details__sub-stat-list">
         <li v-for="(stat, i) in artefactsStore.state.current.statsJson.slice(1)" :key="i">
           <ArtefactSubStat
             :stat="stat"
@@ -29,7 +33,7 @@
 
     <div
       v-if="props.showEdit || props.showDelete || props.showExport || props.showSelect"
-      class="ArtefactCardButtons"
+      class="artefact-details__buttons"
     >
       <MaterialButton
         v-if="props.showEdit"
@@ -87,14 +91,17 @@ import { useI18n } from 'vue-i18n';
 
 import MaterialButton from '@renderer/components/Materials/Button/index.vue';
 import MaterialModal from '@renderer/components/Materials/Modal/index.vue';
-import ArtefactSubStat from '@renderer/components/MyGenshinImpactCharacters/ArtefactSubStat.vue';
+import ArtefactSubStat from '@renderer/components/MyGenshinImpactCharacters/Artefact/SubStat.vue';
 
 import { image } from '@renderer/core/utils';
 import { modalStore } from '@renderer/components/Materials/Modal/Store';
 import { artefactsStore } from '@renderer/core/entities/artefact/store';
 
+defineOptions({ name: 'ArtefactDetails' });
+
 const { t } = useI18n();
 const emit = defineEmits(['select', 'edit']);
+const formatAffix = (val) => val.toLowerCase().replace('%', '');
 
 const props = defineProps({
   showExport: { type: Boolean, default: true },
@@ -125,5 +132,5 @@ const actions = {
 };
 </script>
 
-<style lang="scss" src="./ArtefactCard.scss">
+<style lang="scss" src="./Details.scss">
 </style>

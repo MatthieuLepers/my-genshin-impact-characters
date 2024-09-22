@@ -15,15 +15,15 @@
       />
 
       <MaterialForm class="BuildArtefactPreset" @submit.prevent="actions.handleSubmit">
-        <ArtefactPreset :preset="artefactPresetsStore.state.sets[form.artefactPresetId]">
+        <ArtefactPreset :preset="form.artefactPreset">
           <template #legend>
             <MaterialFormSelect
-              v-model="v$.artefactPresetId.$model"
+              v-model="v$.artefactPreset.$model"
               class="BuildPresetSelect"
               variant="box"
               :label="t('App.CharacterBuild.Create.artefactPresetSelect')"
               :options="State.validPresetList"
-              :valid="!v$.artefactPresetId.$invalid"
+              :valid="!v$.artefactPreset.$invalid"
               :searchable="true"
             >
               <template #option="{ option }">
@@ -80,8 +80,8 @@
             <div class="BuildWeaponInfos">
               <span>{{ t(`Data.Weapons.${weaponsStore.state.weapons[form.weaponId].name}.name`) }}</span>
               <span>{{ t('App.Weapons.level') }}: {{ weaponsStore.state.weapons[form.weaponId].level }}</span>
-              <span>{{ t('App.Artefact.stats.Atk.short') }}: {{ weaponsStore.state.weapons[form.weaponId].currentAtk }}</span>
-              <span>{{ t(`App.Artefact.stats.${weaponsStore.state.weapons[form.weaponId].statName}.short`) }}: {{ weaponsStore.state.weapons[form.weaponId].currentSubStat.toFixed(1) }}{{ weaponsStore.state.weapons[form.weaponId].statName.endsWith('%') ? '%' : '' }}</span>
+              <span class="icon-atk">{{ t('App.Artefact.stats.Atk.short') }}: {{ Math.round(weaponsStore.state.weapons[form.weaponId].currentAtk) }}</span>
+              <span :class="`icon-${formatAffix(weaponsStore.state.weapons[form.weaponId].statName)}`">{{ t(`App.Artefact.stats.${weaponsStore.state.weapons[form.weaponId].statName}.short`) }}: {{ weaponsStore.state.weapons[form.weaponId].currentSubStat.toFixed(1) }}{{ weaponsStore.state.weapons[form.weaponId].statName.endsWith('%') ? '%' : '' }}</span>
             </div>
           </div>
         </MaterialFormFieldSet>
@@ -108,7 +108,7 @@
         </MaterialFormFieldLine>
       </MaterialForm>
 
-      <ArtefactCard
+      <ArtefactDetails
         class="BuildArtefactCard"
         :showExport="false"
         :showEdit="false"
@@ -135,8 +135,8 @@ import MaterialFormFieldLine from '@renderer/components/Materials/Form/FieldLine
 import MaterialFormFieldSet from '@renderer/components/Materials/Form/FieldSet.vue';
 import MaterialFormSelect from '@renderer/components/Materials/Form/Select.vue';
 import MaterialFormInput from '@renderer/components/Materials/Form/Input.vue';
-import ArtefactCard from '@renderer/components/MyGenshinImpactCharacters/ArtefactCard.vue';
-import ArtefactPreset from '@renderer/components/MyGenshinImpactCharacters/ArtefactPreset.vue';
+import ArtefactDetails from '@renderer/components/MyGenshinImpactCharacters/Artefact/Details.vue';
+import ArtefactPreset from '@renderer/components/MyGenshinImpactCharacters/ArtefactPreset/index.vue';
 
 import { image } from '@renderer/core/utils';
 import { charactersStore } from '@renderer/core/entities/character/store';
@@ -147,11 +147,12 @@ import { artefactsStore } from '@renderer/core/entities/artefact/store';
 import { notificationStore } from '@renderer/components/Materials/Notification/Store';
 
 const { t } = useI18n();
+const formatAffix = (affix) => affix.toLowerCase().replace('%', '');
 
 const form = reactive({
   name: '',
   characterName: null,
-  artefactPresetId: null,
+  artefactPreset: null,
   weaponId: null,
 });
 const rules = {
@@ -160,7 +161,7 @@ const rules = {
     minLength: minLength(1),
   },
   characterName: { required },
-  artefactPresetId: { required },
+  artefactPreset: { required },
   weaponId: { required },
 };
 const v$ = useVuelidate(rules, form);
@@ -168,7 +169,7 @@ const v$ = useVuelidate(rules, form);
 const State = computed(() => {
   const validPresetList = Object
     .values(artefactPresetsStore.state.sets)
-    .map((preset) => ({ value: preset.id, label: preset.name, obj: preset }))
+    .map((preset) => ({ value: preset, label: preset.name, obj: preset }))
   ;
   const validWeaponList = Object
     .values(weaponsStore.state.weapons)
@@ -195,16 +196,21 @@ const State = computed(() => {
 
 const actions = {
   async handleSubmit() {
-    const { name, characterName, artefactPresetId, weaponId } = form;
+    const { name, characterName, artefactPreset, weaponId } = form;
+    const { flowerId, featherId, sandsId, gobletId, circletId } = artefactPreset;
     const data = {
       name,
       characterId: charactersStore.state.characters[characterName].id,
-      artefactPresetId,
+      flowerId,
+      featherId,
+      sandsId,
+      gobletId,
+      circletId,
       weaponId,
     };
     const success = await characterBuildsStore.actions.create(data);
     if (success) {
-      notificationStore.actions.success(t('App.CharacterBuild.Create.successNotification'));
+      notificationStore.actions.success(t('App.CharacterBuild.Create.successNotification', [name]));
     } else {
       notificationStore.actions.error(t('App.CharacterBuild.Create.errorNotification'));
     }
@@ -215,14 +221,16 @@ watch(() => form.characterName, () => {
   form.weaponId = State.value.validWeaponList[0].value;
 });
 
+watch(() => form.artefactPreset, (newVal) => {
+  artefactsStore.state.current = newVal.flower;
+});
+
 onBeforeMount(() => {
   form.characterName = State.value.validCharacterList[0].value;
   artefactPresetsStore.state.current = State.value.validPresetList[0].obj;
   artefactsStore.state.current = artefactPresetsStore.state.current.flower;
-  form.artefactPresetId = artefactPresetsStore.state.current.id;
+  form.artefactPreset = artefactPresetsStore.state.current;
   form.weaponId = State.value.validWeaponList[0].value;
-
-  console.log(characterBuildsStore.state.builds);
 });
 </script>
 

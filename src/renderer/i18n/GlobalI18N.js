@@ -1,6 +1,6 @@
 import * as WeaklyBosses from '@renderer/core/datas/WeaklyBosses';
 import * as Weapons from '@renderer/core/datas/Weapons';
-import * as ArtefactSets from '@/renderer/core/datas/ArtefactSets';
+import * as ArtefactSets from '@renderer/core/datas/ArtefactSets';
 
 export default {
   WeaklyBosses: (lang) => Object.entries(WeaklyBosses).reduce((acc, [key, val]) => ({ ...acc, [key]: val.i18n[lang] }), {}),

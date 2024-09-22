@@ -1,11 +1,12 @@
 import type { Config } from '@jest/types';
 
 const config: Config.InitialOptions = {
+  preset: 'ts-jest',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'vue'],
   transform: {
     '^.+\\.vue$': '@vue/vue3-jest',
-    '^.+\\.js$': 'babel-jest',
-    '^.+\\.tsx?$': 'ts-jest',
+    '^.+\\.jsx?$': 'babel-jest',
+    '^.+\\.tsx?$': ['ts-jest', { tsConfig: 'tsconfig.eslint.json' }],
   },
   transformIgnorePatterns: ['<rootDir>/node_modules/'],
   moduleNameMapper: {

@@ -1,7 +1,7 @@
 <template>
   <button
     type="button"
-    :class="GenerateModifiers('Artefact', {
+    :class="GenerateModifiers('artefact-card', {
       current: props.selected,
       ...props.modifiers,
     })"
@@ -16,6 +16,8 @@
 import { image } from '@renderer/core/utils';
 import Artefact from '@renderer/core/entities/artefact';
 
+defineOptions({ name: 'Artefact' });
+
 const emit = defineEmits(['click']);
 
 const props = defineProps({
@@ -29,5 +31,5 @@ const props = defineProps({
 });
 </script>
 
-<style lang="scss" src="./Artefact.scss">
+<style lang="scss" src="./index.scss">
 </style>

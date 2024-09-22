@@ -52,21 +52,22 @@ export default class Character extends AbstractEntity<ICharacter> {
     if (!stats) {
       throw new Error('Cannot find stats object for this level!');
     }
-    const { hp, atk, def, bonusType, bonusValue } = stats.dataValues;
-    return {
-      HP: hp,
-      Atk: atk,
-      Def: def,
-      [bonusType]: bonusValue,
+    const baseStats = {
+      HP: stats.dataValues.hp,
+      Atk: stats.dataValues.atk,
+      Def: stats.dataValues.def,
+      [stats.dataValues.bonusType]: stats.dataValues.bonusValue,
     };
-  }
-
-  get passiveStats(): Record<string, number> {
     return (this.data?.passiveStats ?? [])
       .reduce((acc, passiveStat: IRemoteCharacterPassiveStat) => ({
         ...acc,
-        [passiveStat.dataValues.statType]: passiveStat.dataValues.statValue,
-      }), {});
+        [passiveStat.dataValues.statType]: (acc[passiveStat.dataValues.statType] ?? 0) + passiveStat.dataValues.statValue,
+      }), baseStats)
+    ;
+  }
+
+  getStat(statName: string): number {
+    return this.stats[statName] ?? 0;
   }
 
   get nameStr(): string {

@@ -131,12 +131,12 @@ export { default as SacrificialFragments } from '@renderer/core/datas/weapons/Sa
 export { default as SacrificialGreatsword } from '@renderer/core/datas/weapons/SacrificialGreatsword';
 export { default as SacrificialJade } from '@renderer/core/datas/weapons/SacrificialJade';
 export { default as SacrificialSword } from '@renderer/core/datas/weapons/SacrificialSword';
-export { default as SapwoodBlade } from '@/renderer/core/datas/weapons/SapwoodBlade';
+export { default as SapwoodBlade } from '@renderer/core/datas/weapons/SapwoodBlade';
 export { default as ScionOfTheBlazingSun } from '@renderer/core/datas/weapons/ScionOfTheBlazingSun';
 export { default as SeasonedHuntersBow } from '@renderer/core/datas/weapons/SeasonedHuntersBow';
 export { default as SerpentSpine } from '@renderer/core/datas/weapons/SerpentSpine';
 export { default as SharpshootersOath } from '@renderer/core/datas/weapons/SharpshootersOath';
-export { default as SilvershowerHeartstrings } from '@/renderer/core/datas/weapons/SilvershowerHeartstrings';
+export { default as SilvershowerHeartstrings } from '@renderer/core/datas/weapons/SilvershowerHeartstrings';
 export { default as SilverSword } from '@renderer/core/datas/weapons/SilverSword';
 export { default as SkyriderGreatsword } from '@renderer/core/datas/weapons/SkyriderGreatsword';
 export { default as SkyriderSword } from '@renderer/core/datas/weapons/SkyriderSword';

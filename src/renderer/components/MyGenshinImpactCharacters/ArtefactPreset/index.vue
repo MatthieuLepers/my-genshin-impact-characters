@@ -1,12 +1,12 @@
 <template>
-  <MaterialFormFieldSet class="ArtefactPreset">
+  <MaterialFormFieldSet class="artefact-preset">
     <template #legend>
       <slot name="legend">
         <MaterialFormInput
           v-model="props.preset.name"
           :placeholder="t('App.Artefact.PresetList.placeholder')"
         />
-        <div class="ArtefactPresetButtons" v-if="props.showDelete || props.showEdit || props.showSave">
+        <div class="artefact-preset__buttons" v-if="props.showDelete || props.showEdit || props.showSave">
           <MaterialButton
             v-if="props.showDelete"
             icon="icon-delete"
@@ -67,12 +67,14 @@ import MaterialFormInput from '@renderer/components/Materials/Form/Input.vue';
 import MaterialFormFieldLine from '@renderer/components/Materials/Form/FieldLine.vue';
 import MaterialFormFieldSet from '@renderer/components/Materials/Form/FieldSet.vue';
 import MaterialModal from '@renderer/components/Materials/Modal/index.vue';
-import Artefact from '@renderer/components/MyGenshinImpactCharacters/Artefact.vue';
+import Artefact from '@renderer/components/MyGenshinImpactCharacters/Artefact/index.vue';
 
 import { artefactsStore } from '@renderer/core/entities/artefact/store';
 import { artefactPresetsStore } from '@renderer/core/entities/artefactPreset/store';
 import { notificationStore } from '@renderer/components/Materials/Notification/Store';
 import { modalStore } from '@renderer/components/Materials/Modal/Store';
+
+defineOptions({ name: 'ArtefactPreset' });
 
 const { t } = useI18n();
 const emit = defineEmits(['delete', 'edit', 'save']);
@@ -106,5 +108,5 @@ const actions = {
 };
 </script>
 
-<style lang="scss" src="./ArtefactPreset.scss">
+<style lang="scss" src="./index.scss">
 </style>

@@ -1,8 +1,9 @@
 import AbstractEntity from '@renderer/core/entities/AbstractEntity';
-import { IArtefact, IArtefactStat, IRemoteArtefact } from '@renderer/core/entities/artefact/i';
+import type { IArtefact, IArtefactStat, IRemoteArtefact } from '@renderer/core/entities/artefact/i';
 import { artefactSetsStore } from '@renderer/core/entities/artefactSet/store';
 import type ArtefactSet from '@renderer/core/entities/artefactSet';
-import StatRangeEnum from '@renderer/core/entities/artefact/StatRangeEnum';
+import { getRealValue } from '@renderer/core/entities/artefact/StatUtils';
+import ArtefactMainStatData from '@renderer/core/datas/ArtefactMainStat.json';
 
 export default class Artefact extends AbstractEntity<IArtefact> {
   declare readonly id: number;
@@ -22,7 +23,8 @@ export default class Artefact extends AbstractEntity<IArtefact> {
   }
 
   get level(): number {
-    const { min, max } = StatRangeEnum.main[this.mainStat.name];
+    const min = ArtefactMainStatData[this.mainStat.name][0];
+    const max = ArtefactMainStatData[this.mainStat.name][20];
     return Math.max(0, Math.round((this.mainStat.value - min) / ((max - min) / 20)));
   }
 
@@ -37,8 +39,12 @@ export default class Artefact extends AbstractEntity<IArtefact> {
   get stats(): Record<string, number> {
     return this.statsJson.reduce((ac, stat) => ({
       ...ac,
-      [stat.name]: (ac[stat.name] ?? 0) + stat.value,
+      [stat.name]: (ac[stat.name] ?? 0) + (stat.main ? stat.value : getRealValue(stat)),
     }), {});
+  }
+
+  getStat(statName: string): number {
+    return this.stats[statName] ?? 0;
   }
 
   static async findAll(): Promise<Array<Artefact>> {

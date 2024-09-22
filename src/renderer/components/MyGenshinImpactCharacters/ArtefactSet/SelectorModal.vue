@@ -24,7 +24,7 @@ import { reactive, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 import MaterialModal from '@renderer/components/Materials/Modal/index.vue';
-import ArtefactSetOption from '@renderer/components/MyGenshinImpactCharacters/ArtefactTransmuter/ArtefactSetOption.vue';
+import ArtefactSetOption from '@renderer/components/MyGenshinImpactCharacters/ArtefactSet/Option.vue';
 
 import { artefactSetsStore } from '@renderer/core/entities/artefactSet/store';
 
@@ -56,5 +56,5 @@ const actions = {
 };
 </script>
 
-<style lang="scss" src="./ArtefactSetSelectorModal.scss">
+<style lang="scss" src="./SelectorModal.scss">
 </style>

@@ -56,7 +56,7 @@
         </button>
       </div>
 
-      <ArtefactCard
+      <ArtefactDetails
         v-if="artefactsStore.state.current"
         @edit="actions.handleEdit"
       />
@@ -74,7 +74,9 @@
       class="ArtefactListTransmuter"
       :formData="state.edit ? artefactsStore.state.current : {}"
       :allowClose="artefactsStore.artefactList.value.length > 0"
+      :showImport="!artefactsStore.artefactList.value.length"
       @close="actions.handleClose"
+      @import="actions.handleClickImport"
       @submit="actions.handleSubmit"
     />
   </div>
@@ -84,10 +86,10 @@
 import { reactive, onBeforeMount, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 
+import Artefact from '@renderer/components/MyGenshinImpactCharacters/Artefact/index.vue';
+import ArtefactFilters from '@renderer/components/MyGenshinImpactCharacters/Artefact/Filters.vue';
+import ArtefactDetails from '@renderer/components/MyGenshinImpactCharacters/Artefact/Details.vue';
 import ArtefactTransmuter from '@renderer/components/MyGenshinImpactCharacters/ArtefactTransmuter/index.vue';
-import Artefact from '@renderer/components/MyGenshinImpactCharacters/Artefact.vue';
-import ArtefactFilters from '@renderer/components/MyGenshinImpactCharacters/ArtefactFilters.vue';
-import ArtefactCard from '@renderer/components/MyGenshinImpactCharacters/ArtefactCard.vue';
 
 import { artefactsStore } from '@renderer/core/entities/artefact/store';
 import { notificationStore } from '@renderer/components/Materials/Notification/Store';
@@ -121,6 +123,7 @@ const actions = {
     const success = await artefactsStore.actions.requestImport(dialogOptions);
     if (success) {
       notificationStore.actions.success(t('App.Artefact.List.importSuccess'));
+      state.showArtefactTransmuter = false;
     } else {
       notificationStore.actions.error(t('App.Artefact.List.importFailed'));
     }

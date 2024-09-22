@@ -17,6 +17,8 @@
 
 <script setup>
 import { characterBuildsStore } from '@renderer/core/entities/characterBuild/store';
+
+console.log(characterBuildsStore.state.builds);
 </script>
 
 <style lang="scss" src="./ListTab.scss">

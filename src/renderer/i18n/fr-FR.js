@@ -84,7 +84,7 @@ export default {
         importSuccess: 'L\'importation à réussie !',
         importFailed: 'L\'importation à échouée',
         filterBtnTitle: 'Filtrer la liste',
-        importBtnTitle: 'Importer depuis un fichier',
+        importBtnTitle: 'Importer des artéfacts',
         exportBtnTitle: 'Exporter tous les artéfacts',
         modal: {
           title: 'Confirmation de suppression',
@@ -257,6 +257,12 @@ export default {
         event: 'Évènement',
         shop: 'Boutique',
         fishing: 'Pêche',
+      },
+      DataTable: {
+        name: 'Nom',
+        owned: 'Possedée ?',
+        level: 'Niveau',
+        rank: 'Rang',
       },
     },
     CharacterBuild: {

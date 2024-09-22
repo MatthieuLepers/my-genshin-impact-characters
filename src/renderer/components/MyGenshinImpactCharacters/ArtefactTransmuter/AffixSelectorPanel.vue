@@ -68,8 +68,8 @@ import MaterialFormFieldLine from '@renderer/components/Materials/Form/FieldLine
 import MaterialButton from '@renderer/components/Materials/Button/index.vue';
 import PanelMenu from '@renderer/components/MyGenshinImpactCharacters/PanelMenu.vue';
 
-import StatRangeEnum from '@renderer/core/entities/artefact/StatRangeEnum';
-import { getMinMax } from '@/renderer/core/datas/SubStatUtils';
+import { getMin } from '@renderer/core/entities/artefact/StatUtils';
+import ArtefactMainStatData from '@renderer/core/datas/ArtefactMainStat.json';
 
 const { t } = useI18n();
 
@@ -128,13 +128,13 @@ const actions = {
     modelValue.value = [
       {
         name: form.mainAffix,
-        value: StatRangeEnum.main[form.mainAffix].max,
+        value: ArtefactMainStatData[form.mainAffix][20],
         main: true,
       },
-      ...form.minorAffixes.map((affix) => {
-        const [min] = getMinMax(StatRangeEnum.sub[affix].maxRoll);
-        return { name: affix, value: min };
-      }),
+      ...form.minorAffixes.map((affix) => ({
+        name: affix,
+        value: getMin(affix),
+      })),
     ];
     emit('close');
   },
