@@ -1,4 +1,3 @@
-import Artefact from '@renderer/core/entities/artefact';
 import artefactsStore from '@tests/renderer/mocks/artefactsStore.mock';
 
 describe('Artefact entity', () => {
