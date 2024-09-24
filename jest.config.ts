@@ -6,12 +6,13 @@ const config: Config.InitialOptions = {
   transform: {
     '^.+\\.vue$': '@vue/vue3-jest',
     '^.+\\.jsx?$': 'babel-jest',
-    '^.+\\.tsx?$': ['ts-jest', { tsConfig: 'tsconfig.eslint.json' }],
+    '^.+\\.tsx?$': ['ts-jest', { tsConfig: 'tsconfig.jest.json' }],
   },
   transformIgnorePatterns: ['<rootDir>/node_modules/'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
     '^@renderer/(.*)$': '<rootDir>/src/renderer/$1',
+    '^@tests/(.*)$': '<rootDir>/tests/$1',
   },
   testMatch: [
     '<rootDir>/tests/**/*.spec.ts',
