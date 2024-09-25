@@ -3,7 +3,7 @@ import { IArtefactPreset, IRemoteArtefactPreset } from '@renderer/core/entities/
 import { artefactsStore } from '@renderer/core/entities/artefact/store';
 import type Artefact from '@renderer/core/entities/artefact';
 
-export default class ArtefactPreset extends AbstractEntity<IArtefactPreset> {
+export default class ArtefactPreset<T extends IArtefactPreset = IArtefactPreset> extends AbstractEntity<T> {
   declare readonly id: number;
 
   declare name: string;
@@ -18,7 +18,7 @@ export default class ArtefactPreset extends AbstractEntity<IArtefactPreset> {
 
   declare circletId: number;
 
-  constructor(data: IArtefactPreset) {
+  constructor(data: T) {
     super(data, []);
   }
 

@@ -6,6 +6,7 @@ export interface ICharacterAptitude {
   phaseIncreaseBonus: number;
   constellationIncrease: number;
   constellationIncreaseBonus: number;
+  materialId: string;
 }
 
 export interface IRemoteCharacterAptitude {

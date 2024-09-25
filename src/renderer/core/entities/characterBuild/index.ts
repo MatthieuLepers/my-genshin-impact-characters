@@ -4,10 +4,9 @@ import { weaponsStore } from '@renderer/core/entities/weapon/store';
 import ArtefactPreset from '@renderer/core/entities/artefactPreset';
 import type Character from '@renderer/core/entities/character';
 import type Weapon from '@renderer/core/entities/weapon';
+import { round } from '@renderer/core/entities/artefact/StatUtils';
 
-export default class CharacterBuild extends ArtefactPreset {
-  declare data: ICharacterBuild;
-
+export default class CharacterBuild extends ArtefactPreset<ICharacterBuild> {
   declare characterId: number;
 
   declare weaponId: number;
@@ -45,7 +44,8 @@ export default class CharacterBuild extends ArtefactPreset {
     const baseDef = (this.character?.getStat('Def') ?? 0);
 
     const statList = [
-      'EM', 'Heal%',
+      'CritRate%', 'CritDmg%',
+      'ER%', 'EM', 'Heal%',
       'PyroDmg%', 'PyroRes%',
       'HydroDmg%', 'HydroRes%',
       'CryoDmg%', 'CryoRes%',
@@ -58,15 +58,12 @@ export default class CharacterBuild extends ArtefactPreset {
     ];
 
     return {
-      HP: baseHp * (1 + this.getStat('HP%') / 100) + (super.stats.HP ?? 0),
-      Atk: baseAtk * (1 + this.getStat('Atk%') / 100) + (super.stats.Atk ?? 0),
-      Def: baseDef * (1 + this.getStat('Def%') / 100) + (super.stats.Def ?? 0),
-      'CritRate%': 5 + this.getStat('CritRate%'),
-      'CritDmg%': 50 + this.getStat('CritDmg%'),
-      'ER%': 100 + this.getStat('ER%'),
+      HP: round('HP', baseHp * (1 + this.getStat('HP%') / 100) + (super.stats.HP ?? 0)),
+      Atk: round('HP', baseAtk * (1 + this.getStat('Atk%') / 100) + (super.stats.Atk ?? 0)),
+      Def: round('HP', baseDef * (1 + this.getStat('Def%') / 100) + (super.stats.Def ?? 0)),
       ...statList.reduce((acc, statName) => ({
         ...acc,
-        [statName]: this.getStat(statName),
+        [statName]: round(statName, this.getStat(statName)),
       }), {}),
     };
   }
@@ -80,7 +77,7 @@ export default class CharacterBuild extends ArtefactPreset {
     return builds.map((build: IRemoteCharacterBuild) => new CharacterBuild(build.dataValues));
   }
 
-  static async create(data:ICharacterBuild): Promise<CharacterBuild> {
+  static async create(data: ICharacterBuild): Promise<CharacterBuild> {
     const build = await api.CharacterBuild.create(JSON.stringify(data));
     return new CharacterBuild(build.dataValues);
   }

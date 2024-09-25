@@ -56,8 +56,11 @@ export default class Character extends AbstractEntity<ICharacter> {
       HP: stats.dataValues.hp,
       Atk: stats.dataValues.atk,
       Def: stats.dataValues.def,
-      [stats.dataValues.bonusType]: stats.dataValues.bonusValue,
+      'CritDmg%': 50,
+      'CritRate%': 5,
+      'ER%': 100,
     };
+    baseStats[stats.dataValues.bonusType] = (baseStats[stats.dataValues.bonusType] ?? 0) + stats.dataValues.bonusValue;
     return (this.data?.passiveStats ?? [])
       .reduce((acc, passiveStat: IRemoteCharacterPassiveStat) => ({
         ...acc,
@@ -71,7 +74,7 @@ export default class Character extends AbstractEntity<ICharacter> {
   }
 
   get nameStr(): string {
-    return this.name.indexOf('_') >= 0 ? this.name.replace(/^([^_]+)_(.+)$/, '$1 ($2)') : this.name;
+    return this.name.indexOf('-') >= 0 ? this.name.replace(/^([^_]+)_(.+)$/, '$1 ($2)') : this.name;
   }
 
   get materials(): Array<string> {
