@@ -23,7 +23,8 @@ const useSettingsStore = () => {
         state.settings[key].value = value;
         return state.settings[key].save();
       }
-      return null;
+      state.settings[key] = new Setting({ key, value });
+      return state.settings[key].save();
     },
     getBoolean(key: string): boolean {
       return state.settings?.[key]?.value === 'true' ?? false;
@@ -33,7 +34,8 @@ const useSettingsStore = () => {
         state.settings[key].value = value.toString();
         return state.settings[key].save();
       }
-      return null;
+      state.settings[key] = new Setting({ key, value: value.toString() });
+      return state.settings[key].save();
     },
     async toggleBoolean(key: string): Promise<Setting | null> {
       return this.setBoolean(key, !this.getBoolean(key));

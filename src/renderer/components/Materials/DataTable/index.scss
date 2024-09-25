@@ -40,6 +40,11 @@
     width: 100%;
     height: 100%;
     position: relative;
+
+    &--paginated {
+      height: calc(100% - 116px);
+      overflow: auto;
+    }
   }
 
   &__draggable {

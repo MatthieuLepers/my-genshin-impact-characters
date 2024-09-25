@@ -58,7 +58,7 @@ const mockCharacters = {
         dataValues: {
           id: 1,
           level: 90,
-          hp: 10899,
+          hp: 12907,
           atk: 337.24,
           def: 789.31,
           bonusType: 'ER%',

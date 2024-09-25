@@ -39,7 +39,7 @@ const state = reactive({
 const State = computed(() => ({
   setList: Object
     .values(artefactSetsStore.state.sets)
-    .sort((a, b) => b.rarity - a.rarity || new Date(b.releasedAt).getTime() - new Date(a.releasedAt).getTime() || t(`Data.ArtefactSets.${a.id}.name`).localeCompare(t(`Data.ArtefactSets.${b.id}.name`)))
+    .sort((a, b) => b.rarity - a.rarity || b.releasedAt.getTime() - a.releasedAt.getTime() || t(`Data.ArtefactSets.${a.id}.name`).localeCompare(t(`Data.ArtefactSets.${b.id}.name`)))
     .map((set) => ({
       value: set.id,
       label: t(`Data.ArtefactSets.${set.id}.name`),

@@ -10,7 +10,7 @@ const ELEMENTS_ORDER = ['Pyro', 'Hydro', 'Anemo', 'Electro', 'Dendro', 'Cryo', '
 
 const SORTING_FUNCTIONS = {
   // @ts-ignore
-  releasedAt: (releasedAt: string) => (a: Character, b: Character) => (releasedAt === 'asc' ? new Date(a.data.releasedAt) - new Date(b.data.releasedAt) : new Date(b.data.releasedAt) - new Date(a.data.releasedAt) || a.name.localeCompare(b.name)),
+  releasedAt: (releasedAt: string) => (a: Character, b: Character) => (releasedAt === 'asc' ? a.data.releasedAt.getTime() - b.data.releasedAt.getTime() : b.data.releasedAt.getTime() - a.data.releasedAt.getTime() || a.name.localeCompare(b.name)),
   element: () => (a: Character, b: Character) => ELEMENTS_ORDER.indexOf(a.element) - ELEMENTS_ORDER.indexOf(b.element),
 };
 

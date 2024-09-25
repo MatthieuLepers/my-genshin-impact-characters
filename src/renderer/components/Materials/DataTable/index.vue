@@ -27,7 +27,7 @@
         </DataTableColumn>
       </DataTableRow>
     </div>
-    <div class="m-datatable__body">
+    <div :class="GenerateModifiers('m-datatable__body', { paginated: props.paginate })">
       <Draggable
         :list="[...State.result]"
         :move="State.isGrabbable ? props.allowMoveFn : () => false"

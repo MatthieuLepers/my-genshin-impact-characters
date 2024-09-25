@@ -1,19 +1,21 @@
 <template>
   <main class="View WeaponListView">
     <PanelMenu
-      v-model="state.currentMenu"
+      v-model="weaponsStore.state.filters.type"
       :data="State.panelMenuData"
     >
       <template #button="{ item }">
-        {{ item.label }} ({{ actions.countOwned(item.id) }}/{{ State.weaponList[item.id].length }})
+        {{ item.label }} ({{ actions.countOwned(item.id) }}/{{ State.weaponList[item.id]?.length ?? 0 }})
       </template>
-      <template #[state.currentMenu]>
+      <template #[weaponsStore.state.filters.type]>
         <div class="WeaponCategory">
+          <WeaponFilters />
+
           <MaterialDataTable
             class="WeaponCategoryDataTable"
-            :data="State.weaponList[state.currentMenu]"
+            :data="weaponsStore.weaponList.value"
             :columns="State.columns"
-            :paginate="false"
+            :perPage="8"
             :showActionRow="false"
             :allowMoveFn="() => false"
           >
@@ -27,7 +29,13 @@
                 {{ t(`Data.Weapons.${obj.name}.name`) }}<br />
                 {{ [...Array(obj.rarity).keys()].reduce((acc) => `${acc}★`, '') }}
                 <ul class="WeaponCategoryTags">
-                  <li class="WeaponCategoryTagsItem" v-for="(tag, i) in obj.tags" :key="i">
+                  <li
+                    v-for="(tag, i) in obj.tags"
+                    :key="i"
+                    :class="GenerateModifiers('WeaponCategoryTagsItem', {
+                      selected: weaponsStore.state.filters.search.length > 0 && ((te(`App.Weapons.tags.${tag}`) ? t(`App.Weapons.tags.${tag}`) : tag).toLowerCase().includes(weaponsStore.state.filters.search.toLowerCase()) || tag.toLowerCase().includes(weaponsStore.state.filters.search.toLowerCase())),
+                    })"
+                  >
                     {{ te(`App.Weapons.tags.${tag}`) ? t(`App.Weapons.tags.${tag}`) : tag }}
                   </li>
                 </ul>
@@ -72,13 +80,15 @@
 </template>
 
 <script setup>
-import { reactive, computed } from 'vue';
+import { computed } from 'vue';
+import { onBeforeRouteLeave } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 
 import MaterialDataTable from '@renderer/components/Materials/DataTable/index.vue';
 import MaterialFormToggle from '@renderer/components/Materials/Form/Toggle.vue';
 import MaterialFormInput from '@renderer/components/Materials/Form/Input.vue';
 import PanelMenu from '@renderer/components/MyGenshinImpactCharacters/PanelMenu.vue';
+import WeaponFilters from '@renderer/components/MyGenshinImpactCharacters/Weapon/Filters.vue';
 
 import { image } from '@renderer/core/utils';
 import { weaponsStore } from '@renderer/core/entities/weapon/store';
@@ -87,10 +97,6 @@ defineOptions({ name: 'WeaponListView' });
 
 const { t, te, tm } = useI18n();
 
-const state = reactive({
-  currentMenu: 'bow',
-});
-
 const State = computed(() => ({
   panelMenuData: Object
     .keys(tm('App.Weapons.type'))
@@ -98,13 +104,7 @@ const State = computed(() => ({
       id: weaponType,
       label: t(`App.Weapons.type.${weaponType}`, 2),
     })),
-  weaponList: weaponsStore.weaponList.value.reduce((acc, val) => ({
-    ...acc,
-    [val.type]: [
-      ...(acc?.[val.type] ?? []),
-      val,
-    ],
-  }), {}),
+  weaponList: weaponsStore.groupedByTypeWeaponList.value,
   columns: {
     name: {
       label: t('App.Weapons.DataTable.name'),
@@ -127,7 +127,7 @@ const State = computed(() => ({
 
 const actions = {
   countOwned(type) {
-    return State.value.weaponList[type]
+    return (State.value.weaponList[type] ?? [])
       .filter(({ owned }) => owned)
       .length
     ;
@@ -139,6 +139,10 @@ const actions = {
     obj.save();
   },
 };
+
+onBeforeRouteLeave(() => {
+  weaponsStore.state.filters.search = '';
+});
 </script>
 
 <style lang="scss" src="./index.scss">

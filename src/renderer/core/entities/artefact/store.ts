@@ -40,7 +40,7 @@ const useArtefactsStore = () => {
 
   const artefactList = computed(() => Object
     .values(state.artefacts)
-    .sort((a, b) => new Date(b.artefactSet.releasedAt).getTime() - new Date(a.artefactSet.releasedAt).getTime()
+    .sort((a, b) => b.artefactSet.releasedAt.getTime() - a.artefactSet.releasedAt.getTime()
       || i18n.global.t(`Data.ArtefactSets.${a.setId}.name`).localeCompare(i18n.global.t(`Data.ArtefactSets.${b.setId}.name`))
       || TYPE_ORDER.indexOf(a.type) - TYPE_ORDER.indexOf(b.type))
     .filter(filters))

@@ -48,7 +48,7 @@ describe('Character entity', () => {
 
   test('stats getter', () => {
     const expectedRaiden = {
-      HP: 10899,
+      HP: 12907,
       Atk: 337.24,
       Def: 789.31,
       'CritRate%': 5,

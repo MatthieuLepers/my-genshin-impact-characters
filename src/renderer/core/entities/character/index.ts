@@ -136,7 +136,7 @@ export default class Character extends AbstractEntity<ICharacter> {
   }
 
   isReleased(): boolean {
-    return !!this.releasedAt && Date.now() >= new Date(this.releasedAt).getTime();
+    return !!this.releasedAt && Date.now() >= this.releasedAt.getTime();
   }
 
   async save(): Promise<Character> {

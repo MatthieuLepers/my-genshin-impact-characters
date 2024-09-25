@@ -9,7 +9,7 @@ const useAppStore = () => {
 
   const newlyReleasedCharacters = computed(() => Object
     .values(charactersStore.state.characters)
-    .filter((character) => character.isReleased() && new Date(character.releasedAt!).getTime() + 864000000 >= Date.now() && !character.owned))
+    .filter((character) => character.isReleased() && character.releasedAt!.getTime() + 864000000 >= Date.now() && !character.owned))
   ;
 
   return {

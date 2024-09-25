@@ -171,19 +171,14 @@ const State = computed(() => {
     .values(artefactPresetsStore.state.sets)
     .map((preset) => ({ value: preset, label: preset.name, obj: preset }))
   ;
-  const validWeaponList = Object
-    .values(weaponsStore.state.weapons)
-    .filter((weapon) => ((weapon.rarity <= 2 && weapon.level === 70) || (weapon.rarity >= 3 && [80, 90].includes(weapon.level)))
-      && weapon.type === charactersStore.state.characters[form.characterName ?? 'Amber'].weaponType)
-    .sort((a, b) => b.rarity - a.rarity
-      || new Date(b.releasedAt).getTime() - new Date(a.releasedAt).getTime()
-      || t(`Data.Weapons.${b.name}.name`).localeCompare(t(`Data.Weapons.${a.name}.name`)))
+  const validWeaponList = weaponsStore.weaponList.value
+    .filter((weapon) => ((weapon.rarity <= 2 && weapon.level === 70) || (weapon.rarity >= 3 && [80, 90].includes(weapon.level))))
     .map((weapon) => ({ value: weapon.id, label: t(`Data.Weapons.${weapon.name}.name`), obj: weapon }))
   ;
   const validCharacterList = Object
     .values(charactersStore.state.characters)
     .filter((character) => character.owned && character.level === 90)
-    .sort((a, b) => new Date(b.releasedAt).getTime() - new Date(a.releasedAt).getTime())
+    .sort((a, b) => b.releasedAt.getTime() - a.releasedAt.getTime())
     .map((character) => ({ value: character.name, label: character.name, obj: character }))
   ;
 
@@ -218,6 +213,7 @@ const actions = {
 };
 
 watch(() => form.characterName, () => {
+  weaponsStore.state.filters.type = charactersStore.state.characters[form.characterName].weaponType;
   form.weaponId = State.value.validWeaponList[0].value;
 });
 
@@ -229,6 +225,7 @@ onBeforeMount(() => {
   form.characterName = State.value.validCharacterList[0].value;
   artefactPresetsStore.state.current = State.value.validPresetList[0].obj;
   artefactsStore.state.current = artefactPresetsStore.state.current.flower;
+  weaponsStore.state.filters.type = charactersStore.state.characters[form.characterName ?? 'Amber'].weaponType;
   form.artefactPreset = artefactPresetsStore.state.current;
   form.weaponId = State.value.validWeaponList[0].value;
 });
