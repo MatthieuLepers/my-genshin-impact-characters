@@ -25,14 +25,14 @@
       <Modal
         name="newlyReleasedCharactersModal"
         :modifiers="{ m: true }"
-        :title="t('App.Main.newlyReleasedCharactersModal.title', appStore.newlyReleasedCharacters.value.length)"
+        :title="t('App.Main.newlyReleasedCharactersModal.title', charactersStore.newlyReleasedCharacters.value.length)"
         :acceptLabel="t('App.Main.newlyReleasedCharactersModal.okLabel')"
         :refuseLabel="t('App.Main.newlyReleasedCharactersModal.cancelLabel')"
         @accept="router.push({ name: 'CharacterList' })"
       >
         <ul class="CharacterList">
           <li
-            v-for="(character, i) in appStore.newlyReleasedCharacters.value"
+            v-for="(character, i) in charactersStore.newlyReleasedCharacters.value"
             :key="i"
             class="CharacterListItem"
           >
@@ -64,7 +64,6 @@ import { modalStore } from '@renderer/components/Materials/Modal/Store';
 import { charactersStore } from '@renderer/core/entities/character/store';
 import { materialsStore } from '@renderer/core/entities/material/store';
 import { filteredCharacterStore } from '@renderer/core/stores/FilteredCharacterStore';
-import { appStore } from '@renderer/core/stores/AppStore';
 
 defineOptions({ name: 'MainView' });
 
@@ -132,9 +131,9 @@ onBeforeMount(() => {
 });
 
 onMounted(() => {
-  if (appStore.newlyReleasedCharacters.value.length && !appStore.state.newlyModalOpened) {
+  if (charactersStore.newlyReleasedCharacters.value.length && !charactersStore.state.newlyModalOpened) {
     modalStore.actions.show('newlyReleasedCharactersModal');
-    appStore.state.newlyModalOpened = true;
+    charactersStore.state.newlyModalOpened = true;
   }
 });
 </script>

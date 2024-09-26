@@ -63,7 +63,9 @@ export default class ArtefactPreset<T extends IArtefactPreset = IArtefactPreset>
   }
 
   get artefacts(): Array<Artefact> {
-    return [this.flower, this.feather, this.sands, this.goblet, this.circlet];
+    return [this.flower, this.feather, this.sands, this.goblet, this.circlet]
+      .filter((artefact) => !!artefact)
+    ;
   }
 
   get stats(): Record<string, number> {

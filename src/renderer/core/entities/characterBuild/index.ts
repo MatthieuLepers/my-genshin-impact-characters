@@ -22,8 +22,8 @@ export default class CharacterBuild extends ArtefactPreset<ICharacterBuild> {
     this.characterId = character.id;
   }
 
-  get weapon(): Weapon {
-    return weaponsStore.state.weapons[this.weaponId];
+  get weapon(): Weapon | null {
+    return weaponsStore.state.weapons[this.weaponId] ?? null;
   }
 
   set weapon(weapon: Weapon) {
@@ -40,7 +40,7 @@ export default class CharacterBuild extends ArtefactPreset<ICharacterBuild> {
 
   get stats(): Record<string, number> {
     const baseHp = (this.character?.getStat('HP') ?? 0);
-    const baseAtk = (this.character?.getStat('Atk') ?? 0) + this.weapon.getStat('Atk');
+    const baseAtk = (this.character?.getStat('Atk') ?? 0) + (this.weapon?.getStat('Atk') ?? 0);
     const baseDef = (this.character?.getStat('Def') ?? 0);
 
     const statList = [
@@ -69,7 +69,7 @@ export default class CharacterBuild extends ArtefactPreset<ICharacterBuild> {
   }
 
   getStat(statName: string): number {
-    return (this.character?.getStat(statName) ?? 0) + this.weapon.getStat(statName) + (super.stats[statName] ?? 0);
+    return (this.character?.getStat(statName) ?? 0) + (this.weapon?.getStat(statName) ?? 0) + (super.stats[statName] ?? 0);
   }
 
   static async findAll(): Promise<Array<CharacterBuild>> {

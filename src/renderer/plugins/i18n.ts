@@ -1,5 +1,5 @@
 import { createI18n } from 'vue-i18n';
-import i18n from '@renderer/i18n';
+import i18n from '@/renderer/i18n';
 
 const VueI18n = createI18n({
   locale: 'fr-FR',
