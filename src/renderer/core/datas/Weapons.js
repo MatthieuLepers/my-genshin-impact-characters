@@ -62,6 +62,7 @@ export { default as FootprintOfTheRainbow } from '@renderer/core/datas/weapons/F
 export { default as ForestRegalia } from '@renderer/core/datas/weapons/ForestRegalia';
 export { default as FreedomSword } from '@renderer/core/datas/weapons/FreedomSword';
 export { default as Frostbearer } from '@renderer/core/datas/weapons/Frostbearer';
+export { default as FruitfulHook } from '@renderer/core/datas/weapons/FruitfulHook';
 export { default as FruitOfFulfillment } from '@renderer/core/datas/weapons/FruitOfFulfillment';
 export { default as HakushinRing } from '@renderer/core/datas/weapons/HakushinRing';
 export { default as Halberd } from '@renderer/core/datas/weapons/Halberd';
@@ -97,10 +98,12 @@ export { default as MissiveWindspear } from '@renderer/core/datas/weapons/Missiv
 export { default as MistsplitterReforged } from '@renderer/core/datas/weapons/MistsplitterReforged';
 export { default as MitternachtsWaltz } from '@renderer/core/datas/weapons/MitternachtsWaltz';
 export { default as Moonpiercer } from '@renderer/core/datas/weapons/Moonpiercer';
+export { default as MountainBracingBolt } from '@renderer/core/datas/weapons/MountainBracingBolt';
 export { default as MouunsMoon } from '@renderer/core/datas/weapons/MouunsMoon';
 export { default as OathswornEye } from '@renderer/core/datas/weapons/OathswornEye';
 export { default as OldMercsPal } from '@renderer/core/datas/weapons/OldMercsPal';
 export { default as OtherworldlyStory } from '@renderer/core/datas/weapons/OtherworldlyStory';
+export { default as PeakPatrolSong } from '@renderer/core/datas/weapons/PeakPatrolSong';
 export { default as PocketGrimoire } from '@renderer/core/datas/weapons/PocketGrimoire';
 export { default as PolarStar } from '@renderer/core/datas/weapons/PolarStar';
 export { default as PortablePowerSaw } from '@renderer/core/datas/weapons/PortablePowerSaw';
@@ -153,6 +156,7 @@ export { default as SongOfStillness } from '@renderer/core/datas/weapons/SongOfS
 export { default as SplendorOfTranquilWaters } from '@renderer/core/datas/weapons/SplendorOfTranquilWaters';
 export { default as StaffOfHoma } from '@renderer/core/datas/weapons/StaffOfHoma';
 export { default as StaffOfTheScarletSands } from '@renderer/core/datas/weapons/StaffOfTheScarletSands';
+export { default as SturdyBone } from '@renderer/core/datas/weapons/SturdyBone';
 export { default as SummitShaper } from '@renderer/core/datas/weapons/SummitShaper';
 export { default as SurfsUp } from '@renderer/core/datas/weapons/SurfsUp';
 export { default as SwordOfDescension } from '@renderer/core/datas/weapons/SwordOfDescension';

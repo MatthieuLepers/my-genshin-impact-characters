@@ -24,6 +24,7 @@
     display: flex;
     padding: 0;
     margin: 0;
+    gap: rem(8px);
   }
 
   &Element {
@@ -35,13 +36,15 @@
     justify-content: center;
     align-items: center;
 
-    &:not(:last-of-type) {
-      margin-right: rem(8px);
-    }
-
     img {
       width: 24px;
       filter: grayscale(1);
+    }
+
+    &:not(&--Active) {
+      [class^="icon"] {
+        color: color(grey100);
+      }
     }
 
     &--Active {
@@ -50,34 +53,6 @@
 
       img {
         filter: none;
-      }
-
-      .icon-anemo {
-        color: color(anemo);
-      }
-
-      .icon-geo {
-        color: color(geo);
-      }
-
-      .icon-electro {
-        color: color(electro);
-      }
-
-      .icon-hydro {
-        color: color(hydro);
-      }
-
-      .icon-pyro {
-        color: color(pyro);
-      }
-
-      .icon-cryo {
-        color: color(cryo);
-      }
-
-      .icon-dendro {
-        color: color(dendro);
       }
     }
   }

@@ -32,4 +32,28 @@
       left: 0;
     }
   }
+
+  &__tooltip {
+    display: none;
+
+    &__sub-stat {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      .artefact-sub-stat__value {
+        white-space: nowrap;
+        margin-right: rem(16px);
+      }
+    }
+  }
+
+  &__card {
+    width: 100%;
+    position: relative;
+
+    &:hover .artefact-button__tooltip {
+      display: block;
+    }
+  }
 }

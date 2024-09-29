@@ -1,81 +1,86 @@
 <template>
   <div class="CreateTab">
-    <img
-      :src="image(`img/characters/${charactersStore.state.characters[form.characterName].imageName}_gacha_card.png`)"
-      alt=""
-    />
+    <div class="CreateTabImg">
+      <img
+        :src="image(`img/characters/${charactersStore.state.characters[form.characterName].imageName}/gacha_card.webp`)"
+        alt=""
+      />
+      <CharacterBuildStats
+        class="BuildStats"
+        :build="State.build"
+      />
+    </div>
     <MaterialForm
       class="Build"
       @submit.prevent="actions.handleSubmit"
     >
-      <MaterialFormSelect
-        v-model="v$.characterName.$model"
-        class="BuildCharacterSelect"
-        variant="box"
-        :label="t('App.CharacterBuild.Create.characterSelect')"
-        :options="State.validCharacterList"
-        :valid="!v$.characterName.$invalid"
-      />
-
-      <div class="BuildForm">
-        <MaterialFormFieldSet class="BuildWeaponFieldSet">
-          <template #legend>
-            <MaterialFormSelect
-              v-model="form.weaponId"
-              class="BuildWeaponSelect"
-              variant="box"
-              :label="t('App.CharacterBuild.Create.weaponSelect')"
-              :options="State.validWeaponList"
-              :searchable="true"
-            >
-              <template #option="{ option }">
-                <div class="Option Option--Weapon">
-                  <img :src="image(`img/weapons/${option.obj.name}.webp`)" alt="" />
-                  <div>
-                    {{ option.label }}<br />
-                    {{ [...Array(option.obj.rarity).keys()].reduce((acc) => `${acc}★`, '') }}
-                  </div>
-                </div>
-              </template>
-            </MaterialFormSelect>
-          </template>
-          <div class="BuildWeapon" v-if="form.weaponId">
-            <div>
-              <img class="BuildWeaponImg" :src="image(`img/weapons/${weaponsStore.state.weapons[form.weaponId].name}.webp`)" alt="" />
-            </div>
-            <div class="BuildWeaponInfos">
-              <span>{{ t(`Data.Weapons.${weaponsStore.state.weapons[form.weaponId].name}.name`) }}</span>
-              <span>{{ t('App.Weapons.level') }}: {{ weaponsStore.state.weapons[form.weaponId].level }}</span>
-              <span class="icon-atk">{{ t('App.Artefact.stats.Atk.short') }}: {{ Math.round(weaponsStore.state.weapons[form.weaponId].currentAtk) }}</span>
-              <span :class="`icon-${formatAffix(weaponsStore.state.weapons[form.weaponId].statName)}`">{{ t(`App.Artefact.stats.${weaponsStore.state.weapons[form.weaponId].statName}.short`) }}: {{ weaponsStore.state.weapons[form.weaponId].currentSubStat.toFixed(1) }}{{ weaponsStore.state.weapons[form.weaponId].statName.endsWith('%') ? '%' : '' }}</span>
-            </div>
-          </div>
-        </MaterialFormFieldSet>
-
-        <div class="BuildArtefacts">
-          <ArtefactButton
-            v-for="type in ['flower', 'feather', 'sands', 'goblet', 'circlet']"
-            :key="type"
-            :type="type"
-            :artefact="form[type]"
-            @click="actions.handleClickArtefactButton(type)"
+      <MaterialFormFieldLine :size="2">
+        <template #field0>
+          <MaterialFormSelect
+            v-model="v$.characterName.$model"
+            variant="box"
+            :label="t('App.CharacterBuild.Create.characterSelect')"
+            :options="State.validCharacterList"
+            :valid="!v$.characterName.$invalid"
           />
-        </div>
+        </template>
+        <template #field1>
+          <MaterialFormInput
+            v-model="v$.name.$model"
+            variant="box"
+            :label="t('App.CharacterBuild.Create.name')"
+            :valid="!v$.name.$invalid"
+            :required="true"
+          />
+        </template>
+      </MaterialFormFieldLine>
 
-        <MaterialFormInput
-          v-model="v$.name.$model"
-          class="BuildName"
-          variant="box"
-          :label="t('App.CharacterBuild.Create.name')"
-          :valid="!v$.name.$invalid"
-          :required="true"
+      <MaterialFormFieldSet class="BuildWeaponFieldSet">
+        <template #legend>
+          <MaterialFormSelect
+            v-model="form.weapon"
+            class="BuildWeaponSelect"
+            variant="box"
+            :label="t('App.CharacterBuild.Create.weaponSelect')"
+            :options="State.validWeaponList"
+            :searchable="true"
+          >
+            <template #option="{ option }">
+              <div class="Option Option--Weapon">
+                <img :src="image(`img/weapons/${option.value.name}.webp`)" alt="" />
+                <div>
+                  {{ option.label }}<br />
+                  {{ [...Array(option.value.rarity).keys()].reduce((acc) => `${acc}★`, '') }}
+                </div>
+              </div>
+            </template>
+          </MaterialFormSelect>
+        </template>
+        <div class="BuildWeapon" v-if="form.weapon">
+          <div>
+            <img class="BuildWeaponImg" :src="image(`img/weapons/${form.weapon.name}.webp`)" alt="" />
+          </div>
+          <div class="BuildWeaponInfos">
+            <span>{{ t(`Data.Weapons.${form.weapon.name}.name`) }}</span>
+            <span>{{ t('App.Weapons.level') }}: {{ form.weapon.level }}</span>
+            <span class="icon-atk">{{ t('App.Artefact.stats.Atk.short') }}: {{ Math.round(form.weapon.currentAtk) }}</span>
+            <span :class="`icon-${formatAffix(form.weapon.statName)}`">{{ t(`App.Artefact.stats.${form.weapon.statName}.short`) }}: {{ form.weapon.currentSubStat.toFixed(1) }}{{ form.weapon.statName.endsWith('%') ? '%' : '' }}</span>
+          </div>
+        </div>
+      </MaterialFormFieldSet>
+
+      <div class="BuildArtefacts">
+        <ArtefactButton
+          v-for="type in ['flower', 'feather', 'sands', 'goblet', 'circlet']"
+          :key="type"
+          :type="type"
+          :artefact="form[type]"
+          @click="actions.handleClickArtefactButton(type)"
         />
       </div>
 
-      <div class="BuildStats">
-        <CharacterBuildStats :build="State.build" />
-
-        <MaterialFormFieldLine class="BuildButtons">
+      <MaterialFormFieldLine :size="4" class="BuildButtons">
+        <template #field3>
           <MaterialButton
             icon="icon-check"
             type="submit"
@@ -84,14 +89,21 @@
           >
             {{ t('App.CharacterBuild.Create.saveBtnLabel') }}
           </MaterialButton>
-        </MaterialFormFieldLine>
-      </div>
+        </template>
+      </MaterialFormFieldLine>
     </MaterialForm>
 
     <ArtefactSelectorPanel
       v-model="state.artefactSelectorPanelVisible"
       :formData="form"
       @submit="actions.handleSetArtefacts"
+    />
+
+    <WeaponSelectorPanel
+      v-model="state.weaponSelectorPanelVisible"
+      :formData="form"
+      :type="weaponsStore.state.filters.type"
+      @submit="actions.handleSetWeapon"
     />
   </div>
 </template>
@@ -115,6 +127,7 @@ import MaterialFormSelect from '@renderer/components/Materials/Form/Select.vue';
 import MaterialFormInput from '@renderer/components/Materials/Form/Input.vue';
 import ArtefactSelectorPanel from '@renderer/components/MyGenshinImpactCharacters/Artefact/SelectorPanel.vue';
 import ArtefactButton from '@renderer/components/MyGenshinImpactCharacters/Artefact/Button.vue';
+import WeaponSelectorPanel from '@renderer/components/MyGenshinImpactCharacters/Weapon/SelectorPanel.vue';
 import CharacterBuildStats from '@renderer/components/MyGenshinImpactCharacters/CharacterBuild/Stats.vue';
 
 import { image } from '@renderer/core/utils';
@@ -137,7 +150,7 @@ const form = reactive({
   sands: null,
   goblet: null,
   circlet: null,
-  weaponId: null,
+  weapon: null,
 });
 const rules = {
   name: {
@@ -150,6 +163,7 @@ const v$ = useVuelidate(rules, form);
 
 const state = reactive({
   artefactSelectorPanelVisible: false,
+  weaponSelectorPanelVisible: false,
 });
 
 const State = computed(() => {
@@ -159,7 +173,7 @@ const State = computed(() => {
   ;
   const validWeaponList = weaponsStore.weaponList.value
     .filter((weapon) => ((weapon.rarity <= 2 && weapon.level === 70) || (weapon.rarity >= 3 && [80, 90].includes(weapon.level))))
-    .map((weapon) => ({ value: weapon.id, label: t(`Data.Weapons.${weapon.name}.name`), obj: weapon }))
+    .map((weapon) => ({ value: weapon, label: t(`Data.Weapons.${weapon.name}.name`) }))
   ;
   const validCharacterList = Object
     .values(charactersStore.state.characters)
@@ -175,7 +189,7 @@ const State = computed(() => {
     sandsId: form.sands?.id ?? null,
     gobletId: form.goblet?.id ?? null,
     circletId: form.circlet?.id ?? null,
-    weaponId: form.weaponId,
+    weaponId: form.weapon?.id ?? null,
   });
 
   return {
@@ -188,7 +202,7 @@ const State = computed(() => {
 
 const actions = {
   async handleSubmit() {
-    const { name, characterName, flower, feather, sands, goblet, circlet, weaponId } = form;
+    const { name, characterName, flower, feather, sands, goblet, circlet, weapon } = form;
     const data = {
       name,
       characterId: charactersStore.state.characters[characterName].id,
@@ -197,7 +211,7 @@ const actions = {
       sandsId: sands?.id ?? null,
       gobletId: goblet?.id ?? null,
       circletId: circlet?.id ?? null,
-      weaponId,
+      weaponId: weapon?.id ?? null,
     };
     const success = await characterBuildsStore.actions.create(data);
     if (success) {
@@ -217,11 +231,15 @@ const actions = {
     form.goblet = data.goblet ?? null;
     form.circlet = data.circlet ?? null;
   },
+  handleSetWeapon(data) {
+    form.weapon = data.weapon ?? null;
+  },
 };
 
-watch(() => form.characterName, () => {
-  weaponsStore.state.filters.type = charactersStore.state.characters[form.characterName].weaponType;
-  form.weaponId = State.value.validWeaponList[0].value;
+watch(() => form.characterName, (newVal) => {
+  weaponsStore.state.filters.type = charactersStore.state.characters[newVal].weaponType;
+  form.weapon = State.value.validWeaponList[0].value;
+  form.name = newVal;
 });
 
 onBeforeMount(() => {

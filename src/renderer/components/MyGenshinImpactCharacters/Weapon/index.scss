@@ -1,0 +1,110 @@
+@import '~styles/utilities.scss';
+
+.weapon-card {
+  background-color: color(grey800);
+  overflow: hidden;
+  border-radius: 8px;
+  position: relative;
+  padding-bottom: rem(22px);
+  width: 100%;
+  min-height: 96px;
+
+  &--current {
+    box-shadow: 0 0 0 2px color(grey100);
+  }
+
+  &--checked {
+    &::before {
+      @include icon('check');
+      @include set-font-scale('xs');
+      color: color(success300);
+      width: 18px;
+      height: 18px;
+      border-radius: 0 0 0 50%;
+      background-color: color(grey100);
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  &--gradient5 {
+    background: color(gradient5);
+  }
+
+  &--gradient4 {
+    background: color(gradient4);
+  }
+
+  &--gradient3 {
+    background: color(gradient3);
+  }
+
+  &--gradient2 {
+    background: color(gradient2);
+  }
+
+  &--gradient1 {
+    background: color(gradient1);
+  }
+
+  &__rank {
+    display: none;
+  }
+
+  img {
+    max-height: 64px;
+    width: auto;
+    max-width: 66px;
+  }
+
+  span:last-of-type {
+    @include set-font-scale('m');
+    color: color(grey900);
+    background-color: color(grey100);
+    width: 100%;
+    display: block;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  &--tiny {
+    min-height: 56px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-height: 56px;
+      max-width: 56px;
+    }
+
+    span:last-of-type {
+      @include set-font-scale('xxs');
+      background: none;
+      color: color(grey100);
+      font-weight: 600;
+      width: auto;
+      height: auto;
+      top: 2px;
+      left: 2px;
+      bottom: auto;
+      text-shadow: color(grey500) 0 0 5px;
+    }
+
+    .weapon-card__rank {
+      @include set-font-scale('xxs');
+      display: block;
+      position: absolute;
+      bottom: 2px;
+      right: 2px;
+      color: color(grey100);
+      font-weight: 600;
+      text-shadow: color(grey500) 0 0 5px;
+    }
+  }
+}

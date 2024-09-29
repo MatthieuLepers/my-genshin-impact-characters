@@ -85,8 +85,8 @@ describe('Character entity', () => {
   });
 
   test('imageName getter', () => {
-    expect(raidenShogun.imageName).toBe('raiden_shogun');
-    expect(sangonomyiaKokomi.imageName).toBe('sangonomyia_kokomi');
+    expect(raidenShogun.imageName).toBe('RaidenShogun');
+    expect(sangonomyiaKokomi.imageName).toBe('SangonomyiaKokomi');
   });
 
   test('getMaxMaterial method', () => {

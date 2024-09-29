@@ -1,4 +1,30 @@
 @import '~styles/utilities.scss';
 
 .ListTab {
+  height: 100%;
+  max-height: calc(100% - 38px);
+  display: flex;
+  gap: rem(8px);
+  margin-top: rem(8px);
+  position: relative;
+
+  &>ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(8px);
+    max-height: 100%;
+    overflow: auto;
+
+    &>li {
+      flex: 0 0 calc(50% - 4px);
+      position: relative;
+    }
+  }
+
+  &--scrollable>ul {
+    padding: 0 rem(8px) 0 0;
+  }
 }

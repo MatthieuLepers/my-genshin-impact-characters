@@ -13,7 +13,7 @@ import WindowStore from '@/main/stores/WindowStore';
 function createWindow() {
   const mainWindow = new ElectronWindow('main', {
     width: 1000,
-    height: 588,
+    height: 563,
     resizable: false,
     frame: false,
     webPreferences: {

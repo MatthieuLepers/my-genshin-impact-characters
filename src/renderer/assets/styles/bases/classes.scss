@@ -26,3 +26,32 @@ body {
     font-family: nth($iconData, 1) !important;
   }
 }
+
+[class^="icon-anemo"] {
+  color: color(anemo);
+}
+
+[class^="icon-pyro"] {
+  color: color(pyro);
+}
+
+[class^="icon-hydro"] {
+  color: color(hydro);
+}
+
+[class^="icon-cryo"] {
+  color: color(cryo);
+}
+
+[class^="icon-electro"] {
+  color: color(electro);
+}
+
+[class^="icon-geo"] {
+  color: color(geo);
+}
+
+[class^="icon-dendro"] {
+  color: color(dendro);
+}
+

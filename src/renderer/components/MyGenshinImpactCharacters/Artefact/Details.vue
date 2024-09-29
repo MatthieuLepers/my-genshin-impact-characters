@@ -23,10 +23,7 @@
       </span>
       <ul class="artefact-details__sub-stat-list">
         <li v-for="(stat, i) in artefactsStore.state.current.statsJson.slice(1)" :key="i">
-          <ArtefactSubStat
-            :stat="stat"
-            :level="artefactsStore.state.current.level"
-          />
+          <ArtefactSubStat :stat="stat" />
         </li>
       </ul>
     </div>

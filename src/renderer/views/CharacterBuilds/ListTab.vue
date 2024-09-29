@@ -1,24 +1,17 @@
 <template>
-  <div class="ListTab">
+  <div :class="GenerateModifiers('ListTab', { scrollable: characterBuildsStore.state.builds.length > 4 })">
     <ul>
       <li v-for="(build, i) in characterBuildsStore.state.builds" :key="i">
-        {{ build.name }}<br />
-        Hp: {{ build.stats.HP }}<br />
-        Atk: {{ build.stats.Atk }}<br />
-        Def: {{ build.stats.Def }}<br />
-        EM: {{ build.stats.EM }}<br />
-        TC: {{ build.stats['CritRate%'] }}%<br />
-        DC: {{ build.stats['CritDmg%'] }}%<br />
-        ER: {{ build.stats['ER%'] }}%<br />
+        <CharacterBuild :build="build" />
       </li>
     </ul>
   </div>
 </template>
 
 <script setup>
-import { characterBuildsStore } from '@renderer/core/entities/characterBuild/store';
+import CharacterBuild from '@renderer/components/MyGenshinImpactCharacters/CharacterBuild/index.vue';
 
-console.log(characterBuildsStore.state.builds);
+import { characterBuildsStore } from '@renderer/core/entities/characterBuild/store';
 </script>
 
 <style lang="scss" src="./ListTab.scss">

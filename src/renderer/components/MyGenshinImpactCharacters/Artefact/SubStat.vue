@@ -25,7 +25,6 @@ const { t } = useI18n();
 const formatAffix = (val) => val.toLowerCase().replace('%', '');
 
 const props = defineProps({
-  level: { type: Number, required: true },
   stat: { type: Object, required: true },
 });
 

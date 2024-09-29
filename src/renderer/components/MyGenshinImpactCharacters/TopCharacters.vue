@@ -7,10 +7,10 @@
     <li
       v-for="character in State.characters"
       :key="character.name"
-      @click="actions.handleclick(character)"
+      @click="actions.handleClick(character)"
     >
       <img
-        :src="image(`img/characters/${character.imageName}_gacha_card.png`)"
+        :src="image(`img/characters/${character.imageName}/gacha_card.webp`)"
         :title="`${character.nameStr}, ${character.spentMora / 1000}k`"
         v-if="!character.name.startsWith('Traveler')"
       />
@@ -41,7 +41,7 @@ const actions = {
     e.preventDefault();
     el.value.scrollLeft += e.deltaY;
   },
-  handleclick(character) {
+  handleClick(character) {
     emit('clickCharacter', character);
   },
 };

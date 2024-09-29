@@ -114,7 +114,7 @@ export default class Character extends AbstractEntity<ICharacter> {
   }
 
   get imageName(): string {
-    return this.name.toLowerCase().split(' ').join('_');
+    return this.name.replaceAll(/ /g, '');
   }
 
   getMaxMaterial(materialName: string): number {

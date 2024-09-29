@@ -7,7 +7,11 @@
           :key="option.value"
           class="artefact-transmuter__sets-item"
         >
-          <ArtefactSetOption v-model="v$.setId.$model" :option="option" />
+          <ArtefactSetOption
+            v-model="v$.setId.$model"
+            :option="option"
+            :allowUnselect="false"
+          />
         </li>
       </ul>
       <div class="artefact-transmuter__editor">

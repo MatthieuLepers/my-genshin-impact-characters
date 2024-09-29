@@ -36,16 +36,16 @@ const useWeaponsStore = () => {
   ;
 
   const weaponList = computed(() => groupedByTypeWeaponList.value[state.filters.type]
-    .filter((weapon) => !state.filters.search.length
+    .filter((weapon: Weapon) => !state.filters.search.length
       || (
         i18n.global.t(`Data.Weapons.${weapon.name}.name`).toLowerCase().includes(state.filters.search.toLowerCase())
         || (weapon?.tags ?? []).some((tag) => (i18n.global.te(`App.Weapons.tags.${tag}`) ? i18n.global.t(`App.Weapons.tags.${tag}`) : tag).toLowerCase().includes(state.filters.search.toLowerCase()) || tag.toLowerCase().includes(state.filters.search.toLowerCase()))))
-    .sort((a, b) => TYPE_ORDER.indexOf(a.type) - TYPE_ORDER.indexOf(b.type)
+    .sort((a: Weapon, b: Weapon) => TYPE_ORDER.indexOf(a.type) - TYPE_ORDER.indexOf(b.type)
       || b.rarity - a.rarity
       || b.releasedAt.getTime() - a.releasedAt.getTime()
       || i18n.global.t(`Data.Weapons.${b.name}.name`).localeCompare(i18n.global.t(`Data.Weapons.${a.name}.name`))));
 
-  const ownedList = computed(() => weaponList.value.filter((weapon) => weapon.owned));
+  const ownedList = computed(() => weaponList.value.filter((weapon: Weapon) => weapon.owned));
 
   const actions = {
     async load() {

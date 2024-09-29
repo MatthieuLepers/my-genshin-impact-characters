@@ -46,6 +46,7 @@ const modelValue = defineModel({ type: [String, Number, Boolean, Array] });
 const props = defineProps({
   option: { type: Object, required: true },
   showCount: { type: Boolean, default: false },
+  allowUnselect: { type: Boolean, default: true },
 });
 
 const state = reactive({
@@ -59,7 +60,9 @@ const State = computed(() => ({
 const actions = {
   handleSelectOption(optionValue) {
     if (state.selectedOptions.includes(optionValue)) {
-      state.selectedOptions = state.selectedOptions.filter((val) => val !== optionValue);
+      if (props.allowUnselect) {
+        state.selectedOptions = state.selectedOptions.filter((val) => val !== optionValue);
+      }
     } else {
       state.selectedOptions.push(optionValue);
     }

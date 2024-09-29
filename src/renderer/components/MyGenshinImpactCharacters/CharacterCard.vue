@@ -1,7 +1,7 @@
 <template>
   <div class="CharacterCard">
     <img class="CharacterCardImage"
-      :src="image(`img/characters/${props.character.imageName}.png`)"
+      :src="image(`img/characters/${props.character.imageName}/icon_card.webp`)"
       :alt="props.character.name"
     />
     <div class="CharacterCardInfo">

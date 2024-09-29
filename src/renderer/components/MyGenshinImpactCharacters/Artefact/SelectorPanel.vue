@@ -1,9 +1,8 @@
 <template>
-
-<MaterialForm
-  :class="GenerateModifiers('artefact-selector-panel', { open: modelValue })"
-  @submit.prevent="actions.handleSubmit"
->
+  <MaterialForm
+    :class="GenerateModifiers('artefact-selector-panel', { open: modelValue })"
+    @submit.prevent="actions.handleSubmit"
+  >
     <div class="artefact-selector-panel__container">
       <PanelMenu
         v-model="artefactsStore.state.filters.type[0]"

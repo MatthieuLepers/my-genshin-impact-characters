@@ -76,7 +76,7 @@
       class="m-datatable__footer"
     >
       <DataTablePagination
-        v-model="state.page"
+        v-model="page"
         :data="State.paginated"
       />
     </div>
@@ -97,6 +97,8 @@ defineOptions({ name: 'DataTable' });
 
 const emit = defineEmits(['orderChange']);
 
+const page = defineModel('page', { type: Number, default: 0 });
+
 const props = defineProps({
   columns: { type: Object, default: () => ({}) },
   data: { type: Array, default: () => [] },
@@ -110,7 +112,6 @@ const props = defineProps({
 
 const state = reactive({
   perPage: props.perPage,
-  page: 0,
   sorting: {
     key: null,
     direction: '',
@@ -135,7 +136,7 @@ const State = computed(() => {
     return acc;
   }, []);
   const result = props.paginate
-    ? paginated[state.page] || []
+    ? paginated[page.value] || []
     : sorted
   ;
   const isGrabbable = result.every((obj) => obj.order !== undefined);
