@@ -4,14 +4,14 @@
 
     <MaterialForm class="artefact-filters__form">
       <MaterialFormFieldSet legend="Artefact set">
-        <div class="frame-box frame-box--selected" v-for="(id, i) in form.setId" :key="i">
+        <div class="frame-box frame-box--selected" v-for="(set, i) in form.set" :key="i">
           <img
-            :src="image(`img/artefacts/${id}/flower.webp`)"
+            :src="set.getImage('flower')"
             alt=""
             class="artefactset-option__img"
           />
-          {{ t(`Data.ArtefactSets.${id}.name`) }}
-          <span>{{ artefactsStore.actions.getArtefactCountForSet(id) }}</span>
+          {{ set.getI18n('name') }}
+          <span>{{ artefactsStore.actions.getArtefactCountForSet(set.id) }}</span>
         </div>
         <button
           class="frame-box frame-box__selector"
@@ -81,7 +81,7 @@
           :modifiers="{ danger: true }"
           @click="actions.handleReset"
         >
-          {{ !form.setId.length && !form.mainStat.length && !form.subStat.length ? t('App.ArtefactFilters.resetCloseBtnLabel') : t('App.ArtefactFilters.resetBtnLabel') }}
+          {{ !form.set.length && !form.mainStat.length && !form.subStat.length ? t('App.ArtefactFilters.resetCloseBtnLabel') : t('App.ArtefactFilters.resetBtnLabel') }}
         </MaterialButton>
       </template>
       <template #field1>
@@ -95,7 +95,7 @@
       </template>
     </MaterialFormFieldLine>
 
-    <ArtefactSetSelectorModal v-model="form.setId" />
+    <ArtefactSetSelectorModal v-model="form.set" />
   </aside>
 </template>
 
@@ -110,7 +110,6 @@ import MaterialFormFieldSet from '@renderer/components/Materials/Form/FieldSet.v
 import ArtefactSetSelectorModal from '@renderer/components/MyGenshinImpactCharacters/ArtefactSet/SelectorModal.vue';
 import PanelMenu from '@renderer/components/MyGenshinImpactCharacters/PanelMenu.vue';
 
-import { image } from '@renderer/core/utils';
 import { artefactsStore } from '@renderer/core/entities/artefact/store';
 import { modalStore } from '@renderer/components/Materials/Modal/Store';
 
@@ -126,7 +125,7 @@ const props = defineProps({
 
 const form = reactive({
   type: props.filters.type ?? [],
-  setId: props.filters.setId ?? [],
+  set: props.filters.set ?? [],
   mainStat: props.filters.mainStat ?? [],
   subStat: props.filters.subStat ?? [],
 });
@@ -144,10 +143,10 @@ const State = computed(() => ({
 
 const actions = {
   handleReset() {
-    if (!form.setId.length && !form.mainStat.length && !form.subStat.length) {
+    if (!form.set.length && !form.mainStat.length && !form.subStat.length) {
       emit('close');
     } else {
-      form.setId = props.filters.setId ?? [];
+      form.set = props.filters.set ?? [];
       form.mainStat = props.filters.mainStat ?? [];
       form.subStat = props.filters.subStat ?? [];
       emit('confirm', { ...form });

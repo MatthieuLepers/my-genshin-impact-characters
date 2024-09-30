@@ -1,4 +1,9 @@
-import { ArtefactSet, ArtefactSetPassiveStat, Setting } from '@/main/database/models';
+import {
+  ArtefactSetI18n,
+  ArtefactSet,
+  ArtefactSetPassiveStat,
+  Setting,
+} from '@/main/database/models';
 import JSONArtefactSets from '@/main/public/ArtefactSets.json';
 import { serial } from '@/main/utils/PromiseUtils';
 
@@ -7,7 +12,7 @@ export default async () => {
   const done = await serial(JSONArtefactSets
     .filter((data) => data.releasedAt && new Date(data.releasedAt).getTime() > new Date(lastPopulateDateSetting!).getTime())
     .map((data) => () => ArtefactSet.create(data, {
-      include: [ArtefactSetPassiveStat],
+      include: [ArtefactSetPassiveStat, ArtefactSetI18n],
     }).catch(console.log)))
   ;
 

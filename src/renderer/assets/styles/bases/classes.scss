@@ -27,31 +27,31 @@ body {
   }
 }
 
-[class^="icon-anemo"] {
+[class*="icon-anemo"] {
   color: color(anemo);
 }
 
-[class^="icon-pyro"] {
+[class*="icon-pyro"] {
   color: color(pyro);
 }
 
-[class^="icon-hydro"] {
+[class*="icon-hydro"] {
   color: color(hydro);
 }
 
-[class^="icon-cryo"] {
+[class*="icon-cryo"] {
   color: color(cryo);
 }
 
-[class^="icon-electro"] {
+[class*="icon-electro"] {
   color: color(electro);
 }
 
-[class^="icon-geo"] {
+[class*="icon-geo"] {
   color: color(geo);
 }
 
-[class^="icon-dendro"] {
+[class*="icon-dendro"] {
   color: color(dendro);
 }
 

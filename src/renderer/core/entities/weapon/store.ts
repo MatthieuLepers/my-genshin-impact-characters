@@ -10,6 +10,7 @@ interface IWeaponFilters {
 
 interface IState {
   weapons: Record<string, Weapon>;
+  current: Weapon | null;
   filters: IWeaponFilters;
 }
 
@@ -18,6 +19,7 @@ const TYPE_ORDER = ['bow', 'catalyser', 'polearm', 'claymore', 'sword'];
 const useWeaponsStore = () => {
   const state = reactive<IState>({
     weapons: {},
+    current: null,
     filters: {
       search: '',
       type: 'bow',

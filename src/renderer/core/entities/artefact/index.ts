@@ -3,6 +3,7 @@ import type { IArtefact, IArtefactStat, IRemoteArtefact } from '@renderer/core/e
 import { artefactSetsStore } from '@renderer/core/entities/artefactSet/store';
 import type ArtefactSet from '@renderer/core/entities/artefactSet';
 import { getRealValue } from '@renderer/core/entities/artefact/StatUtils';
+import { image } from '@renderer/core/utils';
 import ArtefactMainStatData from '@renderer/core/datas/ArtefactMainStat.json';
 
 export default class Artefact extends AbstractEntity<IArtefact> {
@@ -41,6 +42,10 @@ export default class Artefact extends AbstractEntity<IArtefact> {
       ...ac,
       [stat.name]: (ac[stat.name] ?? 0) + (stat.main ? stat.value : getRealValue(stat)),
     }), {});
+  }
+
+  get image(): string {
+    return image(`img/artefacts/${this.setId}/${this.type}.webp`);
   }
 
   getStat(statName: string): number {

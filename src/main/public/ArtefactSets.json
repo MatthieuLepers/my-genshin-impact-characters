@@ -1,7 +1,11 @@
 [
   {
     "id": "ArchaicPetra",
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Archaic Petra" },
+      { "locale": "fr-FR", "name": "Roche ancienne" }
+    ]
   },
   {
     "id": "BlizzardStrayer",
@@ -9,7 +13,11 @@
     "passiveStats": [{
       "statType": "CryoDmg%",
       "statValue": 15
-    }]
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Blizzard Strayer" },
+      { "locale": "fr-FR", "name": "Briseur de glace" }
+    ]
   },
   {
     "id": "BloodstainedChivalry",
@@ -17,7 +25,11 @@
     "passiveStats": [{
       "statType": "PhysicalDmg%",
       "statValue": 25
-    }]
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Bloodstained Chivalry" },
+      { "locale": "fr-FR", "name": "Chevalerie ensanglantée" }
+    ]
   },
   {
     "id": "CrimsonWitchOfFlames",
@@ -25,7 +37,11 @@
     "passiveStats": [{
       "statType": "PyroDmg%",
       "statValue": 15
-    }]
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Crimson Witch of Flames" },
+      { "locale": "fr-FR", "name": "Sorcière des flammes ardentes" }
+    ]
   },
   {
     "id": "DeepwoodMemories",
@@ -33,7 +49,11 @@
     "passiveStats": [{
       "statType": "DendroDmg%",
       "statValue": 15
-    }]
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Deepwood Memories" },
+      { "locale": "fr-FR", "name": "Souvenir de forêt" }
+    ]
   },
   {
     "id": "DesertPavilionChronicle",
@@ -41,7 +61,11 @@
     "passiveStats": [{
       "statType": "AnemoDmg%",
       "statValue": 15
-    }]
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Desert Pavilion Chronicle" },
+      { "locale": "fr-FR", "name": "Chronique du Pavillon du désert" }
+    ]
   },
   {
     "id": "EchoesOfAnOffering",
@@ -49,7 +73,11 @@
     "passiveStats": [{
       "statType": "Atk%",
       "statValue": 18
-    }]
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Echoes of an Offering" },
+      { "locale": "fr-FR", "name": "Échos d'une offrande" }
+    ]
   },
   {
     "id": "EmblemOfSeveredFate",
@@ -57,7 +85,11 @@
     "passiveStats": [{
       "statType": "ER%",
       "statValue": 20
-    }]
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Emblem of Severed Fate" },
+      { "locale": "fr-FR", "name": "Emblème du destin brisé" }
+    ]
   },
   {
     "id": "FlowerOfParadiseLost",
@@ -65,7 +97,11 @@
     "passiveStats": [{
       "statType": "EM",
       "statValue": 80
-    }]
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Flower of Paradise Lost" },
+      { "locale": "fr-FR", "name": "Fleur du paradis perdu" }
+    ]
   },
   {
     "id": "FragmentOfHarmonicWhimsy",
@@ -73,7 +109,11 @@
     "passiveStats": [{
       "statType": "Atk%",
       "statValue": 18
-    }]
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Fragment of Harmonic Whimsy" },
+      { "locale": "fr-FR", "name": "Fragment d'harmonie divergente" }
+    ]
   },
   {
     "id": "GildedDreams",
@@ -81,7 +121,11 @@
     "passiveStats": [{
       "statType": "EM",
       "statValue": 80
-    }]
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Gilded Dreams" },
+      { "locale": "fr-FR", "name": "Rêve doré" }
+    ]
   },
   {
     "id": "GladiatorsFinale",
@@ -89,11 +133,19 @@
     "passiveStats": [{
       "statType": "Atk%",
       "statValue": 18
-    }]
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Gladiator's Finale" },
+      { "locale": "fr-FR", "name": "Rideau du Gladiateur" }
+    ]
   },
   {
     "id": "GoldenTroupe",
-    "releasedAt": "2023-08-16"
+    "releasedAt": "2023-08-16",
+    "i18n": [
+      { "locale": "en-EN", "name": "Golden Troupe" },
+      { "locale": "fr-FR", "name": "Troupe dorée" }
+    ]
   },
   {
     "id": "HeartOfDepth",
@@ -101,7 +153,11 @@
     "passiveStats": [{
       "statType": "HydroDmg%",
       "statValue": 15
-    }]
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Heart of Depth" },
+      { "locale": "fr-FR", "name": "Âme des profondeurs" }
+    ]
   },
   {
     "id": "HuskOfOpulentDreams",
@@ -109,7 +165,11 @@
     "passiveStats": [{
       "statType": "Def%",
       "statValue": 30
-    }]
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Husk of Opulent Dreams" },
+      { "locale": "fr-FR", "name": "Coquille des rêves opulents" }
+    ]
   },
   {
     "id": "Lavawalker",
@@ -117,7 +177,11 @@
     "passiveStats": [{
       "statType": "PyroRes%",
       "statValue": 40
-    }]
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Lavawalker" },
+      { "locale": "fr-FR", "name": "Marcheur du feu" }
+    ]
   },
   {
     "id": "MaidenBeloved",
@@ -125,11 +189,19 @@
     "passiveStats": [{
       "statType": "Heal%",
       "statValue": 15
-    }]
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Maiden Beloved" },
+      { "locale": "fr-FR", "name": "Amour chéri" }
+    ]
   },
   {
     "id": "MarechausseHunter",
-    "releasedAt": "2023-08-16"
+    "releasedAt": "2023-08-16",
+    "i18n": [
+      { "locale": "en-EN", "name": "Marechausse Hunter" },
+      { "locale": "fr-FR", "name": "Chasseur de la Maréchaussée" }
+    ]
   },
   {
     "id": "NighttimeWhispersInTheEchoingWoods",
@@ -137,11 +209,19 @@
     "passiveStats": [{
       "statType": "Atk%",
       "statValue": 18
-    }]
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Nighttime Whispers in the Echoing Woods" },
+      { "locale": "fr-FR", "name": "Murmure nocturne en forêt d'échos" }
+    ]
   },
   {
     "id": "NoblesseOblige",
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Noblesse Oblige" },
+      { "locale": "fr-FR", "name": "Ancien rituel royal" }
+    ]
   },
   {
     "id": "NymphsDream",
@@ -149,11 +229,19 @@
     "passiveStats": [{
       "statType": "HydroDmg%",
       "statValue": 15
-    }]
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Nymph's Dream" },
+      { "locale": "fr-FR", "name": "Rêve de la nymphe" }
+    ]
   },
   {
     "id": "ObsidianCodex",
-    "releasedAt": "2024-08-28"
+    "releasedAt": "2024-08-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Obsidian Codex" },
+      { "locale": "fr-FR", "name": "Codex d'obsidienne" }
+    ]
   },
   {
     "id": "OceanHuedClam",
@@ -161,7 +249,11 @@
     "passiveStats": [{
       "statType": "Heal%",
       "statValue": 15
-    }]
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Ocean Hued Clam" },
+      { "locale": "fr-FR", "name": "Palourde aux teintes océaniques" }
+    ]
   },
   {
     "id": "PaleFlame",
@@ -169,7 +261,11 @@
     "passiveStats": [{
       "statType": "PhysicalDmg%",
       "statValue": 25
-    }]
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Pale Flame" },
+      { "locale": "fr-FR", "name": "Flamme blême" }
+    ]
   },
   {
     "id": "RetracingBolide",
@@ -177,11 +273,19 @@
     "passiveStats": [{
       "statType": "ShieldStrength%",
       "statValue": 35
-    }]
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Retracing Bolide" },
+      { "locale": "fr-FR", "name": "Météore inversé" }
+    ]
   },
   {
     "id": "ScrollOfTheHeroOfCinderCity",
-    "releasedAt": "2024-08-28"
+    "releasedAt": "2024-08-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Scroll of the Hero of Cinder City" },
+      { "locale": "fr-FR", "name": "Parchemin du héros de la Cité de braise" }
+    ]
   },
   {
     "id": "ShimenawasReminiscence",
@@ -189,7 +293,11 @@
     "passiveStats": [{
       "statType": "Atk%",
       "statValue": 18
-    }]
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Shimenawa's Reminiscence" },
+      { "locale": "fr-FR", "name": "Réminiscence nostalgique" }
+    ]
   },
   {
     "id": "SongOfDaysPast",
@@ -197,7 +305,11 @@
     "passiveStats": [{
       "statType": "Heal%",
       "statValue": 15
-    }]
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Song of Days Past" },
+      { "locale": "fr-FR", "name": "Chanson des jours d'antan" }
+    ]
   },
   {
     "id": "TenacityOfTheMillelith",
@@ -205,7 +317,11 @@
     "passiveStats": [{
       "statType": "HP%",
       "statValue": 20
-    }]
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Tenacity of the Millelith" },
+      { "locale": "fr-FR", "name": "Ténacité du Millelithe" }
+    ]
   },
   {
     "id": "ThunderingFury",
@@ -213,7 +329,11 @@
     "passiveStats": [{
       "statType": "ElectroDmg%",
       "statValue": 15
-    }]
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Thundering Fury" },
+      { "locale": "fr-FR", "name": "Colère de tonnerre" }
+    ]
   },
   {
     "id": "Thundersoother",
@@ -221,7 +341,11 @@
     "passiveStats": [{
       "statType": "ElectroRes%",
       "statValue": 40
-    }]
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Thundersoother" },
+      { "locale": "fr-FR", "name": "Dompteur de foudre" }
+    ]
   },
   {
     "id": "UnfinishedReverie",
@@ -229,7 +353,11 @@
     "passiveStats": [{
       "statType": "Atk%",
       "statValue": 18
-    }]
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Unfinished Reverie" },
+      { "locale": "fr-FR", "name": "Rêverie incomplète" }
+    ]
   },
   {
     "id": "VermillionHereafter",
@@ -237,7 +365,11 @@
     "passiveStats": [{
       "statType": "Atk%",
       "statValue": 18
-    }]
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Vermillion Hereafter" },
+      { "locale": "fr-FR", "name": "Au-delà cinabrin" }
+    ]
   },
   {
     "id": "ViridescentVenerer",
@@ -245,7 +377,11 @@
     "passiveStats": [{
       "statType": "AnemoDmg%",
       "statValue": 15
-    }]
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Viridescent Venerer" },
+      { "locale": "fr-FR", "name": "Ombre de la Verte Chasseuse" }
+    ]
   },
   {
     "id": "VourukashasGlow",
@@ -253,7 +389,11 @@
     "passiveStats": [{
       "statType": "HP%",
       "statValue": 20
-    }]
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Vourukasha's Glow" },
+      { "locale": "fr-FR", "name": "Lueur du vourukasha" }
+    ]
   },
   {
     "id": "WanderersTroupe",
@@ -261,6 +401,10 @@
     "passiveStats": [{
       "statType": "EM",
       "statValue": 80
-    }]
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Wanderers Troupe" },
+      { "locale": "fr-FR", "name": "Bande vagabonde" }
+    ]
   }
 ]

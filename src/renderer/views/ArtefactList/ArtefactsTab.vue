@@ -144,13 +144,13 @@ const actions = {
     await artefactsStore.actions.requestExportMultiple(dialogOptions);
   },
   handleApplyFilters(data) {
-    artefactsStore.state.filters.setId = [...data.setId];
+    artefactsStore.state.filters.set = [...data.set];
     artefactsStore.state.filters.mainStat = [...data.mainStat];
     artefactsStore.state.filters.subStat = [...data.subStat];
   },
   async handleSubmit(data) {
     if (state.edit) {
-      artefactsStore.state.current.setId = data.setId;
+      artefactsStore.state.current.setId = data.set.id;
       artefactsStore.state.current.type = data.type;
       artefactsStore.state.current.statsJson = data.statsJson;
       await artefactsStore.state.current.save();

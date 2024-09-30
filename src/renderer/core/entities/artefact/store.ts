@@ -1,13 +1,13 @@
 import { reactive, computed } from 'vue';
 import type { OpenDialogOptions, SaveDialogOptions } from 'electron';
 
-import i18n from '@renderer/plugins/i18n';
 import Artefact from '@renderer/core/entities/artefact';
 import type { IArtefact } from '@renderer/core/entities/artefact/i';
+import type ArtefactSet from '@renderer/core/entities/artefactSet';
 
 interface ArtefactFilters {
   type: Array<string>;
-  setId: Array<string>;
+  set: Array<ArtefactSet>;
   mainStat: Array<string>;
   subStat: Array<string>;
 }
@@ -26,14 +26,14 @@ const useArtefactsStore = () => {
     current: null,
     filters: {
       type: [],
-      setId: [],
+      set: [],
       mainStat: [],
       subStat: [],
     },
   });
 
   const filters = (artefact: Artefact): boolean => (state.filters.type.length === 0 || (state.filters.type.length > 0 && state.filters.type.includes(artefact.type)))
-    && (state.filters.setId.length === 0 || (state.filters.setId.length > 0 && state.filters.setId.includes(artefact.setId)))
+    && (state.filters.set.length === 0 || (state.filters.set.length > 0 && state.filters.set.some((set) => set.id === artefact.setId)))
     && (state.filters.mainStat.length === 0 || (state.filters.mainStat.length > 0 && state.filters.mainStat.includes(artefact.mainStat.name)))
     && (state.filters.subStat.length === 0 || (state.filters.subStat.length > 0 && state.filters.subStat.every((stat) => artefact.subStats.some((s) => s.name === stat))))
   ;
@@ -41,7 +41,7 @@ const useArtefactsStore = () => {
   const artefactList = computed(() => Object
     .values(state.artefacts)
     .sort((a, b) => b.artefactSet.releasedAt.getTime() - a.artefactSet.releasedAt.getTime()
-      || i18n.global.t(`Data.ArtefactSets.${a.setId}.name`).localeCompare(i18n.global.t(`Data.ArtefactSets.${b.setId}.name`))
+      || a.artefactSet.getI18n('name').localeCompare(b.artefactSet.getI18n('name'))
       || TYPE_ORDER.indexOf(a.type) - TYPE_ORDER.indexOf(b.type))
     .filter(filters))
   ;
@@ -57,7 +57,7 @@ const useArtefactsStore = () => {
     resetFilters() {
       state.filters = {
         type: [],
-        setId: [],
+        set: [],
         mainStat: [],
         subStat: [],
       };

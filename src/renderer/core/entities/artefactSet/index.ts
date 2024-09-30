@@ -1,8 +1,9 @@
-import AbstractEntity from '@renderer/core/entities/AbstractEntity';
+import AbstractI18nEntity from '@renderer/core/entities/AbstractI18nEntity';
 import type { IArtefactSet, IRemoteArtefactSet } from '@renderer/core/entities/artefactSet/i';
 import type { IRemoteArtefactSetPassiveStat } from '@renderer/core/entities/artefactSetPassiveStat/i';
+import { image } from '@renderer/core/utils';
 
-export default class ArtefactSet extends AbstractEntity<IArtefactSet> {
+export default class ArtefactSet extends AbstractI18nEntity<IArtefactSet> {
   declare readonly id: string;
 
   declare readonly releasedAt: Date;
@@ -18,6 +19,10 @@ export default class ArtefactSet extends AbstractEntity<IArtefactSet> {
         [passiveStat.dataValues.statType]: passiveStat.dataValues.statValue,
       }), {})
     ;
+  }
+
+  getImage(type: string): string {
+    return image(`img/artefacts/${this.id}/${type}.webp`);
   }
 
   static async findAll(): Promise<Array<ArtefactSet>> {

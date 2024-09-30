@@ -8,8 +8,8 @@
       @click="State.filteredCharacters.length ? (state.open = !state.open) : null"
     >
       <span>
-        <img class="BossMaterialImg" :src="image(`img/materials/${props.material}.png`)" :alt="props.material" />
-        [{{ actions.getOwnedAndInvestedMaterials(props.material) }}/{{ actions.getMaxMaterial(props.material) }}] {{ t(`Data.WeaklyBosses.${props.boss}.materials.${props.material}`) }}
+        <img class="BossMaterialImg" :src="props.material.image" :alt="props.material.id" />
+        [{{ actions.getOwnedAndInvestedMaterials(props.material) }}/{{ actions.getMaxMaterial(props.material) }}] {{ props.material.getI18n('name') }}
         <span v-if="filteredCharacterStore.filters.elements.length">&nbsp;({{ State.filteredCharacters.length }})</span>
       </span>
       <FormInput
@@ -18,9 +18,9 @@
         :min="0"
         :max="9999"
         :label="t('App.inInventory')"
-        v-model="materialsStore.state.materials[props.material].inInventory"
+        v-model="props.material.inInventory"
         @click.stop
-        @update:modelValue="materialsStore.state.materials[props.material].save()"
+        @update:modelValue="props.material.save()"
       />
     </button>
     <DataTable
@@ -35,7 +35,7 @@
       <template v-slot:nameStr="{ obj }">
         <span :class="['Element', `icon-${obj.element.toLowerCase()}`]" />
         <span :id="obj.name">
-          [{{ obj.getInvestedMaterials(props.material) }}/{{ obj.getMaxMaterial(props.material) }}] {{ obj.nameStr }}
+          [{{ obj.getInvestedMaterials(props.material.id) }}/{{ obj.getMaxMaterial(props.material.id) }}] {{ obj.nameStr }}
         </span>
       </template>
       <template v-slot:smartLevel="{ obj }">
@@ -105,15 +105,13 @@ import { useI18n } from 'vue-i18n';
 import DataTable from '@renderer/components/Materials/DataTable/index.vue';
 import FormInput from '@renderer/components/Materials/Form/Input.vue';
 
-import { materialsStore } from '@renderer/core/entities/material/store';
 import { filteredCharacterStore } from '@renderer/core/stores/FilteredCharacterStore';
-import { image } from '@renderer/core/utils';
 
 const { t } = useI18n();
 
 const props = defineProps({
-  boss: { type: String, required: true },
-  material: { type: String, required: true },
+  bossId: { type: String, required: true },
+  material: { type: Object, required: true },
   characters: { type: Array, default: () => [] },
 });
 
@@ -122,7 +120,9 @@ const state = reactive({
 });
 
 const State = computed(() => ({
-  filteredCharacters: props.characters.filter((character) => !filteredCharacterStore.filters.elements.length || filteredCharacterStore.filters.elements.includes(character.element)),
+  filteredCharacters: props.characters
+    .filter((character) => !filteredCharacterStore.filters.elements.length
+      || filteredCharacterStore.filters.elements.includes(character.element)),
   columns: {
     nameStr: {
       label: t('App.BossMaterial.columns.character'),
@@ -152,11 +152,11 @@ const State = computed(() => ({
 }));
 
 const actions = {
-  getMaxMaterial(materialName) {
-    return props.characters.reduce((acc, character) => acc + character.getMaxMaterial(materialName), 0);
+  getMaxMaterial(material) {
+    return props.characters.reduce((acc, character) => acc + character.getMaxMaterial(material.id), 0);
   },
-  getOwnedAndInvestedMaterials(materialName) {
-    return props.characters.reduce((acc, character) => acc + character.getInvestedMaterials(materialName), materialsStore.state.materials[materialName].inInventory);
+  getOwnedAndInvestedMaterials(material) {
+    return props.characters.reduce((acc, character) => acc + character.getInvestedMaterials(material.id), material.inInventory);
   },
 };
 </script>

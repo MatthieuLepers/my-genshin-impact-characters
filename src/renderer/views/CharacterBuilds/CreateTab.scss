@@ -33,7 +33,7 @@
       opacity: .9;
     }
 
-    &Artefacts {
+    &Equipments {
       width: 100%;
       display: flex;
       gap: rem(8px);
@@ -48,108 +48,6 @@
           right: 59.5px;
           left: auto;
         }
-      }
-    }
-
-    &WeaponFieldSet {
-      grid-column: 1;
-      grid-row: 2;
-      flex-direction: column;
-
-      .m-form-fieldset__legend {
-        padding: 0;
-
-        .m-form-select {
-          width: 100%;
-          margin-bottom: 0;
-        }
-      }
-    }
-
-    &Weapon {
-      @include set-font-scale('s');
-      display: flex;
-      gap: rem(8px);
-
-      &Img {
-        max-width: 64px;
-        max-height: 64px;
-        width: auto;
-      }
-
-      &Infos {
-        display: flex;
-        flex-wrap: wrap;
-
-        span {
-          display: block;
-          flex: 0 0 100%;
-
-          &:first-of-type {
-            font-weight: 600;
-          }
-
-          &:not(:first-of-type) {
-            @include set-font-scale('xs');
-          }
-
-          &[class^="icon"]::before {
-            margin-right: rem(4px);
-          }
-        }
-      }
-
-      &>div {
-        background-color: color(grey800);
-        border-radius: 8px;
-        padding: rem(8px);
-
-        &:first-of-type {
-          min-width: 85px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        &:last-of-type {
-          flex: 1;
-        }
-      }
-    }
-  }
-
-  .Option {
-    display: flex;
-    gap: rem(8px);
-    align-items: center;
-    width: 100%;
-
-    &--Weapon {
-      img {
-        width: auto;
-        max-width: 48px;
-        max-height: 48px;
-      }
-  
-      &>div {
-        text-align: left;
-      }
-    }
-
-    &--ArtefactPreset {
-      ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        gap: rem(4px);
-        flex: 1;
-        justify-content: flex-end;
-      }
-
-      li>img {
-        max-width: 32px;
-        max-height: 32px;
       }
     }
   }

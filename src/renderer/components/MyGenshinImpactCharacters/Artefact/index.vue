@@ -8,14 +8,13 @@
     })"
     @click="emit('click', $event)"
   >
-    <img :src="image(`img/artefacts/${props.artefact.setId}/${props.artefact.type}.webp`)" alt="" />
+    <img :src="props.artefact.image" alt="" />
     <span :class="['artefact-card__main', `icon-${formatAffix(props.artefact.mainStat.name)}`]" />
     <span>+{{ props.artefact.level }}</span>
   </button>
 </template>
 
 <script setup>
-import { image } from '@renderer/core/utils';
 import Artefact from '@renderer/core/entities/artefact';
 
 defineOptions({ name: 'Artefact' });

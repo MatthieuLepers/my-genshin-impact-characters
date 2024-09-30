@@ -9,19 +9,19 @@
       :type="State.isMultiple ? 'checkbox' : 'radio'"
       name="setId"
       :id="`set${$uid}`"
-      :value="props.option.value"
+      :value="props.option.value.id"
       :checked="modelValue === props.option.value"
       @click="actions.handleSelectOption(props.option.value)"
     />
 
     <img
-      :src="image(`img/artefacts/${props.option.value}/flower.webp`)"
+      :src="props.option.value.getImage('flower')"
       alt=""
       class="artefactset-option__img"
     />
     {{ props.option.label }}
     <span v-if="props.showCount" class="artefactset-option__count">
-      {{ artefactsStore.actions.getArtefactCountForSet(props.option.value) }}
+      {{ artefactsStore.actions.getArtefactCountForSet(props.option.value.id) }}
     </span>
   </label>
 </template>
@@ -34,14 +34,13 @@ import {
   getCurrentInstance,
 } from 'vue';
 
-import { image } from '@renderer/core/utils';
 import { artefactsStore } from '@renderer/core/entities/artefact/store';
 
 defineOptions({ name: 'ArtefactSetOption' });
 
 const $uid = getCurrentInstance().uid;
 
-const modelValue = defineModel({ type: [String, Number, Boolean, Array] });
+const modelValue = defineModel({ type: Array });
 
 const props = defineProps({
   option: { type: Object, required: true },
@@ -61,7 +60,7 @@ const actions = {
   handleSelectOption(optionValue) {
     if (state.selectedOptions.includes(optionValue)) {
       if (props.allowUnselect) {
-        state.selectedOptions = state.selectedOptions.filter((val) => val !== optionValue);
+        state.selectedOptions = state.selectedOptions.filter((val) => val.id !== optionValue.id);
       }
     } else {
       state.selectedOptions.push(optionValue);

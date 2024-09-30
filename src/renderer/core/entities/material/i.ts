@@ -1,9 +1,12 @@
+import type { IRemoteMaterialI18n } from '@renderer/core/entities/material/i18n';
+
 export interface IMaterial {
   readonly id: number;
   inInventory: number;
   readonly bossId: string;
+  readonly i18n: Array<IRemoteMaterialI18n>;
 }
 
 export interface IRemoteMaterial {
-  dataValues: IMaterial;
+  readonly dataValues: IMaterial;
 }

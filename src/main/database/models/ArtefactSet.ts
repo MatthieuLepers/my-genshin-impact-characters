@@ -19,7 +19,7 @@ import {
   HasManyRemoveAssociationsMixin,
   HasManySetAssociationsMixin,
 } from 'sequelize';
-import { ArtefactSetPassiveStat } from '@/main/database/models';
+import { ArtefactSetI18n, ArtefactSetPassiveStat } from '@/main/database/models';
 
 @Table({
   modelName: 'artefactSet',
@@ -62,4 +62,15 @@ export class ArtefactSet extends Model {
   declare countPassiveStats: HasManyCountAssociationsMixin;
 
   declare createPassiveStat: HasManyCreateAssociationMixin<ArtefactSetPassiveStat, 'artefactSetId'>;
+
+  @HasMany(() => ArtefactSetI18n, 'artefactSetId')
+  declare i18n: ArtefactSetI18n[];
+
+  declare getI18ns: HasManyGetAssociationsMixin<ArtefactSetI18n>;
+
+  declare addI18n: HasManyAddAssociationMixin<ArtefactSetI18n, number>;
+
+  declare addI18ns: HasManyAddAssociationsMixin<ArtefactSetI18n, number>;
+
+  declare setI18ns: HasManySetAssociationsMixin<ArtefactSetI18n, number>;
 }

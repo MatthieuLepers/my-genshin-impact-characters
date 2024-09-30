@@ -8,12 +8,14 @@
         <span :class="`icon-${artefactsStore.state.current.type}`">
           {{ t(`App.Artefact.type.${artefactsStore.state.current.type}`) }}
         </span>
-        <img :src="image(`img/artefacts/${artefactsStore.state.current.setId}/${artefactsStore.state.current.type}.webp`)" alt="" />
+        <img :src="artefactsStore.state.current.image" alt="" />
         <div class="artefact-details__main-stat">
           <span :class="`icon-${formatAffix(artefactsStore.state.current.statsJson[0].name)}`">
             {{ t(`App.Artefact.stats.${artefactsStore.state.current.statsJson[0].name}.short`) }}
           </span>
-          <span class="artefact-details__main-stat__value">{{ artefactsStore.state.current.statsJson[0].value }}{{ artefactsStore.state.current.statsJson[0].name.endsWith('%') ? '%' : '' }}</span>
+          <span class="artefact-details__main-stat__value">
+            {{ artefactsStore.state.current.statsJson[0].value }}{{ artefactsStore.state.current.statsJson[0].name.endsWith('%') ? '%' : '' }}
+          </span>
         </div>
       </div>
       <span
@@ -90,7 +92,6 @@ import MaterialButton from '@renderer/components/Materials/Button/index.vue';
 import MaterialModal from '@renderer/components/Materials/Modal/index.vue';
 import ArtefactSubStat from '@renderer/components/MyGenshinImpactCharacters/Artefact/SubStat.vue';
 
-import { image } from '@renderer/core/utils';
 import { modalStore } from '@renderer/components/Materials/Modal/Store';
 import { artefactsStore } from '@renderer/core/entities/artefact/store';
 

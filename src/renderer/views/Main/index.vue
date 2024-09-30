@@ -7,18 +7,18 @@
         :key="filteredCharacterStore.filters.elements.length"
       />
       <div
-        v-for="boss in materialsStore.bossList.value"
-        :key="boss"
+        v-for="bossId in materialsStore.bossList.value"
+        :key="bossId"
       >
-        <h3 class="BossTitle" v-if="actions.filteredCharacters(boss).length">
-          <span>[{{ actions.totalInvestedBossMaterial(boss) }}/{{ actions.totalBossMaterial(boss) }}]</span> {{ t(`Data.WeaklyBosses.${boss}.name`) }}
+        <h3 class="BossTitle" v-if="actions.filteredCharacters(bossId).length">
+          <span>[{{ actions.totalInvestedBossMaterial(bossId) }}/{{ actions.totalBossMaterial(bossId) }}]</span> {{ t(`Data.WeaklyBosses.${bossId}.name`) }}
         </h3>
         <BossMaterial
-          v-for="material in Object.keys(tm(`Data.WeaklyBosses.${boss}.materials`))"
-          :key="`${boss}${material}`"
-          :boss="boss"
+          v-for="material in materialsStore.materialGroupedByBossId.value[bossId]"
+          :key="material.id"
+          :bossId="bossId"
           :material="material"
-          :characters="state.characters[material]"
+          :characters="state.characters[material.id]"
         />
       </div>
 
@@ -76,25 +76,23 @@ const state = reactive({
 });
 
 const actions = {
-  totalBossMaterial(boss) {
-    return Object
-      .keys(tm(`Data.WeaklyBosses.${boss}.materials`))
-      .reduce((acc, material) => acc + actions.getMaxMaterial(material), 0)
+  totalBossMaterial(bossId) {
+    return materialsStore.materialGroupedByBossId.value[bossId]
+      .reduce((acc, material) => acc + actions.getMaxMaterial(material.id), 0)
     ;
   },
-  getMaxMaterial(materialName) {
-    return (state.characters[materialName] ?? []).reduce((acc, character) => acc + character.getMaxMaterial(materialName), 0);
+  getMaxMaterial(materialId) {
+    return (state.characters[materialId] ?? []).reduce((acc, character) => acc + character.getMaxMaterial(materialId), 0);
   },
-  totalInvestedBossMaterial(boss) {
-    return Object
-      .keys(tm(`Data.WeaklyBosses.${boss}.materials`))
-      .reduce((acc, material) => acc + actions.getOwnedAndInvestedMaterials(material), 0)
+  totalInvestedBossMaterial(bossId) {
+    return materialsStore.materialGroupedByBossId.value[bossId]
+      .reduce((acc, material) => acc + actions.getOwnedAndInvestedMaterials(material.id), 0)
     ;
   },
-  getOwnedAndInvestedMaterials(materialName) {
-    if (!state.characters[materialName]?.length) return 0;
-    return (state.characters[materialName] ?? [])
-      .reduce((acc, character) => acc + character.getInvestedMaterials(materialName), materialsStore.state.materials[materialName].inInventory)
+  getOwnedAndInvestedMaterials(materialId) {
+    if (!state.characters[materialId]?.length) return 0;
+    return (state.characters[materialId] ?? [])
+      .reduce((acc, character) => acc + character.getInvestedMaterials(materialId), materialsStore.state.materials[materialId].inInventory)
     ;
   },
   handleClickCharacter(character) {
@@ -106,15 +104,16 @@ const actions = {
       bossMaterialElement.scrollIntoView();
     });
   },
-  filteredCharacters(boss) {
-    const materials = Object.keys(tm(`Data.WeaklyBosses.${boss}.materials`));
-    return Object.keys(state.characters)
-      .filter((material) => materials.includes(material))
-      .reduce((acc, material) => [
+  filteredCharacters(bossId) {
+    const materials = materialsStore.materialGroupedByBossId.value[bossId];
+    const result = Object.keys(state.characters)
+      .filter((materialId) => materials.some(({ id }) => id === materialId))
+      .reduce((acc, materialId) => [
         ...acc,
-        ...filteredCharacterStore.actions.applyFilters(Object.values(state.characters[material])),
+        ...filteredCharacterStore.actions.applyFilters(Object.values(state.characters[materialId])),
       ], [])
     ;
+    return result;
   },
 };
 
@@ -123,7 +122,7 @@ onBeforeMount(() => {
     .filter((character) => character.owned)
     .reduce((acc, character) => {
       character.materials.forEach((material) => {
-        acc[material] = [...(acc[material] || []), character];
+        acc[material] = [...(acc[material] ?? []), character];
       });
       return acc;
     }, {})

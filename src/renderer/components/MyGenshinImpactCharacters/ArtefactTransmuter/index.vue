@@ -8,7 +8,7 @@
           class="artefact-transmuter__sets-item"
         >
           <ArtefactSetOption
-            v-model="v$.setId.$model"
+            v-model="v$.set.$model"
             :option="option"
             :allowUnselect="false"
           />
@@ -33,8 +33,8 @@
               </div>
               <img
                 class="artefact-preview"
-                :src="image(`img/artefacts/${form.setId}/${form.type}.webp`)"
-                :alt="t(`Data.ArtefactSets.${form.setId}.name`)"
+                :src="form.set.getImage(form.type)"
+                :alt="form.set.getI18n('name')"
               />
             </div>
             <MaterialFormFieldLine>
@@ -135,7 +135,6 @@ import ArtefactAffix from '@renderer/components/MyGenshinImpactCharacters/Artefa
 import AffixSelectorPanel from '@renderer/components/MyGenshinImpactCharacters/ArtefactTransmuter/AffixSelectorPanel.vue';
 import PanelMenu from '@renderer/components/MyGenshinImpactCharacters/PanelMenu.vue';
 
-import { image } from '@renderer/core/utils';
 import { artefactSetsStore } from '@renderer/core/entities/artefactSet/store';
 import ArtefactMainStatData from '@renderer/core/datas/ArtefactMainStat.json';
 
@@ -151,14 +150,14 @@ const props = defineProps({
 });
 
 const form = reactive({
-  setId: props.formData.setId ?? null,
+  set: props.formData.set ?? null,
   type: props.formData.type ?? 'flower',
   statsJson: props.formData.statsJson?.slice()?.map((stat) => ({ ...stat })) ?? [
     { name: 'HP', value: ArtefactMainStatData.HP[20], main: true },
   ],
 });
 const rules = {
-  setId: { required },
+  set: { required },
   type: {
     valid: (val) => ['flower', 'feather', 'sands', 'goblet', 'circlet'].includes(val),
   },
@@ -177,10 +176,10 @@ const state = reactive({
 const State = computed(() => ({
   setList: Object
     .values(artefactSetsStore.state.sets)
-    .sort((a, b) => b.releasedAt.getTime() - a.releasedAt.getTime() || t(`Data.ArtefactSets.${a.id}.name`).localeCompare(t(`Data.ArtefactSets.${b.id}.name`)))
+    .sort((a, b) => b.releasedAt.getTime() - a.releasedAt.getTime() || a.getI18n('name').localeCompare(b.getI18n('name')))
     .map((set) => ({
-      value: set.id,
-      label: t(`Data.ArtefactSets.${set.id}.name`),
+      value: set,
+      label: set.getI18n('name'),
     })),
   panelMenuData: [
     { id: 'flower' },
@@ -194,7 +193,7 @@ const State = computed(() => ({
 const actions = {
   handleSubmit() {
     emit('submit', { ...form });
-    form.setId = State.value.setList[0].value;
+    form.set = State.value.setList[0].value;
     form.type = 'flower';
     form.statsJson = [
       {
@@ -229,7 +228,7 @@ watch(() => form.type, () => {
 });
 
 watch(() => props.formData, (newVal) => {
-  form.setId = newVal.setId ?? null;
+  form.set = newVal.set ?? null;
   form.type = newVal.type ?? 'flower';
   form.statsJson = newVal.statsJson ?? [
     { name: 'HP', value: ArtefactMainStatData.HP[20], main: true },
@@ -237,7 +236,7 @@ watch(() => props.formData, (newVal) => {
 });
 
 onBeforeMount(() => {
-  form.setId = props.formData.setId ?? State.value.setList[0].value;
+  form.set = props.formData.set ?? State.value.setList[0].value;
   form.statsJson = props.formData.statsJson?.slice()?.map((stat) => ({ ...stat })) ?? [
     {
       name: 'HP',

@@ -12,8 +12,8 @@
         >
           <Weapon
             :weapon="weapon"
-            :selected="weaponsStore.state.current === weapon"
-            :modifiers="{ checked: form.weapon === weapon }"
+            :selected="weaponsStore.state.current?.id === weapon.id"
+            :modifiers="{ checked: form.weapon?.id === weapon.id }"
             @click="weaponsStore.state.current = weapon"
             @dblclick="form.weapon = weapon"
           />
@@ -42,6 +42,11 @@
         </template>
       </MaterialFormFieldLine>
     </div>
+
+    <WeaponDetails
+      :showSelect="form.weapon !== weaponsStore.state.current"
+      @select="form.weapon = weaponsStore.state.current"
+    />
   </MaterialForm>
 </template>
 
@@ -53,6 +58,7 @@ import MaterialButton from '@renderer/components/Materials/Button/index.vue';
 import MaterialForm from '@renderer/components/Materials/Form/index.vue';
 import MaterialFormFieldLine from '@renderer/components/Materials/Form/FieldLine.vue';
 import Weapon from '@renderer/components/MyGenshinImpactCharacters/Weapon/index.vue';
+import WeaponDetails from '@renderer/components/MyGenshinImpactCharacters/Weapon/Details.vue';
 
 import { weaponsStore } from '@renderer/core/entities/weapon/store';
 
@@ -85,8 +91,8 @@ const actions = {
   },
 };
 
-watch(() => props.formData, (newVal) => {
-  form.weapon = newVal.weapon;
+watch(() => props.formData.weapon, (newVal) => {
+  form.weapon = newVal;
 });
 </script>
 

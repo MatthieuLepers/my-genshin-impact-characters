@@ -1,7 +1,8 @@
-import AbstractEntity from '@renderer/core/entities/AbstractEntity';
+import AbstractI18nEntity from '@renderer/core/entities/AbstractI18nEntity';
 import type { IMaterial, IRemoteMaterial } from '@renderer/core/entities/material/i';
+import { image } from '@renderer/core/utils';
 
-export default class Material extends AbstractEntity<IMaterial> {
+export default class Material extends AbstractI18nEntity<IMaterial> {
   declare readonly id: number;
 
   declare inInventory: number;
@@ -10,6 +11,10 @@ export default class Material extends AbstractEntity<IMaterial> {
 
   constructor(data: IMaterial) {
     super(data, []);
+  }
+
+  get image(): string {
+    return image(`img/materials/${this.id}.png`);
   }
 
   async save(): Promise<Material> {

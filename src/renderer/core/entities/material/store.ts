@@ -11,10 +11,14 @@ const useMaterialsStore = () => {
     materials: {},
   });
 
-  const bossList = computed(() => Object
+  const materialGroupedByBossId = computed(() => Object
     .values(state.materials)
-    .map((material) => material.bossId)
-    .filter((bossId, i, arr) => arr.indexOf(bossId) === i));
+    .reduce((acc, material) => ({
+      ...acc,
+      [material.bossId]: [...(acc[material.bossId] ?? []), material],
+    }), {}));
+
+  const bossList = computed(() => Object.keys(materialGroupedByBossId.value));
 
   const actions = {
     async load() {
@@ -29,6 +33,7 @@ const useMaterialsStore = () => {
   return {
     state,
     bossList,
+    materialGroupedByBossId,
     actions,
   };
 };

@@ -74,7 +74,7 @@ export default class Character extends AbstractEntity<ICharacter> {
   }
 
   get nameStr(): string {
-    return this.name.indexOf('-') >= 0 ? this.name.replace(/^([^_]+)_(.+)$/, '$1 ($2)') : this.name;
+    return this.name.indexOf('-') >= 0 ? this.name.replace(/^([^-]+)-(.+)$/, '$1 ($2)') : this.name;
   }
 
   get materials(): Array<string> {

@@ -11,11 +11,12 @@
   <div v-else class="artefact-button__card">
     <Artefact
       :artefact="props.artefact"
+      :modifiers="props.modifiers"
       @click="emit('click', $event)"
     />
     <ToolTip class="artefact-button__tooltip">
       <ul class="artefact-button__tooltip__sub-stat">
-        <li class="artefact-sub-stat">
+        <li>
           <span class="artefact-sub-stat__value">
             <span :class="`icon-${formatAffix(props.artefact.statsJson[0].name)}`" />
             {{ t(`App.Artefact.stats.${props.artefact.statsJson[0].name}.short`) }}
@@ -46,6 +47,7 @@ const formatAffix = (val) => val.toLowerCase().replace('%', '');
 const props = defineProps({
   type: { type: String, required: true },
   artefact: { type: Object, default: null },
+  modifiers: { type: Object, default: () => ({}) },
 });
 </script>
 
