@@ -40,7 +40,7 @@ defineOptions({ name: 'ArtefactSetOption' });
 
 const $uid = getCurrentInstance().uid;
 
-const modelValue = defineModel({ type: Array });
+const modelValue = defineModel({ type: [Array, Object] });
 
 const props = defineProps({
   option: { type: Object, required: true },

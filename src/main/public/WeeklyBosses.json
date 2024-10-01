@@ -1,0 +1,82 @@
+[
+  {
+    "id": "Dvalin",
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Dvalin" },
+      { "locale": "fr-FR", "name": "Stormterror" }
+    ]
+  },
+  {
+    "id": "Andrius",
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Dvalin" },
+      { "locale": "fr-FR", "name": "Loup du Nord" }
+    ]
+  },
+  {
+    "id": "Childe",
+    "releasedAt": "2020-11-11",
+    "i18n": [
+      { "locale": "en-EN", "name": "Childe" },
+      { "locale": "fr-FR", "name": "Tartaglia" }
+    ]
+  },
+  {
+    "id": "Azhdaha",
+    "releasedAt": "2021-04-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Azhdaha" },
+      { "locale": "fr-FR", "name": "Azhdaha" }
+    ]
+  },
+  {
+    "id": "Signora",
+    "releasedAt": "2021-09-01",
+    "i18n": [
+      { "locale": "en-EN", "name": "Signora" },
+      { "locale": "fr-FR", "name": "Signora" }
+    ]
+  },
+  {
+    "id": "NarukamiNoMikoto",
+    "releasedAt": "2022-02-16",
+    "i18n": [
+      { "locale": "en-EN", "name": "Guardian of Eternity" },
+      { "locale": "fr-FR", "name": "Sentinelle de l'éternité" }
+    ]
+  },
+  {
+    "id": "ShoukiNoKamiTheProdigal",
+    "releasedAt": "2022-11-02",
+    "i18n": [
+      { "locale": "en-EN", "name": "Shouki no Kami, the Prodigal" },
+      { "locale": "fr-FR", "name": "Shouki no Kami, le prodige" }
+    ]
+  },
+  {
+    "id": "GuardianOfApepsOasis",
+    "releasedAt": "2023-04-12",
+    "i18n": [
+      { "locale": "en-EN", "name": "Guard of Apep's Oasis" },
+      { "locale": "fr-FR", "name": "Garde de l'oasis d'Apep" }
+    ]
+  },
+  {
+    "id": "AllDevouringNarwhal",
+    "releasedAt": "2023-11-08",
+    "i18n": [
+      { "locale": "en-EN", "name": "All-Devouring Narwhal" },
+      { "locale": "fr-FR", "name": "Narvhal Stellavore" }
+    ]
+  },
+  {
+    "id": "TheKnave",
+    "releasedAt": "2024-04-24",
+    "i18n": [
+      { "locale": "en-EN", "name": "The Knave" },
+      { "locale": "fr-FR", "name": "Arlecchino" }
+    ]
+  }
+]

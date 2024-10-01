@@ -2,6 +2,8 @@ export { ArtefactSetI18n } from '@/main/database/models/ArtefactSetI18n';
 export { ArtefactSet } from '@/main/database/models/ArtefactSet';
 export { ArtefactSetPassiveStat } from '@/main/database/models/ArtefactSetPassiveStat';
 export { Character } from '@/main/database/models/Character';
+export { WeeklyBossI18n } from '@/main/database/models/WeeklyBossI18n';
+export { WeeklyBoss } from '@/main/database/models/WeeklyBoss';
 export { MaterialI18n } from '@/main/database/models/MaterialI18n';
 export { Material } from '@/main/database/models/Material';
 export { Artefact } from '@/main/database/models/Artefact';

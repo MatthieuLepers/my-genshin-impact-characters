@@ -7,14 +7,17 @@ import {
   Default,
   AllowNull,
   HasMany,
+  ForeignKey,
+  BelongsTo,
 } from 'sequelize-typescript';
 import {
   HasManyGetAssociationsMixin,
   HasManyAddAssociationMixin,
   HasManyAddAssociationsMixin,
   HasManySetAssociationsMixin,
+  HasOneGetAssociationMixin,
 } from 'sequelize';
-import { MaterialI18n } from '@/main/database/models';
+import { MaterialI18n, WeeklyBoss } from '@/main/database/models';
 
 @Table({
   modelName: 'materials',
@@ -35,9 +38,14 @@ export class Material extends Model {
   @Column(DataType.INTEGER)
   declare inInventory: number;
 
-  @AllowNull(false)
+  @ForeignKey(() => WeeklyBoss)
   @Column(DataType.STRING)
   declare bossId: string;
+
+  @BelongsTo(() => WeeklyBoss)
+  declare weeklyBoss: WeeklyBoss;
+
+  declare getWeeklyBoss: HasOneGetAssociationMixin<WeeklyBoss>;
 
   @AllowNull(false)
   @Column(DataType.DATE)

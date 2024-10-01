@@ -1,9 +1,11 @@
 import AbstractI18nEntity from '@renderer/core/entities/AbstractI18nEntity';
 import type { IMaterial, IRemoteMaterial } from '@renderer/core/entities/material/i';
+import type WeeklyBoss from '@renderer/core/entities/weeklyBoss';
+import { weeklyBossesStore } from '@renderer/core/entities/weeklyBoss/store';
 import { image } from '@renderer/core/utils';
 
 export default class Material extends AbstractI18nEntity<IMaterial> {
-  declare readonly id: number;
+  declare readonly id: string;
 
   declare inInventory: number;
 
@@ -11,6 +13,10 @@ export default class Material extends AbstractI18nEntity<IMaterial> {
 
   constructor(data: IMaterial) {
     super(data, []);
+  }
+
+  get weeklyBoss(): WeeklyBoss {
+    return weeklyBossesStore.state.bosses[this.bossId];
   }
 
   get image(): string {

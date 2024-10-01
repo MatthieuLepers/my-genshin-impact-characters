@@ -228,7 +228,7 @@ watch(() => form.type, () => {
 });
 
 watch(() => props.formData, (newVal) => {
-  form.set = newVal.set ?? null;
+  form.set = newVal.set ?? State.value.setList[0].value;
   form.type = newVal.type ?? 'flower';
   form.statsJson = newVal.statsJson ?? [
     { name: 'HP', value: ArtefactMainStatData.HP[20], main: true },

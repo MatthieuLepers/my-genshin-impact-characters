@@ -7,16 +7,15 @@
         :key="filteredCharacterStore.filters.elements.length"
       />
       <div
-        v-for="bossId in materialsStore.bossList.value"
-        :key="bossId"
+        v-for="boss in Object.values(weeklyBossesStore.state.bosses)"
+        :key="boss.id"
       >
-        <h3 class="BossTitle" v-if="actions.filteredCharacters(bossId).length">
-          <span>[{{ actions.totalInvestedBossMaterial(bossId) }}/{{ actions.totalBossMaterial(bossId) }}]</span> {{ t(`Data.WeaklyBosses.${bossId}.name`) }}
+        <h3 class="BossTitle" v-if="actions.filteredCharacters(boss.id).length">
+          <span>[{{ actions.totalInvestedBossMaterial(boss.id) }}/{{ actions.totalBossMaterial(boss.id) }}]</span> {{ boss.getI18n('name') }}
         </h3>
         <BossMaterial
-          v-for="material in materialsStore.materialGroupedByBossId.value[bossId]"
+          v-for="material in materialsStore.materialGroupedByBossId.value[boss.id]"
           :key="material.id"
-          :bossId="bossId"
           :material="material"
           :characters="state.characters[material.id]"
         />
@@ -64,6 +63,7 @@ import { modalStore } from '@renderer/components/Materials/Modal/Store';
 import { charactersStore } from '@renderer/core/entities/character/store';
 import { materialsStore } from '@renderer/core/entities/material/store';
 import { filteredCharacterStore } from '@renderer/core/stores/FilteredCharacterStore';
+import { weeklyBossesStore } from '@/renderer/core/entities/weeklyBoss/store';
 
 defineOptions({ name: 'MainView' });
 

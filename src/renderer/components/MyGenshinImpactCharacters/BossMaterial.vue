@@ -111,7 +111,6 @@ import { filteredCharacterStore } from '@renderer/core/stores/FilteredCharacterS
 const { t } = useI18n();
 
 const props = defineProps({
-  bossId: { type: String, required: true },
   material: { type: Material, required: true },
   characters: { type: Array, default: () => [] },
 });

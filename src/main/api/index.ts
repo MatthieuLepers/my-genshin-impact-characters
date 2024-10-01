@@ -7,6 +7,7 @@ import * as ArtefactSet from '@/main/api/artefactSet';
 import * as Artefact from '@/main/api/artefact';
 import * as ArtefactPreset from '@/main/api/artefactPreset';
 import * as Weapon from '@/main/api/weapon';
+import * as WeeklyBoss from '@/main/api/weeklyBoss';
 import * as CharacterBuild from '@/main/api/characterBuild';
 import * as Setting from '@/main/api/setting';
 import * as CipherUtils from '@/main/utils/CipherUtils';
@@ -33,6 +34,7 @@ export default {
   Artefact,
   ArtefactPreset,
   Weapon,
+  WeeklyBoss,
   CharacterBuild,
   Setting,
   CipherUtils,

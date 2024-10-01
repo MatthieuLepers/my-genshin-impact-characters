@@ -1,9 +1,4 @@
-import GlobalI18N from '@renderer/i18n/GlobalI18N';
-
 export default {
-  Data: {
-    WeaklyBosses: GlobalI18N.WeaklyBosses('fr-FR'),
-  },
   App: {
     Menu: {
       followup: 'Suivi',

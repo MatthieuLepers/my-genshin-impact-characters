@@ -28,6 +28,9 @@ function createWindow() {
   mainWindow.init();
 }
 
+// Prevent app to flicker on starts
+app.commandLine.appendSwitch('disable-gpu');
+
 app
   .whenReady()
   .then(async () => {

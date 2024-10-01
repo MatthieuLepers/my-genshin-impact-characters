@@ -18,8 +18,6 @@ const useMaterialsStore = () => {
       [material.bossId]: [...(acc[material.bossId] ?? []), material],
     }), {}));
 
-  const bossList = computed(() => Object.keys(materialGroupedByBossId.value));
-
   const actions = {
     async load() {
       const materialList = await Material.findAll();
@@ -32,7 +30,6 @@ const useMaterialsStore = () => {
 
   return {
     state,
-    bossList,
     materialGroupedByBossId,
     actions,
   };
