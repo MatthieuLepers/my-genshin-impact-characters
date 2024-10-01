@@ -7,7 +7,15 @@ import {
   PrimaryKey,
   AutoIncrement,
   Default,
+  HasMany,
 } from 'sequelize-typescript';
+import {
+  HasManyGetAssociationsMixin,
+  HasManyAddAssociationMixin,
+  HasManyAddAssociationsMixin,
+  HasManySetAssociationsMixin,
+} from 'sequelize';
+import { WeaponI18n } from '@/main/database/models';
 
 @Table({
   modelName: 'weapons',
@@ -64,4 +72,15 @@ export class Weapon extends Model {
 
   @Column(DataType.JSON)
   declare tags: Array<string>;
+
+  @HasMany(() => WeaponI18n, 'weaponId')
+  declare i18n: WeaponI18n[];
+
+  declare getI18ns: HasManyGetAssociationsMixin<WeaponI18n>;
+
+  declare addI18n: HasManyAddAssociationMixin<WeaponI18n, number>;
+
+  declare addI18ns: HasManyAddAssociationsMixin<WeaponI18n, number>;
+
+  declare setI18ns: HasManySetAssociationsMixin<WeaponI18n, number>;
 }

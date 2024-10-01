@@ -10,7 +10,7 @@
         <span class="weapon-details__header-name">
           <img :src="image(`img/ui/icon_${weaponsStore.state.current.type}.png`)" alt="" />
           <strong>
-            {{ t(`Data.Weapons.${weaponsStore.state.current.name}.name`) }}
+            {{ weaponsStore.state.current.getI18n('name') }}
           </strong>
         </span>
         <span class="weapon-details__level">
@@ -22,7 +22,7 @@
         <span class="weapon-details__rarity">
           {{ [...Array(weaponsStore.state.current.rarity).keys()].reduce((acc) => `${acc}★`, '') }}
         </span>
-        <img :src="image(`img/weapons/${weaponsStore.state.current.name}.webp`)" alt="" />
+        <img :src="weaponsStore.state.current.image" alt="" />
       </div>
       <ul class="weapon-details__stat-list">
         <li>

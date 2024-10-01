@@ -143,7 +143,7 @@ const State = computed(() => {
   ;
   const validWeaponList = weaponsStore.weaponList.value
     .filter((weapon) => ((weapon.rarity <= 2 && weapon.level === 70) || (weapon.rarity >= 3 && [80, 90].includes(weapon.level))))
-    .map((weapon) => ({ value: weapon, label: t(`Data.Weapons.${weapon.name}.name`) }))
+    .map((weapon) => ({ value: weapon, label: weapon.getI18n('name') }))
   ;
   const validCharacterList = Object
     .values(charactersStore.state.characters)

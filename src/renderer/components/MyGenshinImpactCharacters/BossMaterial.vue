@@ -105,13 +105,14 @@ import { useI18n } from 'vue-i18n';
 import DataTable from '@renderer/components/Materials/DataTable/index.vue';
 import FormInput from '@renderer/components/Materials/Form/Input.vue';
 
+import Material from '@renderer/core/entities/material';
 import { filteredCharacterStore } from '@renderer/core/stores/FilteredCharacterStore';
 
 const { t } = useI18n();
 
 const props = defineProps({
   bossId: { type: String, required: true },
-  material: { type: Object, required: true },
+  material: { type: Material, required: true },
   characters: { type: Array, default: () => [] },
 });
 

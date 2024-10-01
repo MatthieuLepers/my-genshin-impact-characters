@@ -8,7 +8,11 @@
     "statName": "CritDmg%",
     "statValue": 9.6,
     "releasedAt": "2024-06-05",
-    "tags": ["wishes", "Clorinde"]
+    "tags": ["wishes", "Clorinde"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Absolution" },
+      { "locale": "fr-FR", "name": "Absolution" }
+    ]
   },
   {
     "name": "Akuoumaru",
@@ -19,7 +23,11 @@
     "statName": "Atk%",
     "statValue": 9,
     "releasedAt": "2021-10-13",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Akuoumaru" },
+      { "locale": "fr-FR", "name": "Akuoumaru" }
+    ]
   },
   {
     "name": "AlleyHunter",
@@ -30,7 +38,11 @@
     "statName": "Atk%",
     "statValue": 6,
     "releasedAt": "2021-04-06",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Alley Hunter" },
+      { "locale": "fr-FR", "name": "Traqueur des impasses" }
+    ]
   },
   {
     "name": "AmenomaKageuchi",
@@ -41,7 +53,11 @@
     "statName": "Atk%",
     "statValue": 12,
     "releasedAt": "2021-07-21",
-    "tags": ["f2p", "inazuma"]
+    "tags": ["f2p", "inazuma"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Amenoma Kageuchi" },
+      { "locale": "fr-FR", "name": "Lame kageuchi d'Amenoma" }
+    ]
   },
   {
     "name": "AmosBow",
@@ -52,7 +68,11 @@
     "statName": "Atk%",
     "statValue": 10.8,
     "releasedAt": "2020-10-28",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Amos' Bow" },
+      { "locale": "fr-FR", "name": "Arc d'Amos" }
+    ]
   },
   {
     "name": "ApprenticesNotes",
@@ -60,7 +80,11 @@
     "owned": false,
     "rarity": 1,
     "atk": 23.25,
-    "releasedAt": "2020-10-28"
+    "releasedAt": "2020-10-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Apprentice's Notes" },
+      { "locale": "fr-FR", "name": "Notes de l'apprenti" }
+    ]
   },
   {
     "name": "AquaSimulacra",
@@ -71,7 +95,11 @@
     "statName": "CritDmg%",
     "statValue": 19.2,
     "releasedAt": "2022-05-31",
-    "tags": ["wishes", "Yelan"]
+    "tags": ["wishes", "Yelan"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Aqua Simulacra" },
+      { "locale": "fr-FR", "name": "Simulacre d'eau" }
+    ]
   },
   {
     "name": "AquilaFavonia",
@@ -82,7 +110,11 @@
     "statName": "PhysicalDmg%",
     "statValue": 9,
     "releasedAt": "2020-10-28",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Aquila Favonia" },
+      { "locale": "fr-FR", "name": "Épée du faucon" }
+    ]
   },
   {
     "name": "AshGravenDrinkingHorn",
@@ -93,7 +125,11 @@
     "statName": "HP%",
     "statValue": 9,
     "releasedAt": "2024-08-28",
-    "tags": ["event"]
+    "tags": ["event"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Ash-Graven Drinking Horn" },
+      { "locale": "fr-FR", "name": "Corne à boire cendrée" }
+    ]
   },
   {
     "name": "AThousandFloatingDreams",
@@ -104,7 +140,11 @@
     "statName": "EM",
     "statValue": 57.6,
     "releasedAt": "2022-11-02",
-    "tags": ["wishes", "Nahida"]
+    "tags": ["wishes", "Nahida"],
+    "i18n": [
+      { "locale": "en-EN", "name": "A Thousand Floating Dreams" },
+      { "locale": "fr-FR", "name": "Mille rêves flottants" }
+    ]
   },
   {
     "name": "BalladOfTheBoundlessBlue",
@@ -115,7 +155,11 @@
     "statName": "ER%",
     "statValue": 6.67,
     "releasedAt": "2023-10-12",
-    "tags": ["event"]
+    "tags": ["event"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Ballad of the Boundless Blue" },
+      { "locale": "fr-FR", "name": "Ballade d'un azur infini" }
+    ]
   },
   {
     "name": "BalladOfTheFjords",
@@ -126,7 +170,11 @@
     "statName": "CritRate%",
     "statValue": 6,
     "releasedAt": "2023-08-16",
-    "tags": ["bp"]
+    "tags": ["bp"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Ballad of the Fjords" },
+      { "locale": "fr-FR", "name": "Ballade des fjords" }
+    ]
   },
   {
     "name": "BeaconOfTheReedSea",
@@ -137,7 +185,11 @@
     "statName": "CritRate%",
     "statValue": 7.2,
     "releasedAt": "2023-03-01",
-    "tags": ["wishes", "Dehya"]
+    "tags": ["wishes", "Dehya"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Beacon of the Reed Sea" },
+      { "locale": "fr-FR", "name": "Balise de la mer de roseaux" }
+    ]
   },
   {
     "name": "BeginnersProtector",
@@ -145,7 +197,11 @@
     "owned": false,
     "rarity": 1,
     "atk": 23.25,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Beginner's Protector" },
+      { "locale": "fr-FR", "name": "Lance du débutant" }
+    ]
   },
   {
     "name": "BlackcliffAgate",
@@ -156,7 +212,11 @@
     "statName": "CritDmg%",
     "statValue": 12,
     "releasedAt": "2020-11-01",
-    "tags": ["shop"]
+    "tags": ["shop"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Blackcliff Agate" },
+      { "locale": "fr-FR", "name": "Agate de Rochenoire" }
+    ]
   },
   {
     "name": "BlackcliffLongsword",
@@ -167,7 +227,11 @@
     "statName": "CritDmg%",
     "statValue": 8,
     "releasedAt": "2020-11-01",
-    "tags": ["shop"]
+    "tags": ["shop"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Blackcliff Longsword" },
+      { "locale": "fr-FR", "name": "Épée longue de Rochenoire" }
+    ]
   },
   {
     "name": "BlackcliffPole",
@@ -178,7 +242,11 @@
     "statName": "CritDmg%",
     "statValue": 12,
     "releasedAt": "2020-11-01",
-    "tags": ["shop"]
+    "tags": ["shop"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Blackcliff Pole" },
+      { "locale": "fr-FR", "name": "Lance de Rochenoire" }
+    ]
   },
   {
     "name": "BlackcliffSlasher",
@@ -189,7 +257,11 @@
     "statName": "CritDmg%",
     "statValue": 12,
     "releasedAt": "2020-11-01",
-    "tags": ["shop"]
+    "tags": ["shop"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Blackcliff Slasher" },
+      { "locale": "fr-FR", "name": "Trancheuse de Rochenoire" }
+    ]
   },
   {
     "name": "BlackcliffWarbow",
@@ -200,7 +272,11 @@
     "statName": "CritDmg%",
     "statValue": 8,
     "releasedAt": "2020-11-01",
-    "tags": ["shop"]
+    "tags": ["shop"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Blackcliff Warbow" },
+      { "locale": "fr-FR", "name": "Arc de guerre de Rochenoire" }
+    ]
   },
   {
     "name": "BlackTassel",
@@ -210,7 +286,11 @@
     "atk": 37.61,
     "statName": "HP%",
     "statValue": 10.21,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Black Tassel" },
+      { "locale": "fr-FR", "name": "Pampille noire" }
+    ]
   },
   {
     "name": "BloodtaintedGreatsword",
@@ -220,7 +300,11 @@
     "atk": 37.6,
     "statName": "EM",
     "statValue": 40.8,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Bloodtainted Greatsword" },
+      { "locale": "fr-FR", "name": "Épée sanglante" }
+    ]
   },
   {
     "name": "CalamityQueller",
@@ -231,7 +315,11 @@
     "statName": "Ark%",
     "statValue": 3.6,
     "releasedAt": "2022-01-05",
-    "tags": ["wishes", "Shenhe"]
+    "tags": ["wishes", "Shenhe"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Calamity Queller" },
+      { "locale": "fr-FR", "name": "Étouffeur de calamités" }
+    ]
   },
   {
     "name": "CashflowSupervision",
@@ -242,7 +330,11 @@
     "statName": "CritRate%",
     "statValue": 4.8,
     "releasedAt": "2023-10-17",
-    "tags": ["wishes", "Wriothesley"]
+    "tags": ["wishes", "Wriothesley"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Cashflow Supervision" },
+      { "locale": "fr-FR", "name": "Supervision de trésorerie" }
+    ]
   },
   {
     "name": "ChainBreaker",
@@ -253,7 +345,11 @@
     "statName": "Atk%",
     "statValue": 6,
     "releasedAt": "2024-08-28",
-    "tags": ["f2p", "natlan"]
+    "tags": ["f2p", "natlan"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Chain Breaker" },
+      { "locale": "fr-FR", "name": "Brise-chaîne" }
+    ]
   },
   {
     "name": "CinnabarSpindle",
@@ -264,7 +360,11 @@
     "statName": "Def%",
     "statValue": 15.01,
     "releasedAt": "2021-11-25",
-    "tags": ["event"]
+    "tags": ["event"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Cinnabar Spindle" },
+      { "locale": "fr-FR", "name": "Fuseau de cinabre" }
+    ]
   },
   {
     "name": "Cloudforged",
@@ -275,7 +375,11 @@
     "statName": "EM",
     "statValue": 36,
     "releasedAt": "2024-06-07",
-    "tags": ["event"]
+    "tags": ["event"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Cloudforged" },
+      { "locale": "fr-FR", "name": "Nimbus-forgé" }
+    ]
   },
   {
     "name": "CompoundBow",
@@ -286,7 +390,11 @@
     "statName": "PhysicalDmg%",
     "statValue": 15.01,
     "releasedAt": "2020-09-28",
-    "tags": ["f2p", "liyue", "mondstadt"]
+    "tags": ["f2p", "liyue", "mondstadt"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Compound Bow" },
+      { "locale": "fr-FR", "name": "Arc à poulies" }
+    ]
   },
   {
     "name": "CoolSteel",
@@ -296,7 +404,11 @@
     "atk": 38.74,
     "statName": "Atk%",
     "statValue": 7.66,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Cool Steel" },
+      { "locale": "fr-FR", "name": "Lame froide" }
+    ]
   },
   {
     "name": "CranesEchoingCall",
@@ -307,7 +419,11 @@
     "statName": "Atk%",
     "statValue": 3.6,
     "releasedAt": "2024-01-31",
-    "tags": ["wishes", "Xianyun"]
+    "tags": ["wishes", "Xianyun"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Crane's Echoing Call" },
+      { "locale": "fr-FR", "name": "Écho de la grue" }
+    ]
   },
   {
     "name": "CrescentPike",
@@ -318,7 +434,11 @@
     "statName": "PhysicalDmg%",
     "statValue": 7.51,
     "releasedAt": "2020-09-28",
-    "tags": ["f2p", "liyue", "mondstadt"]
+    "tags": ["f2p", "liyue", "mondstadt"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Crescent Pike" },
+      { "locale": "fr-FR", "name": "Pique du croissant de lune" }
+    ]
   },
   {
     "name": "CrimsonMoonsSemblance",
@@ -329,7 +449,11 @@
     "statName": "CritRate%",
     "statValue": 4.8,
     "releasedAt": "2024-04-24",
-    "tags": ["wishes", "Arlecchino"]
+    "tags": ["wishes", "Arlecchino"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Crimson Moon's Semblance" },
+      { "locale": "fr-FR", "name": "Semblance de la lune écarlate" }
+    ]
   },
   {
     "name": "DarkIronSword",
@@ -339,7 +463,11 @@
     "atk": 38.74,
     "statName": "EM",
     "statValue": 30.6,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Dark Iron Sword" },
+      { "locale": "fr-FR", "name": "Épée en fer noir" }
+    ]
   },
   {
     "name": "Deathmatch",
@@ -350,7 +478,11 @@
     "statName": "CritRate%",
     "statValue": 8,
     "releasedAt": "2020-09-28",
-    "tags": ["bp"]
+    "tags": ["bp"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Deathmatch" },
+      { "locale": "fr-FR", "name": "Scion de la victoire" }
+    ]
   },
   {
     "name": "DebateClub",
@@ -360,7 +492,11 @@
     "atk": 38.74,
     "statName": "Atk%",
     "statValue": 7.66,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Debate Club" },
+      { "locale": "fr-FR", "name": "Épée de la raison" }
+    ]
   },
   {
     "name": "DialoguesOfTheDesertSages",
@@ -371,7 +507,11 @@
     "statName": "HP%",
     "statValue": 9,
     "releasedAt": "2024-03-14",
-    "tags": ["event"]
+    "tags": ["event"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Dialogues of the Desert Sages" },
+      { "locale": "fr-FR", "name": "Dialogues des sages du désert" }
+    ]
   },
   {
     "name": "DodocoTales",
@@ -382,7 +522,11 @@
     "statName": "Atk%",
     "statValue": 12,
     "releasedAt": "2021-06-17",
-    "tags": ["event"]
+    "tags": ["event"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Dodoco Tales" },
+      { "locale": "fr-FR", "name": "Contes de Dodoco" }
+    ]
   },
   {
     "name": "DragonsBane",
@@ -393,7 +537,11 @@
     "statName": "EM",
     "statValue": 48,
     "releasedAt": "2020-09-28",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Dragon's Bane" },
+      { "locale": "fr-FR", "name": "Fléau du dragon" }
+    ]
   },
   {
     "name": "DragonspineSpear",
@@ -404,7 +552,11 @@
     "statName": "PhysicalDmg%",
     "statValue": 15.01,
     "releasedAt": "2020-12-23",
-    "tags": ["f2p", "dragonspine"]
+    "tags": ["f2p", "dragonspine"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Dragonspine Spear" },
+      { "locale": "fr-FR", "name": "Lance Dosdragon" }
+    ]
   },
   {
     "name": "DullBlade",
@@ -412,7 +564,11 @@
     "owned": false,
     "rarity": 1,
     "atk": 23.25,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Dull Blade" },
+      { "locale": "fr-FR", "name": "Épée émoussée" }
+    ]
   },
   {
     "name": "EarthShaker",
@@ -423,7 +579,11 @@
     "statName": "Atk%",
     "statValue": 6,
     "releasedAt": "2024-08-28",
-    "tags": ["f2p", "natlan"]
+    "tags": ["f2p", "natlan"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Earth Shaker" },
+      { "locale": "fr-FR", "name": "Trembleur de terre" }
+    ]
   },
   {
     "name": "ElegyForTheEnd",
@@ -434,7 +594,11 @@
     "statName": "ER%",
     "statValue": 12,
     "releasedAt": "2021-03-17",
-    "tags": ["wishes", "Venti"]
+    "tags": ["wishes", "Venti"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Elegy for the End" },
+      { "locale": "fr-FR", "name": "Ultime soupir" }
+    ]
   },
   {
     "name": "EmeraldOrb",
@@ -444,7 +608,11 @@
     "atk": 39.88,
     "statName": "EM",
     "statValue": 20.4,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Emerald Orb" },
+      { "locale": "fr-FR", "name": "Orbe jadien" }
+    ]
   },
   {
     "name": "EndOfTheLine",
@@ -455,7 +623,11 @@
     "statName": "ER%",
     "statValue": 10,
     "releasedAt": "2022-08-24",
-    "tags": ["f2p", "sumeru", "fishing"]
+    "tags": ["f2p", "sumeru", "fishing"],
+    "i18n": [
+      { "locale": "en-EN", "name": "End of the Line" },
+      { "locale": "fr-FR", "name": "Chalutier" }
+    ]
   },
   {
     "name": "EngulfingLightning",
@@ -466,7 +638,11 @@
     "statName": "ER%",
     "statValue": 12,
     "releasedAt": "2021-09-01",
-    "tags": ["wishes", "Raiden Shogun"]
+    "tags": ["wishes", "Raiden Shogun"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Engulfing Lightning" },
+      { "locale": "fr-FR", "name": "Lumière du faucheur" }
+    ]
   },
   {
     "name": "EverlastingMoonglow",
@@ -477,7 +653,11 @@
     "statName": "HP%",
     "statValue": 10.8,
     "releasedAt": "2021-09-21",
-    "tags": ["wishes", "Sangonomiya Kokomi"]
+    "tags": ["wishes", "Sangonomiya Kokomi"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Everlasting Moonglow" },
+      { "locale": "fr-FR", "name": "Lueur de la lune éternelle" }
+    ]
   },
   {
     "name": "EyeOfPerception",
@@ -488,7 +668,11 @@
     "statName": "Atk%",
     "statValue": 12,
     "releasedAt": "2020-09-28",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Eye of Perception" },
+      { "locale": "fr-FR", "name": "Œil de la perception" }
+    ]
   },
   {
     "name": "FadingTwilight",
@@ -499,7 +683,11 @@
     "statName": "ER%",
     "statValue": 6.67,
     "releasedAt": "2022-03-31",
-    "tags": ["event"]
+    "tags": ["event"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Fading Twilight" },
+      { "locale": "fr-FR", "name": "Crépuscule couchant" }
+    ]
   },
   {
     "name": "FavoniusCodex",
@@ -510,7 +698,11 @@
     "statName": "ER%",
     "statValue": 10,
     "releasedAt": "2020-09-28",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Favonius Codex" },
+      { "locale": "fr-FR", "name": "Code de Favonius" }
+    ]
   },
   {
     "name": "FavoniusGreatsword",
@@ -521,7 +713,11 @@
     "statName": "ER%",
     "statValue": 13.33,
     "releasedAt": "2020-09-28",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Favonius Greatsword" },
+      { "locale": "fr-FR", "name": "Espadon de Favonius" }
+    ]
   },
   {
     "name": "FavoniusLance",
@@ -532,7 +728,11 @@
     "statName": "ER%",
     "statValue": 6.67,
     "releasedAt": "2020-09-28",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Favonius Lance" },
+      { "locale": "fr-FR", "name": "Lance de Favonius" }
+    ]
   },
   {
     "name": "FavoniusSword",
@@ -543,7 +743,11 @@
     "statName": "ER%",
     "statValue": 13.33,
     "releasedAt": "2020-09-28",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Favonius Sword" },
+      { "locale": "fr-FR", "name": "Épée de Favonius" }
+    ]
   },
   {
     "name": "FavoniusWarbow",
@@ -554,7 +758,11 @@
     "statName": "ER%",
     "statValue": 13.33,
     "releasedAt": "2020-09-28",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Favonius Warbow" },
+      { "locale": "fr-FR", "name": "Arc de chasse de Favonius" }
+    ]
   },
   {
     "name": "FerrousShadow",
@@ -564,7 +772,11 @@
     "atk": 38.74,
     "statName": "HP%",
     "statValue": 7.66,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Ferrous Shadow" },
+      { "locale": "fr-FR", "name": "Ombre ferreuse" }
+    ]
   },
   {
     "name": "FesteringDesire",
@@ -575,7 +787,11 @@
     "statName": "ER%",
     "statValue": 10,
     "releasedAt": "2020-12-23",
-    "tags": ["event"]
+    "tags": ["event"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Festering Desire" },
+      { "locale": "fr-FR", "name": "Croc suppurant" }
+    ]
   },
   {
     "name": "FilletBlade",
@@ -585,7 +801,11 @@
     "atk": 38.74,
     "statName": "Atk%",
     "statValue": 7.66,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Fillet Blade" },
+      { "locale": "fr-FR", "name": "Couteau à filets" }
+    ]
   },
   {
     "name": "FinaleOfTheDeep",
@@ -596,7 +816,11 @@
     "statName": "Atk%",
     "statValue": 6,
     "releasedAt": "2023-08-16",
-    "tags": ["f2p", "fontaine"]
+    "tags": ["f2p", "fontaine"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Finale of the Deep" },
+      { "locale": "fr-FR", "name": "Final des profondeurs" }
+    ]
   },
   {
     "name": "FleuveCendreFerryman",
@@ -607,7 +831,11 @@
     "statName": "ER%",
     "statValue": 10,
     "releasedAt": "2023-08-16",
-    "tags": ["f2p", "fontaine", "fishing"]
+    "tags": ["f2p", "fontaine", "fishing"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Fleuve Cendre Ferryman" },
+      { "locale": "fr-FR", "name": "Passeur du Fleuve cendré" }
+    ]
   },
   {
     "name": "FlowingPurity",
@@ -618,7 +846,11 @@
     "statName": "Atk%",
     "statValue": 6,
     "releasedAt": "2023-08-16",
-    "tags": ["f2p", "fontaine"]
+    "tags": ["f2p", "fontaine"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Flowing Purity" },
+      { "locale": "fr-FR", "name": "Pureté fluide" }
+    ]
   },
   {
     "name": "FluteOfEzpitzal",
@@ -629,7 +861,11 @@
     "statName": "Def%",
     "statValue": 15.01,
     "releasedAt": "2024-08-28",
-    "tags": ["f2p", "natlan"]
+    "tags": ["f2p", "natlan"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Flute of Ezpitzal" },
+      { "locale": "fr-FR", "name": "Flûte d'ezpitzal" }
+    ]
   },
   {
     "name": "FootprintOfTheRainbow",
@@ -640,7 +876,11 @@
     "statName": "Def%",
     "statValue": 11.26,
     "releasedAt": "2024-08-28",
-    "tags": ["f2p", "natlan"]
+    "tags": ["f2p", "natlan"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Footprint of the Rainbow" },
+      { "locale": "fr-FR", "name": "Trace d'arc-en-ciel" }
+    ]
   },
   {
     "name": "ForestRegalia",
@@ -651,7 +891,11 @@
     "statName": "ER%",
     "statValue": 6.67,
     "releasedAt": "2022-08-24",
-    "tags": ["f2p", "sumeru"]
+    "tags": ["f2p", "sumeru"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Forest Regalia" },
+      { "locale": "fr-FR", "name": "Apparat de la forêt" }
+    ]
   },
   {
     "name": "FreedomSword",
@@ -662,7 +906,11 @@
     "statName": "EM",
     "statValue": 43.2,
     "releasedAt": "2021-06-29",
-    "tags": ["wishes", "Kaedehara Kazuha"]
+    "tags": ["wishes", "Kaedehara Kazuha"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Freedom-Sword" },
+      { "locale": "fr-FR", "name": "Serment de la liberté" }
+    ]
   },
   {
     "name": "Frostbearer",
@@ -673,7 +921,11 @@
     "statName": "Atk%",
     "statValue": 9,
     "releasedAt": "2020-12-23",
-    "tags": ["f2p", "dragonspine"]
+    "tags": ["f2p", "dragonspine"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Frostbearer" },
+      { "locale": "fr-FR", "name": "Fruit du permafrost" }
+    ]
   },
   {
     "name": "FruitOfFulfillment",
@@ -684,7 +936,11 @@
     "statName": "ER%",
     "statValue": 10,
     "releasedAt": "2022-08-24",
-    "tags": ["f2p", "sumeru"]
+    "tags": ["f2p", "sumeru"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Fruit of Fulfillment" },
+      { "locale": "fr-FR", "name": "Le fruit de l'accomplissement" }
+    ]
   },
   {
     "name": "HakushinRing",
@@ -695,7 +951,11 @@
     "statName": "ER%",
     "statValue": 6.67,
     "releasedAt": "2021-07-21",
-    "tags": ["f2p", "inazuma"]
+    "tags": ["f2p", "inazuma"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Hakushin Ring" },
+      { "locale": "fr-FR", "name": "Anneau des Hakushin" }
+    ]
   },
   {
     "name": "Halberd",
@@ -705,7 +965,11 @@
     "atk": 39.88,
     "statName": "Atk%",
     "statValue": 5.11,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Halberd" },
+      { "locale": "fr-FR", "name": "Hallebarde" }
+    ]
   },
   {
     "name": "Hamayumi",
@@ -716,7 +980,11 @@
     "statName": "Atk%",
     "statValue": 12,
     "releasedAt": "2021-07-21",
-    "tags": ["f2p", "inazuma"]
+    "tags": ["f2p", "inazuma"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Hamayumi" },
+      { "locale": "fr-FR", "name": "Arc d'exorcisme" }
+    ]
   },
   {
     "name": "HaranGeppakuFutsu",
@@ -727,7 +995,11 @@
     "statName": "CritRate%",
     "statValue": 7.2,
     "releasedAt": "2022-03-30",
-    "tags": ["wishes", "Kamisato Ayato"]
+    "tags": ["wishes", "Kamisato Ayato"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Haran Geppaku Futsu" },
+      { "locale": "fr-FR", "name": "Lune ondulante de Futsu" }
+    ]
   },
   {
     "name": "HarbingerOfDawn",
@@ -737,7 +1009,11 @@
     "atk": 38.74,
     "statName": "CritDmg%",
     "statValue": 10.2,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Harbinger of Dawn" },
+      { "locale": "fr-FR", "name": "Messager de l'Aube" }
+    ]
   },
   {
     "name": "HuntersBow",
@@ -745,7 +1021,11 @@
     "owned": false,
     "rarity": 1,
     "atk": 23.25,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Hunter's Bow" },
+      { "locale": "fr-FR", "name": "Arc de chasse" }
+    ]
   },
   {
     "name": "HuntersPath",
@@ -756,7 +1036,11 @@
     "statName": "CritRate%",
     "statValue": 9.6,
     "releasedAt": "2022-08-24",
-    "tags": ["wishes", "Tighnari"]
+    "tags": ["wishes", "Tighnari"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Hunter's Path" },
+      { "locale": "fr-FR", "name": "La voie du chasseur" }
+    ]
   },
   {
     "name": "IbisPiercer",
@@ -767,7 +1051,11 @@
     "statName": "Atk%",
     "statValue": 6,
     "releasedAt": "2023-05-25",
-    "tags": ["event"]
+    "tags": ["event"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Ibis Piercer" },
+      { "locale": "fr-FR", "name": "Perceur d'ibis" }
+    ]
   },
   {
     "name": "IronPoint",
@@ -775,7 +1063,11 @@
     "owned": false,
     "rarity": 2,
     "atk": 32.93,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Iron Point" },
+      { "locale": "fr-FR", "name": "Pointe de fer" }
+    ]
   },
   {
     "name": "IronSting",
@@ -786,7 +1078,11 @@
     "statName": "EM",
     "statValue": 36,
     "releasedAt": "2020-09-28",
-    "tags": ["f2p", "liyue", "mondstadt"]
+    "tags": ["f2p", "liyue", "mondstadt"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Iron Sting" },
+      { "locale": "fr-FR", "name": "Piqûre de fer" }
+    ]
   },
   {
     "name": "JadefallsSplendor",
@@ -797,7 +1093,11 @@
     "statName": "HP%",
     "statValue": 10.8,
     "releasedAt": "2023-05-02",
-    "tags": ["wishes", "Baizhu"]
+    "tags": ["wishes", "Baizhu"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Jadefall's Splendor" },
+      { "locale": "fr-FR", "name": "Splendeur de l'azur" }
+    ]
   },
   {
     "name": "KagotsurubeIsshin",
@@ -808,7 +1108,11 @@
     "statName": "Atk%",
     "statValue": 9,
     "releasedAt": "2022-07-13",
-    "tags": ["f2p"]
+    "tags": ["f2p"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Kagotsurube Isshin" },
+      { "locale": "fr-FR", "name": "Kagotsurube Isshin" }
+    ]
   },
   {
     "name": "KagurasVerity",
@@ -819,7 +1123,11 @@
     "statName": "CritDmg%",
     "statValue": 14.4,
     "releasedAt": "2022-02-16",
-    "tags": ["wishes", "Yae Miko"]
+    "tags": ["wishes", "Yae Miko"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Kagura's Verity" },
+      { "locale": "fr-FR", "name": "Vérité de Kagura" }
+    ]
   },
   {
     "name": "KatsuragikiriNagamasa",
@@ -830,7 +1138,11 @@
     "statName": "ER%",
     "statValue": 10,
     "releasedAt": "2021-07-21",
-    "tags": ["f2p", "inazuma"]
+    "tags": ["f2p", "inazuma"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Katsuragikiri Nagamasa" },
+      { "locale": "fr-FR", "name": "Espadon de Nagamasa" }
+    ]
   },
   {
     "name": "KeyOfKahjNisut",
@@ -841,7 +1153,11 @@
     "statName": "HP%",
     "statValue": 14.4,
     "releasedAt": "2022-10-14",
-    "tags": ["wishes", "Nilou"]
+    "tags": ["wishes", "Nilou"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Key of Kahj-Nisut" },
+      { "locale": "fr-FR", "name": "Clé de Khaj-Nisut" }
+    ]
   },
   {
     "name": "KingsSquire",
@@ -852,7 +1168,11 @@
     "statName": "Atk%",
     "statValue": 12,
     "releasedAt": "2022-08-24",
-    "tags": ["f2p", "sumeru"]
+    "tags": ["f2p", "sumeru"],
+    "i18n": [
+      { "locale": "en-EN", "name": "King's Squire" },
+      { "locale": "fr-FR", "name": "Le valet du roi" }
+    ]
   },
   {
     "name": "KitainCrossSpear",
@@ -863,7 +1183,11 @@
     "statName": "EM",
     "statValue": 24,
     "releasedAt": "2021-07-21",
-    "tags": ["f2p", "inazuma"]
+    "tags": ["f2p", "inazuma"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Kitain Cross Spear" },
+      { "locale": "fr-FR", "name": "Lance en croix de Kitain" }
+    ]
   },
   {
     "name": "LightOfFoliarIncision",
@@ -874,7 +1198,11 @@
     "statName": "CritDmg%",
     "statValue": 19.2,
     "releasedAt": "2023-01-18",
-    "tags": ["wishes", "Alhaitham"]
+    "tags": ["wishes", "Alhaitham"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Light of Foliar Incision" },
+      { "locale": "fr-FR", "name": "Lumière d'incision foliaire" }
+    ]
   },
   {
     "name": "LionsRoar",
@@ -885,7 +1213,11 @@
     "statName": "Atk%",
     "statValue": 9,
     "releasedAt": "2020-09-28",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Lion's Roar" },
+      { "locale": "fr-FR", "name": "Rugissement du Lion" }
+    ]
   },
   {
     "name": "LithicBlade",
@@ -896,7 +1228,11 @@
     "statName": "Atk%",
     "statValue": 9,
     "releasedAt": "2021-02-23",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Lithic Blade" },
+      { "locale": "fr-FR", "name": "Épée antique des Millelithes" }
+    ]
   },
   {
     "name": "LithicSpear",
@@ -907,7 +1243,11 @@
     "statName": "Atk%",
     "statValue": 6,
     "releasedAt": "2021-02-23",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Lithic Spear" },
+      { "locale": "fr-FR", "name": "Lance des Millelithes" }
+    ]
   },
   {
     "name": "LostPrayerToTheSacredWinds",
@@ -918,7 +1258,11 @@
     "statName": "CritRate%",
     "statValue": 7.2,
     "releasedAt": "2020-09-28",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Lost Prayer to the Sacred Winds" },
+      { "locale": "fr-FR", "name": "L'origine des Quatre Vents" }
+    ]
   },
   {
     "name": "LumidouceElegy",
@@ -929,7 +1273,11 @@
     "statName": "CritRate%",
     "statValue": 7.2,
     "releasedAt": "2024-08-06",
-    "tags": ["wishes", "Emilie"]
+    "tags": ["wishes", "Emilie"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Lumidouce Elegy" },
+      { "locale": "fr-FR", "name": "Élégie de Lumidouce" }
+    ]
   },
   {
     "name": "LuxuriousSeaLord",
@@ -940,7 +1288,11 @@
     "statName": "Atk%",
     "statValue": 12,
     "releasedAt": "2021-09-27",
-    "tags": ["event"]
+    "tags": ["event"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Luxurious Sea-Lord" },
+      { "locale": "fr-FR", "name": "Illustre seigneur des mers" }
+    ]
   },
   {
     "name": "MagicGuide",
@@ -950,7 +1302,11 @@
     "atk": 37.61,
     "statName": "EM",
     "statValue": 40.8,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Magic Guide" },
+      { "locale": "fr-FR", "name": "Guide de magie" }
+    ]
   },
   {
     "name": "MailedFlower",
@@ -961,7 +1317,11 @@
     "statName": "EM",
     "statValue": 24,
     "releasedAt": "2023-03-03",
-    "tags": ["event"]
+    "tags": ["event"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Mailed Flower" },
+      { "locale": "fr-FR", "name": "Fleur de mailles" }
+    ]
   },
   {
     "name": "MakhairaAquamarine",
@@ -972,7 +1332,11 @@
     "statName": "EM",
     "statValue": 36,
     "releasedAt": "2022-09-28",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Makhaira Aquamarine" },
+      { "locale": "fr-FR", "name": "Aigue-marine de Makhaira" }
+    ]
   },
   {
     "name": "MappaMare",
@@ -983,7 +1347,11 @@
     "statName": "EM",
     "statValue": 24,
     "releasedAt": "2020-09-28",
-    "tags": ["f2p", "liyue", "mondstadt"]
+    "tags": ["f2p", "liyue", "mondstadt"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Mappa Mare" },
+      { "locale": "fr-FR", "name": "Atlas des terres et des mer" }
+    ]
   },
   {
     "name": "MemoryOfDust",
@@ -994,7 +1362,11 @@
     "statName": "Atk%",
     "statValue": 10.8,
     "releasedAt": "2020-11-11",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Memory of Dust" },
+      { "locale": "fr-FR", "name": "Chaînes mortelles" }
+    ]
   },
   {
     "name": "Messenger",
@@ -1004,7 +1376,11 @@
     "atk": 39.88,
     "statName": "CritDmg%",
     "statValue": 6.8,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Messenger" },
+      { "locale": "fr-FR", "name": "Messager" }
+    ]
   },
   {
     "name": "MissiveWindspear",
@@ -1015,7 +1391,11 @@
     "statName": "Atk%",
     "statValue": 9,
     "releasedAt": "2022-09-29",
-    "tags": ["event"]
+    "tags": ["event"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Lance du vent saisonnier" },
+      { "locale": "fr-FR", "name": "Missive Windspear" }
+    ]
   },
   {
     "name": "MistsplitterReforged",
@@ -1026,7 +1406,11 @@
     "statName": "CritDmg%",
     "statValue": 9.6,
     "releasedAt": "2021-07-21",
-    "tags": ["wishes", "Kamisato Ayaka"]
+    "tags": ["wishes", "Kamisato Ayaka"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Mistsplitter Reforged" },
+      { "locale": "fr-FR", "name": "Reflet de tranche-brume" }
+    ]
   },
   {
     "name": "MitternachtsWaltz",
@@ -1037,7 +1421,11 @@
     "statName": "PhysicalDmg%",
     "statValue": 11.26,
     "releasedAt": "2021-06-09",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Mitternachts Waltz" },
+      { "locale": "fr-FR", "name": "Valse nocturne" }
+    ]
   },
   {
     "name": "Moonpiercer",
@@ -1048,7 +1436,11 @@
     "statName": "EM",
     "statValue": 24,
     "releasedAt": "2022-08-24",
-    "tags": ["f2p", "sumeru"]
+    "tags": ["f2p", "sumeru"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Moonpiercer" },
+      { "locale": "fr-FR", "name": "Perce-lune" }
+    ]
   },
   {
     "name": "MouunsMoon",
@@ -1059,7 +1451,11 @@
     "statName": "Atk%",
     "statValue": 6,
     "releasedAt": "2021-11-02",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Mouun's Moon" },
+      { "locale": "fr-FR", "name": "Lune de Mouun" }
+    ]
   },
   {
     "name": "OathswornEye",
@@ -1070,7 +1466,11 @@
     "statName": "Atk%",
     "statValue": 6,
     "releasedAt": "2022-02-16",
-    "tags": ["event"]
+    "tags": ["event"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Oathsworn Eye" },
+      { "locale": "fr-FR", "name": "Œil d'assermentation" }
+    ]
   },
   {
     "name": "OldMercsPal",
@@ -1078,7 +1478,11 @@
     "owned": false,
     "rarity": 2,
     "atk": 32.93,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Old Merc's Pal" },
+      { "locale": "fr-FR", "name": "Lame du mercenaire" }
+    ]
   },
   {
     "name": "OtherworldlyStory",
@@ -1088,7 +1492,11 @@
     "atk": 38.74,
     "statName": "ER%",
     "statValue": 8.5,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Otherworldly Story" },
+      { "locale": "fr-FR", "name": "Conte d'un autre monde" }
+    ]
   },
   {
     "name": "PocketGrimoire",
@@ -1096,7 +1504,11 @@
     "owned": false,
     "rarity": 2,
     "atk": 32.93,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Pocket Grimoire" },
+      { "locale": "fr-FR", "name": "Grimoire de poche" }
+    ]
   },
   {
     "name": "PolarStar",
@@ -1107,7 +1519,11 @@
     "statName": "CritRate%",
     "statValue": 7.2,
     "releasedAt": "2021-10-13",
-    "tags": ["wishes", "Tartaglia"]
+    "tags": ["wishes", "Tartaglia"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Polar Star" },
+      { "locale": "fr-FR", "name": "Étoile polaire" }
+    ]
   },
   {
     "name": "PortablePowerSaw",
@@ -1118,7 +1534,11 @@
     "statName": "HP%",
     "statValue": 12,
     "releasedAt": "2023-09-27",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Portable Power Saw" },
+      { "locale": "fr-FR", "name": "Scie électrique portative" }
+    ]
   },
   {
     "name": "Predator",
@@ -1129,7 +1549,11 @@
     "statName": "Atk%",
     "statValue": 9,
     "releasedAt": "2021-09-01",
-    "tags": ["ps4", "Aloy"]
+    "tags": ["ps4", "Aloy"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Predator" },
+      { "locale": "fr-FR", "name": "Predator" }
+    ]
   },
   {
     "name": "PrimordialJadeCutter",
@@ -1140,7 +1564,11 @@
     "statName": "CritRate%",
     "statValue": 9.6,
     "releasedAt": "2021-02-03",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Primordial Jade Cutter" },
+      { "locale": "fr-FR", "name": "Coupeur de jade primordial" }
+    ]
   },
   {
     "name": "PrimordialJadeWingedSpear",
@@ -1151,7 +1579,11 @@
     "statName": "CritRate%",
     "statValue": 4.8,
     "releasedAt": "2020-09-28",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Primordial Jade Winged-Spear" },
+      { "locale": "fr-FR", "name": "Lance de jade ailée" }
+    ]
   },
   {
     "name": "ProspectorsDrill",
@@ -1162,7 +1594,11 @@
     "statName": "Atk%",
     "statValue": 6,
     "releasedAt": "2023-10-17",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Prospector's Drill" },
+      { "locale": "fr-FR", "name": "Foret de prospecteur" }
+    ]
   },
   {
     "name": "PrototypeAmber",
@@ -1173,7 +1609,11 @@
     "statName": "HP%",
     "statValue": 9,
     "releasedAt": "2020-09-28",
-    "tags": ["f2p", "liyue", "mondstadt"]
+    "tags": ["f2p", "liyue", "mondstadt"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Prototype Amber" },
+      { "locale": "fr-FR", "name": "Malice (prototype)" }
+    ]
   },
   {
     "name": "PrototypeArchaic",
@@ -1184,7 +1624,11 @@
     "statName": "Atk%",
     "statValue": 6,
     "releasedAt": "2020-09-28",
-    "tags": ["f2p", "liyue", "mondstadt"]
+    "tags": ["f2p", "liyue", "mondstadt"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Prototype Archaic" },
+      { "locale": "fr-FR", "name": "Espadon (prototype)" }
+    ]
   },
   {
     "name": "PrototypeCrescent",
@@ -1195,7 +1639,11 @@
     "statName": "Atk%",
     "statValue": 9,
     "releasedAt": "2020-09-28",
-    "tags": ["f2p", "liyue", "mondstadt"]
+    "tags": ["f2p", "liyue", "mondstadt"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Prototype Crescent" },
+      { "locale": "fr-FR", "name": "Lune paisible (prototype)" }
+    ]
   },
   {
     "name": "PrototypeRancour",
@@ -1206,7 +1654,11 @@
     "statName": "PhysicalDmg%",
     "statValue": 7.51,
     "releasedAt": "2020-09-28",
-    "tags": ["f2p", "liyue", "mondstadt"]
+    "tags": ["f2p", "liyue", "mondstadt"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Prototype Rancour" },
+      { "locale": "fr-FR", "name": "Tailleur de pierre (prototype)" }
+    ]
   },
   {
     "name": "PrototypeStarglitter",
@@ -1217,7 +1669,11 @@
     "statName": "ER%",
     "statValue": 10,
     "releasedAt": "2020-09-28",
-    "tags": ["f2p", "liyue", "mondstadt"]
+    "tags": ["f2p", "liyue", "mondstadt"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Prototype Starglitter" },
+      { "locale": "fr-FR", "name": "Guisarme stellaire (prototype)" }
+    ]
   },
   {
     "name": "Rainslasher",
@@ -1228,7 +1684,11 @@
     "statName": "EM",
     "statValue": 36,
     "releasedAt": "2020-09-28",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Rainslasher" },
+      { "locale": "fr-FR", "name": "Fluorescence" }
+    ]
   },
   {
     "name": "RangeGauge",
@@ -1239,7 +1699,11 @@
     "statName": "Atk%",
     "statValue": 6,
     "releasedAt": "2023-10-17",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Range Gauge" },
+      { "locale": "fr-FR", "name": "Jauge de portée" }
+    ]
   },
   {
     "name": "RavenBow",
@@ -1249,7 +1713,11 @@
     "atk": 39.88,
     "statName": "EM",
     "statValue": 20.4,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Raven Bow" },
+      { "locale": "fr-FR", "name": "Arc du corbeau" }
+    ]
   },
   {
     "name": "RecurveBow",
@@ -1259,7 +1727,11 @@
     "atk": 37.61,
     "statName": "HP%",
     "statValue": 10.21,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Recurve Bow" },
+      { "locale": "fr-FR", "name": "Arc courbé" }
+    ]
   },
   {
     "name": "RedhornStonethresher",
@@ -1270,7 +1742,11 @@
     "statName": "CritDmg%",
     "statValue": 19.2,
     "releasedAt": "2021-12-14",
-    "tags": ["wishes", "Arataki Itto"]
+    "tags": ["wishes", "Arataki Itto"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Redhorn Stonethresher" },
+      { "locale": "fr-FR", "name": "Brise-pierre de corne rouge" }
+    ]
   },
   {
     "name": "RightfulReward",
@@ -1281,7 +1757,11 @@
     "statName": "HP%",
     "statValue": 6,
     "releasedAt": "2023-08-16",
-    "tags": ["f2p", "fontaine"]
+    "tags": ["f2p", "fontaine"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Rightful Reward" },
+      { "locale": "fr-FR", "name": "Récompense légitime" }
+    ]
   },
   {
     "name": "RingOfYaxche",
@@ -1292,7 +1772,11 @@
     "statName": "HP%",
     "statValue": 9,
     "releasedAt": "2024-08-28",
-    "tags": ["f2p", "natlan"]
+    "tags": ["f2p", "natlan"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Ring of Yaxche" },
+      { "locale": "fr-FR", "name": "Anneau de Yaxche" }
+    ]
   },
   {
     "name": "RoyalBow",
@@ -1303,7 +1787,11 @@
     "statName": "Atk%",
     "statValue": 9,
     "releasedAt": "2020-09-28",
-    "tags": ["shop"]
+    "tags": ["shop"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Royal Bow" },
+      { "locale": "fr-FR", "name": "Arc royal" }
+    ]
   },
   {
     "name": "RoyalGreatsword",
@@ -1314,7 +1802,11 @@
     "statName": "Atk%",
     "statValue": 6,
     "releasedAt": "2020-09-28",
-    "tags": ["shop"]
+    "tags": ["shop"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Royal Greatsword" },
+      { "locale": "fr-FR", "name": "Espadon royal" }
+    ]
   },
   {
     "name": "RoyalGrimoire",
@@ -1325,7 +1817,11 @@
     "statName": "Atk%",
     "statValue": 6,
     "releasedAt": "2020-09-28",
-    "tags": ["shop"]
+    "tags": ["shop"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Royal Grimoire" },
+      { "locale": "fr-FR", "name": "Grimoire royal" }
+    ]
   },
   {
     "name": "RoyalLongsword",
@@ -1336,7 +1832,11 @@
     "statName": "Atk%",
     "statValue": 9,
     "releasedAt": "2020-09-28",
-    "tags": ["shop"]
+    "tags": ["shop"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Royal Longsword" },
+      { "locale": "fr-FR", "name": "Épée longue royale" }
+    ]
   },
   {
     "name": "RoyalSpear",
@@ -1347,7 +1847,11 @@
     "statName": "Atk%",
     "statValue": 6,
     "releasedAt": "2020-09-28",
-    "tags": ["shop"]
+    "tags": ["shop"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Royal Spear" },
+      { "locale": "fr-FR", "name": "Lance de chasse royale" }
+    ]
   },
   {
     "name": "Rust",
@@ -1358,7 +1862,11 @@
     "statName": "Atk%",
     "statValue": 9,
     "releasedAt": "2020-09-28",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Rust" },
+      { "locale": "fr-FR", "name": "Arc rouillé" }
+    ]
   },
   {
     "name": "SacrificialBow",
@@ -1369,7 +1877,11 @@
     "statName": "ER%",
     "statValue": 6.67,
     "releasedAt": "2020-09-28",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Sacrificial Bow" },
+      { "locale": "fr-FR", "name": "Arc rituel" }
+    ]
   },
   {
     "name": "SacrificialFragments",
@@ -1380,7 +1892,11 @@
     "statName": "EM",
     "statValue": 48,
     "releasedAt": "2020-09-28",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Sacrificial Fragments" },
+      { "locale": "fr-FR", "name": "Mémoires de rituels" }
+    ]
   },
   {
     "name": "SacrificialGreatsword",
@@ -1391,7 +1907,11 @@
     "statName": "ER%",
     "statValue": 6.67,
     "releasedAt": "2020-09-28",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Sacrificial Greatsword" },
+      { "locale": "fr-FR", "name": "Espadon rituel" }
+    ]
   },
   {
     "name": "SacrificialJade",
@@ -1402,7 +1922,11 @@
     "statName": "CritRate%",
     "statValue": 8,
     "releasedAt": "2023-08-16",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Sacrificial Jade" },
+      { "locale": "fr-FR", "name": "Jade sacrificiel" }
+    ]
   },
   {
     "name": "SacrificialSword",
@@ -1413,195 +1937,11 @@
     "statName": "ER%",
     "statValue": 13.33,
     "releasedAt": "2020-09-28",
-    "tags": ["wishes"]
-  },
-  {
-    "name": "ScionOfTheBlazingSun",
-    "type": "bow",
-    "owned": false,
-    "rarity": 4,
-    "atk": 43.73,
-    "statName": "CritRate%",
-    "statValue": 4,
-    "releasedAt": "2023-08-16",
-    "tags": ["bp"]
-  },
-  {
-    "name": "SeasonedHuntersBow",
-    "type": "bow",
-    "owned": false,
-    "rarity": 2,
-    "atk": 32.93,
-    "releasedAt": "2020-09-28"
-  },
-  {
-    "name": "SerpentSpine",
-    "type": "claymore",
-    "owned": false,
-    "rarity": 4,
-    "atk": 42.4,
-    "statName": "CritRate%",
-    "statValue": 6,
-    "releasedAt": "2020-09-28",
-    "tags": ["bp"]
-  },
-  {
-    "name": "SharpshootersOath",
-    "type": "bow",
-    "owned": false,
-    "rarity": 3,
-    "atk": 38.74,
-    "statName": "CritDmg%",
-    "statValue": 10.2,
-    "releasedAt": "2020-09-28"
-  },
-  {
-    "name": "SilvershowerHeartstrings",
-    "type": "bow",
-    "owned": false,
-    "rarity": 5,
-    "atk": 44.34,
-    "statName": "HP%",
-    "statValue": 14.4,
-    "releasedAt": "2024-06-25",
-    "tags": ["wishes", "Sigewinne"]
-  },
-  {
-    "name": "SilverSword",
-    "type": "sword",
-    "owned": false,
-    "rarity": 2,
-    "atk": 32.93,
-    "releasedAt": "2020-09-28"
-  },
-  {
-    "name": "SkyriderGreatsword",
-    "type": "claymore",
-    "owned": false,
-    "rarity": 3,
-    "atk": 38.74,
-    "statName": "PhysicalDmg%",
-    "statValue": 9.56,
-    "releasedAt": "2020-09-28"
-  },
-  {
-    "name": "SkyriderSword",
-    "type": "sword",
-    "owned": false,
-    "rarity": 3,
-    "atk": 37.61,
-    "statName": "ER%",
-    "statValue": 11.33,
-    "releasedAt": "2020-09-28"
-  },
-  {
-    "name": "SkywardBlade",
-    "type": "sword",
-    "owned": false,
-    "rarity": 5,
-    "atk": 45.94,
-    "statName": "ER%",
-    "statValue": 12,
-    "releasedAt": "2020-09-28",
-    "tags": ["wishes"]
-  },
-  {
-    "name": "SkywardAtlas",
-    "type": "catalyser",
-    "owned": false,
-    "rarity": 5,
-    "atk": 47.54,
-    "statName": "Atk%",
-    "statValue": 7.2,
-    "releasedAt": "2020-09-28",
-    "tags": ["wishes"]
-  },
-  {
-    "name": "SkywardHarp",
-    "type": "bow",
-    "owned": false,
-    "rarity": 5,
-    "atk": 47.54,
-    "statName": "CritRate%",
-    "statValue": 4.8,
-    "releasedAt": "2020-09-28",
-    "tags": ["wishes"]
-  },
-  {
-    "name": "SkywardPride",
-    "type": "claymore",
-    "owned": false,
-    "rarity": 5,
-    "atk": 47.54,
-    "statName": "ER%",
-    "statValue": 8,
-    "releasedAt": "2020-09-28",
-    "tags": ["wishes"]
-  },
-  {
-    "name": "SkywardSpine",
-    "type": "polearm",
-    "owned": false,
-    "rarity": 5,
-    "atk": 47.54,
-    "statName": "ER%",
-    "statValue": 8,
-    "releasedAt": "2020-09-28",
-    "tags": ["wishes"]
-  },
-  {
-    "name": "Slingshot",
-    "type": "bow",
-    "owned": false,
-    "rarity": 3,
-    "atk": 37.61,
-    "statName": "CritRate%",
-    "statValue": 6.8,
-    "releasedAt": "2020-09-28"
-  },
-  {
-    "name": "SnowTombedStarsilver",
-    "type": "claymore",
-    "owned": false,
-    "rarity": 4,
-    "atk": 43.73,
-    "statName": "PhysicalDmg%",
-    "statValue": 7.51,
-    "releasedAt": "2020-12-23",
-    "tags": ["f2p", "dragonspine"]
-  },
-  {
-    "name": "SolarPearl",
-    "type": "catalyser",
-    "owned": false,
-    "rarity": 4,
-    "atk": 42.4,
-    "statName": "CritRate%",
-    "statValue": 6,
-    "releasedAt": "2020-09-28",
-    "tags": ["bp"]
-  },
-  {
-    "name": "SongOfBrokenPines",
-    "type": "claymore",
-    "owned": false,
-    "rarity": 5,
-    "atk": 49.14,
-    "statName": "PhysicalDmg%",
-    "statValue": 4.5,
-    "releasedAt": "2021-03-18",
-    "tags": ["wishes", "Eula"]
-  },
-  {
-    "name": "SongOfStillness",
-    "type": "bow",
-    "owned": false,
-    "rarity": 4,
-    "atk": 42.4,
-    "statName": "Atk%",
-    "statValue": 9,
-    "releasedAt": "2023-08-16",
-    "tags": ["f2p", "fontaine"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Sacrificial Sword" },
+      { "locale": "fr-FR", "name": "Épée rituelle" }
+    ]
   },
   {
     "name": "SapwoodBlade",
@@ -1612,7 +1952,271 @@
     "statName": "ER%",
     "statValue": 6.67,
     "releasedAt": "2022-08-24",
-    "tags": ["f2p", "sumeru"]
+    "tags": ["f2p", "sumeru"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Sapwood Blade" },
+      { "locale": "fr-FR", "name": "Lame d'aubier" }
+    ]
+  },
+  {
+    "name": "ScionOfTheBlazingSun",
+    "type": "bow",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "CritRate%",
+    "statValue": 4,
+    "releasedAt": "2023-08-16",
+    "tags": ["bp"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Scion of the Blazing Sun" },
+      { "locale": "fr-FR", "name": "Descendant du soleil flamboyant" }
+    ]
+  },
+  {
+    "name": "SeasonedHuntersBow",
+    "type": "bow",
+    "owned": false,
+    "rarity": 2,
+    "atk": 32.93,
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Seasoned Hunter's Bow" },
+      { "locale": "fr-FR", "name": "Arc de chasse aguerri" }
+    ]
+  },
+  {
+    "name": "SerpentSpine",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "CritRate%",
+    "statValue": 6,
+    "releasedAt": "2020-09-28",
+    "tags": ["bp"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Serpent Spine" },
+      { "locale": "fr-FR", "name": "Ossature du dragon" }
+    ]
+  },
+  {
+    "name": "SharpshootersOath",
+    "type": "bow",
+    "owned": false,
+    "rarity": 3,
+    "atk": 38.74,
+    "statName": "CritDmg%",
+    "statValue": 10.2,
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Sharpshooter's Oath" },
+      { "locale": "fr-FR", "name": "Serment de l'archer" }
+    ]
+  },
+  {
+    "name": "SilvershowerHeartstrings",
+    "type": "bow",
+    "owned": false,
+    "rarity": 5,
+    "atk": 44.34,
+    "statName": "HP%",
+    "statValue": 14.4,
+    "releasedAt": "2024-06-25",
+    "tags": ["wishes", "Sigewinne"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Silverhower Heartstrings" },
+      { "locale": "fr-FR", "name": "Corde de pluie blanche" }
+    ]
+  },
+  {
+    "name": "SilverSword",
+    "type": "sword",
+    "owned": false,
+    "rarity": 2,
+    "atk": 32.93,
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Silver Sword" },
+      { "locale": "fr-FR", "name": "Épée en argent" }
+    ]
+  },
+  {
+    "name": "SkyriderGreatsword",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 3,
+    "atk": 38.74,
+    "statName": "PhysicalDmg%",
+    "statValue": 9.56,
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Skyrider Greatsword" },
+      { "locale": "fr-FR", "name": "Grande épée céleste" }
+    ]
+  },
+  {
+    "name": "SkyriderSword",
+    "type": "sword",
+    "owned": false,
+    "rarity": 3,
+    "atk": 37.61,
+    "statName": "ER%",
+    "statValue": 11.33,
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Skyrider Sword" },
+      { "locale": "fr-FR", "name": "Épée céleste" }
+    ]
+  },
+  {
+    "name": "SkywardAtlas",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 5,
+    "atk": 47.54,
+    "statName": "Atk%",
+    "statValue": 7.2,
+    "releasedAt": "2020-09-28",
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Skyward Atlas" },
+      { "locale": "fr-FR", "name": "Atlas de la Voûte d'Azur" }
+    ]
+  },
+  {
+    "name": "SkywardBlade",
+    "type": "sword",
+    "owned": false,
+    "rarity": 5,
+    "atk": 45.94,
+    "statName": "ER%",
+    "statValue": 12,
+    "releasedAt": "2020-09-28",
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Skyward Blade" },
+      { "locale": "fr-FR", "name": "Lame de la Voûte d'Azur" }
+    ]
+  },
+  {
+    "name": "SkywardHarp",
+    "type": "bow",
+    "owned": false,
+    "rarity": 5,
+    "atk": 47.54,
+    "statName": "CritRate%",
+    "statValue": 4.8,
+    "releasedAt": "2020-09-28",
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Skyward Harp" },
+      { "locale": "fr-FR", "name": "Ailes de la Voûte d'Azur" }
+    ]
+  },
+  {
+    "name": "SkywardPride",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 5,
+    "atk": 47.54,
+    "statName": "ER%",
+    "statValue": 8,
+    "releasedAt": "2020-09-28",
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Skyward Pride" },
+      { "locale": "fr-FR", "name": "Fierté de la Voûte d'Azur" }
+    ]
+  },
+  {
+    "name": "SkywardSpine",
+    "type": "polearm",
+    "owned": false,
+    "rarity": 5,
+    "atk": 47.54,
+    "statName": "ER%",
+    "statValue": 8,
+    "releasedAt": "2020-09-28",
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Skyward Spine" },
+      { "locale": "fr-FR", "name": "Berge de la Voûte d'Azur" }
+    ]
+  },
+  {
+    "name": "Slingshot",
+    "type": "bow",
+    "owned": false,
+    "rarity": 3,
+    "atk": 37.61,
+    "statName": "CritRate%",
+    "statValue": 6.8,
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Slingshot" },
+      { "locale": "fr-FR", "name": "Lance-pierres" }
+    ]
+  },
+  {
+    "name": "SnowTombedStarsilver",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "PhysicalDmg%",
+    "statValue": 7.51,
+    "releasedAt": "2020-12-23",
+    "tags": ["f2p", "dragonspine"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Snow-Tombed Starsilver" },
+      { "locale": "fr-FR", "name": "Tombe-neige en argétoile" }
+    ]
+  },
+  {
+    "name": "SolarPearl",
+    "type": "catalyser",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "CritRate%",
+    "statValue": 6,
+    "releasedAt": "2020-09-28",
+    "tags": ["bp"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Solar Pearl" },
+      { "locale": "fr-FR", "name": "Perle solaire" }
+    ]
+  },
+  {
+    "name": "SongOfBrokenPines",
+    "type": "claymore",
+    "owned": false,
+    "rarity": 5,
+    "atk": 49.14,
+    "statName": "PhysicalDmg%",
+    "statValue": 4.5,
+    "releasedAt": "2021-03-18",
+    "tags": ["wishes", "Eula"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Song of Broken Pines" },
+      { "locale": "fr-FR", "name": "Ode au chant du vent" }
+    ]
+  },
+  {
+    "name": "SongOfStillness",
+    "type": "bow",
+    "owned": false,
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "Atk%",
+    "statValue": 9,
+    "releasedAt": "2023-08-16",
+    "tags": ["f2p", "fontaine"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Song of Stillness" },
+      { "locale": "fr-FR", "name": "Chant de quiétude" }
+    ]
   },
   {
     "name": "SplendorOfTranquilWaters",
@@ -1623,7 +2227,11 @@
     "statName": "CritDmg%",
     "statValue": 19.2,
     "releasedAt": "2023-11-08",
-    "tags": ["wishes", "Furina"]
+    "tags": ["wishes", "Furina"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Splendor of Tranquil Waters" },
+      { "locale": "fr-FR", "name": "Splendeur des eaux calmes" }
+    ]
   },
   {
     "name": "StaffOfHoma",
@@ -1634,7 +2242,11 @@
     "statName": "CritDmg%",
     "statValue": 14.4,
     "releasedAt": "2021-02-23",
-    "tags": ["wishes", "Hu Tao"]
+    "tags": ["wishes", "Hu Tao"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Staff of Homa" },
+      { "locale": "fr-FR", "name": "Bâton de Homa" }
+    ]
   },
   {
     "name": "StaffOfTheScarletSands",
@@ -1645,7 +2257,11 @@
     "statName": "CritRate%",
     "statValue": 9.6,
     "releasedAt": "2022-09-28",
-    "tags": ["wishes", "Cyno"]
+    "tags": ["wishes", "Cyno"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Staff of the Scarlet Sands" },
+      { "locale": "fr-FR", "name": "Bâton des sables écarlates" }
+    ]
   },
   {
     "name": "SummitShaper",
@@ -1656,7 +2272,11 @@
     "statName": "Atk%",
     "statValue": 10.8,
     "releasedAt": "2020-12-23",
-    "tags": ["wishes", "Albedo"]
+    "tags": ["wishes", "Albedo"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Summit Shaper" },
+      { "locale": "fr-FR", "name": "Tranche-sommets" }
+    ]
   },
   {
     "name": "SurfsUp",
@@ -1667,7 +2287,11 @@
     "statName": "CritDmg%",
     "statValue": 19.2,
     "releasedAt": "2024-08-28",
-    "tags": ["wishes", "Mualani"]
+    "tags": ["wishes", "Mualani"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Surf's Up" },
+      { "locale": "fr-FR", "name": "Instant surfant" }
+    ]
   },
   {
     "name": "SwordOfDescension",
@@ -1678,7 +2302,11 @@
     "statName": "Atk%",
     "statValue": 7.66,
     "releasedAt": "2020-09-28",
-    "tags": ["ps4", "Traveler"]
+    "tags": ["ps4", "Traveler"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Sword of Descension" },
+      { "locale": "fr-FR", "name": "Épée de la descente" }
+    ]
   },
   {
     "name": "SwordOfNarzissenkreuz",
@@ -1689,7 +2317,11 @@
     "statName": "Atk%",
     "statValue": 9,
     "releasedAt": "2023-11-08",
-    "tags": ["f2p", "fontaine"]
+    "tags": ["f2p", "fontaine"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Sword of Narzissenkreuz" },
+      { "locale": "fr-FR", "name": "Lame du Narzissenkreuz" }
+    ]
   },
   {
     "name": "TalkingStick",
@@ -1700,7 +2332,11 @@
     "statName": "CritRate%",
     "statValue": 4,
     "releasedAt": "2023-08-16",
-    "tags": ["bp"]
+    "tags": ["bp"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Talking Stick" },
+      { "locale": "fr-FR", "name": "Bâton bavard" }
+    ]
   },
   {
     "name": "TheAlleyFlash",
@@ -1711,7 +2347,11 @@
     "statName": "EM",
     "statValue": 12,
     "releasedAt": "2021-03-17",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "The Alley Flash" },
+      { "locale": "fr-FR", "name": "Éclair des impasses" }
+    ]
   },
   {
     "name": "TheBell",
@@ -1722,7 +2362,11 @@
     "statName": "HP%",
     "statValue": 9,
     "releasedAt": "2020-09-28",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "The Bell" },
+      { "locale": "fr-FR", "name": "Épée-horloge" }
+    ]
   },
   {
     "name": "TheBlackSword",
@@ -1733,7 +2377,11 @@
     "statName": "CritRate%",
     "statValue": 6,
     "releasedAt": "2020-09-28",
-    "tags": ["bp"]
+    "tags": ["bp"],
+    "i18n": [
+      { "locale": "en-EN", "name": "The Black Sword" },
+      { "locale": "fr-FR", "name": "Épée noire" }
+    ]
   },
   {
     "name": "TheCatch",
@@ -1744,7 +2392,11 @@
     "statName": "ER%",
     "statValue": 10,
     "releasedAt": "2021-09-01",
-    "tags": ["f2p", "mondstadt", "fishing"]
+    "tags": ["f2p", "mondstadt", "fishing"],
+    "i18n": [
+      { "locale": "en-EN", "name": "\"The Catch\"" },
+      { "locale": "fr-FR", "name": "\"La prise\"" }
+    ]
   },
   {
     "name": "TheDockhandsAssistant",
@@ -1755,7 +2407,11 @@
     "statName": "HP%",
     "statValue": 9,
     "releasedAt": "2023-09-27",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "The Dockhand's Assistant" },
+      { "locale": "fr-FR", "name": "L'assistant du docker" }
+    ]
   },
   {
     "name": "TheFirstGreatMagic",
@@ -1766,7 +2422,11 @@
     "statName": "CritDmg%",
     "statValue": 14.4,
     "releasedAt": "2023-08-16",
-    "tags": ["wishes", "Linney"]
+    "tags": ["wishes", "Linney"],
+    "i18n": [
+      { "locale": "en-EN", "name": "The First Great Magic" },
+      { "locale": "fr-FR", "name": "La première grande magie" }
+    ]
   },
   {
     "name": "TheFlute",
@@ -1777,7 +2437,11 @@
     "statName": "Atk%",
     "statValue": 9,
     "releasedAt": "2020-09-28",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Flûte" },
+      { "locale": "fr-FR", "name": "The Flute" }
+    ]
   },
   {
     "name": "TheStringless",
@@ -1788,7 +2452,11 @@
     "statName": "EM",
     "statValue": 36,
     "releasedAt": "2020-09-28",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "The Stringless" },
+      { "locale": "fr-FR", "name": "Dernière corde" }
+    ]
   },
   {
     "name": "TheUnforged",
@@ -1799,7 +2467,11 @@
     "statName": "Atk%",
     "statValue": 10.8,
     "releasedAt": "2020-12-01",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "The Unforged" },
+      { "locale": "fr-FR", "name": "Lame brute" }
+    ]
   },
   {
     "name": "TheViridescentHunt",
@@ -1810,7 +2482,11 @@
     "statName": "CritRate%",
     "statValue": 6,
     "releasedAt": "2020-09-28",
-    "tags": ["bp"]
+    "tags": ["bp"],
+    "i18n": [
+      { "locale": "en-EN", "name": "The Viridescent Hunt" },
+      { "locale": "fr-FR", "name": "Arc de chasse verdoyant" }
+    ]
   },
   {
     "name": "TheWidsith",
@@ -1821,7 +2497,11 @@
     "statName": "CritDmg%",
     "statValue": 12,
     "releasedAt": "2020-09-28",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "The Widsith" },
+      { "locale": "fr-FR", "name": "Mouvement vagabond" }
+    ]
   },
   {
     "name": "ThrillingTalesOfDragonSlayers",
@@ -1831,7 +2511,11 @@
     "atk": 38.74,
     "statName": "HP%",
     "statValue": 7.66,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Thrilling Tales of Dragon Slayers" },
+      { "locale": "fr-FR", "name": "Histoire des chasseurs de dragon" }
+    ]
   },
   {
     "name": "ThunderingPulse",
@@ -1842,7 +2526,11 @@
     "statName": "CritDmg%",
     "statValue": 14.4,
     "releasedAt": "2021-08-10",
-    "tags": ["wishes", "Yoimiya"]
+    "tags": ["wishes", "Yoimiya"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Thundering Pulse" },
+      { "locale": "fr-FR", "name": "Pulsation du tonnerre" }
+    ]
   },
   {
     "name": "TidalShadow",
@@ -1853,7 +2541,11 @@
     "statName": "Atk%",
     "statValue": 9,
     "releasedAt": "2023-08-16",
-    "tags": ["f2p", "fontaine"]
+    "tags": ["f2p", "fontaine"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Tidal Shadow" },
+      { "locale": "fr-FR", "name": "Ombre tidale" }
+    ]
   },
   {
     "name": "TomeOfTheEternalFlow",
@@ -1864,7 +2556,11 @@
     "statName": "CritDmg%",
     "statValue": 19.2,
     "releasedAt": "2023-09-27",
-    "tags": ["wishes", "Neuvillette"]
+    "tags": ["wishes", "Neuvillette"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Tome of the Eternal Flow" },
+      { "locale": "fr-FR", "name": "Tome du flux éternel" }
+    ]
   },
   {
     "name": "ToukabouShigure",
@@ -1875,7 +2571,11 @@
     "statName": "EM",
     "statValue": 36,
     "releasedAt": "2022-12-15",
-    "tags": ["event"]
+    "tags": ["event"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Toukabou Shigure" },
+      { "locale": "fr-FR", "name": "Pluie florale" }
+    ]
   },
   {
     "name": "TravelersHandySword",
@@ -1885,7 +2585,11 @@
     "atk": 39.88,
     "statName": "Def%",
     "statValue": 6.37,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Traveler's Handy Sword" },
+      { "locale": "fr-FR", "name": "Épée du voyageur" }
+    ]
   },
   {
     "name": "TulaytullahsRemembrance",
@@ -1896,7 +2600,11 @@
     "statName": "CritDmg%",
     "statValue": 9.6,
     "releasedAt": "2022-12-07",
-    "tags": ["wishes", "Wanderer"]
+    "tags": ["wishes", "Wanderer"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Tulaytullah's Remembrance" },
+      { "locale": "fr-FR", "name": "Mémoire de Tulaytullah" }
+    ]
   },
   {
     "name": "TwinNephrite",
@@ -1906,7 +2614,11 @@
     "atk": 39.88,
     "statName": "CritRate%",
     "statValue": 3.4,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Twin Nephrite" },
+      { "locale": "fr-FR", "name": "Néphrite jumelle" }
+    ]
   },
   {
     "name": "UltimateOverlordsMegaMagicSword",
@@ -1917,7 +2629,11 @@
     "statName": "ER%",
     "statValue": 6.67,
     "releasedAt": "2023-12-21",
-    "tags": ["event"]
+    "tags": ["event"],
+    "i18n": [
+      { "locale": "en-EN", "name": "\"Ultimate Overlord's Mega Magic Sword\"" },
+      { "locale": "fr-FR", "name": "\"Méga épée magique du suzerain ultime\"" }
+    ]
   },
   {
     "name": "UrakuMisugiri",
@@ -1928,7 +2644,11 @@
     "statName": "CritDmg%",
     "statValue": 19.2,
     "releasedAt": "2024-03-13",
-    "tags": ["wishes", "Chiori"]
+    "tags": ["wishes", "Chiori"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Uraku Misugiri" },
+      { "locale": "fr-FR", "name": "Uraku Misugiri" }
+    ]
   },
   {
     "name": "Verdict",
@@ -1939,7 +2659,11 @@
     "statName": "CritRate%",
     "statValue": 4.8,
     "releasedAt": "2023-12-20",
-    "tags": ["wishes", "Navia"]
+    "tags": ["wishes", "Navia"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Verdict" },
+      { "locale": "fr-FR", "name": "Condamneur" }
+    ]
   },
   {
     "name": "VortexVanquisher",
@@ -1950,7 +2674,11 @@
     "statName": "Atk%",
     "statValue": 10.8,
     "releasedAt": "2020-12-01",
-    "tags": ["wishes", "Zhongly"]
+    "tags": ["wishes", "Zhongly"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Vortex Vanquisher" },
+      { "locale": "fr-FR", "name": "Perceur prismatique" }
+    ]
   },
   {
     "name": "WanderingEvenstar",
@@ -1961,7 +2689,11 @@
     "statName": "EM",
     "statValue": 36,
     "releasedAt": "2022-10-14",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Wandering Evenstar" },
+      { "locale": "fr-FR", "name": "Étoile du soir errante" }
+    ]
   },
   {
     "name": "WasterGreatsword",
@@ -1969,7 +2701,11 @@
     "owned": false,
     "rarity": 1,
     "atk": 23.25,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Waster Greatsword" },
+      { "locale": "fr-FR", "name": "Épée d'entraînement" }
+    ]
   },
   {
     "name": "WavebreakersFin",
@@ -1980,7 +2716,11 @@
     "statName": "Atk%",
     "statValue": 3,
     "releasedAt": "2021-11-02",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Wavebreaker's Fin" },
+      { "locale": "fr-FR", "name": "Aileron de brise-vagues" }
+    ]
   },
   {
     "name": "Whiteblind",
@@ -1991,7 +2731,11 @@
     "statName": "Def%",
     "statValue": 11.26,
     "releasedAt": "2020-09-28",
-    "tags": ["f2p", "liyue", "mondstadt"]
+    "tags": ["f2p", "liyue", "mondstadt"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Whiteblind" },
+      { "locale": "fr-FR", "name": "Ombre immaculée" }
+    ]
   },
   {
     "name": "WhiteIronGreatsword",
@@ -2001,7 +2745,11 @@
     "atk": 38.74,
     "statName": "Def%",
     "statValue": 9.56,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "White Iron Greatsword" },
+      { "locale": "fr-FR", "name": "Grande épée en fer blanc" }
+    ]
   },
   {
     "name": "WhiteTassel",
@@ -2011,7 +2759,11 @@
     "atk": 38.74,
     "statName": "CritRate%",
     "statValue": 5.1,
-    "releasedAt": "2020-09-28"
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "White Tassel" },
+      { "locale": "fr-FR", "name": "Pampille blanche" }
+    ]
   },
   {
     "name": "WindblumeOde",
@@ -2022,7 +2774,11 @@
     "statName": "EM",
     "statValue": 36,
     "releasedAt": "2021-03-19",
-    "tags": ["event"]
+    "tags": ["event"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Windblume Ode" },
+      { "locale": "fr-FR", "name": "Ode aux alizées" }
+    ]
   },
   {
     "name": "WineAndSong",
@@ -2033,7 +2789,11 @@
     "statName": "ER%",
     "statValue": 6.67,
     "releasedAt": "2021-03-17",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Wine and Song" },
+      { "locale": "fr-FR", "name": "Vins et chants" }
+    ]
   },
   {
     "name": "WolfFang",
@@ -2044,7 +2804,11 @@
     "statName": "CritRate%",
     "statValue": 6,
     "releasedAt": "2023-08-16",
-    "tags": ["bp"]
+    "tags": ["bp"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Wolf-Fang" },
+      { "locale": "fr-FR", "name": "Croc de loup" }
+    ]
   },
   {
     "name": "WolfsGravestone",
@@ -2055,7 +2819,11 @@
     "statName": "Atk%",
     "statValue": 10.8,
     "releasedAt": "2020-09-28",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Wolf's Gravestone" },
+      { "locale": "fr-FR", "name": "Mort-du-loup" }
+    ]
   },
   {
     "name": "XiphosMoonlight",
@@ -2066,7 +2834,11 @@
     "statName": "EM",
     "statValue": 36,
     "releasedAt": "2022-10-14",
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Xiphos' Moonlight" },
+      { "locale": "fr-FR", "name": "Clair de lune de Xiphos" }
+    ]
   },
   {
     "name": "FangOfTheMountainKing",
@@ -2077,7 +2849,11 @@
     "statName": "CritRate%",
     "statValue": 2.4,
     "releasedAt": "2024-09-18",
-    "tags": ["wishes", "Kinich"]
+    "tags": ["wishes", "Kinich"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Fang of the Mountain King" },
+      { "locale": "fr-FR", "name": "Croc du roi de la montagne" }
+    ]
   },
   {
     "name": "SturdyBone",
@@ -2087,7 +2863,11 @@
     "atk": 43.73,
     "statName": "Atk%",
     "statValue": 6,
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Sturdy Bone" },
+      { "locale": "fr-FR", "name": "Os robuste" }
+    ]
   },
   {
     "name": "PeakPatrolSong",
@@ -2097,7 +2877,11 @@
     "atk": 44.34,
     "statName": "Def%",
     "statValue": 18,
-    "tags": ["wishes", "Xilonen"]
+    "tags": ["wishes", "Xilonen"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Peak Patrol Song" },
+      { "locale": "fr-FR", "name": "Chanson de patrouille de sommet" }
+    ]
   },
   {
     "name": "FruitfulHook",
@@ -2107,7 +2891,11 @@
     "atk": 43.73,
     "statName": "Atk%",
     "statValue": 6,
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Fruitful Hook" },
+      { "locale": "fr-FR", "name": "Crochet fructueux" }
+    ]
   },
   {
     "name": "MountainBracingBolt",
@@ -2117,6 +2905,10 @@
     "atk": 43.73,
     "statName": "ER%",
     "statValue": 6.67,
-    "tags": ["wishes"]
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Mountain Bracing Bolt" },
+      { "locale": "fr-FR", "name": "Clou soutenant les montagnes" }
+    ]
   }
 ]

@@ -5,6 +5,7 @@ export { Character } from '@/main/database/models/Character';
 export { MaterialI18n } from '@/main/database/models/MaterialI18n';
 export { Material } from '@/main/database/models/Material';
 export { Artefact } from '@/main/database/models/Artefact';
+export { WeaponI18n } from '@/main/database/models/WeaponI18n';
 export { Weapon } from '@/main/database/models/Weapon';
 export { ArtefactPreset } from '@/main/database/models/ArtefactPreset';
 export { CharacterAptitude } from '@/main/database/models/CharacterAptitude';

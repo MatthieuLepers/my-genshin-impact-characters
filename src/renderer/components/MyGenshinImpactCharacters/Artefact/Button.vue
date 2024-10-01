@@ -38,6 +38,8 @@ import Artefact from '@renderer/components/MyGenshinImpactCharacters/Artefact/in
 import ArtefactSubStat from '@renderer/components/MyGenshinImpactCharacters/Artefact/SubStat.vue';
 import ToolTip from '@renderer/components/MyGenshinImpactCharacters/ToolTip.vue';
 
+import ArtefactEntity from '@renderer/core/entities/artefact';
+
 defineOptions({ name: 'ArtefactButton' });
 
 const { t } = useI18n();
@@ -46,7 +48,7 @@ const formatAffix = (val) => val.toLowerCase().replace('%', '');
 
 const props = defineProps({
   type: { type: String, required: true },
-  artefact: { type: Object, default: null },
+  artefact: { type: ArtefactEntity, default: null },
   modifiers: { type: Object, default: () => ({}) },
 });
 </script>

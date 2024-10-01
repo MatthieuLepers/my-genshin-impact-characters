@@ -3,7 +3,6 @@ import GlobalI18N from '@renderer/i18n/GlobalI18N';
 export default {
   Data: {
     WeaklyBosses: GlobalI18N.WeaklyBosses('fr-FR'),
-    Weapons: GlobalI18N.Weapons('fr-FR'),
   },
   App: {
     Menu: {

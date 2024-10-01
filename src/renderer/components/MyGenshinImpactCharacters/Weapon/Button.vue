@@ -17,7 +17,7 @@
     <ToolTip class="weapon-button__tooltip">
       <ul class="weapon-button__tooltip__sub-stat">
         <li>
-          {{ t(`Data.Weapons.${props.weapon.name}.name`) }}
+          {{ props.weapon.getI18n('name') }}
         </li>
         <li>
           <span class="weapon-sub-stat__value">
@@ -44,6 +44,7 @@ import { useI18n } from 'vue-i18n';
 import Weapon from '@renderer/components/MyGenshinImpactCharacters/Weapon/index.vue';
 import ToolTip from '@renderer/components/MyGenshinImpactCharacters/ToolTip.vue';
 
+import WeaponEntity from '@renderer/core/entities/weapon';
 import { image } from '@renderer/core/utils';
 
 defineOptions({ name: 'WeaponButton' });
@@ -54,7 +55,7 @@ const formatAffix = (val) => val.toLowerCase().replace('%', '');
 
 const props = defineProps({
   type: { type: String, required: true },
-  weapon: { type: Object, default: null },
+  weapon: { type: WeaponEntity, default: null },
   modifiers: { type: Object, default: () => ({}) },
 });
 </script>

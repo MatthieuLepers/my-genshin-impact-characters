@@ -1,3 +1,5 @@
+import { IRemoteWeaponI18n } from '@renderer/core/entities/weapon/i18n';
+
 export interface IWeapon {
   readonly id: number;
   readonly name: string;
@@ -11,6 +13,7 @@ export interface IWeapon {
   readonly statName: string;
   readonly statValue: number;
   readonly tags: Array<string>;
+  readonly i18n: Array<IRemoteWeaponI18n>;
 }
 
 export interface IRemoteWeapon {

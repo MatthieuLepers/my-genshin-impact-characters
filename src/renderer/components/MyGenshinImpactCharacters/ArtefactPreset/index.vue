@@ -69,6 +69,7 @@ import MaterialFormFieldSet from '@renderer/components/Materials/Form/FieldSet.v
 import MaterialModal from '@renderer/components/Materials/Modal/index.vue';
 import Artefact from '@renderer/components/MyGenshinImpactCharacters/Artefact/index.vue';
 
+import ArtefactPreset from '@renderer/core/entities/artefactPreset';
 import { artefactsStore } from '@renderer/core/entities/artefact/store';
 import { artefactPresetsStore } from '@renderer/core/entities/artefactPreset/store';
 import { notificationStore } from '@renderer/components/Materials/Notification/Store';
@@ -80,7 +81,7 @@ const { t } = useI18n();
 const emit = defineEmits(['delete', 'edit', 'save']);
 
 const props = defineProps({
-  preset: { type: Object },
+  preset: { type: ArtefactPreset },
   showDelete: { type: Boolean, default: false },
   showEdit: { type: Boolean, default: false },
   showSave: { type: Boolean, default: false },

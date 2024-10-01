@@ -65,7 +65,7 @@
         <ToolTip class="character-build__tooltip">
           <ul class="character-build__tooltip__sub-stat">
             <li class="artefact-sub-stat">
-              {{ t(`Data.Weapons.${props.build.weapon.name}.name`) }}
+              {{ props.build.weapon.getI18n('name') }}
             </li>
             <li class="artefact-sub-stat">
               <span class="artefact-sub-stat__value">

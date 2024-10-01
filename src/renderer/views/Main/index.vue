@@ -68,7 +68,7 @@ import { filteredCharacterStore } from '@renderer/core/stores/FilteredCharacterS
 defineOptions({ name: 'MainView' });
 
 const router = useRouter();
-const { t, tm } = useI18n();
+const { t } = useI18n();
 
 const state = reactive({
   characters: {},

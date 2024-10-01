@@ -24,11 +24,11 @@
             <template #name="{ obj }">
               <img
                 class="WeaponCategoryImg"
-                :src="image(`img/weapons/${obj.name}.webp`)"
+                :src="obj.image"
                 alt=""
               />
               <span>
-                {{ t(`Data.Weapons.${obj.name}.name`) }}<br />
+                {{ obj.getI18n('name') }}<br />
                 {{ [...Array(obj.rarity).keys()].reduce((acc) => `${acc}★`, '') }}
                 <ul class="WeaponCategoryTags">
                   <li
@@ -92,7 +92,6 @@ import MaterialFormInput from '@renderer/components/Materials/Form/Input.vue';
 import PanelMenu from '@renderer/components/MyGenshinImpactCharacters/PanelMenu.vue';
 import WeaponFilters from '@renderer/components/MyGenshinImpactCharacters/Weapon/Filters.vue';
 
-import { image } from '@renderer/core/utils';
 import { weaponsStore } from '@renderer/core/entities/weapon/store';
 
 defineOptions({ name: 'WeaponListView' });

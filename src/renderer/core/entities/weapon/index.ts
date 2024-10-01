@@ -1,5 +1,6 @@
-import AbstractEntity from '@renderer/core/entities/AbstractEntity';
-import { IWeapon, IRemoteWeapon } from '@renderer/core/entities/weapon/i';
+import AbstractI18nEntity from '@renderer/core/entities/AbstractI18nEntity';
+import type { IWeapon, IRemoteWeapon } from '@renderer/core/entities/weapon/i';
+import { image } from '@renderer/core/utils';
 
 const WEAPON_STAT_TYPES = {
   type549: [15.070818070818072, 13.177045177045176],
@@ -18,7 +19,7 @@ const WEAPON_STAT_TYPES = {
   type123: [7.975483870967742],
 };
 
-export default class Weapon extends AbstractEntity<IWeapon> {
+export default class Weapon extends AbstractI18nEntity<IWeapon> {
   declare readonly id: number;
 
   declare readonly name: string;
@@ -70,6 +71,10 @@ export default class Weapon extends AbstractEntity<IWeapon> {
       ? this.statValue * 4.59375
       : this.statValue * 4.190277777777778
     ;
+  }
+
+  get image(): string {
+    return image(`img/weapons/${this.name}.webp`);
   }
 
   get stats(): Record<string, number> {

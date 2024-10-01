@@ -4,7 +4,6 @@ import { electronApp, optimizer, is } from '@electron-toolkit/utils';
 import { autoUpdater } from 'electron-updater';
 
 import { sequelize } from '@/main/database';
-import populate from '@/main/database/populate';
 import { Setting } from '@/main/database/models';
 import ElectronWindow from '@/main/classes/ElectronWindow';
 import { APP_PLATEFORM } from '@/main/utils/Constants';
@@ -41,7 +40,6 @@ app
 
     await sequelize.sync();
     await Setting.createDefault();
-    await populate();
 
     if (is.dev) {
       // eslint-disable-next-line import/no-extraneous-dependencies

@@ -8,14 +8,13 @@
     })"
     @click="emit('click', $event)"
   >
-    <img :src="image(`img/weapons/${props.weapon.name}.webp`)" alt="" />
+    <img :src="props.weapon.image" alt="" />
     <span class="weapon-card__rank">R{{ props.weapon.rank }}</span>
     <span>{{ props.weapon.level }}</span>
   </button>
 </template>
 
 <script setup>
-import { image } from '@renderer/core/utils';
 import Weapon from '@renderer/core/entities/weapon';
 
 defineOptions({ name: 'Weapon' });
