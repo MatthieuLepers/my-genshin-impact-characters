@@ -3,6 +3,7 @@ import type { ICharacter, IRemoteCharacter } from '@renderer/core/entities/chara
 import CharacterAptitude from '@renderer/core/entities/characterAptitude';
 import type { IRemoteCharacterAptitude } from '@renderer/core/entities/characterAptitude/i';
 import type { IRemoteCharacterPassiveStat } from '@renderer/core/entities/characterPassiveStat/i';
+import { image } from '@renderer/core/utils';
 
 const PHASES = [
   (level: number): boolean => level > 0 && level <= 20,
@@ -113,8 +114,8 @@ export default class Character extends AbstractEntity<ICharacter> {
     ;
   }
 
-  get imageName(): string {
-    return this.name.replaceAll(/ /g, '');
+  getImage(imageVariant: string): string {
+    return image(`img/characters/${this.name.replaceAll(/ /g, '')}/${imageVariant}.webp`);
   }
 
   getMaxMaterial(materialName: string): number {

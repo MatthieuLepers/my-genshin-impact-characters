@@ -5,12 +5,12 @@
   >
     <div class="character-build__container">
       <img
-        :src="image(`img/characters/${props.build.character.imageName}/theme.webp`)"
+        :src="props.build.character.getImage('theme')"
         class="character-build__theme"
         alt=""
       />
       <img
-        :src="image(`img/characters/${props.build.character.imageName}/icon.webp`)"
+        :src="props.build.character.getImage('icon')"
         class="character-build__img"
         alt=""
       />
@@ -98,8 +98,9 @@
           <ul class="character-build__tooltip__sub-stat">
             <li class="artefact-sub-stat">
               <span class="artefact-sub-stat__value">
-                <span :class="`icon-${formatAffix(artefact.statsJson[0].name)}`" />
-                {{ t(`App.Artefact.stats.${artefact.statsJson[0].name}.short`) }}
+                <span :class="`icon-${formatAffix(artefact.statsJson[0].name)}`">
+                  {{ t(`App.Artefact.stats.${artefact.statsJson[0].name}.short`) }}
+                </span>
                 {{ artefact.statsJson[0].value }}{{ artefact.statsJson[0].name.endsWith('%') ? '%' : '' }}
               </span>
             </li>
@@ -121,8 +122,6 @@ import ToolTip from '@renderer/components/MyGenshinImpactCharacters/ToolTip.vue'
 import Artefact from '@renderer/components/MyGenshinImpactCharacters/Artefact/index.vue';
 import ArtefactSubStat from '@renderer/components/MyGenshinImpactCharacters/Artefact/SubStat.vue';
 import Weapon from '@renderer/components/MyGenshinImpactCharacters/Weapon/index.vue';
-
-import { image } from '@renderer/core/utils';
 
 defineOptions({ name: 'CharacterBuild' });
 

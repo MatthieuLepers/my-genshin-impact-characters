@@ -9,7 +9,6 @@
 
 <script setup>
 const props = defineProps({
-  visible: { type: Boolean, default: false },
   horizontalAnchor: { type: String, default: 'center' },
   verticalAnchor: { type: String, default: 'top' },
 });

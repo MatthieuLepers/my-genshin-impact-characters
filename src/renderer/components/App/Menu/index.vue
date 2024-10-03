@@ -25,8 +25,11 @@
           {{ t('App.Menu.weapons') }}
         </router-link>
       </li>
-      <li>
-        <router-link :to="{ name: 'CharacterBuilds' }" class="AppMenuLink">
+      <li v-if="buildEnabled">
+        <router-link
+          :to="{ name: 'CharacterBuilds' }"
+          class="AppMenuLink"
+        >
           <img :src="image(`img/ui/menu_character.png`)" alt="" />
           {{ t('App.Menu.characterBuilds') }}
         </router-link>
@@ -36,12 +39,19 @@
 </template>
 
 <script setup>
+import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
+
 import { image } from '@renderer/core/utils';
+import { charactersStore } from '@renderer/core/entities/character/store';
 
 defineOptions({ name: 'AppMenu' });
 
 const { t } = useI18n();
+
+const buildEnabled = computed(() => Object
+  .values(charactersStore.state.characters)
+  .filter((character) => character.level === 90).length > 0);
 </script>
 
 <style lang="scss" src="./index.scss">

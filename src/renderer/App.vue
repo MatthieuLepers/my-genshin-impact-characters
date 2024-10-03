@@ -2,26 +2,37 @@
   <AppTitleBar name="main" />
   <AppMenu v-if="!state.loading" />
   <router-view v-if="!state.loading" />
-  <MaterialLoaderIcon v-else class="MainLoader" />
-  <NotificationList>
+  <div v-else class="MainLoader">
+    <MaterialLoaderIcon class="MainLoaderIcon"  />
+    <MaterialsProgressBar
+      class="MainLoaderProgressBar"
+      :percent="state.populate.percent"
+      :modifiers="{ center: true }"
+    >
+      <template #label>
+        {{ state.populate.label }} ({{ state.populate.current }}/{{ state.populate.total }})
+      </template>
+    </MaterialsProgressBar>
+  </div>
+  <MaterialsNotificationList>
     <template #downloadupdate="{ notification }">
       {{ notification.text }}
-      <div class="MainProgressBar">
-        <span :style="{ width: `calc(${state.percent}% - 4px)` }">
-          {{ Math.round(state.percent * 10) / 10 }}%
-        </span>
-      </div>
+      <MaterialsProgressBar
+        class="MainProgressBar"
+        :percent="state.percent"
+      />
     </template>
-  </NotificationList>
+  </MaterialsNotificationList>
 </template>
 
 <script setup>
 import { reactive, onBeforeMount } from 'vue';
 import { useI18n } from 'vue-i18n';
 
-import AppTitleBar from '@renderer/components/AppTitleBar/index.vue';
-import AppMenu from '@renderer/components/AppMenu/index.vue';
-import NotificationList from '@renderer/components/Materials/Notification/List.vue';
+import AppTitleBar from '@renderer/components/App/TitleBar/index.vue';
+import AppMenu from '@renderer/components/App/Menu/index.vue';
+import MaterialsProgressBar from '@renderer/components/Materials/ProgressBar/index.vue';
+import MaterialsNotificationList from '@renderer/components/Materials/Notification/List.vue';
 import MaterialLoaderIcon from '@renderer/components/Materials/Loader/Icon.vue';
 
 import { notificationStore } from '@renderer/components/Materials/Notification/Store';
@@ -41,6 +52,12 @@ const { t, locale } = useI18n();
 const state = reactive({
   loading: true,
   percent: 0,
+  populate: {
+    label: '',
+    current: 0,
+    total: 0,
+    percent: 0,
+  },
 });
 
 api.on('localeChange', (iso) => {
@@ -107,6 +124,9 @@ onBeforeMount(() => {
     locale.value = settingsStore.actions.getString('locale');
 
     state.loading = false;
+  });
+  api.on('populateProgress', (data) => {
+    state.populate = data;
   });
 });
 </script>

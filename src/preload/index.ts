@@ -1,7 +1,7 @@
 import { contextBridge } from 'electron';
 
 import { sequelize } from '@/main/database';
-import populate from '@/main/database/populate';
+import { populate } from '@/main/database/populate';
 import api from '@/main/api';
 
 contextBridge.exposeInMainWorld('api', api);

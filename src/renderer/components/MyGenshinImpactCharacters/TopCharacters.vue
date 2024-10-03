@@ -10,7 +10,7 @@
       @click="actions.handleClick(character)"
     >
       <img
-        :src="image(`img/characters/${character.imageName}/gacha_card.webp`)"
+        :src="character.getImage('gacha_card')"
         :title="`${character.nameStr}, ${character.spentMora / 1000}k`"
         v-if="!character.name.startsWith('Traveler')"
       />
@@ -23,7 +23,6 @@ import { computed, ref } from 'vue';
 
 import { charactersStore } from '@renderer/core/entities/character/store';
 import { filteredCharacterStore } from '@renderer/core/stores/FilteredCharacterStore';
-import { image } from '@renderer/core/utils';
 
 const el = ref(null);
 

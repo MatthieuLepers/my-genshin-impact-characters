@@ -3,6 +3,7 @@
 .weapon-selector-panel {
   @include transition(left .2s ease);
   position: absolute;
+  z-index: 999;
   top: 0;
   left: -100%;
   width: 100%;
@@ -16,7 +17,6 @@
 
   &--open {
     left: 0;
-    z-index: 1;
   }
 
   &__container {

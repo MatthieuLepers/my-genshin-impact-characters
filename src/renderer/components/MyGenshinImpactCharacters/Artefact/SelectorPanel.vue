@@ -90,11 +90,11 @@ const props = defineProps({
 });
 
 const form = reactive({
-  flower: props.formData.flower ?? null,
-  feather: props.formData.feather ?? null,
-  sands: props.formData.sands ?? null,
-  goblet: props.formData.goblet ?? null,
-  circlet: props.formData.circlet ?? null,
+  flower: props.formData.flower,
+  feather: props.formData.feather,
+  sands: props.formData.sands,
+  goblet: props.formData.goblet,
+  circlet: props.formData.circlet,
 });
 
 const State = computed(() => ({
@@ -144,6 +144,16 @@ watch(() => props.formData, (newVal) => {
   form.sands = newVal.sands;
   form.goblet = newVal.goblet;
   form.circlet = newVal.circlet;
+});
+
+watch(() => modelValue.value, (newVal) => {
+  if (newVal) {
+    form.flower = props.formData.flower;
+    form.feather = props.formData.feather;
+    form.sands = props.formData.sands;
+    form.goblet = props.formData.goblet;
+    form.circlet = props.formData.circlet;
+  }
 });
 </script>
 

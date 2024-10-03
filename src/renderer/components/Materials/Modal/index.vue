@@ -135,7 +135,9 @@ const actions = {
 };
 
 const handleClickBackdrop = (e) => {
-  if (e.target === root.value) modalStore.actions.hide(props.name);
+  if (e.target === root.value) {
+    actions.handleClose();
+  }
 };
 
 watch(() => state.open, (newVal) => {

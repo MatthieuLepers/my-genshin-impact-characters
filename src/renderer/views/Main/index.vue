@@ -21,7 +21,7 @@
         />
       </div>
 
-      <Modal
+      <MaterialModal
         name="newlyReleasedCharactersModal"
         :modifiers="{ m: true }"
         :title="t('App.Main.newlyReleasedCharactersModal.title', charactersStore.newlyReleasedCharacters.value.length)"
@@ -38,7 +38,7 @@
             <CharacterCard :character="character" />
           </li>
         </ul>
-      </Modal>
+      </MaterialModal>
     </main>
   </div>
 </template>
@@ -53,7 +53,7 @@ import {
 import { useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 
-import Modal from '@renderer/components/Materials/Modal/index.vue';
+import MaterialModal from '@renderer/components/Materials/Modal/index.vue';
 import BossMaterial from '@renderer/components/MyGenshinImpactCharacters/BossMaterial.vue';
 import TopCharacters from '@renderer/components/MyGenshinImpactCharacters/TopCharacters.vue';
 import Filters from '@renderer/components/MyGenshinImpactCharacters/Filters.vue';

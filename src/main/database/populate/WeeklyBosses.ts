@@ -1,21 +1,20 @@
 import { ipcRenderer } from 'electron';
 
-import { MaterialI18n, Material, Setting } from '@/main/database/models';
-import JSONMaterials from '@/main/public/Materials.json';
+import { WeeklyBossI18n, WeeklyBoss, Setting } from '@/main/database/models';
+import JSONWeeklyBosses from '@/main/public/WeeklyBosses.json';
 import { serial } from '@/main/utils/PromiseUtils';
 
 export const populate = async () => {
-  const lastPopulateDateSetting = await Setting.get('lastPopulateDateMaterials', '1970-01-01');
-
-  const done = await serial(JSONMaterials
+  const lastPopulateDateSetting = await Setting.get('lastPopulateDateWeeklyBosses', '1970-01-01');
+  const done = await serial(JSONWeeklyBosses
     .filter((data) => data.releasedAt && new Date(data.releasedAt).getTime() > new Date(lastPopulateDateSetting!).getTime())
     .map((data, i, arr) => async () => {
-      const result = await Material.create(data, {
-        include: [MaterialI18n],
+      const result = await WeeklyBoss.create(data, {
+        include: [WeeklyBossI18n],
       }).catch(console.log);
 
       ipcRenderer.send('populateProgress', {
-        label: 'Importing materials...',
+        label: 'Importing weekly bosses...',
         current: i,
         total: arr.length,
         percent: i / arr.length,
@@ -26,6 +25,6 @@ export const populate = async () => {
   ;
 
   if (done.length) {
-    await Setting.set('lastPopulateDateMaterials', new Date().toISOString());
+    await Setting.set('lastPopulateDateWeeklyBosses', new Date().toISOString());
   }
 };

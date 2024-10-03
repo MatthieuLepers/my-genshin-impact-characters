@@ -1,44 +1,114 @@
 <template>
   <div class="View CharacterBuildsView">
-    <PanelMenu
-      v-model="state.currentMenu"
-      :displayNavIf="Object.values(characterBuildsStore.state.builds).length > 0"
-      :data="State.panelMenuData"
+    <div :class="GenerateModifiers('CharacterBuildList', {
+      scrollable: characterBuildsStore.sortedByCharacterReleaseDateBuildList.value.length > 2,
+    })">
+      <ul>
+        <li v-for="(build, i) in characterBuildsStore.sortedByCharacterReleaseDateBuildList.value" :key="i">
+          <CharacterBuild
+            :build="build"
+            @edit="actions.handleClickEdit(build)"
+            @delete="actions.handleClickDelete(build)"
+          />
+        </li>
+      </ul>
+    </div>
+
+    <div class="CharacterBuildButtons">
+      <MaterialButton
+        icon="icon-plus"
+        :modifiers="{ secondary: true }"
+        @click="modalStore.actions.show('buildFormModal')"
+      >
+        {{ t('App.CharacterBuild.addBtnLabel') }}
+      </MaterialButton>
+    </div>
+
+    <CharacterBuildFormModal
+      :formData="characterBuildsStore.state.current ?? {}"
+      @submit="actions.handleSubmit"
+      @close="characterBuildsStore.state.current = null"
+    />
+
+    <MaterialModal
+      name="deleteBuildModal"
+      :title="t('App.CharacterBuild.deleteModal.title')"
+      :acceptLabel="t('App.CharacterBuild.deleteModal.acceptLabel')"
+      :refuseLabel="t('App.CharacterBuild.deleteModal.refuseLabel')"
+      @accept="actions.handleConfirmDelete"
     >
-      <template #create>
-        <CreateTab />
-      </template>
-      <template #list>
-        <ListTab />
-      </template>
-    </PanelMenu>
+      {{ t('App.CharacterBuild.deleteModal.content') }}
+    </MaterialModal>
   </div>
 </template>
 
 <script setup>
-import { reactive, computed } from 'vue';
+import { onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 
-import PanelMenu from '@renderer/components/MyGenshinImpactCharacters/PanelMenu.vue';
-import CreateTab from '@renderer/views/CharacterBuilds/CreateTab.vue';
-import ListTab from '@renderer/views/CharacterBuilds/ListTab.vue';
+import MaterialButton from '@renderer/components/Materials/Button/index.vue';
+import MaterialModal from '@renderer/components/Materials/Modal/index.vue';
+import CharacterBuild from '@renderer/components/MyGenshinImpactCharacters/CharacterBuild/index.vue';
+import CharacterBuildFormModal from '@renderer/views/CharacterBuilds/CharacterBuildFormModal.vue';
 
+import { notificationStore } from '@renderer/components/Materials/Notification/Store';
+import { modalStore } from '@renderer/components/Materials/Modal/Store';
+import { charactersStore } from '@renderer/core/entities/character/store';
 import { characterBuildsStore } from '@renderer/core/entities/characterBuild/store';
-
-defineOptions({ name: 'CharacterBuildsView' });
 
 const { t } = useI18n();
 
-const state = reactive({
-  currentMenu: 'create',
-});
+defineOptions({ name: 'CharacterBuildsView' });
 
-const State = computed(() => ({
-  panelMenuData: [
-    { id: 'create', label: t('App.CharacterBuild.createBuild') },
-    { id: 'list', label: t('App.CharacterBuild.myBuilds') },
-  ],
-}));
+const actions = {
+  async handleSubmit(formData) {
+    let success;
+    const data = {
+      name: formData.name,
+      characterId: charactersStore.state.characters[formData.characterName].id,
+      flowerId: formData.flower?.id ?? null,
+      featherId: formData.feather?.id ?? null,
+      sandsId: formData.sands?.id ?? null,
+      gobletId: formData.goblet?.id ?? null,
+      circletId: formData.circlet?.id ?? null,
+      weaponId: formData.weapon?.id ?? null,
+    };
+
+    if (characterBuildsStore.state.current) {
+      success = await characterBuildsStore.actions
+        .update(data)
+        .then(() => true)
+        .catch(() => false)
+      ;
+    } else {
+      success = await characterBuildsStore.actions.create(data);
+    }
+
+    if (success) {
+      notificationStore.actions.success(t('App.CharacterBuild.successNotification', [formData.name]));
+    } else {
+      notificationStore.actions.error(t('App.CharacterBuild.errorNotification'));
+    }
+    characterBuildsStore.state.current = null;
+  },
+  handleClickEdit(build) {
+    characterBuildsStore.state.current = build;
+    modalStore.actions.show('buildFormModal');
+  },
+  handleClickDelete(build) {
+    characterBuildsStore.state.current = build;
+    modalStore.actions.show('deleteBuildModal');
+  },
+  async handleConfirmDelete() {
+    await characterBuildsStore.actions.destroy();
+  },
+};
+
+onMounted(() => {
+  if (!characterBuildsStore.sortedByCharacterReleaseDateBuildList.value.length) {
+    modalStore.actions.show('buildFormModal');
+  }
+});
 </script>
 
 <style lang="scss" src="./index.scss">

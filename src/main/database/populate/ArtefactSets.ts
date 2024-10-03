@@ -1,26 +1,25 @@
 import { ipcRenderer } from 'electron';
 
 import {
-  Character,
-  CharacterAptitude,
-  CharacterStats,
-  CharacterPassiveStat,
+  ArtefactSetI18n,
+  ArtefactSet,
+  ArtefactSetPassiveStat,
   Setting,
 } from '@/main/database/models';
-import JSONCharacters from '@/main/public/Characters.json';
+import JSONArtefactSets from '@/main/public/ArtefactSets.json';
 import { serial } from '@/main/utils/PromiseUtils';
 
 export const populate = async () => {
-  const lastPopulateDateSetting = await Setting.get('lastPopulateDateCharacters', '1970-01-01');
-  const done = await serial(JSONCharacters
+  const lastPopulateDateSetting = await Setting.get('lastPopulateDateArtefactSets', '1970-01-01');
+  const done = await serial(JSONArtefactSets
     .filter((data) => data.releasedAt && new Date(data.releasedAt).getTime() > new Date(lastPopulateDateSetting!).getTime())
     .map((data, i, arr) => async () => {
-      const result = Character.create(data, {
-        include: [CharacterAptitude, CharacterStats, CharacterPassiveStat],
+      const result = await ArtefactSet.create(data, {
+        include: [ArtefactSetPassiveStat, ArtefactSetI18n],
       }).catch(console.log);
 
       ipcRenderer.send('populateProgress', {
-        label: 'Importing characters...',
+        label: 'Importing artefact sets...',
         current: i,
         total: arr.length,
         percent: i / arr.length,
@@ -31,6 +30,6 @@ export const populate = async () => {
   ;
 
   if (done.length) {
-    await Setting.set('lastPopulateDateCharacters', new Date().toISOString());
+    await Setting.set('lastPopulateDateArtefactSets', new Date().toISOString());
   }
 };

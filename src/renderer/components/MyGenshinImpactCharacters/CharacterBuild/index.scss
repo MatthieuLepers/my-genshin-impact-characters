@@ -10,6 +10,7 @@
   &__container {
     display: flex;
     flex: 0 0 100%;
+    justify-content: space-between;
     padding: rem(8px) 0 0 rem(8px);
     position: relative;
     overflow: hidden;
@@ -29,8 +30,9 @@
   }
 
   &__img {
-    min-width: 150px;
+    width: auto;
     min-height: 150px;
+    max-height: 150px;
     position: relative;
     z-index: 1;
   }
@@ -168,7 +170,7 @@
           transform: none;
 
           &::before {
-            left: 22px;
+            left: 26px;
           }
         }
       }
@@ -181,7 +183,7 @@
           transform: none;
 
           &::before {
-            right: 22px;
+            right: 26px;
             left: auto;
           }
         }

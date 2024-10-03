@@ -18,8 +18,9 @@
       <ul class="artefact-button__tooltip__sub-stat">
         <li>
           <span class="artefact-sub-stat__value">
-            <span :class="`icon-${formatAffix(props.artefact.statsJson[0].name)}`" />
-            {{ t(`App.Artefact.stats.${props.artefact.statsJson[0].name}.short`) }}
+            <span :class="`icon-${formatAffix(props.artefact.statsJson[0].name)}`">
+              {{ t(`App.Artefact.stats.${props.artefact.statsJson[0].name}.short`) }}
+            </span>
             {{ props.artefact.statsJson[0].value }}{{ props.artefact.statsJson[0].name.endsWith('%') ? '%' : '' }}
           </span>
         </li>

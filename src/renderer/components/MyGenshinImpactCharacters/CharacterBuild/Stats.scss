@@ -8,11 +8,39 @@
   &__item {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: color(grey800);
     padding: rem(4px) rem(8px);
 
+    [class*="icon"]::before {
+      margin-right: rem(4px);
+    }
+
     &:nth-child(2n) {
       background-color: lighten(color(grey800), 5);
+    }
+  }
+
+  &__value {
+    &--changed {
+      position: relative;
+      padding-right: 60px;
+
+      span {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 60px;
+        text-align: right;
+
+        &.negative {
+          color: color(pyro);
+        }
+
+        &.positive {
+          color: color(common);
+        }
+      }
     }
   }
 }

@@ -1,82 +1,121 @@
 <template>
-  <div class="CreateTab">
-    <div class="CreateTabImg">
+  <MaterialModal
+    name="buildFormModal"
+    class="Build"
+    :showClose="false"
+    @accept="emit('submit', { ...form })"
+    @close="emit('close')"
+  >
+    <div class="BuildContainer">
       <img
-        :src="image(`img/characters/${charactersStore.state.characters[form.characterName].imageName}/gacha_card.webp`)"
+        class="BuildImgTheme"
+        :src="charactersStore.state.characters[form.characterName].getImage('theme')"
         alt=""
       />
-      <CharacterBuildStats
-        class="BuildStats"
-        :build="State.build"
-      />
-    </div>
-    <MaterialForm
-      class="Build"
-      @submit.prevent="actions.handleSubmit"
-    >
-      <MaterialFormFieldLine :size="2">
-        <template #field0>
+
+      <div class="BuildImgSection">
+        <MaterialFormFieldLine>
           <MaterialFormSelect
             v-model="v$.characterName.$model"
             variant="box"
-            :label="t('App.CharacterBuild.Create.characterSelect')"
+            :label="t('App.CharacterBuild.characterSelect')"
             :options="State.validCharacterList"
             :valid="!v$.characterName.$invalid"
-          />
-        </template>
-        <template #field1>
-          <MaterialFormInput
-            v-model="v$.name.$model"
-            variant="box"
-            :label="t('App.CharacterBuild.Create.name')"
-            :valid="!v$.name.$invalid"
-            :required="true"
-          />
-        </template>
-      </MaterialFormFieldLine>
-
-      <div class="BuildEquipments">
-        <WeaponButton
-          :type="State.character.weaponType"
-          :weapon="form.weapon"
-          @click="state.weaponSelectorPanelVisible = true"
-        />
-        <ArtefactButton
-          v-for="type in ['flower', 'feather', 'sands', 'goblet', 'circlet']"
-          :key="type"
-          :type="type"
-          :artefact="form[type]"
-          @click="actions.handleClickArtefactButton(type)"
+          >
+            <template #option="{ option }">
+              <img
+                class="BuildOptionImg"
+                :src="option.obj.getImage('side_icon')"
+                alt=""
+              />
+              {{ option.value }}
+            </template>
+          </MaterialFormSelect>
+        </MaterialFormFieldLine>
+        <img
+          class="BuildImg"
+          :src="charactersStore.state.characters[form.characterName].getImage('icon')"
+          alt=""
         />
       </div>
 
-      <MaterialFormFieldLine :size="4" class="BuildButtons">
-        <template #field3>
+      <div class="BuildInfosSection">
+        <MaterialFormFieldLine>
+          <MaterialFormInput
+            v-model="v$.name.$model"
+            variant="box"
+            :label="t('App.CharacterBuild.name')"
+            :valid="!v$.name.$invalid"
+            :required="true"
+          />
+        </MaterialFormFieldLine>
+
+        <CharacterBuildStats
+          class="BuildStats"
+          :build="State.build"
+          :old="props.formData"
+        />
+      </div>
+    </div>
+
+    <div class="BuildEquipmentSection">
+      <WeaponButton
+        class="BuildEquipment"
+        :type="State.character.weaponType"
+        :weapon="form.weapon"
+        @click="state.weaponSelectorPanelVisible = true"
+      />
+      <ArtefactButton
+        v-for="type in ['flower', 'feather', 'sands', 'goblet', 'circlet']"
+        :key="type"
+        class="BuildEquipment"
+        :type="type"
+        :artefact="form[type]"
+        @click="actions.handleClickArtefactButton(type)"
+      />
+    </div>
+
+    <template #footer="{ accept, close }">
+      <MaterialFormFieldLine :size="2" class="BuildButtonSection">
+        <template #field0>
+          <MaterialButton
+            icon="icon-close"
+            type="button"
+            :class="GenerateModifiers('m-modal__btn', { refuse: true })"
+            :modifiers="{ danger: true }"
+            @click="close"
+          >
+            {{ t('App.CharacterBuild.cancelBtnLabel') }}
+          </MaterialButton>
+        </template>
+        <template #field1>
           <MaterialButton
             icon="icon-check"
-            type="submit"
+            type="button"
             :disabled="v$.$invalid"
-            :modifiers="{ success: true }"
+            :class="GenerateModifiers('m-modal__btn', { accept: true })"
+            :modifiers="{ secondary: true }"
+            @click="accept"
           >
-            {{ t('App.CharacterBuild.Create.saveBtnLabel') }}
+            {{ t('App.CharacterBuild.saveBtnLabel') }}
           </MaterialButton>
         </template>
       </MaterialFormFieldLine>
-    </MaterialForm>
+    </template>
+  </MaterialModal>
 
-    <ArtefactSelectorPanel
-      v-model="state.artefactSelectorPanelVisible"
-      :formData="form"
-      @submit="actions.handleSetArtefacts"
-    />
+  <ArtefactSelectorPanel
+    v-model="state.artefactSelectorPanelVisible"
+    :formData="form"
+    @submit="actions.handleSetArtefacts"
+  />
 
-    <WeaponSelectorPanel
-      v-model="state.weaponSelectorPanelVisible"
-      :formData="form"
-      :type="weaponsStore.state.filters.type"
-      @submit="actions.handleSetWeapon"
-    />
-  </div>
+  <WeaponSelectorPanel
+    v-model="state.weaponSelectorPanelVisible"
+    :formData="form"
+    :type="weaponsStore.state.filters.type"
+    @submit="actions.handleSetWeapon"
+  />
 </template>
 
 <script setup>
@@ -91,7 +130,7 @@ import { useVuelidate } from '@vuelidate/core';
 import { required, minLength } from '@vuelidate/validators';
 
 import MaterialButton from '@renderer/components/Materials/Button/index.vue';
-import MaterialForm from '@renderer/components/Materials/Form/index.vue';
+import MaterialModal from '@renderer/components/Materials/Modal/index.vue';
 import MaterialFormFieldLine from '@renderer/components/Materials/Form/FieldLine.vue';
 import MaterialFormSelect from '@renderer/components/Materials/Form/Select.vue';
 import MaterialFormInput from '@renderer/components/Materials/Form/Input.vue';
@@ -101,16 +140,18 @@ import WeaponButton from '@renderer/components/MyGenshinImpactCharacters/Weapon/
 import WeaponSelectorPanel from '@renderer/components/MyGenshinImpactCharacters/Weapon/SelectorPanel.vue';
 import CharacterBuildStats from '@renderer/components/MyGenshinImpactCharacters/CharacterBuild/Stats.vue';
 
-import { image } from '@renderer/core/utils';
 import CharacterBuild from '@renderer/core/entities/characterBuild';
 import { charactersStore } from '@renderer/core/entities/character/store';
 import { artefactPresetsStore } from '@renderer/core/entities/artefactPreset/store';
 import { weaponsStore } from '@renderer/core/entities/weapon/store';
-import { characterBuildsStore } from '@renderer/core/entities/characterBuild/store';
 import { artefactsStore } from '@renderer/core/entities/artefact/store';
-import { notificationStore } from '@renderer/components/Materials/Notification/Store';
 
 const { t } = useI18n();
+const emit = defineEmits(['submit', 'close']);
+
+const props = defineProps({
+  formData: { type: Object, default: () => ({}) },
+});
 
 const form = reactive({
   name: '',
@@ -128,6 +169,7 @@ const rules = {
     minLength: minLength(1),
   },
   characterName: { required },
+  weapon: { required },
 };
 const v$ = useVuelidate(rules, form);
 
@@ -173,24 +215,9 @@ const State = computed(() => {
 });
 
 const actions = {
-  async handleSubmit() {
-    const { name, flower, feather, sands, goblet, circlet, weapon } = form;
-    const data = {
-      name,
-      characterId: State.value.character.id,
-      flowerId: flower?.id ?? null,
-      featherId: feather?.id ?? null,
-      sandsId: sands?.id ?? null,
-      gobletId: goblet?.id ?? null,
-      circletId: circlet?.id ?? null,
-      weaponId: weapon?.id ?? null,
-    };
-    const success = await characterBuildsStore.actions.create(data);
-    if (success) {
-      notificationStore.actions.success(t('App.CharacterBuild.Create.successNotification', [name]));
-    } else {
-      notificationStore.actions.error(t('App.CharacterBuild.Create.errorNotification'));
-    }
+  resetForm() {
+    form.characterName = State.value.validCharacterList[0].value;
+    weaponsStore.state.filters.type = State.value.character.weaponType;
   },
   handleClickArtefactButton(type) {
     artefactsStore.state.filters.type = [type];
@@ -208,11 +235,20 @@ const actions = {
   },
 };
 
-watch(() => form.characterName, (newVal) => {
+watch(() => form.characterName, () => {
   weaponsStore.state.filters.type = State.value.character.weaponType;
-  form.weapon = State.value.validWeaponList[0].value;
   weaponsStore.state.current = form.weapon;
-  form.name = newVal;
+});
+
+watch(() => props.formData, (newVal) => {
+  form.name = newVal.name;
+  form.characterName = newVal.character?.name ?? State.value.validCharacterList[0].value;
+  form.flower = newVal?.flower ?? null;
+  form.feather = newVal?.feather ?? null;
+  form.sands = newVal?.sands ?? null;
+  form.goblet = newVal?.goblet ?? null;
+  form.circlet = newVal?.circlet ?? null;
+  form.weapon = newVal?.weapon ?? null;
 });
 
 onBeforeMount(() => {
@@ -222,5 +258,5 @@ onBeforeMount(() => {
 });
 </script>
 
-<style lang="scss" src="./CreateTab.scss">
+<style lang="scss" src="./CharacterBuildFormModal.scss">
 </style>

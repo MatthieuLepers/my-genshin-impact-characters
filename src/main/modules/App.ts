@@ -92,6 +92,11 @@ class AppModule {
   }
 
   @IpcOn
+  static populateProgress(data: Object) {
+    WindowStore.broadcastData('populateProgress', data);
+  }
+
+  @IpcOn
   static quitAndInstallUpdate() {
     autoUpdater.quitAndInstall();
   }

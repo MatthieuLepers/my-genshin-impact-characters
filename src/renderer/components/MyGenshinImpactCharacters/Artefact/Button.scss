@@ -44,6 +44,10 @@
       .artefact-sub-stat__value {
         white-space: nowrap;
         margin-right: rem(16px);
+
+        [class*="icon"]::before {
+          margin-right: rem(4px);
+        }
       }
     }
   }
