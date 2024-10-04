@@ -8,22 +8,11 @@ interface IState {
 
 const useArtefactSetsStore = () => {
   const state = reactive<IState>({
-    sets: {},
+    sets: ArtefactSet.findAll(),
   });
-
-  const actions = {
-    async load() {
-      const objList = await ArtefactSet.findAll();
-      state.sets = objList.reduce((acc, obj) => ({
-        ...acc,
-        [obj.id]: obj,
-      }), {});
-    },
-  };
 
   return {
     state,
-    actions,
   };
 };
 

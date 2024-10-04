@@ -1,22 +1,26 @@
-import type { IRemoteCharacterAptitude } from '@renderer/core/entities/characterAptitude/i';
-import type { IRemoteCharacterStat } from '@renderer/core/entities/characterStat/i';
-import type { IRemoteCharacterPassiveStat } from '@renderer/core/entities/characterPassiveStat/i';
+import type { ICharacterAptitude } from '@renderer/core/entities/characterAptitude/i';
+import type { ICharacterStat } from '@renderer/core/entities/characterStat/i';
+import type { ICharacterPassiveStat } from '@renderer/core/entities/characterPassiveStat/i';
 
-export interface ICharacter {
+export interface IDatabaseCharacter {
   readonly id: number;
   readonly name: string;
-  readonly releasedAt?: Date;
-  readonly element: string;
   level: number;
   phase: number;
   constellation: number;
-  readonly weaponType: string;
-  aptitudes: Array<IRemoteCharacterAptitude>;
-  readonly stats: Array<IRemoteCharacterStat>;
-  readonly passiveStats: Array<IRemoteCharacterPassiveStat>;
+  aptitudeLevels: [number, number, number];
   owned: boolean;
 }
 
+export interface ICharacter extends IDatabaseCharacter {
+  readonly releasedAt?: Date;
+  readonly element: string;
+  readonly weaponType: string;
+  aptitudes: Array<ICharacterAptitude>;
+  readonly stats: Array<ICharacterStat>;
+  readonly passiveStats?: Array<ICharacterPassiveStat>;
+}
+
 export interface IRemoteCharacter {
-  dataValues: ICharacter;
+  dataValues: IDatabaseCharacter;
 }

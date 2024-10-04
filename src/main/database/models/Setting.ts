@@ -44,9 +44,7 @@ export class Setting extends Model {
 
   static async createDefault(): Promise<void> {
     const DEFAULT_SETTINGS = {
-      lastPopulateDateWeeklyBosses: '1970-01-01',
       lastPopulateDateMaterials: '1970-01-01',
-      lastPopulateDateArtefactSets: '1970-01-01',
       lastPopulateDateCharacters: '1970-01-01',
       lastPopulateDateWeapons: '1970-01-01',
       locale: 'en-EN',

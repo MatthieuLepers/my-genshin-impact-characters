@@ -1,6 +1,7 @@
 import AbstractI18nEntity from '@renderer/core/entities/AbstractI18nEntity';
-import type { IWeeklyBoss, IRemoteWeeklyBoss } from '@renderer/core/entities/weeklyBoss/i';
+import type { IWeeklyBoss } from '@renderer/core/entities/weeklyBoss/i';
 import { image } from '@renderer/core/utils';
+import WeeklyBossData from '@renderer/core/entities/weeklyBoss/data.json';
 
 export default class WeeklyBoss extends AbstractI18nEntity<IWeeklyBoss> {
   declare readonly id: number;
@@ -13,8 +14,17 @@ export default class WeeklyBoss extends AbstractI18nEntity<IWeeklyBoss> {
     return image(`img/weeklyBosses/${this.id}.png`);
   }
 
-  static async findAll(): Promise<Array<WeeklyBoss>> {
-    const weeklyBosses = await api.WeeklyBoss.findAll();
-    return weeklyBosses.map((material: IRemoteWeeklyBoss) => new WeeklyBoss(material.dataValues));
+  static findAll(): Record<string, WeeklyBoss> {
+    return Object
+      .entries(WeeklyBossData)
+      .reduce((acc, [id, weeklyBoss]) => ({
+        ...acc,
+        [id]: new WeeklyBoss({
+          ...weeklyBoss,
+          id,
+          releasedAt: new Date(weeklyBoss.releasedAt),
+        }),
+      }), {})
+    ;
   }
 }

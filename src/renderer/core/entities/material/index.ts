@@ -3,6 +3,7 @@ import type { IMaterial, IRemoteMaterial } from '@renderer/core/entities/materia
 import type WeeklyBoss from '@renderer/core/entities/weeklyBoss';
 import { weeklyBossesStore } from '@renderer/core/entities/weeklyBoss/store';
 import { image } from '@renderer/core/utils';
+import MaterialData from '@renderer/core/entities/material/data.json';
 
 export default class Material extends AbstractI18nEntity<IMaterial> {
   declare readonly id: string;
@@ -10,6 +11,8 @@ export default class Material extends AbstractI18nEntity<IMaterial> {
   declare inInventory: number;
 
   declare readonly bossId: string;
+
+  declare readonly releasedAt?: Date;
 
   constructor(data: IMaterial) {
     super(data, []);
@@ -34,6 +37,13 @@ export default class Material extends AbstractI18nEntity<IMaterial> {
 
   static async findAll(): Promise<Array<Material>> {
     const materials = await api.Material.findAll();
-    return materials.map((material: IRemoteMaterial) => new Material(material.dataValues));
+    return materials.map((material: IRemoteMaterial) => {
+      const data = MaterialData[material.dataValues.id];
+      return new Material({
+        ...material.dataValues,
+        ...data,
+        releasedAt: data.releasedAt ? new Date(data.releasedAt) : undefined,
+      });
+    });
   }
 }

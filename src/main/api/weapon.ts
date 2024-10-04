@@ -1,14 +1,10 @@
 import { Identifier } from 'sequelize';
 
-import { Weapon, WeaponI18n } from '@/main/database/models';
+import { Weapon } from '@/main/database/models';
 import type { IWeapon } from '@renderer/core/entities/weapon/i';
 
 export async function findAll(): Promise<Array<Weapon>> {
-  return Weapon.findAll({
-    include: [
-      { model: WeaponI18n },
-    ],
-  });
+  return Weapon.findAll();
 }
 
 export async function update(identifier: Identifier, body: string): Promise<Weapon | null> {

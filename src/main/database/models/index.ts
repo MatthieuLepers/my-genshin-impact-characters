@@ -1,17 +1,7 @@
-export { ArtefactSetI18n } from '@/main/database/models/ArtefactSetI18n';
-export { ArtefactSet } from '@/main/database/models/ArtefactSet';
-export { ArtefactSetPassiveStat } from '@/main/database/models/ArtefactSetPassiveStat';
 export { Character } from '@/main/database/models/Character';
-export { WeeklyBossI18n } from '@/main/database/models/WeeklyBossI18n';
-export { WeeklyBoss } from '@/main/database/models/WeeklyBoss';
-export { MaterialI18n } from '@/main/database/models/MaterialI18n';
 export { Material } from '@/main/database/models/Material';
 export { Artefact } from '@/main/database/models/Artefact';
-export { WeaponI18n } from '@/main/database/models/WeaponI18n';
 export { Weapon } from '@/main/database/models/Weapon';
 export { ArtefactPreset } from '@/main/database/models/ArtefactPreset';
-export { CharacterAptitude } from '@/main/database/models/CharacterAptitude';
-export { CharacterStats } from '@/main/database/models/CharacterStats';
-export { CharacterPassiveStat } from '@/main/database/models/CharacterPassiveStat';
 export { CharacterBuild } from '@/main/database/models/CharacterBuild';
 export { Setting } from '@/main/database/models/Setting';

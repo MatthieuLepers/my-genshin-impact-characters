@@ -37,10 +37,8 @@ import MaterialLoaderIcon from '@renderer/components/Materials/Loader/Icon.vue';
 
 import { notificationStore } from '@renderer/components/Materials/Notification/Store';
 import { settingsStore } from '@renderer/core/entities/setting/store';
-import { weeklyBossesStore } from '@renderer/core/entities/weeklyBoss/store';
 import { materialsStore } from '@renderer/core/entities/material/store';
 import { charactersStore } from '@renderer/core/entities/character/store';
-import { artefactSetsStore } from '@renderer/core/entities/artefactSet/store';
 import { artefactsStore } from '@renderer/core/entities/artefact/store';
 import { artefactPresetsStore } from '@renderer/core/entities/artefactPreset/store';
 import { weaponsStore } from '@renderer/core/entities/weapon/store';
@@ -111,10 +109,8 @@ api.on('update-downloaded', () => {
 onBeforeMount(() => {
   api.on('database-ready', async () => {
     await settingsStore.actions.load();
-    await weeklyBossesStore.actions.load();
     await materialsStore.actions.load();
     await charactersStore.actions.load();
-    await artefactSetsStore.actions.load();
     await artefactsStore.actions.load();
     await artefactPresetsStore.actions.load();
     await weaponsStore.actions.load();

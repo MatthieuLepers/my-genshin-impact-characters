@@ -1,9 +1,10 @@
 import AbstractEntity from '@renderer/core/entities/AbstractEntity';
 import type { ICharacter, IRemoteCharacter } from '@renderer/core/entities/character/i';
 import CharacterAptitude from '@renderer/core/entities/characterAptitude';
-import type { IRemoteCharacterAptitude } from '@renderer/core/entities/characterAptitude/i';
-import type { IRemoteCharacterPassiveStat } from '@renderer/core/entities/characterPassiveStat/i';
+import type { ICharacterAptitude } from '@renderer/core/entities/characterAptitude/i';
+import type { ICharacterPassiveStat } from '@renderer/core/entities/characterPassiveStat/i';
 import { image } from '@renderer/core/utils';
+import CharacterData from '@renderer/core/entities/character/data.json';
 
 const PHASES = [
   (level: number): boolean => level > 0 && level <= 20,
@@ -20,8 +21,6 @@ export default class Character extends AbstractEntity<ICharacter> {
 
   declare readonly name: string;
 
-  declare readonly releasedAt?: Date;
-
   declare level: number;
 
   declare phase: number;
@@ -30,8 +29,26 @@ export default class Character extends AbstractEntity<ICharacter> {
 
   declare owned: boolean;
 
+  declare readonly releasedAt?: Date;
+
+  declare readonly weaponType: string;
+
   constructor(data: ICharacter) {
-    super(data, ['aptitudes', 'stats', 'passiveStats', 'element']);
+    super(data, ['aptitudeLevels', 'element', 'aptitudes', 'stats', 'passiveStats']);
+  }
+
+  get aptitudeLevels(): [number, number, number] {
+    return [
+      this.aptitudes.NormalAttack.level,
+      this.aptitudes.ElementalSkill.level,
+      this.aptitudes.ElementalBurst.level,
+    ];
+  }
+
+  set aptitudeLevels([a, b, c]: [number, number, number]) {
+    this.aptitudes.NormalAttack.level = a;
+    this.aptitudes.ElementalSkill.level = b;
+    this.aptitudes.ElementalBurst.level = c;
   }
 
   get element(): string {
@@ -40,8 +57,8 @@ export default class Character extends AbstractEntity<ICharacter> {
 
   get aptitudes(): Record<string, CharacterAptitude> {
     return (this.data?.aptitudes ?? [])
-      .reduce((acc, aptitude: IRemoteCharacterAptitude) => {
-        const obj = new CharacterAptitude(aptitude.dataValues, this);
+      .reduce((acc, aptitude: ICharacterAptitude) => {
+        const obj = new CharacterAptitude(aptitude, this);
 
         return { ...acc, [obj.type]: obj };
       }, {})
@@ -49,23 +66,23 @@ export default class Character extends AbstractEntity<ICharacter> {
   }
 
   get stats(): Record<string, number> {
-    const stats = (this.data?.stats ?? []).find(({ dataValues }) => dataValues.level === this.level);
+    const stats = (this.data?.stats ?? []).find(({ level }) => level === this.level);
     if (!stats) {
       throw new Error('Cannot find stats object for this level!');
     }
     const baseStats = {
-      HP: stats.dataValues.hp,
-      Atk: stats.dataValues.atk,
-      Def: stats.dataValues.def,
+      HP: stats.hp,
+      Atk: stats.atk,
+      Def: stats.def,
       'CritDmg%': 50,
       'CritRate%': 5,
       'ER%': 100,
     };
-    baseStats[stats.dataValues.bonusType] = (baseStats[stats.dataValues.bonusType] ?? 0) + stats.dataValues.bonusValue;
+    baseStats[stats.bonusType] = (baseStats[stats.bonusType] ?? 0) + stats.bonusValue;
     return (this.data?.passiveStats ?? [])
-      .reduce((acc, passiveStat: IRemoteCharacterPassiveStat) => ({
+      .reduce((acc, passiveStat: ICharacterPassiveStat) => ({
         ...acc,
-        [passiveStat.dataValues.statType]: (acc[passiveStat.dataValues.statType] ?? 0) + passiveStat.dataValues.statValue,
+        [passiveStat.statType]: (acc[passiveStat.statType] ?? 0) + passiveStat.statValue,
       }), baseStats)
     ;
   }
@@ -143,7 +160,13 @@ export default class Character extends AbstractEntity<ICharacter> {
   async save(): Promise<Character> {
     const { level, phase, constellation, owned } = this.data;
     if (this.id) {
-      await api.Character.update(this.id, JSON.stringify({ level, phase, constellation, owned }));
+      await api.Character.update(this.id, JSON.stringify({
+        level,
+        phase,
+        constellation,
+        aptitudeLevels: this.aptitudeLevels,
+        owned,
+      }));
       return this;
     }
     throw new Error('Character not found');
@@ -151,6 +174,21 @@ export default class Character extends AbstractEntity<ICharacter> {
 
   static async findAll(): Promise<Array<Character>> {
     const characters = await api.Character.findAll();
-    return characters.map((character: IRemoteCharacter) => new Character(character.dataValues));
+    return characters.map((character: IRemoteCharacter) => {
+      const data = CharacterData[character.dataValues.name];
+      return new Character({
+        ...data,
+        ...character.dataValues,
+        releasedAt: data.releasedAt ? new Date(data.releasedAt) : undefined,
+        aptitudes: data.aptitudes.map((aptitude: Partial<ICharacterAptitude>, i: number) => ({
+          level: character.dataValues.aptitudeLevels[i],
+          phaseIncrease: 0,
+          phaseIncreaseBonus: 0,
+          constellationIncrease: 0,
+          constellationIncreaseBonus: 0,
+          ...aptitude,
+        })),
+      });
+    });
   }
 }

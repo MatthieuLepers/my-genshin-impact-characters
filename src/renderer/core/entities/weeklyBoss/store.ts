@@ -8,22 +8,11 @@ interface IState {
 
 const useWeeklyBossesStore = () => {
   const state = reactive<IState>({
-    bosses: {},
+    bosses: WeeklyBoss.findAll(),
   });
-
-  const actions = {
-    async load() {
-      const bossList = await WeeklyBoss.findAll();
-      state.bosses = bossList.reduce((acc, boss) => ({
-        ...acc,
-        [boss.id]: boss,
-      }), {});
-    },
-  };
 
   return {
     state,
-    actions,
   };
 };
 

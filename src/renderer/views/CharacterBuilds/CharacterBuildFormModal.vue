@@ -235,7 +235,8 @@ const actions = {
   },
 };
 
-watch(() => form.characterName, () => {
+watch(() => form.characterName, (newVal) => {
+  form.name = newVal;
   weaponsStore.state.filters.type = State.value.character.weaponType;
   weaponsStore.state.current = form.weapon;
 });

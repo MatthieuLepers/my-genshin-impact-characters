@@ -6,11 +6,7 @@ import {
   AllowNull,
   PrimaryKey,
   AutoIncrement,
-  BelongsTo,
-  ForeignKey,
 } from 'sequelize-typescript';
-import { HasOneGetAssociationMixin } from 'sequelize';
-import { ArtefactSet } from '@/main/database/models';
 
 @Table({
   modelName: 'artefacts',
@@ -32,14 +28,8 @@ export class Artefact extends Model {
   @Column(DataType.STRING)
   declare type: string;
 
-  @ForeignKey(() => ArtefactSet)
   @Column(DataType.STRING)
   declare setId: string;
-
-  @BelongsTo(() => ArtefactSet)
-  declare artefactSet: ArtefactSet;
-
-  declare getArtefactSet: HasOneGetAssociationMixin<ArtefactSet>;
 
   @AllowNull(false)
   @Column(DataType.JSON)

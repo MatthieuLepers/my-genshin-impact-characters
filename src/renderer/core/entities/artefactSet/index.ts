@@ -1,7 +1,8 @@
 import AbstractI18nEntity from '@renderer/core/entities/AbstractI18nEntity';
-import type { IArtefactSet, IRemoteArtefactSet } from '@renderer/core/entities/artefactSet/i';
-import type { IRemoteArtefactSetPassiveStat } from '@renderer/core/entities/artefactSetPassiveStat/i';
+import type { IArtefactSet } from '@renderer/core/entities/artefactSet/i';
+import type { IArtefactSetPassiveStat } from '@renderer/core/entities/artefactSetPassiveStat/i';
 import { image } from '@renderer/core/utils';
+import ArtefactSetData from '@renderer/core/entities/artefactSet/data.json';
 
 export default class ArtefactSet extends AbstractI18nEntity<IArtefactSet> {
   declare readonly id: string;
@@ -14,9 +15,9 @@ export default class ArtefactSet extends AbstractI18nEntity<IArtefactSet> {
 
   get stats(): Record<string, number> {
     return (this.data?.passiveStats ?? [])
-      .reduce((acc, passiveStat: IRemoteArtefactSetPassiveStat) => ({
+      .reduce((acc, passiveStat: IArtefactSetPassiveStat) => ({
         ...acc,
-        [passiveStat.dataValues.statType]: passiveStat.dataValues.statValue,
+        [passiveStat.statType]: passiveStat.statValue,
       }), {})
     ;
   }
@@ -25,8 +26,17 @@ export default class ArtefactSet extends AbstractI18nEntity<IArtefactSet> {
     return image(`img/artefacts/${this.id}/${type}.webp`);
   }
 
-  static async findAll(): Promise<Array<ArtefactSet>> {
-    const sets = await api.ArtefactSet.findAll();
-    return sets.map((set: IRemoteArtefactSet) => new ArtefactSet(set.dataValues));
+  static findAll(): Record<string, ArtefactSet> {
+    return Object
+      .entries(ArtefactSetData)
+      .reduce((acc, [id, set]) => ({
+        ...acc,
+        [id]: new ArtefactSet({
+          ...set,
+          id,
+          releasedAt: new Date(set.releasedAt),
+        }),
+      }), {})
+    ;
   }
 }

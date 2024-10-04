@@ -6,10 +6,6 @@ export interface II18nData {
   [key: string]: string;
 }
 
-export interface IRemoteI18nData {
-  dataValues: II18nData;
-}
-
 export default abstract class AbstractI18nEntity<T extends Record<string, any>> extends AbstractEntity<T> {
   constructor(
     data: T,
@@ -19,9 +15,9 @@ export default abstract class AbstractI18nEntity<T extends Record<string, any>> 
   }
 
   get i18n(): Record<string, II18nData> {
-    return this.data.i18n.reduce((acc: Record<string, II18nData>, remoteObj: IRemoteI18nData) => ({
+    return this.data.i18n.reduce((acc: Record<string, II18nData>, obj: II18nData) => ({
       ...acc,
-      [remoteObj.dataValues.locale]: remoteObj.dataValues,
+      [obj.locale]: obj,
     }), {});
   }
 

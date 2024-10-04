@@ -1,6 +1,7 @@
 import AbstractI18nEntity from '@renderer/core/entities/AbstractI18nEntity';
 import type { IWeapon, IRemoteWeapon } from '@renderer/core/entities/weapon/i';
 import { image } from '@renderer/core/utils';
+import WeaponData from '@renderer/core/entities/weapon/data.json';
 
 const WEAPON_STAT_TYPES = {
   type549: [15.070818070818072, 13.177045177045176],
@@ -20,19 +21,17 @@ const WEAPON_STAT_TYPES = {
 };
 
 export default class Weapon extends AbstractI18nEntity<IWeapon> {
-  declare readonly id: number;
-
-  declare readonly name: string;
-
-  declare readonly releasedAt: Date;
-
-  declare readonly type: string;
+  declare readonly id: string;
 
   declare owned: boolean;
 
   declare level: number;
 
   declare rank: number;
+
+  declare readonly releasedAt?: Date;
+
+  declare readonly type: string;
 
   declare readonly rarity: number;
 
@@ -74,7 +73,7 @@ export default class Weapon extends AbstractI18nEntity<IWeapon> {
   }
 
   get image(): string {
-    return image(`img/weapons/${this.name}.webp`);
+    return image(`img/weapons/${this.id}.webp`);
   }
 
   get stats(): Record<string, number> {
@@ -90,13 +89,20 @@ export default class Weapon extends AbstractI18nEntity<IWeapon> {
 
   static async findAll(): Promise<Array<Weapon>> {
     const weapons = await api.Weapon.findAll();
-    return weapons.map((weapon: IRemoteWeapon) => new Weapon(weapon.dataValues));
+    return weapons.map((weapon: IRemoteWeapon) => {
+      const data = WeaponData[weapon.dataValues.id];
+      return new Weapon({
+        ...weapon.dataValues,
+        ...data,
+        releasedAt: data.releasedAt ? new Date(data.releasedAt) : undefined,
+      });
+    });
   }
 
   async save(): Promise<Weapon> {
-    const { owned, level } = this.data;
+    const { owned, level, rank } = this.data;
     if (this.id) {
-      await api.Weapon.update(this.id, JSON.stringify({ owned, level }));
+      await api.Weapon.update(this.id, JSON.stringify({ owned, level, rank }));
     }
     return this;
   }
