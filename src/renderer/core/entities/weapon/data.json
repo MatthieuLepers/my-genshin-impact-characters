@@ -1,7 +1,6 @@
 {
   "Absolution": {
     "type": "sword",
-    "owned": false,
     "rarity": 5,
     "atk": 47.54,
     "statName": "CritDmg%",
@@ -15,7 +14,6 @@
   },
   "Akuoumaru": {
     "type": "claymore",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "Atk%",
@@ -29,7 +27,6 @@
   },
   "AlleyHunter": {
     "type": "bow",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "Atk%",
@@ -43,7 +40,6 @@
   },
   "AmenomaKageuchi": {
     "type": "sword",
-    "owned": false,
     "rarity": 4,
     "atk": 41.07,
     "statName": "Atk%",
@@ -57,7 +53,6 @@
   },
   "AmosBow": {
     "type": "bow",
-    "owned": false,
     "rarity": 5,
     "atk": 45.94,
     "statName": "Atk%",
@@ -71,7 +66,6 @@
   },
   "ApprenticesNotes": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 1,
     "atk": 23.25,
     "releasedAt": "2020-10-28",
@@ -82,7 +76,6 @@
   },
   "AquaSimulacra": {
     "type": "bow",
-    "owned": false,
     "rarity": 5,
     "atk": 44.34,
     "statName": "CritDmg%",
@@ -96,7 +89,6 @@
   },
   "AquilaFavonia": {
     "type": "sword",
-    "owned": false,
     "rarity": 5,
     "atk": 47.54,
     "statName": "PhysicalDmg%",
@@ -110,7 +102,6 @@
   },
   "AshGravenDrinkingHorn": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "HP%",
@@ -124,7 +115,6 @@
   },
   "AThousandFloatingDreams": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 5,
     "atk": 44.34,
     "statName": "EM",
@@ -138,7 +128,6 @@
   },
   "BalladOfTheBoundlessBlue": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "ER%",
@@ -152,7 +141,6 @@
   },
   "BalladOfTheFjords": {
     "type": "polearm",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "CritRate%",
@@ -166,7 +154,6 @@
   },
   "BeaconOfTheReedSea": {
     "type": "claymore",
-    "owned": false,
     "rarity": 5,
     "atk": 45.94,
     "statName": "CritRate%",
@@ -180,7 +167,6 @@
   },
   "BeginnersProtector": {
     "type": "polearm",
-    "owned": false,
     "rarity": 1,
     "atk": 23.25,
     "releasedAt": "2020-09-28",
@@ -191,7 +177,6 @@
   },
   "BlackcliffAgate": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "CritDmg%",
@@ -205,7 +190,6 @@
   },
   "BlackcliffLongsword": {
     "type": "sword",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "CritDmg%",
@@ -219,7 +203,6 @@
   },
   "BlackcliffPole": {
     "type": "polearm",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "CritDmg%",
@@ -233,7 +216,6 @@
   },
   "BlackcliffSlasher": {
     "type": "claymore",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "CritDmg%",
@@ -247,7 +229,6 @@
   },
   "BlackcliffWarbow": {
     "type": "bow",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "CritDmg%",
@@ -261,7 +242,6 @@
   },
   "BlackTassel": {
     "type": "polearm",
-    "owned": false,
     "rarity": 3,
     "atk": 37.61,
     "statName": "HP%",
@@ -274,7 +254,6 @@
   },
   "BloodtaintedGreatsword": {
     "type": "claymore",
-    "owned": false,
     "rarity": 3,
     "atk": 37.6,
     "statName": "EM",
@@ -287,7 +266,6 @@
   },
   "CalamityQueller": {
     "type": "polearm",
-    "owned": false,
     "rarity": 5,
     "atk": 49.14,
     "statName": "Ark%",
@@ -301,7 +279,6 @@
   },
   "CashflowSupervision": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 5,
     "atk": 47.54,
     "statName": "CritRate%",
@@ -315,7 +292,6 @@
   },
   "ChainBreaker": {
     "type": "bow",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "Atk%",
@@ -329,7 +305,6 @@
   },
   "CinnabarSpindle": {
     "type": "sword",
-    "owned": false,
     "rarity": 4,
     "atk": 41.07,
     "statName": "Def%",
@@ -343,7 +318,6 @@
   },
   "Cloudforged": {
     "type": "bow",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "EM",
@@ -357,7 +331,6 @@
   },
   "CompoundBow": {
     "type": "bow",
-    "owned": false,
     "rarity": 4,
     "atk": 41.07,
     "statName": "PhysicalDmg%",
@@ -371,7 +344,6 @@
   },
   "CoolSteel": {
     "type": "sword",
-    "owned": false,
     "rarity": 3,
     "atk": 38.74,
     "statName": "Atk%",
@@ -384,7 +356,6 @@
   },
   "CranesEchoingCall": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 5,
     "atk": 49.14,
     "statName": "Atk%",
@@ -398,7 +369,6 @@
   },
   "CrescentPike": {
     "type": "polearm",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "PhysicalDmg%",
@@ -412,7 +382,6 @@
   },
   "CrimsonMoonsSemblance": {
     "type": "polearm",
-    "owned": false,
     "rarity": 5,
     "atk": 47.54,
     "statName": "CritRate%",
@@ -426,7 +395,6 @@
   },
   "DarkIronSword": {
     "type": "sword",
-    "owned": false,
     "rarity": 3,
     "atk": 38.74,
     "statName": "EM",
@@ -439,7 +407,6 @@
   },
   "Deathmatch": {
     "type": "polearm",
-    "owned": false,
     "rarity": 4,
     "atk": 41.07,
     "statName": "CritRate%",
@@ -453,7 +420,6 @@
   },
   "DebateClub": {
     "type": "claymore",
-    "owned": false,
     "rarity": 3,
     "atk": 38.74,
     "statName": "Atk%",
@@ -466,7 +432,6 @@
   },
   "DialoguesOfTheDesertSages": {
     "type": "polearm",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "HP%",
@@ -480,7 +445,6 @@
   },
   "DodocoTales": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 4,
     "atk": 41.07,
     "statName": "Atk%",
@@ -494,7 +458,6 @@
   },
   "DragonsBane": {
     "type": "polearm",
-    "owned": false,
     "rarity": 4,
     "atk": 41.07,
     "statName": "EM",
@@ -508,7 +471,6 @@
   },
   "DragonspineSpear": {
     "type": "polearm",
-    "owned": false,
     "rarity": 4,
     "atk": 41.07,
     "statName": "PhysicalDmg%",
@@ -522,7 +484,6 @@
   },
   "DullBlade": {
     "type": "sword",
-    "owned": false,
     "rarity": 1,
     "atk": 23.25,
     "releasedAt": "2020-09-28",
@@ -533,7 +494,6 @@
   },
   "EarthShaker": {
     "type": "claymore",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "Atk%",
@@ -547,7 +507,6 @@
   },
   "ElegyForTheEnd": {
     "type": "bow",
-    "owned": false,
     "rarity": 5,
     "atk": 45.94,
     "statName": "ER%",
@@ -561,7 +520,6 @@
   },
   "EmeraldOrb": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 3,
     "atk": 39.88,
     "statName": "EM",
@@ -574,7 +532,6 @@
   },
   "EndOfTheLine": {
     "type": "bow",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "ER%",
@@ -588,7 +545,6 @@
   },
   "EngulfingLightning": {
     "type": "polearm",
-    "owned": false,
     "rarity": 5,
     "atk": 45.94,
     "statName": "ER%",
@@ -602,7 +558,6 @@
   },
   "EverlastingMoonglow": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 5,
     "atk": 45.94,
     "statName": "HP%",
@@ -616,7 +571,6 @@
   },
   "EyeOfPerception": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 4,
     "atk": 41.07,
     "statName": "Atk%",
@@ -630,7 +584,6 @@
   },
   "FadingTwilight": {
     "type": "bow",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "ER%",
@@ -644,7 +597,6 @@
   },
   "FavoniusCodex": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "ER%",
@@ -658,7 +610,6 @@
   },
   "FavoniusGreatsword": {
     "type": "claymore",
-    "owned": false,
     "rarity": 4,
     "atk": 41.07,
     "statName": "ER%",
@@ -672,7 +623,6 @@
   },
   "FavoniusLance": {
     "type": "polearm",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "ER%",
@@ -686,7 +636,6 @@
   },
   "FavoniusSword": {
     "type": "sword",
-    "owned": false,
     "rarity": 4,
     "atk": 41.07,
     "statName": "ER%",
@@ -700,7 +649,6 @@
   },
   "FavoniusWarbow": {
     "type": "bow",
-    "owned": false,
     "rarity": 4,
     "atk": 41.07,
     "statName": "ER%",
@@ -714,7 +662,6 @@
   },
   "FerrousShadow": {
     "type": "sword",
-    "owned": false,
     "rarity": 3,
     "atk": 38.74,
     "statName": "HP%",
@@ -727,7 +674,6 @@
   },
   "FesteringDesire": {
     "type": "sword",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "ER%",
@@ -741,7 +687,6 @@
   },
   "FilletBlade": {
     "type": "sword",
-    "owned": false,
     "rarity": 3,
     "atk": 38.74,
     "statName": "Atk%",
@@ -754,7 +699,6 @@
   },
   "FinaleOfTheDeep": {
     "type": "sword",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "Atk%",
@@ -768,7 +712,6 @@
   },
   "FleuveCendreFerryman": {
     "type": "sword",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "ER%",
@@ -782,7 +725,6 @@
   },
   "FlowingPurity": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "Atk%",
@@ -796,7 +738,6 @@
   },
   "FluteOfEzpitzal": {
     "type": "sword",
-    "owned": false,
     "rarity": 4,
     "atk": 41.07,
     "statName": "Def%",
@@ -810,7 +751,6 @@
   },
   "FootprintOfTheRainbow": {
     "type": "polearm",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "Def%",
@@ -824,7 +764,6 @@
   },
   "ForestRegalia": {
     "type": "claymore",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "ER%",
@@ -838,7 +777,6 @@
   },
   "FreedomSword": {
     "type": "sword",
-    "owned": false,
     "rarity": 5,
     "atk": 45.94,
     "statName": "EM",
@@ -852,7 +790,6 @@
   },
   "Frostbearer": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "Atk%",
@@ -866,7 +803,6 @@
   },
   "FruitOfFulfillment": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "ER%",
@@ -880,7 +816,6 @@
   },
   "HakushinRing": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "ER%",
@@ -894,7 +829,6 @@
   },
   "Halberd": {
     "type": "polearm",
-    "owned": false,
     "rarity": 3,
     "atk": 39.88,
     "statName": "Atk%",
@@ -907,7 +841,6 @@
   },
   "Hamayumi": {
     "type": "bow",
-    "owned": false,
     "rarity": 4,
     "atk": 41.07,
     "statName": "Atk%",
@@ -921,7 +854,6 @@
   },
   "HaranGeppakuFutsu": {
     "type": "sword",
-    "owned": false,
     "rarity": 5,
     "atk": 45.94,
     "statName": "CritRate%",
@@ -935,7 +867,6 @@
   },
   "HarbingerOfDawn": {
     "type": "sword",
-    "owned": false,
     "rarity": 3,
     "atk": 38.74,
     "statName": "CritDmg%",
@@ -948,7 +879,6 @@
   },
   "HuntersBow": {
     "type": "bow",
-    "owned": false,
     "rarity": 1,
     "atk": 23.25,
     "releasedAt": "2020-09-28",
@@ -959,7 +889,6 @@
   },
   "HuntersPath": {
     "type": "bow",
-    "owned": false,
     "rarity": 5,
     "atk": 44.34,
     "statName": "CritRate%",
@@ -973,7 +902,6 @@
   },
   "IbisPiercer": {
     "type": "bow",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "Atk%",
@@ -987,7 +915,6 @@
   },
   "IronPoint": {
     "type": "polearm",
-    "owned": false,
     "rarity": 2,
     "atk": 32.93,
     "releasedAt": "2020-09-28",
@@ -998,7 +925,6 @@
   },
   "IronSting": {
     "type": "sword",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "EM",
@@ -1012,7 +938,6 @@
   },
   "JadefallsSplendor": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 5,
     "atk": 45.94,
     "statName": "HP%",
@@ -1026,7 +951,6 @@
   },
   "KagotsurubeIsshin": {
     "type": "sword",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "Atk%",
@@ -1040,7 +964,6 @@
   },
   "KagurasVerity": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 5,
     "atk": 45.94,
     "statName": "CritDmg%",
@@ -1054,7 +977,6 @@
   },
   "KatsuragikiriNagamasa": {
     "type": "claymore",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "ER%",
@@ -1068,7 +990,6 @@
   },
   "KeyOfKahjNisut": {
     "type": "sword",
-    "owned": false,
     "rarity": 5,
     "atk": 44.34,
     "statName": "HP%",
@@ -1082,7 +1003,6 @@
   },
   "KingsSquire": {
     "type": "bow",
-    "owned": false,
     "rarity": 4,
     "atk": 41.07,
     "statName": "Atk%",
@@ -1096,7 +1016,6 @@
   },
   "KitainCrossSpear": {
     "type": "polearm",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "EM",
@@ -1110,7 +1029,6 @@
   },
   "LightOfFoliarIncision": {
     "type": "sword",
-    "owned": false,
     "rarity": 5,
     "atk": 44.34,
     "statName": "CritDmg%",
@@ -1124,7 +1042,6 @@
   },
   "LionsRoar": {
     "type": "sword",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "Atk%",
@@ -1138,7 +1055,6 @@
   },
   "LithicBlade": {
     "type": "claymore",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "Atk%",
@@ -1152,7 +1068,6 @@
   },
   "LithicSpear": {
     "type": "polearm",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "Atk%",
@@ -1166,7 +1081,6 @@
   },
   "LostPrayerToTheSacredWinds": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 5,
     "atk": 45.94,
     "statName": "CritRate%",
@@ -1180,7 +1094,6 @@
   },
   "LumidouceElegy": {
     "type": "polearm",
-    "owned": false,
     "rarity": 5,
     "atk": 45.94,
     "statName": "CritRate%",
@@ -1194,7 +1107,6 @@
   },
   "LuxuriousSeaLord": {
     "type": "claymore",
-    "owned": false,
     "rarity": 4,
     "atk": 41.07,
     "statName": "Atk%",
@@ -1208,7 +1120,6 @@
   },
   "MagicGuide": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 3,
     "atk": 37.61,
     "statName": "EM",
@@ -1221,7 +1132,6 @@
   },
   "MailedFlower": {
     "type": "claymore",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "EM",
@@ -1235,7 +1145,6 @@
   },
   "MakhairaAquamarine": {
     "type": "claymore",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "EM",
@@ -1249,7 +1158,6 @@
   },
   "MappaMare": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "EM",
@@ -1263,7 +1171,6 @@
   },
   "MemoryOfDust": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 5,
     "atk": 45.94,
     "statName": "Atk%",
@@ -1277,7 +1184,6 @@
   },
   "Messenger": {
     "type": "bow",
-    "owned": false,
     "rarity": 3,
     "atk": 39.88,
     "statName": "CritDmg%",
@@ -1290,7 +1196,6 @@
   },
   "MissiveWindspear": {
     "type": "polearm",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "Atk%",
@@ -1304,7 +1209,6 @@
   },
   "MistsplitterReforged": {
     "type": "sword",
-    "owned": false,
     "rarity": 5,
     "atk": 47.54,
     "statName": "CritDmg%",
@@ -1318,7 +1222,6 @@
   },
   "MitternachtsWaltz": {
     "type": "bow",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "PhysicalDmg%",
@@ -1332,7 +1235,6 @@
   },
   "Moonpiercer": {
     "type": "polearm",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "EM",
@@ -1346,7 +1248,6 @@
   },
   "MouunsMoon": {
     "type": "bow",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "Atk%",
@@ -1360,7 +1261,6 @@
   },
   "OathswornEye": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "Atk%",
@@ -1374,7 +1274,6 @@
   },
   "OldMercsPal": {
     "type": "claymore",
-    "owned": false,
     "rarity": 2,
     "atk": 32.93,
     "releasedAt": "2020-09-28",
@@ -1385,7 +1284,6 @@
   },
   "OtherworldlyStory": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 3,
     "atk": 38.74,
     "statName": "ER%",
@@ -1398,7 +1296,6 @@
   },
   "PocketGrimoire": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 2,
     "atk": 32.93,
     "releasedAt": "2020-09-28",
@@ -1409,7 +1306,6 @@
   },
   "PolarStar": {
     "type": "bow",
-    "owned": false,
     "rarity": 5,
     "atk": 45.94,
     "statName": "CritRate%",
@@ -1423,7 +1319,6 @@
   },
   "PortablePowerSaw": {
     "type": "claymore",
-    "owned": false,
     "rarity": 4,
     "atk": 41.07,
     "statName": "HP%",
@@ -1437,7 +1332,6 @@
   },
   "Predator": {
     "type": "bow",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "Atk%",
@@ -1451,7 +1345,6 @@
   },
   "PrimordialJadeCutter": {
     "type": "sword",
-    "owned": false,
     "rarity": 5,
     "atk": 44.34,
     "statName": "CritRate%",
@@ -1465,7 +1358,6 @@
   },
   "PrimordialJadeWingedSpear": {
     "type": "polearm",
-    "owned": false,
     "rarity": 5,
     "atk": 47.54,
     "statName": "CritRate%",
@@ -1479,7 +1371,6 @@
   },
   "ProspectorsDrill": {
     "type": "polearm",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "Atk%",
@@ -1493,7 +1384,6 @@
   },
   "PrototypeAmber": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "HP%",
@@ -1507,7 +1397,6 @@
   },
   "PrototypeArchaic": {
     "type": "claymore",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "Atk%",
@@ -1521,7 +1410,6 @@
   },
   "PrototypeCrescent": {
     "type": "bow",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "Atk%",
@@ -1535,7 +1423,6 @@
   },
   "PrototypeRancour": {
     "type": "sword",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "PhysicalDmg%",
@@ -1549,7 +1436,6 @@
   },
   "PrototypeStarglitter": {
     "type": "polearm",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "ER%",
@@ -1563,7 +1449,6 @@
   },
   "Rainslasher": {
     "type": "claymore",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "EM",
@@ -1577,7 +1462,6 @@
   },
   "RangeGauge": {
     "type": "bow",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "Atk%",
@@ -1591,7 +1475,6 @@
   },
   "RavenBow": {
     "type": "bow",
-    "owned": false,
     "rarity": 3,
     "atk": 39.88,
     "statName": "EM",
@@ -1604,7 +1487,6 @@
   },
   "RecurveBow": {
     "type": "bow",
-    "owned": false,
     "rarity": 3,
     "atk": 37.61,
     "statName": "HP%",
@@ -1617,7 +1499,6 @@
   },
   "RedhornStonethresher": {
     "type": "claymore",
-    "owned": false,
     "rarity": 5,
     "atk": 44.34,
     "statName": "CritDmg%",
@@ -1631,7 +1512,6 @@
   },
   "RightfulReward": {
     "type": "polearm",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "HP%",
@@ -1645,7 +1525,6 @@
   },
   "RingOfYaxche": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "HP%",
@@ -1659,7 +1538,6 @@
   },
   "RoyalBow": {
     "type": "bow",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "Atk%",
@@ -1673,7 +1551,6 @@
   },
   "RoyalGreatsword": {
     "type": "claymore",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "Atk%",
@@ -1687,7 +1564,6 @@
   },
   "RoyalGrimoire": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "Atk%",
@@ -1701,7 +1577,6 @@
   },
   "RoyalLongsword": {
     "type": "sword",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "Atk%",
@@ -1715,7 +1590,6 @@
   },
   "RoyalSpear": {
     "type": "polearm",
-    "owned": false,
     "rarity": 4,
     "atk": 43.7,
     "statName": "Atk%",
@@ -1729,7 +1603,6 @@
   },
   "Rust": {
     "type": "bow",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "Atk%",
@@ -1743,7 +1616,6 @@
   },
   "SacrificialBow": {
     "type": "bow",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "ER%",
@@ -1757,7 +1629,6 @@
   },
   "SacrificialFragments": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 4,
     "atk": 41.07,
     "statName": "EM",
@@ -1771,7 +1642,6 @@
   },
   "SacrificialGreatsword": {
     "type": "claymore",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "ER%",
@@ -1785,7 +1655,6 @@
   },
   "SacrificialJade": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 4,
     "atk": 41.07,
     "statName": "CritRate%",
@@ -1799,7 +1668,6 @@
   },
   "SacrificialSword": {
     "type": "sword",
-    "owned": false,
     "rarity": 4,
     "atk": 41.07,
     "statName": "ER%",
@@ -1813,7 +1681,6 @@
   },
   "SapwoodBlade": {
     "type": "sword",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "ER%",
@@ -1827,7 +1694,6 @@
   },
   "ScionOfTheBlazingSun": {
     "type": "bow",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "CritRate%",
@@ -1841,7 +1707,6 @@
   },
   "SeasonedHuntersBow": {
     "type": "bow",
-    "owned": false,
     "rarity": 2,
     "atk": 32.93,
     "releasedAt": "2020-09-28",
@@ -1852,7 +1717,6 @@
   },
   "SerpentSpine": {
     "type": "claymore",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "CritRate%",
@@ -1866,7 +1730,6 @@
   },
   "SharpshootersOath": {
     "type": "bow",
-    "owned": false,
     "rarity": 3,
     "atk": 38.74,
     "statName": "CritDmg%",
@@ -1879,7 +1742,6 @@
   },
   "SilvershowerHeartstrings": {
     "type": "bow",
-    "owned": false,
     "rarity": 5,
     "atk": 44.34,
     "statName": "HP%",
@@ -1893,7 +1755,6 @@
   },
   "SilverSword": {
     "type": "sword",
-    "owned": false,
     "rarity": 2,
     "atk": 32.93,
     "releasedAt": "2020-09-28",
@@ -1904,7 +1765,6 @@
   },
   "SkyriderGreatsword": {
     "type": "claymore",
-    "owned": false,
     "rarity": 3,
     "atk": 38.74,
     "statName": "PhysicalDmg%",
@@ -1917,7 +1777,6 @@
   },
   "SkyriderSword": {
     "type": "sword",
-    "owned": false,
     "rarity": 3,
     "atk": 37.61,
     "statName": "ER%",
@@ -1930,7 +1789,6 @@
   },
   "SkywardAtlas": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 5,
     "atk": 47.54,
     "statName": "Atk%",
@@ -1944,7 +1802,6 @@
   },
   "SkywardBlade": {
     "type": "sword",
-    "owned": false,
     "rarity": 5,
     "atk": 45.94,
     "statName": "ER%",
@@ -1958,7 +1815,6 @@
   },
   "SkywardHarp": {
     "type": "bow",
-    "owned": false,
     "rarity": 5,
     "atk": 47.54,
     "statName": "CritRate%",
@@ -1972,7 +1828,6 @@
   },
   "SkywardPride": {
     "type": "claymore",
-    "owned": false,
     "rarity": 5,
     "atk": 47.54,
     "statName": "ER%",
@@ -1986,7 +1841,6 @@
   },
   "SkywardSpine": {
     "type": "polearm",
-    "owned": false,
     "rarity": 5,
     "atk": 47.54,
     "statName": "ER%",
@@ -2000,7 +1854,6 @@
   },
   "Slingshot": {
     "type": "bow",
-    "owned": false,
     "rarity": 3,
     "atk": 37.61,
     "statName": "CritRate%",
@@ -2013,7 +1866,6 @@
   },
   "SnowTombedStarsilver": {
     "type": "claymore",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "PhysicalDmg%",
@@ -2027,7 +1879,6 @@
   },
   "SolarPearl": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "CritRate%",
@@ -2041,7 +1892,6 @@
   },
   "SongOfBrokenPines": {
     "type": "claymore",
-    "owned": false,
     "rarity": 5,
     "atk": 49.14,
     "statName": "PhysicalDmg%",
@@ -2055,7 +1905,6 @@
   },
   "SongOfStillness": {
     "type": "bow",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "Atk%",
@@ -2069,7 +1918,6 @@
   },
   "SplendorOfTranquilWaters": {
     "type": "sword",
-    "owned": false,
     "rarity": 5,
     "atk": 44.34,
     "statName": "CritDmg%",
@@ -2083,7 +1931,6 @@
   },
   "StaffOfHoma": {
     "type": "polearm",
-    "owned": false,
     "rarity": 5,
     "atk": 45.94,
     "statName": "CritDmg%",
@@ -2097,7 +1944,6 @@
   },
   "StaffOfTheScarletSands": {
     "type": "polearm",
-    "owned": false,
     "rarity": 5,
     "atk": 44.34,
     "statName": "CritRate%",
@@ -2111,7 +1957,6 @@
   },
   "SummitShaper": {
     "type": "sword",
-    "owned": false,
     "rarity": 5,
     "atk": 45.94,
     "statName": "Atk%",
@@ -2125,7 +1970,6 @@
   },
   "SurfsUp": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 5,
     "atk": 44.34,
     "statName": "CritDmg%",
@@ -2139,7 +1983,6 @@
   },
   "SwordOfDescension": {
     "type": "sword",
-    "owned": false,
     "rarity": 4,
     "atk": 38.74,
     "statName": "Atk%",
@@ -2153,7 +1996,6 @@
   },
   "SwordOfNarzissenkreuz": {
     "type": "sword",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "Atk%",
@@ -2167,7 +2009,6 @@
   },
   "TalkingStick": {
     "type": "claymore",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "CritRate%",
@@ -2181,7 +2022,6 @@
   },
   "TheAlleyFlash": {
     "type": "sword",
-    "owned": false,
     "rarity": 4,
     "atk": 45.07,
     "statName": "EM",
@@ -2195,7 +2035,6 @@
   },
   "TheBell": {
     "type": "claymore",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "HP%",
@@ -2209,7 +2048,6 @@
   },
   "TheBlackSword": {
     "type": "sword",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "CritRate%",
@@ -2223,7 +2061,6 @@
   },
   "TheCatch": {
     "type": "polearm",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "ER%",
@@ -2237,7 +2074,6 @@
   },
   "TheDockhandsAssistant": {
     "type": "sword",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "HP%",
@@ -2251,7 +2087,6 @@
   },
   "TheFirstGreatMagic": {
     "type": "bow",
-    "owned": false,
     "rarity": 5,
     "atk": 45.94,
     "statName": "CritDmg%",
@@ -2265,7 +2100,6 @@
   },
   "TheFlute": {
     "type": "sword",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "Atk%",
@@ -2279,7 +2113,6 @@
   },
   "TheStringless": {
     "type": "bow",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "EM",
@@ -2293,7 +2126,6 @@
   },
   "TheUnforged": {
     "type": "claymore",
-    "owned": false,
     "rarity": 5,
     "atk": 45.94,
     "statName": "Atk%",
@@ -2307,7 +2139,6 @@
   },
   "TheViridescentHunt": {
     "type": "bow",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "CritRate%",
@@ -2321,7 +2152,6 @@
   },
   "TheWidsith": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "CritDmg%",
@@ -2335,7 +2165,6 @@
   },
   "ThrillingTalesOfDragonSlayers": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 3,
     "atk": 38.74,
     "statName": "HP%",
@@ -2348,7 +2177,6 @@
   },
   "ThunderingPulse": {
     "type": "bow",
-    "owned": false,
     "rarity": 5,
     "atk": 45.94,
     "statName": "CritDmg%",
@@ -2362,7 +2190,6 @@
   },
   "TidalShadow": {
     "type": "claymore",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "Atk%",
@@ -2376,7 +2203,6 @@
   },
   "TomeOfTheEternalFlow": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 5,
     "atk": 44.34,
     "statName": "CritDmg%",
@@ -2390,7 +2216,6 @@
   },
   "ToukabouShigure": {
     "type": "sword",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "EM",
@@ -2404,7 +2229,6 @@
   },
   "TravelersHandySword": {
     "type": "sword",
-    "owned": false,
     "rarity": 3,
     "atk": 39.88,
     "statName": "Def%",
@@ -2417,7 +2241,6 @@
   },
   "TulaytullahsRemembrance": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 5,
     "atk": 47.54,
     "statName": "CritDmg%",
@@ -2431,7 +2254,6 @@
   },
   "TwinNephrite": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 3,
     "atk": 39.88,
     "statName": "CritRate%",
@@ -2444,7 +2266,6 @@
   },
   "UltimateOverlordsMegaMagicSword": {
     "type": "claymore",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "ER%",
@@ -2458,7 +2279,6 @@
   },
   "UrakuMisugiri": {
     "type": "sword",
-    "owned": false,
     "rarity": 5,
     "atk": 44.34,
     "statName": "CritDmg%",
@@ -2472,7 +2292,6 @@
   },
   "Verdict": {
     "type": "claymore",
-    "owned": false,
     "rarity": 5,
     "atk": 47.54,
     "statName": "CritRate%",
@@ -2486,7 +2305,6 @@
   },
   "VortexVanquisher": {
     "type": "polearm",
-    "owned": false,
     "rarity": 5,
     "atk": 45.94,
     "statName": "Atk%",
@@ -2500,7 +2318,6 @@
   },
   "WanderingEvenstar": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "EM",
@@ -2514,7 +2331,6 @@
   },
   "WasterGreatsword": {
     "type": "claymore",
-    "owned": false,
     "rarity": 1,
     "atk": 23.25,
     "releasedAt": "2020-09-28",
@@ -2525,7 +2341,6 @@
   },
   "WavebreakersFin": {
     "type": "polearm",
-    "owned": false,
     "rarity": 4,
     "atk": 45.07,
     "statName": "Atk%",
@@ -2539,7 +2354,6 @@
   },
   "Whiteblind": {
     "type": "claymore",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "Def%",
@@ -2553,7 +2367,6 @@
   },
   "WhiteIronGreatsword": {
     "type": "sword",
-    "owned": false,
     "rarity": 3,
     "atk": 38.74,
     "statName": "Def%",
@@ -2566,7 +2379,6 @@
   },
   "WhiteTassel": {
     "type": "polearm",
-    "owned": false,
     "rarity": 3,
     "atk": 38.74,
     "statName": "CritRate%",
@@ -2579,7 +2391,6 @@
   },
   "WindblumeOde": {
     "type": "bow",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "EM",
@@ -2593,7 +2404,6 @@
   },
   "WineAndSong": {
     "type": "catalyser",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "ER%",
@@ -2607,7 +2417,6 @@
   },
   "WolfFang": {
     "type": "sword",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "CritRate%",
@@ -2621,7 +2430,6 @@
   },
   "WolfsGravestone": {
     "type": "claymore",
-    "owned": false,
     "rarity": 5,
     "atk": 45.94,
     "statName": "Atk%",
@@ -2635,7 +2443,6 @@
   },
   "XiphosMoonlight": {
     "type": "sword",
-    "owned": false,
     "rarity": 4,
     "atk": 42.4,
     "statName": "EM",
@@ -2649,7 +2456,6 @@
   },
   "FangOfTheMountainKing": {
     "type": "claymore",
-    "owned": false,
     "rarity": 5,
     "atk": 49.14,
     "statName": "CritRate%",
@@ -2663,11 +2469,11 @@
   },
   "SturdyBone": {
     "type": "sword",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "Atk%",
     "statValue": 6,
+    "releasedAt": "2024-10-09",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Sturdy Bone" },
@@ -2676,11 +2482,11 @@
   },
   "PeakPatrolSong": {
     "type": "sword",
-    "owned": false,
     "rarity": 5,
     "atk": 44.34,
     "statName": "Def%",
     "statValue": 18,
+    "releasedAt": "2024-10-09",
     "tags": ["wishes", "Xilonen"],
     "i18n": [
       { "locale": "en-EN", "name": "Peak Patrol Song" },
@@ -2689,7 +2495,6 @@
   },
   "FruitfulHook": {
     "type": "claymore",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "Atk%",
@@ -2702,11 +2507,11 @@
   },
   "MountainBracingBolt": {
     "type": "polearm",
-    "owned": false,
     "rarity": 4,
     "atk": 43.73,
     "statName": "ER%",
     "statValue": 6.67,
+    "releasedAt": "2024-10-09",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Mountain Bracing Bolt" },
