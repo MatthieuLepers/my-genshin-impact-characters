@@ -5,6 +5,7 @@
   >
     <div class="character-build__container">
       <img
+        v-if="!props.build.character.name.startsWith('Traveler')"
         :src="props.build.character.getImage('theme')"
         class="character-build__theme"
         alt=""

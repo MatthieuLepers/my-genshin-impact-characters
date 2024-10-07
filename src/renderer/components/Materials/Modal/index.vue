@@ -53,7 +53,7 @@
         </slot>
       </div>
       <slot
-        v-if="props.showClose"
+        v-if="props.showClose && props.allowClose"
         :close="actions.handleClose"
         name="close"
       >
@@ -92,6 +92,7 @@ const props = defineProps({
   name: { type: String, required: true },
   title: { type: String, default: null },
   showClose: { type: Boolean, default: true },
+  allowClose: { type: Boolean, default: true },
   showFooter: { type: Boolean, default: true },
   acceptOnly: { type: Boolean, default: false },
   refuseOnly: { type: Boolean, default: false },
@@ -117,7 +118,7 @@ const State = computed(() => ({
 
 const actions = {
   handleClose() {
-    if (state.open) {
+    if (state.open && props.allowClose) {
       modalStore.actions.hide(props.name);
       state.oldFocusElement.focus();
       emit('close');

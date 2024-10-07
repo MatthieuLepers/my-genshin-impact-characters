@@ -13,7 +13,7 @@
           <Weapon
             :weapon="weapon"
             :selected="weaponsStore.state.current?.id === weapon.id"
-            :modifiers="{ checked: form.weapon?.id === weapon.id }"
+            :modifiers="{ tiny: true, checked: form.weapon?.id === weapon.id }"
             @click="weaponsStore.state.current = weapon"
             @dblclick="form.weapon = weapon"
           />

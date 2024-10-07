@@ -22,7 +22,7 @@
                 <Artefact
                   :artefact="artefact"
                   :selected="artefactsStore.state.current?.id === artefact.id"
-                  :modifiers="{ checked: form[artefactsStore.state.filters.type] === artefact }"
+                  :modifiers="{ tiny: true, checked: form[artefactsStore.state.filters.type] === artefact }"
                   @click="artefactsStore.state.current = artefact"
                   @dblclick="form[artefactsStore.state.filters.type] = artefact"
                 />

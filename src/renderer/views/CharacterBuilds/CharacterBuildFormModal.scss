@@ -19,6 +19,10 @@
       margin-top: rem(16px);
       padding: 0 rem(8px) rem(8px);
     }
+
+    .m-form-select--box .m-form-select__dropdown__item {
+      white-space: nowrap;
+    }
   }
 
   &Container {

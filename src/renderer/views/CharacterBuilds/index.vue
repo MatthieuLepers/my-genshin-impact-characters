@@ -26,6 +26,7 @@
 
     <CharacterBuildFormModal
       :formData="characterBuildsStore.state.current ?? {}"
+      :allowClose="State.allowClose"
       @submit="actions.handleSubmit"
       @close="characterBuildsStore.state.current = null"
     />
@@ -43,7 +44,7 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue';
+import { computed, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 import MaterialButton from '@renderer/components/Materials/Button/index.vue';
@@ -104,8 +105,12 @@ const actions = {
   },
 };
 
+const State = computed(() => ({
+  allowClose: characterBuildsStore.sortedByCharacterReleaseDateBuildList.value.length > 0,
+}));
+
 onMounted(() => {
-  if (!characterBuildsStore.sortedByCharacterReleaseDateBuildList.value.length) {
+  if (!State.value.allowClose) {
     modalStore.actions.show('buildFormModal');
   }
 });

@@ -13,6 +13,7 @@
           <Artefact
             :artefact="artefact"
             :selected="artefact.id === artefactsStore.state.current.id"
+            :modifiers="{ tiny: true }"
             @click="artefactsStore.state.current = artefact"
           />
         </li>
@@ -160,7 +161,7 @@ const actions = {
     } else {
       await artefactsStore.actions.create(data);
     }
-    state.showArtefactTransmuter = false;
+    notificationStore.actions.success('Saved');
   },
   handleEdit() {
     state.showArtefactTransmuter = true;

@@ -44,7 +44,7 @@
           :min="1"
           :max="90"
           v-model="obj.smartLevel"
-          @update:modelValue="obj.save()"
+          @update:modelValue="actions.handleChangeLevel(obj)"
         />
       </template>
       <template v-slot:phase="{ obj }">
@@ -106,6 +106,7 @@ import DataTable from '@renderer/components/Materials/DataTable/index.vue';
 import FormInput from '@renderer/components/Materials/Form/Input.vue';
 
 import Material from '@renderer/core/entities/material';
+import { charactersStore } from '@renderer/core/entities/character/store';
 import { filteredCharacterStore } from '@renderer/core/stores/FilteredCharacterStore';
 
 const { t } = useI18n();
@@ -157,6 +158,20 @@ const actions = {
   },
   getOwnedAndInvestedMaterials(material) {
     return props.characters.reduce((acc, character) => acc + character.getInvestedMaterials(material.id), material.inInventory);
+  },
+  async handleChangeLevel(character) {
+    if (character.name.startsWith('Traveler')) {
+      Promise.all(Object
+        .values(charactersStore.state.characters)
+        .filter((c) => c.name.startsWith('Traveler'))
+        .map((c) => {
+          c.smartLevel = character.smartLevel;
+          return c.save();
+        }))
+      ;
+    } else {
+      await character.save();
+    }
   },
 };
 </script>

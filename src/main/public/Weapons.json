@@ -2877,6 +2877,7 @@
     "atk": 44.34,
     "statName": "Def%",
     "statValue": 18,
+    "releasedAt": "2024-10-09",
     "tags": ["wishes", "Xilonen"],
     "i18n": [
       { "locale": "en-EN", "name": "Peak Patrol Song" },

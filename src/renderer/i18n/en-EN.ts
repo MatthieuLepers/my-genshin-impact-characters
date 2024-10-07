@@ -12,6 +12,9 @@ export default {
         label: 'File',
         save: 'Save',
         exit: 'Exit',
+        selectTravelerGender: 'Traveler',
+        male: 'Aether',
+        female: 'Lumine',
       },
       langMenu: {
         label: 'Language',
@@ -173,25 +176,50 @@ export default {
           short: 'Pyro DMG bonus',
           display: 'Pyro DMG bonus',
         },
+        'PyroRes%': {
+          long: 'Pyro resistance',
+          short: 'Pyro res.',
+          display: 'Pyro resistance',
+        },
         'HydroDmg%': {
           long: 'Hydro damage bonus',
           short: 'Hydro DMG bonus',
           display: 'Hydro DMG bonus',
+        },
+        'HydroRes%': {
+          long: 'Hydro resistance',
+          short: 'Hydro res.',
+          display: 'Hydro resistance',
         },
         'CryoDmg%': {
           long: 'Cryo damage bonus',
           short: 'Cryo DMG bonus',
           display: 'Cryo DMG bonus',
         },
+        'CryoRes%': {
+          long: 'Cryo resistance',
+          short: 'Cryo res.',
+          display: 'Cryo resistance',
+        },
         'ElectroDmg%': {
           long: 'Electro damage bonus',
           short: 'Electro DMG bonus',
           display: 'Electro DMG bonus',
         },
+        'ElectroRes%': {
+          long: 'Electro resistance',
+          short: 'Electro res.',
+          display: 'Electro resistance',
+        },
         'PhysicalDmg%': {
           long: 'Physical damage bonus',
           short: 'Physical DMG bonus',
           display: 'Physical DMG bonus',
+        },
+        'PhysicalRes%': {
+          long: 'Physical resistance',
+          short: 'Physical res.',
+          display: 'Physical resistance',
         },
         'AnemoDmg%': {
           long: 'Anemo damage bonus',

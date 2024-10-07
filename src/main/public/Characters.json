@@ -2960,5 +2960,37 @@
         "bonusValue": 38.4
       }
     ]
+  },
+  {
+    "name": "Xilonen",
+    "releasedAt": "2024-10-09",
+    "element": "geo",
+    "weaponType": "sword",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "MirrorOfMushin"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 3,
+        "materialId": "MirrorOfMushin"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 5,
+        "materialId": "MirrorOfMushin"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 12405,
+        "atk": 275.06,
+        "def": 929.95,
+        "bonusType": "Def%",
+        "bonusValue": 36
+      }
+    ]
   }
 ]

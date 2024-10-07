@@ -192,47 +192,42 @@ const State = computed(() => ({
 
 const actions = {
   handleSubmit() {
-    emit('submit', { ...form });
-    form.set = State.value.setList[0].value;
-    form.type = 'flower';
-    form.statsJson = [
-      {
-        name: 'HP',
-        value: ArtefactMainStatData.HP[20],
-        main: true,
-      },
-    ];
+    emit('submit', { ...form, setId: form.set.id });
+    actions.resetStats();
   },
   handleClickAffix(isMain) {
     state.affixPanelVisible = true;
     state.main = isMain;
   },
+  resetStats() {
+    if (['flower', 'feather'].includes(form.type) && !State.value.isEditMode) {
+      const data = {
+        flower: 'HP',
+        feather: 'Atk',
+      };
+      form.statsJson = [
+        {
+          name: data[form.type],
+          value: ArtefactMainStatData[data[form.type]][20],
+          main: true,
+        },
+      ];
+    } else {
+      form.statsJson = [];
+    }
+  },
 };
 
 watch(() => form.type, () => {
-  if (['flower', 'feather'].includes(form.type) && !State.value.isEditMode) {
-    const data = {
-      flower: 'HP',
-      feather: 'Atk',
-    };
-    form.statsJson = [
-      {
-        name: data[form.type],
-        value: ArtefactMainStatData[data[form.type]][20],
-        main: true,
-      },
-    ];
-  } else {
-    form.statsJson = [];
-  }
+  actions.resetStats();
 });
 
 watch(() => props.formData, (newVal) => {
-  form.set = newVal.set ?? State.value.setList[0].value;
-  form.type = newVal.type ?? 'flower';
-  form.statsJson = newVal.statsJson ?? [
-    { name: 'HP', value: ArtefactMainStatData.HP[20], main: true },
-  ];
+  if (newVal.set) {
+    form.set = newVal.set;
+    form.type = newVal.type;
+    form.statsJson = newVal.statsJson;
+  }
 });
 
 onBeforeMount(() => {

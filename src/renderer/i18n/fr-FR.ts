@@ -12,6 +12,9 @@ export default {
         label: 'Fichier',
         save: 'Sauvegarder',
         exit: 'Quitter',
+        selectTravelerGender: 'Voyageur',
+        male: 'Aether',
+        female: 'Lumine',
       },
       langMenu: {
         label: 'Langage',
@@ -173,25 +176,50 @@ export default {
           short: 'Bonus de DGT Pyro',
           display: 'Bonus de DGT Pyro',
         },
+        'PyroRes%': {
+          long: 'Résistance Pyro',
+          short: 'Res. Pyro',
+          display: 'Résistance Pyro',
+        },
         'HydroDmg%': {
           long: 'Bonus de dégâts Hydro',
           short: 'Bonus de DGT Hydro',
           display: 'Bonus de DGT Hydro',
+        },
+        'HydroRes%': {
+          long: 'Résistance Hydro',
+          short: 'Res. Hydro',
+          display: 'Résistance Hydro',
         },
         'CryoDmg%': {
           long: 'Bonus de dégâts Cryo',
           short: 'Bonus de DGT Cryo',
           display: 'Bonus de DGT Cryo',
         },
+        'CryoRes%': {
+          long: 'Résistance Cryo',
+          short: 'Res. Cryo',
+          display: 'Résistance Cryo',
+        },
         'ElectroDmg%': {
           long: 'Bonus de dégâts Électro',
           short: 'Bonus de DGT Électro',
           display: 'Bonus de DGT Électro',
         },
+        'ElectroRes%': {
+          long: 'Résistance Électro',
+          short: 'Res. Électro',
+          display: 'Résistance Électro',
+        },
         'PhysicalDmg%': {
           long: 'Bonus de dégâts Physique',
           short: 'Bonus de DGT Physique',
           display: 'Bonus de DGT Physique',
+        },
+        'PhysicalRes%': {
+          long: 'Résistance Physique',
+          short: 'Res. Physique',
+          display: 'Résistance Physique',
         },
         'AnemoDmg%': {
           long: 'Bonus de dégâts Anémo',

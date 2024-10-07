@@ -3,7 +3,6 @@
     <PanelMenu
       v-model="weaponsStore.state.filters.type"
       :data="State.panelMenuData"
-      @update:modelValue="state.page = 0"
     >
       <template #button="{ item }">
         {{ item.label }} ({{ actions.countOwned(item.id) }}/{{ State.weaponList[item.id]?.length ?? 0 }})
@@ -13,11 +12,10 @@
           <WeaponFilters />
 
           <MaterialDataTable
-            v-model:page="state.page"
             class="WeaponCategoryDataTable"
             :data="weaponsStore.weaponList.value"
             :columns="State.columns"
-            :perPage="8"
+            :paginate="false"
             :showActionRow="false"
             :allowMoveFn="() => false"
           >
@@ -82,7 +80,7 @@
 </template>
 
 <script setup>
-import { reactive, computed } from 'vue';
+import { computed } from 'vue';
 import { onBeforeRouteLeave } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 
@@ -97,10 +95,6 @@ import { weaponsStore } from '@renderer/core/entities/weapon/store';
 defineOptions({ name: 'WeaponListView' });
 
 const { t, te, tm } = useI18n();
-
-const state = reactive({
-  page: 0,
-});
 
 const State = computed(() => ({
   panelMenuData: Object

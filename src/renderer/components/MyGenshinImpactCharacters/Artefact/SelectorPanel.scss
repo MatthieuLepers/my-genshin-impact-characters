@@ -44,11 +44,13 @@
 
   &__list {
     list-style: none;
-    padding: 0;
+    padding: rem(2px);
     margin: rem(8px) 0;
     display: flex;
     flex-wrap: wrap;
     gap: rem(8px);
+    max-height: calc(100% - 48px);
+    overflow: auto;
 
     &-item {
       flex: 0 0 calc(14.285% - 6.857px);

@@ -47,6 +47,7 @@ export class Setting extends Model {
       lastPopulateDateMaterials: '1970-01-01',
       lastPopulateDateCharacters: '1970-01-01',
       lastPopulateDateWeapons: '1970-01-01',
+      travelerGender: 'Female',
       locale: 'en-EN',
       cipherKey: crypto.randomBytes(16).toString('hex'),
       cipherIv: crypto.randomBytes(8).toString('hex'),

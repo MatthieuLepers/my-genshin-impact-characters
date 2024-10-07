@@ -3,11 +3,13 @@
     name="buildFormModal"
     class="Build"
     :showClose="false"
+    :allowClose="props.allowClose"
     @accept="emit('submit', { ...form })"
     @close="emit('close')"
   >
     <div class="BuildContainer">
       <img
+        v-if="!form.characterName.startsWith('Traveler')"
         class="BuildImgTheme"
         :src="charactersStore.state.characters[form.characterName].getImage('theme')"
         alt=""
@@ -28,7 +30,7 @@
                 :src="option.obj.getImage('side_icon')"
                 alt=""
               />
-              {{ option.value }}
+              {{ option.label }}
             </template>
           </MaterialFormSelect>
         </MaterialFormFieldLine>
@@ -77,7 +79,7 @@
 
     <template #footer="{ accept, close }">
       <MaterialFormFieldLine :size="2" class="BuildButtonSection">
-        <template #field0>
+        <template #field0 v-if="props.allowClose">
           <MaterialButton
             icon="icon-close"
             type="button"
@@ -151,6 +153,7 @@ const emit = defineEmits(['submit', 'close']);
 
 const props = defineProps({
   formData: { type: Object, default: () => ({}) },
+  allowClose: { type: Boolean, default: true },
 });
 
 const form = reactive({
@@ -191,7 +194,7 @@ const State = computed(() => {
     .values(charactersStore.state.characters)
     .filter((character) => character.owned && character.level === 90)
     .sort((a, b) => b.releasedAt.getTime() - a.releasedAt.getTime())
-    .map((character) => ({ value: character.name, label: character.name, obj: character }))
+    .map((character) => ({ value: character.name, label: character.nameStr, obj: character }))
   ;
   const character = charactersStore.state.characters[form.characterName];
   const build = new CharacterBuild({
@@ -236,9 +239,12 @@ const actions = {
 };
 
 watch(() => form.characterName, (newVal) => {
-  form.name = newVal;
+  form.name = charactersStore.state.characters[newVal].nameStr;
+  if (weaponsStore.state.filters.type !== State.value.character.weaponType) {
+    form.weapon = null;
+    [weaponsStore.state.current] = State.value.validWeaponList;
+  }
   weaponsStore.state.filters.type = State.value.character.weaponType;
-  weaponsStore.state.current = form.weapon;
 });
 
 watch(() => props.formData, (newVal) => {
@@ -254,7 +260,7 @@ watch(() => props.formData, (newVal) => {
 
 onBeforeMount(() => {
   form.characterName = State.value.validCharacterList[0].value;
-  form.name = form.characterName;
+  form.name = charactersStore.state.characters[form.characterName].nameStr;
   weaponsStore.state.filters.type = State.value.character.weaponType;
 });
 </script>

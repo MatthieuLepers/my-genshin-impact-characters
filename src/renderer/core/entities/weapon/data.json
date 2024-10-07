@@ -63,7 +63,7 @@
     "statName": "Atk%",
     "statValue": 10.8,
     "releasedAt": "2020-10-28",
-    "tags": ["wishes"],
+    "tags": ["wishes", "Ganyu"],
     "i18n": [
       { "locale": "en-EN", "name": "Amos' Bow" },
       { "locale": "fr-FR", "name": "Arc d'Amos" }

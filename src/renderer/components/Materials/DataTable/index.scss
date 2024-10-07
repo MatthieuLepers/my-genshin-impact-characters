@@ -38,8 +38,9 @@
 
   &__body {
     width: 100%;
-    height: 100%;
+    height: calc(100% - 35px);
     position: relative;
+    overflow: auto;
 
     &--paginated {
       height: calc(100% - 116px);

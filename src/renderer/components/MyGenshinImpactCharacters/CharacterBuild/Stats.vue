@@ -43,7 +43,7 @@ const props = defineProps({
 const State = computed(() => {
   const stats = Object
     .entries(props.build.stats)
-    .reduce((acc, [key, val]) => (val > 0 || props.old?.stats?.[key] > 0 ? [
+    .reduce((acc, [key, val]) => (![null, undefined, 0].includes(val) || ![null, undefined, 0].includes(props.old?.stats?.[key]) ? [
       ...acc,
       {
         statType: key,

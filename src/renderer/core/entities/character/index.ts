@@ -1,3 +1,4 @@
+import i18n from '@renderer/plugins/i18n';
 import AbstractEntity from '@renderer/core/entities/AbstractEntity';
 import type { ICharacter, IRemoteCharacter } from '@renderer/core/entities/character/i';
 import CharacterAptitude from '@renderer/core/entities/characterAptitude';
@@ -5,6 +6,7 @@ import type { ICharacterAptitude } from '@renderer/core/entities/characterAptitu
 import type { ICharacterPassiveStat } from '@renderer/core/entities/characterPassiveStat/i';
 import { image } from '@renderer/core/utils';
 import CharacterData from '@renderer/core/entities/character/data.json';
+import { settingsStore } from '../setting/store';
 
 const PHASES = [
   (level: number): boolean => level > 0 && level <= 20,
@@ -92,7 +94,11 @@ export default class Character extends AbstractEntity<ICharacter> {
   }
 
   get nameStr(): string {
-    return this.name.indexOf('-') >= 0 ? this.name.replace(/^([^-]+)-(.+)$/, '$1 ($2)') : this.name;
+    if (this.name.startsWith('Traveler')) {
+      const gender = settingsStore.actions.getString('travelerGender', 'Female').toLowerCase();
+      return `${i18n.global.t(`App.TitleBarMenu.fileMenu.${gender}`)} (${this.name.substring(this.name.indexOf('-') + 1)})`;
+    }
+    return this.name;
   }
 
   get materials(): Array<string> {
@@ -132,6 +138,10 @@ export default class Character extends AbstractEntity<ICharacter> {
   }
 
   getImage(imageVariant: string): string {
+    if (this.name.startsWith('Traveler')) {
+      const gender = settingsStore.actions.getString('travelerGender', 'Female');
+      return image(`img/characters/Traveler/${gender}/${imageVariant}.webp`);
+    }
     return image(`img/characters/${this.name.replaceAll(/ /g, '')}/${imageVariant}.webp`);
   }
 

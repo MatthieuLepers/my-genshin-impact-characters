@@ -7,7 +7,7 @@ import ArtefactSetData from '@renderer/core/entities/artefactSet/data.json';
 export default class ArtefactSet extends AbstractI18nEntity<IArtefactSet> {
   declare readonly id: string;
 
-  declare readonly releasedAt: Date;
+  declare readonly releasedAt?: Date;
 
   constructor(data: IArtefactSet) {
     super(data, ['passiveStats']);
@@ -34,7 +34,7 @@ export default class ArtefactSet extends AbstractI18nEntity<IArtefactSet> {
         [id]: new ArtefactSet({
           ...set,
           id,
-          releasedAt: new Date(set.releasedAt),
+          releasedAt: set.releasedAt ? new Date(set.releasedAt) : undefined,
         }),
       }), {})
     ;
