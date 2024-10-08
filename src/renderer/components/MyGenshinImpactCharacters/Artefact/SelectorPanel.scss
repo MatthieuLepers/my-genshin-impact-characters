@@ -32,7 +32,7 @@
     }
   }
 
-  .PanelMenuButton {
+  &__menu .PanelMenuButton {
     @include set-font-scale('xl');
     color: color(grey100);
 

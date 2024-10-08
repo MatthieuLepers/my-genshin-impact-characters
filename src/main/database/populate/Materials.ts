@@ -9,7 +9,12 @@ export const populate = async () => {
 
   const done = await serial(Object
     .entries(JSONMaterials)
-    .filter(([, data]) => data.releasedAt && new Date(data.releasedAt).getTime() > new Date(lastPopulateDateSetting!).getTime())
+    .filter(([, data]) => {
+      const dataTimestamp = new Date(data?.releasedAt ?? '1970-01-01').getTime();
+      const settingsTimestamp = new Date(lastPopulateDateSetting!).getTime();
+
+      return dataTimestamp > settingsTimestamp && dataTimestamp <= Date.now();
+    })
     .map(([id], i, arr) => async () => {
       const result = await Material.create({ id }).catch(console.log);
 

@@ -63,7 +63,6 @@
       />
 
       <ArtefactFilters
-        :filters="props.filters"
         :visible="state.showArtefactFilters"
         @confirm="actions.handleApplyFilters"
         @close="state.showArtefactFilters = false"
@@ -98,10 +97,6 @@ import { notificationStore } from '@renderer/components/Materials/Notification/S
 defineOptions({ name: 'ArtefactListView' });
 
 const { t } = useI18n();
-
-const props = defineProps({
-  filters: { type: Object, default: () => ({}) },
-});
 
 const state = reactive({
   showArtefactFilters: false,

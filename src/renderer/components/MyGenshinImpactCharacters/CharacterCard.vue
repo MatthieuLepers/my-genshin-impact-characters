@@ -4,15 +4,13 @@
       :src="props.character.getImage('icon_card')"
       :alt="props.character.name"
     />
+    <span
+      v-if="!props.character.owned && props.character.name.startsWith('Traveler')"
+      :class="[`icon-${props.character.element.toLowerCase()}`, 'CharacterCardElement']"
+    />
     <div class="CharacterCardInfo">
-      <img
-        v-if="props.showElement"
-        class="CharacterCardElement"
-        :src="image(`img/elements/${props.character.element.toLowerCase()}.png`)"
-        :alt="props.character.element"
-      />
       <span class="CharacterCardName">
-        {{ props.character.name }}
+        {{ props.character.nameStr }}
       </span>
     </div>
   </div>
@@ -20,7 +18,6 @@
 
 <script setup>
 import Character from '@renderer/core/entities/character';
-import { image } from '@renderer/core/utils';
 
 defineOptions({ name: 'CharacterCard' });
 

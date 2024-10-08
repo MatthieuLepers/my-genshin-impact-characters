@@ -43,8 +43,7 @@ const { t } = useI18n();
 
 const State = computed(() => ({
   filteredCharacters: filteredCharacterStore.actions
-    .applyFilters(Object.values(charactersStore.state.characters))
-    .filter((character) => !character.name.startsWith('Traveler')),
+    .applyFilters(Object.values(charactersStore.state.characters)),
 }));
 
 onBeforeRouteLeave((to, from, next) => {

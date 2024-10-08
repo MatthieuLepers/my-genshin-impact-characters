@@ -53,15 +53,6 @@
         {{ t('App.Artefact.List.deleteBtnLabel') }}
       </MaterialButton>
       <MaterialButton
-        v-if="props.showExport"
-        type="button"
-        icon="icon-export"
-        :modifiers="{ cancel: true }"
-        @click="actions.handleClickExport"
-      >
-        {{ t('App.Artefact.List.exportBtnLabel') }}
-      </MaterialButton>
-      <MaterialButton
         v-if="props.showSelect"
         type="button"
         icon="icon-check"
@@ -102,28 +93,12 @@ const emit = defineEmits(['select', 'edit']);
 const formatAffix = (val) => val.toLowerCase().replace('%', '');
 
 const props = defineProps({
-  showExport: { type: Boolean, default: true },
   showEdit: { type: Boolean, default: true },
   showDelete: { type: Boolean, default: true },
   showSelect: { type: Boolean, default: false },
 });
 
 const actions = {
-  async handleClickExport() {
-    const dialogOptions = {
-      title: t('Electron.Dialog.saveFile.title'),
-      buttonLabel: t('Electron.Dialog.saveFile.buttonLabel'),
-      defaultPath: `${api.homedir}/Desktop/${t(`App.Artefact.type.${artefactsStore.state.current.type}`)}.json`,
-      filters: [
-        {
-          name: t('Electron.Dialog.filters.json'),
-          extensions: ['json'],
-        },
-      ],
-      properties: [],
-    };
-    await artefactsStore.actions.requestExport(dialogOptions);
-  },
   async handleDelete() {
     await artefactsStore.actions.destroy();
   },

@@ -2,8 +2,12 @@
   <Form :class="GenerateModifiers('Filters', { Simple: props.simple })">
     <FormFieldLine :size="simple ? 1 : 2">
       <ul class="FiltersElementList">
-        <li v-for="element in State.elementList" :key="element" :class="GenerateModifiers('FiltersElement', { Active: filteredCharacterStore.filters.elements.includes(element) })">
-          <button type="button" @click="actions.handleClickElement(element)">
+        <li v-for="element in State.elementList" :key="element">
+          <button
+            :class="GenerateModifiers('FiltersElement', { Active: filteredCharacterStore.filters.elements.includes(element) })"
+            type="button"
+            @click="actions.handleClickElement(element)"
+          >
             <span v-icon:[element.toLowerCase()] />
           </button>
         </li>

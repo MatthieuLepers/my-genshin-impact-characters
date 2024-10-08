@@ -9,7 +9,12 @@ export const populate = async () => {
   const lastPopulateDateSetting = await Setting.get('lastPopulateDateWeapons', '1970-01-01');
   const done = await serial(Object
     .entries(JSONWeapons)
-    .filter(([, data]: [string, IWeapon]) => data.releasedAt && new Date(data.releasedAt).getTime() > new Date(lastPopulateDateSetting!).getTime())
+    .filter(([, data]: [string, IWeapon]) => {
+      const dataTimestamp = new Date(data?.releasedAt ?? '1970-01-01').getTime();
+      const settingsTimestamp = new Date(lastPopulateDateSetting!).getTime();
+
+      return dataTimestamp > settingsTimestamp && dataTimestamp <= Date.now();
+    })
     .map(([id], i, arr) => async () => {
       const result = await Weapon.create({ id }).catch(console.log);
 

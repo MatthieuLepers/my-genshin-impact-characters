@@ -29,7 +29,7 @@
         </template>
         <div v-if="state.currentPanel === 'mainStat'">
           <div
-            v-for="(stat, i) in Object.keys(tm('App.Artefact.stats'))"
+            v-for="(stat, i) in State.validMainStats"
             :key="i"
             :class="GenerateModifiers('frame-box', {
               checked: form.mainStat.includes(stat),
@@ -51,7 +51,7 @@
         </div>
         <div v-else>
           <div
-            v-for="(stat, i) in ['HP', 'HP%', 'Atk', 'Atk%', 'Def', 'Def%', 'EM', 'ER%', 'CritRate%', 'CritDmg%']"
+            v-for="(stat, i) in State.validSubStats"
             :key="i"
             :class="GenerateModifiers('frame-box', {
               checked: form.subStat.includes(stat),
@@ -100,7 +100,7 @@
 </template>
 
 <script setup>
-import { reactive, computed } from 'vue';
+import { reactive, computed, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 import MaterialButton from '@renderer/components/Materials/Button/index.vue';
@@ -115,7 +115,7 @@ import { modalStore } from '@renderer/components/Materials/Modal/Store';
 
 defineOptions({ name: 'ArtefactFilters' });
 
-const { t, tm } = useI18n();
+const { t } = useI18n();
 const emit = defineEmits(['confirm', 'close']);
 
 const props = defineProps({
@@ -124,31 +124,39 @@ const props = defineProps({
 });
 
 const form = reactive({
-  type: props.filters.type ?? [],
-  set: props.filters.set ?? [],
-  mainStat: props.filters.mainStat ?? [],
-  subStat: props.filters.subStat ?? [],
+  type: [...(props.filters.type ?? [])],
+  set: [...(props.filters.set ?? [])],
+  mainStat: [...(props.filters.mainStat ?? [])],
+  subStat: [...(props.filters.subStat ?? [])],
 });
 
 const state = reactive({
   currentPanel: 'mainStat',
 });
 
-const State = computed(() => ({
-  panelMenuData: [
+const State = computed(() => {
+  const validMainStats = ['HP', 'HP%', 'Atk', 'Atk%', 'Def%', 'EM', 'CritRate%', 'CritDmg%', 'Heal%', 'PyroDmg%', 'HydroDmg%', 'CryoDmg%', 'ElectroDmg%', 'AnemoDmg%', 'DendroDmg%', 'GeoDmg%', 'PhysicalDmg%'];
+  const validSubStats = ['HP', 'HP%', 'Atk', 'Atk%', 'Def', 'Def%', 'EM', 'ER%', 'CritRate%', 'CritDmg%'];
+  const panelMenuData = [
     { id: 'mainStat', label: 'Main stat' },
     { id: 'subStat', label: 'Sub stat' },
-  ],
-}));
+  ];
+
+  return {
+    panelMenuData,
+    validMainStats,
+    validSubStats,
+  };
+});
 
 const actions = {
   handleReset() {
     if (!form.set.length && !form.mainStat.length && !form.subStat.length) {
       emit('close');
     } else {
-      form.set = props.filters.set ?? [];
-      form.mainStat = props.filters.mainStat ?? [];
-      form.subStat = props.filters.subStat ?? [];
+      form.set = [...(props.filters.set ?? [])];
+      form.mainStat = [...(props.filters.mainStat ?? [])];
+      form.subStat = [...(props.filters.subStat ?? [])];
       emit('confirm', { ...form });
     }
   },
@@ -173,6 +181,13 @@ const actions = {
     }
   },
 };
+
+watch(() => props.filters, (newVal) => {
+  form.type = [...newVal.type ?? []];
+  form.set = [...newVal.set ?? []];
+  form.mainStat = [...(newVal.mainStat ?? [])];
+  form.subStat = [...(newVal.subStat ?? [])];
+}, { deep: true });
 </script>
 
 <style lang="scss" src="./Filters.scss">

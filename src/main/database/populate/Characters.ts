@@ -8,7 +8,12 @@ export const populate = async () => {
   const lastPopulateDateSetting = await Setting.get('lastPopulateDateCharacters', '1970-01-01');
   const done = await serial(Object
     .entries(JSONCharacters)
-    .filter(([, data]) => data.releasedAt && new Date(data.releasedAt).getTime() > new Date(lastPopulateDateSetting!).getTime())
+    .filter(([, data]) => {
+      const dataTimestamp = new Date(data?.releasedAt ?? '1970-01-01').getTime();
+      const settingsTimestamp = new Date(lastPopulateDateSetting!).getTime();
+
+      return dataTimestamp > settingsTimestamp && dataTimestamp <= Date.now();
+    })
     .map(([name, data], i, arr) => async () => {
       const result = Character.create({
         name,

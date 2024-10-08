@@ -140,6 +140,9 @@ export default class Character extends AbstractEntity<ICharacter> {
   getImage(imageVariant: string): string {
     if (this.name.startsWith('Traveler')) {
       const gender = settingsStore.actions.getString('travelerGender', 'Female');
+      if (imageVariant === 'icon_card') {
+        return image(`img/characters/Traveler/${gender}/${imageVariant}_${this.element.toLocaleLowerCase()}.webp`);
+      }
       return image(`img/characters/Traveler/${gender}/${imageVariant}.webp`);
     }
     return image(`img/characters/${this.name.replaceAll(/ /g, '')}/${imageVariant}.webp`);

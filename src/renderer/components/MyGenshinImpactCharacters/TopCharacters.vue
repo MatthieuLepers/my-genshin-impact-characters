@@ -12,8 +12,8 @@
       <img
         :src="character.getImage('gacha_card')"
         :title="`${character.nameStr}, ${character.spentMora / 1000}k`"
-        v-if="!character.name.startsWith('Traveler')"
       />
+      <span v-icon:[character.data.element] v-if="character.name.startsWith('Traveler')" />
     </li>
   </ul>
 </template>

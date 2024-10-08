@@ -14,7 +14,7 @@
       </ul>
     </div>
 
-    <div class="CharacterBuildButtons">
+    <div class="CharacterBuildButtons" v-if="characterBuildsStore.sortedByCharacterReleaseDateBuildList.value.length > 0">
       <MaterialButton
         icon="icon-plus"
         :modifiers="{ secondary: true }"

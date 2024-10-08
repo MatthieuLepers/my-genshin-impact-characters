@@ -30,6 +30,7 @@ export class Weapon extends Model {
   @Column(DataType.INTEGER)
   declare rank: number;
 
+  @Default(false)
   @Column(DataType.BOOLEAN)
   declare owned: boolean;
 }

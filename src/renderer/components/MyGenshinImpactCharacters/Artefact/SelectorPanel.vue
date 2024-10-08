@@ -7,6 +7,7 @@
       <PanelMenu
         v-model="artefactsStore.state.filters.type[0]"
         :data="State.panelMenuData"
+        class="artefact-selector-panel__menu"
       >
         <template #button="{ item }">
           <span v-icon:[item.id] />
@@ -30,6 +31,16 @@
             </ul>
 
             <MaterialFormFieldLine :size="4">
+              <template #field0>
+                <button
+                  type="button"
+                  class="ArtefactsTabButton"
+                  :title="t('App.Artefact.List.filterBtnTitle')"
+                  @click="state.showArtefactFilters = true"
+                >
+                  <span v-icon:filter />
+                </button>
+              </template>
               <template #field2>
                 <MaterialButton
                   icon="icon-close"

@@ -25,7 +25,8 @@
     font-weight: 700;
 
     &:first-of-type {
-      border-radius: 50px 0 0 50px;
+      border-top-left-radius: 50px;
+      border-bottom-left-radius: 50px;
       border-left: 2px solid color(grey700);
 
       &:focus,
@@ -35,7 +36,8 @@
     }
 
     &:last-of-type {
-      border-radius: 0 50px 50px 0;
+      border-top-right-radius: 50px;
+      border-bottom-right-radius: 50px;
       border-right: 2px solid color(grey700);
 
       &:focus,

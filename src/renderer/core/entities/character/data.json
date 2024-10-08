@@ -2,7 +2,6 @@
   "Amber": {
     "releasedAt": "2020-09-28",
     "element": "pyro",
-    "owned": true,
     "weaponType": "bow",
     "aptitudes": [
       {
@@ -128,7 +127,6 @@
   "Traveler-Geo": {
     "releasedAt": "2020-09-28",
     "element": "geo",
-    "owned": true,
     "weaponType": "sword",
     "aptitudes": [
       {
@@ -138,12 +136,12 @@
       {
         "type": "ElementalSkill",
         "constellationIncrease": 5,
-        "materialId": "DvalinsSigh"
+        "materialId": "TailOfBoreas"
       },
       {
         "type": "ElementalBurst",
         "constellationIncrease": 3,
-        "materialId": "DvalinsSigh"
+        "materialId": "TailOfBoreas"
       }
     ],
     "stats": [
@@ -253,7 +251,6 @@
   "Lisa": {
     "releasedAt": "2020-09-28",
     "element": "electro",
-    "owned": true,
     "weaponType": "catalyser",
     "aptitudes": [
       {
@@ -595,7 +592,6 @@
   "Kaeya": {
     "releasedAt": "2020-09-28",
     "element": "cryo",
-    "owned": true,
     "weaponType": "sword",
     "aptitudes": [
       {
@@ -1094,7 +1090,6 @@
   "Traveler-Electro": {
     "releasedAt": "2021-07-01",
     "element": "electro",
-    "owned": true,
     "weaponType": "sword",
     "aptitudes": [
       {
@@ -1661,7 +1656,6 @@
   "Traveler-Dendro": {
     "releasedAt": "2022-08-24",
     "element": "dendro",
-    "owned": true,
     "weaponType": "sword",
     "aptitudes": [
       {
@@ -2220,7 +2214,6 @@
   "Traveler-Hydro": {
     "releasedAt": "2023-08-16",
     "element": "hydro",
-    "owned": true,
     "weaponType": "sword",
     "aptitudes": [
       {
@@ -2866,6 +2859,37 @@
         "def": 801.6,
         "bonusType": "CritDmg%",
         "bonusValue": 38.4
+      }
+    ]
+  },
+  "Xilonen": {
+    "releasedAt": "2024-10-09",
+    "element": "geo",
+    "weaponType": "sword",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "MirrorOfMushin"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 3,
+        "materialId": "MirrorOfMushin"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 5,
+        "materialId": "MirrorOfMushin"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 12405,
+        "atk": 275.06,
+        "def": 929.95,
+        "bonusType": "Def%",
+        "bonusValue": 36
       }
     ]
   }
