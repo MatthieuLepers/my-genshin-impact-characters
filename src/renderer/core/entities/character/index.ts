@@ -198,7 +198,7 @@ export default class Character extends AbstractEntity<ICharacter> {
           phaseIncrease: 0,
           phaseIncreaseBonus: 0,
           constellationIncrease: 0,
-          constellationIncreaseBonus: 0,
+          constellationIncreaseBonus: 3,
           ...aptitude,
         })),
       });

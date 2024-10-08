@@ -3,6 +3,7 @@ import { ipcRenderer } from 'electron';
 import { Character, Setting } from '@/main/database/models';
 import JSONCharacters from '@renderer/core/entities/character/data.json';
 import { serial } from '@/main/utils/PromiseUtils';
+import LegacyFile from '@/main/stores/LegacyFile';
 
 export const populate = async () => {
   const lastPopulateDateSetting = await Setting.get('lastPopulateDateCharacters', '1970-01-01');
@@ -17,8 +18,7 @@ export const populate = async () => {
     .map(([name, data], i, arr) => async () => {
       const result = Character.create({
         name,
-        // @ts-ignore
-        owned: !!data.owned,
+        ...LegacyFile.getCharacterData(name, `${data.element.charAt(0).toUpperCase()}${data.element.substring(1).toLowerCase()}`),
       }).catch(console.log);
 
       ipcRenderer.send('populateProgress', {
