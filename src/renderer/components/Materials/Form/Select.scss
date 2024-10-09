@@ -89,6 +89,10 @@
         position: absolute;
         top: 8px;
         left: 15px;
+
+        strong {
+          margin-left: rem(4px);
+        }
       }
 
       &__outer {
@@ -208,7 +212,7 @@
         width: 100%;
         color: color(grey000);
         min-height: 56px;
-        max-height: 224px;
+        max-height: 168px;
         overflow: hidden;
         overflow-y: visible;
         box-shadow: 0 0 8px rgba(color(grey000), .2);
@@ -427,7 +431,6 @@
 
         &__item {
           @include set-font-scale('xs');
-          @include make-accessibility-shadow();
           display: inline-flex;
           align-items: center;
           height: 24px;
@@ -437,6 +440,8 @@
           padding: 0 rem(8px);
           position: relative;
           margin: rem(1px);
+
+          @include make-accessibility-shadow();
 
           &:not(:last-of-type) {
             margin-right: rem(2px);

@@ -11,6 +11,23 @@
     margin: 0;
     padding: 0;
     cursor: pointer;
+    position: relative;
+    height: 100px;
+
+    span {
+      @include set-font-scale('m');
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+      width: 100%;
+      background-color: rgba(color(grey000), .3);
+      padding: rem(2px) 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-shadow: 0 1px rgba(color(grey999), .9);
+    }
   }
 
   img {

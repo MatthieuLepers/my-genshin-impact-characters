@@ -15,6 +15,23 @@ $colors: (
   warning100   : #f0f042,
   warning300   : #d6914e,
   danger300    : #f63232,
+  base         : #6fa376,
+  common       : #8eea83,
+  uncommon     : #31e09d,
+  rare         : #27bbe4,
+  epic         : #de79f0,
+  anemo        : #61dbbb,
+  geo          : #f8ba4e,
+  electro      : #b25dcd,
+  hydro        : #5680ff,
+  pyro         : #ff3c32,
+  cryo         : #77a2e6,
+  dendro       : #a5c83b,
+  gradient5    : linear-gradient(to bottom right, #695453, #e6ac54),
+  gradient4    : linear-gradient(to bottom right, #595482, #b886ca),
+  gradient3    : linear-gradient(to bottom right, #515474, #499fb3),
+  gradient2    : linear-gradient(to bottom right, #48575c, #5e966c),
+  gradient1    : linear-gradient(to bottom right, #4f5864, #838f99),
 );
 
 @function color($colorName) {

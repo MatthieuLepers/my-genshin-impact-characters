@@ -1,10 +1,14 @@
 <template>
   <Form :class="GenerateModifiers('Filters', { Simple: props.simple })">
-    <FormFieldLine :size="simple ? 1 : 3">
+    <FormFieldLine :size="simple ? 1 : 2">
       <ul class="FiltersElementList">
-        <li v-for="element in State.elementList" :key="element" :class="GenerateModifiers('FiltersElement', { Active: useFilteredCharacterStore.filters.elements.includes(element) })">
-          <button type="button" @click="actions.handleClickElement(element)">
-            <img :src="image(`img/elements/${element.toLowerCase()}.png`)" :alt="element" />
+        <li v-for="element in State.elementList" :key="element">
+          <button
+            :class="GenerateModifiers('FiltersElement', { Active: filteredCharacterStore.filters.elements.includes(element) })"
+            type="button"
+            @click="actions.handleClickElement(element)"
+          >
+            <span v-icon:[element.toLowerCase()] />
           </button>
         </li>
       </ul>
@@ -13,9 +17,13 @@
       </label>
       <template v-slot:field0>
         <ul class="FiltersElementList">
-          <li v-for="element in State.elementList" :key="element" :class="GenerateModifiers('FiltersElement', { Active: useFilteredCharacterStore.filters.elements.includes(element) })">
-            <button type="button" @click="actions.handleClickElement(element)">
-              <img :src="image(`img/elements/${element.toLowerCase()}.png`)" :alt="element" />
+          <li v-for="element in State.elementList" :key="element">
+            <button
+              :class="GenerateModifiers('FiltersElement', { Active: filteredCharacterStore.filters.elements.includes(element) })"
+              type="button"
+              @click="actions.handleClickElement(element)"
+            >
+              <span v-icon:[element.toLowerCase()] />
             </button>
           </li>
         </ul>
@@ -24,15 +32,8 @@
         </label>
       </template>
       <template v-slot:field1>
-        <FormInput
-          v-model="useFilteredCharacterStore.filters.name"
-          class="FiltersSearch"
-          :label="t('App.Filters.search.label')"
-        />
-      </template>
-      <template v-slot:field2>
         <FormSelect
-          v-model="useFilteredCharacterStore.sortBy.text"
+          v-model="filteredCharacterStore.sortBy.text"
           class="FiltersSelect"
           :options="State.sortOptions"
           :label="t('App.Filters.sort.label')"
@@ -48,12 +49,10 @@ import { useI18n } from 'vue-i18n';
 
 import Form from '@renderer/components/Materials/Form/index.vue';
 import FormFieldLine from '@renderer/components/Materials/Form/FieldLine.vue';
-import FormInput from '@renderer/components/Materials/Form/Input.vue';
 import FormSelect from '@renderer/components/Materials/Form/Select.vue';
 
-import { useAppStore } from '@renderer/core/stores/AppStore';
-import { useFilteredCharacterStore } from '@/renderer/core/stores/FilteredCharacterStore';
-import { image } from '@renderer/core/utils';
+import { charactersStore } from '@renderer/core/entities/character/store';
+import { filteredCharacterStore } from '@renderer/core/stores/FilteredCharacterStore';
 
 const { t } = useI18n();
 
@@ -66,7 +65,7 @@ const props = defineProps({
 
 const State = computed(() => ({
   elementList: Object
-    .values(useAppStore.state.characters)
+    .values(charactersStore.state.characters)
     .filter((character) => !props.ownerFilter || (props.ownerFilter && character.owned))
     .map((character) => character.element)
     .filter((character, i, arr) => arr.indexOf(character) === i)
@@ -82,10 +81,10 @@ const State = computed(() => ({
 
 const actions = {
   handleClickElement(element) {
-    if (useFilteredCharacterStore.filters.elements.includes(element)) {
-      useFilteredCharacterStore.filters.elements = useFilteredCharacterStore.filters.elements.filter((e) => e !== element);
+    if (filteredCharacterStore.filters.elements.includes(element)) {
+      filteredCharacterStore.filters.elements = filteredCharacterStore.filters.elements.filter((e) => e !== element);
     } else {
-      useFilteredCharacterStore.filters.elements.push(element);
+      filteredCharacterStore.filters.elements.push(element);
     }
   },
 };

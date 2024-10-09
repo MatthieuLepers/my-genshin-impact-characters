@@ -21,32 +21,29 @@
     grid-row: 2;
   }
 
-  .AppProgressBar {
-    flex: 1;
-    height: 24px;
-    border-radius: 12px;
-    background-color: color(grey000);
-    position: relative;
-    padding: 2px;
-    overflow: hidden;
-    margin: 0 rem(28px) 0 rem(16px);
-  
-    &Track {
-      @include set-font-scale('s');
-      @include transition(width .2s ease);
-      position: absolute;
-      top: 2px;
-      left: 2px;
-      height: calc(100% - 4px);
-      background-color: color(secondary200);
-      border-radius: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 0;
-      white-space: nowrap;
-      overflow: hidden;
+  .MainLoader {
+    width: 100vw;
+    height: calc(100vh - 30px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &Icon {
+      width: 64px;
+      height: 64px;
+      font-size: rem(64px);
     }
+
+    &ProgressBar {
+      width: 40%;
+      margin-top: rem(24px);
+    }
+  }
+
+  .MainProgressBar {
+    flex: 1;
+    margin: 0 rem(32px) 0 rem(16px);
   }
 
   .View {

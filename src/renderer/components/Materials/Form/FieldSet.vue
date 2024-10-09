@@ -13,7 +13,7 @@
 defineOptions({ name: 'FormFieldSet' });
 
 const props = defineProps({
-  legend: { type: String, required: true },
+  legend: { type: String, default: null },
 });
 </script>
 

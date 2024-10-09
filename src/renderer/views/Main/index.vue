@@ -4,42 +4,41 @@
       <Filters class="MainViewFilters" />
       <TopCharacters
         @clickCharacter="actions.handleClickCharacter"
-        :key="useFilteredCharacterStore.filters.elements.length"
+        :key="filteredCharacterStore.filters.elements.length"
       />
       <div
-        v-for="boss in Object.keys(tm('Data.WeaklyBosses'))"
-        :key="boss"
+        v-for="boss in Object.values(weeklyBossesStore.state.bosses)"
+        :key="boss.id"
       >
-        <h3 class="BossTitle" v-if="actions.filteredCharacters(boss).length">
-          <span>[{{ actions.totalInvestedBossMaterial(boss) }}/{{ actions.totalBossMaterial(boss) }}]</span> {{ t(`Data.WeaklyBosses.${boss}.name`) }}
+        <h3 class="BossTitle" v-if="actions.filteredCharacters(boss.id).length">
+          <span>[{{ actions.totalInvestedBossMaterial(boss.id) }}/{{ actions.totalBossMaterial(boss.id) }}]</span> {{ boss.getI18n('name') }}
         </h3>
         <BossMaterial
-          v-for="material in Object.keys(tm(`Data.WeaklyBosses.${boss}.materials`))"
-          :key="`${boss}${material}`"
-          :boss="boss"
+          v-for="material in materialsStore.materialGroupedByBossId.value[boss.id]"
+          :key="material.id"
           :material="material"
-          :characters="state.characters[material]"
+          :characters="state.characters[material.id]"
         />
       </div>
 
-      <Modal
+      <MaterialModal
         name="newlyReleasedCharactersModal"
         :modifiers="{ m: true }"
-        :title="t('App.Main.newlyReleasedCharactersModal.title', useAppStore.newlyReleasedCharacters.value.length)"
+        :title="t('App.Main.newlyReleasedCharactersModal.title', charactersStore.newlyReleasedCharacters.value.length)"
         :acceptLabel="t('App.Main.newlyReleasedCharactersModal.okLabel')"
         :refuseLabel="t('App.Main.newlyReleasedCharactersModal.cancelLabel')"
         @accept="router.push({ name: 'CharacterList' })"
       >
         <ul class="CharacterList">
           <li
-            v-for="(character, i) in useAppStore.newlyReleasedCharacters.value"
+            v-for="(character, i) in charactersStore.newlyReleasedCharacters.value"
             :key="i"
             class="CharacterListItem"
           >
             <CharacterCard :character="character" />
           </li>
         </ul>
-      </Modal>
+      </MaterialModal>
     </main>
   </div>
 </template>
@@ -54,20 +53,22 @@ import {
 import { useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 
-import Modal from '@renderer/components/Materials/Modal/index.vue';
+import MaterialModal from '@renderer/components/Materials/Modal/index.vue';
 import BossMaterial from '@renderer/components/MyGenshinImpactCharacters/BossMaterial.vue';
 import TopCharacters from '@renderer/components/MyGenshinImpactCharacters/TopCharacters.vue';
 import Filters from '@renderer/components/MyGenshinImpactCharacters/Filters.vue';
 import CharacterCard from '@renderer/components/MyGenshinImpactCharacters/CharacterCard.vue';
 
 import { modalStore } from '@renderer/components/Materials/Modal/Store';
-import { useAppStore } from '@renderer/core/stores/AppStore';
-import { useFilteredCharacterStore } from '@renderer/core/stores/FilteredCharacterStore';
+import { charactersStore } from '@renderer/core/entities/character/store';
+import { materialsStore } from '@renderer/core/entities/material/store';
+import { filteredCharacterStore } from '@renderer/core/stores/FilteredCharacterStore';
+import { weeklyBossesStore } from '@/renderer/core/entities/weeklyBoss/store';
 
 defineOptions({ name: 'MainView' });
 
 const router = useRouter();
-const { t, tm } = useI18n();
+const { t } = useI18n();
 
 const state = reactive({
   characters: {},
@@ -75,25 +76,23 @@ const state = reactive({
 });
 
 const actions = {
-  totalBossMaterial(boss) {
-    return Object
-      .keys(tm(`Data.WeaklyBosses.${boss}.materials`))
-      .reduce((acc, material) => acc + actions.getMaxMaterial(material), 0)
+  totalBossMaterial(bossId) {
+    return materialsStore.materialGroupedByBossId.value[bossId]
+      .reduce((acc, material) => acc + actions.getMaxMaterial(material.id), 0)
     ;
   },
-  getMaxMaterial(materialName) {
-    return (state.characters[materialName] || []).reduce((acc, character) => acc + character.getMaxMaterial(materialName), 0);
+  getMaxMaterial(materialId) {
+    return (state.characters[materialId] ?? []).reduce((acc, character) => acc + character.getMaxMaterial(materialId), 0);
   },
-  totalInvestedBossMaterial(boss) {
-    return Object
-      .keys(tm(`Data.WeaklyBosses.${boss}.materials`))
-      .reduce((acc, material) => acc + actions.getOwnedAndInvestedMaterials(material), 0)
+  totalInvestedBossMaterial(bossId) {
+    return materialsStore.materialGroupedByBossId.value[bossId]
+      .reduce((acc, material) => acc + actions.getOwnedAndInvestedMaterials(material.id), 0)
     ;
   },
-  getOwnedAndInvestedMaterials(materialName) {
-    if (!state.characters[materialName]?.length) return 0;
-    return (state.characters[materialName] || [])
-      .reduce((acc, character) => acc + character.getInvestedMaterials(materialName), useAppStore.state.materials[materialName])
+  getOwnedAndInvestedMaterials(materialId) {
+    if (!state.characters[materialId]?.length) return 0;
+    return (state.characters[materialId] ?? [])
+      .reduce((acc, character) => acc + character.getInvestedMaterials(materialId), materialsStore.state.materials[materialId].inInventory)
     ;
   },
   handleClickCharacter(character) {
@@ -105,24 +104,25 @@ const actions = {
       bossMaterialElement.scrollIntoView();
     });
   },
-  filteredCharacters(boss) {
-    const materials = Object.keys(tm(`Data.WeaklyBosses.${boss}.materials`));
-    return Object.keys(state.characters)
-      .filter((material) => materials.includes(material))
-      .reduce((acc, material) => [
+  filteredCharacters(bossId) {
+    const materials = materialsStore.materialGroupedByBossId.value[bossId];
+    const result = Object.keys(state.characters)
+      .filter((materialId) => materials.some(({ id }) => id === materialId))
+      .reduce((acc, materialId) => [
         ...acc,
-        ...useFilteredCharacterStore.actions.applyFilters(Object.values(state.characters[material])),
+        ...filteredCharacterStore.actions.applyFilters(Object.values(state.characters[materialId])),
       ], [])
     ;
+    return result;
   },
 };
 
 onBeforeMount(() => {
-  state.characters = Object.values(useAppStore.state.characters)
+  state.characters = Object.values(charactersStore.state.characters)
     .filter((character) => character.owned)
     .reduce((acc, character) => {
       character.materials.forEach((material) => {
-        acc[material] = [...(acc[material] || []), character];
+        acc[material] = [...(acc[material] ?? []), character];
       });
       return acc;
     }, {})
@@ -130,11 +130,9 @@ onBeforeMount(() => {
 });
 
 onMounted(() => {
-  if (!Object.values(state.characters).length) {
-    router.push({ name: 'CharacterList' });
-  } else if (useAppStore.newlyReleasedCharacters.value.length && !useAppStore.state.newlyModalOpened) {
+  if (charactersStore.newlyReleasedCharacters.value.length && !charactersStore.state.newlyModalOpened) {
     modalStore.actions.show('newlyReleasedCharactersModal');
-    useAppStore.state.newlyModalOpened = true;
+    charactersStore.state.newlyModalOpened = true;
   }
 });
 </script>

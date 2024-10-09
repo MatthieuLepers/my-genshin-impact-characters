@@ -1,0 +1,132 @@
+@import '~styles/utilities.scss';
+
+.Build {
+  #buildFormModal {
+    max-width: 60%;
+    border-radius: 8px;
+
+    .m-modal__header {
+      display: none;
+    }
+
+    .m-modal__body {
+      margin: 0;
+      padding: 0;
+      max-height: none;
+    }
+
+    .m-modal__footer {
+      margin-top: rem(16px);
+      padding: 0 rem(8px) rem(8px);
+    }
+
+    .m-form-select--box .m-form-select__dropdown__item {
+      white-space: nowrap;
+    }
+  }
+
+  &Container {
+    flex: 0 0 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(8px);
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+  }
+
+  &ImgTheme {
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    opacity: .5;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  &ImgSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: rem(8px);
+    padding: rem(8px) 0 0 rem(8px);
+    position: relative;
+    z-index: 1;
+  }
+
+  &Img {
+    max-width: 180px;
+    max-height: 180px;
+  }
+
+  &OptionImg {
+    width: auto;
+    max-width: 32px;
+    max-height: 32px;
+    margin-right: rem(8px);
+  }
+
+  &InfosSection {
+    display: flex;
+    flex-direction: column;
+    gap: rem(8px);
+    flex: 1;
+    padding: rem(8px) rem(8px) 0 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  &Stats {
+    margin-bottom: rem(8px);
+    opacity: .9;
+  }
+
+  &EquipmentSection {
+    display: flex;
+    gap: rem(8px);
+    flex: 0 0 100%;
+    padding: rem(8px);
+    position: relative;
+    z-index: 1;
+    background-color: rgba(color(grey800), .5);
+  }
+
+  &Equipment {
+    flex: calc(16.666% - 6.666px);
+    position: relative;
+
+    &:nth-child(1) {
+      .tooltip--h-center {
+        left: 2px;
+        transform: none;
+
+        &::before {
+          left: 31px;
+        }
+      }
+    }
+
+    &:nth-last-child(1) {
+      .tooltip--h-center {
+        right: 2px;
+        left: auto;
+        transform: none;
+
+        &::before {
+          right: 31px;
+          left: auto;
+        }
+      }
+    }
+  }
+
+  &ButtonSection {
+    flex: 0 0 100%;
+    padding: 0 rem(8px) rem(8px) rem(8px);
+    position: relative;
+    z-index: 1;
+  }
+}

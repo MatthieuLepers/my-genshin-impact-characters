@@ -1,0 +1,96 @@
+@import '~styles/utilities.scss';
+
+.AffixSelectorPanel {
+  @include transition(left .5s ease);
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: calc(35% + 6px);
+  height: 100%;
+  background-color: color(grey900);
+  padding: rem(8px);
+  flex-direction: column;
+  flex-wrap: nowrap;
+
+  &--visible {
+    left: 0;
+  }
+
+  &Title {
+    margin: 0;
+    @include set-font-scale('l');
+    font-weight: 600;
+  }
+
+  .PanelMenu {
+    margin-top: rem(16px);
+  }
+
+  &Checkbox {
+    position: relative;
+    cursor: pointer;
+    border: 2px solid color(grey700);
+    margin-bottom: rem(8px);
+    padding: rem(8px);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-weight: 700;
+
+    &:hover {
+      border-color: color(grey100);
+    }
+
+    &::before {
+      content: '';
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 2px solid color(grey700);
+      margin-right: rem(8px);
+    }
+
+    &--checked {
+      background-color: color(grey100);
+      color: color(grey900);
+      border-color: color(grey100);
+
+      &::before {
+        @include icon('check');
+        border: none;
+      }
+    }
+
+    &--disabled {
+      opacity: .5;
+    }
+
+    input {
+      position: absolute;
+      top: 0;
+      left: -100%;
+    }
+
+    [class^="icon"] {
+      @include set-font-scale('xs');
+      display: inline-block;
+      margin-right: rem(4px);
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: rem(16px) 0 rem(8px);
+    padding: 0 rem(8px) 0 0;
+    overflow-y: auto;
+    height: calc(100% - 126px);
+
+    &.minorOnly {
+      height: calc(100% - 69px);
+    }
+
+    li {
+      width: 100%;
+    }
+  }
+}

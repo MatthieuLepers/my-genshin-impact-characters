@@ -1,25 +1,21 @@
 import { reactive } from 'vue';
 
-import type Character from '@renderer/core/classes/Character';
+import type Character from '@renderer/core/entities/character';
 
 const FILTERING_FUNCTIONS = {
   elements: (elements: string) => (character: Character) => (elements.length ? elements.includes(character.element) : true),
-  name: (name: string) => (character: Character) => (name.length ? character.name.toLowerCase().includes(name.toLowerCase()) : true),
 };
 
 const ELEMENTS_ORDER = ['Pyro', 'Hydro', 'Anemo', 'Electro', 'Dendro', 'Cryo', 'Geo'];
 
 const SORTING_FUNCTIONS = {
-  // @ts-ignore
-  releasedAt: (releasedAt: string) => (a: Character, b: Character) => (releasedAt === 'asc' ? new Date(a.$data.releasedAt) - new Date(b.$data.releasedAt) : new Date(b.$data.releasedAt) - new Date(a.$data.releasedAt) || a.name.localeCompare(b.name)),
-  name: (name: string) => (a: Character, b: Character) => (name === 'asc' ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name)),
+  releasedAt: (releasedAt: string) => (a: Character, b: Character) => (releasedAt === 'asc' ? a.releasedAt!.getTime() - b.releasedAt!.getTime() : b.releasedAt!.getTime() - a.releasedAt!.getTime() || a.name.localeCompare(b.name)),
   element: () => (a: Character, b: Character) => ELEMENTS_ORDER.indexOf(a.element) - ELEMENTS_ORDER.indexOf(b.element),
 };
 
-const filteredCharacterStore = () => {
+const useFilteredCharacterStore = () => {
   const filters = reactive({
     elements: [],
-    name: '',
   });
 
   const sortBy = reactive({
@@ -36,7 +32,6 @@ const filteredCharacterStore = () => {
     },
     reset() {
       filters.elements = [];
-      filters.name = '';
       sortBy.text = 'releasedAt:desc';
     },
   };
@@ -48,4 +43,4 @@ const filteredCharacterStore = () => {
   };
 };
 
-export const useFilteredCharacterStore = filteredCharacterStore();
+export const filteredCharacterStore = useFilteredCharacterStore();

@@ -1,7 +1,9 @@
 node_modules
 dist
 out
+tests
 .gitignore
 .eslintrc.js
-eletron.vite.config.ts
+*.config.js
+*.config.ts
 **/*.d.ts

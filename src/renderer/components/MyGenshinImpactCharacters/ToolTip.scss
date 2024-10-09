@@ -1,0 +1,76 @@
+@import '~styles/utilities.scss';
+
+.tooltip {
+  position: absolute;
+  background-color: color(grey700);
+  z-index: 1;
+  padding: rem(8px);
+  border-radius: 4px;
+  filter: drop-shadow(0 0 1px color(grey100));
+
+  &::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    display: block;
+    transform: rotate(45deg);
+    transform-origin: 50% 50%;
+    position: absolute;
+    background-color: color(grey700);
+    z-index: -1;
+  }
+
+  &--h {
+    &-left {
+      right: calc(100% + 12px);
+
+      &::before {
+        left: calc(100% - 6px);
+      }
+    }
+
+    &-right {
+      left: calc(100% + 12px);
+
+      &::before {
+        right: calc(100% - 6px);
+      }
+    }
+
+    &-center {
+      left: 50%;
+      transform: translateX(-50%);
+
+      &::before {
+        left: calc(50% - 6px);
+      }
+    }
+  }
+
+  &--v {
+    &-top {
+      bottom: calc(100% + 12px);
+
+      &::before {
+        top: calc(100% - 6px);
+      }
+    }
+
+    &-bottom {
+      top: calc(100% + 12px);
+
+      &::before {
+        bottom: calc(100% - 6px);
+      }
+    }
+
+    &-center {
+      top: 50%;
+      transform: translateY(-50%);
+
+      &::before {
+        top: calc(50% - 6px);
+      }
+    }
+  }
+}

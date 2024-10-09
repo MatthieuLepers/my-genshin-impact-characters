@@ -1,0 +1,75 @@
+{
+  "title": "Artefact",
+  "description": "An artefact",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": ["flower", "feather", "sands", "goblet", "circlet"],
+      "message": {
+        "type": "type property must be of string type",
+        "required": "Missing required type key",
+        "enum": "Unrecognized type"
+      }
+    },
+    "setId": {
+      "type": "string",
+      "enum": ["ArchaicPetra", "BlizzardStrayer", "BloodstainedChivalry", "CrimsonWitchOfFlames", "DeepwoodMemories", "DesertPavilionChronicle", "EchoesOfAnOffering", "EmblemOfSeveredFate", "FlowerOfParadiseLost", "FragmentOfHarmonicWhimsy", "GildedDreams", "GladiatorsFinale", "GoldenTroupe", "HeartOfDepth", "HuskOfOpulentDreams", "Lavawalker", "LuckyDog", "MaidenBeloved", "MarechausseHunter", "NighttimeWhispersInTheEchoingWoods", "NoblesseOblige", "NymphsDream", "ObsidianCodex", "OceanHuedClam", "PaleFlame", "RetracingBolide", "ScrollOfTheHeroOfCinderCity", "ShimenawasReminiscence", "SongOfDaysPast", "TenacityOfTheMillelith", "ThunderingFury", "Thundersoother", "UnfinishedReverie", "VermillionHereafter", "ViridescentVenerer", "VourukashasGlow", "WanderersTroupe"],
+      "message": {
+        "type": "setId property must be of string type",
+        "required": "Missing required setId key",
+        "enum": "Unrecognized setId"
+      }
+    },
+    "statsJson": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/stat"
+      },
+      "message": {
+        "type": "statsJson property must be of array type",
+        "minItems": "statsJson cannot have lower than 4 items",
+        "maxItems": "statsJson cannot have higher than 4 items",
+        "uniqueItems": "statsJson cannot have duplicate items"
+      }
+    }
+  },
+  "required": ["type", "setId", "statsJson"],
+  "additionalProperties": false,
+  "$defs": {
+    "stat": {
+      "type": "object",
+      "required": ["name", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "enum": ["HP", "HP%", "Atk", "Atk%", "Def", "Def%", "EM", "ER%", "CritRate%", "CritDmg%", "Heal%", "PyroDmg%", "CryoDmg%", "HydroDmg%", "ElectroDmg%", "AnemoDmg%", "GeoDmg%", "DendroDmg%", "PhysicalDmg%"],
+          "message": {
+            "type": "name property must be of string type",
+            "required": "Missing required property name",
+            "enum": "Unrecognized stat name"
+          }
+        },
+        "value": {
+          "type": "number",
+          "min": 0,
+          "message": {
+            "type": "value property must be of string type",
+            "required": "Missing required property value",
+            "min": "value property cannot be lower than 0"
+          }
+        },
+        "main": {
+          "type": "boolean",
+          "message": {
+            "type": "main property must be of boolean type"
+          }
+        }
+      }
+    }
+  }
+}

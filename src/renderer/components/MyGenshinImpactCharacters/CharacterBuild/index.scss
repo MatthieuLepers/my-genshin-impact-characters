@@ -1,0 +1,213 @@
+@import '~styles/utilities.scss';
+
+.character-build {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgba(color(grey800), .5);
+  border-radius: 8px;
+  gap: rem(8px);
+
+  &__container {
+    display: flex;
+    flex: 0 0 100%;
+    justify-content: space-between;
+    padding: rem(8px) 0 0 rem(8px);
+    position: relative;
+    overflow: hidden;
+    color: color(grey000);
+    border-radius: 8px 8px 0 0;
+  }
+
+  &__theme {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 0;
+    opacity: .5;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  &__img {
+    width: auto;
+    min-height: 150px;
+    max-height: 150px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__infos {
+    flex: 0 0 calc(100% - 150px);
+    position: relative;
+    z-index: 1;
+    padding: 0 rem(8px) rem(8px);
+  }
+
+  &__name {
+    @include set-font-scale('s');
+    width: 100%;
+    border-radius: 20px;
+    text-align: center;
+    padding: rem(4px) rem(8px);
+    font-weight: 600;
+    color: color(grey100);
+
+    &--anemo {
+      background-color: color(anemo);
+    }
+
+    &--geo {
+      background-color: color(geo);
+    }
+
+    &--electro {
+      background-color: color(electro);
+    }
+
+    &--hydro {
+      background-color: color(hydro);
+    }
+
+    &--pyro {
+      background-color: color(pyro);
+    }
+
+    &--cryo {
+      background-color: color(cryo);
+    }
+
+    &--dendro {
+      background-color: color(dendro);
+    }
+  }
+
+  &__level {
+    @include set-font-scale('m');
+    display: block;
+    margin-top: rem(20px);
+    font-weight: 600;
+    text-align: left;
+  }
+
+  &__constellation {
+    @include set-font-scale('m');
+    padding: rem(4px) rem(6px);
+    margin-left: rem(8px);
+    border-radius: 4px;
+
+    &--common {
+      background-color: color(common);
+    }
+
+    &--uncommon {
+      background-color: color(uncommon);
+    }
+
+    &--rare {
+      background-color: color(rare);
+    }
+
+    &--epic {
+      background-color: color(epic);
+    }
+
+    strong {
+      text-shadow: color(grey500) 0 0 5px;
+    }
+  }
+
+  &__aptitudes {
+    @include set-font-scale('s');
+    margin-top: rem(20px);
+    display: flex;
+    gap: rem(8px);
+
+    &-item {
+      padding: rem(2px) rem(8px);
+      background-color: color(grey500);
+      border-radius: 12px;
+      text-align: center;
+      font-weight: 600;
+
+      &--rare {
+        background-color: color(rare);
+      }
+    }
+  }
+
+  &__buttons {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: rem(8px);
+  }
+
+  &__equipments {
+    flex: 0 0 100%;
+    list-style: none;
+    padding: 0 rem(8px) rem(8px);
+    margin: 0;
+    display: flex;
+    gap: rem(8px);
+
+    &-item {
+      flex: 0 0 calc(16.666% - 6.666px);
+      max-width: calc(16.666% - 6.666px);
+      max-height: 96px;
+      position: relative;
+
+      &:hover .character-build__tooltip {
+        display: block;
+      }
+
+      &:nth-child(1),
+      &:nth-child(2) {
+        .character-build__tooltip.tooltip--h-center {
+          left: 0;
+          transform: none;
+
+          &::before {
+            left: 26px;
+          }
+        }
+      }
+
+      &:nth-last-child(1),
+      &:nth-last-child(2) {
+        .character-build__tooltip.tooltip--h-center {
+          right: 0;
+          left: auto;
+          transform: none;
+
+          &::before {
+            right: 26px;
+            left: auto;
+          }
+        }
+      }
+
+      &--weapon {
+        background-color: color(grey800);
+        border-radius: 8px;
+      }
+    }
+  }
+
+  &__tooltip {
+    display: none;
+
+    &__sub-stat {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      .artefact-sub-stat__value {
+        white-space: nowrap;
+        margin-right: rem(16px);
+      }
+    }
+  }
+}

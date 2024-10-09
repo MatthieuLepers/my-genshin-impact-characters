@@ -1,0 +1,105 @@
+@import '~styles/utilities.scss';
+
+.artefact-details {
+  position: relative;
+  width: calc(100% - 8px);
+  height: 100%;
+  background-color: color(grey800);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  grid-column: 2;
+  grid-row: 1 / span 2;
+
+  &--edit {
+    &::before {
+      content: '';
+      position: absolute;
+      width: 245%;
+      height: 100%;
+      right: 100%;
+      top: 0;
+    }
+  }
+
+  &__header {
+    @include set-font-scale('m');
+    display: flex;
+    position: relative;
+    height: 140px;
+    background: color(gradient5);
+    padding: rem(16px);
+
+    [class^="icon"] {
+      @include set-font-scale('xs');
+      position: relative;
+      z-index: 1;
+
+      &::before {
+        @include set-font-scale('xs');
+        margin-right: rem(4px);
+      }
+    }
+
+    img {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: auto;
+      max-height: 112px;
+      z-index: 0;
+    }
+  }
+
+  &__main-stat {
+    @include set-font-scale('xxs');
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    font-weight: 700;
+
+    &__value {
+      @include set-font-scale('xxl', 'xl');
+      display: block;
+      color: color(grey100);
+    }
+  }
+
+  &__level {
+    @include set-font-scale('s');
+    display: inline-block;
+    background-color: color(grey100);
+    padding: 0 rem(8px);
+    border-radius: 6px;
+    color: color(grey900);
+    font-weight: 700;
+    margin: rem(16px) 0 0 rem(16px);
+  }
+
+  &__sub-stat-list {
+    padding: 0 rem(16px);
+    margin: rem(12px) 0 rem(8px);
+    list-style: none;
+    font-weight: 600;
+
+    &--edit {
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin-bottom: rem(4px);
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: rem(8px);
+    padding: rem(16px);
+  }
+}
+
+#artefactDestroyModal {
+  width: 35%;
+}

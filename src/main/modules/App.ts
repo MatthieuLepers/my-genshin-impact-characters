@@ -1,16 +1,23 @@
-import fs from 'fs';
-import os from 'os';
-import merge from 'deepmerge';
+import type { Identifier } from 'sequelize';
+import { dialog, OpenDialogOptions, type SaveDialogOptions } from 'electron';
 import { autoUpdater } from 'electron-updater';
-import database from '@renderer/assets/genshin-impact-character';
+import fs from 'fs';
+import Ajv from 'ajv';
 
 import { IpcHandle, IpcOn, GlobalShortcut } from '@/main/decorators';
+import { Setting, Artefact } from '@/main/database/models';
 import WindowStore from '@/main/stores/WindowStore';
+import ArtefactSchema from '@/main/public/schemas/artefact.schema.json';
 
 class AppModule {
   @IpcHandle
   static async localeChange(iso: string): Promise<void> {
     WindowStore.broadcastData('localeChange', iso);
+
+    const localeSetting = await Setting.findByPk('locale');
+    if (localeSetting) {
+      await localeSetting.update({ value: iso });
+    }
   }
 
   @IpcHandle
@@ -18,48 +25,59 @@ class AppModule {
     WindowStore.sendData(windowName, channel, ...args);
   }
 
-  @IpcOn
-  static readDirSync({ path, onlyFiles, onlyDirectories }) {
-    const dirContent = fs.readdirSync(path);
-    return dirContent.filter((file) => {
-      if (onlyFiles || onlyDirectories) {
-        const stats = fs.lstatSync(`${path}/${file}`);
-        return (onlyFiles && stats.isFile()) || (onlyDirectories && stats.isDirectory());
+  @IpcHandle
+  static async exportArtefact(identifier: Identifier, dialogOptions: SaveDialogOptions): Promise<void> {
+    const obj = await Artefact.findByPk(identifier);
+    if (obj) {
+      const mainWindow = WindowStore.get('main')!;
+      const { canceled, filePath } = await dialog.showSaveDialog(mainWindow, dialogOptions);
+
+      if (!canceled && filePath?.length) {
+        const { type, setId, statsJson } = obj;
+        fs.writeFileSync(filePath, JSON.stringify({ type, setId, statsJson }, null, 2));
       }
-      return true;
-    });
-  }
-
-  @IpcOn
-  static loadData() {
-    const baseDir = `${os.homedir()}/Documents`;
-    const fileName = 'genshin-impact-character.json';
-    const filePath = `${baseDir}/${fileName}`;
-
-    if (!fs.existsSync(filePath)) {
-      fs.writeFileSync(filePath, JSON.stringify(database, null, 2));
-      WindowStore.broadcastData('set-locale', database.locale || 'fr-FR');
-      return database;
     }
-    const data = merge(
-      database,
-      JSON.parse(`${fs.readFileSync(filePath)}`),
-    );
-    WindowStore.broadcastData('set-locale', data.locale || 'fr-FR');
-    return data;
   }
 
-  @IpcOn
-  static saveData(json: string) {
-    const baseDir = `${os.homedir()}/Documents`;
-    const fileName = 'genshin-impact-character.json';
-    const filePath = `${baseDir}/${fileName}`;
+  @IpcHandle
+  static async exportMultipleArtefact(idList: string, dialogOptions: SaveDialogOptions): Promise<void> {
+    const parsedIdList = JSON.parse(idList);
+    const mainWindow = WindowStore.get('main')!;
+    const { canceled, filePath } = await dialog.showSaveDialog(mainWindow, dialogOptions);
+
+    if (!canceled && filePath?.length) {
+      const artefactList: Array<Artefact> = await Artefact.findAll({
+        where: { id: parsedIdList },
+      });
+      const toExportList = artefactList.map(({ type, setId, statsJson }) => ({ type, setId, statsJson }));
+
+      fs.writeFileSync(filePath, JSON.stringify(toExportList, null, 2));
+    }
+  }
+
+  @IpcHandle
+  static async importArtefact(dialogOptions: OpenDialogOptions): Promise<string | null> {
+    const mainWindow = WindowStore.get('main')!;
+    const { canceled, filePaths } = await dialog.showOpenDialog(mainWindow, dialogOptions);
+
+    if (canceled || !filePaths.length || !fs.existsSync(filePaths[0])) return null;
+
+    const fileContent = `${fs.readFileSync(filePaths[0])}`;
 
     try {
-      fs.writeFileSync(filePath, json);
-      return true;
-    } catch (ex) {
-      return false;
+      const parsedContent = JSON.parse(fileContent);
+      const artefactList = Array.isArray(parsedContent) ? parsedContent : [parsedContent];
+
+      const valid = artefactList.filter((artefactData) => {
+        const validator = new Ajv();
+        return validator.validate(ArtefactSchema, artefactData);
+      });
+      if (valid.length) {
+        return JSON.stringify(valid);
+      }
+      return null;
+    } catch (e) {
+      return null;
     }
   }
 
@@ -71,6 +89,11 @@ class AppModule {
         win.sendData('database-ready');
       });
     });
+  }
+
+  @IpcOn
+  static populateProgress(data: Object) {
+    WindowStore.broadcastData('populateProgress', data);
   }
 
   @IpcOn

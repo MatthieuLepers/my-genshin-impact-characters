@@ -3,8 +3,10 @@ import { join } from 'path';
 import { electronApp, optimizer, is } from '@electron-toolkit/utils';
 import { autoUpdater } from 'electron-updater';
 
-import { APP_PLATEFORM } from '@/main/utils/Constants';
+import { sequelize } from '@/main/database';
+import { Setting } from '@/main/database/models';
 import ElectronWindow from '@/main/classes/ElectronWindow';
+import { APP_PLATEFORM } from '@/main/utils/Constants';
 import WindowStore from '@/main/stores/WindowStore';
 
 function createWindow() {
@@ -26,15 +28,21 @@ function createWindow() {
   mainWindow.init();
 }
 
+// Prevent app to flicker on starts
+app.commandLine.appendSwitch('disable-gpu');
+
 app
   .whenReady()
   .then(async () => {
-    electronApp.setAppUserModelId('com.electron');
+    electronApp.setAppUserModelId('vite.electron.my-genshin-impact-characters');
 
     const AppModule = await import('@/main/modules/App');
     AppModule.default();
 
     createWindow();
+
+    await sequelize.sync();
+    await Setting.createDefault();
 
     if (is.dev) {
       // eslint-disable-next-line import/no-extraneous-dependencies
@@ -72,14 +80,6 @@ app.on('before-quit', () => {
   }
 });
 
-/**
- * Auto Updater
- *
- * Uncomment the following code below and install `electron-updater` to
- * support auto updating. Code Signing with a valid certificate is required.
- * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-electron-builder.html#auto-updating
- * https://github.com/iffy/electron-updater-example
- */
 autoUpdater.on('update-available', () => {
   WindowStore.broadcastData('update-available');
 });

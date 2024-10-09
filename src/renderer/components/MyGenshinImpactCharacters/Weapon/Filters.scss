@@ -1,0 +1,8 @@
+@import '~styles/utilities.scss';
+
+.weapon-filters {
+  padding: 16px;
+  background-color: rgba(color(grey000), .05);
+  border-radius: 16px;
+  margin-bottom: rem(8px);
+}

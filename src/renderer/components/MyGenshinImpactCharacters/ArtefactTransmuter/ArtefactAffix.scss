@@ -1,0 +1,44 @@
+@import '~styles/utilities.scss';
+
+.ArtefactAffix {
+  &Button {
+    position: relative;
+    box-shadow: 0 0 0 2px color(grey800);
+    border: 1px solid color(grey600);
+    background-color:  color(grey800);
+    color: color(grey500);
+    padding: rem(12px) rem(8px) rem(12px) rem(28px);
+    margin: rem(2px);
+    width: calc(100% - 4px);
+    text-align: left;
+    font-weight: 700;
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      width: 12px;
+      height: 2px;
+      transform-origin: 50% 50%;
+      top: calc(50% - 1px);
+      left: 8px;
+      background-color: color(grey500);
+    }
+
+    &::after {
+      transform: rotate(90deg);
+    }
+
+    &:focus,
+    &:hover {
+      background-color: color(grey100);
+      box-shadow: 0 0 0 2px color(grey100);
+      color: color(grey900);
+
+      &::after,
+      &::before {
+        background-color: color(grey900);
+      }
+    }
+  }
+}

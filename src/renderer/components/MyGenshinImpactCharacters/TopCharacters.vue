@@ -7,13 +7,13 @@
     <li
       v-for="character in State.characters"
       :key="character.name"
-      @click="actions.handleclick(character)"
+      @click="actions.handleClick(character)"
     >
       <img
-        :src="image(`img/characters/${character.imageName}_gacha_card.png`)"
+        :src="character.getImage('gacha_card')"
         :title="`${character.nameStr}, ${character.spentMora / 1000}k`"
-        v-if="!character.name.startsWith('Traveler')"
       />
+      <span v-icon:[character.data.element] v-if="character.name.startsWith('Traveler')" />
     </li>
   </ul>
 </template>
@@ -21,17 +21,16 @@
 <script setup>
 import { computed, ref } from 'vue';
 
-import { useAppStore } from '@renderer/core/stores/AppStore';
-import { useFilteredCharacterStore } from '@renderer/core/stores/FilteredCharacterStore';
-import { image } from '@renderer/core/utils';
+import { charactersStore } from '@renderer/core/entities/character/store';
+import { filteredCharacterStore } from '@renderer/core/stores/FilteredCharacterStore';
 
 const el = ref(null);
 
 const emit = defineEmits(['clickCharacter']);
 
 const State = computed(() => ({
-  characters: useFilteredCharacterStore.actions
-    .applyFilters(Object.values(useAppStore.state.characters))
+  characters: filteredCharacterStore.actions
+    .applyFilters(Object.values(charactersStore.state.characters))
     .filter((character) => character.owned)
     .sort((a, b) => b.spentMora - a.spentMora || a.name.localeCompare(b.name)),
 }));
@@ -41,7 +40,7 @@ const actions = {
     e.preventDefault();
     el.value.scrollLeft += e.deltaY;
   },
-  handleclick(character) {
+  handleClick(character) {
     emit('clickCharacter', character);
   },
 };

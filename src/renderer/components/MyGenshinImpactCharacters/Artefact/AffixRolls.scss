@@ -1,0 +1,71 @@
+@import '~styles/utilities.scss';
+
+.artefact-affix-rolls {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+
+  &__item {
+    &--default {
+      @include set-font-scale('xs');
+      letter-spacing: 0.1rem;
+
+      &:not(:first-of-type) {
+        margin-left: rem(4px);
+      }
+
+      &.artefact-affix-rolls__item--common {
+        color: color(common);
+      }
+
+      &.artefact-affix-rolls__item--uncommon {
+        color: color(uncommon);
+      }
+
+      &.artefact-affix-rolls__item--rare {
+        color: color(rare);
+      }
+
+      &.artefact-affix-rolls__item--epic {
+        color: color(epic);
+      }
+    }
+
+    &--bar {
+      height: 20px;
+      width: 7px;
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      background-color: color(grey600);
+
+      &:not(:first-of-type) {
+        margin-left: rem(2px);
+      }
+
+      span {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
+
+      &.artefact-affix-rolls__item--common span {
+        background-color: color(common);
+      }
+
+      &.artefact-affix-rolls__item--uncommon span {
+        background-color: color(uncommon);
+      }
+
+      &.artefact-affix-rolls__item--rare span {
+        background-color: color(rare);
+      }
+
+      &.artefact-affix-rolls__item--epic span {
+        background-color: color(epic);
+      }
+    }
+  }
+}

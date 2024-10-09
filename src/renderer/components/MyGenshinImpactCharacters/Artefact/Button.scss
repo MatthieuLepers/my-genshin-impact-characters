@@ -1,0 +1,63 @@
+@import '~styles/utilities.scss';
+
+.artefact-button {
+  background-color: color(grey800);
+  overflow: hidden;
+  border-radius: 8px;
+  position: relative;
+  padding-bottom: rem(22px);
+  width: 100%;
+  min-height: 96px;
+
+  img {
+    max-height: 32px;
+    width: auto;
+    max-width: 32px;
+  }
+
+  span {
+    &[class^="icon"] {
+      @include set-font-scale('xxl');
+    }
+
+    &:last-of-type {
+      @include set-font-scale('m');
+      color: color(grey900);
+      background-color: color(grey100);
+      width: 100%;
+      display: block;
+      text-align: center;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  &__tooltip {
+    display: none;
+
+    &__sub-stat {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      .artefact-sub-stat__value {
+        white-space: nowrap;
+        margin-right: rem(16px);
+
+        [class*="icon"]::before {
+          margin-right: rem(4px);
+        }
+      }
+    }
+  }
+
+  &__card {
+    width: 100%;
+    position: relative;
+
+    &:hover .artefact-button__tooltip {
+      display: block;
+    }
+  }
+}

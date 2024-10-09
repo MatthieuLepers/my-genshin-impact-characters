@@ -34,27 +34,27 @@ import { useI18n } from 'vue-i18n';
 import Filters from '@renderer/components/MyGenshinImpactCharacters/Filters.vue';
 import CharacterCard from '@renderer/components/MyGenshinImpactCharacters/CharacterCard.vue';
 
-import { useAppStore } from '@renderer/core/stores/AppStore';
-import { useFilteredCharacterStore } from '@renderer/core/stores/FilteredCharacterStore';
+import { charactersStore } from '@renderer/core/entities/character/store';
+import { filteredCharacterStore } from '@renderer/core/stores/FilteredCharacterStore';
 
 defineOptions({ name: 'CharacterListView' });
 
 const { t } = useI18n();
 
 const State = computed(() => ({
-  filteredCharacters: useFilteredCharacterStore.actions
-    .applyFilters(Object.values(useAppStore.state.characters))
-    .filter((character) => !character.name.startsWith('Traveler')),
+  filteredCharacters: filteredCharacterStore.actions
+    .applyFilters(Object.values(charactersStore.state.characters)),
 }));
 
 onBeforeRouteLeave((to, from, next) => {
-  useFilteredCharacterStore.actions.reset();
+  filteredCharacterStore.actions.reset();
   next();
 });
 
 const actions = {
-  handleToggleOwned(character) {
+  async handleToggleOwned(character) {
     character.owned = !character.owned;
+    await character.save();
   },
 };
 </script>

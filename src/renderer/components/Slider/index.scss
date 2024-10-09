@@ -1,0 +1,54 @@
+@import '~styles/utilities.scss';
+
+.m-slider {
+  &__tooltip {
+    @include set-font-scale('s');
+    letter-spacing: 0.1rem;
+    z-index: 1;
+    white-space: nowrap;
+    background-color: color(grey600);
+    border-radius: 2px;
+    color: color(grey000);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: rem(4px) rem(12px);
+    position: relative;
+    font-weight: 600;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      transform: translate(-50%, 50%) rotate(45deg);
+      background-color: inherit;
+      bottom: 0;
+      left: 50%;
+    }
+  }
+
+  &__track {
+    position: absolute;
+    left: 0;
+    top: calc(50% - 4px);
+    height: 8px;
+    background-color: color(secondary200);
+    border-radius: 4px;
+  }
+
+  &__mark {
+    display: block;
+    position: absolute;
+    top: calc(50% - 2px);
+    width: 4px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: color(grey900);
+    z-index: 1;
+
+    &--active {
+      background-color: color(grey100);
+    }
+  }
+}

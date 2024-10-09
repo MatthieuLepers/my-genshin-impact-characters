@@ -1,0 +1,35 @@
+@import '~styles/utilities.scss';
+
+.artefact-sub-stat {
+  @include set-font-scale('s');
+  position: relative;
+  width: 100%;
+  text-align: left;
+  font-weight: 600;
+  display: flex;
+  padding: rem(2px) 0;
+
+  &__value {
+    flex: 1;
+
+    &--base {
+      color: color(base);
+    }
+
+    &--common {
+      color: color(common);
+    }
+
+    &--uncommon {
+      color: color(uncommon);
+    }
+
+    &--rare {
+      color: color(rare);
+    }
+
+    &--epic {
+      color: color(epic);
+    }
+  }
+}

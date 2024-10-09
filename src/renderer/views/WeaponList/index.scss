@@ -1,0 +1,45 @@
+@import '~styles/utilities.scss';
+
+.WeaponListView {
+  padding: rem(8px) rem(8px) 0;
+  max-height: calc(100vh - 30px);
+  overflow-y: auto;
+}
+
+.WeaponCategory {
+  margin-top: rem(8px);
+  padding-right: rem(8px);
+  height: calc(100% - 46px);
+
+  &DataTable {
+    height: calc(100% - 100px);
+  }
+
+  &Img {
+    max-width: 32px;
+    max-height: 32px;
+    width: auto;
+    margin-right: rem(8px);
+  }
+
+  &Tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(4px);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    &Item {
+      @include set-font-scale('xxs');
+      background-color: color(grey700);
+      border-radius: 20px;
+      text-transform: capitalize;
+      padding: 0 rem(4px);
+
+      &--selected {
+        background-color: color(secondary200);
+      }
+    }
+  }
+}
