@@ -44,7 +44,7 @@ const useWeaponsStore = () => {
         || (weapon?.tags ?? []).some((tag) => (i18n.global.te(`App.Weapons.tags.${tag}`) ? i18n.global.t(`App.Weapons.tags.${tag}`) : tag).toLowerCase().includes(state.filters.search.toLowerCase()) || tag.toLowerCase().includes(state.filters.search.toLowerCase()))))
     .sort((a: Weapon, b: Weapon) => TYPE_ORDER.indexOf(a.type) - TYPE_ORDER.indexOf(b.type)
       || b.rarity - a.rarity
-      || b.releasedAt.getTime() - a.releasedAt.getTime()
+      || b.releasedAt!.getTime() - a.releasedAt!.getTime()
       || b.getI18n('name').localeCompare(a.getI18n('name'))));
 
   const ownedList = computed(() => weaponList.value.filter((weapon: Weapon) => weapon.owned));

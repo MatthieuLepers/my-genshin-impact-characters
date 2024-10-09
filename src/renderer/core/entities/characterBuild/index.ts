@@ -9,12 +9,12 @@ import { round } from '@renderer/core/entities/artefact/StatUtils';
 export default class CharacterBuild extends ArtefactPreset<ICharacterBuild> {
   declare characterId: number;
 
-  declare weaponId: number;
+  declare weaponId: string;
 
-  get character(): Character | undefined {
+  get character(): Character {
     return Object
       .values(charactersStore.state.characters)
-      .find((character) => character.id === this.characterId)
+      .find((character) => character.id === this.characterId)!
     ;
   }
 

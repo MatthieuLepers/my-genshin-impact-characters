@@ -7,7 +7,7 @@ export interface ICharacterBuild {
   sandsId: number;
   gobletId: number;
   circletId: number;
-  weaponId: number;
+  weaponId: string;
 }
 
 export interface IRemoteCharacterBuild {

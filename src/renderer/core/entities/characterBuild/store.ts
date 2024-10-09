@@ -16,7 +16,7 @@ const useCharacterBuildsStore = () => {
 
   const sortedByCharacterReleaseDateBuildList = computed(() => Object
     .values(state.builds)
-    .sort((a, b) => b.character.releasedAt.getTime() - a.character.releasedAt.getTime()));
+    .sort((a, b) => b.character.releasedAt!.getTime() - a.character.releasedAt!.getTime()));
 
   const actions = {
     async load() {

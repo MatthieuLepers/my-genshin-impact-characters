@@ -2,14 +2,27 @@ import { ipcRenderer } from 'electron';
 
 import { Weapon, Setting } from '@/main/database/models';
 import JSONWeapons from '@renderer/core/entities/weapon/data.json';
-import type { IWeapon } from '@renderer/core/entities/weapon/i';
 import { serial } from '@/main/utils/PromiseUtils';
+import type { IWeaponI18n } from '@renderer/core/entities/weapon/i18n';
+
+interface IJsonWeapon {
+  type: string;
+  rarity: number;
+  atk: number;
+  statName?: string;
+  statValue?: number;
+  releasedAt?: string;
+  tags?: Array<string>;
+  i18n: Array<IWeaponI18n>;
+}
+
+type TJsonWeaponData = Record<string, IJsonWeapon>;
 
 export const populate = async () => {
   const lastPopulateDateSetting = await Setting.get('lastPopulateDateWeapons', '1970-01-01');
   const done = await serial(Object
-    .entries(JSONWeapons)
-    .filter(([, data]: [string, IWeapon]) => {
+    .entries(JSONWeapons as TJsonWeaponData)
+    .filter(([, data]) => {
       const dataTimestamp = new Date(data?.releasedAt ?? '1970-01-01').getTime();
       const settingsTimestamp = new Date(lastPopulateDateSetting!).getTime();
 
