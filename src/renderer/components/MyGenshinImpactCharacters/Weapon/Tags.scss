@@ -1,0 +1,22 @@
+@import '~styles/utilities.scss';
+
+.WeaponTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(4px);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  &Item {
+    @include set-font-scale('xxs');
+    background-color: color(grey700);
+    border-radius: 20px;
+    text-transform: capitalize;
+    padding: 0 rem(4px);
+
+    &--selected {
+      background-color: color(secondary200);
+    }
+  }
+}

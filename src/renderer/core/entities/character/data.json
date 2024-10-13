@@ -2892,5 +2892,65 @@
         "bonusValue": 36
       }
     ]
+  },
+  "Chasca": {
+    "element": "anemo",
+    "weaponType": "bow",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "SilkenFeather"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 3,
+        "materialId": "SilkenFeather"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 5,
+        "materialId": "SilkenFeather"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 9797,
+        "atk": 346.81,
+        "def": 614.84,
+        "bonusType": "CritRate%",
+        "bonusValue": 19.2
+      }
+    ]
+  },
+  "Ororon": {
+    "element": "electro",
+    "weaponType": "bow",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "LightlessSilkString"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 5,
+        "materialId": "LightlessSilkString"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 3,
+        "materialId": "LightlessSilkString"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 9244,
+        "atk": 244.26,
+        "def": 586.97,
+        "bonusType": "Atk%",
+        "bonusValue": 24
+      }
+    ]
   }
 }

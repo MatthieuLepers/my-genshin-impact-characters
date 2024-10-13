@@ -37,11 +37,15 @@ export default class Weapon extends AbstractI18nEntity<IWeapon> {
 
   declare readonly atk: number;
 
-  declare readonly statName: string;
+  declare readonly statName?: string;
 
-  declare readonly statValue: number;
+  declare readonly statValue?: number;
 
   declare readonly tags: Array<string>;
+
+  declare readonly material: string;
+
+  declare readonly maxRank: number;
 
   constructor(data: IWeapon) {
     super(data, []);
@@ -79,7 +83,7 @@ export default class Weapon extends AbstractI18nEntity<IWeapon> {
   get stats(): Record<string, number> {
     return {
       Atk: this.currentAtk,
-      [this.statName]: this.currentSubStat,
+      [this.statName]: this.currentSubStat ?? 0,
     };
   }
 
@@ -94,7 +98,9 @@ export default class Weapon extends AbstractI18nEntity<IWeapon> {
       return new Weapon({
         ...weapon.dataValues,
         ...data,
-        releasedAt: data.releasedAt ? new Date(data.releasedAt) : undefined,
+        releasedAt: data?.releasedAt ? new Date(data.releasedAt) : undefined,
+        tags: data?.tags ?? [],
+        maxRank: data?.maxRank ?? 5,
       });
     });
   }

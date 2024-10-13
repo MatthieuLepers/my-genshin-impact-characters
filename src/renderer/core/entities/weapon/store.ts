@@ -14,8 +14,6 @@ interface IState {
   filters: IWeaponFilters;
 }
 
-const TYPE_ORDER = ['bow', 'catalyser', 'polearm', 'claymore', 'sword'];
-
 const useWeaponsStore = () => {
   const state = reactive<IState>({
     weapons: {},
@@ -37,15 +35,18 @@ const useWeaponsStore = () => {
     }), {}))
   ;
 
-  const weaponList = computed(() => groupedByTypeWeaponList.value[state.filters.type]
-    .filter((weapon: Weapon) => !state.filters.search.length
-      || (
-        weapon.getI18n('name').toLowerCase().includes(state.filters.search.toLowerCase())
-        || (weapon?.tags ?? []).some((tag) => (i18n.global.te(`App.Weapons.tags.${tag}`) ? i18n.global.t(`App.Weapons.tags.${tag}`) : tag).toLowerCase().includes(state.filters.search.toLowerCase()) || tag.toLowerCase().includes(state.filters.search.toLowerCase()))))
-    .sort((a: Weapon, b: Weapon) => TYPE_ORDER.indexOf(a.type) - TYPE_ORDER.indexOf(b.type)
-      || b.rarity - a.rarity
-      || b.releasedAt!.getTime() - a.releasedAt!.getTime()
-      || b.getI18n('name').localeCompare(a.getI18n('name'))));
+  const groupedByMaterialWeaponList = computed(() => Object
+    .values(state.weapons)
+    .reduce((acc, val) => ({
+      ...acc,
+      [val.material]: [
+        ...(acc?.[val.material] ?? []),
+        val,
+      ],
+    }), {}))
+  ;
+
+  const weaponList = computed(() => groupedByTypeWeaponList.value[state.filters.type]);
 
   const ownedList = computed(() => weaponList.value.filter((weapon: Weapon) => weapon.owned));
 
@@ -57,12 +58,24 @@ const useWeaponsStore = () => {
         [obj.id]: obj,
       }), {});
     },
+    applyFilter(list: Array<Weapon>): Array<Weapon> {
+      return list
+        .filter((weapon: Weapon) => !state.filters.search.length
+        || (
+          weapon.getI18n('name').toLowerCase().includes(state.filters.search.toLowerCase())
+          || (weapon?.tags ?? []).some((tag) => (i18n.global.te(`App.Weapons.tags.${tag}`) ? i18n.global.t(`App.Weapons.tags.${tag}`) : tag).toLowerCase().includes(state.filters.search.toLowerCase()) || tag.toLowerCase().includes(state.filters.search.toLowerCase()))))
+        .sort((a: Weapon, b: Weapon) => b.rarity - a.rarity
+          || b.releasedAt!.getTime() - a.releasedAt!.getTime()
+          || b.getI18n('name').localeCompare(a.getI18n('name')))
+      ;
+    },
   };
 
   return {
     state,
     weaponList,
     groupedByTypeWeaponList,
+    groupedByMaterialWeaponList,
     ownedList,
     actions,
   };

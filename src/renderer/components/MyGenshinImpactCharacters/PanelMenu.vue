@@ -23,7 +23,7 @@
 const modelValue = defineModel({ type: [String, Number, Boolean] });
 
 const props = defineProps({
-  data: { type: Object, default: () => ({}) },
+  data: { type: Array, default: () => [] },
   displayIf: { type: Boolean, default: true },
   displayNavIf: { type: Boolean, default: true },
   /**

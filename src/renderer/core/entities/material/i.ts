@@ -1,4 +1,7 @@
-import type { IMaterialI18n } from '@renderer/core/entities/material/i18n';
+export interface IMaterialI18n {
+  readonly locale: string;
+  readonly name: string;
+}
 
 export interface IDatabaseMaterial {
   readonly id: string;

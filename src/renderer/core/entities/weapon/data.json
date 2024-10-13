@@ -6,6 +6,7 @@
     "statName": "CritDmg%",
     "statValue": 9.6,
     "releasedAt": "2024-06-05",
+    "material": "FragmentOfAnAncientChord",
     "tags": ["wishes", "Clorinde"],
     "i18n": [
       { "locale": "en-EN", "name": "Absolution" },
@@ -19,6 +20,7 @@
     "statName": "Atk%",
     "statValue": 9,
     "releasedAt": "2021-10-13",
+    "material": "CoralBranchOfADistantSea",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Akuoumaru" },
@@ -32,6 +34,7 @@
     "statName": "Atk%",
     "statValue": 6,
     "releasedAt": "2021-04-06",
+    "material": "FettersOfTheDandelionGladiator",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Alley Hunter" },
@@ -45,6 +48,7 @@
     "statName": "Atk%",
     "statValue": 12,
     "releasedAt": "2021-07-21",
+    "material": "CoralBranchOfADistantSea",
     "tags": ["f2p", "inazuma"],
     "i18n": [
       { "locale": "en-EN", "name": "Amenoma Kageuchi" },
@@ -58,6 +62,7 @@
     "statName": "Atk%",
     "statValue": 10.8,
     "releasedAt": "2020-10-28",
+    "material": "FettersOfTheDandelionGladiator",
     "tags": ["wishes", "Ganyu"],
     "i18n": [
       { "locale": "en-EN", "name": "Amos' Bow" },
@@ -69,6 +74,7 @@
     "rarity": 1,
     "atk": 23.25,
     "releasedAt": "2020-10-28",
+    "material": "TileOfDecarabiansTower",
     "i18n": [
       { "locale": "en-EN", "name": "Apprentice's Notes" },
       { "locale": "fr-FR", "name": "Notes de l'apprenti" }
@@ -81,6 +87,7 @@
     "statName": "CritDmg%",
     "statValue": 19.2,
     "releasedAt": "2022-05-31",
+    "material": "LuminousSandsFromGuyun",
     "tags": ["wishes", "Yelan"],
     "i18n": [
       { "locale": "en-EN", "name": "Aqua Simulacra" },
@@ -94,6 +101,7 @@
     "statName": "PhysicalDmg%",
     "statValue": 9,
     "releasedAt": "2020-10-28",
+    "material": "TileOfDecarabiansTower",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Aquila Favonia" },
@@ -107,6 +115,7 @@
     "statName": "HP%",
     "statValue": 9,
     "releasedAt": "2024-08-28",
+    "material": "NightWindsMysticConsideration",
     "tags": ["event"],
     "i18n": [
       { "locale": "en-EN", "name": "Ash-Graven Drinking Horn" },
@@ -120,6 +129,7 @@
     "statName": "EM",
     "statValue": 57.6,
     "releasedAt": "2022-11-02",
+    "material": "OasisGardensReminiscence",
     "tags": ["wishes", "Nahida"],
     "i18n": [
       { "locale": "en-EN", "name": "A Thousand Floating Dreams" },
@@ -133,6 +143,7 @@
     "statName": "ER%",
     "statValue": 6.67,
     "releasedAt": "2023-10-12",
+    "material": "BorealWolfsMilkTooth",
     "tags": ["event"],
     "i18n": [
       { "locale": "en-EN", "name": "Ballad of the Boundless Blue" },
@@ -146,6 +157,7 @@
     "statName": "CritRate%",
     "statValue": 6,
     "releasedAt": "2023-08-16",
+    "material": "BrokenGobletOfThePristineSea",
     "tags": ["bp"],
     "i18n": [
       { "locale": "en-EN", "name": "Ballad of the Fjords" },
@@ -159,6 +171,7 @@
     "statName": "CritRate%",
     "statValue": 7.2,
     "releasedAt": "2023-03-01",
+    "material": "EchoOfScorchingMight",
     "tags": ["wishes", "Dehya"],
     "i18n": [
       { "locale": "en-EN", "name": "Beacon of the Reed Sea" },
@@ -170,6 +183,7 @@
     "rarity": 1,
     "atk": 23.25,
     "releasedAt": "2020-09-28",
+    "material": "FettersOfTheDandelionGladiator",
     "i18n": [
       { "locale": "en-EN", "name": "Beginner's Protector" },
       { "locale": "fr-FR", "name": "Lance du débutant" }
@@ -182,6 +196,7 @@
     "statName": "CritDmg%",
     "statValue": 12,
     "releasedAt": "2020-11-01",
+    "material": "LuminousSandsFromGuyun",
     "tags": ["shop"],
     "i18n": [
       { "locale": "en-EN", "name": "Blackcliff Agate" },
@@ -195,6 +210,7 @@
     "statName": "CritDmg%",
     "statValue": 8,
     "releasedAt": "2020-11-01",
+    "material": "LuminousSandsFromGuyun",
     "tags": ["shop"],
     "i18n": [
       { "locale": "en-EN", "name": "Blackcliff Longsword" },
@@ -208,6 +224,7 @@
     "statName": "CritDmg%",
     "statValue": 12,
     "releasedAt": "2020-11-01",
+    "material": "MistViledLeadElixir",
     "tags": ["shop"],
     "i18n": [
       { "locale": "en-EN", "name": "Blackcliff Pole" },
@@ -221,6 +238,7 @@
     "statName": "CritDmg%",
     "statValue": 12,
     "releasedAt": "2020-11-01",
+    "material": "MistViledLeadElixir",
     "tags": ["shop"],
     "i18n": [
       { "locale": "en-EN", "name": "Blackcliff Slasher" },
@@ -234,6 +252,7 @@
     "statName": "CritDmg%",
     "statValue": 8,
     "releasedAt": "2020-11-01",
+    "material": "LuminousSandsFromGuyun",
     "tags": ["shop"],
     "i18n": [
       { "locale": "en-EN", "name": "Blackcliff Warbow" },
@@ -247,6 +266,7 @@
     "statName": "HP%",
     "statValue": 10.21,
     "releasedAt": "2020-09-28",
+    "material": "GrainOfAerosiderite",
     "i18n": [
       { "locale": "en-EN", "name": "Black Tassel" },
       { "locale": "fr-FR", "name": "Pampille noire" }
@@ -259,6 +279,7 @@
     "statName": "EM",
     "statValue": 40.8,
     "releasedAt": "2020-09-28",
+    "material": "BorealWolfsMilkTooth",
     "i18n": [
       { "locale": "en-EN", "name": "Bloodtainted Greatsword" },
       { "locale": "fr-FR", "name": "Épée sanglante" }
@@ -271,6 +292,7 @@
     "statName": "Ark%",
     "statValue": 3.6,
     "releasedAt": "2022-01-05",
+    "material": "MistViledLeadElixir",
     "tags": ["wishes", "Shenhe"],
     "i18n": [
       { "locale": "en-EN", "name": "Calamity Queller" },
@@ -284,6 +306,7 @@
     "statName": "CritRate%",
     "statValue": 4.8,
     "releasedAt": "2023-10-17",
+    "material": "BrokenGobletOfThePristineSea",
     "tags": ["wishes", "Wriothesley"],
     "i18n": [
       { "locale": "en-EN", "name": "Cashflow Supervision" },
@@ -297,6 +320,7 @@
     "statName": "Atk%",
     "statValue": 6,
     "releasedAt": "2024-08-28",
+    "material": "NightWindsMysticConsideration",
     "tags": ["f2p", "natlan"],
     "i18n": [
       { "locale": "en-EN", "name": "Chain Breaker" },
@@ -310,6 +334,7 @@
     "statName": "Def%",
     "statValue": 15.01,
     "releasedAt": "2021-11-25",
+    "material": "TileOfDecarabiansTower",
     "tags": ["event"],
     "i18n": [
       { "locale": "en-EN", "name": "Cinnabar Spindle" },
@@ -323,6 +348,7 @@
     "statName": "EM",
     "statValue": 36,
     "releasedAt": "2024-06-07",
+    "material": "GrainOfAerosiderite",
     "tags": ["event"],
     "i18n": [
       { "locale": "en-EN", "name": "Cloudforged" },
@@ -336,6 +362,7 @@
     "statName": "PhysicalDmg%",
     "statValue": 15.01,
     "releasedAt": "2020-09-28",
+    "material": "GrainOfAerosiderite",
     "tags": ["f2p", "liyue", "mondstadt"],
     "i18n": [
       { "locale": "en-EN", "name": "Compound Bow" },
@@ -349,6 +376,7 @@
     "statName": "Atk%",
     "statValue": 7.66,
     "releasedAt": "2020-09-28",
+    "material": "TileOfDecarabiansTower",
     "i18n": [
       { "locale": "en-EN", "name": "Cool Steel" },
       { "locale": "fr-FR", "name": "Lame froide" }
@@ -361,6 +389,7 @@
     "statName": "Atk%",
     "statValue": 3.6,
     "releasedAt": "2024-01-31",
+    "material": "MistViledLeadElixir",
     "tags": ["wishes", "Xianyun"],
     "i18n": [
       { "locale": "en-EN", "name": "Crane's Echoing Call" },
@@ -374,6 +403,7 @@
     "statName": "PhysicalDmg%",
     "statValue": 7.51,
     "releasedAt": "2020-09-28",
+    "material": "LuminousSandsFromGuyun",
     "tags": ["f2p", "liyue", "mondstadt"],
     "i18n": [
       { "locale": "en-EN", "name": "Crescent Pike" },
@@ -387,22 +417,11 @@
     "statName": "CritRate%",
     "statValue": 4.8,
     "releasedAt": "2024-04-24",
+    "material": "BrokenGobletOfThePristineSea",
     "tags": ["wishes", "Arlecchino"],
     "i18n": [
       { "locale": "en-EN", "name": "Crimson Moon's Semblance" },
       { "locale": "fr-FR", "name": "Semblance de la lune écarlate" }
-    ]
-  },
-  "DarkIronSword": {
-    "type": "sword",
-    "rarity": 3,
-    "atk": 38.74,
-    "statName": "EM",
-    "statValue": 30.6,
-    "releasedAt": "2020-09-28",
-    "i18n": [
-      { "locale": "en-EN", "name": "Dark Iron Sword" },
-      { "locale": "fr-FR", "name": "Épée en fer noir" }
     ]
   },
   "Deathmatch": {
@@ -412,6 +431,7 @@
     "statName": "CritRate%",
     "statValue": 8,
     "releasedAt": "2020-09-28",
+    "material": "BorealWolfsMilkTooth",
     "tags": ["bp"],
     "i18n": [
       { "locale": "en-EN", "name": "Deathmatch" },
@@ -425,6 +445,7 @@
     "statName": "Atk%",
     "statValue": 7.66,
     "releasedAt": "2020-09-28",
+    "material": "MistViledLeadElixir",
     "i18n": [
       { "locale": "en-EN", "name": "Debate Club" },
       { "locale": "fr-FR", "name": "Épée de la raison" }
@@ -437,6 +458,7 @@
     "statName": "HP%",
     "statValue": 9,
     "releasedAt": "2024-03-14",
+    "material": "CopperTalismanOfTheForestDew",
     "tags": ["event"],
     "i18n": [
       { "locale": "en-EN", "name": "Dialogues of the Desert Sages" },
@@ -450,6 +472,7 @@
     "statName": "Atk%",
     "statValue": 12,
     "releasedAt": "2021-06-17",
+    "material": "BorealWolfsMilkTooth",
     "tags": ["event"],
     "i18n": [
       { "locale": "en-EN", "name": "Dodoco Tales" },
@@ -463,6 +486,7 @@
     "statName": "EM",
     "statValue": 48,
     "releasedAt": "2020-09-28",
+    "material": "MistViledLeadElixir",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Dragon's Bane" },
@@ -476,6 +500,7 @@
     "statName": "PhysicalDmg%",
     "statValue": 15.01,
     "releasedAt": "2020-12-23",
+    "material": "BorealWolfsMilkTooth",
     "tags": ["f2p", "dragonspine"],
     "i18n": [
       { "locale": "en-EN", "name": "Dragonspine Spear" },
@@ -499,6 +524,7 @@
     "statName": "Atk%",
     "statValue": 6,
     "releasedAt": "2024-08-28",
+    "material": "BlazingSacrificialHeartsTerror",
     "tags": ["f2p", "natlan"],
     "i18n": [
       { "locale": "en-EN", "name": "Earth Shaker" },
@@ -512,6 +538,7 @@
     "statName": "ER%",
     "statValue": 12,
     "releasedAt": "2021-03-17",
+    "material": "BorealWolfsMilkTooth",
     "tags": ["wishes", "Venti"],
     "i18n": [
       { "locale": "en-EN", "name": "Elegy for the End" },
@@ -525,6 +552,7 @@
     "statName": "EM",
     "statValue": 20.4,
     "releasedAt": "2020-09-28",
+    "material": "LuminousSandsFromGuyun",
     "i18n": [
       { "locale": "en-EN", "name": "Emerald Orb" },
       { "locale": "fr-FR", "name": "Orbe jadien" }
@@ -537,6 +565,7 @@
     "statName": "ER%",
     "statValue": 10,
     "releasedAt": "2022-08-24",
+    "material": "EchoOfScorchingMight",
     "tags": ["f2p", "sumeru", "fishing"],
     "i18n": [
       { "locale": "en-EN", "name": "End of the Line" },
@@ -550,6 +579,7 @@
     "statName": "ER%",
     "statValue": 12,
     "releasedAt": "2021-09-01",
+    "material": "MaskOfTheWickedLieutenant",
     "tags": ["wishes", "Raiden Shogun"],
     "i18n": [
       { "locale": "en-EN", "name": "Engulfing Lightning" },
@@ -563,6 +593,7 @@
     "statName": "HP%",
     "statValue": 10.8,
     "releasedAt": "2021-09-21",
+    "material": "CoralBranchOfADistantSea",
     "tags": ["wishes", "Sangonomiya Kokomi"],
     "i18n": [
       { "locale": "en-EN", "name": "Everlasting Moonglow" },
@@ -576,6 +607,7 @@
     "statName": "Atk%",
     "statValue": 12,
     "releasedAt": "2020-09-28",
+    "material": "MistViledLeadElixir",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Eye of Perception" },
@@ -589,6 +621,7 @@
     "statName": "ER%",
     "statValue": 6.67,
     "releasedAt": "2022-03-31",
+    "material": "GrainOfAerosiderite",
     "tags": ["event"],
     "i18n": [
       { "locale": "en-EN", "name": "Fading Twilight" },
@@ -602,6 +635,7 @@
     "statName": "ER%",
     "statValue": 10,
     "releasedAt": "2020-09-28",
+    "material": "TileOfDecarabiansTower",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Favonius Codex" },
@@ -615,6 +649,7 @@
     "statName": "ER%",
     "statValue": 13.33,
     "releasedAt": "2020-09-28",
+    "material": "FettersOfTheDandelionGladiator",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Favonius Greatsword" },
@@ -628,6 +663,7 @@
     "statName": "ER%",
     "statValue": 6.67,
     "releasedAt": "2020-09-28",
+    "material": "FettersOfTheDandelionGladiator",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Favonius Lance" },
@@ -641,6 +677,7 @@
     "statName": "ER%",
     "statValue": 13.33,
     "releasedAt": "2020-09-28",
+    "material": "TileOfDecarabiansTower",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Favonius Sword" },
@@ -654,6 +691,7 @@
     "statName": "ER%",
     "statValue": 13.33,
     "releasedAt": "2020-09-28",
+    "material": "FettersOfTheDandelionGladiator",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Favonius Warbow" },
@@ -661,12 +699,13 @@
     ]
   },
   "FerrousShadow": {
-    "type": "sword",
+    "type": "claymore",
     "rarity": 3,
     "atk": 38.74,
     "statName": "HP%",
     "statValue": 7.66,
     "releasedAt": "2020-09-28",
+    "material": "TileOfDecarabiansTower",
     "i18n": [
       { "locale": "en-EN", "name": "Ferrous Shadow" },
       { "locale": "fr-FR", "name": "Ombre ferreuse" }
@@ -679,6 +718,7 @@
     "statName": "ER%",
     "statValue": 10,
     "releasedAt": "2020-12-23",
+    "material": "FettersOfTheDandelionGladiator",
     "tags": ["event"],
     "i18n": [
       { "locale": "en-EN", "name": "Festering Desire" },
@@ -692,6 +732,7 @@
     "statName": "Atk%",
     "statValue": 7.66,
     "releasedAt": "2020-09-28",
+    "material": "MistViledLeadElixir",
     "i18n": [
       { "locale": "en-EN", "name": "Fillet Blade" },
       { "locale": "fr-FR", "name": "Couteau à filets" }
@@ -704,6 +745,7 @@
     "statName": "Atk%",
     "statValue": 6,
     "releasedAt": "2023-08-16",
+    "material": "DrossOfPureSacredDewdrop",
     "tags": ["f2p", "fontaine"],
     "i18n": [
       { "locale": "en-EN", "name": "Finale of the Deep" },
@@ -717,6 +759,7 @@
     "statName": "ER%",
     "statValue": 10,
     "releasedAt": "2023-08-16",
+    "material": "FragmentOfAnAncientChord",
     "tags": ["f2p", "fontaine", "fishing"],
     "i18n": [
       { "locale": "en-EN", "name": "Fleuve Cendre Ferryman" },
@@ -730,6 +773,7 @@
     "statName": "Atk%",
     "statValue": 6,
     "releasedAt": "2023-08-16",
+    "material": "DrossOfPureSacredDewdrop",
     "tags": ["f2p", "fontaine"],
     "i18n": [
       { "locale": "en-EN", "name": "Flowing Purity" },
@@ -743,6 +787,7 @@
     "statName": "Def%",
     "statValue": 15.01,
     "releasedAt": "2024-08-28",
+    "material": "BlazingSacrificialHeartsTerror",
     "tags": ["f2p", "natlan"],
     "i18n": [
       { "locale": "en-EN", "name": "Flute of Ezpitzal" },
@@ -756,6 +801,7 @@
     "statName": "Def%",
     "statValue": 11.26,
     "releasedAt": "2024-08-28",
+    "material": "DeliriousDecadenceOfTheSacredLord",
     "tags": ["f2p", "natlan"],
     "i18n": [
       { "locale": "en-EN", "name": "Footprint of the Rainbow" },
@@ -769,6 +815,7 @@
     "statName": "ER%",
     "statValue": 6.67,
     "releasedAt": "2022-08-24",
+    "material": "CopperTalismanOfTheForestDew",
     "tags": ["f2p", "sumeru"],
     "i18n": [
       { "locale": "en-EN", "name": "Forest Regalia" },
@@ -782,6 +829,7 @@
     "statName": "EM",
     "statValue": 43.2,
     "releasedAt": "2021-06-29",
+    "material": "FettersOfTheDandelionGladiator",
     "tags": ["wishes", "Kaedehara Kazuha"],
     "i18n": [
       { "locale": "en-EN", "name": "Freedom-Sword" },
@@ -795,6 +843,7 @@
     "statName": "Atk%",
     "statValue": 9,
     "releasedAt": "2020-12-23",
+    "material": "FettersOfTheDandelionGladiator",
     "tags": ["f2p", "dragonspine"],
     "i18n": [
       { "locale": "en-EN", "name": "Frostbearer" },
@@ -808,6 +857,7 @@
     "statName": "ER%",
     "statValue": 10,
     "releasedAt": "2022-08-24",
+    "material": "OasisGardensReminiscence",
     "tags": ["f2p", "sumeru"],
     "i18n": [
       { "locale": "en-EN", "name": "Fruit of Fulfillment" },
@@ -821,6 +871,7 @@
     "statName": "ER%",
     "statValue": 6.67,
     "releasedAt": "2021-07-21",
+    "material": "CoralBranchOfADistantSea",
     "tags": ["f2p", "inazuma"],
     "i18n": [
       { "locale": "en-EN", "name": "Hakushin Ring" },
@@ -834,6 +885,7 @@
     "statName": "Atk%",
     "statValue": 5.11,
     "releasedAt": "2020-09-28",
+    "material": "MistViledLeadElixir",
     "i18n": [
       { "locale": "en-EN", "name": "Halberd" },
       { "locale": "fr-FR", "name": "Hallebarde" }
@@ -846,6 +898,7 @@
     "statName": "Atk%",
     "statValue": 12,
     "releasedAt": "2021-07-21",
+    "material": "NarukamisWisdom",
     "tags": ["f2p", "inazuma"],
     "i18n": [
       { "locale": "en-EN", "name": "Hamayumi" },
@@ -859,6 +912,7 @@
     "statName": "CritRate%",
     "statValue": 7.2,
     "releasedAt": "2022-03-30",
+    "material": "NarukamisWisdom",
     "tags": ["wishes", "Kamisato Ayato"],
     "i18n": [
       { "locale": "en-EN", "name": "Haran Geppaku Futsu" },
@@ -872,6 +926,7 @@
     "statName": "CritDmg%",
     "statValue": 10.2,
     "releasedAt": "2020-09-28",
+    "material": "BorealWolfsMilkTooth",
     "i18n": [
       { "locale": "en-EN", "name": "Harbinger of Dawn" },
       { "locale": "fr-FR", "name": "Messager de l'Aube" }
@@ -882,6 +937,7 @@
     "rarity": 1,
     "atk": 23.25,
     "releasedAt": "2020-09-28",
+    "material": "BorealWolfsMilkTooth",
     "i18n": [
       { "locale": "en-EN", "name": "Hunter's Bow" },
       { "locale": "fr-FR", "name": "Arc de chasse" }
@@ -894,6 +950,7 @@
     "statName": "CritRate%",
     "statValue": 9.6,
     "releasedAt": "2022-08-24",
+    "material": "EchoOfScorchingMight",
     "tags": ["wishes", "Tighnari"],
     "i18n": [
       { "locale": "en-EN", "name": "Hunter's Path" },
@@ -907,6 +964,7 @@
     "statName": "Atk%",
     "statValue": 6,
     "releasedAt": "2023-05-25",
+    "material": "CopperTalismanOfTheForestDew",
     "tags": ["event"],
     "i18n": [
       { "locale": "en-EN", "name": "Ibis Piercer" },
@@ -918,6 +976,7 @@
     "rarity": 2,
     "atk": 32.93,
     "releasedAt": "2020-09-28",
+    "material": "FettersOfTheDandelionGladiator",
     "i18n": [
       { "locale": "en-EN", "name": "Iron Point" },
       { "locale": "fr-FR", "name": "Pointe de fer" }
@@ -930,6 +989,7 @@
     "statName": "EM",
     "statValue": 36,
     "releasedAt": "2020-09-28",
+    "material": "GrainOfAerosiderite",
     "tags": ["f2p", "liyue", "mondstadt"],
     "i18n": [
       { "locale": "en-EN", "name": "Iron Sting" },
@@ -943,6 +1003,7 @@
     "statName": "HP%",
     "statValue": 10.8,
     "releasedAt": "2023-05-02",
+    "material": "LuminousSandsFromGuyun",
     "tags": ["wishes", "Baizhu"],
     "i18n": [
       { "locale": "en-EN", "name": "Jadefall's Splendor" },
@@ -956,6 +1017,8 @@
     "statName": "Atk%",
     "statValue": 9,
     "releasedAt": "2022-07-13",
+    "material": "MaskOfTheWickedLieutenant",
+    "maxRank": 1,
     "tags": ["f2p"],
     "i18n": [
       { "locale": "en-EN", "name": "Kagotsurube Isshin" },
@@ -969,6 +1032,7 @@
     "statName": "CritDmg%",
     "statValue": 14.4,
     "releasedAt": "2022-02-16",
+    "material": "MaskOfTheWickedLieutenant",
     "tags": ["wishes", "Yae Miko"],
     "i18n": [
       { "locale": "en-EN", "name": "Kagura's Verity" },
@@ -982,6 +1046,7 @@
     "statName": "ER%",
     "statValue": 10,
     "releasedAt": "2021-07-21",
+    "material": "NarukamisWisdom",
     "tags": ["f2p", "inazuma"],
     "i18n": [
       { "locale": "en-EN", "name": "Katsuragikiri Nagamasa" },
@@ -995,6 +1060,7 @@
     "statName": "HP%",
     "statValue": 14.4,
     "releasedAt": "2022-10-14",
+    "material": "CopperTalismanOfTheForestDew",
     "tags": ["wishes", "Nilou"],
     "i18n": [
       { "locale": "en-EN", "name": "Key of Kahj-Nisut" },
@@ -1008,6 +1074,7 @@
     "statName": "Atk%",
     "statValue": 12,
     "releasedAt": "2022-08-24",
+    "material": "EchoOfScorchingMight",
     "tags": ["f2p", "sumeru"],
     "i18n": [
       { "locale": "en-EN", "name": "King's Squire" },
@@ -1021,6 +1088,7 @@
     "statName": "EM",
     "statValue": 24,
     "releasedAt": "2021-07-21",
+    "material": "MaskOfTheWickedLieutenant",
     "tags": ["f2p", "inazuma"],
     "i18n": [
       { "locale": "en-EN", "name": "Kitain Cross Spear" },
@@ -1034,6 +1102,7 @@
     "statName": "CritDmg%",
     "statValue": 19.2,
     "releasedAt": "2023-01-18",
+    "material": "CopperTalismanOfTheForestDew",
     "tags": ["wishes", "Alhaitham"],
     "i18n": [
       { "locale": "en-EN", "name": "Light of Foliar Incision" },
@@ -1047,6 +1116,7 @@
     "statName": "Atk%",
     "statValue": 9,
     "releasedAt": "2020-09-28",
+    "material": "LuminousSandsFromGuyun",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Lion's Roar" },
@@ -1060,6 +1130,7 @@
     "statName": "Atk%",
     "statValue": 9,
     "releasedAt": "2021-02-23",
+    "material": "LuminousSandsFromGuyun",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Lithic Blade" },
@@ -1073,6 +1144,7 @@
     "statName": "Atk%",
     "statValue": 6,
     "releasedAt": "2021-02-23",
+    "material": "GrainOfAerosiderite",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Lithic Spear" },
@@ -1086,6 +1158,7 @@
     "statName": "CritRate%",
     "statValue": 7.2,
     "releasedAt": "2020-09-28",
+    "material": "FettersOfTheDandelionGladiator",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Lost Prayer to the Sacred Winds" },
@@ -1099,6 +1172,7 @@
     "statName": "CritRate%",
     "statValue": 7.2,
     "releasedAt": "2024-08-06",
+    "material": "BrokenGobletOfThePristineSea",
     "tags": ["wishes", "Emilie"],
     "i18n": [
       { "locale": "en-EN", "name": "Lumidouce Elegy" },
@@ -1112,6 +1186,7 @@
     "statName": "Atk%",
     "statValue": 12,
     "releasedAt": "2021-09-27",
+    "material": "GrainOfAerosiderite",
     "tags": ["event"],
     "i18n": [
       { "locale": "en-EN", "name": "Luxurious Sea-Lord" },
@@ -1125,6 +1200,7 @@
     "statName": "EM",
     "statValue": 40.8,
     "releasedAt": "2020-09-28",
+    "material": "TileOfDecarabiansTower",
     "i18n": [
       { "locale": "en-EN", "name": "Magic Guide" },
       { "locale": "fr-FR", "name": "Guide de magie" }
@@ -1137,6 +1213,7 @@
     "statName": "EM",
     "statValue": 24,
     "releasedAt": "2023-03-03",
+    "material": "FettersOfTheDandelionGladiator",
     "tags": ["event"],
     "i18n": [
       { "locale": "en-EN", "name": "Mailed Flower" },
@@ -1150,6 +1227,7 @@
     "statName": "EM",
     "statValue": 36,
     "releasedAt": "2022-09-28",
+    "material": "EchoOfScorchingMight",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Makhaira Aquamarine" },
@@ -1163,6 +1241,7 @@
     "statName": "EM",
     "statValue": 24,
     "releasedAt": "2020-09-28",
+    "material": "GrainOfAerosiderite",
     "tags": ["f2p", "liyue", "mondstadt"],
     "i18n": [
       { "locale": "en-EN", "name": "Mappa Mare" },
@@ -1176,6 +1255,7 @@
     "statName": "Atk%",
     "statValue": 10.8,
     "releasedAt": "2020-11-11",
+    "material": "GrainOfAerosiderite",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Memory of Dust" },
@@ -1189,6 +1269,7 @@
     "statName": "CritDmg%",
     "statValue": 6.8,
     "releasedAt": "2020-09-28",
+    "material": "MistViledLeadElixir",
     "i18n": [
       { "locale": "en-EN", "name": "Messenger" },
       { "locale": "fr-FR", "name": "Messager" }
@@ -1201,6 +1282,7 @@
     "statName": "Atk%",
     "statValue": 9,
     "releasedAt": "2022-09-29",
+    "material": "BorealWolfsMilkTooth",
     "tags": ["event"],
     "i18n": [
       { "locale": "en-EN", "name": "Lance du vent saisonnier" },
@@ -1214,6 +1296,7 @@
     "statName": "CritDmg%",
     "statValue": 9.6,
     "releasedAt": "2021-07-21",
+    "material": "CoralBranchOfADistantSea",
     "tags": ["wishes", "Kamisato Ayaka"],
     "i18n": [
       { "locale": "en-EN", "name": "Mistsplitter Reforged" },
@@ -1227,6 +1310,7 @@
     "statName": "PhysicalDmg%",
     "statValue": 11.26,
     "releasedAt": "2021-06-09",
+    "material": "TileOfDecarabiansTower",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Mitternachts Waltz" },
@@ -1240,6 +1324,7 @@
     "statName": "EM",
     "statValue": 24,
     "releasedAt": "2022-08-24",
+    "material": "OasisGardensReminiscence",
     "tags": ["f2p", "sumeru"],
     "i18n": [
       { "locale": "en-EN", "name": "Moonpiercer" },
@@ -1253,6 +1338,7 @@
     "statName": "Atk%",
     "statValue": 6,
     "releasedAt": "2021-11-02",
+    "material": "NarukamisWisdom",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Mouun's Moon" },
@@ -1266,6 +1352,7 @@
     "statName": "Atk%",
     "statValue": 6,
     "releasedAt": "2022-02-16",
+    "material": "CoralBranchOfADistantSea",
     "tags": ["event"],
     "i18n": [
       { "locale": "en-EN", "name": "Oathsworn Eye" },
@@ -1277,6 +1364,7 @@
     "rarity": 2,
     "atk": 32.93,
     "releasedAt": "2020-09-28",
+    "material": "BorealWolfsMilkTooth",
     "i18n": [
       { "locale": "en-EN", "name": "Old Merc's Pal" },
       { "locale": "fr-FR", "name": "Lame du mercenaire" }
@@ -1289,6 +1377,7 @@
     "statName": "ER%",
     "statValue": 8.5,
     "releasedAt": "2020-09-28",
+    "material": "FettersOfTheDandelionGladiator",
     "i18n": [
       { "locale": "en-EN", "name": "Otherworldly Story" },
       { "locale": "fr-FR", "name": "Conte d'un autre monde" }
@@ -1299,6 +1388,7 @@
     "rarity": 2,
     "atk": 32.93,
     "releasedAt": "2020-09-28",
+    "material": "TileOfDecarabiansTower",
     "i18n": [
       { "locale": "en-EN", "name": "Pocket Grimoire" },
       { "locale": "fr-FR", "name": "Grimoire de poche" }
@@ -1311,6 +1401,7 @@
     "statName": "CritRate%",
     "statValue": 7.2,
     "releasedAt": "2021-10-13",
+    "material": "MaskOfTheWickedLieutenant",
     "tags": ["wishes", "Tartaglia"],
     "i18n": [
       { "locale": "en-EN", "name": "Polar Star" },
@@ -1324,6 +1415,7 @@
     "statName": "HP%",
     "statValue": 12,
     "releasedAt": "2023-09-27",
+    "material": "BrokenGobletOfThePristineSea",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Portable Power Saw" },
@@ -1337,6 +1429,8 @@
     "statName": "Atk%",
     "statValue": 9,
     "releasedAt": "2021-09-01",
+    "material": "NarukamisWisdom",
+    "maxRank": 1,
     "tags": ["ps4", "Aloy"],
     "i18n": [
       { "locale": "en-EN", "name": "Predator" },
@@ -1350,6 +1444,7 @@
     "statName": "CritRate%",
     "statValue": 9.6,
     "releasedAt": "2021-02-03",
+    "material": "MistViledLeadElixir",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Primordial Jade Cutter" },
@@ -1363,6 +1458,7 @@
     "statName": "CritRate%",
     "statValue": 4.8,
     "releasedAt": "2020-09-28",
+    "material": "LuminousSandsFromGuyun",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Primordial Jade Winged-Spear" },
@@ -1376,6 +1472,7 @@
     "statName": "Atk%",
     "statValue": 6,
     "releasedAt": "2023-10-17",
+    "material": "FragmentOfAnAncientChord",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Prospector's Drill" },
@@ -1389,6 +1486,7 @@
     "statName": "HP%",
     "statValue": 9,
     "releasedAt": "2020-09-28",
+    "material": "MistViledLeadElixir",
     "tags": ["f2p", "liyue", "mondstadt"],
     "i18n": [
       { "locale": "en-EN", "name": "Prototype Amber" },
@@ -1402,6 +1500,7 @@
     "statName": "Atk%",
     "statValue": 6,
     "releasedAt": "2020-09-28",
+    "material": "GrainOfAerosiderite",
     "tags": ["f2p", "liyue", "mondstadt"],
     "i18n": [
       { "locale": "en-EN", "name": "Prototype Archaic" },
@@ -1415,6 +1514,7 @@
     "statName": "Atk%",
     "statValue": 9,
     "releasedAt": "2020-09-28",
+    "material": "MistViledLeadElixir",
     "tags": ["f2p", "liyue", "mondstadt"],
     "i18n": [
       { "locale": "en-EN", "name": "Prototype Crescent" },
@@ -1428,6 +1528,7 @@
     "statName": "PhysicalDmg%",
     "statValue": 7.51,
     "releasedAt": "2020-09-28",
+    "material": "MistViledLeadElixir",
     "tags": ["f2p", "liyue", "mondstadt"],
     "i18n": [
       { "locale": "en-EN", "name": "Prototype Rancour" },
@@ -1441,6 +1542,7 @@
     "statName": "ER%",
     "statValue": 10,
     "releasedAt": "2020-09-28",
+    "material": "GrainOfAerosiderite",
     "tags": ["f2p", "liyue", "mondstadt"],
     "i18n": [
       { "locale": "en-EN", "name": "Prototype Starglitter" },
@@ -1454,6 +1556,7 @@
     "statName": "EM",
     "statValue": 36,
     "releasedAt": "2020-09-28",
+    "material": "MistViledLeadElixir",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Rainslasher" },
@@ -1467,6 +1570,7 @@
     "statName": "Atk%",
     "statValue": 6,
     "releasedAt": "2023-10-17",
+    "material": "FragmentOfAnAncientChord",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Range Gauge" },
@@ -1480,6 +1584,7 @@
     "statName": "EM",
     "statValue": 20.4,
     "releasedAt": "2020-09-28",
+    "material": "TileOfDecarabiansTower",
     "i18n": [
       { "locale": "en-EN", "name": "Raven Bow" },
       { "locale": "fr-FR", "name": "Arc du corbeau" }
@@ -1492,6 +1597,7 @@
     "statName": "HP%",
     "statValue": 10.21,
     "releasedAt": "2020-09-28",
+    "material": "FettersOfTheDandelionGladiator",
     "i18n": [
       { "locale": "en-EN", "name": "Recurve Bow" },
       { "locale": "fr-FR", "name": "Arc courbé" }
@@ -1504,6 +1610,7 @@
     "statName": "CritDmg%",
     "statValue": 19.2,
     "releasedAt": "2021-12-14",
+    "material": "NarukamisWisdom",
     "tags": ["wishes", "Arataki Itto"],
     "i18n": [
       { "locale": "en-EN", "name": "Redhorn Stonethresher" },
@@ -1517,6 +1624,7 @@
     "statName": "HP%",
     "statValue": 6,
     "releasedAt": "2023-08-16",
+    "material": "BrokenGobletOfThePristineSea",
     "tags": ["f2p", "fontaine"],
     "i18n": [
       { "locale": "en-EN", "name": "Rightful Reward" },
@@ -1530,6 +1638,7 @@
     "statName": "HP%",
     "statValue": 9,
     "releasedAt": "2024-08-28",
+    "material": "DeliriousDecadenceOfTheSacredLord",
     "tags": ["f2p", "natlan"],
     "i18n": [
       { "locale": "en-EN", "name": "Ring of Yaxche" },
@@ -1543,6 +1652,7 @@
     "statName": "Atk%",
     "statValue": 9,
     "releasedAt": "2020-09-28",
+    "material": "FettersOfTheDandelionGladiator",
     "tags": ["shop"],
     "i18n": [
       { "locale": "en-EN", "name": "Royal Bow" },
@@ -1556,6 +1666,7 @@
     "statName": "Atk%",
     "statValue": 6,
     "releasedAt": "2020-09-28",
+    "material": "FettersOfTheDandelionGladiator",
     "tags": ["shop"],
     "i18n": [
       { "locale": "en-EN", "name": "Royal Greatsword" },
@@ -1569,6 +1680,7 @@
     "statName": "Atk%",
     "statValue": 6,
     "releasedAt": "2020-09-28",
+    "material": "TileOfDecarabiansTower",
     "tags": ["shop"],
     "i18n": [
       { "locale": "en-EN", "name": "Royal Grimoire" },
@@ -1582,6 +1694,7 @@
     "statName": "Atk%",
     "statValue": 9,
     "releasedAt": "2020-09-28",
+    "material": "TileOfDecarabiansTower",
     "tags": ["shop"],
     "i18n": [
       { "locale": "en-EN", "name": "Royal Longsword" },
@@ -1595,6 +1708,7 @@
     "statName": "Atk%",
     "statValue": 6,
     "releasedAt": "2020-09-28",
+    "material": "MistViledLeadElixir",
     "tags": ["shop"],
     "i18n": [
       { "locale": "en-EN", "name": "Royal Spear" },
@@ -1608,6 +1722,7 @@
     "statName": "Atk%",
     "statValue": 9,
     "releasedAt": "2020-09-28",
+    "material": "LuminousSandsFromGuyun",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Rust" },
@@ -1621,6 +1736,7 @@
     "statName": "ER%",
     "statValue": 6.67,
     "releasedAt": "2020-09-28",
+    "material": "BorealWolfsMilkTooth",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Sacrificial Bow" },
@@ -1634,6 +1750,7 @@
     "statName": "EM",
     "statValue": 48,
     "releasedAt": "2020-09-28",
+    "material": "FettersOfTheDandelionGladiator",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Sacrificial Fragments" },
@@ -1647,6 +1764,7 @@
     "statName": "ER%",
     "statValue": 6.67,
     "releasedAt": "2020-09-28",
+    "material": "BorealWolfsMilkTooth",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Sacrificial Greatsword" },
@@ -1660,6 +1778,7 @@
     "statName": "CritRate%",
     "statValue": 8,
     "releasedAt": "2023-08-16",
+    "material": "LuminousSandsFromGuyun",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Sacrificial Jade" },
@@ -1673,6 +1792,7 @@
     "statName": "ER%",
     "statValue": 13.33,
     "releasedAt": "2020-09-28",
+    "material": "FettersOfTheDandelionGladiator",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Sacrificial Sword" },
@@ -1686,6 +1806,7 @@
     "statName": "ER%",
     "statValue": 6.67,
     "releasedAt": "2022-08-24",
+    "material": "CopperTalismanOfTheForestDew",
     "tags": ["f2p", "sumeru"],
     "i18n": [
       { "locale": "en-EN", "name": "Sapwood Blade" },
@@ -1699,6 +1820,7 @@
     "statName": "CritRate%",
     "statValue": 4,
     "releasedAt": "2023-08-16",
+    "material": "EchoOfScorchingMight",
     "tags": ["bp"],
     "i18n": [
       { "locale": "en-EN", "name": "Scion of the Blazing Sun" },
@@ -1710,6 +1832,7 @@
     "rarity": 2,
     "atk": 32.93,
     "releasedAt": "2020-09-28",
+    "material": "BorealWolfsMilkTooth",
     "i18n": [
       { "locale": "en-EN", "name": "Seasoned Hunter's Bow" },
       { "locale": "fr-FR", "name": "Arc de chasse aguerri" }
@@ -1722,6 +1845,7 @@
     "statName": "CritRate%",
     "statValue": 6,
     "releasedAt": "2020-09-28",
+    "material": "GrainOfAerosiderite",
     "tags": ["bp"],
     "i18n": [
       { "locale": "en-EN", "name": "Serpent Spine" },
@@ -1735,6 +1859,7 @@
     "statName": "CritDmg%",
     "statValue": 10.2,
     "releasedAt": "2020-09-28",
+    "material": "BorealWolfsMilkTooth",
     "i18n": [
       { "locale": "en-EN", "name": "Sharpshooter's Oath" },
       { "locale": "fr-FR", "name": "Serment de l'archer" }
@@ -1747,6 +1872,7 @@
     "statName": "HP%",
     "statValue": 14.4,
     "releasedAt": "2024-06-25",
+    "material": "DrossOfPureSacredDewdrop",
     "tags": ["wishes", "Sigewinne"],
     "i18n": [
       { "locale": "en-EN", "name": "Silverhower Heartstrings" },
@@ -1758,6 +1884,7 @@
     "rarity": 2,
     "atk": 32.93,
     "releasedAt": "2020-09-28",
+    "material": "TileOfDecarabiansTower",
     "i18n": [
       { "locale": "en-EN", "name": "Silver Sword" },
       { "locale": "fr-FR", "name": "Épée en argent" }
@@ -1770,6 +1897,7 @@
     "statName": "PhysicalDmg%",
     "statValue": 9.56,
     "releasedAt": "2020-09-28",
+    "material": "GrainOfAerosiderite",
     "i18n": [
       { "locale": "en-EN", "name": "Skyrider Greatsword" },
       { "locale": "fr-FR", "name": "Grande épée céleste" }
@@ -1782,6 +1910,7 @@
     "statName": "ER%",
     "statValue": 11.33,
     "releasedAt": "2020-09-28",
+    "material": "GrainOfAerosiderite",
     "i18n": [
       { "locale": "en-EN", "name": "Skyrider Sword" },
       { "locale": "fr-FR", "name": "Épée céleste" }
@@ -1794,6 +1923,7 @@
     "statName": "Atk%",
     "statValue": 7.2,
     "releasedAt": "2020-09-28",
+    "material": "BorealWolfsMilkTooth",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Skyward Atlas" },
@@ -1807,6 +1937,7 @@
     "statName": "ER%",
     "statValue": 12,
     "releasedAt": "2020-09-28",
+    "material": "BorealWolfsMilkTooth",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Skyward Blade" },
@@ -1820,6 +1951,7 @@
     "statName": "CritRate%",
     "statValue": 4.8,
     "releasedAt": "2020-09-28",
+    "material": "BorealWolfsMilkTooth",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Skyward Harp" },
@@ -1833,6 +1965,7 @@
     "statName": "ER%",
     "statValue": 8,
     "releasedAt": "2020-09-28",
+    "material": "BorealWolfsMilkTooth",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Skyward Pride" },
@@ -1846,6 +1979,7 @@
     "statName": "ER%",
     "statValue": 8,
     "releasedAt": "2020-09-28",
+    "material": "FettersOfTheDandelionGladiator",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Skyward Spine" },
@@ -1859,6 +1993,7 @@
     "statName": "CritRate%",
     "statValue": 6.8,
     "releasedAt": "2020-09-28",
+    "material": "LuminousSandsFromGuyun",
     "i18n": [
       { "locale": "en-EN", "name": "Slingshot" },
       { "locale": "fr-FR", "name": "Lance-pierres" }
@@ -1871,6 +2006,7 @@
     "statName": "PhysicalDmg%",
     "statValue": 7.51,
     "releasedAt": "2020-12-23",
+    "material": "TileOfDecarabiansTower",
     "tags": ["f2p", "dragonspine"],
     "i18n": [
       { "locale": "en-EN", "name": "Snow-Tombed Starsilver" },
@@ -1884,6 +2020,7 @@
     "statName": "CritRate%",
     "statValue": 6,
     "releasedAt": "2020-09-28",
+    "material": "LuminousSandsFromGuyun",
     "tags": ["bp"],
     "i18n": [
       { "locale": "en-EN", "name": "Solar Pearl" },
@@ -1897,6 +2034,7 @@
     "statName": "PhysicalDmg%",
     "statValue": 4.5,
     "releasedAt": "2021-03-18",
+    "material": "TileOfDecarabiansTower",
     "tags": ["wishes", "Eula"],
     "i18n": [
       { "locale": "en-EN", "name": "Song of Broken Pines" },
@@ -1910,6 +2048,7 @@
     "statName": "Atk%",
     "statValue": 9,
     "releasedAt": "2023-08-16",
+    "material": "FragmentOfAnAncientChord",
     "tags": ["f2p", "fontaine"],
     "i18n": [
       { "locale": "en-EN", "name": "Song of Stillness" },
@@ -1923,6 +2062,7 @@
     "statName": "CritDmg%",
     "statValue": 19.2,
     "releasedAt": "2023-11-08",
+    "material": "DrossOfPureSacredDewdrop",
     "tags": ["wishes", "Furina"],
     "i18n": [
       { "locale": "en-EN", "name": "Splendor of Tranquil Waters" },
@@ -1936,6 +2076,7 @@
     "statName": "CritDmg%",
     "statValue": 14.4,
     "releasedAt": "2021-02-23",
+    "material": "GrainOfAerosiderite",
     "tags": ["wishes", "Hu Tao"],
     "i18n": [
       { "locale": "en-EN", "name": "Staff of Homa" },
@@ -1949,6 +2090,7 @@
     "statName": "CritRate%",
     "statValue": 9.6,
     "releasedAt": "2022-09-28",
+    "material": "OasisGardensReminiscence",
     "tags": ["wishes", "Cyno"],
     "i18n": [
       { "locale": "en-EN", "name": "Staff of the Scarlet Sands" },
@@ -1962,6 +2104,7 @@
     "statName": "Atk%",
     "statValue": 10.8,
     "releasedAt": "2020-12-23",
+    "material": "LuminousSandsFromGuyun",
     "tags": ["wishes", "Albedo"],
     "i18n": [
       { "locale": "en-EN", "name": "Summit Shaper" },
@@ -1975,6 +2118,7 @@
     "statName": "CritDmg%",
     "statValue": 19.2,
     "releasedAt": "2024-08-28",
+    "material": "BlazingSacrificialHeartsTerror",
     "tags": ["wishes", "Mualani"],
     "i18n": [
       { "locale": "en-EN", "name": "Surf's Up" },
@@ -1988,6 +2132,8 @@
     "statName": "Atk%",
     "statValue": 7.66,
     "releasedAt": "2020-09-28",
+    "material": "BorealWolfsMilkTooth",
+    "maxRank": 1,
     "tags": ["ps4", "Traveler"],
     "i18n": [
       { "locale": "en-EN", "name": "Sword of Descension" },
@@ -2001,6 +2147,7 @@
     "statName": "Atk%",
     "statValue": 9,
     "releasedAt": "2023-11-08",
+    "material": "FragmentOfAnAncientChord",
     "tags": ["f2p", "fontaine"],
     "i18n": [
       { "locale": "en-EN", "name": "Sword of Narzissenkreuz" },
@@ -2014,6 +2161,7 @@
     "statName": "CritRate%",
     "statValue": 4,
     "releasedAt": "2023-08-16",
+    "material": "OasisGardensReminiscence",
     "tags": ["bp"],
     "i18n": [
       { "locale": "en-EN", "name": "Talking Stick" },
@@ -2027,6 +2175,7 @@
     "statName": "EM",
     "statValue": 12,
     "releasedAt": "2021-03-17",
+    "material": "TileOfDecarabiansTower",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "The Alley Flash" },
@@ -2040,6 +2189,7 @@
     "statName": "HP%",
     "statValue": 9,
     "releasedAt": "2020-09-28",
+    "material": "TileOfDecarabiansTower",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "The Bell" },
@@ -2053,6 +2203,7 @@
     "statName": "CritRate%",
     "statValue": 6,
     "releasedAt": "2020-09-28",
+    "material": "BorealWolfsMilkTooth",
     "tags": ["bp"],
     "i18n": [
       { "locale": "en-EN", "name": "The Black Sword" },
@@ -2066,6 +2217,7 @@
     "statName": "ER%",
     "statValue": 10,
     "releasedAt": "2021-09-01",
+    "material": "MaskOfTheWickedLieutenant",
     "tags": ["f2p", "mondstadt", "fishing"],
     "i18n": [
       { "locale": "en-EN", "name": "\"The Catch\"" },
@@ -2079,6 +2231,7 @@
     "statName": "HP%",
     "statValue": 9,
     "releasedAt": "2023-09-27",
+    "material": "DrossOfPureSacredDewdrop",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "The Dockhand's Assistant" },
@@ -2092,6 +2245,7 @@
     "statName": "CritDmg%",
     "statValue": 14.4,
     "releasedAt": "2023-08-16",
+    "material": "FragmentOfAnAncientChord",
     "tags": ["wishes", "Linney"],
     "i18n": [
       { "locale": "en-EN", "name": "The First Great Magic" },
@@ -2105,10 +2259,11 @@
     "statName": "Atk%",
     "statValue": 9,
     "releasedAt": "2020-09-28",
+    "material": "BorealWolfsMilkTooth",
     "tags": ["wishes"],
     "i18n": [
-      { "locale": "en-EN", "name": "Flûte" },
-      { "locale": "fr-FR", "name": "The Flute" }
+      { "locale": "en-EN", "name": "The Flute" },
+      { "locale": "fr-FR", "name": "Flûte" }
     ]
   },
   "TheStringless": {
@@ -2118,6 +2273,7 @@
     "statName": "EM",
     "statValue": 36,
     "releasedAt": "2020-09-28",
+    "material": "TileOfDecarabiansTower",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "The Stringless" },
@@ -2131,6 +2287,7 @@
     "statName": "Atk%",
     "statValue": 10.8,
     "releasedAt": "2020-12-01",
+    "material": "MistViledLeadElixir",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "The Unforged" },
@@ -2144,6 +2301,7 @@
     "statName": "CritRate%",
     "statValue": 6,
     "releasedAt": "2020-09-28",
+    "material": "TileOfDecarabiansTower",
     "tags": ["bp"],
     "i18n": [
       { "locale": "en-EN", "name": "The Viridescent Hunt" },
@@ -2157,6 +2315,7 @@
     "statName": "CritDmg%",
     "statValue": 12,
     "releasedAt": "2020-09-28",
+    "material": "BorealWolfsMilkTooth",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "The Widsith" },
@@ -2170,6 +2329,7 @@
     "statName": "HP%",
     "statValue": 7.66,
     "releasedAt": "2020-09-28",
+    "material": "BorealWolfsMilkTooth",
     "i18n": [
       { "locale": "en-EN", "name": "Thrilling Tales of Dragon Slayers" },
       { "locale": "fr-FR", "name": "Histoire des chasseurs de dragon" }
@@ -2182,6 +2342,7 @@
     "statName": "CritDmg%",
     "statValue": 14.4,
     "releasedAt": "2021-08-10",
+    "material": "NarukamisWisdom",
     "tags": ["wishes", "Yoimiya"],
     "i18n": [
       { "locale": "en-EN", "name": "Thundering Pulse" },
@@ -2195,6 +2356,7 @@
     "statName": "Atk%",
     "statValue": 9,
     "releasedAt": "2023-08-16",
+    "material": "BrokenGobletOfThePristineSea",
     "tags": ["f2p", "fontaine"],
     "i18n": [
       { "locale": "en-EN", "name": "Tidal Shadow" },
@@ -2208,6 +2370,7 @@
     "statName": "CritDmg%",
     "statValue": 19.2,
     "releasedAt": "2023-09-27",
+    "material": "DrossOfPureSacredDewdrop",
     "tags": ["wishes", "Neuvillette"],
     "i18n": [
       { "locale": "en-EN", "name": "Tome of the Eternal Flow" },
@@ -2221,6 +2384,7 @@
     "statName": "EM",
     "statValue": 36,
     "releasedAt": "2022-12-15",
+    "material": "NarukamisWisdom",
     "tags": ["event"],
     "i18n": [
       { "locale": "en-EN", "name": "Toukabou Shigure" },
@@ -2234,6 +2398,7 @@
     "statName": "Def%",
     "statValue": 6.37,
     "releasedAt": "2020-09-28",
+    "material": "FettersOfTheDandelionGladiator",
     "i18n": [
       { "locale": "en-EN", "name": "Traveler's Handy Sword" },
       { "locale": "fr-FR", "name": "Épée du voyageur" }
@@ -2246,6 +2411,7 @@
     "statName": "CritDmg%",
     "statValue": 9.6,
     "releasedAt": "2022-12-07",
+    "material": "EchoOfScorchingMight",
     "tags": ["wishes", "Wanderer"],
     "i18n": [
       { "locale": "en-EN", "name": "Tulaytullah's Remembrance" },
@@ -2259,6 +2425,7 @@
     "statName": "CritRate%",
     "statValue": 3.4,
     "releasedAt": "2020-09-28",
+    "material": "MistViledLeadElixir",
     "i18n": [
       { "locale": "en-EN", "name": "Twin Nephrite" },
       { "locale": "fr-FR", "name": "Néphrite jumelle" }
@@ -2271,6 +2438,7 @@
     "statName": "ER%",
     "statValue": 6.67,
     "releasedAt": "2023-12-21",
+    "material": "BrokenGobletOfThePristineSea",
     "tags": ["event"],
     "i18n": [
       { "locale": "en-EN", "name": "\"Ultimate Overlord's Mega Magic Sword\"" },
@@ -2284,6 +2452,7 @@
     "statName": "CritDmg%",
     "statValue": 19.2,
     "releasedAt": "2024-03-13",
+    "material": "CoralBranchOfADistantSea",
     "tags": ["wishes", "Chiori"],
     "i18n": [
       { "locale": "en-EN", "name": "Uraku Misugiri" },
@@ -2297,6 +2466,7 @@
     "statName": "CritRate%",
     "statValue": 4.8,
     "releasedAt": "2023-12-20",
+    "material": "FragmentOfAnAncientChord",
     "tags": ["wishes", "Navia"],
     "i18n": [
       { "locale": "en-EN", "name": "Verdict" },
@@ -2310,6 +2480,7 @@
     "statName": "Atk%",
     "statValue": 10.8,
     "releasedAt": "2020-12-01",
+    "material": "GrainOfAerosiderite",
     "tags": ["wishes", "Zhongly"],
     "i18n": [
       { "locale": "en-EN", "name": "Vortex Vanquisher" },
@@ -2323,6 +2494,7 @@
     "statName": "EM",
     "statValue": 36,
     "releasedAt": "2022-10-14",
+    "material": "OasisGardensReminiscence",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Wandering Evenstar" },
@@ -2334,6 +2506,7 @@
     "rarity": 1,
     "atk": 23.25,
     "releasedAt": "2020-09-28",
+    "material": "BorealWolfsMilkTooth",
     "i18n": [
       { "locale": "en-EN", "name": "Waster Greatsword" },
       { "locale": "fr-FR", "name": "Épée d'entraînement" }
@@ -2346,6 +2519,7 @@
     "statName": "Atk%",
     "statValue": 3,
     "releasedAt": "2021-11-02",
+    "material": "MaskOfTheWickedLieutenant",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Wavebreaker's Fin" },
@@ -2359,6 +2533,7 @@
     "statName": "Def%",
     "statValue": 11.26,
     "releasedAt": "2020-09-28",
+    "material": "LuminousSandsFromGuyun",
     "tags": ["f2p", "liyue", "mondstadt"],
     "i18n": [
       { "locale": "en-EN", "name": "Whiteblind" },
@@ -2366,12 +2541,13 @@
     ]
   },
   "WhiteIronGreatsword": {
-    "type": "sword",
+    "type": "claymore",
     "rarity": 3,
     "atk": 38.74,
     "statName": "Def%",
     "statValue": 9.56,
     "releasedAt": "2020-09-28",
+    "material": "FettersOfTheDandelionGladiator",
     "i18n": [
       { "locale": "en-EN", "name": "White Iron Greatsword" },
       { "locale": "fr-FR", "name": "Grande épée en fer blanc" }
@@ -2384,6 +2560,7 @@
     "statName": "CritRate%",
     "statValue": 5.1,
     "releasedAt": "2020-09-28",
+    "material": "LuminousSandsFromGuyun",
     "i18n": [
       { "locale": "en-EN", "name": "White Tassel" },
       { "locale": "fr-FR", "name": "Pampille blanche" }
@@ -2396,6 +2573,7 @@
     "statName": "EM",
     "statValue": 36,
     "releasedAt": "2021-03-19",
+    "material": "FettersOfTheDandelionGladiator",
     "tags": ["event"],
     "i18n": [
       { "locale": "en-EN", "name": "Windblume Ode" },
@@ -2409,6 +2587,7 @@
     "statName": "ER%",
     "statValue": 6.67,
     "releasedAt": "2021-03-17",
+    "material": "BorealWolfsMilkTooth",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Wine and Song" },
@@ -2422,6 +2601,7 @@
     "statName": "CritRate%",
     "statValue": 6,
     "releasedAt": "2023-08-16",
+    "material": "TileOfDecarabiansTower",
     "tags": ["bp"],
     "i18n": [
       { "locale": "en-EN", "name": "Wolf-Fang" },
@@ -2435,6 +2615,7 @@
     "statName": "Atk%",
     "statValue": 10.8,
     "releasedAt": "2020-09-28",
+    "material": "FettersOfTheDandelionGladiator",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Wolf's Gravestone" },
@@ -2448,6 +2629,7 @@
     "statName": "EM",
     "statValue": 36,
     "releasedAt": "2022-10-14",
+    "material": "CopperTalismanOfTheForestDew",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Xiphos' Moonlight" },
@@ -2461,6 +2643,7 @@
     "statName": "CritRate%",
     "statValue": 2.4,
     "releasedAt": "2024-09-18",
+    "material": "DeliriousDecadenceOfTheSacredLord",
     "tags": ["wishes", "Kinich"],
     "i18n": [
       { "locale": "en-EN", "name": "Fang of the Mountain King" },
@@ -2474,6 +2657,7 @@
     "statName": "Atk%",
     "statValue": 6,
     "releasedAt": "2024-10-09",
+    "material": "BlazingSacrificialHeartsTerror",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Sturdy Bone" },
@@ -2487,6 +2671,7 @@
     "statName": "Def%",
     "statValue": 18,
     "releasedAt": "2024-10-09",
+    "material": "NightWindsMysticConsideration",
     "tags": ["wishes", "Xilonen"],
     "i18n": [
       { "locale": "en-EN", "name": "Peak Patrol Song" },
@@ -2499,6 +2684,7 @@
     "atk": 43.73,
     "statName": "Atk%",
     "statValue": 6,
+    "material": "NightWindsMysticConsideration",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Fruitful Hook" },
@@ -2512,10 +2698,63 @@
     "statName": "ER%",
     "statValue": 6.67,
     "releasedAt": "2024-10-09",
+    "material": "DeliriousDecadenceOfTheSacredLord",
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Mountain Bracing Bolt" },
       { "locale": "fr-FR", "name": "Clou soutenant les montagnes" }
+    ]
+  },
+  "TheCalamityOfTheBlightedSprings": {
+    "type": "bow",
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "Atk%",
+    "statValue": 6,
+    "material": "DeliriousDecadenceOfTheSacredLord",
+    "tags": ["event"],
+    "i18n": [
+      { "locale": "en-EN", "name": "The Calamity of the Blighted Springs" },
+      { "locale": "fr-FR", "name": "La calamité des sources dévastées" }
+    ]
+  },
+  "WaveridingWhirl": {
+    "type": "catalyser",
+    "rarity": 4,
+    "atk": 41.07,
+    "statName": "ER%",
+    "statValue": 13.33,
+    "material": "BlazingSacrificialHeartsTerror",
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Waveriding Whirl" },
+      { "locale": "fr-FR", "name": "Tourbillon sur les vagues" }
+    ]
+  },
+  "FlowerWreathedFeathers": {
+    "type": "catalyser",
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "Atk%",
+    "statValue": 9,
+    "material": "NightWindsMysticConsideration",
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Flower-Wreathed Feathers" },
+      { "locale": "fr-FR", "name": "Plumard de fleurs" }
+    ]
+  },
+  "AstralVulturesCrimsonPlumage": {
+    "type": "bow",
+    "rarity": 4,
+    "atk": 45.94,
+    "statName": "CritDmg%",
+    "statValue": 14.4,
+    "material": "NightWindsMysticConsideration",
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Astral Vulture's Crimson Plumage" },
+      { "locale": "fr-FR", "name": "Plumage cramoisi du vautour astral" }
     ]
   }
 }

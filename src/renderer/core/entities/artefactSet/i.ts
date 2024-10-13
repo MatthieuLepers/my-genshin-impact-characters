@@ -1,5 +1,8 @@
 import type { IArtefactSetPassiveStat } from '@renderer/core/entities/artefactSetPassiveStat/i';
-import type { IArtefactSetI18n } from '@renderer/core/entities/artefactSet/i18n';
+
+export interface IArtefactSetI18n {
+  readonly locale: string;
+}
 
 export interface IArtefactSet {
   readonly id: string;

@@ -1,4 +1,7 @@
-import type { IWeeklyBossI18n } from '@renderer/core/entities/weeklyBoss/i18n';
+export interface IWeeklyBossI18n {
+  readonly locale: string;
+  readonly name: string;
+}
 
 export interface IWeeklyBoss {
   readonly id: string;

@@ -1,0 +1,15 @@
+@import '~styles/utilities.scss';
+
+.WeaponType {
+  &:not(.PanelMenuContainer--solo) {
+    height: calc(100% - 38px);
+  }
+
+  &Filters {
+    margin-top: rem(8px);
+  }
+
+  &DataTable {
+    height: calc(100% - 138px);
+  }
+}

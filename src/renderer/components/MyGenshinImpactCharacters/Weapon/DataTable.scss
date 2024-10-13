@@ -1,0 +1,30 @@
+@import '~styles/utilities.scss';
+
+.WeaponDataTable {
+  .base input {
+    color: color(base);
+  }
+
+  .common input {
+    color: color(common);
+  }
+
+  .uncommon input {
+    color: color(uncommon);
+  }
+
+  .rare input {
+    color: color(rare);
+  }
+
+  .epic input {
+    color: color(epic);
+  }
+
+  &Img {
+    max-width: 32px;
+    max-height: 32px;
+    width: auto;
+    margin-right: rem(8px);
+  }
+}

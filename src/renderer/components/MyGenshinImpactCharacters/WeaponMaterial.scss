@@ -1,0 +1,35 @@
+@import '~styles/utilities.scss';
+
+.WeaponMaterial {
+  padding: 0 rem(4px);
+
+  &Title {
+    @include set-font-scale('m');
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: rem(16px) 0 rem(8px);
+    padding-right: rem(8px);
+    width: 100%;
+    border: 1px solid color(grey800);
+    padding: rem(8px) rem(4px);
+
+    span {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &Img {
+    width: auto;
+    height: 34px;
+    display: block;
+    margin-right: rem(8px);
+  }
+}
+
+.WeaponCategory {
+  margin-top: rem(8px);
+  padding-right: rem(8px);
+  height: calc(100% - 46px);
+}

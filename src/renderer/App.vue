@@ -108,13 +108,17 @@ api.on('update-downloaded', () => {
 
 onBeforeMount(() => {
   api.on('database-ready', async () => {
-    await settingsStore.actions.load();
-    await materialsStore.actions.load();
-    await charactersStore.actions.load();
-    await artefactsStore.actions.load();
-    await artefactPresetsStore.actions.load();
-    await weaponsStore.actions.load();
-    await characterBuildsStore.actions.load();
+    try {
+      await settingsStore.actions.load();
+      await materialsStore.actions.load();
+      await charactersStore.actions.load();
+      await artefactsStore.actions.load();
+      await artefactPresetsStore.actions.load();
+      await weaponsStore.actions.load();
+      await characterBuildsStore.actions.load();
+    } catch (e) {
+      console.log(e);
+    }
 
     await api.invoke('localeChange', settingsStore.actions.getString('locale'));
     locale.value = settingsStore.actions.getString('locale');
