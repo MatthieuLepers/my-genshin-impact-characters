@@ -5,10 +5,17 @@ import JSONCharacters from '@renderer/core/entities/character/data.json';
 import { serial } from '@/main/utils/PromiseUtils';
 import LegacyFile from '@/main/stores/LegacyFile';
 
+interface IJsonCharacter {
+  releasedAt?: string;
+  element: string;
+}
+
+type TJsonCharacterData = Record<string, IJsonCharacter>;
+
 export const populate = async () => {
   const lastPopulateDateSetting = await Setting.get('lastPopulateDateCharacters', '1970-01-01');
   const done = await serial(Object
-    .entries(JSONCharacters)
+    .entries(JSONCharacters as TJsonCharacterData)
     .filter(([, data]) => {
       const dataTimestamp = new Date(data?.releasedAt ?? '1970-01-01').getTime();
       const settingsTimestamp = new Date(lastPopulateDateSetting!).getTime();

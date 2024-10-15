@@ -71,8 +71,8 @@ export default class Weapon extends AbstractI18nEntity<IWeapon> {
       throw new Error('Cannot get currentSubStat for this level!');
     }
     return this.level === 90
-      ? this.statValue * 4.59375
-      : this.statValue * 4.190277777777778
+      ? this.statValue! * 4.59375
+      : this.statValue! * 4.190277777777778
     ;
   }
 
@@ -81,10 +81,11 @@ export default class Weapon extends AbstractI18nEntity<IWeapon> {
   }
 
   get stats(): Record<string, number> {
-    return {
-      Atk: this.currentAtk,
-      [this.statName]: this.currentSubStat ?? 0,
-    };
+    const result = { Atk: this.currentAtk };
+    if (this.statName) {
+      result[this.statName] = this.currentSubStat ?? 0;
+    }
+    return result;
   }
 
   getStat(statName: string): number {

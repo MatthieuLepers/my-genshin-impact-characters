@@ -3,17 +3,9 @@ import { ipcRenderer } from 'electron';
 import { Weapon, Setting } from '@/main/database/models';
 import JSONWeapons from '@renderer/core/entities/weapon/data.json';
 import { serial } from '@/main/utils/PromiseUtils';
-import type { IWeaponI18n } from '@renderer/core/entities/weapon/i18n';
 
 interface IJsonWeapon {
-  type: string;
-  rarity: number;
-  atk: number;
-  statName?: string;
-  statValue?: number;
   releasedAt?: string;
-  tags?: Array<string>;
-  i18n: Array<IWeaponI18n>;
 }
 
 type TJsonWeaponData = Record<string, IJsonWeapon>;
