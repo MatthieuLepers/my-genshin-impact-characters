@@ -14,14 +14,16 @@
   }
 
   &--checked {
+    box-shadow: 0 0 0 2px color(common);
+
     &::before {
       @include icon('check');
       @include set-font-scale('xs');
-      color: color(success300);
+      color: color(grey100);
       width: 18px;
       height: 18px;
       border-radius: 0 0 0 50%;
-      background-color: color(grey100);
+      background-color: color(common);
       display: block;
       position: absolute;
       top: 0;

@@ -208,6 +208,10 @@
         white-space: nowrap;
         margin-right: rem(16px);
       }
+
+      .artefact-sub-stat:first-of-type {
+        white-space: nowrap;
+      }
     }
   }
 }

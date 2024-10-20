@@ -23,6 +23,7 @@
     display: flex;
     flex-direction: column;
     flex: 0 0 66%;
+    justify-content: space-between;
   }
 
   &__list {
@@ -32,7 +33,6 @@
     display: flex;
     flex-wrap: wrap;
     gap: rem(8px);
-    flex: 1;
     max-height: calc(100% - 48px);
     overflow: auto;
 

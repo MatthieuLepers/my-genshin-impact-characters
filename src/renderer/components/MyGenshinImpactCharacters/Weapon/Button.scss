@@ -39,6 +39,10 @@
         white-space: nowrap;
         margin-right: rem(16px);
       }
+
+      &>li:first-of-type {
+        white-space: nowrap;
+      }
     }
   }
 

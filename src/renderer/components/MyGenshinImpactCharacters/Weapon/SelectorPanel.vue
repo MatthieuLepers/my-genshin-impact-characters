@@ -79,8 +79,8 @@ const form = reactive({
 });
 
 const State = computed(() => ({
-  weaponList: weaponsStore
-    .groupedByTypeWeaponList.value[props.type]
+  weaponList: weaponsStore.actions
+    .applyFilter(weaponsStore.groupedByTypeWeaponList.value[props.type])
     .filter((weapon) => [80, 90].includes(weapon.level)),
 }));
 
@@ -93,6 +93,14 @@ const actions = {
 
 watch(() => props.formData.weapon, (newVal) => {
   form.weapon = newVal;
+});
+
+watch(() => modelValue.value, () => {
+  if (props.formData.weapon) {
+    weaponsStore.state.current = props.formData.weapon;
+  } else {
+    [weaponsStore.state.current] = State.value.weaponList;
+  }
 });
 </script>
 
