@@ -2684,6 +2684,7 @@
     "atk": 43.73,
     "statName": "Atk%",
     "statValue": 6,
+    "releasedAt": "2024-10-29",
     "material": "NightWindsMysticConsideration",
     "tags": ["wishes"],
     "i18n": [
