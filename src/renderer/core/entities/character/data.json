@@ -2894,6 +2894,7 @@
     ]
   },
   "Chasca": {
+    "releasedAt": "2024-11-20",
     "element": "anemo",
     "weaponType": "bow",
     "aptitudes": [
@@ -2924,6 +2925,7 @@
     ]
   },
   "Ororon": {
+    "releasedAt": "2024-11-20",
     "element": "electro",
     "weaponType": "bow",
     "aptitudes": [
