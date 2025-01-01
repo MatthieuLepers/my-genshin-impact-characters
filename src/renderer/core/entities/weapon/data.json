@@ -2761,5 +2761,33 @@
       { "locale": "en-EN", "name": "Astral Vulture's Crimson Plumage" },
       { "locale": "fr-FR", "name": "Plumage cramoisi du vautour astral" }
     ]
+  },
+  "AThousandBlazingSuns": {
+    "type": "claymore",
+    "rarity": 5,
+    "atk": 49.14,
+    "statName": "CritRate%",
+    "statValue": 2.4,
+    "releasedAt": "2025-01-01",
+    "material": "BlazingSacrificialHeartsTerror",
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "A Thousand Blazing Suns" },
+      { "locale": "fr-FR", "name": "Mille soleils brûlants" }
+    ]
+  },
+  "StarcallersWatch": {
+    "type": "catalyser",
+    "rarity": 5,
+    "atk": 44.34,
+    "statName": "EM",
+    "statValue": 57.6,
+    "releasedAt": "2025-01-01",
+    "material": "DeliriousDecadenceOfTheSacredLord",
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Starcaller's Watch" },
+      { "locale": "fr-FR", "name": "Veillée du meneur d'étoiles" }
+    ]
   }
 }

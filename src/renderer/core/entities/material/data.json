@@ -238,5 +238,29 @@
       { "locale": "en-EN", "name": "Denial and Judgment" },
       { "locale": "fr-FR", "name": "Verdict négatif" }
     ]
+  },
+  "ErodedHorn": {
+    "bossId": "LordOfErodedPrimalFire",
+    "releasedAt": "2025-01-01",
+    "i18n": [
+      { "locale": "en-EN", "name": "Eroded Horn" },
+      { "locale": "fr-FR", "name": "Corne érodé" }
+    ]
+  },
+  "ErodedSunfire": {
+    "bossId": "LordOfErodedPrimalFire",
+    "releasedAt": "2025-01-01",
+    "i18n": [
+      { "locale": "en-EN", "name": "Eroded Sunfire" },
+      { "locale": "fr-FR", "name": "Rayon érodé" }
+    ]
+  },
+  "ErodedScaleFeather": {
+    "bossId": "LordOfErodedPrimalFire",
+    "releasedAt": "2025-01-01",
+    "i18n": [
+      { "locale": "en-EN", "name": "Eroded Scale-Feather" },
+      { "locale": "fr-FR", "name": "Plume érodée" }
+    ]
   }
 }

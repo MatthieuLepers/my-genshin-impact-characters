@@ -2954,5 +2954,98 @@
         "bonusValue": 24
       }
     ]
+  },
+  "Mavuika": {
+    "releasedAt": "2025-01-01",
+    "element": "pyro",
+    "weaponType": "claymore",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "ErodedHorn"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 5,
+        "materialId": "ErodedHorn"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 3,
+        "materialId": "ErodedHorn"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 12552,
+        "atk": 358.77,
+        "def": 791.61,
+        "bonusType": "CritDmg%",
+        "bonusValue": 38.4
+      }
+    ]
+  },
+  "Citlali": {
+    "releasedAt": "2025-01-01",
+    "element": "cryo",
+    "weaponType": "catalyser",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "DenialAndJudgment"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 3,
+        "materialId": "DenialAndJudgment"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 5,
+        "materialId": "DenialAndJudgment"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 11634,
+        "atk": 126.76,
+        "def": 763.17,
+        "bonusType": "EM",
+        "bonusValue": 115.2
+      }
+    ]
+  },
+  "Lan Yan": {
+    "releasedAt": "2025-01-22",
+    "element": "anemo",
+    "weaponType": "catalyser",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "ErodedSunfire"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 3,
+        "materialId": "ErodedSunfire"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 5,
+        "materialId": "ErodedSunfire"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 9244,
+        "atk": 250.63,
+        "def": 580.14,
+        "bonusType": "Atk%",
+        "bonusValue": 24
+      }
+    ]
   }
 }

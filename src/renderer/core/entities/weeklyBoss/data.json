@@ -68,5 +68,12 @@
       { "locale": "en-EN", "name": "The Knave" },
       { "locale": "fr-FR", "name": "Arlecchino" }
     ]
+  },
+  "LordOfErodedPrimalFire": {
+    "releasedAt": "2025-01-01",
+    "i18n": [
+      { "locale": "en-EN", "name": "Lord of Eroded Primal Fire" },
+      { "locale": "fr-FR", "name": "Érodé seigneur du feu primordial" }
+    ]
   }
 }
