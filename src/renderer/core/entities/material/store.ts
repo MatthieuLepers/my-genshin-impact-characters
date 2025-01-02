@@ -13,9 +13,18 @@ const useMaterialsStore = () => {
 
   const materialGroupedByBossId = computed(() => Object
     .values(state.materials)
+    .filter((material) => !!material.bossId)
     .reduce((acc, material) => ({
       ...acc,
       [material.bossId]: [...(acc[material.bossId] ?? []), material],
+    }), {}));
+
+  const specialMaterialList = computed(() => Object
+    .values(state.materials)
+    .filter((material) => !material.bossId)
+    .reduce((acc, material) => ({
+      ...acc,
+      [material.id]: material,
     }), {}));
 
   const actions = {
@@ -31,6 +40,7 @@ const useMaterialsStore = () => {
   return {
     state,
     materialGroupedByBossId,
+    specialMaterialList,
     actions,
   };
 };

@@ -239,6 +239,13 @@
       { "locale": "fr-FR", "name": "Verdict négatif" }
     ]
   },
+  "TheCornerstoneOfStarsAndFlames": {
+    "releasedAt": "2025-01-02",
+    "i18n": [
+      { "locale": "en-EN", "name": "The Cornerstone of Stars and Flames" },
+      { "locale": "fr-FR", "name": "Pierre angulaire des étoiles et des flammes" }
+    ]
+  },
   "ErodedHorn": {
     "bossId": "LordOfErodedPrimalFire",
     "releasedAt": "2025-01-01",

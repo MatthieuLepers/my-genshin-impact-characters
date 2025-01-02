@@ -38,6 +38,7 @@ export default {
     selectOwnedCharacters: 'Séléctionnez les personnages que vous possédez',
     myWeapons: 'Mes armes',
     BossMaterial: {
+      specials: 'Spéciaux',
       columns: {
         character: 'Personnage',
         owned: 'Possédé',

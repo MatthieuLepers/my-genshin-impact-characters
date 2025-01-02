@@ -20,6 +20,17 @@
           :characters="state.characters[material.id]"
         />
       </div>
+      <div>
+        <h3 class="BossTitle" v-if="actions.filteredCharacters().length">
+          <span>[{{ actions.totalInvestedBossMaterial() }}/{{ actions.totalBossMaterial() }}]</span> {{ t('App.BossMaterial.specials') }}
+        </h3>
+        <BossMaterial
+          v-for="material in materialsStore.specialMaterialList.value"
+          :key="material.id"
+          :material="material"
+          :characters="state.characters[material.id]"
+        />
+      </div>
 
       <MaterialModal
         name="newlyReleasedCharactersModal"
@@ -76,16 +87,24 @@ const state = reactive({
 });
 
 const actions = {
-  totalBossMaterial(bossId) {
-    return materialsStore.materialGroupedByBossId.value[bossId]
+  totalBossMaterial(bossId = null) {
+    const materials = !bossId
+      ? Object.values(materialsStore.specialMaterialList.value)
+      : materialsStore.materialGroupedByBossId.value[bossId]
+    ;
+    return materials
       .reduce((acc, material) => acc + actions.getMaxMaterial(material.id), 0)
     ;
   },
   getMaxMaterial(materialId) {
     return (state.characters[materialId] ?? []).reduce((acc, character) => acc + character.getMaxMaterial(materialId), 0);
   },
-  totalInvestedBossMaterial(bossId) {
-    return materialsStore.materialGroupedByBossId.value[bossId]
+  totalInvestedBossMaterial(bossId = null) {
+    const materials = !bossId
+      ? Object.values(materialsStore.specialMaterialList.value)
+      : materialsStore.materialGroupedByBossId.value[bossId]
+    ;
+    return materials
       .reduce((acc, material) => acc + actions.getOwnedAndInvestedMaterials(material.id), 0)
     ;
   },
@@ -104,8 +123,11 @@ const actions = {
       bossMaterialElement.scrollIntoView();
     });
   },
-  filteredCharacters(bossId) {
-    const materials = materialsStore.materialGroupedByBossId.value[bossId];
+  filteredCharacters(bossId = null) {
+    const materials = !bossId
+      ? Object.values(materialsStore.specialMaterialList.value)
+      : materialsStore.materialGroupedByBossId.value[bossId]
+    ;
     const result = Object.keys(state.characters)
       .filter((materialId) => materials.some(({ id }) => id === materialId))
       .reduce((acc, materialId) => [

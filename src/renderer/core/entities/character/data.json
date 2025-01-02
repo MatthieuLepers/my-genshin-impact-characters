@@ -2955,6 +2955,40 @@
       }
     ]
   },
+  "Traveler-Pyro": {
+    "releasedAt": "2025-01-02",
+    "element": "pyro",
+    "weaponType": "sword",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "TheCornerstoneOfStarsAndFlames",
+        "materialCost": [0, 0, 0, 0, 0, 0, 1, 1, 1, 1]
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 35,
+        "materialId": "TheCornerstoneOfStarsAndFlames",
+        "materialCost": [0, 0, 0, 0, 0, 0, 1, 1, 1, 1]
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 5,
+        "materialId": "TheCornerstoneOfStarsAndFlames",
+        "materialCost": [0, 0, 0, 0, 0, 0, 1, 1, 1, 1]
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 10875,
+        "atk": 212.4,
+        "def": 682.52,
+        "bonusType": "Atk%",
+        "bonusValue": 24
+      }
+    ]
+  },
   "Mavuika": {
     "releasedAt": "2025-01-01",
     "element": "pyro",

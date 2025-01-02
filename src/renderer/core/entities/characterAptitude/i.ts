@@ -6,4 +6,5 @@ export interface ICharacterAptitude {
   constellationIncrease: number;
   constellationIncreaseBonus: number;
   materialId: string;
+  materialCost: Array<number>;
 }

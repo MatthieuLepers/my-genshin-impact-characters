@@ -22,7 +22,7 @@ export default class CharacterAptitude extends AbstractEntity<ICharacterAptitude
     data: ICharacterAptitude,
     public character: Character,
   ) {
-    super(data, []);
+    super(data, ['materialCost']);
   }
 
   get smartLevel(): number {
@@ -46,6 +46,10 @@ export default class CharacterAptitude extends AbstractEntity<ICharacterAptitude
     return [0, 12.5, 17.5, 25, 30, 37.5, 120, 260, 450, 700].slice(0, this.realLevel - 1).reduce((acc, val) => acc + val, 0) * 1000;
   }
 
+  get materialCost(): Array<number> {
+    return this.data.materialCost ?? [0, 0, 0, 0, 0, 0, 1, 1, 2, 2];
+  }
+
   getBonusValue(): number {
     let bonus = 0;
     if (this.constellationIncrease > 0 && this.constellationIncrease <= this.character.constellation) {
@@ -66,7 +70,7 @@ export default class CharacterAptitude extends AbstractEntity<ICharacterAptitude
   }
 
   getMaterialForLevel(level: number): number {
-    return [0, 0, 0, 0, 0, 0, 1, 1, 2, 2]
+    return this.materialCost
       .slice(0, level)
       .reduce((acc, val) => acc + val, 0)
     ;
