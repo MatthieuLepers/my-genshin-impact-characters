@@ -2789,5 +2789,32 @@
       { "locale": "en-EN", "name": "Starcaller's Watch" },
       { "locale": "fr-FR", "name": "Veillée du meneur d'étoiles" }
     ]
+  },
+  "SunnyMorningSleepIn": {
+    "type": "catalyser",
+    "rarity": 5,
+    "atk": 44.34,
+    "statName": "EM",
+    "statValue": 57.6,
+    "releasedAt": "2025-02-12",
+    "material": "NarukamisWisdom",
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Sunny Morning Sleep-In" },
+      { "locale": "fr-FR", "name": "Hibernation matinale du Nouvel An" }
+    ]
+  },
+  "TamayurateiNoOhanashi": {
+    "type": "polearm",
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "ER%",
+    "statValue": 6.67,
+    "material": "MaskOfTheWickedLieutenant",
+    "tags": ["event"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Tamayuratei no Ohanashi" },
+      { "locale": "fr-FR", "name": "Tamayuratei no Ohanashi" }
+    ]
   }
 }
