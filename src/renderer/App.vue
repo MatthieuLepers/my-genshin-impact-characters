@@ -44,6 +44,7 @@ import { artefactPresetsStore } from '@renderer/core/entities/artefactPreset/sto
 import { weaponsStore } from '@renderer/core/entities/weapon/store';
 import { characterBuildsStore } from '@renderer/core/entities/characterBuild/store';
 import Shortcut from '@renderer/core/Shortcut';
+import { api } from '@renderer/core/api';
 
 const { t, locale } = useI18n();
 
@@ -120,14 +121,18 @@ onBeforeMount(() => {
       console.log(e);
     }
 
-    await api.invoke('localeChange', settingsStore.actions.getString('locale'));
-    locale.value = settingsStore.actions.getString('locale');
+    await api.invoke('localeChange', settingsStore.actions.getString('locale', 'en-EN'));
+    locale.value = settingsStore.actions.getString('locale', 'en-EN');
 
     state.loading = false;
   });
   api.on('populateProgress', (data) => {
     state.populate = data;
   });
+
+  if (api.isWeb) {
+    api.send('database-ready');
+  }
 });
 </script>
 

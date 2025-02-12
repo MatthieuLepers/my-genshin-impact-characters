@@ -2,6 +2,7 @@ import AbstractI18nEntity from '@renderer/core/entities/AbstractI18nEntity';
 import type { IWeapon, IRemoteWeapon } from '@renderer/core/entities/weapon/i';
 import { image } from '@renderer/core/utils';
 import WeaponData from '@renderer/core/entities/weapon/data.json';
+import { api } from '@renderer/core/api';
 
 const WEAPON_STAT_TYPES = {
   type549: [15.070818070818072, 13.177045177045176],

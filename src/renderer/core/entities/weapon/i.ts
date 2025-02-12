@@ -24,5 +24,5 @@ export interface IWeapon extends IDatabaseWeapon {
 }
 
 export interface IRemoteWeapon {
-  dataValues: IWeapon;
+  dataValues: IDatabaseWeapon;
 }

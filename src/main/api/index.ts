@@ -36,4 +36,5 @@ export default {
   plateform: APP_PLATEFORM,
   clipboard,
   isDev: IS_DEV,
+  isWeb: false,
 };

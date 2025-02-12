@@ -4,6 +4,7 @@ import type WeeklyBoss from '@renderer/core/entities/weeklyBoss';
 import { weeklyBossesStore } from '@renderer/core/entities/weeklyBoss/store';
 import { image } from '@renderer/core/utils';
 import MaterialData from '@renderer/core/entities/material/data.json';
+import { api } from '@renderer/core/api';
 
 export default class Material extends AbstractI18nEntity<IMaterial> {
   declare readonly id: string;

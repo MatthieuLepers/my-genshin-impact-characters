@@ -27,7 +27,7 @@ const useSettingsStore = () => {
       return state.settings[key].save();
     },
     getBoolean(key: string, defaultValue?: boolean): boolean {
-      return state.settings?.[key]?.value === 'true' ?? defaultValue ?? false;
+      return state.settings?.[key]?.value === 'true' || defaultValue || false;
     },
     async setBoolean(key: string, value: boolean): Promise<Setting | null> {
       if (state.settings[key]) {

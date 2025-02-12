@@ -5,6 +5,7 @@ import type ArtefactSet from '@renderer/core/entities/artefactSet';
 import { getRealValue } from '@renderer/core/entities/artefact/StatUtils';
 import { image } from '@renderer/core/utils';
 import ArtefactMainStatData from '@renderer/core/datas/ArtefactMainStat.json';
+import { api } from '@renderer/core/api';
 
 export default class Artefact extends AbstractEntity<IArtefact> {
   declare readonly id: number;

@@ -2,6 +2,7 @@ import AbstractEntity from '@renderer/core/entities/AbstractEntity';
 import { IArtefactPreset, IRemoteArtefactPreset } from '@renderer/core/entities/artefactPreset/i';
 import { artefactsStore } from '@renderer/core/entities/artefact/store';
 import type Artefact from '@renderer/core/entities/artefact';
+import { api } from '@renderer/core/api';
 
 export default class ArtefactPreset<T extends IArtefactPreset = IArtefactPreset> extends AbstractEntity<T> {
   declare readonly id: number;

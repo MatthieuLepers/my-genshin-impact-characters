@@ -15,7 +15,7 @@
         <span v-icon:help />
       </button>
       <button
-        v-if="props.minimizable"
+        v-if="!api.isWeb && props.minimizable"
         type="button"
         class="m-title-bar__button"
         @click="actions.minimize"
@@ -23,14 +23,14 @@
         <span v-icon:minimize />
       </button>
       <button
-        v-if="props.maximizable || props.minimizable"
+        v-if="!api.isWeb && (props.maximizable || props.minimizable)"
         :disabled="!props.maximizable"
         class="m-title-bar__button"
         @click="actions.maximize">
         <span v-icon:maximize />
       </button>
       <button
-        v-if="props.closable"
+        v-if="!api.isWeb && props.closable"
         :class="GenerateModifiers('m-title-bar__button', { close: true })"
         @click="actions.close"
       >
@@ -41,6 +41,8 @@
 </template>
 
 <script setup>
+import { api } from '@renderer/core/api';
+
 defineOptions({ name: 'TitleBar' });
 
 const emit = defineEmits(['help']);

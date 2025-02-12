@@ -5,6 +5,7 @@ import ArtefactPreset from '@renderer/core/entities/artefactPreset';
 import type Character from '@renderer/core/entities/character';
 import type Weapon from '@renderer/core/entities/weapon';
 import { round } from '@renderer/core/entities/artefact/StatUtils';
+import { api } from '@renderer/core/api';
 
 export default class CharacterBuild extends ArtefactPreset<ICharacterBuild> {
   declare characterId: number;

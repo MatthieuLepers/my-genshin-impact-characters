@@ -6,7 +6,8 @@ import type { ICharacterAptitude } from '@renderer/core/entities/characterAptitu
 import type { ICharacterPassiveStat } from '@renderer/core/entities/characterPassiveStat/i';
 import { image } from '@renderer/core/utils';
 import CharacterData from '@renderer/core/entities/character/data.json';
-import { settingsStore } from '../setting/store';
+import { settingsStore } from '@renderer/core/entities/setting/store';
+import { api } from '@renderer/core/api';
 
 const PHASES = [
   (level: number): boolean => level > 0 && level <= 20,

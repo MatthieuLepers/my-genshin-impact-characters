@@ -4,6 +4,7 @@ import type { OpenDialogOptions, SaveDialogOptions } from 'electron';
 import Artefact from '@renderer/core/entities/artefact';
 import type { IArtefact } from '@renderer/core/entities/artefact/i';
 import type ArtefactSet from '@renderer/core/entities/artefactSet';
+import { api } from '@renderer/core/api';
 
 interface ArtefactFilters {
   type: Array<string>;
