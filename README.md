@@ -1,6 +1,6 @@
 # My Genshin Impact characters
 
-[![GitHub release](https://img.shields.io/badge/Version-2.0.5-blue)](https://github.com/MatthieuLepers/my-genshin-impact-characters/releases/latest)
+[![GitHub release](https://img.shields.io/badge/Version-2.0.8-blue)](https://github.com/MatthieuLepers/my-genshin-impact-characters/releases/latest)
 [![GitHub release](https://img.shields.io/badge/Platform-Windows-orange)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 [![GitHub release](https://img.shields.io/badge/Node-16.20.2-green)](https://nodejs.org/download/release/v16.20.2/)
 [![GitHub release](https://img.shields.io/badge/License-GNU%20GPLv3-blue)](https://www.gnu.org/licenses/gpl-3.0.en.html)
@@ -30,7 +30,7 @@ See application reputation & windows smart screen [here](https://www.digicert.co
 **⚠️ You should definitely read this part before making a contribution**
 
 ### Installation
-Just clone the repository, run `npm install` to install all node dependencies, then run `npm run dev` to start the application.
+Just clone the repository, run `npm install` to install all node dependencies, then run `npm run dev` or `npm run dev:web` to start the application.
 
 ### Pull requests
 Please apply the naming convention when you create a branch:
