@@ -8,3 +8,13 @@ export interface ICharacterAptitude {
   materialId: string;
   materialCost: Array<number>;
 }
+
+export interface ICharacterAptitudeJson {
+  readonly type: string;
+  readonly phaseIncrease?: number;
+  readonly phaseIncreaseBonus?: number;
+  readonly constellationIncrease?: number;
+  readonly constellationIncreaseBonus?: number;
+  readonly materialId: string;
+  readonly materialCost?: Array<number>;
+}

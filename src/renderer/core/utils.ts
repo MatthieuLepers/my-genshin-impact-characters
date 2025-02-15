@@ -37,7 +37,7 @@ export function generatePermutations<T>(input: Array<T>, length: number): Array<
 
 export function image(path: string): string {
   if (api.isDev) return `/${path}`;
-  return process.env.NODE_ENV === 'production'
+  return process.env.NODE_ENV === 'production' && api.isWeb
     ? `/my-genshin-impact-characters/${path}`
     : path
   ;

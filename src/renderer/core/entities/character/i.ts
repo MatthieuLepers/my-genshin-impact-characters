@@ -1,4 +1,4 @@
-import type { ICharacterAptitude } from '@renderer/core/entities/characterAptitude/i';
+import type { ICharacterAptitude, ICharacterAptitudeJson } from '@renderer/core/entities/characterAptitude/i';
 import type { ICharacterStat } from '@renderer/core/entities/characterStat/i';
 import type { ICharacterPassiveStat } from '@renderer/core/entities/characterPassiveStat/i';
 
@@ -17,6 +17,15 @@ export interface ICharacter extends IDatabaseCharacter {
   readonly element: string;
   readonly weaponType: string;
   aptitudes: Array<ICharacterAptitude>;
+  readonly stats: Array<ICharacterStat>;
+  readonly passiveStats?: Array<ICharacterPassiveStat>;
+}
+
+export interface ICharacterJson {
+  readonly releasedAt?: string;
+  readonly element: string;
+  readonly weaponType: string;
+  readonly aptitudes: Array<ICharacterAptitudeJson>;
   readonly stats: Array<ICharacterStat>;
   readonly passiveStats?: Array<ICharacterPassiveStat>;
 }
