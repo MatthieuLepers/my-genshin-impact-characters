@@ -3082,7 +3082,7 @@
       }
     ]
   },
-  "Yumemisuki Misuki": {
+  "Yumemizuki Mizuki": {
     "releasedAt": "2025-02-12",
     "element": "anemo",
     "weaponType": "catalyser",
@@ -3110,6 +3110,66 @@
         "def": 757.03,
         "bonusType": "EM",
         "bonusValue": 115.2
+      }
+    ]
+  },
+  "Iansan": {
+    "element": "electro",
+    "weaponType": "polearm",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "DenialAndJudgment"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 3,
+        "materialId": "DenialAndJudgment"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 5,
+        "materialId": "DenialAndJudgment"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 10657,
+        "atk": 257.0,
+        "def": 638.16,
+        "bonusType": "Atk%",
+        "bonusValue": 24.0
+      }
+    ]
+  },
+  "Varesa": {
+    "element": "electro",
+    "weaponType": "catalyser",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "constellationIncrease": 5,
+        "materialId": "ErodedScaleFeather"
+      },
+      {
+        "type": "ElementalSkill",
+        "materialId": "ErodedScaleFeather"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 3,
+        "materialId": "ErodedScaleFeather"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 12699,
+        "atk": 339.63,
+        "def": 806.98,
+        "bonusType": "CritRate%",
+        "bonusValue": 19.2
       }
     ]
   }

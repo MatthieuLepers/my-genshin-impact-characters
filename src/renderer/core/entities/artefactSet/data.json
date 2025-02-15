@@ -370,5 +370,21 @@
       { "locale": "en-EN", "name": "Wanderers Troupe" },
       { "locale": "fr-FR", "name": "Bande vagabonde" }
     ]
+  },
+  "LongNightsOath": {
+    "i18n": [
+      { "locale": "en-EN", "name": "Long Night's Oath" },
+      { "locale": "fr-FR", "name": "Serment de la longue nuit" }
+    ]
+  },
+  "FinaleOfTheDeepGalleries": {
+    "passiveStats": [{
+      "statType": "CryoDmg%",
+      "statValue": 15
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Finale of the Deep Galleries" },
+      { "locale": "fr-FR", "name": "Finale des galeries profondes" }
+    ]
   }
 }

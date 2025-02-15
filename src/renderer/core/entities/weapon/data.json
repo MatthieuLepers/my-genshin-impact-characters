@@ -2810,11 +2810,25 @@
     "atk": 43.73,
     "statName": "ER%",
     "statValue": 6.67,
+    "releasedAt": "2025-02-14",
     "material": "MaskOfTheWickedLieutenant",
     "tags": ["event"],
     "i18n": [
       { "locale": "en-EN", "name": "Tamayuratei no Ohanashi" },
       { "locale": "fr-FR", "name": "Tamayuratei no Ohanashi" }
+    ]
+  },
+  "VividNotions": {
+    "type": "catalyser",
+    "rarity": 5,
+    "atk": 47.54,
+    "statName": "CritDmg%",
+    "statValue": 9.6,
+    "material": "DeliriousDecadenceOfTheSacredLord",
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Vivid Notions" },
+      { "locale": "fr-FR", "name": "Notions colorées" }
     ]
   }
 }

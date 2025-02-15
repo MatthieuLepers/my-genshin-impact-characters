@@ -1,5 +1,5 @@
 import AbstractI18nEntity from '@renderer/core/entities/AbstractI18nEntity';
-import type { IArtefactSet } from '@renderer/core/entities/artefactSet/i';
+import type { IArtefactSet, IArtefactSetJson } from '@renderer/core/entities/artefactSet/i';
 import type { IArtefactSetPassiveStat } from '@renderer/core/entities/artefactSetPassiveStat/i';
 import { image } from '@renderer/core/utils';
 import ArtefactSetData from '@renderer/core/entities/artefactSet/data.json';
@@ -28,7 +28,7 @@ export default class ArtefactSet extends AbstractI18nEntity<IArtefactSet> {
 
   static findAll(): Record<string, ArtefactSet> {
     return Object
-      .entries(ArtefactSetData)
+      .entries(ArtefactSetData as Record<string, IArtefactSetJson>)
       .reduce((acc, [id, set]) => ({
         ...acc,
         [id]: new ArtefactSet({
