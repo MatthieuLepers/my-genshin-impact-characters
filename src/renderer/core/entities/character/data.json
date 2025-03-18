@@ -3114,6 +3114,7 @@
     ]
   },
   "Iansan": {
+    "releasedAt": "2025-03-26",
     "element": "electro",
     "weaponType": "polearm",
     "aptitudes": [
@@ -3144,6 +3145,7 @@
     ]
   },
   "Varesa": {
+    "releasedAt": "2025-03-26",
     "element": "electro",
     "weaponType": "catalyser",
     "aptitudes": [
@@ -3166,8 +3168,8 @@
       {
         "level": 90,
         "hp": 12699,
-        "atk": 339.63,
-        "def": 806.98,
+        "atk": 356.38,
+        "def": 781.62,
         "bonusType": "CritRate%",
         "bonusValue": 19.2
       }

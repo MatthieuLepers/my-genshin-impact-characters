@@ -372,12 +372,14 @@
     ]
   },
   "LongNightsOath": {
+    "releasedAt": "2025-03-26",
     "i18n": [
       { "locale": "en-EN", "name": "Long Night's Oath" },
       { "locale": "fr-FR", "name": "Serment de la longue nuit" }
     ]
   },
   "FinaleOfTheDeepGalleries": {
+    "releasedAt": "2025-03-26",
     "passiveStats": [{
       "statType": "CryoDmg%",
       "statValue": 15
