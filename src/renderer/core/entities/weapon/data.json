@@ -2831,5 +2831,33 @@
       { "locale": "en-EN", "name": "Vivid Notions" },
       { "locale": "fr-FR", "name": "Notions colorées" }
     ]
+  },
+  "SequenceOfSolitude": {
+    "type": "bow",
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "HP%",
+    "statValue": 9,
+    "releasedAt": "2025-05-09",
+    "material": "FragmentOfAnAncientChord",
+    "tags": ["event"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Sequence of Solitude" },
+      { "locale": "fr-FR", "name": "Séquence de solitude" }
+    ]
+  },
+  "SymphonistOfScents": {
+    "type": "polearm",
+    "rarity": 5,
+    "atk": 45.94,
+    "statName": "CritDmg%",
+    "statValue": 14.4,
+    "releasedAt": "2025-05-07",
+    "material": "DrossOfPureSacredDewdrop",
+    "tags": ["wishes", "Escoffier"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Symphonist of Scents" },
+      { "locale": "fr-FR", "name": "Symphoniste des senteurs" }
+    ]
   }
 }

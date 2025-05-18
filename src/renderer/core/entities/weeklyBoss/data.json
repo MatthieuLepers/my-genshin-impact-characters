@@ -75,5 +75,12 @@
       { "locale": "en-EN", "name": "Lord of Eroded Primal Fire" },
       { "locale": "fr-FR", "name": "Érodé seigneur du feu primordial" }
     ]
+  },
+  "HexenzirkelTrial": {
+    "releasedAt": "2025-05-07",
+    "i18n": [
+      { "locale": "en-EN", "name": "Hexenzirkel Trial" },
+      { "locale": "fr-FR", "name": "Épreuve de l'Hexenzirkel" }
+    ]
   }
 }

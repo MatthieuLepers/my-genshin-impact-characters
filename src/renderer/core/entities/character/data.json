@@ -3174,5 +3174,67 @@
         "bonusValue": 19.2
       }
     ]
+  },
+  "Ifa": {
+    "releasedAt": "2025-05-07",
+    "element": "anemo",
+    "weaponType": "catalyser",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "AscendedSampleRook"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 3,
+        "materialId": "AscendedSampleRook"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 5,
+        "materialId": "AscendedSampleRook"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 10081,
+        "atk": 178.41,
+        "def": 605.4,
+        "bonusType": "EM",
+        "bonusValue": 96
+      }
+    ]
+  },
+  "Escoffier": {
+    "releasedAt": "2025-05-07",
+    "element": "cryo",
+    "weaponType": "polearm",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "ErodedHorn"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 3,
+        "materialId": "ErodedHorn"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 5,
+        "materialId": "ErodedHorn"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 13348,
+        "atk": 346.81,
+        "def": 731.66,
+        "bonusType": "CritRate%",
+        "bonusValue": 19.2
+      }
+    ]
   }
 }

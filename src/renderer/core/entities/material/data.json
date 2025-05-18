@@ -269,5 +269,29 @@
       { "locale": "en-EN", "name": "Eroded Scale-Feather" },
       { "locale": "fr-FR", "name": "Plume érodée" }
     ]
+  },
+  "AscendedSampleKnight": {
+    "bossId": "HexenzirkelTrial",
+    "releasedAt": "2025-05-07",
+    "i18n": [
+      { "locale": "en-EN", "name": "Ascended Sample: Knight" },
+      { "locale": "fr-FR", "name": "Échantillon ascensionné : Cavalier" }
+    ]
+  },
+  "AscendedSampleRook": {
+    "bossId": "HexenzirkelTrial",
+    "releasedAt": "2025-05-07",
+    "i18n": [
+      { "locale": "en-EN", "name": "Ascended Sample: Rook" },
+      { "locale": "fr-FR", "name": "Échantillon ascensionné : Tour" }
+    ]
+  },
+  "AscendedSampleQueen": {
+    "bossId": "HexenzirkelTrial",
+    "releasedAt": "2025-05-07",
+    "i18n": [
+      { "locale": "en-EN", "name": "Ascended Sample: Queen" },
+      { "locale": "fr-FR", "name": "Échantillon ascensionné : Dame" }
+    ]
   }
 }
