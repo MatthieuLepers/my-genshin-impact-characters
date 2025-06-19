@@ -1474,17 +1474,17 @@
     "aptitudes": [
       {
         "type": "NormalAttack",
-        "materialId": "HellfireButterfly"
+        "materialId": "AshenHeart"
       },
       {
         "type": "ElementalSkill",
         "constellationIncrease": 5,
-        "materialId": "HellfireButterfly"
+        "materialId": "AshenHeart"
       },
       {
         "type": "ElementalBurst",
         "constellationIncrease": 3,
-        "materialId": "HellfireButterfly"
+        "materialId": "AshenHeart"
       }
     ],
     "stats": [
@@ -2621,11 +2621,11 @@
     "aptitudes": [
       {
         "type": "NormalAttack",
+        "constellationIncrease": 3,
         "materialId": "FadingCandle"
       },
       {
         "type": "ElementalSkill",
-        "constellationIncrease": 3,
         "materialId": "FadingCandle"
       },
       {
@@ -3234,6 +3234,68 @@
         "def": 731.66,
         "bonusType": "CritRate%",
         "bonusValue": 19.2
+      }
+    ]
+  },
+  "Dahlia": {
+    "releasedAt": "2025-06-18",
+    "element": "hydro",
+    "weaponType": "catalyser",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "ErodedScaleFeather"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 5,
+        "materialId": "ErodedScaleFeather"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 3,
+        "materialId": "ErodedScaleFeather"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 12506,
+        "atk": 189.03,
+        "def": 559.67,
+        "bonusType": "HP%",
+        "bonusValue": 24
+      }
+    ]
+  },
+  "Skirk": {
+    "releasedAt": "2025-06-18",
+    "element": "cryo",
+    "weaponType": "sword",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "AscendedSampleKnight"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 5,
+        "materialId": "AscendedSampleKnight"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 3,
+        "materialId": "AscendedSampleKnight"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 12417,
+        "atk": 358.77,
+        "def": 806.21,
+        "bonusType": "CritDmg%",
+        "bonusValue": 38.4
       }
     ]
   }

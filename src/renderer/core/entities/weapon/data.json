@@ -2859,5 +2859,19 @@
       { "locale": "en-EN", "name": "Symphonist of Scents" },
       { "locale": "fr-FR", "name": "Symphoniste des senteurs" }
     ]
+  },
+  "Azurelight": {
+    "type": "sword",
+    "rarity": 5,
+    "atk": 47.54,
+    "statName": "CritRate%",
+    "statValue": 4.8,
+    "releasedAt": "2025-06-18",
+    "material": "NightWindsMysticConsideration",
+    "tags": ["wishes", "Skirk"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Azurelight" },
+      { "locale": "fr-FR", "name": "Éclazur" }
+    ]
   }
 }
