@@ -7,7 +7,8 @@ import { sequelize } from '@/main/database';
 import { Setting } from '@/main/database/models';
 import ElectronWindow from '@/main/classes/ElectronWindow';
 import { APP_PLATEFORM } from '@/main/utils/Constants';
-import WindowStore from '@/main/stores/WindowStore';
+import { store } from '@/main/stores/WindowStore';
+import { registerAllGlobalShortcuts, registerAllIpcHandlers } from './decorators';
 
 function createWindow() {
   const mainWindow = new ElectronWindow('main', {
@@ -36,10 +37,12 @@ app
   .then(async () => {
     electronApp.setAppUserModelId('vite.electron.my-genshin-impact-characters');
 
-    const AppModule = await import('@/main/modules/App');
-    AppModule.default();
+    const { init: AppModule } = await import('@/main/modules/App.js');
+    AppModule();
 
     createWindow();
+    registerAllIpcHandlers();
+    registerAllGlobalShortcuts();
 
     await sequelize.sync();
     await Setting.createDefault();
@@ -65,7 +68,7 @@ app
 
 app.on('window-all-closed', () => {
   if (APP_PLATEFORM === 'darwin') {
-    app.dock.hide();
+    app.dock?.hide();
     app.setActivationPolicy('accessory');
   } else {
     app.quit();
@@ -74,22 +77,22 @@ app.on('window-all-closed', () => {
 
 app.on('before-quit', () => {
   if (APP_PLATEFORM === 'darwin') {
-    app.dock.hide();
+    app.dock?.hide();
     app.setActivationPolicy('accessory');
     app.quit();
   }
 });
 
 autoUpdater.on('update-available', () => {
-  WindowStore.broadcastData('update-available');
+  store.broadcastData('update-available');
 });
 
 autoUpdater.on('download-progress', (progressObj) => {
-  WindowStore.broadcastData('download-progress', progressObj.percent);
+  store.broadcastData('download-progress', progressObj.percent);
 });
 
 autoUpdater.on('update-downloaded', () => {
-  WindowStore.broadcastData('update-downloaded');
+  store.broadcastData('update-downloaded');
 });
 
 app.on('ready', () => {

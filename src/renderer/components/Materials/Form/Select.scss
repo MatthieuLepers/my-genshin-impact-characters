@@ -1,4 +1,5 @@
-@import "~styles/utilities.scss";
+@use 'sass:color';
+@use '~styles/utilities' as *;
 
 .m-form-select {
   &--box {
@@ -271,7 +272,7 @@
             .m-form-select__dropdown__item--focused,
             &:focus,
             &:hover {
-              background-color: lighten(color(secondary200), 10);
+              background-color: color.adjust(color(secondary200), $lightness: 10%);
             }
           }
 
@@ -357,7 +358,7 @@
         cursor: default;
 
         &-arrow {
-          background-color: lighten(color(grey700), 10);
+          background-color: color.adjust(color(grey700), $lightness: 10%);
 
           &::after,
           &::before {
@@ -367,7 +368,7 @@
 
         &__item {
           color: color(grey500);
-          background-color: lighten(color(grey700), 10);
+          background-color: color.adjust(color(grey700), $lightness: 10%);
         }
       }
     }
@@ -595,7 +596,7 @@
             &.m-form-select__dropdown__item--focused,
             &:focus,
             &:hover {
-              background-color: lighten(color(secondary200), 10);
+              background-color: color.adjust(color(secondary200), $lightness: 10%);
             }
 
             .m-form-select__dropdown__item-icon {

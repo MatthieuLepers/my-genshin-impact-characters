@@ -1,4 +1,5 @@
-@import '~styles/utilities.scss';
+@use 'sass:color';
+@use '~styles/utilities' as *;
 
 .ArtefactListView {
   padding: rem(8px);
@@ -60,7 +61,7 @@
 
       &:focus,
       &:hover {
-        background-color: lighten(color(secondary200), 10%);
+        background-color: color.adjust(color(secondary200), $lightness: 10%);
       }
     }
   }

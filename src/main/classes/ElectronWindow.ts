@@ -7,7 +7,7 @@ import {
 import { join } from 'path';
 import { is } from '@electron-toolkit/utils';
 
-import WindowStore from '@/main/stores/WindowStore';
+import { store } from '@/main/stores/WindowStore';
 
 interface Template {
   file: string;
@@ -66,7 +66,7 @@ export default class ElectronWindow extends BrowserWindow {
         ipcMain.off(`minimize:${this.name}`, handleMinimize);
         ipcMain.off(`maximize:${this.name}`, handleMaximize);
         ipcMain.off(`close:${this.name}`, handleClose);
-        WindowStore.unregister(this);
+        store.unregister(this);
         this.close();
       }
     };
@@ -84,7 +84,7 @@ export default class ElectronWindow extends BrowserWindow {
       return { action: 'deny' };
     });
 
-    WindowStore.register(this);
+    store.register(this);
   }
 
   setTemplate(routePath: string | null, file = 'index.html'): this {

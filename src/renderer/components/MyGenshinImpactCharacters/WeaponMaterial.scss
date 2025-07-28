@@ -1,4 +1,4 @@
-@import '~styles/utilities.scss';
+@use '~styles/utilities' as *;
 
 .WeaponMaterial {
   padding: 0 rem(4px);

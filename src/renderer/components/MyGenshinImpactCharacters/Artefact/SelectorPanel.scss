@@ -1,4 +1,4 @@
-@import '~styles/utilities.scss';
+@use '~styles/utilities' as *;
 
 .artefact-selector-panel {
   @include transition(left .2s ease);

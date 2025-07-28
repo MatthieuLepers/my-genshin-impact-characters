@@ -1,6 +1,6 @@
-@import './bases/breakpoints.scss';
-@import './bases/animations.scss';
-@import './bases/colors.scss';
-@import './bases/fonts.scss';
-@import './bases/icons.scss';
-@import './bases/mixins.scss';
+@forward './bases/breakpoints';
+@forward './bases/animations';
+@forward './bases/colors';
+@forward './bases/fonts';
+@forward './bases/icons';
+@forward './bases/mixins';

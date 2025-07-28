@@ -1,4 +1,4 @@
-@import '~styles/utilities.scss';
+@use '~styles/utilities' as *;
 
 .AffixSelectorPanel {
   @include transition(left .5s ease);

@@ -1,4 +1,4 @@
-@import '~styles/utilities.scss';
+@use '~styles/utilities' as *;
 
 .CharacterListView {
   padding: rem(24px) rem(8px) 0;

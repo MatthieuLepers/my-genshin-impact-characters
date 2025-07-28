@@ -1,5 +1,10 @@
+@use 'sass:list';
+@use './fonts' as fonts;
+@use './icons' as icons;
+@use './colors' as colors;
+
 body {
-  @include font-family('Open Sans');
+  @include fonts.font-family('Open Sans');
   font-size: 16px;
 }
 
@@ -20,38 +25,38 @@ body {
 }
 
 /* ICONS */
-@each $iconName, $iconData in $icons {
+@each $iconName, $iconData in icons.$icons {
   .icon-#{$iconName}:before {
-    content: nth($iconData, 2);
-    font-family: nth($iconData, 1) !important;
+    content: list.nth($iconData, 2);
+    font-family: list.nth($iconData, 1) !important;
   }
 }
 
 [class*="icon-anemo"] {
-  color: color(anemo);
+  color: colors.color(anemo);
 }
 
 [class*="icon-pyro"] {
-  color: color(pyro);
+  color: colors.color(pyro);
 }
 
 [class*="icon-hydro"] {
-  color: color(hydro);
+  color: colors.color(hydro);
 }
 
 [class*="icon-cryo"] {
-  color: color(cryo);
+  color: colors.color(cryo);
 }
 
 [class*="icon-electro"] {
-  color: color(electro);
+  color: colors.color(electro);
 }
 
 [class*="icon-geo"] {
-  color: color(geo);
+  color: colors.color(geo);
 }
 
 [class*="icon-dendro"] {
-  color: color(dendro);
+  color: colors.color(dendro);
 }
 

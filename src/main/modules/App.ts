@@ -6,13 +6,13 @@ import Ajv from 'ajv';
 
 import { IpcHandle, IpcOn, GlobalShortcut } from '@/main/decorators';
 import { Setting, Artefact } from '@/main/database/models';
-import WindowStore from '@/main/stores/WindowStore';
 import ArtefactSchema from '@/main/public/schemas/artefact.schema.json';
+import { store } from '@/main/stores/WindowStore';
 
 class AppModule {
   @IpcHandle
   static async localeChange(iso: string): Promise<void> {
-    WindowStore.broadcastData('localeChange', iso);
+    store.broadcastData('localeChange', iso);
 
     const localeSetting = await Setting.findByPk('locale');
     if (localeSetting) {
@@ -22,14 +22,14 @@ class AppModule {
 
   @IpcHandle
   static async sendDataToWindow(windowName: string, channel: string, ...args: any[]): Promise<void> {
-    WindowStore.sendData(windowName, channel, ...args);
+    store.sendData(windowName, channel, ...args);
   }
 
   @IpcHandle
   static async exportArtefact(identifier: Identifier, dialogOptions: SaveDialogOptions): Promise<void> {
     const obj = await Artefact.findByPk(identifier);
     if (obj) {
-      const mainWindow = WindowStore.get('main')!;
+      const mainWindow = store.get('main')!;
       const { canceled, filePath } = await dialog.showSaveDialog(mainWindow, dialogOptions);
 
       if (!canceled && filePath?.length) {
@@ -42,7 +42,7 @@ class AppModule {
   @IpcHandle
   static async exportMultipleArtefact(idList: string, dialogOptions: SaveDialogOptions): Promise<void> {
     const parsedIdList = JSON.parse(idList);
-    const mainWindow = WindowStore.get('main')!;
+    const mainWindow = store.get('main')!;
     const { canceled, filePath } = await dialog.showSaveDialog(mainWindow, dialogOptions);
 
     if (!canceled && filePath?.length) {
@@ -57,7 +57,7 @@ class AppModule {
 
   @IpcHandle
   static async importArtefact(dialogOptions: OpenDialogOptions): Promise<string | null> {
-    const mainWindow = WindowStore.get('main')!;
+    const mainWindow = store.get('main')!;
     const { canceled, filePaths } = await dialog.showOpenDialog(mainWindow, dialogOptions);
 
     if (canceled || !filePaths.length || !fs.existsSync(filePaths[0])) return null;
@@ -83,7 +83,7 @@ class AppModule {
 
   @IpcOn
   static databaseReady() {
-    WindowStore.getVisibleWindows().forEach((win) => {
+    store.getVisibleWindows().forEach((win) => {
       win.sendData('database-ready');
       win.webContents.addListener('did-finish-load', () => {
         win.sendData('database-ready');
@@ -93,7 +93,7 @@ class AppModule {
 
   @IpcOn
   static populateProgress(data: Object) {
-    WindowStore.broadcastData('populateProgress', data);
+    store.broadcastData('populateProgress', data);
   }
 
   @IpcOn
@@ -103,7 +103,7 @@ class AppModule {
 
   @GlobalShortcut('Alt+F4')
   static closeAppNonDarwin() {
-    const win = WindowStore.get('main');
+    const win = store.get('main');
     if (win) {
       win.close();
     }
@@ -111,11 +111,11 @@ class AppModule {
 
   @GlobalShortcut('Command+Q')
   static closeAppDarwin() {
-    const win = WindowStore.get('main');
+    const win = store.get('main');
     if (win) {
       win.close();
     }
   }
 }
 
-export default () => AppModule;
+export const init = () => AppModule;

@@ -53,4 +53,4 @@ class WindowStore {
   }
 }
 
-export default new WindowStore();
+export const store = new WindowStore();
