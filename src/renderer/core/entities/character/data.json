@@ -3298,5 +3298,36 @@
         "bonusValue": 38.4
       }
     ]
+  },
+  "Ineffa": {
+    "releasedAt": "2025-07-30",
+    "element": "electro",
+    "weaponType": "polearm",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "ErodedSunfire"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 3,
+        "materialId": "ErodedSunfire"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 5,
+        "materialId": "ErodedSunfire"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 12613,
+        "atk": 330.07,
+        "def": 827.73,
+        "bonusType": "CritRate%",
+        "bonusValue": 19.2
+      }
+    ]
   }
 }

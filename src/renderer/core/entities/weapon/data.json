@@ -2873,5 +2873,33 @@
       { "locale": "en-EN", "name": "Azurelight" },
       { "locale": "fr-FR", "name": "Éclazur" }
     ]
+  },
+  "FlameForgedInsight": {
+    "type": "claymore",
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "EM",
+    "statValue": 36,
+    "releasedAt": "2025-07-30T11:00",
+    "material": "DeliriousDecadenceOfTheSacredLord",
+    "tags": ["events"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Flame-Forged Insight" },
+      { "locale": "fr-FR", "name": "Perception forgée par les flammes" }
+    ]
+  },
+  "FracturedHalo": {
+    "type": "polearm",
+    "rarity": 5,
+    "atk": 45.94,
+    "statName": "CritDmg%",
+    "statValue": 14.4,
+    "releasedAt": "2025-07-30",
+    "material": "BlazingSacrificialHeartsTerror",
+    "tags": ["wishes", "Ineffa"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Fractured Halo" },
+      { "locale": "fr-FR", "name": "Halo fracturé" }
+    ]
   }
 }
