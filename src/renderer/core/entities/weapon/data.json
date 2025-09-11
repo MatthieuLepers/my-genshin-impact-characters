@@ -289,7 +289,7 @@
     "type": "polearm",
     "rarity": 5,
     "atk": 49.14,
-    "statName": "Ark%",
+    "statName": "Atk%",
     "statValue": 3.6,
     "releasedAt": "2022-01-05",
     "material": "MistViledLeadElixir",
@@ -1779,7 +1779,7 @@
     "statValue": 8,
     "releasedAt": "2023-08-16",
     "material": "LuminousSandsFromGuyun",
-    "tags": ["wishes"],
+    "tags": ["bp"],
     "i18n": [
       { "locale": "en-EN", "name": "Sacrificial Jade" },
       { "locale": "fr-FR", "name": "Jade sacrificiel" }
@@ -2900,6 +2900,132 @@
     "i18n": [
       { "locale": "en-EN", "name": "Fractured Halo" },
       { "locale": "fr-FR", "name": "Halo fracturé" }
+    ]
+  },
+  "SnareHook": {
+    "type": "bow",
+    "rarity": 4,
+    "atk": 41.07,
+    "statName": "ER%",
+    "statValue": 13.33,
+    "releasedAt": "2025-09-10",
+    "material": "BlazeOfLongNightFlint",
+    "tags": ["f2p", "Nod-Krai"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Snare Hook" },
+      { "locale": "fr-FR", "name": "Crochet de capture" }
+    ]
+  },
+  "BlackmarrowLantern": {
+    "type": "catalyser",
+    "rarity": 4,
+    "atk": 41.07,
+    "statName": "EM",
+    "statValue": 48,
+    "releasedAt": "2025-09-10",
+    "material": "ArcaneDeviceWish",
+    "tags": ["f2p", "Nod-Krai"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Blackmarrow Lantern" },
+      { "locale": "fr-FR", "name": "Lanterne à moelle sombre" }
+    ]
+  },
+  "ProspectorsShovel": {
+    "type": "polearm",
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "Atk%",
+    "statValue": 9,
+    "releasedAt": "2025-09-10",
+    "material": "BlazeOfLongNightFlint",
+    "tags": ["f2p", "Nod-Krai"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Prospector's Shovel" },
+      { "locale": "fr-FR", "name": "Pelle du prospecteur" }
+    ]
+  },
+  "MasterKey": {
+    "type": "claymore",
+    "rarity": 4,
+    "atk": 41.07,
+    "statName": "ER%",
+    "statValue": 13.33,
+    "releasedAt": "2025-09-10",
+    "material": "AureateRadianceOfTheFarNorthScions",
+    "tags": ["f2p", "Nod-Krai"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Master Key" },
+      { "locale": "fr-FR", "name": "Clé universelle" }
+    ]
+  },
+  "SerenitysCall": {
+    "type": "sword",
+    "rarity": 4,
+    "atk": 41.07,
+    "statName": "ER%",
+    "statValue": 13.33,
+    "releasedAt": "2025-09-10",
+    "material": "ArcaneDeviceWish",
+    "tags": ["f2p", "Nod-Krai"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Serenity's Call" },
+      { "locale": "fr-FR", "name": "Appel de sérénité" }
+    ]
+  },
+  "EtherlightSpindlelute": {
+    "type": "catalyser",
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "ER%",
+    "statValue": 10,
+    "releasedAt": "2025-09-10",
+    "material": "AureateRadianceOfTheFarNorthScions",
+    "tags": ["event"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Etherlight Spindlelute" },
+      { "locale": "fr-FR", "name": "Lyre du tisse-lumière" }
+    ]
+  },
+  "MoonweaversDawn": {
+    "type": "sword",
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "Atk%",
+    "statValue": 6,
+    "releasedAt": "2025-09-10",
+    "material": "AureateRadianceOfTheFarNorthScions",
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Moonweaver's Dawn" },
+      { "locale": "fr-FR", "name": "Aube du tisse-lune" }
+    ]
+  },
+  "NightweaversLookingGlass": {
+    "type": "catalyser",
+    "rarity": 5,
+    "atk": 44.34,
+    "statName": "EM",
+    "statValue": 57.6,
+    "releasedAt": "2025-09-10",
+    "material": "ArcaneDeviceWish",
+    "tags": ["wishes", "Lauma"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Nightweaver's Looking Glass" },
+      { "locale": "fr-FR", "name": "Miroir du tisse-nuit" }
+    ]
+  },
+  "BloodsoakedRuins": {
+    "type": "polearm",
+    "rarity": 5,
+    "atk": 47.54,
+    "statName": "CritRate%",
+    "statValue": 4.8,
+    "releasedAt": "2025-10-22",
+    "material": "BlazeOfLongNightFlint",
+    "tags": ["wishes", "Flins"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Bloodsoaked Ruins" },
+      { "locale": "fr-FR", "name": "Ruines sanglantes" }
     ]
   }
 }

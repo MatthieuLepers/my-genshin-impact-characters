@@ -322,5 +322,59 @@
         "tier4": "Révélation mystique du vent nocturne"
       }
     ]
+  },
+  "BlazeOfLongNightFlint": {
+    "i18n": [
+      {
+        "locale": "en-EN",
+        "tier1": "Ember of Long Night Flint",
+        "tier2": "Afterglow of Long Night Flint",
+        "tier3": "Flare of Long Night Flint",
+        "tier4": "Blaze of Long Night Flint"
+      },
+      {
+        "locale": "fr-FR",
+        "tier1": "Braise de silex de longue nuit",
+        "tier2": "Lueur de silex de longue nuit",
+        "tier3": "Flamme de silex de longue nuit",
+        "tier4": "Embrasement de silex de longue nuit"
+      }
+    ]
+  },
+  "ArcaneDeviceWish": {
+    "i18n": [
+      {
+        "locale": "en-EN",
+        "tier1": "Arcane Device Fragment",
+        "tier2": "Arcane Device Replica",
+        "tier3": "Arcane Device Inheritance",
+        "tier4": "Arcane Device Wish"
+      },
+      {
+        "locale": "fr-FR",
+        "tier1": "Fragment d'appareil arcanique",
+        "tier2": "Réplique d'appareil arcanique",
+        "tier3": "Succession d'appareil arcanique",
+        "tier4": "Souhait d'appareil arcanique"
+      }
+    ]
+  },
+  "AureateRadianceOfTheFarNorthScions": {
+    "i18n": [
+      {
+        "locale": "en-EN",
+        "tier1": "Sundered Glory of the Far-North Scions",
+        "tier2": "Unyielding Delusion of the Far-North Scions",
+        "tier3": "Oblation of the Far-North Scions",
+        "tier4": "Aureate Radiance of the Far-North Scions"
+      },
+      {
+        "locale": "fr-FR",
+        "tier1": "Gloire brisée des héritiers du grand nord",
+        "tier2": "Illusion inflexible des héritiers du grand nord",
+        "tier3": "Oblation des héritiers du grand nord",
+        "tier4": "Rayonnement doré des héritiers du grand nord"
+      }
+    ]
   }
 }

@@ -388,5 +388,27 @@
       { "locale": "en-EN", "name": "Finale of the Deep Galleries" },
       { "locale": "fr-FR", "name": "Finale des galeries profondes" }
     ]
+  },
+  "NightOfTheSkysUnveiling": {
+    "releasedAt": "2025-09-10",
+    "passiveStats": [{
+      "statType": "EM",
+      "statValue": 80
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Night of the Sky's Unveiling" },
+      { "locale": "fr-FR", "name": "Nuit de la révélation céleste" }
+    ]
+  },
+  "SilkenMoonsSerenade": {
+    "releasedAt": "2025-09-10",
+    "passiveStats": [{
+      "statType": "ER%",
+      "statValue": 20
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Silken Moon's Serenade" },
+      { "locale": "fr-FR", "name": "Sérénade de la lune soyeuse" }
+    ]
   }
 }

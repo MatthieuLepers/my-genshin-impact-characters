@@ -3329,5 +3329,98 @@
         "bonusValue": 19.2
       }
     ]
+  },
+  "Aino": {
+    "releasedAt": "2025-09-10",
+    "element": "hydro",
+    "weaponType": "claymore",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "SilkenFeather"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 5,
+        "materialId": "SilkenFeather"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 3,
+        "materialId": "SilkenFeather"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 11201,
+        "atk": 242.13,
+        "def": 607.44,
+        "bonusType": "EM",
+        "bonusValue": 96
+      }
+    ]
+  },
+  "Flins": {
+    "releasedAt": "2025-10-22",
+    "element": "electro",
+    "weaponType": "polearm",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "AscendedSampleQueen"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 5,
+        "materialId": "AscendedSampleQueen"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 3,
+        "materialId": "AscendedSampleQueen"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 12491,
+        "atk": 351.59,
+        "def": 808.52,
+        "bonusType": "CritDmg%",
+        "bonusValue": 38.4
+      }
+    ]
+  },
+  "Lauma": {
+    "releasedAt": "2025-09-10",
+    "element": "dendro",
+    "weaponType": "catalyser",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "ErodedScaleFeather"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 3,
+        "materialId": "ErodedScaleFeather"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 5,
+        "materialId": "ErodedScaleFeather"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 10654,
+        "atk": 254.96,
+        "def": 668.64,
+        "bonusType": "EM",
+        "bonusValue": 115.2
+      }
+    ]
   }
 }
