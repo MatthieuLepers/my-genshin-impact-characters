@@ -3422,5 +3422,36 @@
         "bonusValue": 115.2
       }
     ]
+  },
+  "Nefer": {
+    "releasedAt": "2025-10-22",
+    "element": "dendro",
+    "weaponType": "catalyser",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "AscendedSampleRook"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 3,
+        "materialId": "AscendedSampleRook"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 5,
+        "materialId": "AscendedSampleRook"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 12704,
+        "atk": 344.42,
+        "def": 799.3,
+        "bonusType": "CritDmg%",
+        "bonusValue": 38.4
+      }
+    ]
   }
 }

@@ -3027,5 +3027,47 @@
       { "locale": "en-EN", "name": "Bloodsoaked Ruins" },
       { "locale": "fr-FR", "name": "Ruines sanglantes" }
     ]
+  },
+  "ReliquaryOfTruth": {
+    "type": "catalyser",
+    "rarity": 5,
+    "atk": 44.34,
+    "statName": "CritDmg%",
+    "statValue": 19.2,
+    "releasedAt": "2025-10-22",
+    "material": "OasisGardensReminiscence",
+    "tags": ["wishes", "Nefer"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Reliquary of Truth" },
+      { "locale": "fr-FR", "name": "Reliquaire de la vérité" }
+    ]
+  },
+  "SacrificersStaff": {
+    "type": "polearm",
+    "rarity": 4,
+    "atk": 45.07,
+    "statName": "CritRate%",
+    "statValue": 2,
+    "releasedAt": "2025-10-22",
+    "material": "BlazeOfLongNightFlint",
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Sacrificer's Staff" },
+      { "locale": "fr-FR", "name": "Bâton de sacrificateur" }
+    ]
+  },
+  "DawningFrost": {
+    "type": "catalyser",
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "CritDmg%",
+    "statValue": 12,
+    "releasedAt": "2025-10-22",
+    "material": "ArcaneDeviceWish",
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Dawning Frost" },
+      { "locale": "fr-FR", "name": "Frimas d’aube" }
+    ]
   }
 }
