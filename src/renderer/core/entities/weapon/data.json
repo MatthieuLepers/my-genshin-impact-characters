@@ -3067,7 +3067,35 @@
     "tags": ["wishes"],
     "i18n": [
       { "locale": "en-EN", "name": "Dawning Frost" },
-      { "locale": "fr-FR", "name": "Frimas d’aube" }
+      { "locale": "fr-FR", "name": "Frimas d'aube" }
+    ]
+  },
+  "AthameArtis": {
+    "type": "sword",
+    "rarity": 5,
+    "atk": 45.94,
+    "statName": "CritRate%",
+    "statValue": 7.2,
+    "releasedAt": "2025-12-03",
+    "material": "TileOfDecarabiansTower",
+    "tags": ["wishes", "Durin"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Athame Artis" },
+      { "locale": "fr-FR", "name": "Athame Artis" }
+    ]
+  },
+  "TheDaybreakChronicles": {
+    "type": "bow",
+    "rarity": 5,
+    "atk": 47.54,
+    "statName": "CritDmg%",
+    "statValue": 9.6,
+    "releasedAt": "2025-12-03",
+    "material": "FettersOfTheDandelionGladiator",
+    "tags": ["wishes", "Venti"],
+    "i18n": [
+      { "locale": "en-EN", "name": "The Daybreak Chronicles" },
+      { "locale": "fr-FR", "name": "Les chroniques de l'aube" }
     ]
   }
 }

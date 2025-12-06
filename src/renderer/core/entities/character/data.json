@@ -3453,5 +3453,67 @@
         "bonusValue": 38.4
       }
     ]
+  },
+  "Durin": {
+    "releasedAt": "2025-12-03",
+    "element": "pyro",
+    "weaponType": "sword",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "ErodedSunfire"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 5,
+        "materialId": "ErodedSunfire"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 3,
+        "materialId": "ErodedSunfire"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 12430,
+        "atk": 346.81,
+        "def": 822.35,
+        "bonusType": "CritDmg%",
+        "bonusValue": 38.4
+      }
+    ]
+  },
+  "Jahoda": {
+    "releasedAt": "2025-12-03",
+    "element": "anemo",
+    "weaponType": "bow",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "AscendedSampleKnight"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 5,
+        "materialId": "AscendedSampleKnight"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 3,
+        "materialId": "AscendedSampleKnight"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 9646,
+        "atk": 223.02,
+        "def": 580.14,
+        "bonusType": "Heal%",
+        "bonusValue": 18.46
+      }
+    ]
   }
 }
