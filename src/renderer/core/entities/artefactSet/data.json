@@ -410,5 +410,27 @@
       { "locale": "en-EN", "name": "Silken Moon's Serenade" },
       { "locale": "fr-FR", "name": "Sérénade de la lune soyeuse" }
     ]
+  },
+  "AubadeOfMorningstarAndMoon": {
+    "releasedAt": "2026-01-14",
+    "passiveStats": [{
+      "statType": "EM",
+      "statValue": 80
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Aubade of Morningstar and Moon" },
+      { "locale": "fr-FR", "name": "Aubade d'astre et de lune" }
+    ]
+  },
+  "ADayCarvedFromRisingWinds": {
+    "releasedAt": "2026-01-14",
+    "passiveStats": [{
+      "statType": "Atk%",
+      "statValue": 18
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "A Day Carved from Rising Winds" },
+      { "locale": "fr-FR", "name": "Journée sculptée par les vents ascendants" }
+    ]
   }
 }

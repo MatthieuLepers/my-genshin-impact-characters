@@ -293,5 +293,29 @@
       { "locale": "en-EN", "name": "Ascended Sample: Queen" },
       { "locale": "fr-FR", "name": "Échantillon ascensionné : Dame" }
     ]
+  },
+  "MaskOfTheVirtuousDoctor": {
+    "bossId": "Dottore",
+    "releasedAt": "2026-01-14",
+    "i18n": [
+      { "locale": "en-EN", "name": "Mask of the Virtuous Doctor" },
+      { "locale": "fr-FR", "name": "Masque du médecin vertueux" }
+    ]
+  },
+  "MadmansRestraint": {
+    "bossId": "Dottore",
+    "releasedAt": "2026-01-14",
+    "i18n": [
+      { "locale": "en-EN", "name": "Madman's Restraint" },
+      { "locale": "fr-FR", "name": "Contrainte du fou" }
+    ]
+  },
+  "ElixirOfTheHeretic": {
+    "bossId": "Dottore",
+    "releasedAt": "2026-01-14",
+    "i18n": [
+      { "locale": "en-EN", "name": "Elixir of the Heretic" },
+      { "locale": "fr-FR", "name": "Élixir de l'hérétique" }
+    ]
   }
 }

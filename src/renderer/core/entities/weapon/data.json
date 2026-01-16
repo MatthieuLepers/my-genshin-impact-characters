@@ -3097,5 +3097,47 @@
       { "locale": "en-EN", "name": "The Daybreak Chronicles" },
       { "locale": "fr-FR", "name": "Les chroniques de l'aube" }
     ]
+  },
+  "RainbowSerpentsRainBow": {
+    "type": "bow",
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "ER%",
+    "statValue": 10,
+    "releasedAt": "2025-12-19",
+    "material": "NightWindsMysticConsideration",
+    "tags": ["event"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Rainbow Serpent's Rain Bow" },
+      { "locale": "fr-FR", "name": "Arc pluvial du serpent arc-en-cie" }
+    ]
+  },
+  "NocturnesCurtainCall": {
+    "type": "catalyser",
+    "rarity": 5,
+    "atk": 44.34,
+    "statName": "CritDmg%",
+    "statValue": 19.2,
+    "releasedAt": "2026-01-14",
+    "material": "AureateRadianceOfTheFarNorthScions",
+    "tags": ["wishes", "Columbina"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Nocturne's Curtain Call" },
+      { "locale": "fr-FR", "name": "Rappel de la nocturne" }
+    ]
+  },
+  "LightbearingMoonshard": {
+    "type": "sword",
+    "rarity": 5,
+    "atk": 44.34,
+    "statName": "CritDmg%",
+    "statValue": 19.2,
+    "releasedAt": "2026-02-03",
+    "material": "GrainOfAerosiderite",
+    "tags": ["wishes", "Zibai"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Lightbearing Moonshard" },
+      { "locale": "fr-FR", "name": "Éclat lunaire luminescent" }
+    ]
   }
 }

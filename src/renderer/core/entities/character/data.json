@@ -3515,5 +3515,98 @@
         "bonusValue": 18.46
       }
     ]
+  },
+  "Columbina": {
+    "releasedAt": "2026-01-14",
+    "element": "hydro",
+    "weaponType": "catalyser",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "MaskOfTheVirtuousDoctor"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 3,
+        "materialId": "MaskOfTheVirtuousDoctor"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 5,
+        "materialId": "MaskOfTheVirtuousDoctor"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 14695,
+        "atk": 95.67,
+        "def": 514.93,
+        "bonusType": "CritRate%",
+        "bonusValue": 19.2
+      }
+    ]
+  },
+  "Illuga": {
+    "releasedAt": "2026-02-03",
+    "element": "geo",
+    "weaponType": "polearm",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "ErodedHorn"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 5,
+        "materialId": "ErodedHorn"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 3,
+        "materialId": "ErodedHorn"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 11962,
+        "atk": 191.16,
+        "def": 813.57,
+        "bonusType": "EM",
+        "bonusValue": 96
+      }
+    ]
+  },
+  "Zibai": {
+    "releasedAt": "2026-02-03",
+    "element": "geo",
+    "weaponType": "sword",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "AscendedSampleQueen"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 3,
+        "materialId": "AscendedSampleQueen"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 5,
+        "materialId": "AscendedSampleQueen"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 12919,
+        "atk": 224.83,
+        "def": 956.85,
+        "bonusType": "CritDmg%",
+        "bonusValue": 38.4
+      }
+    ]
   }
 }

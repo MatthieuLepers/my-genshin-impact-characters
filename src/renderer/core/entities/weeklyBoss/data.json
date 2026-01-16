@@ -82,5 +82,12 @@
       { "locale": "en-EN", "name": "Hexenzirkel Trial" },
       { "locale": "fr-FR", "name": "Épreuve de l'Hexenzirkel" }
     ]
+  },
+  "Dottore": {
+    "releasedAt": "2026-01-14",
+    "i18n": [
+      { "locale": "en-EN", "name": "Dottore" },
+      { "locale": "fr-FR", "name": "Dottore" }
+    ]
   }
 }
