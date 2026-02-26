@@ -3139,5 +3139,19 @@
       { "locale": "en-EN", "name": "Lightbearing Moonshard" },
       { "locale": "fr-FR", "name": "Éclat lunaire luminescent" }
     ]
+  },
+  "GestOfTheMightyWolf": {
+    "type": "sword",
+    "rarity": 5,
+    "atk": 45.94,
+    "statName": "CritRate%",
+    "statValue": 7.2,
+    "releasedAt": "2026-02-25",
+    "material": "BorealWolfsMilkTooth",
+    "tags": ["wishes", "Varka"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Gest of the Mighty Wolf" },
+      { "locale": "fr-FR", "name": "Geste du loup puissant" }
+    ]
   }
 }

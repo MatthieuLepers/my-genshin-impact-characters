@@ -3608,5 +3608,36 @@
         "bonusValue": 38.4
       }
     ]
+  },
+  "Varka": {
+    "releasedAt": "2026-02-25",
+    "element": "anemo",
+    "weaponType": "claymore",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "AscendedSampleRook"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 3,
+        "materialId": "AscendedSampleRook"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 5,
+        "materialId": "AscendedSampleRook"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 12613,
+        "atk": 352.79,
+        "def": 795.45,
+        "bonusType": "CritDmg%",
+        "bonusValue": 38.4
+      }
+    ]
   }
 }
