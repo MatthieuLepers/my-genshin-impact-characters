@@ -3639,5 +3639,36 @@
         "bonusValue": 38.4
       }
     ]
+  },
+  "Linnea": {
+    "releasedAt": "2026-04-08",
+    "element": "geo",
+    "weaponType": "bow",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "ElixirOfTheHeretic"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 3,
+        "materialId": "ElixirOfTheHeretic"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 5,
+        "materialId": "ElixirOfTheHeretic"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 9895,
+        "atk": 143.51,
+        "def": 906.89,
+        "bonusType": "CritRate%",
+        "bonusValue": 19.2
+      }
+    ]
   }
 }

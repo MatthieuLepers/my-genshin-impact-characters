@@ -3141,7 +3141,7 @@
     ]
   },
   "GestOfTheMightyWolf": {
-    "type": "sword",
+    "type": "claymore",
     "rarity": 5,
     "atk": 45.94,
     "statName": "CritRate%",
@@ -3152,6 +3152,20 @@
     "i18n": [
       { "locale": "en-EN", "name": "Gest of the Mighty Wolf" },
       { "locale": "fr-FR", "name": "Geste du loup puissant" }
+    ]
+  },
+  "GoldenFrostboundOath": {
+    "type": "bow",
+    "rarity": 5,
+    "atk": 44.34,
+    "statName": "CritDmg%",
+    "statValue": 19.2,
+    "releasedAt": "2026-04-07",
+    "material": "BlazeOfLongNightFlint",
+    "tags": ["wishes", "Linnea"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Golden Frostbound Oath" },
+      { "locale": "fr-FR", "name": "Serment de gel doré" }
     ]
   }
 }
