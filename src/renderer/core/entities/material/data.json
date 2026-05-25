@@ -317,5 +317,29 @@
       { "locale": "en-EN", "name": "Elixir of the Heretic" },
       { "locale": "fr-FR", "name": "Élixir de l'hérétique" }
     ]
+  },
+  "CounterfeitResin": {
+    "bossId": "DottoreSumeru",
+    "releasedAt": "2026-05-20",
+    "i18n": [
+      { "locale": "en-EN", "name": "Counterfeit Resin" },
+      { "locale": "fr-FR", "name": "Résine contrefaite" }
+    ]
+  },
+  "TwistedWitheredBranch": {
+    "bossId": "DottoreSumeru",
+    "releasedAt": "2026-05-20",
+    "i18n": [
+      { "locale": "en-EN", "name": "Twisted Withered Branch" },
+      { "locale": "fr-FR", "name": "Branche flétrie et tordue" }
+    ]
+  },
+  "ProfanedSprout": {
+    "bossId": "DottoreSumeru",
+    "releasedAt": "2026-05-20",
+    "i18n": [
+      { "locale": "en-EN", "name": "Profaned Sprout" },
+      { "locale": "fr-FR", "name": "Pousse profane" }
+    ]
   }
 }

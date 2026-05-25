@@ -86,8 +86,15 @@
   "Dottore": {
     "releasedAt": "2026-01-14",
     "i18n": [
-      { "locale": "en-EN", "name": "Dottore" },
-      { "locale": "fr-FR", "name": "Dottore" }
+      { "locale": "en-EN", "name": "Dottore (Nod-Krai)" },
+      { "locale": "fr-FR", "name": "Dottore (Nod-Krai)" }
+    ]
+  },
+  "DottoreSumeru": {
+    "releasedAt": "2026-05-20",
+    "i18n": [
+      { "locale": "en-EN", "name": "Dottore (Sumeru)" },
+      { "locale": "fr-FR", "name": "Dottore (Sumeru)" }
     ]
   }
 }

@@ -3167,5 +3167,33 @@
       { "locale": "en-EN", "name": "Golden Frostbound Oath" },
       { "locale": "fr-FR", "name": "Serment de gel doré" }
     ]
+  },
+  "AngelosHeptades": {
+    "type": "catalyser",
+    "rarity": 5,
+    "atk": 49.14,
+    "statName": "Atk%",
+    "statValue": 3.6,
+    "releasedAt": "2026-05-20",
+    "material": "ArcaneDeviceWish",
+    "tags": ["wishes", "Nicole"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Angelos' Heptades" },
+      { "locale": "fr-FR", "name": "Heptades des anges" }
+    ]
+  },
+  "DisasterAndRemorse": {
+    "type": "polearm",
+    "rarity": 5,
+    "atk": 47.54,
+    "statName": "CritRate%",
+    "statValue": 4.8,
+    "material": "TileOfDecarabiansTower",
+    "releasedAt": "2026-06-09",
+    "tags": ["wishes", "Lohen"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Disaster and Remorse" },
+      { "locale": "fr-FR", "name": "Désastre et remords" }
+    ]
   }
 }

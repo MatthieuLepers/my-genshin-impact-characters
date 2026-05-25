@@ -3670,5 +3670,98 @@
         "bonusValue": 19.2
       }
     ]
+  },
+  "Prune": {
+    "releasedAt": "2026-05-20",
+    "element": "anemo",
+    "weaponType": "catalyser",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "MaskOfTheVirtuousDoctor"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 5,
+        "materialId": "MaskOfTheVirtuousDoctor"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 3,
+        "materialId": "MaskOfTheVirtuousDoctor"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 9679,
+        "atk": 220.89,
+        "def": 580.14,
+        "bonusType": "Atk%",
+        "bonusValue": 24
+      }
+    ]
+  },
+  "Nicole": {
+    "releasedAt": "2026-05-20",
+    "element": "pyro",
+    "weaponType": "catalyser",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "CounterfeitResin"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 3,
+        "materialId": "CounterfeitResin"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 5,
+        "materialId": "CounterfeitResin"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 10409,
+        "atk": 342.03,
+        "def": 562.58,
+        "bonusType": "Atk%",
+        "bonusValue": 28.8
+      }
+    ]
+  },
+  "Lohen": {
+    "releasedAt": "2026-06-09",
+    "element": "cryo",
+    "weaponType": "polearm",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "AscendedSampleKnight"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 3,
+        "materialId": "AscendedSampleKnight"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 5,
+        "materialId": "AscendedSampleKnight"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 12858,
+        "atk": 344.42,
+        "def": 783.93,
+        "bonusType": "CritDmg%",
+        "bonusValue": 38.4
+      }
+    ]
   }
 }

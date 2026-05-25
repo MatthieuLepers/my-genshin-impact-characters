@@ -432,5 +432,27 @@
       { "locale": "en-EN", "name": "A Day Carved from Rising Winds" },
       { "locale": "fr-FR", "name": "Journée sculptée par les vents ascendants" }
     ]
+  },
+  "DisenchantmentInDeepShadow": {
+    "releasedAt": "2026-05-20",
+    "passiveStats": [{
+      "statType": "Atk%",
+      "statValue": 18
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Disenchantment in Deep Shadow" },
+      { "locale": "fr-FR", "name": "Désenchantement dans l'ombre profonde" }
+    ]
+  },
+  "CelestialGift": {
+    "releasedAt": "2026-05-20",
+    "passiveStats": [{
+      "statType": "ER%",
+      "statValue": 20
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Celestial Gift" },
+      { "locale": "fr-FR", "name": "Don céleste" }
+    ]
   }
 }
