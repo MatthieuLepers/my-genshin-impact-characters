@@ -3195,5 +3195,19 @@
       { "locale": "en-EN", "name": "Disaster and Remorse" },
       { "locale": "fr-FR", "name": "Désastre et remords" }
     ]
+  },
+  "ATeaspoonOfTranscendence": {
+    "type": "claymore",
+    "rarity": 5,
+    "atk": 47.54,
+    "statName": "CritDmg%",
+    "statValue": 9.6,
+    "material": "AureateRadianceOfTheFarNorthScions",
+    "releasedAt": "2026-07-01",
+    "tags": ["wishes", "Sandrone"],
+    "i18n": [
+      { "locale": "en-EN", "name": "A Teaspoon of Transcendence" },
+      { "locale": "fr-FR", "name": "Une cuillerée de transcendance" }
+    ]
   }
 }

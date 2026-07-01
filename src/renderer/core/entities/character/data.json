@@ -3763,5 +3763,36 @@
         "bonusValue": 38.4
       }
     ]
+  },
+  "Sandrone": {
+    "releasedAt": "2026-07-01",
+    "element": "cryo",
+    "weaponType": "claymore",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "constellationIncrease": 3,
+        "materialId": "MadmansRestraint"
+      },
+      {
+        "type": "ElementalSkill",
+        "materialId": "MadmansRestraint"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 5,
+        "materialId": "MadmansRestraint"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 13226,
+        "atk": 342.03,
+        "def": 752.41,
+        "bonusType": "CritRate%",
+        "bonusValue": 19.2
+      }
+    ]
   }
 }
