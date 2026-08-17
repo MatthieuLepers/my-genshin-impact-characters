@@ -3209,5 +3209,173 @@
       { "locale": "en-EN", "name": "A Teaspoon of Transcendence" },
       { "locale": "fr-FR", "name": "Une cuillerée de transcendance" }
     ]
+  },
+  "HereticsMoltenBlade": {
+    "type": "sword",
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "CritRate%",
+    "statValue": 6,
+    "material": "BlazingSacrificialHeartsTerror",
+    "releasedAt": "2026-08-12",
+    "tags": ["bp"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Heretic's Molten Blade" },
+      { "locale": "fr-FR", "name": "Lame de lave de l'hérétique" }
+    ]
+  },
+  "ForgedByTheGoldenMelody": {
+    "type": "claymore",
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "CritRate%",
+    "statValue": 6,
+    "material": "DrossOfPureSacredDewdrop",
+    "releasedAt": "2026-08-12",
+    "tags": ["bp"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Forged by the Golden Melody" },
+      { "locale": "fr-FR", "name": "Forgée par la loi d'or" }
+    ]
+  },
+  "Frostbreath": {
+    "type": "polearm",
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "ER%",
+    "statValue": 10,
+    "material": "RevelryOfTheCellaredSpiritualNectar",
+    "releasedAt": "2026-08-12",
+    "tags": ["bp"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Frostbreath" },
+      { "locale": "fr-FR", "name": "Souffle de givre" }
+    ]
+  },
+  "ClashOfKings": {
+    "type": "catalyser",
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "CritRate%",
+    "statValue": 6,
+    "material": "CopperTalismanOfTheForestDew",
+    "releasedAt": "2026-08-12",
+    "tags": ["bp"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Clash of Kings" },
+      { "locale": "fr-FR", "name": "Choc des rois" }
+    ]
+  },
+  "JadeVista": {
+    "type": "bow",
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "CritRate%",
+    "statValue": 6,
+    "material": "GrainOfAerosiderite",
+    "releasedAt": "2026-08-12",
+    "tags": ["bp"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Jade Vista" },
+      { "locale": "fr-FR", "name": "Vue de jade" }
+    ]
+  },
+  "Emberwell": {
+    "type": "sword",
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "EM",
+    "statValue": 36,
+    "material": "TriumphOfThePaleStarArmy",
+    "releasedAt": "2026-08-12",
+    "tags": ["f2p", "snezhnaya"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Emberwell" },
+      { "locale": "fr-FR", "name": "Puits-de-braises" }
+    ]
+  },
+  "BladeOfAtonement": {
+    "type": "claymore",
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "Atk%",
+    "statValue": 6,
+    "material": "TriumphOfThePaleStarArmy",
+    "releasedAt": "2026-08-12",
+    "tags": ["f2p", "snezhnaya"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Blade of Atonement" },
+      { "locale": "fr-FR", "name": "Lame de rédemption" }
+    ]
+  },
+  "SongOfTheVigil": {
+    "type": "polearm",
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "EM",
+    "statValue": 24,
+    "material": "TheFrostEmperorsFarewell",
+    "releasedAt": "2026-08-12",
+    "tags": ["f2p", "snezhnaya"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Song of the Vigil" },
+      { "locale": "fr-FR", "name": "Chant de la veillée" }
+    ]
+  },
+  "EchoesOfTheHeart": {
+    "type": "catalyser",
+    "rarity": 4,
+    "atk": 43.73,
+    "statName": "Atk%",
+    "statValue": 6,
+    "material": "TriumphOfThePaleStarArmy",
+    "releasedAt": "2026-08-12",
+    "tags": ["f2p", "snezhnaya"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Echoes of the Heart" },
+      { "locale": "fr-FR", "name": "Écho du cœur" }
+    ]
+  },
+  "CovenantOfFrostAndSnow": {
+    "type": "bow",
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "Def%",
+    "statValue": 11.26,
+    "material": "TriumphOfThePaleStarArmy",
+    "releasedAt": "2026-08-12",
+    "tags": ["f2p", "snezhnaya"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Covenant of Frost and Snow" },
+      { "locale": "fr-FR", "name": "Alliance du givre et de la neige" }
+    ]
+  },
+  "WhitelakeFrostfeather": {
+    "type": "sword",
+    "rarity": 5,
+    "atk": 47.54,
+    "statName": "CritRate%",
+    "statValue": 4.8,
+    "material": "RevelryOfTheCellaredSpiritualNectar",
+    "releasedAt": "2026-08-12",
+    "tags": ["wishes", "Odette"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Whitelake Frostfeather" },
+      { "locale": "fr-FR", "name": "Plume hivernale du lac blanc" }
+    ]
+  },
+  "ExaiphanesBlade": {
+    "type": "sword",
+    "rarity": 5,
+    "atk": 45.94,
+    "statName": "CritRate%",
+    "statValue": 7.2,
+    "material": "TheFrostEmperorsFarewell",
+    "releasedAt": "2026-08-12",
+    "tags": ["wishes", "Traveler"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Exaiphanes Blade" },
+      { "locale": "fr-FR", "name": "Lame exaphane" }
+    ]
   }
 }

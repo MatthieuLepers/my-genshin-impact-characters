@@ -3794,5 +3794,98 @@
         "bonusValue": 19.2
       }
     ]
+  },
+  "Alyosha": {
+    "releasedAt": "2026-08-12",
+    "element": "electro",
+    "weaponType": "polearm",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "ElixirOfTheHeretic"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 3,
+        "materialId": "ElixirOfTheHeretic"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 5,
+        "materialId": "ElixirOfTheHeretic"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 11962,
+        "atk": 342.03,
+        "def": 703.0,
+        "bonusType": "ER%",
+        "bonusValue": 26.67
+      }
+    ]
+  },
+  "Odette": {
+    "releasedAt": "2026-08-12",
+    "element": "cryo",
+    "weaponType": "sword",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "TwistedWitheredBranch"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 3,
+        "materialId": "TwistedWitheredBranch"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 5,
+        "materialId": "TwistedWitheredBranch"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 12981,
+        "atk": 334.85,
+        "def": 787.0,
+        "bonusType": "CritDmg%",
+        "bonusValue": 38.4
+      }
+    ]
+  },
+  "Traveler-Cryo": {
+    "releasedAt": "2026-08-12",
+    "element": "cryo",
+    "weaponType": "sword",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "AscendedSampleQueen"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 5,
+        "materialId": "AscendedSampleQueen"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 3,
+        "materialId": "AscendedSampleQueen"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 10875,
+        "atk": 212.4,
+        "def": 682.52,
+        "bonusType": "Atk%",
+        "bonusValue": 24
+      }
+    ]
   }
 }

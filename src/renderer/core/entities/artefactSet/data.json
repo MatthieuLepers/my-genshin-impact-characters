@@ -454,5 +454,27 @@
       { "locale": "en-EN", "name": "Celestial Gift" },
       { "locale": "fr-FR", "name": "Don céleste" }
     ]
+  },
+  "ScarletProof": {
+    "releasedAt": "2026-08-12",
+    "passiveStats": [{
+      "statType": "Atk%",
+      "statValue": 18
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Scarlet Proof" },
+      { "locale": "fr-FR", "name": "Preuve écarlate" }
+    ]
+  },
+  "HeartOfTheFurnace": {
+    "releasedAt": "2026-08-12",
+    "passiveStats": [{
+      "statType": "Atk%",
+      "statValue": 18
+    }],
+    "i18n": [
+      { "locale": "en-EN", "name": "Heart of the Furnace" },
+      { "locale": "fr-FR", "name": "Cœur de la fournaise" }
+    ]
   }
 }
