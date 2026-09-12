@@ -2882,7 +2882,7 @@
     "statValue": 36,
     "releasedAt": "2025-07-30T11:00",
     "material": "DeliriousDecadenceOfTheSacredLord",
-    "tags": ["events"],
+    "tags": ["event"],
     "i18n": [
       { "locale": "en-EN", "name": "Flame-Forged Insight" },
       { "locale": "fr-FR", "name": "Perception forgée par les flammes" }
@@ -3376,6 +3376,103 @@
     "i18n": [
       { "locale": "en-EN", "name": "Exaiphanes Blade" },
       { "locale": "fr-FR", "name": "Lame exaphane" }
+    ]
+  },
+  "DarkIronSword": {
+    "type": "sword",
+    "rarity": 3,
+    "atk": 38.74,
+    "statName": "EM",
+    "statValue": 30.6,
+    "material": "LuminousSandsFromGuyun",
+    "releasedAt": "2020-09-28",
+    "i18n": [
+      { "locale": "en-EN", "name": "Dark Iron Sword" },
+      { "locale": "fr-FR", "name": "Épée en fer noir" }
+    ]
+  },
+  "NewBough": {
+    "type": "sword",
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "CritDmg%",
+    "statValue": 12,
+    "material": "RevelryOfTheCellaredSpiritualNectar",
+    "releasedAt": "2026-09-23",
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "New Bough" },
+      { "locale": "fr-FR", "name": "Nouvelle branche" }
+    ]
+  },
+  "SilverLight": {
+    "type": "sword",
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "Atk%",
+    "statValue": 9,
+    "material": "GrainOfAerosiderite",
+    "releasedAt": "2026-09-23",
+    "tags": ["event"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Silver Light" },
+      { "locale": "fr-FR", "name": "Lumière argentée" }
+    ]
+  },
+  "BeyondTheChrysalis": {
+    "type": "sword",
+    "rarity": 5,
+    "atk": 47.54,
+    "statName": "CritDmg%",
+    "statValue": 9.6,
+    "material": "TriumphOfThePaleStarArmy",
+    "releasedAt": "2026-09-23",
+    "tags": ["wishes", "Vesna"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Beyond the Chrysalis" },
+      { "locale": "fr-FR", "name": "Au-delà de la chrysalide" }
+    ]
+  },
+  "WintersHeavyHeart": {
+    "type": "catalyser",
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "CritDmg%",
+    "statValue": 12,
+    "material": "TheFrostEmperorsFarewell",
+    "releasedAt": "2026-09-23",
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Winter's Heavy Heart" },
+      { "locale": "fr-FR", "name": "Le cœur lourd de l'hiver" }
+    ]
+  },
+  "HymnOfTheMaelstrom": {
+    "type": "catalyser",
+    "rarity": 5,
+    "atk": 44.34,
+    "statName": "HP%",
+    "statValue": 14.4,
+    "material": "RevelryOfTheCellaredSpiritualNectar",
+    "releasedAt": "2026-09-23",
+    "tags": ["wishes", "Vodyanista"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Hymn of the Maelstrom" },
+      { "locale": "fr-FR", "name": "Hymne dans le maelström" }
+    ]
+  },
+  "BreezeborneRefrain": {
+    "type": "bow",
+    "rarity": 4,
+    "atk": 42.4,
+    "statName": "CritRate%",
+    "statValue": 6,
+    "material": "TheFrostEmperorsFarewell",
+    "releasedAt": "2026-09-23",
+    "tags": ["wishes"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Breezeborne Refrain" },
+      { "locale": "fr-FR", "name": "Refrain dans le vent" }
     ]
   }
 }
