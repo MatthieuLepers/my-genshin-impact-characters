@@ -3887,5 +3887,67 @@
         "bonusValue": 24
       }
     ]
+  },
+  "Vodyanitsa": {
+    "releasedAt": "2026-09-23",
+    "element": "hydro",
+    "weaponType": "catalyser",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "MadmansRestraint"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 3,
+        "materialId": "MadmansRestraint"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 5,
+        "materialId": "MadmansRestraint"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 14818,
+        "atk": 107.63,
+        "def": 484.19,
+        "bonusType": "HP%",
+        "bonusValue": 28.8
+      }
+    ]
+  },
+  "Vesna": {
+    "releasedAt": "2026-09-23",
+    "element": "anemo",
+    "weaponType": "sword",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "materialId": "ProfanedSprout"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 3,
+        "materialId": "ProfanedSprout"
+      },
+      {
+        "type": "ElementalBurst",
+        "constellationIncrease": 5,
+        "materialId": "ProfanedSprout"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 13262,
+        "atk": 353.98,
+        "def": 730.13,
+        "bonusType": "CritRate%",
+        "bonusValue": 19.2
+      }
+    ]
   }
 }
