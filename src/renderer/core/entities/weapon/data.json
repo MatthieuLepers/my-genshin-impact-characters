@@ -3474,5 +3474,19 @@
       { "locale": "en-EN", "name": "Breezeborne Refrain" },
       { "locale": "fr-FR", "name": "Refrain dans le vent" }
     ]
+  },
+  "StarsealedEdict": {
+    "type": "catalyser",
+    "rarity": 5,
+    "atk": 44.34,
+    "statName": "CritRate%",
+    "statValue": 19.2,
+    "material": "TheFrostEmperorsFarewell",
+    "releasedAt": "2026-11-04",
+    "tags": ["wishes", "Mitya"],
+    "i18n": [
+      { "locale": "en-EN", "name": "Starsealed Edict" },
+      { "locale": "fr-FR", "name": "Édit d'astre secret" }
+    ]
   }
 }

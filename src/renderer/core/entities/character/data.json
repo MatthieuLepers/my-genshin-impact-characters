@@ -3949,5 +3949,67 @@
         "bonusValue": 19.2
       }
     ]
+  },
+  "Valeriy": {
+    "releasedAt": "2026-11-04",
+    "element": "electro",
+    "weaponType": "sword",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "constellationIncrease": 3,
+        "materialId": "CounterfeitResin"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 5,
+        "materialId": "CounterfeitResin"
+      },
+      {
+        "type": "ElementalBurst",
+        "materialId": "CounterfeitResin"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 10005,
+        "atk": 254.88,
+        "def": 703.0,
+        "bonusType": "Atk%",
+        "bonusValue": 24
+      }
+    ]
+  },
+  "Mitya": {
+    "releasedAt": "2026-11-04",
+    "element": "electro",
+    "weaponType": "catalyser",
+    "aptitudes": [
+      {
+        "type": "NormalAttack",
+        "constellationIncrease": 5,
+        "materialId": "MaskOfTheVirtuousDoctor"
+      },
+      {
+        "type": "ElementalSkill",
+        "constellationIncrease": 3,
+        "materialId": "MaskOfTheVirtuousDoctor"
+      },
+      {
+        "type": "ElementalBurst",
+        "materialId": "MaskOfTheVirtuousDoctor"
+      }
+    ],
+    "stats": [
+      {
+        "level": 90,
+        "hp": 11634,
+        "atk": 263.1,
+        "def": 791.61,
+        "bonusType": "CritDmg%",
+        "bonusValue": 38.4
+      }
+    ]
   }
 }
